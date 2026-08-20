@@ -31,9 +31,68 @@
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-/* This paragraph uses the embedded Sassoon typeface in the photographed page,
-   which is not available to the browser overlay. Position its active-word band
-   from the PDF's real word boxes so metric substitution cannot make it drift. */
+/* The photographed page uses the embedded Sassoon typeface, which is not
+   available to the browser overlay. Position each active-word band from the
+   PDF's real word boxes so metric substitution cannot make it drift. */
+#content :is([data-id="pg002_p001"],[data-id="pg002_p002"],[data-id="pg002_p003"],[data-id="pg002_p004"],[data-id="pg002_p005"],[data-id="pg002_p006"],[data-id="pg002_p007"],[data-id="pg002_p008"],[data-id="pg002_p009"],[data-id="pg002_p010"],[data-id="pg002_p011"],[data-id="pg002_p012"],[data-id="pg002_p013"],[data-id="pg002_p014"],[data-id="pg002_p015"]) span[data-word-index].bg-yellow-300{position:static!important}
+#content :is([data-id="pg002_p001"],[data-id="pg002_p002"],[data-id="pg002_p003"],[data-id="pg002_p004"],[data-id="pg002_p005"],[data-id="pg002_p006"],[data-id="pg002_p007"],[data-id="pg002_p008"],[data-id="pg002_p009"],[data-id="pg002_p010"],[data-id="pg002_p011"],[data-id="pg002_p012"],[data-id="pg002_p013"],[data-id="pg002_p014"],[data-id="pg002_p015"]) span[data-word-index].bg-yellow-300::before{right:auto!important;bottom:auto!important;height:17px!important;transform:none!important}
+#content [data-id="pg002_p001"] span[data-word-index="0"].bg-yellow-300::before{left:18.37px!important;top:2.16px!important;width:70.21px!important}
+#content [data-id="pg002_p001"] span[data-word-index="1"].bg-yellow-300::before{left:93.62px!important;top:2.16px!important;width:64.84px!important}
+#content [data-id="pg002_p001"] span[data-word-index="2"].bg-yellow-300::before{left:163.49px!important;top:2.16px!important;width:15.42px!important}
+#content [data-id="pg002_p001"] span[data-word-index="3"].bg-yellow-300::before{left:183.94px!important;top:2.16px!important;width:78.10px!important}
+#content [data-id="pg002_p001"] span[data-word-index="4"].bg-yellow-300::before{left:267.07px!important;top:2.16px!important;width:40.26px!important}
+#content [data-id="pg002_p002"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:75.89px!important}
+#content [data-id="pg002_p002"] span[data-word-index="1"].bg-yellow-300::before{left:81.29px!important;top:2.96px!important;width:40.26px!important}
+#content [data-id="pg002_p003"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:75.09px!important}
+#content [data-id="pg002_p003"] span[data-word-index="1"].bg-yellow-300::before{left:80.49px!important;top:2.96px!important;width:40.26px!important}
+#content [data-id="pg002_p004"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:72.90px!important}
+#content [data-id="pg002_p004"] span[data-word-index="1"].bg-yellow-300::before{left:78.30px!important;top:2.96px!important;width:40.26px!important}
+#content [data-id="pg002_p005"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.16px!important;width:43.44px!important}
+#content [data-id="pg002_p005"] span[data-word-index="1"].bg-yellow-300::before{left:48.21px!important;top:2.16px!important;width:30.19px!important}
+#content [data-id="pg002_p005"] span[data-word-index="2"].bg-yellow-300::before{left:83.76px!important;top:2.16px!important;width:40.26px!important}
+#content [data-id="pg002_p005"] span[data-word-index="3"].bg-yellow-300::before{left:129.37px!important;top:2.16px!important;width:30.19px!important}
+#content [data-id="pg002_p005"] span[data-word-index="4"].bg-yellow-300::before{left:164.91px!important;top:2.16px!important;width:20.13px!important}
+#content [data-id="pg002_p005"] span[data-word-index="5"].bg-yellow-300::before{left:190.40px!important;top:2.16px!important;width:10.06px!important}
+#content [data-id="pg002_p006"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:70.21px!important}
+#content [data-id="pg002_p006"] span[data-word-index="1"].bg-yellow-300::before{left:75.61px!important;top:2.96px!important;width:64.84px!important}
+#content [data-id="pg002_p006"] span[data-word-index="2"].bg-yellow-300::before{left:145.48px!important;top:2.96px!important;width:15.42px!important}
+#content [data-id="pg002_p006"] span[data-word-index="3"].bg-yellow-300::before{left:165.93px!important;top:2.96px!important;width:78.10px!important}
+#content [data-id="pg002_p007"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:79.02px!important}
+#content [data-id="pg002_p007"] span[data-word-index="1"].bg-yellow-300::before{left:83.79px!important;top:2.95px!important;width:36.21px!important}
+#content [data-id="pg002_p008"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:30.19px!important}
+#content [data-id="pg002_p008"] span[data-word-index="1"].bg-yellow-300::before{left:34.97px!important;top:2.95px!important;width:20.79px!important}
+#content [data-id="pg002_p008"] span[data-word-index="2"].bg-yellow-300::before{left:60.79px!important;top:2.95px!important;width:56.97px!important}
+#content [data-id="pg002_p008"] span[data-word-index="3"].bg-yellow-300::before{left:122.79px!important;top:2.95px!important;width:57.29px!important}
+#content [data-id="pg002_p008"] span[data-word-index="4"].bg-yellow-300::before{left:185.11px!important;top:2.95px!important;width:39.98px!important}
+#content [data-id="pg002_p009"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:13.55px!important}
+#content [data-id="pg002_p009"] span[data-word-index="1"].bg-yellow-300::before{left:18.95px!important;top:2.95px!important;width:17.41px!important}
+#content [data-id="pg002_p009"] span[data-word-index="2"].bg-yellow-300::before{left:41.39px!important;top:2.95px!important;width:29.29px!important}
+#content [data-id="pg002_p009"] span[data-word-index="3"].bg-yellow-300::before{left:75.71px!important;top:2.95px!important;width:50.32px!important}
+#content [data-id="pg002_p010"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:50.32px!important}
+#content [data-id="pg002_p010"] span[data-word-index="1"].bg-yellow-300::before{left:55.72px!important;top:2.95px!important;width:28.95px!important}
+#content [data-id="pg002_p010"] span[data-word-index="2"].bg-yellow-300::before{left:89.71px!important;top:2.95px!important;width:16.05px!important}
+#content [data-id="pg002_p010"] span[data-word-index="3"].bg-yellow-300::before{left:110.79px!important;top:2.95px!important;width:58.24px!important}
+#content [data-id="pg002_p011"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.76px!important;width:26.45px!important}
+#content [data-id="pg002_p012"] span[data-word-index="0"].bg-yellow-300::before{left:25.53px!important;top:2.76px!important;width:40.39px!important}
+#content [data-id="pg002_p012"] span[data-word-index="1"].bg-yellow-300::before{left:70.95px!important;top:2.76px!important;width:30.19px!important}
+#content [data-id="pg002_p012"] span[data-word-index="2"].bg-yellow-300::before{left:106.17px!important;top:2.76px!important;width:30.19px!important}
+#content [data-id="pg002_p012"] span[data-word-index="3"].bg-yellow-300::before{left:141.40px!important;top:2.76px!important;width:30.19px!important}
+#content [data-id="pg002_p012"] span[data-word-index="4"].bg-yellow-300::before{left:178.02px!important;top:2.76px!important;width:40.58px!important}
+#content [data-id="pg002_p012"] span[data-word-index="5"].bg-yellow-300::before{left:223.63px!important;top:2.76px!important;width:30.19px!important}
+#content [data-id="pg002_p012"] span[data-word-index="6"].bg-yellow-300::before{left:258.85px!important;top:2.76px!important;width:30.19px!important}
+#content [data-id="pg002_p012"] span[data-word-index="7"].bg-yellow-300::before{left:294.07px!important;top:2.76px!important;width:30.19px!important}
+#content [data-id="pg002_p013"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.76px!important;width:48.81px!important}
+#content [data-id="pg002_p014"] span[data-word-index="0"].bg-yellow-300::before{left:25.53px!important;top:2.76px!important;width:55.60px!important}
+#content [data-id="pg002_p014"] span[data-word-index="1"].bg-yellow-300::before{left:84.90px!important;top:2.76px!important;width:51.70px!important}
+#content [data-id="pg002_p014"] span[data-word-index="2"].bg-yellow-300::before{left:139.80px!important;top:2.76px!important;width:16.80px!important}
+#content [data-id="pg002_p014"] span[data-word-index="3"].bg-yellow-300::before{left:159.80px!important;top:2.76px!important;width:20.40px!important}
+#content [data-id="pg002_p014"] span[data-word-index="4"].bg-yellow-300::before{left:183.40px!important;top:2.76px!important;width:18.80px!important}
+#content [data-id="pg002_p014"] span[data-word-index="5"].bg-yellow-300::before{left:205.40px!important;top:2.76px!important;width:19.77px!important}
+#content [data-id="pg002_p015"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.76px!important;width:70.77px!important}
+#content [data-id="pg002_p015"] span[data-word-index="1"].bg-yellow-300::before{left:97.53px!important;top:2.76px!important;width:38.40px!important}
+#content [data-id="pg002_p015"] span[data-word-index="2"].bg-yellow-300::before{left:141.40px!important;top:2.76px!important;width:19.70px!important}
+#content [data-id="pg002_p015"] span[data-word-index="3"].bg-yellow-300::before{left:166.20px!important;top:2.76px!important;width:19.70px!important}
+#content [data-id="pg002_p015"] span[data-word-index="4"].bg-yellow-300::before{left:191.40px!important;top:2.76px!important;width:15.84px!important}
 #content [data-id="pg002_p016"]{top:540px!important;transform:none!important}
 #content [data-id="pg002_p016"] span[data-word-index].bg-yellow-300{position:static!important}
 #content [data-id="pg002_p016"] span[data-word-index].bg-yellow-300::before{right:auto!important;bottom:auto!important;height:17px!important;transform:none!important}
@@ -89,7 +148,7 @@
   <img src="images/pg002_im011.png" alt="" data-id="pg002_im011" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg002_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Reprinted 2021&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:154px;left:72px;line-height:17px;width:121px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Reprinted 2021</span></p>
   <p data-id="pg002_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Reviewed 2024&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:176px;left:72px;line-height:17px;width:121px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Reviewed 2024</span></p>
-  <p data-id="pg002_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ISBN: 978-9912-753-59-4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:238px;left:72px;line-height:17px;width:200px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">ISBN: 978-9912-753-59-4</span></p>
+  <p data-id="pg002_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ISBN: 978 9912 753 59 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:238px;left:72px;line-height:17px;width:200px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">ISBN: 978 9912 753 59 4</span></p>
   <p data-id="pg002_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tanzania Institute of Education&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:300px;left:72px;line-height:17px;width:244px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Tanzania Institute of Education</span></p>
   <p data-id="pg002_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Mikocheni Area&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:322px;left:72px;line-height:17px;width:244px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Mikocheni Area</span></p>
   <p data-id="pg002_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;132 Ali Hassan Mwinyi Road&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:344px;left:72px;line-height:17px;width:244px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">132 Ali Hassan Mwinyi Road</span></p>
