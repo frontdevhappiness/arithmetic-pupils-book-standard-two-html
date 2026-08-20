@@ -685,27 +685,27 @@
           {
             "text": "132",
             "start": 0,
-            "end": 2.04
+            "end": 1.82
           },
           {
             "text": "Ali",
-            "start": 2.04,
-            "end": 2.5
+            "start": 1.82,
+            "end": 2.28
           },
           {
             "text": "Hassan",
-            "start": 2.5,
-            "end": 3
+            "start": 2.28,
+            "end": 2.78
           },
           {
             "text": "Mwinyi",
-            "start": 3,
-            "end": 3.52
+            "start": 2.78,
+            "end": 3.3
           },
           {
             "text": "Road",
-            "start": 3.52,
-            "end": 4
+            "start": 3.3,
+            "end": 3.78
           }
         ]
       }
@@ -734,7 +734,7 @@
           {
             "text": "35094",
             "start": 1.46,
-            "end": 4.64
+            "end": 5.58
           }
         ]
       }
@@ -762,22 +762,22 @@
           {
             "text": "14112",
             "start": 0,
-            "end": 2.68
+            "end": 3.26
           },
           {
             "text": "Dar",
-            "start": 2.68,
-            "end": 3.52
+            "start": 3.26,
+            "end": 4.1
           },
           {
             "text": "es",
-            "start": 3.52,
-            "end": 3.84
+            "start": 4.1,
+            "end": 4.42
           },
           {
             "text": "Salaam",
-            "start": 3.84,
-            "end": 4.14
+            "start": 4.42,
+            "end": 4.72
           }
         ]
       }
