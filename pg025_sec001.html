@@ -25,11 +25,12 @@
       <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
 <style>
 #content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. Paint one translucent
-   highlight on the word wrapper so the source glyph remains readable; the
-   normal runtime rule paints an opaque fill on both wrapper and child span. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{background-color:rgba(253,224,71,.48)!important;color:transparent!important;mix-blend-mode:multiply}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300 span{background-color:transparent!important;color:transparent!important}
+/* The photographed page supplies the visible glyphs. The invisible overlay's
+   font metrics can sit slightly below those photographed glyphs, so paint a
+   separate, raised highlight band instead of using the inline text box. */
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
 </style>
   <img src="images/pg025_page.png" alt="" role="presentation" aria-hidden="true" data-id="pg025_page" style="position:absolute;inset:0;width:558px;height:768px">
   <img src="images/pg025_im014.png" alt="Page 19" data-id="pg025_im014" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0">

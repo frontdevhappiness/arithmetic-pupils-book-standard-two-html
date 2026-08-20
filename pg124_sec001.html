@@ -25,11 +25,12 @@
       <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
 <style>
 #content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. Paint one translucent
-   highlight on the word wrapper so the source glyph remains readable; the
-   normal runtime rule paints an opaque fill on both wrapper and child span. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{background-color:rgba(253,224,71,.48)!important;color:transparent!important;mix-blend-mode:multiply}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300 span{background-color:transparent!important;color:transparent!important}
+/* The photographed page supplies the visible glyphs. The invisible overlay's
+   font metrics can sit slightly below those photographed glyphs, so paint a
+   separate, raised highlight band instead of using the inline text box. */
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
 </style>
   <img src="images/pg124_page.png" alt="" role="presentation" aria-hidden="true" data-id="pg124_page" style="position:absolute;inset:0;width:558px;height:768px">
   <p data-id="pg124_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;118&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">118</span></p>
