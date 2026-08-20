@@ -16,7 +16,12 @@
     <style>
       html { width: 100%; height: 100%; }
       #content { visibility: hidden; }
-    </style>
+
+/* Move one precisely measured marker behind the current word on page 6. */
+#content .adt-page-overlay-text[data-id^="pg006_p"] span[data-word-index].bg-yellow-300::before{content:none!important}
+#content .adt-page-overlay-text[data-id^="pg006_p"] span[data-word-index].bg-yellow-300>span{background-color:transparent!important}
+#adt-pg006-word-highlight{position:fixed;left:0;top:0;width:0;height:0;background:rgba(253,224,71,.34);border-radius:2px;pointer-events:none;opacity:0;z-index:40;mix-blend-mode:multiply;transition:opacity 50ms ease-out;will-change:left,top,width,height,opacity}
+</style>
     <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
 
@@ -44,14 +49,15 @@
   <img src="images/pg006_im012.png" alt="" data-id="pg006_im012" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg006_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;and Technology. This book is the Second Edition of the&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:165px;left:72px;line-height:18px;width:405px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">and Technology. This book is the Second Edition of the</span></p>
   <img src="images/pg006_im013.png" alt="" data-id="pg006_im013" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg006_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Arithmetic book published in 2019 based on the 2016 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;curriculum. This book will enable the pupil to build &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;arithmetic skills through various learning activities with &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;emphasis in the following areas:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:186px;left:72px;line-height:18px;width:405px;height:94px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Arithmetic book published in 2019 based on the 2016 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">curriculum. This book will enable the pupil to build </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">arithmetic skills through various learning activities with </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">emphasis in the following areas:</span></p>
+  <p data-id="pg006_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Arithmetic book published in 2019 based on the 2016\n&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;curriculum. This book will enable the pupil to build\n&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;arithmetic skills through various learning activities with\n&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;emphasis in the following areas:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" style="position:absolute;top:186px;left:72px;line-height:18px;width:405px;height:94px;white-space:pre-wrap"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Arithmetic book published in 2019 based on the 2016<br>curriculum. This book will enable the pupil to build<br>arithmetic skills through various learning activities with<br>emphasis in the following areas:</span></p>
   <p data-id="pg006_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Mastering the basics of arithmetic&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:280px;left:72px;line-height:18px;width:405px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Mastering the basics of arithmetic</span></p>
   <p data-id="pg006_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Mastering the skills of arithmetic&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:311px;left:72px;line-height:18px;width:405px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Mastering the skills of arithmetic</span></p>
   <p data-id="pg006_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Applying relevant arithmetic principles&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:342px;left:72px;line-height:18px;width:405px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Applying relevant arithmetic principles</span></p>
   <p data-id="pg006_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Additional learning resources are available at&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:373px;left:72px;line-height:18px;width:405px;height:34px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Additional learning resources are available at</span></p>
   <p data-id="pg006_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;TIE e-Library https://ol.tie.go.tz/videos&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:407px;left:72px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">TIE e-Library https://ol.tie.go.tz/videos</span></p>
-  <p data-id="pg006_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tanzania Institute of Education&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:526px;left:216px;line-height:18px;width:256px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Tanzania Institute of Education</span></p>
+
   <img src="images/pg006_im001.png" alt="QR code linking to the TIE e-Library videos resource." data-id="pg006_im001" style="position:absolute;top:448px;left:79px;width:73px;height:74px;opacity:0">
+  <p data-id="pg006_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tanzania Institute of Education&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:526px;left:216px;line-height:18px;width:256px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Tanzania Institute of Education</span></p>
   <img src="images/pg006_im003.png" alt="" data-id="pg006_im003" style="position:absolute;top:21px;left:535px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg006_im004.png" alt="" data-id="pg006_im004" style="position:absolute;top:19px;left:533px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg006_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;vi&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:264px;line-height:18px;width:15px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">vi</span></p>
@@ -97,6 +103,62 @@
       })();
     </script>
 
+    <script>
+      (function () {
+        var root = document.getElementById("content");
+        if (!root) return;
+
+        var marker = document.createElement("span");
+        marker.id = "adt-pg006-word-highlight";
+        marker.setAttribute("aria-hidden", "true");
+        document.body.appendChild(marker);
+
+        var frame = 0;
+        function updateMarker() {
+          frame = 0;
+          var active = root.querySelector('.adt-page-overlay-text[data-id^="pg006_p"] span[data-word-index].bg-yellow-300');
+          var word = active && (active.firstElementChild || active);
+          if (!word) {
+            marker.style.opacity = "0";
+            return;
+          }
+
+          var rect = word.getBoundingClientRect();
+          if (!rect.width || !rect.height) {
+            marker.style.opacity = "0";
+            return;
+          }
+
+          var rootRect = root.getBoundingClientRect();
+          var scaleY = root.offsetHeight ? rootRect.height / root.offsetHeight : 1;
+          var lineHeight = parseFloat(getComputedStyle(word).lineHeight);
+          var height = Number.isFinite(lineHeight) ? lineHeight * scaleY : rect.height;
+          var top = rect.top + (rect.height - height) / 2;
+
+          marker.style.left = rect.left + "px";
+          marker.style.top = top + "px";
+          marker.style.width = rect.width + "px";
+          marker.style.height = height + "px";
+          marker.style.opacity = "1";
+        }
+
+        function scheduleMarkerUpdate() {
+          if (!frame) frame = requestAnimationFrame(updateMarker);
+        }
+
+        new MutationObserver(scheduleMarkerUpdate).observe(root, {
+          subtree: true,
+          childList: true,
+          attributes: true,
+          attributeFilter: ["class"]
+        });
+        window.addEventListener("resize", scheduleMarkerUpdate);
+        window.addEventListener("scroll", scheduleMarkerUpdate, true);
+        window.addEventListener("load", scheduleMarkerUpdate);
+        window.addEventListener("adt:dock-resize", scheduleMarkerUpdate);
+        scheduleMarkerUpdate();
+      })();
+    </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
