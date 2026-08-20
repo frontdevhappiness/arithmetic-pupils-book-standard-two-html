@@ -43613,6 +43613,7 @@ function useAtomValueWithDelay<Value>(
     const activeRef = (0, import_react21.useRef)(null);
     const hasAutoStartedRef = (0, import_react21.useRef)(false);
     const playSessionRef = (0, import_react21.useRef)(0);
+    const highlightFrameRef = (0, import_react21.useRef)(0);
     const [isPlaying, setIsPlaying] = useAtom(isPlayingAtom);
     const [currentIndex, setCurrentIndex] = useAtom(currentAudioIndexAtom);
     const activeMedia = useAtomValue(activeMediaAtom);
@@ -43674,7 +43675,36 @@ function useAtomValueWithDelay<Value>(
       },
       [teardownActive, timecodeMap]
     );
+    const stopHighlightClock = (0, import_react21.useCallback)(() => {
+      if (!highlightFrameRef.current) return;
+      cancelAnimationFrame(highlightFrameRef.current);
+      highlightFrameRef.current = 0;
+    }, []);
+    const syncHighlightToMediaClock = (0, import_react21.useCallback)(() => {
+      const audio = audioRef.current;
+      const active = activeRef.current;
+      if (!audio || !active || active.mode !== "word") return;
+      const idx = findWordIndexAtTime(active.timestamps, audio.currentTime);
+      setWordHighlight(active.el, idx);
+    }, []);
+    const startHighlightClock = (0, import_react21.useCallback)(
+      (session) => {
+        stopHighlightClock();
+        const tick = () => {
+          const audio = audioRef.current;
+          if (!audio || session !== playSessionRef.current || audio.paused || audio.ended) {
+            highlightFrameRef.current = 0;
+            return;
+          }
+          syncHighlightToMediaClock();
+          highlightFrameRef.current = requestAnimationFrame(tick);
+        };
+        tick();
+      },
+      [stopHighlightClock, syncHighlightToMediaClock]
+    );
     const stopAndClear = (0, import_react21.useCallback)(() => {
+      stopHighlightClock();
       teardownActive();
       const audio = audioRef.current;
       if (!audio) return;
@@ -43682,10 +43712,14 @@ function useAtomValueWithDelay<Value>(
       audio.onerror = null;
       audio.ontimeupdate = null;
       audio.onloadedmetadata = null;
+      audio.onseeking = null;
+      audio.onseeked = null;
+      audio.onplaying = null;
+      audio.onwaiting = null;
       audio.pause();
       audio.removeAttribute("src");
       audio.load();
-    }, [teardownActive]);
+    }, [stopHighlightClock, teardownActive]);
     const playAtIndex = (0, import_react21.useCallback)(
       (index2) => {
         hasAutoStartedRef.current = true;
@@ -43699,15 +43733,21 @@ function useAtomValueWithDelay<Value>(
         const url = `./content/i18n/${language}/audio/${item.filename}`;
         if (!audioRef.current) audioRef.current = new Audio();
         const audio = audioRef.current;
+        stopHighlightClock();
         audio.onended = null;
         audio.onerror = null;
         audio.ontimeupdate = null;
         audio.onloadedmetadata = null;
+        audio.onseeking = null;
+        audio.onseeked = null;
+        audio.onplaying = null;
+        audio.onwaiting = null;
         teardownActive();
         audio.src = url;
         audio.playbackRate = speedRef.current;
         audio.volume = Math.max(0, Math.min(1, volumeRef.current));
         audio.onloadedmetadata = () => {
+          if (session !== playSessionRef.current) return;
           if (activeRef.current && activeRef.current.mode === "word" && !timecodeMap[item.id]) {
             const text = item.el.textContent ?? "";
             activeRef.current.timestamps = resolveWordTimestamps(
@@ -43718,13 +43758,14 @@ function useAtomValueWithDelay<Value>(
             );
           }
         };
-        audio.ontimeupdate = () => {
-          const active = activeRef.current;
-          if (!active || active.mode !== "word") return;
-          const idx = findWordIndexAtTime(active.timestamps, audio.currentTime);
-          setWordHighlight(active.el, idx);
-        };
+        audio.ontimeupdate = syncHighlightToMediaClock;
+        audio.onseeking = syncHighlightToMediaClock;
+        audio.onseeked = syncHighlightToMediaClock;
+        audio.onplaying = () => startHighlightClock(session);
+        audio.onwaiting = stopHighlightClock;
         audio.onended = () => {
+          if (session !== playSessionRef.current) return;
+          stopHighlightClock();
           teardownActive();
           const next = index2 + 1;
           if (next < items.length) {
@@ -43735,6 +43776,8 @@ function useAtomValueWithDelay<Value>(
           }
         };
         audio.onerror = () => {
+          if (session !== playSessionRef.current) return;
+          stopHighlightClock();
           console.warn("[adt-runtime] audio playback failed for", url);
           teardownActive();
           setIsPlaying(false);
@@ -43743,6 +43786,7 @@ function useAtomValueWithDelay<Value>(
         setCurrentIndex(index2);
         audio.play().then(() => {
           if (session !== playSessionRef.current) return;
+          startHighlightClock(session);
           setActiveMedia("tts");
           setIsPlaying(true);
         }).catch((err) => {
@@ -43760,6 +43804,9 @@ function useAtomValueWithDelay<Value>(
         setActiveMedia,
         stopAndClear,
         setupHighlight,
+        startHighlightClock,
+        stopHighlightClock,
+        syncHighlightToMediaClock,
         teardownActive,
         timecodeMap
       ]
@@ -43768,14 +43815,17 @@ function useAtomValueWithDelay<Value>(
       const audio = audioRef.current;
       if (!audio || audio.paused) return;
       audio.pause();
+      stopHighlightClock();
+      syncHighlightToMediaClock();
       setIsPlaying(false);
-    }, [setIsPlaying]);
+    }, [setIsPlaying, stopHighlightClock, syncHighlightToMediaClock]);
     const play = (0, import_react21.useCallback)(() => {
       if (items.length === 0) return;
       setReadAloudMode(true);
       const audio = audioRef.current;
       if (audio && audio.src && audio.currentTime > 0 && audio.currentTime < audio.duration) {
         audio.play().then(() => {
+          startHighlightClock(playSessionRef.current);
           setActiveMedia("tts");
           setIsPlaying(true);
         }).catch(() => setIsPlaying(false));
@@ -43788,7 +43838,8 @@ function useAtomValueWithDelay<Value>(
       playAtIndex,
       setActiveMedia,
       setIsPlaying,
-      setReadAloudMode
+      setReadAloudMode,
+      startHighlightClock
     ]);
     const togglePlayPause = (0, import_react21.useCallback)(() => {
       const audio = audioRef.current;

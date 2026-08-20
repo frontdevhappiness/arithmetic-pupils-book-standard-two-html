@@ -16,6 +16,11 @@
     <style>
       html { width: 100%; height: 100%; }
       #content { visibility: hidden; }
+
+/* Paint a single precisely measured marker behind the current page-7 word. */
+#content .adt-page-overlay-text[data-id^="pg007_p"] span[data-word-index].bg-yellow-300::before{content:none!important}
+#content .adt-page-overlay-text[data-id^="pg007_p"] span[data-word-index].bg-yellow-300>span{background-color:transparent!important}
+#adt-pg007-word-highlight{position:fixed;left:0;top:0;width:0;height:0;background:rgba(253,224,71,.34);border-radius:2px;pointer-events:none;opacity:0;z-index:40;mix-blend-mode:multiply;transition:opacity 50ms ease-out;will-change:left,top,width,height,opacity}
     </style>
     <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
@@ -70,6 +75,17 @@
     </main>
     <script>
       (function () {
+        var root = document.getElementById("content");
+        var anchor = root && root.querySelector('[data-id="pg007_p001"]');
+        if (!root || !anchor) return;
+        ["pg007_p023", "pg007_p024", "pg007_p021"].forEach(function (id) {
+          var element = root.querySelector('[data-id="' + id + '"]');
+          if (element) root.insertBefore(element, anchor);
+        });
+      })();
+    </script>
+    <script>
+      (function () {
         var c = document.getElementById("content");
         if (!c) return;
         var W = parseFloat(c.style.width) || c.offsetWidth || 1;
@@ -98,6 +114,63 @@
         window.addEventListener("resize", fit);
         window.addEventListener("load", fit);
         window.addEventListener("adt:dock-resize", fit);
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var root = document.getElementById("content");
+        if (!root) return;
+
+        var marker = document.createElement("span");
+        marker.id = "adt-pg007-word-highlight";
+        marker.setAttribute("aria-hidden", "true");
+        document.body.appendChild(marker);
+
+        var frame = 0;
+        function updateMarker() {
+          frame = 0;
+          var active = root.querySelector('.adt-page-overlay-text[data-id^="pg007_p"] span[data-word-index].bg-yellow-300');
+          var word = active && (active.firstElementChild || active);
+          if (!word) {
+            marker.style.opacity = "0";
+            return;
+          }
+
+          var rect = word.getBoundingClientRect();
+          if (!rect.width || !rect.height) {
+            marker.style.opacity = "0";
+            return;
+          }
+
+          var rootRect = root.getBoundingClientRect();
+          var scaleY = root.offsetHeight ? rootRect.height / root.offsetHeight : 1;
+          var lineHeight = parseFloat(getComputedStyle(word).lineHeight);
+          var height = Number.isFinite(lineHeight) ? lineHeight * scaleY : rect.height;
+          var top = rect.top + (rect.height - height) / 2;
+
+          marker.style.left = rect.left + "px";
+          marker.style.top = top + "px";
+          marker.style.width = rect.width + "px";
+          marker.style.height = height + "px";
+          marker.style.opacity = "1";
+        }
+
+        function scheduleMarkerUpdate() {
+          if (!frame) frame = requestAnimationFrame(updateMarker);
+        }
+
+        new MutationObserver(scheduleMarkerUpdate).observe(root, {
+          subtree: true,
+          childList: true,
+          attributes: true,
+          attributeFilter: ["class"]
+        });
+        window.addEventListener("resize", scheduleMarkerUpdate);
+        window.addEventListener("scroll", scheduleMarkerUpdate, true);
+        window.addEventListener("load", scheduleMarkerUpdate);
+        window.addEventListener("adt:dock-resize", scheduleMarkerUpdate);
+        scheduleMarkerUpdate();
       })();
     </script>
 
