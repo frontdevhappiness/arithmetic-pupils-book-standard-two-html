@@ -67,6 +67,7 @@ for (const ids of [["pg007_p006", "pg007_p011", "pg007_p016"], ["pg007_p007", "p
 // Regression checks for media-clock synchronization and stale-session cleanup.
 assert.match(runtime, /audio\.currentTime/, "highlighting must use the audio media clock");
 assert.match(runtime, /requestAnimationFrame\(tick\)/, "short words must be sampled every animation frame");
+assert.match(runtime, /if \(prev === target\) return/, "the same spoken word must not be repainted repeatedly");
 assert.match(runtime, /session !== playSessionRef\.current/, "old playback sessions must be ignored");
 assert.match(runtime, /cancelAnimationFrame\(highlightFrameRef\.current\)/, "old highlight loops must be cancelled");
 for (const handler of ["ontimeupdate", "onloadedmetadata", "onseeking", "onseeked", "onplaying", "onwaiting", "onended", "onerror"]) {
@@ -79,6 +80,7 @@ assert.match(runtime, /audio\.playbackRate = speedRef\.current/, "playback speed
 assert.match(html, /#adt-pg007-word-highlight\{position:fixed;/);
 assert.match(html, /marker\.style\.width = rect\.width \+ "px"/);
 assert.match(html, /var height = Number\.isFinite\(lineHeight\) \? lineHeight \* scaleY : rect\.height/);
+assert.match(html, /fontSize \* scaleY \* 0\.2/, "the marker must align with the photographed text baseline");
 assert.match(html, /marker\.style\.height = height \+ "px"/);
 assert.match(html, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/);
 assert.doesNotMatch(html, /transition:[^;}]*\b(?:left|top|width|height)\b/, "marker geometry must never lag behind the spoken word");

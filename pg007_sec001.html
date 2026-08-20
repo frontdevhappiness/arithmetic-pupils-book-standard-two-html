@@ -146,8 +146,10 @@
           var rootRect = root.getBoundingClientRect();
           var scaleY = root.offsetHeight ? rootRect.height / root.offsetHeight : 1;
           var lineHeight = parseFloat(getComputedStyle(word).lineHeight);
+          var fontSize = parseFloat(getComputedStyle(word).fontSize);
           var height = Number.isFinite(lineHeight) ? lineHeight * scaleY : rect.height;
-          var top = rect.top + (rect.height - height) / 2;
+          var raise = Number.isFinite(fontSize) ? fontSize * scaleY * 0.2 : 0;
+          var top = rect.top + (rect.height - height) / 2 - raise;
 
           marker.style.left = rect.left + "px";
           marker.style.top = top + "px";

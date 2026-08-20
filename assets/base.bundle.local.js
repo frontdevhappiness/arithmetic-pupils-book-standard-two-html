@@ -43534,11 +43534,14 @@ function useAtomValueWithDelay<Value>(
     const prev = element.querySelector(
       `[data-word-index].${WORD_HIGHLIGHT_CLASS}`
     );
-    if (prev) prev.classList.remove(WORD_HIGHLIGHT_CLASS);
-    if (wordIndex < 0) return;
-    const target = element.querySelector(
+    const target = wordIndex < 0 ? null : element.querySelector(
       `[data-word-index="${wordIndex}"]`
     );
+    // The media clock runs every animation frame. Do not remove and re-add the
+    // same class on every frame: that repaints one spoken word many times and
+    // makes the marker appear to flash or highlight twice.
+    if (prev === target) return;
+    if (prev) prev.classList.remove(WORD_HIGHLIGHT_CLASS);
     if (target) target.classList.add(WORD_HIGHLIGHT_CLASS);
   }
   function clearWordHighlight(element) {
