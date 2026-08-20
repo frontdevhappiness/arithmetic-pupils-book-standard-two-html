@@ -43440,7 +43440,7 @@ function useAtomValueWithDelay<Value>(
     const runAutoFit = window.__adtRunAutoFit;
     if (typeof runAutoFit === "function") runAutoFit();
   }
-  function wrapWordsFromSegments(element, segments) {
+  function wrapWordsFromSegments(element, segments, preserveSegmentLines = false) {
     const plan = buildWordRenderPlan(segments.map((s) => s.text).join(""));
     if (!plan.some((s) => s.type === "word")) return false;
     const doc = element.ownerDocument;
@@ -43471,8 +43471,14 @@ function useAtomValueWithDelay<Value>(
       return out;
     };
     const fragment = doc.createDocumentFragment();
+    const segmentBreaks = preserveSegmentLines ? new Set(segOffsets.slice(1)) : null;
     let charCursor = 0;
     for (const seg of plan) {
+      if (segmentBreaks?.has(charCursor)) {
+        const lineBreak = doc.createElement("br");
+        lineBreak.setAttribute("data-segment-line-break", "");
+        fragment.appendChild(lineBreak);
+      }
       if (seg.type === "separator") {
         if (seg.text.length > 0) {
           for (const piece of buildPieces(charCursor, charCursor + seg.text.length)) {
@@ -43498,7 +43504,7 @@ function useAtomValueWithDelay<Value>(
     element.setAttribute(ORIGINAL_HTML_ATTR, element.innerHTML);
     const segments = parseSegments(element.getAttribute("data-segments"));
     if (segments && segments.length > 0) {
-      if (wrapWordsFromSegments(element, segments)) {
+      if (wrapWordsFromSegments(element, segments, element.hasAttribute("data-adt-segment-lines"))) {
         refitFixedLayout(element);
         return;
       }

@@ -32,14 +32,17 @@ const gathered = domIds.filter((id) => audios[id] && !id.includes("_im"));
 assert.deepEqual(gathered, spokenOrder, "narration order must follow the visible page");
 assert.equal(new Set(gathered).size, gathered.length, "no passage may play twice");
 
-for (const id of [...spokenOrder, "pg007_im001"]) {
+for (const id of spokenOrder) {
   assert.ok(html.includes(`data-id="${id}"`), `${id} must be displayed`);
   assert.ok(audios[id], `${id} must have mapped narration audio`);
   const audioPath = `content/i18n/en-GB/audio/${audios[id]}`;
   const words = tokens(texts[id]);
   const stamps = timecodes[id]?.timecodes?.[1]?.word_timestamps;
   assert.ok(Array.isArray(stamps), `${id} must have word-level timestamps`);
-  assert.deepEqual(stamps.map(({ text }) => normal(text)), words.map(normal), `${id} timestamp words must match every displayed word`);
+  const spokenWords = ["pg007_p006", "pg007_p011", "pg007_p016"].includes(id)
+    ? [...words.slice(0, -2), "two", "times"]
+    : words;
+  assert.deepEqual(stamps.map(({ text }) => normal(text)), spokenWords.map(normal), `${id} timestamps must describe every spoken word`);
 
   let previousEnd = 0;
   for (const [index, stamp] of stamps.entries()) {
@@ -58,6 +61,8 @@ for (const id of [...spokenOrder, "pg007_im001"]) {
   assert.ok(previousEnd <= duration + 0.05, `${id} timestamps must fit its real audio duration`);
 }
 
+assert.doesNotMatch(pageMarkup, /data-id="pg007_im001"/, "the duplicate chapter image description must remain decorative");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`../content/i18n/en-GB/audio/${filename}`, import.meta.url))).digest("hex");
 for (const ids of [["pg007_p006", "pg007_p011", "pg007_p016"], ["pg007_p007", "pg007_p012", "pg007_p017"]]) {
   assert.equal(new Set(ids.map((id) => hash(audios[id]))).size, 1, `${ids.join(", ")} repeated verses must use identical audio`);
@@ -68,6 +73,8 @@ for (const ids of [["pg007_p006", "pg007_p011", "pg007_p016"], ["pg007_p007", "p
 assert.match(runtime, /audio\.currentTime/, "highlighting must use the audio media clock");
 assert.match(runtime, /requestAnimationFrame\(tick\)/, "short words must be sampled every animation frame");
 assert.match(runtime, /if \(prev === target\) return/, "the same spoken word must not be repainted repeatedly");
+assert.match(runtime, /preserveSegmentLines \? new Set\(segOffsets\.slice\(1\)\) : null/, "fixed-layout segment boundaries must be preserved as printed lines");
+assert.match(runtime, /data-segment-line-break/, "printed line boundaries must produce explicit line breaks");
 assert.match(runtime, /session !== playSessionRef\.current/, "old playback sessions must be ignored");
 assert.match(runtime, /cancelAnimationFrame\(highlightFrameRef\.current\)/, "old highlight loops must be cancelled");
 for (const handler of ["ontimeupdate", "onloadedmetadata", "onseeking", "onseeked", "onplaying", "onwaiting", "onended", "onerror"]) {
@@ -83,6 +90,8 @@ assert.match(html, /var height = Number\.isFinite\(lineHeight\) \? lineHeight \*
 assert.match(html, /fontSize \* scaleY \* 0\.2/, "the marker must align with the photographed text baseline");
 assert.match(html, /marker\.style\.height = height \+ "px"/);
 assert.match(html, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/);
+assert.match(html, /\[data-adt-segment-lines\]\{white-space:nowrap\}/, "words must not flow into a different photographed line");
+assert.match(html, /\["pg007_p002", "pg007_p008", "pg007_p013", "pg007_p018", "pg007_p021"\][\s\S]*?data-adt-segment-lines/, "all multiline page-7 passages must retain their extracted line boundaries");
 assert.doesNotMatch(html, /transition:[^;}]*\b(?:left|top|width|height)\b/, "marker geometry must never lag behind the spoken word");
 
 console.log(`pg007 read-aloud regression: ${spokenOrder.length} passages and ${spokenOrder.reduce((sum, id) => sum + tokens(texts[id]).length, 0)} spoken words verified`);

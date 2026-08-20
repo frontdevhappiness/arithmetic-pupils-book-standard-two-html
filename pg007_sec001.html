@@ -20,6 +20,7 @@
 /* Paint a single precisely measured marker behind the current page-7 word. */
 #content .adt-page-overlay-text[data-id^="pg007_p"] span[data-word-index].bg-yellow-300::before{content:none!important}
 #content .adt-page-overlay-text[data-id^="pg007_p"] span[data-word-index].bg-yellow-300>span{background-color:transparent!important}
+#content .adt-page-overlay-text[data-adt-segment-lines]{white-space:nowrap}
 #adt-pg007-word-highlight{position:fixed;left:0;top:0;width:0;height:0;background:rgba(253,224,71,.34);border-radius:2px;pointer-events:none;opacity:0;z-index:40;mix-blend-mode:multiply;transition:opacity 50ms ease-out;will-change:left,top,width,height,opacity}
     </style>
     <noscript><style>#content { visibility: visible !important; }</style></noscript>
@@ -54,7 +55,7 @@
   <p data-id="pg007_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;One hundred and eleven, one hundred and twelve, &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;one hundred and thirteen, one hundred and fourteen, &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;one hundred and fifteen.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:608px;left:106px;line-height:18px;width:386px;height:87px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">One hundred and eleven, one hundred and twelve, </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">one hundred and thirteen, one hundred and fourteen, </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">one hundred and fifteen.</span></p>
   <img src="images/pg007_im003.png" alt="" data-id="pg007_im003" style="position:absolute;top:21px;left:36px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg007_im004.png" alt="" data-id="pg007_im004" style="position:absolute;top:19px;left:34px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg007_im001.png" alt="Chapter One: Recognizing numbers in hundreds." data-id="pg007_im001" style="position:absolute;top:32px;left:50px;width:405px;height:176px;opacity:0">
+  <img src="images/pg007_im001.png" alt="" role="presentation" aria-hidden="true" style="position:absolute;top:32px;left:50px;width:405px;height:176px;opacity:0">
   <p data-id="pg007_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Recognizing numbers &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot;in hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:90px;left:215px;line-height:24px;width:239px;height:52px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">Recognizing numbers </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">in hundreds</span></p>
   <img src="images/pg007_im009.png" alt="" data-id="pg007_im009" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg007_im010.png" alt="" data-id="pg007_im010" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
@@ -81,6 +82,10 @@
         ["pg007_p023", "pg007_p024", "pg007_p021"].forEach(function (id) {
           var element = root.querySelector('[data-id="' + id + '"]');
           if (element) root.insertBefore(element, anchor);
+        });
+        ["pg007_p002", "pg007_p008", "pg007_p013", "pg007_p018", "pg007_p021"].forEach(function (id) {
+          var element = root.querySelector('[data-id="' + id + '"]');
+          if (element) element.setAttribute("data-adt-segment-lines", "1");
         });
       })();
     </script>
