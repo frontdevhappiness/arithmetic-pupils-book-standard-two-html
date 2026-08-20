@@ -1,0 +1,33 @@
+{
+  "title": "Arithmetic Pupil’s Book Standard Two",
+  "bundleVersion": "60b7b44a22f1d838",
+  "languages": {
+    "available": [
+      "en-GB"
+    ],
+    "default": "en-GB"
+  },
+  "features": {
+    "signLanguage": false,
+    "easyRead": false,
+    "glossary": false,
+    "eli5": false,
+    "readAloud": true,
+    "autoplay": true,
+    "showTutorial": true,
+    "showNavigationControls": true,
+    "describeImages": true,
+    "notepad": false,
+    "state": true,
+    "characterDisplay": false,
+    "highlight": true,
+    "activities": false
+  },
+  "analytics": {
+    "enabled": false,
+    "siteId": 0,
+    "trackerUrl": "https://unisitetracker.unicef.io/matomo.php",
+    "srcUrl": "https://unisitetracker.unicef.io/matomo.js"
+  },
+  "fixedLayout": true
+}
