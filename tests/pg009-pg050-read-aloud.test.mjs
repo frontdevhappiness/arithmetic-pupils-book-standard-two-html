@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 57; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 58; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1192,6 +1192,27 @@ assert.deepEqual(
   "page 57 must narrate only the example text and its coherent steps, scores, and solution"
 );
 
+const page58 = read("pg058_sec001.html");
+const page58Questions = "Question 1. Name the tools used to play this game. Question 2. How many faces does a die have? Question 3. What is the largest number of dots on a die? Question 4. What is the smallest number of dots on a die? Question 5. What is the smallest number in the game? Question 6. What is the largest number in the game? Question 7. How many steps are there before the number 210 in the game? Question 8. Asha and Anna each rolled a die once. Both of their marbles were at 407. Asha got 2 dots and Anna got 4 dots. Who moved her marble up to number 501?";
+const page58Example = "A fisherman caught 112 fish in the morning. He then caught 210 fish in the afternoon. How many fish did he catch?";
+for (const [id, expected, filename] of [
+  ["pg058_p025", page58Questions, "pg058_p025_adt_questions.mp3"],
+  ["pg058_p026", page58Example, "pg058_p026_adt_example.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 58 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.match(page58, /data-id="pg058_p025"[\s\S]*data-id="pg058_p004"/, "the consolidated questions must precede their visual fragments");
+assert.match(page58, /data-id="pg058_p019"[\s\S]*data-id="pg058_p026"[\s\S]*data-id="pg058_p020"/, "the example heading must precede its consolidated problem narration");
+assert.match(page58, /one or more sentences\./, "the word-problem definition must be grammatical");
+assert.equal(audios.pg058_p001, "pg058_p001.mp3", "the Questions heading must be narrated");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg058_")).sort(),
+  ["pg058_p001", "pg058_p002", "pg058_p016", "pg058_p017", "pg058_p019", "pg058_p025", "pg058_p026"],
+  "page 58 must narrate each question and example exactly once"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1226,4 +1247,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg057 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg058 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
