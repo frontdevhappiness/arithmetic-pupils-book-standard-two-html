@@ -718,6 +718,20 @@ for (const id of ["pg037_p007","pg037_p008","pg037_p009","pg037_p010","pg037_p01
   assert.equal(timecodes[id], undefined, `${id} must not retain duplicate timing`);
 }
 
+const page38 = read("pg038_sec001.html");
+assert.equal(texts.pg038_im002, "", "the hidden page 38 composite must not repeat the complete first example");
+assert.equal(audios.pg038_im002, undefined, "the hidden page 38 composite must not play narration");
+assert.equal(timecodes.pg038_im002, undefined, "the hidden page 38 composite must not retain duplicate timing");
+assert.match(page38, /data-id="pg038_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the hidden page 38 composite must be decorative");
+assert.equal(audios.pg038_im001, "pg038_im001.mp3", "the visible abacus must retain its focused description");
+assert.equal(texts.pg038_p008, "3. Add hundreds: 3 + 2 = 5. Write 5 in the hundreds place.", "page 38 must use the correct hundreds calculation");
+assert.equal(audios.pg038_p008, "pg038_p008_adt_corrected.mp3", "the corrected hundreds step must use the new ADT narration");
+assert.deepEqual(timecodes.pg038_p008.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg038_p008), "the corrected hundreds step must retain real word-level timing");
+for (const id of ["pg038_p009", "pg038_p019"]) {
+  assert.equal(audios[id], undefined, `${id} must not repeat the final equation immediately before Therefore`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain duplicate timing`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
