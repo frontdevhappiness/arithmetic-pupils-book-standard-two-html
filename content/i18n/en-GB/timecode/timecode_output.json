@@ -26916,29 +26916,73 @@
       {
         "word_timestamps": [
           {
-            "text": "One",
+            "text": "Three",
             "start": 0,
-            "end": 0.6600000262260437
+            "end": 0.7
           },
           {
-            "text": "pencil",
-            "start": 0.6600000262260437,
-            "end": 1.2799999713897705
+            "text": "single",
+            "start": 0.7,
+            "end": 1.32
+          },
+          {
+            "text": "pencils",
+            "start": 1.32,
+            "end": 1.84
           },
           {
             "text": "representing",
-            "start": 1.2799999713897705,
-            "end": 2.200000047683716
+            "start": 2.24,
+            "end": 2.84
           },
           {
-            "text": "1",
-            "start": 2.200000047683716,
-            "end": 2.680000066757202
+            "text": "3",
+            "start": 2.84,
+            "end": 3.34
           },
           {
-            "text": "one",
-            "start": 2.680000066757202,
-            "end": 2.859999895095825
+            "text": "ones",
+            "start": 3.34,
+            "end": 3.74
+          }
+        ]
+      }
+    ]
+  },
+  "pg023_im018": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Three",
+            "start": 0,
+            "end": 0.7
+          },
+          {
+            "text": "single",
+            "start": 0.7,
+            "end": 1.32
+          },
+          {
+            "text": "pencils",
+            "start": 1.32,
+            "end": 1.84
+          },
+          {
+            "text": "representing",
+            "start": 2.24,
+            "end": 2.84
+          },
+          {
+            "text": "3",
+            "start": 2.84,
+            "end": 3.34
+          },
+          {
+            "text": "ones",
+            "start": 3.34,
+            "end": 3.74
           }
         ]
       }
@@ -27560,7 +27604,7 @@
           },
           {
             "text": "representing",
-            "start": 3.5199999809265137,
+            "start": 3,
             "end": 3.5199999809265137
           },
           {
@@ -27609,7 +27653,7 @@
           },
           {
             "text": "representing",
-            "start": 3.059999942779541,
+            "start": 2.6,
             "end": 3.059999942779541
           },
           {
@@ -27658,7 +27702,7 @@
           },
           {
             "text": "representing",
-            "start": 2.700000047683716,
+            "start": 2.26,
             "end": 2.700000047683716
           },
           {
@@ -27771,7 +27815,7 @@
           },
           {
             "text": "representing",
-            "start": 3.7200000286102295,
+            "start": 3.18,
             "end": 3.7200000286102295
           },
           {

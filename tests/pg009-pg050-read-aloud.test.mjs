@@ -281,6 +281,16 @@ assert.match(page22, /data-id="pg022_p009"[\s\S]*?left:147px;line-height:19px;wi
 assert.match(page22, /"pg022_p001", "pg022_p002", "pg022_p003", "pg022_p004", "pg022_p005"[\s\S]*"pg022_im006", "pg022_im001", "pg022_im002"[\s\S]*"pg022_p006", "pg022_p007", "pg022_p008", "pg022_p009"/, "Example 5 must narrate text and images in visual order");
 assert.match(page22, /"pg022_p010", "pg022_p011", "pg022_p013", "pg022_p014", "pg022_p015", "pg022_p016"[\s\S]*"pg022_im003", "pg022_im004", "pg022_im005"/, "Exercise 1 must narrate its prompt and images in visual order");
 
+const page23 = read("pg023_sec001.html");
+assert.match(page23, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 23 must not paint a second legacy highlight layer");
+for (const id of ["pg023_im001", "pg023_im018"]) {
+  assert.equal(texts[id], "Three single pencils, representing 3 ones.", `${id} must describe all three visible ones`);
+  assert.equal(audios[id], "pg023_im001_adt_clean.mp3", `${id} must use the matching ADT description`);
+}
+assert.match(page23, /data-id="pg023_p010"[\s\S]*?left:154px;line-height:18px;width:75px;height:20px/, "item 3 Hundreds overlay must fit its printed word");
+assert.match(page23, /"pg023_p001", "pg023_p002", "pg023_p003", "pg023_p004"[\s\S]*"pg023_im002", "pg023_im003", "pg023_im001"/, "item 2 must narrate its headers and images in visual order");
+assert.match(page23, /"pg023_p009", "pg023_p010", "pg023_p011", "pg023_p012"[\s\S]*"pg023_im004", "pg023_im005", "pg023_im018"/, "item 3 must narrate its headers and images in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
