@@ -41,7 +41,7 @@ let tokenCount = 0;
 for (let pageNumber = 9; pageNumber <= 50; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
-  const domIds = [...markup.matchAll(new RegExp(`data-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
+  const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
   const spoken = domIds.filter((id) => audios[id] && id.includes("_p"));
   const mapped = Object.keys(audios).filter((id) => id.startsWith(`pg${page}_p`));
   assert.deepEqual(new Set(spoken), new Set(mapped), `page ${pageNumber} must expose every mapped body narration`);
@@ -186,6 +186,38 @@ assert.match(page18, /span\[data-word-index\]\.bg-yellow-300::before\{content:no
 for (const id of ["pg018_im001", "pg018_im002", "pg018_im003"]) {
   assert.match(page18, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate panel must be decorative`);
   assert.equal(audios[id], undefined, `${id} must not repeat content already represented by word overlays`);
+}
+
+const page19 = read("pg019_sec001.html");
+assert.match(page19, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 19 must not paint a second legacy highlight layer");
+for (const id of ["pg019_im001", "pg019_im002"]) {
+  assert.match(page19, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate panel must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not repeat content already represented by word overlays`);
+}
+assert.match(page19, /"pg019_p004", "pg019_p005", "pg019_p008", "pg019_p009", "pg019_p012", "pg019_p013"[\s\S]*"pg019_p006", "pg019_p007"/, "Exercise 7 must narrate the left column before the right column");
+assert.match(page19, /"pg019_p019", "pg019_p020", "pg019_p023", "pg019_p024"[\s\S]*"pg019_p021", "pg019_p022"/, "Exercise 8 must narrate items 1-5 before items 6-10");
+assert.equal(texts.pg019_p015, "315, _____, 313", "Exercise 7 item 6 must end with the printed number 313");
+assert.equal(audios.pg019_p015, "pg019_p015_clean.mp3", "Exercise 7 item 6 must use corrected local narration");
+assert.deepEqual(timecodes.pg019_p015.timecodes[1].word_timestamps, [
+  { text: "315", start: 0, end: 1.66 },
+  { text: "313", start: 2.74, end: 3.54 }
+], "Exercise 7 item 6 must highlight 315 and 313 at their spoken times");
+for (const id of ["pg019_p007", "pg019_p009", "pg019_p011", "pg019_p013", "pg019_p028", "pg019_p030", "pg019_p036"]) {
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use clean ADT narration without unrelated words`);
+}
+assert.deepEqual(timecodes.pg019_p007.timecodes[1].word_timestamps, [
+  { text: "380", start: 0, end: 1.42 },
+  { text: "378", start: 2.18, end: 3.62 }
+], "Exercise 7 item 4 must keep each number highlighted for its complete spoken phrase");
+assert.deepEqual(timecodes.pg019_p030.timecodes[1].word_timestamps, [
+  { text: "179", start: 0, end: 2.3 },
+  { text: "178", start: 3.84, end: 4.38 }
+], "Exercise 8 item 8 must not highlight a stray leading word");
+for (const id of ["pg019_p006", "pg019_p031"]) {
+  assert.equal(audios[id], "pg014_p019_adt_clean.mp3", `${id} must say only 'four' without a trailing 'and'`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps, [
+    { text: "4", start: 0, end: 0.64 }
+  ], `${id} highlight must stop when the clean item number ends`);
 }
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
