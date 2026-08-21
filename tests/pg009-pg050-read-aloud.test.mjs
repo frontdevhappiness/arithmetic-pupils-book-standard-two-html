@@ -162,6 +162,25 @@ assert.match(page16, /\["pg016_p058", "pg016_p059", "pg016_p056"\][\s\S]*root\.i
 assert.equal(audios.pg016_p045, "pg014_p019_adt_clean.mp3", "page 16 item 4 must not contain a trailing 'and'");
 assert.deepEqual(timecodes.pg016_p045.timecodes[1].word_timestamps, [{ text: "4", start: 0, end: 0.64 }], "page 16 item 4 highlight must stop with the clean narration");
 
+const page17 = read("pg017_sec001.html");
+assert.match(page17, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 17 must not paint a second legacy highlight layer");
+for (const id of ["pg017_im001", "pg017_im002", "pg017_im003", "pg017_im004"]) {
+  assert.match(page17, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate panel must be decorative`);
+}
+for (const id of ["pg017_im001", "pg017_im002", "pg017_im003"]) {
+  assert.equal(audios[id], undefined, `${id} must not repeat exercise text already represented by word overlays`);
+}
+assert.match(page17, /"pg017_p027", "pg017_p032", "pg017_p037", "pg017_p042", "pg017_p047"[\s\S]*"pg017_p029", "pg017_p030"[\s\S]*root\.insertBefore\(orderedItems, insertionPoint\)/, "Exercise 4 must narrate the left column before the right column");
+for (const id of ["pg017_p020", "pg017_p021", "pg017_p022", "pg017_p023"]) {
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must not speak blank lines as unrelated words`);
+}
+assert.deepEqual(timecodes.pg017_p020.timecodes[1].word_timestamps, [
+  { text: "2", start: 0, end: 0.62 },
+  { text: "109", start: 1.18, end: 2.28 },
+  { text: "110", start: 2.96, end: 3.86 },
+  { text: "111", start: 4.58, end: 5.38 }
+], "Exercise 3 item 2 must use measured clean-audio timing");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
