@@ -2520,7 +2520,7 @@
   "pg050_p066": "ARITHMETICS PUPIL'S STD 2.indd 44",
   "pg050_p067": "06/11/2024 17:23",
   "pg051_p000": "45",
-  "pg051_im001": "Worked example showing 166 + 126 added by place value. Under the headings hundreds, tens and ones, the numbers are aligned to give 2 hundreds, 9 tens and 2 ones. The steps say: add ones, 6 + 6 = 12, regroup as 1 ten and 2 ones; add tens, 1 + 6 + 2 = 9; add hundreds, 1 + 1 = 2. Therefore, the answer is 292.",
+  "pg051_im001": "",
   "pg051_p001": "Example 1",
   "pg051_p002": "Solution",
   "pg051_p003": "+",
@@ -5959,5 +5959,7 @@
   "pg049_p030": "Step 3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds place. Therefore, 167 plus 138 equals 305.",
   "pg049_p031": "Question 1. 683 plus 138. Question 2. 364 plus 348. Question 3. 736 plus 249. Question 4. 262 plus 289. Question 5. 566 plus 284. Question 6. 292 plus 362. Question 7. 456 plus 258. Question 8. 272 plus 465. Question 9. 781 plus 209. Question 10. 189 plus 771.",
   "pg050_p068": "Question 11. 484 plus 109. Question 12. 189 plus 102. Question 13. 801 plus 9. Question 14. 229 plus 229. Question 15. 518 plus 119. Question 16. 673 plus 117. Question 17. 239 plus 221. Question 18. 123 plus 229. Question 19. 444 plus 137. Question 20. 269 plus 21.",
-  "pg050_p069": "Question 1. 739 plus 15. Question 2. 118 plus 132. Question 3. 819 plus 113. Question 4. 287 plus 113. Question 5. 773 plus 9. Question 6. 333 plus 27. Question 7. 239 plus 8. Question 8. 123 plus 127. Question 9. 444 plus 219. Question 10. 269 plus 23. Question 11. 291 plus 19. Question 12. 839 plus 111. Question 13. 709 plus 29. Question 14. 469 plus 31. Question 15. 729 plus 148. Question 16. 456 plus 326. Question 17. 381 plus 409. Question 18. 462 plus 418. Question 19. 282 plus 365. Question 20. 627 plus 203."
+  "pg050_p069": "Question 1. 739 plus 15. Question 2. 118 plus 132. Question 3. 819 plus 113. Question 4. 287 plus 113. Question 5. 773 plus 9. Question 6. 333 plus 27. Question 7. 239 plus 8. Question 8. 123 plus 127. Question 9. 444 plus 219. Question 10. 269 plus 23. Question 11. 291 plus 19. Question 12. 839 plus 111. Question 13. 709 plus 29. Question 14. 469 plus 31. Question 15. 729 plus 148. Question 16. 456 plus 326. Question 17. 381 plus 409. Question 18. 462 plus 418. Question 19. 282 plus 365. Question 20. 627 plus 203.",
+  "pg051_p060": "Add one hundred and sixty-six and one hundred and twenty-six vertically.",
+  "pg051_p061": "Align the hundreds, tens, and ones digits in their correct columns. The first row has 1 in the hundreds column, 6 in the tens column, and 6 in the ones column. The second row has 1 in the hundreds column, 2 in the tens column, and 6 in the ones column. A plus sign appears before the second row. The answer row shows 2 in the hundreds column, 9 in the tens column, and 2 in the ones column. Steps. Step 1. Add ones: 6 plus 6 equals 12. Regroup 12 ones into 1 ten and 2 ones. Write 2 in the ones place. Carry 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 2 equals 9. Write 9 in the tens place. Step 3. Add hundreds: 1 plus 1 equals 2. Write 2 in the hundreds place. Therefore, the answer is two hundred and ninety-two."
 }
