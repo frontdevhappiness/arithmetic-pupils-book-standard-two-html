@@ -181,6 +181,13 @@ assert.deepEqual(timecodes.pg017_p020.timecodes[1].word_timestamps, [
   { text: "111", start: 4.58, end: 5.38 }
 ], "Exercise 3 item 2 must use measured clean-audio timing");
 
+const page18 = read("pg018_sec001.html");
+assert.match(page18, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 18 must not paint a second legacy highlight layer");
+for (const id of ["pg018_im001", "pg018_im002", "pg018_im003"]) {
+  assert.match(page18, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate panel must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not repeat content already represented by word overlays`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
