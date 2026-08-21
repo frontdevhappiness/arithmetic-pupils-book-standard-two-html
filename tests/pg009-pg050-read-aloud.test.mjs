@@ -436,6 +436,32 @@ for (const number of [5,6,7,8,9,11,12,13,14,15,17,18,19,20,21,23,24,25,26,27,29,
 }
 assert.match(page28, /"pg028_p066", "pg028_p067",[\s\S]*"pg028_im002",[\s\S]*"pg028_p068", "pg028_p069", "pg028_p070"/, "Example 1 must narrate its place-value diagram before the explanation beneath it");
 
+const page29 = read("pg029_sec001.html");
+assert.match(page29, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 29 must use only the exact runtime word highlight");
+assert.equal(texts.pg029_im001, "In 395, 3 is in the hundreds place, 9 is in the tens place, and 5 is in the ones place.", "Example 2 must explain 395 from hundreds to ones");
+assert.equal(audios.pg029_im001, "pg029_im001_adt_clean.mp3", "Example 2 must use clear place-value narration");
+assert.deepEqual(timecodes.pg029_im001.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg029_im001), "Example 2 description must highlight in spoken order");
+const page29Rows = {
+  pg029_p009: "1. 3 hundreds 1 tens 2 ones",
+  pg029_p010: "2. 1 hundreds 0 tens 8 ones",
+  pg029_p011: "3. 4 hundreds 2 tens 5 ones",
+  pg029_p012: "4. 3 tens 5 ones",
+  pg029_p013: "5. 2 hundreds 1 tens 5 ones",
+  pg029_p014: "6. 4 hundreds 0 tens 3 ones"
+};
+for (const [id, text] of Object.entries(page29Rows)) {
+  assert.equal(texts[id], text, `${id} must narrate its complete diagram as one passage`);
+  assert.equal(audios[id], `${id}_adt_row.mp3`, `${id} must use one complete place-value recording`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(text), `${id} must highlight the question number and place values in spoken order`);
+}
+for (const number of [2,3,4,5,6,7]) {
+  const id = `pg029_im${String(number).padStart(3, "0")}`;
+  assert.equal(texts[id], "", `${id} must not duplicate its combined exercise narration`);
+  assert.equal(audios[id], undefined, `${id} must be decorative after its words move to the question overlay`);
+}
+assert.match(page29, /\{id:"pg029_p009", item:"1\.", h:"3", t:"1", o:"2", left:105, top:396\}/, "question 1 highlight segments must align with its printed diagram");
+assert.match(page29, /\{id:"pg029_p012", item:"4\.", h:null, t:"3", o:"5", left:297, top:489\}/, "question 4 must omit a nonexistent hundreds place");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
