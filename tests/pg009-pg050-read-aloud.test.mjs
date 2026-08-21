@@ -571,6 +571,36 @@ for (const id of ["pg032_p003", "pg032_p011", "pg032_p018", "pg032_p021", "pg032
 assert.match(page32, /answerTwo\.setAttribute\("style", "position:absolute;top:227px;left:286px/, "Example 2 answer highlight must stay in the right column");
 assert.match(page32, /"pg032_p016","pg032_p019","pg032_p022","pg032_p025","pg032_p028",[\s\S]*"pg032_p017","pg032_p020","pg032_p023","pg032_p026","pg032_p029"/, "Exercise 7 must read items 1 through 10 in numerical order");
 
+const page33 = read("pg033_sec001.html");
+assert.match(page33, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 33 must use only the exact runtime word highlight");
+for (const id of ["pg033_im002", "pg033_im003"]) {
+  assert.equal(texts[id], "", `${id} duplicate panel description must be empty`);
+  assert.equal(audios[id], undefined, `${id} duplicate panel description must not repeat visible text`);
+  assert.equal(timecodes[id], undefined, `${id} duplicate panel description must not retain timing data`);
+  assert.match(page33, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+const page33Items = {
+  pg033_p003: "1. 200 + 30 + 9 =", pg033_p005: "2. 100 + 20 + 7 =", pg033_p007: "3. 300 + 50 + 2 =",
+  pg033_p009: "4. 400 + 80 + 6 =", pg033_p011: "5. 200 + 70 + 1 =", pg033_p004: "6. 100 + 40 + 3 =",
+  pg033_p006: "7. 400 + 60 + 5 =", pg033_p008: "8. 300 + 10 + 8 =", pg033_p010: "9. 200 + 90 + 4 =",
+  pg033_p022: "10. 300 + 30 + 3 ="
+};
+for (const [id, text] of Object.entries(page33Items)) {
+  assert.equal(texts[id], text, `${id} must contain one complete exercise item`);
+  assert.equal(audios[id], `${id}_adt_item.mp3`, `${id} must use one complete item recording`);
+  const stamps = timecodes[id].timecodes[1].word_timestamps;
+  assert.deepEqual(stamps.map(({ text: word }) => word), tokens(text), `${id} must highlight its item number and expression in order`);
+  assert.ok(stamps[1].start - stamps[0].end >= 0.4, `${id} item number must not run into its expression`);
+  assert.ok(meanVolume(audios[id]) > -35, `${id} must contain clearly audible speech`);
+}
+assert.equal(texts.pg033_p012, "Activity 1", "the activity heading must have a natural space");
+assert.equal(audios.pg033_p012, "pg033_p012_adt_clean.mp3", "the activity heading must use clean narration");
+const page33ImageDescription = "Manka stands with Asha, Jane, and Hamisi beside an open box of exercise books. The two girls hold stacks of books, the boy reaches into the box, and Manka holds out a book.";
+assert.equal(texts.pg033_im001, page33ImageDescription, "the story illustration must have a specific useful description");
+assert.equal(audios.pg033_im001, "pg033_im001_adt_clean.mp3", "the story illustration must have clean narration");
+assert.deepEqual(timecodes.pg033_im001.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(page33ImageDescription), "the illustration description must highlight every spoken word");
+assert.match(page33, /"pg033_p001","pg033_p002","pg033_p003","pg033_p005","pg033_p007","pg033_p009","pg033_p011",[\s\S]*"pg033_p004","pg033_p006","pg033_p008","pg033_p010","pg033_p022",[\s\S]*"pg033_p012","pg033_p013","pg033_p015","pg033_p018","pg033_im001"/, "page 33 must narrate the exercise and story once in visual reading order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);

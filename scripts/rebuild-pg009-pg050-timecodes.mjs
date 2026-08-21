@@ -8,7 +8,7 @@ const audios = readJson("content/i18n/en-GB/audios.json");
 const timecodePath = new URL("content/i18n/en-GB/timecode/timecode_output.json", ROOT);
 const timecodes = JSON.parse(readFileSync(timecodePath, "utf8"));
 const wordPattern = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu;
-const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg02[57]_im00[1-6]$|pg026_im00[2-5]$|pg028_im002$|pg029_im001$|pg031_im00[1-6]$)/;
+const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg02[57]_im00[1-6]$|pg026_im00[2-5]$|pg028_im002$|pg029_im001$|pg031_im00[1-6]$|pg033_im001$)/;
 const ASR_DIR = process.env.ADT_ASR_DIR || "/tmp/adt-pages009-050-wav";
 const write = process.argv.includes("--write");
 
@@ -279,7 +279,6 @@ const manualStamps = {
   pg025_p010: [["4", 0, 0.64]],
   pg026_p018: [["4", 0, 0.64]],
   pg027_p016: [["4", 0, 0.64]],
-  pg033_p009: [["4", 0, 0.64], ["400", 0.98, 1.56], ["+", 1.56, 2.16], ["80", 2.16, 2.56], ["+", 2.56, 3.12], ["6", 3.12, 3.56], ["=", 3.56, 4.24], ["9", 4.3, 4.9]],
   pg041_p001: [["5", 0, 0.78], ["632", 0.78, 2.58], ["+", 2.58, 3.38], ["267", 3.38, 4.78], ["=", 4.78, 5.58]],
   pg050_p014: [["18", 0, 0.88]],
   pg050_p052: [["18", 0, 0.88]]
@@ -322,9 +321,9 @@ for (const id of ids) {
   const current = extractCurrent(id);
   const rawWhisper = extractWhisper(id);
   const whisper = placeValueRowIds.has(id) ? expandPlaceValueTokens(rawWhisper) : rawWhisper;
-  const preferWhisper = /^(?:pg027_|pg026_im00[2-5]$|pg028_(?:p(?:002|004|010|016|022|028|034|040|046|052|058)|im002)$|pg029_(?:p(?:009|010|011|012|013|014)|im001)$|pg030_p(?:00[1-8]|012|014|016|018|020|022|024|026|028|030)$|pg031_(?:p(?:002|004|006|008|010|012|014)|im00[1-6])$|pg032_p(?:002|007|010|016|017|019|020|022|023|025|026|028|029)$)/.test(id) && whisper.length;
+  const preferWhisper = /^(?:pg027_|pg026_im00[2-5]$|pg028_(?:p(?:002|004|010|016|022|028|034|040|046|052|058)|im002)$|pg029_(?:p(?:009|010|011|012|013|014)|im001)$|pg030_p(?:00[1-8]|012|014|016|018|020|022|024|026|028|030)$|pg031_(?:p(?:002|004|006|008|010|012|014)|im00[1-6])$|pg032_p(?:002|007|010|016|017|019|020|022|023|025|026|028|029)$|pg033_(?:p(?:001|002|00[3-9]|010|011|012|013|015|018|022)|im001)$)/.test(id) && whisper.length;
   const duration = preferWhisper ? durationOf(id) : Number.POSITIVE_INFINITY;
-  const forceFreshTiming = /^(?:pg031_(?:p(?:002|004|006|008|010|012|014)|im00[1-6])|pg032_p(?:002|007|010|016|017|019|020|022|023|025|026|028|029))$/.test(id);
+  const forceFreshTiming = /^(?:pg031_(?:p(?:002|004|006|008|010|012|014)|im00[1-6])|pg032_p(?:002|007|010|016|017|019|020|022|023|025|026|028|029)|pg033_(?:p(?:001|002|00[3-9]|010|011|012|013|015|018|022)|im001))$/.test(id);
   const currentTimingIsValid = !forceFreshTiming && rawCurrent.length === expected.length && current.length === expected.length && current.every(({ start, end }, index) =>
     Number.isFinite(start) && Number.isFinite(end) && end - start >= 0.099 && end <= duration + 0.05 && (!index || start >= current[index - 1].end - 1e-6)
   );
