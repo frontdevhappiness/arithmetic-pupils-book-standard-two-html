@@ -828,6 +828,22 @@ assert.equal(audios.pg042_im001, undefined, "the page 42 composite exercise imag
 assert.equal(timecodes.pg042_im001, undefined, "the page 42 composite exercise image must not retain duplicate timing");
 assert.match(page42, /data-id="pg042_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page 42 composite exercise image must be decorative");
 
+const page43 = read("pg043_sec001.html");
+const page43Visual = "A schoolgirl stands looking down at three open boxes of coins. The boxes are pink, yellow, and orange, arranged from left to right.";
+assert.equal(texts.pg043_im001, page43Visual, "the page 43 illustration must describe its visual scene without repeating the coin-count caption");
+assert.equal(audios.pg043_im001, "pg043_im001_adt_visual.mp3", "the page 43 illustration must use the corrected ADT narration");
+assert.deepEqual(
+  timecodes.pg043_im001.timecodes[1].word_timestamps.map(({ text: word }) => word),
+  tokens(page43Visual),
+  "the page 43 illustration must retain real word-level timing"
+);
+assert.equal(texts.pg043_im002, "", "the hidden page 43 question composite must not summarize the questions before they are read");
+assert.equal(audios.pg043_im002, undefined, "the hidden page 43 question composite must not play duplicate narration");
+assert.equal(timecodes.pg043_im002, undefined, "the hidden page 43 question composite must not retain duplicate timing");
+assert.match(page43, /data-id="pg043_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the hidden page 43 question composite must be decorative");
+assert.ok(page43.indexOf('data-id="pg043_im001"') < page43.indexOf('data-id="pg043_p001"'), "the illustration description must precede its three box labels");
+assert.ok(page43.indexOf('data-id="pg043_p003"') < page43.indexOf('data-id="pg043_p004"'), "the coin-count passage must follow the three box labels");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
