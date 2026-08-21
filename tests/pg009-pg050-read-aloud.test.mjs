@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 54; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 55; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1114,6 +1114,30 @@ assert.deepEqual(
   "page 54 must narrate only the continued questions, chart heading, introduction, chart description, and explanation"
 );
 
+const page55 = read("pg055_sec001.html");
+const page55Chart = "The addition chart has column headings 201, 202, 203, 204, 205, and 206, and row headings 201, 202, 203, 204, 205, and 206. Two sums are already shown: 204 plus 205 equals 409, and 206 plus 203 equals 409. Fill in the other sums.";
+const page55Questions = "Question 1. Add the numbers in the chart. Question 2. Write the smallest number in the first row. Question 3. Write the largest number in the fifth row. Question 4. Write the largest number in the chart. Question 5. The largest number is the sum of which numbers?";
+const page55Sequences = "Question 1. 102, 104, 106. Question 2. 105, 110, 115. Question 3. 200, 250, 300. Question 4. 820, 840, 860. Question 5. 890, 893, 896. Question 6. 799, 808, 817. Question 7. 601, 605, 609, 621.";
+for (const [id, expected, filename] of [
+  ["pg055_p041", page55Chart, "pg055_p041_adt_chart.mp3"],
+  ["pg055_p042", page55Questions, "pg055_p042_adt_questions.mp3"],
+  ["pg055_p043", page55Sequences, "pg055_p043_adt_sequences.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 55 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.match(page55, /data-id="pg055_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate Exercise 10 panel must be decorative");
+assert.equal(texts.pg055_im002, "", "the duplicate Exercise 10 panel must not repeat the sequence narration");
+assert.ok(page55.indexOf('data-id="pg055_p002"') < page55.indexOf('data-id="pg055_p041"'), "the chart instruction must precede its description");
+assert.ok(page55.indexOf('data-id="pg055_p041"') < page55.indexOf('data-id="pg055_p042"'), "the chart description must precede the questions");
+assert.ok(page55.indexOf('data-id="pg055_p024"') < page55.indexOf('data-id="pg055_p043"'), "the Exercise 10 instruction must precede its sequences");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg055_")).sort(),
+  ["pg055_p001", "pg055_p002", "pg055_p023", "pg055_p024", "pg055_p041", "pg055_p042", "pg055_p043"],
+  "page 55 must narrate only its headings, instructions, chart description, questions, and sequences"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1148,4 +1172,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg054 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg055 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
