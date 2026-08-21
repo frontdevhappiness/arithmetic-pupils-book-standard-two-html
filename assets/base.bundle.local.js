@@ -43337,9 +43337,15 @@ function useAtomValueWithDelay<Value>(
   var import_react21 = __toESM(require_react(), 1);
 
   // src/features/audio/lib/tokenizer.ts
-  var WORD_PATTERN = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*/gu;
+  // Standalone arithmetic operators are spoken tokens too. Keeping them in the
+  // render plan lets “plus”, “minus”, “times”, “divided by”, and “equals” stay
+  // highlighted on their printed symbols instead of shifting later words.
+  var WORD_PATTERN = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu;
   function normalizeHighlightText(text) {
     return String(text ?? "").replace(/\s+/g, " ").trim();
+  }
+  function normalizeNarrationComparison(text) {
+    return normalizeHighlightText(text).toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
   }
   function extractHighlightableWords(text) {
     return Array.from(String(text ?? "").matchAll(WORD_PATTERN), (m) => m[0]);
@@ -43435,10 +43441,85 @@ function useAtomValueWithDelay<Value>(
   var WORD_HIGHLIGHT_CLASS = "bg-yellow-300";
   var BLOCK_HIGHLIGHT_CLASS = "tts-active-block";
   var FIT_ATTR = "data-adt-fit";
+  var PRESERVE_SEGMENT_LINES_CLASS = "adt-preserve-segment-lines";
+  var MEASURED_MARKER_ID = "adt-runtime-word-highlight";
+  var measuredMarkerFrame = 0;
   function refitFixedLayout(element) {
     if (!element.hasAttribute(FIT_ATTR)) return;
     const runAutoFit = window.__adtRunAutoFit;
     if (typeof runAutoFit === "function") runAutoFit();
+  }
+  function shouldPreserveSegmentLines(element, segments) {
+    if (element.hasAttribute("data-adt-segment-lines")) return true;
+    if (!element.hasAttribute(FIT_ATTR) || segments.length < 2) return false;
+    // A short first segment is commonly an item number with different styling,
+    // not a separate printed line. Let normal wrapping keep it beside the text.
+    if (/^\s*\d+[.)]?\s*$/.test(segments[0].text)) return false;
+    const lineHeight = Number.parseFloat(element.style.lineHeight);
+    const height = Number.parseFloat(element.style.height);
+    if (!(lineHeight > 0) || !(height > 0)) return false;
+    const estimatedLines = height / lineHeight;
+    return estimatedLines >= Math.max(1.9, segments.length * 0.75);
+  }
+  function ensureMeasuredMarkerStyles() {
+    if (document.getElementById("adt-runtime-word-highlight-style")) return;
+    const style = document.createElement("style");
+    style.id = "adt-runtime-word-highlight-style";
+    style.textContent = `
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300,#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important}
+#content .adt-page-overlay-text.${PRESERVE_SEGMENT_LINES_CLASS}{white-space:nowrap}
+#${MEASURED_MARKER_ID}{position:fixed;left:0;top:0;width:0;height:0;background:rgba(253,224,71,.34);border-radius:2px;pointer-events:none;opacity:0;z-index:40;mix-blend-mode:multiply;transition:opacity 50ms ease-out;will-change:left,top,width,height,opacity}`;
+    document.head.appendChild(style);
+  }
+  function getMeasuredMarker() {
+    if (document.querySelector('[id^="adt-pg"][id$="-word-highlight"]')) return null;
+    ensureMeasuredMarkerStyles();
+    let marker = document.getElementById(MEASURED_MARKER_ID);
+    if (!marker) {
+      marker = document.createElement("span");
+      marker.id = MEASURED_MARKER_ID;
+      marker.setAttribute("aria-hidden", "true");
+      document.body.appendChild(marker);
+    }
+    return marker;
+  }
+  function updateMeasuredWordHighlight() {
+    measuredMarkerFrame = 0;
+    const marker = getMeasuredMarker();
+    if (!marker) return;
+    const root = document.getElementById("content");
+    const active = root?.querySelector(".adt-page-overlay-text span[data-word-index].bg-yellow-300");
+    const word = active && (active.firstElementChild || active);
+    if (!root || !word) {
+      marker.style.opacity = "0";
+      return;
+    }
+    const rect = word.getBoundingClientRect();
+    if (!rect.width || !rect.height) {
+      marker.style.opacity = "0";
+      return;
+    }
+    const rootRect = root.getBoundingClientRect();
+    const scaleY = root.offsetHeight ? rootRect.height / root.offsetHeight : 1;
+    const computed = getComputedStyle(word);
+    const lineHeight = Number.parseFloat(computed.lineHeight);
+    const fontSize = Number.parseFloat(computed.fontSize);
+    const height = Number.isFinite(lineHeight) ? lineHeight * scaleY : rect.height;
+    const raise = Number.isFinite(fontSize) ? fontSize * scaleY * 0.2 : 0;
+    marker.style.left = `${rect.left}px`;
+    marker.style.top = `${rect.top + (rect.height - height) / 2 - raise}px`;
+    marker.style.width = `${rect.width}px`;
+    marker.style.height = `${height}px`;
+    marker.style.opacity = "1";
+  }
+  function scheduleMeasuredWordHighlight() {
+    if (!measuredMarkerFrame) measuredMarkerFrame = requestAnimationFrame(updateMeasuredWordHighlight);
+  }
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", scheduleMeasuredWordHighlight);
+    window.addEventListener("scroll", scheduleMeasuredWordHighlight, true);
+    window.addEventListener("adt:dock-resize", scheduleMeasuredWordHighlight);
   }
   function wrapWordsFromSegments(element, segments, preserveSegmentLines = false) {
     const plan = buildWordRenderPlan(segments.map((s) => s.text).join(""));
@@ -43504,7 +43585,9 @@ function useAtomValueWithDelay<Value>(
     element.setAttribute(ORIGINAL_HTML_ATTR, element.innerHTML);
     const segments = parseSegments(element.getAttribute("data-segments"));
     if (segments && segments.length > 0) {
-      if (wrapWordsFromSegments(element, segments, element.hasAttribute("data-adt-segment-lines"))) {
+      const preserveSegmentLines = shouldPreserveSegmentLines(element, segments);
+      element.classList.toggle(PRESERVE_SEGMENT_LINES_CLASS, preserveSegmentLines);
+      if (wrapWordsFromSegments(element, segments, preserveSegmentLines)) {
         refitFixedLayout(element);
         return;
       }
@@ -43535,6 +43618,7 @@ function useAtomValueWithDelay<Value>(
     if (original === null) return;
     element.innerHTML = original;
     element.removeAttribute(ORIGINAL_HTML_ATTR);
+    element.classList.remove(PRESERVE_SEGMENT_LINES_CLASS);
   }
   function setWordHighlight(element, wordIndex) {
     const prev = element.querySelector(
@@ -43549,9 +43633,11 @@ function useAtomValueWithDelay<Value>(
     if (prev === target) return;
     if (prev) prev.classList.remove(WORD_HIGHLIGHT_CLASS);
     if (target) target.classList.add(WORD_HIGHLIGHT_CLASS);
+    scheduleMeasuredWordHighlight();
   }
   function clearWordHighlight(element) {
     element.querySelectorAll(`[data-word-index].${WORD_HIGHLIGHT_CLASS}`).forEach((el) => el.classList.remove(WORD_HIGHLIGHT_CLASS));
+    scheduleMeasuredWordHighlight();
   }
   function setBlockHighlight(element) {
     element.classList.add(BLOCK_HIGHLIGHT_CLASS);
@@ -43609,6 +43695,7 @@ function useAtomValueWithDelay<Value>(
     const elements = Array.from(content.querySelectorAll("[data-id]"));
     const items = [];
     for (const el of elements) {
+      if (el.getAttribute("aria-hidden") === "true" || el.getAttribute("role") === "presentation") continue;
       const id = el.getAttribute("data-id");
       if (!id) continue;
       const audio = resolvePlayableAudio(el, id, audioFiles, translations, easyReadMode);
@@ -43648,8 +43735,15 @@ function useAtomValueWithDelay<Value>(
     volumeRef.current = volume;
     const items = (0, import_react21.useMemo)(() => {
       const all = gatherPlayableItems(audioFiles, translations, easyReadMode);
-      if (describeImagesMode) return all;
-      return all.filter((item) => item.el.tagName.toLowerCase() !== "img");
+      const textNarration = normalizeNarrationComparison(
+        all.filter((item) => item.el.tagName.toLowerCase() !== "img").map((item) => translations[item.id] ?? item.el.textContent ?? "").join(" ")
+      );
+      return all.filter((item) => {
+        if (item.el.tagName.toLowerCase() !== "img") return true;
+        if (!describeImagesMode) return false;
+        const description = normalizeNarrationComparison(translations[item.id] ?? item.el.getAttribute("alt") ?? "");
+        return description.length > 0 && !textNarration.includes(description);
+      });
     }, [audioFiles, translations, easyReadMode, describeImagesMode]);
     const teardownActive = (0, import_react21.useCallback)(() => {
       const active = activeRef.current;
