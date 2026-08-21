@@ -361,6 +361,38 @@ assert.match(page26, /data-id="pg026_p006"[\s\S]*?top:324px;left:77px;line-heigh
 assert.match(page26, /data-id="pg026_p009"[\s\S]*?top:324px;left:283px;line-height:18px;width:184px;height:41px/, "Example 2 instruction must highlight in the right column");
 assert.match(page26, /"pg026_p021", "pg026_p022", "pg026_p019", "pg026_p001", "pg026_p002"[\s\S]*"pg026_p005", "pg026_p006", "pg026_im001"[\s\S]*"pg026_p008", "pg026_p009", "pg026_p011"[\s\S]*"pg026_p013", "pg026_p014"[\s\S]*"pg026_p015", "pg026_im002", "pg026_p016", "pg026_im003"[\s\S]*"pg026_p017", "pg026_im004", "pg026_p018", "pg026_im005"/, "page 26 must narrate the chapter, examples, and exercise in visual order");
 
+const page27 = read("pg027_sec001.html");
+assert.match(page27, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 27 must not paint a second legacy highlight layer");
+assert.match(page27, /data-id="pg027_im008"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the whole-exercise duplicate image must be decorative");
+assert.equal(texts.pg027_im008, "", "the duplicate exercise image must not retain spoken description text");
+assert.equal(audios.pg027_im008, undefined, "the duplicate exercise image must not repeat all visible lines");
+for (const [id, description] of Object.entries({
+  pg027_im001: "247",
+  pg027_im002: "87",
+  pg027_im003: "93",
+  pg027_im004: "210",
+  pg027_im005: "179",
+  pg027_im006: "500"
+})) {
+  assert.equal(texts[id], description, `${id} must read only the printed question number`);
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use its corrected page 27 narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(description), `${id} timestamps must cover its complete description`);
+}
+assert.equal(audios.pg027_p016, "pg014_p019_adt_clean.mp3", "Exercise 2 item 4 must say only four without a trailing and");
+assert.deepEqual(timecodes.pg027_p016.timecodes[1].word_timestamps, [{ text: "4", start: 0, end: 0.64 }], "Exercise 2 item 4 must highlight only the clean word four");
+for (const id of [
+  "pg027_p011", "pg027_p013", "pg027_p015", "pg027_p017", "pg027_p019",
+  "pg027_p021", "pg027_p023", "pg027_p025", "pg027_p027", "pg027_p028"
+]) {
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use clean ADT narration without stray words from blank lines`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts[id]), `${id} must highlight each printed token once and in order`);
+}
+assert.match(page27, /data-id="pg027_p007"[\s\S]*?top:341px;left:98px;line-height:17px;width:84px;height:19px/, "Exercise 2 heading highlight must fit only its printed words");
+assert.match(page27, /data-id="pg027_p019"[\s\S]*?top:523px;left:152px;line-height:18px;width:324px;height:20px/, "item 5 overlay must not overlap item 6");
+assert.match(page27, /data-id="pg027_p021"[\s\S]*?top:547px;left:152px;line-height:18px;width:324px;height:20px;text-align:right/, "item 6 overlay must cover its complete printed line");
+assert.match(page27, /data-id="pg027_p028"[\s\S]*?top:645px;left:116px;line-height:18px;width:360px;height:20px/, "item 10 overlay must cover its complete printed line");
+assert.match(page27, /"pg027_p010", "pg027_p011", "pg027_p012", "pg027_p013"[\s\S]*"pg027_p014", "pg027_p015", "pg027_p016", "pg027_p017"[\s\S]*"pg027_p026", "pg027_p027", "pg027_p028"/, "Exercise 2 must narrate every item once in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);

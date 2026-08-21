@@ -8,7 +8,7 @@ const audios = readJson("content/i18n/en-GB/audios.json");
 const timecodePath = new URL("content/i18n/en-GB/timecode/timecode_output.json", ROOT);
 const timecodes = JSON.parse(readFileSync(timecodePath, "utf8"));
 const wordPattern = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu;
-const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg025_im00[1-6]$)/;
+const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg02[57]_im00[1-6]$)/;
 const ASR_DIR = process.env.ADT_ASR_DIR || "/tmp/adt-pages009-050-wav";
 const write = process.argv.includes("--write");
 
@@ -252,6 +252,7 @@ const manualStamps = {
   pg024_p002: [["Count", 0, 0.44], ["the", 0.44, 0.8], ["cups", 0.8, 1.14], ["Write", 1.98, 2.14], ["their", 2.14, 2.38], ["total", 2.38, 2.72], ["in", 2.72, 2.98], ["numerals", 2.98, 3.44], ["in", 3.44, 3.68], ["the", 3.68, 3.86], ["blank", 3.86, 4.02], ["space", 4.02, 4.42]],
   pg025_p010: [["4", 0, 0.64]],
   pg026_p018: [["4", 0, 0.64]],
+  pg027_p016: [["4", 0, 0.64]],
   pg033_p009: [["4", 0, 0.64], ["400", 0.98, 1.56], ["+", 1.56, 2.16], ["80", 2.16, 2.56], ["+", 2.56, 3.12], ["6", 3.12, 3.56], ["=", 3.56, 4.24], ["9", 4.3, 4.9]],
   pg041_p001: [["5", 0, 0.78], ["632", 0.78, 2.58], ["+", 2.58, 3.38], ["267", 3.38, 4.78], ["=", 4.78, 5.58]],
   pg050_p014: [["18", 0, 0.88]],
@@ -293,8 +294,11 @@ for (const id of ids) {
   }
   const rawCurrent = timecodes[id]?.timecodes?.[1]?.word_timestamps ?? [];
   const current = extractCurrent(id);
+  const whisper = extractWhisper(id);
+  const preferWhisper = id.startsWith("pg027_") && whisper.length;
+  const duration = preferWhisper ? durationOf(id) : Number.POSITIVE_INFINITY;
   const currentTimingIsValid = rawCurrent.length === expected.length && current.length === expected.length && current.every(({ start, end }, index) =>
-    Number.isFinite(start) && Number.isFinite(end) && end - start >= 0.099 && (!index || start >= current[index - 1].end - 1e-6)
+    Number.isFinite(start) && Number.isFinite(end) && end - start >= 0.099 && end <= duration + 0.05 && (!index || start >= current[index - 1].end - 1e-6)
   );
   if (currentTimingIsValid) {
     const normalized = rawCurrent.map((stamp, index) => ({ ...stamp, text: expected[index] }));
@@ -302,15 +306,15 @@ for (const id of ids) {
     timecodes[id] = { timecodes: [null, { word_timestamps: normalized }] };
     continue;
   }
-  const candidates = [current, extractWhisper(id)].filter((candidate) => candidate.length);
+  const candidates = [preferWhisper ? whisper : current, whisper].filter((candidate, index, all) => candidate.length && all.indexOf(candidate) === index);
   const aligned = candidates.map((candidate) => align(expected, candidate)).sort((a, b) => a.bad - b.bad || a.score - b.score)[0];
   if (!aligned || aligned.bad) {
     failures.push(`${id}: ${expected.join(" ")} (unmatched ${aligned?.bad ?? "no timing source"})`);
     continue;
   }
-  const duration = durationOf(id);
-  const stamps = makeStamps(expected, aligned.groups, duration);
-  if (stamps.some((stamp, index) => stamp.end - stamp.start < 0.099 || stamp.end > duration + 0.05 || (index && stamp.start < stamps[index - 1].end))) {
+  const measuredDuration = Number.isFinite(duration) ? duration : durationOf(id);
+  const stamps = makeStamps(expected, aligned.groups, measuredDuration);
+  if (stamps.some((stamp, index) => stamp.end - stamp.start < 0.099 || stamp.end > measuredDuration + 0.05 || (index && stamp.start < stamps[index - 1].end))) {
     failures.push(`${id}: generated timing validation failed`);
     continue;
   }
