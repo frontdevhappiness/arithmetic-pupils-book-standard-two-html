@@ -35,7 +35,7 @@
   <img src="images/pg042_page.png" alt="" role="presentation" aria-hidden="true" data-id="pg042_page" style="position:absolute;inset:0;width:558px;height:768px">
   <img src="images/pg042_im003.png" alt="" data-id="pg042_im003" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg042_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;36&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">36</span></p>
-  <img src="images/pg042_im001.png" alt="Exercise 2. Write the answer in each question. Twenty addition sums are shown in two columns, from 111 + 333 to 896 + 103." data-id="pg042_im001" style="position:absolute;top:67px;left:64px;width:410px;height:360px;opacity:0">
+  <img src="images/pg042_im001.png" alt="" data-id="pg042_im001" role="presentation" aria-hidden="true" style="position:absolute;top:67px;left:64px;width:410px;height:360px;opacity:0">
   <img src="images/pg042_im008.png" alt="" data-id="pg042_im008" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg042_im009.png" alt="" data-id="pg042_im009" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg042_im010.png" alt="" data-id="pg042_im010" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
@@ -73,6 +73,24 @@
   <img src="images/pg042_im007.png" alt="" data-id="pg042_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg042_p031" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 36&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 36</span></p>
   <p data-id="pg042_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
+<script>
+  /* Read the left column (questions 1–10) before the right column (11–20).
+     Absolute positioning keeps the photographed-page overlay visually unchanged. */
+  (function () {
+    var readingOrder = [
+      "pg042_p003", "pg042_p005", "pg042_p007", "pg042_p009", "pg042_p011",
+      "pg042_p013", "pg042_p015", "pg042_p017", "pg042_p019", "pg042_p021",
+      "pg042_p004", "pg042_p006", "pg042_p008", "pg042_p010", "pg042_p012",
+      "pg042_p014", "pg042_p016", "pg042_p018", "pg042_p020", "pg042_p022"
+    ];
+    var activity = document.querySelector('[data-id="pg042_p023"]');
+    if (!activity || !activity.parentNode) return;
+    readingOrder.forEach(function (id) {
+      var item = document.querySelector('[data-id="' + id + '"]');
+      if (item) activity.parentNode.insertBefore(item, activity);
+    });
+  })();
+</script>
 <script src="./assets/auto-fit.js"></script>
 </div>
     </main>

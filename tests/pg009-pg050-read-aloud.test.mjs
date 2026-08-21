@@ -801,6 +801,33 @@ for (const id of ["pg041_p002","pg041_p003","pg041_p004","pg041_p005","pg041_p00
   assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated timing`);
 }
 
+const page42 = read("pg042_sec001.html");
+const page42ReadingOrder = [
+  "pg042_p003", "pg042_p005", "pg042_p007", "pg042_p009", "pg042_p011",
+  "pg042_p013", "pg042_p015", "pg042_p017", "pg042_p019", "pg042_p021",
+  "pg042_p004", "pg042_p006", "pg042_p008", "pg042_p010", "pg042_p012",
+  "pg042_p014", "pg042_p016", "pg042_p018", "pg042_p020", "pg042_p022"
+];
+const page42OrderSource = page42.match(/var readingOrder = \[([\s\S]*?)\];/);
+assert.ok(page42OrderSource, "page 42 must define its two-column reading order before read-aloud starts");
+assert.deepEqual(
+  [...page42OrderSource[1].matchAll(/"(pg042_p\d+)"/g)].map((match) => match[1]),
+  page42ReadingOrder,
+  "page 42 must read questions 1–10 before questions 11–20"
+);
+for (const id of page42ReadingOrder) {
+  assert.equal(audios[id], `${id}.mp3`, `${id} must retain its own equation narration`);
+  assert.deepEqual(
+    timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word),
+    tokens(texts[id]),
+    `${id} must retain word-level timing for its complete printed equation`
+  );
+}
+assert.equal(texts.pg042_im001, "", "the page 42 composite exercise image must not repeat the visible exercise text");
+assert.equal(audios.pg042_im001, undefined, "the page 42 composite exercise image must not play duplicate narration");
+assert.equal(timecodes.pg042_im001, undefined, "the page 42 composite exercise image must not retain duplicate timing");
+assert.match(page42, /data-id="pg042_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page 42 composite exercise image must be decorative");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
