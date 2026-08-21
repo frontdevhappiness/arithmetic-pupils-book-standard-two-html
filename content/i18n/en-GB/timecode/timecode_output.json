@@ -43162,62 +43162,6 @@
       }
     ]
   },
-  "pg040_p002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Hundreds",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Tens",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p004": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Ones",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p005": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
   "pg038_p016": {
     "timecodes": [
       null,
@@ -43361,202 +43305,6 @@
       }
     ]
   },
-  "pg040_p006": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p007": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p008": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p009": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p010": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p019": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Hundreds",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p020": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Tens",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p021": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Ones",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p022": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p023": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p024": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p025": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p026": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_p027": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
   "pg039_p020": {
     "timecodes": [
       null,
@@ -43671,40 +43419,6 @@
             "text": "Add",
             "start": 0,
             "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_im002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "blue",
-            "start": 0,
-            "end": 0.8600000143051147
-          },
-          {
-            "text": "counter",
-            "start": 0.8600000143051147,
-            "end": 1.4199999570846558
-          },
-          {
-            "text": "representing",
-            "start": 1.4199999570846558,
-            "end": 2.380000114440918
-          },
-          {
-            "text": "one",
-            "start": 2.380000114440918,
-            "end": 2.9000000953674316
-          },
-          {
-            "text": "ten",
-            "start": 2.9000000953674316,
-            "end": 3.4000000953674316
           }
         ]
       }
@@ -43945,40 +43659,6 @@
       }
     ]
   },
-  "pg040_im003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "red",
-            "start": 0,
-            "end": 0.8999999761581421
-          },
-          {
-            "text": "counter",
-            "start": 0.8999999761581421,
-            "end": 1.399999976158142
-          },
-          {
-            "text": "representing",
-            "start": 1.399999976158142,
-            "end": 2.5
-          },
-          {
-            "text": "one",
-            "start": 2.5,
-            "end": 2.9000000953674316
-          },
-          {
-            "text": "one",
-            "start": 2.9000000953674316,
-            "end": 3.440000057220459
-          }
-        ]
-      }
-    ]
-  },
   "pg042_p001": {
     "timecodes": [
       null,
@@ -43993,40 +43673,6 @@
             "text": "2",
             "start": 0.699999988079071,
             "end": 1.100000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg040_im001": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Green",
-            "start": 0,
-            "end": 0.5600000023841858
-          },
-          {
-            "text": "counter",
-            "start": 0.5600000023841858,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "representing",
-            "start": 1.0800000429153442,
-            "end": 1.8600000143051147
-          },
-          {
-            "text": "one",
-            "start": 1.8600000143051147,
-            "end": 2.2200000286102295
-          },
-          {
-            "text": "hundred",
-            "start": 2.2200000286102295,
-            "end": 2.4800000190734863
           }
         ]
       }
@@ -155991,6 +155637,544 @@
             "text": "sum",
             "start": 19.8,
             "end": 20.1
+          }
+        ]
+      }
+    ]
+  },
+  "pg040_p037": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Third",
+            "start": 0,
+            "end": 0.96
+          },
+          {
+            "text": "place-value",
+            "start": 0.96,
+            "end": 1.64
+          },
+          {
+            "text": "model",
+            "start": 1.64,
+            "end": 1.96
+          },
+          {
+            "text": "In",
+            "start": 2.48,
+            "end": 2.58
+          },
+          {
+            "text": "the",
+            "start": 2.58,
+            "end": 2.94
+          },
+          {
+            "text": "hundreds",
+            "start": 2.94,
+            "end": 3.16
+          },
+          {
+            "text": "column",
+            "start": 3.16,
+            "end": 3.34
+          },
+          {
+            "text": "one",
+            "start": 3.76,
+            "end": 4
+          },
+          {
+            "text": "green",
+            "start": 4,
+            "end": 4.36
+          },
+          {
+            "text": "counter",
+            "start": 4.36,
+            "end": 4.68
+          },
+          {
+            "text": "is",
+            "start": 4.68,
+            "end": 5
+          },
+          {
+            "text": "added",
+            "start": 5,
+            "end": 5.14
+          },
+          {
+            "text": "to",
+            "start": 5.14,
+            "end": 5.44
+          },
+          {
+            "text": "two",
+            "start": 5.44,
+            "end": 5.72
+          },
+          {
+            "text": "green",
+            "start": 5.72,
+            "end": 6.08
+          },
+          {
+            "text": "counters",
+            "start": 6.08,
+            "end": 6.34
+          },
+          {
+            "text": "In",
+            "start": 7.28,
+            "end": 7.38
+          },
+          {
+            "text": "the",
+            "start": 7.38,
+            "end": 7.7
+          },
+          {
+            "text": "tens",
+            "start": 7.7,
+            "end": 7.9
+          },
+          {
+            "text": "column",
+            "start": 7.9,
+            "end": 8.12
+          },
+          {
+            "text": "two",
+            "start": 8.38,
+            "end": 8.74
+          },
+          {
+            "text": "blue",
+            "start": 8.74,
+            "end": 9.04
+          },
+          {
+            "text": "counters",
+            "start": 9.04,
+            "end": 9.26
+          },
+          {
+            "text": "are",
+            "start": 9.26,
+            "end": 9.8
+          },
+          {
+            "text": "added",
+            "start": 9.8,
+            "end": 9.9
+          },
+          {
+            "text": "to",
+            "start": 9.9,
+            "end": 10.08
+          },
+          {
+            "text": "three",
+            "start": 10.08,
+            "end": 10.34
+          },
+          {
+            "text": "blue",
+            "start": 10.34,
+            "end": 10.58
+          },
+          {
+            "text": "counters",
+            "start": 10.58,
+            "end": 10.88
+          },
+          {
+            "text": "In",
+            "start": 11.54,
+            "end": 11.64
+          },
+          {
+            "text": "the",
+            "start": 11.64,
+            "end": 11.92
+          },
+          {
+            "text": "ones",
+            "start": 11.92,
+            "end": 12.14
+          },
+          {
+            "text": "column",
+            "start": 12.14,
+            "end": 12.32
+          },
+          {
+            "text": "five",
+            "start": 12.68,
+            "end": 13.04
+          },
+          {
+            "text": "red",
+            "start": 13.04,
+            "end": 13.3
+          },
+          {
+            "text": "counters",
+            "start": 13.3,
+            "end": 13.56
+          },
+          {
+            "text": "are",
+            "start": 13.56,
+            "end": 14.08
+          },
+          {
+            "text": "added",
+            "start": 14.08,
+            "end": 14.18
+          },
+          {
+            "text": "to",
+            "start": 14.18,
+            "end": 14.36
+          },
+          {
+            "text": "three",
+            "start": 14.36,
+            "end": 14.66
+          },
+          {
+            "text": "red",
+            "start": 14.66,
+            "end": 14.88
+          },
+          {
+            "text": "counters",
+            "start": 14.88,
+            "end": 15.18
+          },
+          {
+            "text": "Fill",
+            "start": 16.06,
+            "end": 16.16
+          },
+          {
+            "text": "in",
+            "start": 16.16,
+            "end": 16.26
+          },
+          {
+            "text": "the",
+            "start": 16.26,
+            "end": 16.44
+          },
+          {
+            "text": "three",
+            "start": 16.44,
+            "end": 16.82
+          },
+          {
+            "text": "column",
+            "start": 16.82,
+            "end": 16.92
+          },
+          {
+            "text": "totals",
+            "start": 16.92,
+            "end": 17.3
+          },
+          {
+            "text": "and",
+            "start": 17.3,
+            "end": 17.6
+          },
+          {
+            "text": "the",
+            "start": 17.6,
+            "end": 17.9
+          },
+          {
+            "text": "final",
+            "start": 17.9,
+            "end": 18.06
+          },
+          {
+            "text": "sum",
+            "start": 18.06,
+            "end": 18.32
+          }
+        ]
+      }
+    ]
+  },
+  "pg040_p038": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Fourth",
+            "start": 0,
+            "end": 0.5
+          },
+          {
+            "text": "place-value",
+            "start": 0.64,
+            "end": 1.24
+          },
+          {
+            "text": "model",
+            "start": 1.24,
+            "end": 1.6
+          },
+          {
+            "text": "In",
+            "start": 1.98,
+            "end": 2.08
+          },
+          {
+            "text": "the",
+            "start": 2.08,
+            "end": 2.5
+          },
+          {
+            "text": "hundreds",
+            "start": 2.5,
+            "end": 2.6
+          },
+          {
+            "text": "column",
+            "start": 2.6,
+            "end": 2.8
+          },
+          {
+            "text": "four",
+            "start": 3.04,
+            "end": 3.36
+          },
+          {
+            "text": "green",
+            "start": 3.36,
+            "end": 3.72
+          },
+          {
+            "text": "counters",
+            "start": 3.72,
+            "end": 3.98
+          },
+          {
+            "text": "are",
+            "start": 3.98,
+            "end": 4.42
+          },
+          {
+            "text": "added",
+            "start": 4.42,
+            "end": 4.52
+          },
+          {
+            "text": "to",
+            "start": 4.52,
+            "end": 4.74
+          },
+          {
+            "text": "five",
+            "start": 4.74,
+            "end": 5
+          },
+          {
+            "text": "green",
+            "start": 5,
+            "end": 5.32
+          },
+          {
+            "text": "counters",
+            "start": 5.32,
+            "end": 5.58
+          },
+          {
+            "text": "In",
+            "start": 6.38,
+            "end": 6.48
+          },
+          {
+            "text": "the",
+            "start": 6.48,
+            "end": 6.88
+          },
+          {
+            "text": "tens",
+            "start": 6.88,
+            "end": 6.98
+          },
+          {
+            "text": "column",
+            "start": 6.98,
+            "end": 7.2
+          },
+          {
+            "text": "two",
+            "start": 7.66,
+            "end": 7.88
+          },
+          {
+            "text": "blue",
+            "start": 7.88,
+            "end": 8.2
+          },
+          {
+            "text": "counters",
+            "start": 8.2,
+            "end": 8.42
+          },
+          {
+            "text": "are",
+            "start": 8.42,
+            "end": 8.9
+          },
+          {
+            "text": "added",
+            "start": 8.9,
+            "end": 9
+          },
+          {
+            "text": "to",
+            "start": 9,
+            "end": 9.22
+          },
+          {
+            "text": "one",
+            "start": 9.22,
+            "end": 9.42
+          },
+          {
+            "text": "blue",
+            "start": 9.42,
+            "end": 9.62
+          },
+          {
+            "text": "counter",
+            "start": 9.62,
+            "end": 9.9
+          },
+          {
+            "text": "In",
+            "start": 10.68,
+            "end": 10.78
+          },
+          {
+            "text": "the",
+            "start": 10.78,
+            "end": 11.16
+          },
+          {
+            "text": "ones",
+            "start": 11.16,
+            "end": 11.26
+          },
+          {
+            "text": "column",
+            "start": 11.26,
+            "end": 11.48
+          },
+          {
+            "text": "five",
+            "start": 11.88,
+            "end": 12.22
+          },
+          {
+            "text": "red",
+            "start": 12.22,
+            "end": 12.5
+          },
+          {
+            "text": "counters",
+            "start": 12.5,
+            "end": 12.7
+          },
+          {
+            "text": "are",
+            "start": 12.7,
+            "end": 13.14
+          },
+          {
+            "text": "added",
+            "start": 13.14,
+            "end": 13.24
+          },
+          {
+            "text": "to",
+            "start": 13.24,
+            "end": 13.44
+          },
+          {
+            "text": "two",
+            "start": 13.44,
+            "end": 13.68
+          },
+          {
+            "text": "red",
+            "start": 13.68,
+            "end": 13.9
+          },
+          {
+            "text": "counters",
+            "start": 13.9,
+            "end": 14.2
+          },
+          {
+            "text": "Fill",
+            "start": 15.18,
+            "end": 15.28
+          },
+          {
+            "text": "in",
+            "start": 15.28,
+            "end": 15.38
+          },
+          {
+            "text": "the",
+            "start": 15.38,
+            "end": 15.6
+          },
+          {
+            "text": "three",
+            "start": 15.6,
+            "end": 15.86
+          },
+          {
+            "text": "column",
+            "start": 15.86,
+            "end": 16.02
+          },
+          {
+            "text": "totals",
+            "start": 16.02,
+            "end": 16.36
+          },
+          {
+            "text": "and",
+            "start": 16.36,
+            "end": 16.64
+          },
+          {
+            "text": "the",
+            "start": 16.64,
+            "end": 17
+          },
+          {
+            "text": "final",
+            "start": 17,
+            "end": 17.1
+          },
+          {
+            "text": "sum",
+            "start": 17.1,
+            "end": 17.34
           }
         ]
       }
