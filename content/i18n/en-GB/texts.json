@@ -3140,7 +3140,7 @@
   "pg060_p050": "06/11/2024 17:23",
   "pg060_p018": "8",
   "pg061_p000": "55",
-  "pg061_im001": "Exercise 11",
+  "pg061_im001": "",
   "pg061_p001": "Exercise 11",
   "pg061_p002": "Answer the following questions.",
   "pg061_p003": "1. One family had 130 goats. Another family had",
@@ -5984,5 +5984,6 @@
   "pg058_p026": "A fisherman caught 112 fish in the morning. He then caught 210 fish in the afternoon. How many fish did he catch?",
   "pg059_p053": "Solution. Number of fish caught in the morning is 112. Number of fish caught in the evening is 210. Add the numbers vertically. 112 plus 210 equals 322. Steps. Step 1. Add the ones. 2 plus 0 equals 2. Write 2 in the ones place. Step 2. Add the tens. 1 plus 1 equals 2. Write 2 in the tens place. Step 3. Add the hundreds. 1 plus 2 equals 3. Write 3 in the hundreds place. Therefore, a fisherman caught 322 fish.",
   "pg059_p054": "Example 2. A grandfather has 389 mango trees. A grandmother has 433 mango trees. How many mango trees do they both have? Solution. Grandfather's mango trees equal 389. Grandmother's mango trees equal 433.",
-  "pg060_p051": "Add the numbers vertically. 389 plus 433 equals 822. Steps. Step 1. Add the ones. 9 plus 3 equals 12. Regroup 12 ones into 1 ten and 2 ones. Write 2 in the ones place. Take 1 ten to the tens place. Step 2. Add the tens. 1 plus 8 plus 3 equals 12. Regroup 12 tens into 100 and 2 tens. Write 2 in the tens place. Take 100 to the hundreds place. Step 3. Add the hundreds. 1 plus 3 plus 4 equals 8. Write 8 in the hundreds place. Therefore, they have 822 mango trees."
+  "pg060_p051": "Add the numbers vertically. 389 plus 433 equals 822. Steps. Step 1. Add the ones. 9 plus 3 equals 12. Regroup 12 ones into 1 ten and 2 ones. Write 2 in the ones place. Take 1 ten to the tens place. Step 2. Add the tens. 1 plus 8 plus 3 equals 12. Regroup 12 tens into 100 and 2 tens. Write 2 in the tens place. Take 100 to the hundreds place. Step 3. Add the hundreds. 1 plus 3 plus 4 equals 8. Write 8 in the hundreds place. Therefore, they have 822 mango trees.",
+  "pg061_p030": "Question 1. One family had 130 goats. Another family had 110 goats. How many goats did the two families have? Question 2. A farmer planted 403 orange seedlings. She then planted 592 guava seedlings. How many seedlings did she plant altogether? Question 3. In a certain primary school, 372 pupils participated in sports. They were joined by 527 fellow pupils. How many pupils participated in the sports altogether? Question 4. A primary school bought 601 sports uniforms. Later, the school bought 326 more sports uniforms. How many sports uniforms did the school buy? Question 5. A training in environmental care was attended by 294 girls and 312 boys. How many people attended the training? Question 6. A school bought 333 desks. Later, the school bought another 426 desks. How many desks did the school buy? Question 7. Standard One pupils were given 350 pencils after passing an examination. Standard Two pupils were given 520 pencils after passing their examination. How many pencils were given to the two classes?"
 }

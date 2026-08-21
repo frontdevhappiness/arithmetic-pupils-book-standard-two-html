@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 60; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 61; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1244,6 +1244,20 @@ assert.deepEqual(
   "page 60 must narrate its complete solution exactly once"
 );
 
+const page61 = read("pg061_sec001.html");
+const page61Questions = "Question 1. One family had 130 goats. Another family had 110 goats. How many goats did the two families have? Question 2. A farmer planted 403 orange seedlings. She then planted 592 guava seedlings. How many seedlings did she plant altogether? Question 3. In a certain primary school, 372 pupils participated in sports. They were joined by 527 fellow pupils. How many pupils participated in the sports altogether? Question 4. A primary school bought 601 sports uniforms. Later, the school bought 326 more sports uniforms. How many sports uniforms did the school buy? Question 5. A training in environmental care was attended by 294 girls and 312 boys. How many people attended the training? Question 6. A school bought 333 desks. Later, the school bought another 426 desks. How many desks did the school buy? Question 7. Standard One pupils were given 350 pencils after passing an examination. Standard Two pupils were given 520 pencils after passing their examination. How many pencils were given to the two classes?";
+assert.equal(texts.pg061_p030, page61Questions, "page 61 must narrate all seven questions coherently");
+assert.equal(audios.pg061_p030, "pg061_p030_adt_questions.mp3", "page 61 must use corrected ADT narration");
+assert.deepEqual(timecodes.pg061_p030.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(page61Questions), "page 61 must retain real word-level timing");
+assert.equal(texts.pg061_im001, "", "the duplicate Exercise 11 image label must have no narration");
+assert.match(page61, /data-id="pg061_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate Exercise 11 image label must be decorative");
+assert.match(page61, /data-id="pg061_p030"[\s\S]*data-id="pg061_p003"/, "the consolidated questions must precede their visual fragments");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg061_")).sort(),
+  ["pg061_p001", "pg061_p002", "pg061_p030"],
+  "page 61 must narrate its title, instruction, and questions exactly once"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1278,4 +1292,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg060 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg061 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
