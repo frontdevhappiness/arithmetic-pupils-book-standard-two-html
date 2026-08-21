@@ -43469,7 +43469,7 @@ function useAtomValueWithDelay<Value>(
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300,#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important}
 #content .adt-page-overlay-text.${PRESERVE_SEGMENT_LINES_CLASS}{white-space:nowrap}
-#${MEASURED_MARKER_ID}{position:fixed;left:0;top:0;width:0;height:0;background:rgba(253,224,71,.34);border-radius:2px;pointer-events:none;opacity:0;z-index:40;mix-blend-mode:multiply;transition:opacity 50ms ease-out;will-change:left,top,width,height,opacity}`;
+#${MEASURED_MARKER_ID}{position:fixed;left:0;top:0;width:0;height:0;background:rgba(253,224,71,.3);border-radius:2px;pointer-events:none;opacity:0;z-index:40;mix-blend-mode:multiply;transition:opacity 50ms ease-out;will-change:left,top,width,height,opacity}`;
     document.head.appendChild(style);
   }
   function getMeasuredMarker() {
@@ -43495,7 +43495,12 @@ function useAtomValueWithDelay<Value>(
       marker.style.opacity = "0";
       return;
     }
-    const rect = word.getBoundingClientRect();
+    // Measure the rendered text itself. An inline wrapper can inherit a much
+    // wider box from a fixed-layout paragraph, especially on centred lines.
+    const range = document.createRange();
+    range.selectNodeContents(word);
+    const textRect = range.getBoundingClientRect();
+    const rect = textRect.width && textRect.height ? textRect : word.getBoundingClientRect();
     if (!rect.width || !rect.height) {
       marker.style.opacity = "0";
       return;
@@ -43504,11 +43509,9 @@ function useAtomValueWithDelay<Value>(
     const scaleY = root.offsetHeight ? rootRect.height / root.offsetHeight : 1;
     const computed = getComputedStyle(word);
     const lineHeight = Number.parseFloat(computed.lineHeight);
-    const fontSize = Number.parseFloat(computed.fontSize);
     const height = Number.isFinite(lineHeight) ? lineHeight * scaleY : rect.height;
-    const raise = Number.isFinite(fontSize) ? fontSize * scaleY * 0.2 : 0;
     marker.style.left = `${rect.left}px`;
-    marker.style.top = `${rect.top + (rect.height - height) / 2 - raise}px`;
+    marker.style.top = `${rect.top + (rect.height - height) / 2}px`;
     marker.style.width = `${rect.width}px`;
     marker.style.height = `${height}px`;
     marker.style.opacity = "1";

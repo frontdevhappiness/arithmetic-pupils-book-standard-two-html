@@ -116,6 +116,28 @@ assert.equal(audios.pg013_p107, "pg013_p107_adt_gpt4omini.mp3", "931 must use th
 assert.deepEqual(timecodes.pg013_p107.timecodes[1].word_timestamps, [{ text: "931", start: 0, end: 1.26 }], "931 highlight must follow its measured speech timestamp");
 assert.match(page13, /data-id="pg013_p106"[\s\S]*?>930<\/span><\/p>\s*<p data-id="pg013_p107"[\s\S]*?>931<\/span><\/p>/, "930 and 931 must use separate overlay and narration elements");
 
+const page14 = read("pg014_sec001.html");
+assert.match(page14, /data-id="pg014_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "page 14 duplicate full-page exercise panel must be decorative");
+assert.equal(audios.pg014_im001, undefined, "page 14 exercise content must not be narrated twice");
+assert.match(page14, /"pg014_p004", "pg014_p005", "pg014_p009", "pg014_p010"[\s\S]*root\.insertBefore\(element, firstRightColumnItem\)/, "Exercise 11 must narrate the left column before the right column");
+assert.equal(audios.pg014_p011, "pg014_p011_adt_clean.mp3", "item 15 must not begin with an unrelated word");
+assert.equal(audios.pg014_p019, "pg014_p019_adt_clean.mp3", "item 4 must not contain a trailing unrelated word");
+assert.equal(audios.pg014_p070, "pg014_p070_adt_clean.mp3", "Exercise 12 item 6 must not contain trailing unrelated words");
+assert.deepEqual(timecodes.pg014_p011.timecodes[1].word_timestamps, [{ text: "15", start: 0, end: 0.82 }], "item 15 highlight must use measured clean-audio timing");
+assert.deepEqual(timecodes.pg014_p019.timecodes[1].word_timestamps, [{ text: "4", start: 0, end: 0.64 }], "item 4 highlight must use measured clean-audio timing");
+assert.match(page14, /data-id="pg014_p069"[\s\S]*?style="position:absolute;top:606px;left:72px;line-height:18px;width:394px;height:20px"/, "Exercise 12 item 5 must use a stable full-line overlay");
+for (const id of ["pg014_p069", "pg014_p070", "pg014_p071"]) {
+  const element = page14.match(new RegExp(`<p data-id="${id}"[\\s\\S]*?</p>`))?.[0] ?? "";
+  assert.doesNotMatch(element, /text-align:center/, `${id} must not shift word coordinates by centring its overlay`);
+}
+assert.deepEqual(timecodes.pg014_p069.timecodes[1].word_timestamps, [
+  { text: "5", start: 0, end: 0.88 },
+  { text: "Three", start: 1.74, end: 1.84 },
+  { text: "hundred", start: 1.84, end: 2 },
+  { text: "and", start: 2, end: 2.34 },
+  { text: "three", start: 2.34, end: 2.48 }
+], "Exercise 12 item 5 highlight must follow measured spoken-word boundaries");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -135,6 +157,10 @@ for (const id of ["pg044_p017", "pg044_p030", "pg045_p003", "pg045_p040", "pg046
 
 assert.match(runtime, /audio\.currentTime/, "highlighting must follow the audio media clock");
 assert.match(runtime, /requestAnimationFrame\(tick\)/, "word boundaries must be sampled on each media frame");
+assert.match(runtime, /document\.createRange\(\)/, "highlight width must be measured from the current word text range");
+assert.match(runtime, /range\.selectNodeContents\(word\)/, "highlight measurement must exclude the surrounding paragraph box");
+assert.match(runtime, /rect\.top \+ \(rect\.height - height\) \/ 2/, "highlight must be vertically centred on the current word");
+assert.match(runtime, /background:rgba\(253,224,71,\.3\)/, "highlight must use a soft semi-transparent yellow");
 assert.match(runtime, /\[\+\\-−–×÷=<>\/\]/, "spoken arithmetic symbols must be highlight tokens");
 assert.match(runtime, /session !== playSessionRef\.current/, "stale playback sessions must be ignored");
 assert.match(runtime, /cancelAnimationFrame\(highlightFrameRef\.current\)/, "old highlight loops must be cancelled");
