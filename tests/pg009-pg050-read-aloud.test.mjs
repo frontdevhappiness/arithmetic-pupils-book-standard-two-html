@@ -643,6 +643,59 @@ assert.deepEqual(tokens(texts.pg035_im001).filter(word => /^\d+$/.test(word)), [
 assert.equal(audios.pg035_im001, "pg035_im001_adt_order.mp3", "the arrow diagram must use its corrected ordered narration");
 assert.match(page35, /data-id="pg035_p001"[\s\S]*data-id="pg035_p002"[\s\S]*data-id="pg035_p003"[\s\S]*data-id="pg035_p004"[\s\S]*data-id="pg035_p006"[\s\S]*data-id="pg035_p008"[\s\S]*data-id="pg035_p009"[\s\S]*data-id="pg035_im001"[\s\S]*data-id="pg035_p011"[\s\S]*data-id="pg035_p012"[\s\S]*data-id="pg035_p013"[\s\S]*data-id="pg035_p014"[\s\S]*data-id="pg035_p015"/, "page 35 must narrate both question sets and Activity 3 in visual order");
 
+const page36 = read("pg036_sec001.html");
+assert.match(page36, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 36 must use only the exact runtime word highlight");
+assert.match(page36, /#adt-runtime-word-highlight\{display:none!important\}/, "page 36 must temporarily hide the yellow runtime word marker without disabling audio");
+assert.equal(audios.pg036_p002, "pg036_p002_adt_clean.mp3", "disabling page 36 highlighting must leave read-aloud audio enabled");
+assert.equal(texts.pg036_im003, "", "the extracted Tens column must not repeat the bottom table");
+assert.equal(audios.pg036_im003, undefined, "the extracted Tens column must not have narration audio");
+assert.equal(timecodes.pg036_im003, undefined, "the extracted Tens column must not retain timing data");
+assert.match(page36, /data-id="pg036_im003"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the extracted Tens column must be decorative");
+assert.equal(texts.pg036_p002, "1. Write the place value of each missing number horizontally in the following chart.", "question 1 must be one complete instruction");
+assert.equal(audios.pg036_p002, "pg036_p002_adt_clean.mp3", "question 1 must use one uninterrupted recording");
+assert.equal(texts.pg036_p003, "", "the obsolete second instruction fragment must be empty");
+assert.equal(audios.pg036_p003, undefined, "the obsolete second instruction fragment must not play separately");
+assert.deepEqual(timecodes.pg036_p002.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg036_p002), "question 1 must highlight its complete instruction in spoken order");
+assert.ok(meanVolume(audios.pg036_p002) > -35, "question 1 must remain clearly audible");
+for (const id of ["pg036_p002","pg036_p031","pg036_p032","pg036_p048"]) {
+  const stamps = timecodes[id].timecodes[1].word_timestamps;
+  const pause = stamps[1].start - stamps[0].end;
+  assert.ok(pause >= 0.5 && pause <= 0.85, `${id} must use a natural pause after its question number`);
+}
+const page36TopIds = ["pg036_p004","pg036_p005","pg036_p006","pg036_p007","pg036_p008","pg036_p009","pg036_p010","pg036_p011","pg036_p012","pg036_p013","pg036_p014","pg036_p015","pg036_p016","pg036_p017","pg036_p018","pg036_p019","pg036_p020","pg036_p021","pg036_p022","pg036_p023","pg036_p024","pg036_p025","pg036_p026","pg036_p027","pg036_p028","pg036_p029","pg036_p030"];
+assert.deepEqual(page36TopIds.flatMap(id => tokens(texts[id])), ["201","202","203","205","206","207","208","209","301","303","304","305","306","307","308","309","401","402","403","404","405","407","408","409","501","502","503","504","506","507","508","509","601","603","604","605","606","607","608","609","701","702","703","704","705","706","708","709","801","802","803","804","805","806","807","808","901","902","904","905","906","907","908","909"], "the top chart must read every printed number once in row order");
+assert.match(page36, /var columns=\[5,43,84,125,167,209,251,293,335\]/, "top-chart highlights must use the nine photographed column positions");
+assert.deepEqual(["pg036_p054","pg036_p055","pg036_p056","pg036_p058","pg036_p059","pg036_p060","pg036_p062","pg036_p063","pg036_p064","pg036_p066","pg036_p067","pg036_p068","pg036_p070","pg036_p071","pg036_p072"].map(id => texts[id]), ["1","1","9","8","2","7","2","6","3","6","1","0","3","3","3"], "the bottom table must read hundreds, tens, and ones row by row");
+assert.match(page36, /box\("pg036_p055",246,577,44,"center"\); box\("pg036_p071",246,658,44,"center"\); box\("pg036_p072",335,658,41,"center"\)/, "repeated digits must highlight their own Tens and Ones cells instead of overlapping Hundreds");
+assert.match(page36, /style:at\(black,24,0\).*style:at\(black,24,21\)[\s\S]*?\],82,85,387,42\)/, "question 1 instruction highlights must align with both printed lines");
+const page36Question3Rows = {
+  pg036_p076: "229. Two is in the tens column.",
+  pg036_p077: "368. Three is in the hundreds column.",
+  pg036_p078: "876. Six is in the ones column.",
+  pg036_p079: "569. Six is in the tens column.",
+  pg036_p080: "997. Nine is in the hundreds column."
+};
+const page36Question4Rows = {
+  pg036_p081: "One is in the hundreds column, one is in the tens column, and nine is in the ones column.",
+  pg036_p082: "Eight is in the hundreds column, two is in the tens column, and seven is in the ones column.",
+  pg036_p083: "Two is in the hundreds column, six is in the tens column, and three is in the ones column.",
+  pg036_p084: "Six is in the hundreds column, one is in the tens column, and zero is in the ones column.",
+  pg036_p085: "Three is in the hundreds column, three is in the tens column, and three is in the ones column."
+};
+for (const [id, expected] of Object.entries({ ...page36Question3Rows, ...page36Question4Rows })) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete place-value row`);
+  assert.equal(audios[id], `${id}_adt_place_value.mp3`, `${id} must use the corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing in display order`);
+  assert.equal((page36.match(new RegExp(`data-id="${id}"`, "g")) ?? []).length, 1, `${id} must occur once in page order`);
+}
+assert.match(page36, /function narration\(id,segments\).*?node\.style\.whiteSpace="nowrap"/s, "page 36 contextual narration must never wrap its hidden timing words into another question");
+assert.match(page36, /\["pg036_p077","368","Three",425,250,"hundreds",220\]/, "question 3 row two must anchor its digit and Hundreds highlight to that row");
+assert.match(page36, /\["pg036_p083",\["Two","six","three"\],618\]/, "question 4 row three must retain its correct place-value highlight anchors");
+for (const id of ["pg036_p038","pg036_p039","pg036_p040","pg036_p041","pg036_p042","pg036_p043","pg036_p044","pg036_p045","pg036_p046","pg036_p047","pg036_p054","pg036_p055","pg036_p056","pg036_p058","pg036_p059","pg036_p060","pg036_p062","pg036_p063","pg036_p064","pg036_p066","pg036_p067","pg036_p068","pg036_p070","pg036_p071","pg036_p072"]) {
+  assert.equal(audios[id], undefined, `${id} must not repeat an isolated table-cell clip`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated timing`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
