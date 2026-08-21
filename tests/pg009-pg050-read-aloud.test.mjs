@@ -1002,11 +1002,34 @@ assert.deepEqual(
   "page 49 must narrate only its worked step, visual alternative, heading, instruction, and coherent questions"
 );
 
+const page50 = read("pg050_sec001.html");
+const page50Continuation = "Question 11. 484 plus 109. Question 12. 189 plus 102. Question 13. 801 plus 9. Question 14. 229 plus 229. Question 15. 518 plus 119. Question 16. 673 plus 117. Question 17. 239 plus 221. Question 18. 123 plus 229. Question 19. 444 plus 137. Question 20. 269 plus 21.";
+const page50Exercise = "Question 1. 739 plus 15. Question 2. 118 plus 132. Question 3. 819 plus 113. Question 4. 287 plus 113. Question 5. 773 plus 9. Question 6. 333 plus 27. Question 7. 239 plus 8. Question 8. 123 plus 127. Question 9. 444 plus 219. Question 10. 269 plus 23. Question 11. 291 plus 19. Question 12. 839 plus 111. Question 13. 709 plus 29. Question 14. 469 plus 31. Question 15. 729 plus 148. Question 16. 456 plus 326. Question 17. 381 plus 409. Question 18. 462 plus 418. Question 19. 282 plus 365. Question 20. 627 plus 203.";
+for (const [id, expected, filename] of [
+  ["pg050_p068", page50Continuation, "pg050_p068_adt_questions11to20.mp3"],
+  ["pg050_p069", page50Exercise, "pg050_p069_adt_exercise6.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate the printed page 50 sums in order`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.equal(texts.pg050_im001, "", "the questions 11–20 composite must not repeat its text narration");
+assert.equal(audios.pg050_im001, undefined, "the questions 11–20 composite must not play duplicate narration");
+assert.equal(timecodes.pg050_im001, undefined, "the questions 11–20 composite must not retain duplicate timing");
+assert.match(page50, /data-id="pg050_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the questions 11–20 composite must be decorative");
+assert.ok(page50.indexOf('data-id="pg050_p068"') < page50.indexOf('data-id="pg050_p001"'), "questions 11–20 must precede their isolated visual fragments");
+assert.ok(page50.indexOf('data-id="pg050_p021"') < page50.indexOf('data-id="pg050_p069"'), "the Exercise 6 instruction must precede its questions");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg050_")).sort(),
+  ["pg050_p020", "pg050_p021", "pg050_p062", "pg050_p063", "pg050_p064", "pg050_p068", "pg050_p069"],
+  "page 50 must narrate only its headings, instructions, explanatory text, and two coherent question passages"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
 for (const [id, source] of [
-  ["pg014_p004", oneSource], ["pg016_p012", oneSource], ["pg050_p022", oneSource],
+  ["pg014_p004", oneSource], ["pg016_p012", oneSource],
   ["pg028_p011", threeSource]
 ]) assert.equal(hash(audios[id]), source, `${id} must use repaired audible narration`);
 assert.equal(hash(audios.pg010_p166), hash(audios.pg013_p040), "both printed 360 entries must use the same repaired narration");
