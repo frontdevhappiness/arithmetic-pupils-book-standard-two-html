@@ -138,6 +138,20 @@ assert.deepEqual(timecodes.pg014_p069.timecodes[1].word_timestamps, [
   { text: "three", start: 2.34, end: 2.48 }
 ], "Exercise 12 item 5 highlight must follow measured spoken-word boundaries");
 
+const page15 = read("pg015_sec001.html");
+assert.match(page15, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 15 must not paint a second legacy highlight layer");
+assert.match(page15, /data-id="pg015_p002"[\s\S]*?style="position:absolute;top:100px;left:95px;line-height:18px;width:408px;height:20px"/, "Exercise 12 item 9 must use a stable full-line overlay");
+for (const id of ["pg015_p002", "pg015_p003", "pg015_p005", "pg015_p006"]) {
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use clean ADT narration without unrelated words`);
+}
+assert.deepEqual(timecodes.pg015_p002.timecodes[1].word_timestamps, [
+  { text: "9", start: 0, end: 1.08 },
+  { text: "One", start: 1.9, end: 2.14 },
+  { text: "hundred", start: 2.14, end: 2.42 },
+  { text: "and", start: 2.42, end: 2.7 },
+  { text: "nine", start: 2.7, end: 2.96 }
+], "Exercise 12 item 9 highlight must follow measured clean-audio timing");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
