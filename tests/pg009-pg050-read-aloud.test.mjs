@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 59; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 60; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1232,6 +1232,18 @@ assert.deepEqual(
   "page 59 must narrate its solution and second example exactly once"
 );
 
+const page60 = read("pg060_sec001.html");
+const page60Solution = "Add the numbers vertically. 389 plus 433 equals 822. Steps. Step 1. Add the ones. 9 plus 3 equals 12. Regroup 12 ones into 1 ten and 2 ones. Write 2 in the ones place. Take 1 ten to the tens place. Step 2. Add the tens. 1 plus 8 plus 3 equals 12. Regroup 12 tens into 100 and 2 tens. Write 2 in the tens place. Take 100 to the hundreds place. Step 3. Add the hundreds. 1 plus 3 plus 4 equals 8. Write 8 in the hundreds place. Therefore, they have 822 mango trees.";
+assert.equal(texts.pg060_p051, page60Solution, "page 60 must narrate the complete vertical addition coherently");
+assert.equal(audios.pg060_p051, "pg060_p051_adt_solution.mp3", "page 60 must use corrected ADT narration");
+assert.deepEqual(timecodes.pg060_p051.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(page60Solution), "page 60 must retain real word-level timing");
+assert.match(page60, /data-id="pg060_p051"[\s\S]*data-id="pg060_p001"/, "the consolidated solution must precede its visual fragments");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg060_")).sort(),
+  ["pg060_p051"],
+  "page 60 must narrate its complete solution exactly once"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1266,4 +1278,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg059 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg060 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
