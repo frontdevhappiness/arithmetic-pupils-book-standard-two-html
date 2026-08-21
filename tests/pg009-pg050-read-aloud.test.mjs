@@ -696,6 +696,28 @@ for (const id of ["pg036_p038","pg036_p039","pg036_p040","pg036_p041","pg036_p04
   assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated timing`);
 }
 
+const page37 = read("pg037_sec001.html");
+assert.equal(texts.pg037_p002, "Numbers can be added horizontally or vertically. Addition is done by considering the place value of each digit in a number.", "page 37 introduction must be one uninterrupted passage");
+assert.equal(audios.pg037_p002, "pg037_p002_adt_intro.mp3", "page 37 introduction must use the corrected ADT recording");
+assert.deepEqual(timecodes.pg037_p002.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg037_p002), "page 37 introduction must retain real word-level timing");
+assert.equal(texts.pg037_p003, "", "the obsolete continuation fragment must be empty");
+assert.equal(audios.pg037_p003, undefined, "the obsolete continuation fragment must not play separately");
+assert.equal(timecodes.pg037_p003, undefined, "the obsolete continuation fragment must not retain timing");
+assert.match(page37, /content\.insertBefore\(chapter,lesson\)/, "the Chapter Five description must play before the lesson title");
+assert.match(page37, /expression\.after\(example\)/, "the complete example description must play at the example instead of before the introduction");
+assert.equal(audios.pg037_im007, "pg037_im007.mp3", "the chapter banner must be narrated once");
+assert.equal(audios.pg037_im008, "pg037_im008.mp3", "the place-value model must use one complete description");
+for (const id of ["pg037_im001","pg037_im002","pg037_im003","pg037_im004","pg037_im005","pg037_im006"]) {
+  assert.equal(texts[id], "", `${id} must be decorative because the complete model is already described`);
+  assert.equal(audios[id], undefined, `${id} must not repeat an individual counter-group clip`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain duplicate timing`);
+  assert.match(page37, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be marked decorative`);
+}
+for (const id of ["pg037_p007","pg037_p008","pg037_p009","pg037_p010","pg037_p011","pg037_p012","pg037_p013","pg037_p014","pg037_p015","pg037_p016","pg037_p017","pg037_p018","pg037_p019","pg037_p020","pg037_p021","pg037_p022","pg037_p023","pg037_p024"]) {
+  assert.equal(audios[id], undefined, `${id} must not repeat text already covered by the consolidated chapter or example narration`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain duplicate timing`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);

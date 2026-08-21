@@ -41817,25 +41817,6 @@
       }
     ]
   },
-  "pg037_p007": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Example",
-            "start": 0,
-            "end": 0.8199999928474426
-          },
-          {
-            "text": "1",
-            "start": 0.8199999928474426,
-            "end": 1.3200000524520874
-          }
-        ]
-      }
-    ]
-  },
   "pg037_p002": {
     "timecodes": [
       null,
@@ -41844,84 +41825,107 @@
           {
             "text": "Numbers",
             "start": 0,
-            "end": 0.62
+            "end": 0.5
           },
           {
             "text": "can",
-            "start": 0.62,
-            "end": 0.96
+            "start": 0.5,
+            "end": 0.86
           },
           {
             "text": "be",
-            "start": 0.96,
-            "end": 1.54
+            "start": 0.86,
+            "end": 1.38
           },
           {
             "text": "added",
-            "start": 1.54,
-            "end": 1.64
+            "start": 1.38,
+            "end": 1.48
           },
           {
             "text": "horizontally",
-            "start": 1.64,
-            "end": 2.32
+            "start": 1.48,
+            "end": 2.04
           },
           {
             "text": "or",
-            "start": 2.32,
-            "end": 3.22
+            "start": 2.04,
+            "end": 2.74
           },
           {
             "text": "vertically",
-            "start": 3.22,
-            "end": 3.64
+            "start": 2.74,
+            "end": 3.12
           },
           {
             "text": "Addition",
-            "start": 4.42,
-            "end": 4.76
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p009": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "start": 4.34,
+            "end": 4.62
+          },
           {
-            "text": "Hundreds",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p010": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "is",
+            "start": 4.62,
+            "end": 4.98
+          },
           {
-            "text": "Tens",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p011": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "done",
+            "start": 4.98,
+            "end": 5.08
+          },
           {
-            "text": "Ones",
-            "start": 0,
-            "end": 0.8999999761581421
+            "text": "by",
+            "start": 5.08,
+            "end": 5.38
+          },
+          {
+            "text": "considering",
+            "start": 5.38,
+            "end": 5.7
+          },
+          {
+            "text": "the",
+            "start": 5.7,
+            "end": 6.02
+          },
+          {
+            "text": "place",
+            "start": 6.02,
+            "end": 6.34
+          },
+          {
+            "text": "value",
+            "start": 6.34,
+            "end": 6.66
+          },
+          {
+            "text": "of",
+            "start": 6.66,
+            "end": 6.98
+          },
+          {
+            "text": "each",
+            "start": 6.98,
+            "end": 7.26
+          },
+          {
+            "text": "digit",
+            "start": 7.26,
+            "end": 7.6
+          },
+          {
+            "text": "in",
+            "start": 7.6,
+            "end": 8.08
+          },
+          {
+            "text": "a",
+            "start": 8.08,
+            "end": 8.48
+          },
+          {
+            "text": "number",
+            "start": 8.48,
+            "end": 8.58
           }
         ]
       }
@@ -42162,172 +42166,6 @@
       }
     ]
   },
-  "pg037_p003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "is",
-            "start": 0,
-            "end": 0.36000001430511475
-          },
-          {
-            "text": "done",
-            "start": 0.36000001430511475,
-            "end": 0.6399999856948853
-          },
-          {
-            "text": "by",
-            "start": 0.6399999856948853,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "considering",
-            "start": 1.0800000429153442,
-            "end": 1.4199999570846558
-          },
-          {
-            "text": "the",
-            "start": 1.4199999570846558,
-            "end": 1.7599999904632568
-          },
-          {
-            "text": "place",
-            "start": 1.7599999904632568,
-            "end": 2.0799999237060547
-          },
-          {
-            "text": "value",
-            "start": 2.0799999237060547,
-            "end": 2.5799999237060547
-          },
-          {
-            "text": "of",
-            "start": 2.5799999237060547,
-            "end": 3.0399999618530273
-          },
-          {
-            "text": "each",
-            "start": 3.0399999618530273,
-            "end": 3.319999933242798
-          },
-          {
-            "text": "digit",
-            "start": 3.319999933242798,
-            "end": 3.640000104904175
-          },
-          {
-            "text": "in",
-            "start": 3.640000104904175,
-            "end": 4.019999980926514
-          },
-          {
-            "text": "a",
-            "start": 4.019999980926514,
-            "end": 4.28000020980835
-          },
-          {
-            "text": "number",
-            "start": 4.28000020980835,
-            "end": 4.420000076293945
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_im001": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Two",
-            "start": 0,
-            "end": 0.5
-          },
-          {
-            "text": "green",
-            "start": 0.5,
-            "end": 0.9599999785423279
-          },
-          {
-            "text": "counters",
-            "start": 0.9599999785423279,
-            "end": 1.4800000190734863
-          },
-          {
-            "text": "representing",
-            "start": 1.4800000190734863,
-            "end": 2.180000066757202
-          },
-          {
-            "text": "2",
-            "start": 2.180000066757202,
-            "end": 2.700000047683716
-          },
-          {
-            "text": "hundreds",
-            "start": 2.700000047683716,
-            "end": 2.9800000190734863
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p013": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_im002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Two",
-            "start": 0,
-            "end": 0.7599999904632568
-          },
-          {
-            "text": "blue",
-            "start": 0.7599999904632568,
-            "end": 1.100000023841858
-          },
-          {
-            "text": "counters",
-            "start": 1.100000023841858,
-            "end": 1.5800000429153442
-          },
-          {
-            "text": "representing",
-            "start": 1.5800000429153442,
-            "end": 2.319999933242798
-          },
-          {
-            "text": "2",
-            "start": 2.319999933242798,
-            "end": 2.759999990463257
-          },
-          {
-            "text": "tens",
-            "start": 2.759999990463257,
-            "end": 3
-          }
-        ]
-      }
-    ]
-  },
   "pg037_im008": {
     "timecodes": [
       null,
@@ -42552,211 +42390,6 @@
       }
     ]
   },
-  "pg037_p018": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p019": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p020": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p014": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 0.6000000238418579
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p008": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "223",
-            "start": 0,
-            "end": 1.659999966621399
-          },
-          {
-            "text": "+",
-            "start": 1.659999966621399,
-            "end": 2.240000009536743
-          },
-          {
-            "text": "345",
-            "start": 2.240000009536743,
-            "end": 3.5
-          },
-          {
-            "text": "=",
-            "start": 3.9800000190734863,
-            "end": 4.679999828338623
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_im003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Three",
-            "start": 0,
-            "end": 0.5400000214576721
-          },
-          {
-            "text": "red",
-            "start": 0.5400000214576721,
-            "end": 0.8399999737739563
-          },
-          {
-            "text": "counters",
-            "start": 0.8399999737739563,
-            "end": 1.3200000524520874
-          },
-          {
-            "text": "representing",
-            "start": 1.3200000524520874,
-            "end": 2.200000047683716
-          },
-          {
-            "text": "3",
-            "start": 2.200000047683716,
-            "end": 2.8399999141693115
-          },
-          {
-            "text": "ones",
-            "start": 2.8399999141693115,
-            "end": 3.2200000286102295
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p023": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Chapter",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p012": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_im006": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 0.699999988079071
-          },
-          {
-            "text": "red",
-            "start": 0.699999988079071,
-            "end": 1.1799999475479126
-          },
-          {
-            "text": "counters",
-            "start": 1.1799999475479126,
-            "end": 1.6399999856948853
-          },
-          {
-            "text": "representing",
-            "start": 1.6399999856948853,
-            "end": 2.5
-          },
-          {
-            "text": "5",
-            "start": 2.5,
-            "end": 3.299999952316284
-          },
-          {
-            "text": "ones",
-            "start": 3.299999952316284,
-            "end": 3.6600000858306885
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p016": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 0.7200000286102295
-          }
-        ]
-      }
-    ]
-  },
   "pg038_p002": {
     "timecodes": [
       null,
@@ -42781,140 +42414,6 @@
             "text": "=",
             "start": 3.9800000190734863,
             "end": 4.679999828338623
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_im004": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Three",
-            "start": 0,
-            "end": 0.5400000214576721
-          },
-          {
-            "text": "green",
-            "start": 0.5400000214576721,
-            "end": 0.9200000166893005
-          },
-          {
-            "text": "counters",
-            "start": 0.9200000166893005,
-            "end": 1.4199999570846558
-          },
-          {
-            "text": "representing",
-            "start": 1.4199999570846558,
-            "end": 2.299999952316284
-          },
-          {
-            "text": "3",
-            "start": 2.299999952316284,
-            "end": 2.819999933242798
-          },
-          {
-            "text": "hundreds",
-            "start": 2.819999933242798,
-            "end": 3.0399999618530273
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_im005": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Four",
-            "start": 0,
-            "end": 1.1799999475479126
-          },
-          {
-            "text": "blue",
-            "start": 1.1799999475479126,
-            "end": 1.600000023841858
-          },
-          {
-            "text": "counters",
-            "start": 1.600000023841858,
-            "end": 2.0999999046325684
-          },
-          {
-            "text": "representing",
-            "start": 2.0999999046325684,
-            "end": 3.240000009536743
-          },
-          {
-            "text": "four",
-            "start": 3.240000009536743,
-            "end": 3.5999999046325684
-          },
-          {
-            "text": "tens",
-            "start": 3.5999999046325684,
-            "end": 3.880000114440918
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p015": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p022": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Addition",
-            "start": 0,
-            "end": 0.5400000214576721
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p017": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Equals",
-            "start": 0,
-            "end": 0.6800000071525574
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p024": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Five",
-            "start": 0,
-            "end": 0.6399999856948853
           }
         ]
       }
@@ -42953,45 +42452,6 @@
             "text": "Addition",
             "start": 1.3600000143051147,
             "end": 2.0399999618530273
-          }
-        ]
-      }
-    ]
-  },
-  "pg037_p021": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Therefore",
-            "start": 0,
-            "end": 0.7400000095367432
-          },
-          {
-            "text": "345",
-            "start": 1.2599999904632568,
-            "end": 2.2799999713897705
-          },
-          {
-            "text": "+",
-            "start": 2.2799999713897705,
-            "end": 2.9200000762939453
-          },
-          {
-            "text": "223",
-            "start": 2.9200000762939453,
-            "end": 4.28000020980835
-          },
-          {
-            "text": "=",
-            "start": 4.28000020980835,
-            "end": 5.059999942779541
-          },
-          {
-            "text": "568",
-            "start": 5.059999942779541,
-            "end": 6.480000019073486
           }
         ]
       }
