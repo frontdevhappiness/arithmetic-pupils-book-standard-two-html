@@ -2420,13 +2420,13 @@
   "pg048_p050": "ARITHMETICS PUPIL'S STD 2.indd 42",
   "pg048_p051": "06/11/2024 17:23",
   "pg049_p000": "43",
-  "pg049_im003": "Exercise 5. Write the answer in each question: 1. 683 + 138, 2. 364 + 348, 3. 736 + 249, 4. 262 + 289, 5. 566 + 284, 6. 292 + 362, 7. 456 + 258, 8. 272 + 465, 9. 781 + 209, 10. 189 + 771.",
+  "pg049_im003": "",
   "pg049_p001": "3.Addhundreds:1+1+1=3.",
   "pg049_p002": "Write 3 in the hundreds place. 167 +138 = 305",
   "pg049_p003": "1",
   "pg049_p004": "Therefore, the answer is 305.",
   "pg049_p005": "Or",
-  "pg049_im001": "Place-value bead frame with three green beads in hundreds, zero blue beads left in tens after regrouping, and five red beads in ones, showing the answer 305.",
+  "pg049_im001": "Place-value bead frame showing regrouping for 167 plus 138. Fifteen red ones are regrouped: ten circled ones become one blue ten, leaving five ones. Then ten circled blue tens become one green hundred, leaving zero tens. Together with the existing hundreds, the final columns show 3 hundreds, 0 tens, and 5 ones. Therefore, 167 plus 138 equals 305.",
   "pg049_p006": "Therefore, 167 + 138 = 305.",
   "pg049_p007": "Exercise 5",
   "pg049_p008": "Write the answer in each question.",
@@ -5955,5 +5955,7 @@
   "pg047_p171": "Question 7. 444 plus 222. Question 8. 70 plus 20. Question 9. 106 plus 450. Question 10. 121 plus 712. Question 11. 215 plus 421. Question 12. 560 plus 439. Question 13. 126 plus 563. Question 14. 561 plus 423. Question 15. 716 plus 231.",
   "pg047_p172": "Question 1. 465 plus 334. Question 2. 613 plus 244. Question 3. 472 plus 324. Question 4. 715 plus 223. Question 5. 678 plus 210. Question 6. 421 plus 136. Question 7. 714 plus 133. Question 8. 352 plus 415. Question 9. 526 plus 313. Question 10. 564 plus 213. Question 11. 215 plus 421. Question 12. 128 plus 541.",
   "pg048_p052": "Question 13. 213 plus 331. Question 14. 213 plus 431. Question 15. 785 plus 214.",
-  "pg048_p053": "167 plus 138 equals 305. Solution. Step 1. Add ones: 7 plus 8 equals 15. Regroup 15 ones into 1 ten and 5 ones. Write 5 in the ones place. Carry 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 3 equals 10. Regroup 10 tens into 1 hundred and 0 tens. Write 0 in the tens place. Carry 1 hundred to the hundreds place."
+  "pg048_p053": "167 plus 138 equals 305. Solution. Step 1. Add ones: 7 plus 8 equals 15. Regroup 15 ones into 1 ten and 5 ones. Write 5 in the ones place. Carry 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 3 equals 10. Regroup 10 tens into 1 hundred and 0 tens. Write 0 in the tens place. Carry 1 hundred to the hundreds place.",
+  "pg049_p030": "Step 3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds place. Therefore, 167 plus 138 equals 305.",
+  "pg049_p031": "Question 1. 683 plus 138. Question 2. 364 plus 348. Question 3. 736 plus 249. Question 4. 262 plus 289. Question 5. 566 plus 284. Question 6. 292 plus 362. Question 7. 456 plus 258. Question 8. 272 plus 465. Question 9. 781 plus 209. Question 10. 189 plus 771."
 }

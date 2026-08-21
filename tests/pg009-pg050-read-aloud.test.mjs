@@ -975,6 +975,33 @@ assert.deepEqual(
   "page 48 must narrate only its introduction and two coherent passages"
 );
 
+const page49 = read("pg049_sec001.html");
+const page49Step = "Step 3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds place. Therefore, 167 plus 138 equals 305.";
+const page49Questions = "Question 1. 683 plus 138. Question 2. 364 plus 348. Question 3. 736 plus 249. Question 4. 262 plus 289. Question 5. 566 plus 284. Question 6. 292 plus 362. Question 7. 456 plus 258. Question 8. 272 plus 465. Question 9. 781 plus 209. Question 10. 189 plus 771.";
+const page49Image = "Place-value bead frame showing regrouping for 167 plus 138. Fifteen red ones are regrouped: ten circled ones become one blue ten, leaving five ones. Then ten circled blue tens become one green hundred, leaving zero tens. Together with the existing hundreds, the final columns show 3 hundreds, 0 tens, and 5 ones. Therefore, 167 plus 138 equals 305.";
+for (const [id, expected, filename] of [
+  ["pg049_p030", page49Step, "pg049_p030_adt_step3.mp3"],
+  ["pg049_p031", page49Questions, "pg049_p031_adt_exercise5.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 49 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.equal(texts.pg049_im003, "", "the Exercise 5 composite must not repeat all ten questions");
+assert.equal(audios.pg049_im003, undefined, "the Exercise 5 composite must not play duplicate narration");
+assert.equal(timecodes.pg049_im003, undefined, "the Exercise 5 composite must not retain duplicate timing");
+assert.match(page49, /data-id="pg049_im003"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the Exercise 5 composite must be decorative");
+assert.equal(texts.pg049_im001, page49Image, "the bead-frame description must explain both regrouping arrows and the final place values");
+assert.equal(audios.pg049_im001, "pg049_im001_adt_regrouping.mp3", "the corrected bead-frame description must be narrated");
+assert.deepEqual(timecodes.pg049_im001.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(page49Image), "the bead-frame description must retain real word-level timing");
+assert.ok(page49.indexOf('data-id="pg049_p030"') < page49.indexOf('data-id="pg049_p001"'), "Step 3 must precede its isolated visual fragments");
+assert.ok(page49.indexOf('data-id="pg049_p008"') < page49.indexOf('data-id="pg049_p031"'), "the Exercise 5 instruction must precede its questions");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg049_")).sort(),
+  ["pg049_im001", "pg049_p005", "pg049_p007", "pg049_p008", "pg049_p030", "pg049_p031"],
+  "page 49 must narrate only its worked step, visual alternative, heading, instruction, and coherent questions"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
