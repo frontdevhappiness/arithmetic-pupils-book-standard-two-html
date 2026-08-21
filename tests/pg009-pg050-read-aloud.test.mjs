@@ -732,6 +732,29 @@ for (const id of ["pg038_p009", "pg038_p019"]) {
   assert.equal(timecodes[id], undefined, `${id} must not retain duplicate timing`);
 }
 
+const page39 = read("pg039_sec001.html");
+const page39Models = {
+  pg039_p039: "First place-value model. In the hundreds column, two green counters are added to one green counter. In the tens column, one blue counter is added to four blue counters. In the ones column, four red counters are added to three red counters. Fill in the three column totals and the final sum.",
+  pg039_p040: "Second place-value model. In the hundreds column, three green counters are added to four green counters. In the tens column, four blue counters are added to three blue counters. In the ones column, two red counters are added to six red counters. Fill in the three column totals and the final sum."
+};
+for (const [id, expected] of Object.entries(page39Models)) {
+  assert.equal(texts[id], expected, `${id} must describe every counter group without giving away the answer`);
+  assert.equal(audios[id], `${id}_adt_model.mp3`, `${id} must use the complete ADT model narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.ok(page39.indexOf('data-id="pg039_p003"') < page39.indexOf('data-id="pg039_p039"'), "the first model description must follow its equation");
+assert.ok(page39.indexOf('data-id="pg039_p020"') < page39.indexOf('data-id="pg039_p040"'), "the second model description must follow its equation");
+for (const id of ["pg039_im001", "pg039_im002", "pg039_im003"]) {
+  assert.equal(texts[id], "", `${id} must be decorative because the complete model is described once`);
+  assert.equal(audios[id], undefined, `${id} must not play an isolated counter description`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain duplicate timing`);
+  assert.match(page39, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be marked decorative`);
+}
+for (const id of ["pg039_p004","pg039_p005","pg039_p006","pg039_p007","pg039_p008","pg039_p009","pg039_p010","pg039_p011","pg039_p012","pg039_p021","pg039_p022","pg039_p023","pg039_p024","pg039_p025","pg039_p026","pg039_p027","pg039_p028","pg039_p029"]) {
+  assert.equal(audios[id], undefined, `${id} must not repeat an isolated table label`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated timing`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
