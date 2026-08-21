@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 55; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 56; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1138,6 +1138,36 @@ assert.deepEqual(
   "page 55 must narrate only its headings, instructions, chart description, questions, and sequences"
 );
 
+const page56 = read("pg056_sec001.html");
+const page56Sequences = "Question 8. 401, 500, 599. Question 9. 306, 312, 318. Question 10. 497, 506, 515, 542.";
+const page56Path201 = "Number path from HOME to SCHOOL. 201, 202, 203, 204, 205, 206, 207, 208, 209, 210.";
+const page56Path301 = "301, 302, 303, 304, 305, 306, 307, 308, 309, 310.";
+const page56Path401 = "401, 402, 403, 404, 405, 406, 407, 408, 409, 410.";
+const page56Path501 = "501 at SCHOOL.";
+const page56Steps = "Step 1. Play in pairs. Step 2. Use a cup or a tin. Step 3. Put a die in a cup or in a tin. Step 4. Each player must have a marble of different colour for identification.";
+for (const [id, expected, filename] of [
+  ["pg056_p018", page56Sequences, "pg056_p018_adt_sequences.mp3"],
+  ["pg056_im001", page56Path201, "pg056_im001_adt_path_201.mp3"],
+  ["pg056_p020", page56Path301, "pg056_p020_adt_path_301.mp3"],
+  ["pg056_p021", page56Path401, "pg056_p021_adt_path_401.mp3"],
+  ["pg056_p022", page56Path501, "pg056_p022_adt_path_501.mp3"],
+  ["pg056_p019", page56Steps, "pg056_p019_adt_steps.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 56 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.equal(texts.pg056_im004, "", "the page-number crop must not repeat the printed page number");
+assert.match(page56, /data-id="pg056_im004"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page-number crop must be decorative");
+assert.ok(page56.indexOf('data-id="pg056_p018"') < page56.indexOf('data-id="pg056_p001"'), "the continued sequences must precede their isolated visual fragments");
+assert.ok(page56.indexOf('data-id="pg056_p008"') < page56.indexOf('data-id="pg056_im001"'), "the game introduction must precede the path description");
+assert.ok(page56.indexOf('data-id="pg056_p010"') < page56.indexOf('data-id="pg056_p019"'), "the Steps heading must precede the consolidated steps");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg056_")).sort(),
+  ["pg056_im001", "pg056_p006", "pg056_p007", "pg056_p008", "pg056_p010", "pg056_p018", "pg056_p019", "pg056_p020", "pg056_p021", "pg056_p022"],
+  "page 56 must narrate only its activity headings, introduction, path description, sequences, and consolidated steps"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1172,4 +1202,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg055 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg056 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
