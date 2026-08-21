@@ -3273,12 +3273,12 @@
   "pg064_p052": "hundreds",
   "pg064_p053": "tens",
   "pg064_p054": "ones",
-  "pg065_im004": "Page 59.",
+  "pg065_im004": "",
   "pg065_p000": "59",
-  "pg065_im003": "Exercise 1. Write the answer in each question. 1. 299 minus 133. 2. 795 minus 275. 3. 444 minus 200. 4. 568 minus 346. 5. 306 minus 204. 6. 597 minus 50. 7. 980 minus 440. 8. 600 minus 300. 9. 649 minus 48. 10. 937 minus 415. 11. 935 minus 213. 12. 528 minus 417. 13. 438 minus 216. 14. 287 minus 240. 15. 386 minus 215. 16. 756 minus 524. 17. 368 minus 118. 18. 999 minus 439.",
+  "pg065_im003": "",
   "pg065_p001": "Or",
   "pg065_p002": "247 – 123 =",
-  "pg065_im001": "Abacus showing 1 hundred, 2 tens and 4 ones, representing 124.",
+  "pg065_im001": "",
   "pg065_p003": "Therefore, 247 – 123 = 124",
   "pg065_p004": "Exercise 1",
   "pg065_p005": "Write the answer in each question.",
@@ -3308,7 +3308,7 @@
   "pg065_p030": "9.",
   "pg065_p031": "649 – 48 =",
   "pg065_p032": "18. 999 – 439 =",
-  "pg065_im002": "Worked example: 247 minus 123 shown on an abacus labelled hundreds, tens and ones. The remaining beads show 1 hundred, 2 tens and 4 ones. Therefore, 247 minus 123 equals 124.",
+  "pg065_im002": "",
   "pg065_p033": "hundreds tens ones",
   "pg065_p034": "ARITHMETICS PUPIL'S STD 2.indd 59",
   "pg065_p035": "06/11/2024 17:23",
@@ -5989,5 +5989,7 @@
   "pg062_p031": "Question 8. A headteacher bought 150 exercise books. Later, she bought 216 more exercise books. How many exercise books did she buy altogether? Question 9. A village has 446 women and 358 men. How many people are there in the village? Question 10. A school has 590 pupils. Another school has 348 pupils. What is the total number of pupils in the two schools? Question 11. On Monday, 247 cows were sent to the open market. On Tuesday, 264 cows were sent to the open market. How many cows were sent to the open market in the two days? Question 12. A shopkeeper bought 516 eggs on the first day. He bought another 378 eggs on the second day. How many eggs did he buy in the two days? Question 13. A school shop had 464 bottles of soda. The shopkeeper added 385 more bottles of soda in the shop. How many bottles of soda are in the shop? Question 14. A primary school received a gift of 625 pencils. Later, it received 286 more pencils. How many pencils did the school get in total? Question 15. A health officer gave 766 mosquito nets to the villagers. Later, she gave 186 more mosquito nets to the villagers. How many mosquito nets did the villagers get? Question 16. One lorry carried 187 pawpaws. Another lorry carried 216 pawpaws. How many pawpaws did the two lorries carry?",
   "pg063_p035": "Chapter Six. Subtraction. Subtracting numbers not exceeding 999. Numbers can be subtracted horizontally or vertically. Subtraction is done by considering the place value of each digit in a number. Subtracting numbers horizontally without regrouping. Numbers are subtracted starting from the right to the left.",
   "pg063_p036": "Example. 247 minus 123. Solution. Subtract by place value, starting from the right. In the ones place, 7 minus 3 equals 4. In the tens place, 4 minus 2 equals 2. In the hundreds place, 2 minus 1 equals 1. Therefore, 247 minus 123 equals 124. The diagram uses coloured arrows to match ones with ones, tens with tens, and hundreds with hundreds.",
-  "pg064_p059": "Steps. Step 1. Subtract the ones. 7 minus 3 equals 4. Write 4 in the ones place. The first place value diagram shows 247 minus 123, with 4 written in the ones place. Step 2. Subtract the tens. 4 minus 2 equals 2. Write 2 in the tens place. The second diagram shows 2 tens and 4 ones in the answer. Step 3. Subtract the hundreds. 2 minus 1 equals 1. Write 1 in the hundreds place. The final diagram shows 100, 2 tens and 4 ones. Therefore, the answer is 124."
+  "pg064_p059": "Steps. Step 1. Subtract the ones. 7 minus 3 equals 4. Write 4 in the ones place. The first place value diagram shows 247 minus 123, with 4 written in the ones place. Step 2. Subtract the tens. 4 minus 2 equals 2. Write 2 in the tens place. The second diagram shows 2 tens and 4 ones in the answer. Step 3. Subtract the hundreds. 2 minus 1 equals 1. Write 1 in the hundreds place. The final diagram shows 100, 2 tens and 4 ones. Therefore, the answer is 124.",
+  "pg065_p036": "Or. 247 minus 123. The abacus has columns for hundreds, tens and ones. Crossed beads show the amount subtracted. 1 bead remains in the hundreds column, 2 beads remain in the tens column, and 4 beads remain in the ones column. Therefore, 247 minus 123 equals 124.",
+  "pg065_p037": "Exercise 1. Write the answer in each question. Question 1. 299 minus 133. Question 2. 795 minus 275. Question 3. 444 minus 200. Question 4. 568 minus 346. Question 5. 306 minus 204. Question 6. 597 minus 50. Question 7. 980 minus 440. Question 8. 600 minus 300. Question 9. 649 minus 48. Question 10. 937 minus 415. Question 11. 935 minus 213. Question 12. 528 minus 417. Question 13. 438 minus 216. Question 14. 287 minus 240. Question 15. 386 minus 215. Question 16. 756 minus 524. Question 17. 368 minus 118. Question 18. 999 minus 439."
 }
