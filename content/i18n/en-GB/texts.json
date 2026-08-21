@@ -2116,7 +2116,7 @@
   "pg045_p041": "tens",
   "pg045_p042": "ones",
   "pg046_p000": "40",
-  "pg046_im001": "Worked examples of column addition for 345 + 223. Step 2 says, “Add tens: 4 + 2 = 6. Write 6 in the tens place.” The place-value chart shows 345 over 223, with 6 written in the tens column and 8 in the ones column. Step 3 says, “Add hundreds: 3 + 2 = 5. Write 5 in the hundred place.” The completed chart shows 568. Below, Exercise 3 asks pupils to write the answer for six sums: 226 + 432, 342 + 22, 432 + 41, 325 + 143, 333 + 304, and 137 + 200.",
+  "pg046_im001": "",
   "pg046_p001": "2. Add tens: 4 + 2 = 6.",
   "pg046_p002": "Write 6 in the tens place.",
   "pg046_p006": "+",
@@ -5950,5 +5950,6 @@
   "pg144_im001": "Four blank boxes for shape exercises labelled: 11. A shape of a cone; 12. A shape of a cylinder; 13. A shape of a cuboid; 14. A shape of a cube.",
   "pg144_p007": "ARITHMETICS PUPIL'S STD 2.indd 138",
   "pg144_p008": "06/11/2024 17:24",
-  "pg045_p053": "Solution. Arrange 345 plus 223 vertically. Align the hundreds, tens, and ones digits in their correct columns. The sum is 568."
+  "pg045_p053": "Solution. Arrange 345 plus 223 vertically. Align the hundreds, tens, and ones digits in their correct columns. The sum is 568.",
+  "pg046_p079": "Question 1. 226 plus 432. Question 2. 342 plus 22. Question 3. 432 plus 41. Question 4. 325 plus 143. Question 5. 333 plus 304. Question 6. 137 plus 200."
 }

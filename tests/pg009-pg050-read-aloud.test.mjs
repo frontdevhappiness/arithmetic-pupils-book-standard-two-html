@@ -894,6 +894,37 @@ for (const id of [
   assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated page 45 timing`);
 }
 
+const page46 = read("pg046_sec001.html");
+const page46Questions = "Question 1. 226 plus 432. Question 2. 342 plus 22. Question 3. 432 plus 41. Question 4. 325 plus 143. Question 5. 333 plus 304. Question 6. 137 plus 200.";
+assert.equal(texts.pg046_p079, page46Questions, "page 46 must narrate all six sums clearly and in printed order");
+assert.equal(audios.pg046_p079, "pg046_p079_adt_questions.mp3", "page 46 must use the corrected ADT exercise narration");
+assert.deepEqual(
+  timecodes.pg046_p079.timecodes[1].word_timestamps.map(({ text: word }) => word),
+  tokens(page46Questions),
+  "the page 46 exercise narration must retain real word-level timing"
+);
+assert.equal(texts.pg046_im001, "", "the page 46 composite must not repeat all worked steps and questions");
+assert.equal(audios.pg046_im001, undefined, "the page 46 composite must not play duplicate narration");
+assert.equal(timecodes.pg046_im001, undefined, "the page 46 composite must not retain duplicate timing");
+assert.match(page46, /data-id="pg046_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page 46 composite must be decorative");
+assert.ok(page46.indexOf('data-id="pg046_p032"') < page46.indexOf('data-id="pg046_p079"'), "the exercise instruction must precede its questions");
+for (const id of [
+  "pg046_p003", "pg046_p004", "pg046_p005", "pg046_p007", "pg046_p008", "pg046_p009",
+  "pg046_p010", "pg046_p011", "pg046_p012", "pg046_p013", "pg046_p014", "pg046_p017",
+  "pg046_p018", "pg046_p019", "pg046_p021", "pg046_p022", "pg046_p023", "pg046_p024",
+  "pg046_p025", "pg046_p026", "pg046_p027", "pg046_p028", "pg046_p029", "pg046_p033",
+  "pg046_p035", "pg046_p036", "pg046_p037", "pg046_p038", "pg046_p039", "pg046_p040",
+  "pg046_p041", "pg046_p043", "pg046_p044", "pg046_p045", "pg046_p046", "pg046_p047",
+  "pg046_p049", "pg046_p050", "pg046_p051", "pg046_p052", "pg046_p053", "pg046_p055",
+  "pg046_p056", "pg046_p057", "pg046_p058", "pg046_p059", "pg046_p060", "pg046_p061",
+  "pg046_p063", "pg046_p064", "pg046_p065", "pg046_p066", "pg046_p067", "pg046_p068",
+  "pg046_p069", "pg046_p071", "pg046_p072", "pg046_p073", "pg046_p074", "pg046_p075",
+  "pg046_p076"
+]) {
+  assert.equal(audios[id], undefined, `${id} must not play as an isolated page 46 diagram fragment`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated page 46 timing`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
