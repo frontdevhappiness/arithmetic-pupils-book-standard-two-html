@@ -291,6 +291,28 @@ assert.match(page23, /data-id="pg023_p010"[\s\S]*?left:154px;line-height:18px;wi
 assert.match(page23, /"pg023_p001", "pg023_p002", "pg023_p003", "pg023_p004"[\s\S]*"pg023_im002", "pg023_im003", "pg023_im001"/, "item 2 must narrate its headers and images in visual order");
 assert.match(page23, /"pg023_p009", "pg023_p010", "pg023_p011", "pg023_p012"[\s\S]*"pg023_im004", "pg023_im005", "pg023_im018"/, "item 3 must narrate its headers and images in visual order");
 
+const page24 = read("pg024_sec001.html");
+assert.match(page24, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 24 must not paint a second legacy highlight layer");
+for (const id of ["pg024_im004", "pg024_im005"]) {
+  assert.match(page24, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not duplicate visible narration`);
+}
+assert.equal(texts.pg024_p002, "Count the cups. Write their total in numerals in the blank space.", "the instruction must be one uninterrupted passage");
+assert.equal(audios.pg024_p002, "pg024_p002_adt_clean.mp3", "the merged instruction must use clean ADT narration");
+assert.equal(audios.pg024_p003, undefined, "the old instruction fragment must not create a pause or repetition");
+assert.deepEqual(timecodes.pg024_p002.timecodes[1].word_timestamps.map(({ text }) => text), ["Count", "the", "cups", "Write", "their", "total", "in", "numerals", "in", "the", "blank", "space"], "the merged instruction must highlight every spoken word in order");
+for (const [id, description] of Object.entries({
+  pg024_im001: "Row 1 shows three cups in the hundreds column, two cups in the tens column, and five cups in the ones column.",
+  pg024_im002: "Row 2 shows two cups in the hundreds column, three cups in the tens column, and four cups in the ones column.",
+  pg024_im003: "Row 3 shows four cups in the hundreds column, three cups in the tens column, and no cups in the ones column."
+})) {
+  assert.equal(texts[id], description, `${id} must accurately describe its complete row`);
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use matching ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text }) => text), description.match(/[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*/gu), `${id} timestamps must cover every description word`);
+}
+assert.match(page24, /data-id="pg024_p004"[\s\S]*?left:81px;line-height:18px;width:20px;height:20px/, "item 1 highlight overlay must fit only the printed item number");
+assert.match(page24, /"pg024_p001", "pg024_p002"[\s\S]*"pg024_p004", "pg024_p005", "pg024_p006", "pg024_p007", "pg024_im001"[\s\S]*"pg024_p011", "pg024_p012", "pg024_p013", "pg024_p014", "pg024_im002"[\s\S]*"pg024_p018", "pg024_p019", "pg024_p020", "pg024_p021", "pg024_im003"/, "page 24 must narrate each row and its description in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
