@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 65; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 66; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1315,6 +1315,22 @@ assert.match(page65, /data-id="pg065_p036"[\s\S]*data-id="pg065_p001"/, "the aba
 assert.match(page65, /data-id="pg065_p037"[\s\S]*data-id="pg065_p004"/, "the exercise narration must precede its visual fragments");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg065_")).sort(), ["pg065_p036", "pg065_p037"], "page 65 must narrate the example and exercise exactly once");
 
+const page66 = read("pg066_sec001.html");
+const page66Exercise = "Exercise 2. Write the answer in each question. Question 1. 436 minus 321. Question 2. 758 minus 643. Question 3. 239 minus 115. Question 4. 384 minus 243. Question 5. 895 minus 670. Question 6. 267 minus 145. Question 7. 530 minus 410. Question 8. 682 minus 381. Question 9. 999 minus 717. Question 10. 246 minus 123. Question 11. 896 minus 643. Question 12. 900 minus 500. Question 13. 729 minus 408. Question 14. 256 minus 113. Question 15. 446 minus 325. Question 16. 185 minus 172. Question 17. 388 minus 216. Question 18. 888 minus 283.";
+const page66Activity = "Activity 1. Subtraction game. Question 1. Use the direction of the arrows to fill the missing numbers in the balloons. The diagram has six balloons connected by arrows. The left path shows 900 minus 100 equals 800. The right path shows 900 minus a missing number equals 600. The bottom row shows 800 minus a missing number equals 600.";
+for (const [id, expected, filename] of [["pg066_p031", page66Exercise, "pg066_p031_adt_exercise.mp3"], ["pg066_p032", page66Activity, "pg066_p032_adt_activity.mp3"]]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 66 in order`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+for (const id of ["pg066_im001", "pg066_im002", "pg066_im003"]) {
+  assert.equal(texts[id], "", `${id} duplicate composite must have no separate narration`);
+  assert.match(page66, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+assert.match(page66, /data-id="pg066_p031"[\s\S]*data-id="pg066_p001"/, "the exercise narration must precede its visual fragments");
+assert.match(page66, /data-id="pg066_p032"[\s\S]*data-id="pg066_p021"/, "the activity narration must precede its visual fragments");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg066_")).sort(), ["pg066_p031", "pg066_p032"], "page 66 must narrate the exercise and activity exactly once");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1349,4 +1365,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg065 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg066 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);

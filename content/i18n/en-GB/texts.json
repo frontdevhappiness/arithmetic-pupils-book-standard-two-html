@@ -3314,8 +3314,8 @@
   "pg065_p035": "06/11/2024 17:23",
   "pg065_p018": "5.",
   "pg066_p000": "60",
-  "pg066_im003": "Activity 1: Subtraction game.",
-  "pg066_im002": "Exercise 2. Write the answer in each question. 1. 436 minus 321 equals. 2. 758 minus 643 equals. 3. 239 minus 115 equals. 4. 384 minus 243 equals. 5. 895 minus 670 equals. 6. 267 minus 145 equals. 7. 530 minus 410 equals. 8. 682 minus 381 equals. 9. 999 minus 717 equals. 10. 246 minus 123 equals. 11. 896 minus 643 equals. 12. 900 minus 500 equals. 13. 729 minus 408 equals. 14. 256 minus 113 equals. 15. 446 minus 325 equals. 16. 185 minus 172 equals. 17. 388 minus 216 equals. 18. 888 minus 283 equals.",
+  "pg066_im003": "",
+  "pg066_im002": "",
   "pg066_p001": "Exercise 2",
   "pg066_p002": "Write the answer in each question.",
   "pg066_p003": "1. 436 – 321 =",
@@ -3339,7 +3339,7 @@
   "pg066_p021": "Activity 1",
   "pg066_p022": "Subtraction game",
   "pg066_p023": "1. Use the direction of the arrows to fill the missing numbers in the balloons.",
-  "pg066_im001": "Subtraction game diagram with six balloons connected by arrows. Top balloon shows 900. On the left branch, a middle balloon shows 100 and the bottom balloon shows 800. On the right branch, the middle balloon is blank and the bottom balloon shows 600. Along the bottom row, the left balloon points to a blank centre balloon with a minus sign, and the blank centre balloon points to the 600 balloon with an equals sign.",
+  "pg066_im001": "",
   "pg066_p025": "900",
   "pg066_p026": "600",
   "pg066_p027": "800",
@@ -5991,5 +5991,7 @@
   "pg063_p036": "Example. 247 minus 123. Solution. Subtract by place value, starting from the right. In the ones place, 7 minus 3 equals 4. In the tens place, 4 minus 2 equals 2. In the hundreds place, 2 minus 1 equals 1. Therefore, 247 minus 123 equals 124. The diagram uses coloured arrows to match ones with ones, tens with tens, and hundreds with hundreds.",
   "pg064_p059": "Steps. Step 1. Subtract the ones. 7 minus 3 equals 4. Write 4 in the ones place. The first place value diagram shows 247 minus 123, with 4 written in the ones place. Step 2. Subtract the tens. 4 minus 2 equals 2. Write 2 in the tens place. The second diagram shows 2 tens and 4 ones in the answer. Step 3. Subtract the hundreds. 2 minus 1 equals 1. Write 1 in the hundreds place. The final diagram shows 100, 2 tens and 4 ones. Therefore, the answer is 124.",
   "pg065_p036": "Or. 247 minus 123. The abacus has columns for hundreds, tens and ones. Crossed beads show the amount subtracted. 1 bead remains in the hundreds column, 2 beads remain in the tens column, and 4 beads remain in the ones column. Therefore, 247 minus 123 equals 124.",
-  "pg065_p037": "Exercise 1. Write the answer in each question. Question 1. 299 minus 133. Question 2. 795 minus 275. Question 3. 444 minus 200. Question 4. 568 minus 346. Question 5. 306 minus 204. Question 6. 597 minus 50. Question 7. 980 minus 440. Question 8. 600 minus 300. Question 9. 649 minus 48. Question 10. 937 minus 415. Question 11. 935 minus 213. Question 12. 528 minus 417. Question 13. 438 minus 216. Question 14. 287 minus 240. Question 15. 386 minus 215. Question 16. 756 minus 524. Question 17. 368 minus 118. Question 18. 999 minus 439."
+  "pg065_p037": "Exercise 1. Write the answer in each question. Question 1. 299 minus 133. Question 2. 795 minus 275. Question 3. 444 minus 200. Question 4. 568 minus 346. Question 5. 306 minus 204. Question 6. 597 minus 50. Question 7. 980 minus 440. Question 8. 600 minus 300. Question 9. 649 minus 48. Question 10. 937 minus 415. Question 11. 935 minus 213. Question 12. 528 minus 417. Question 13. 438 minus 216. Question 14. 287 minus 240. Question 15. 386 minus 215. Question 16. 756 minus 524. Question 17. 368 minus 118. Question 18. 999 minus 439.",
+  "pg066_p031": "Exercise 2. Write the answer in each question. Question 1. 436 minus 321. Question 2. 758 minus 643. Question 3. 239 minus 115. Question 4. 384 minus 243. Question 5. 895 minus 670. Question 6. 267 minus 145. Question 7. 530 minus 410. Question 8. 682 minus 381. Question 9. 999 minus 717. Question 10. 246 minus 123. Question 11. 896 minus 643. Question 12. 900 minus 500. Question 13. 729 minus 408. Question 14. 256 minus 113. Question 15. 446 minus 325. Question 16. 185 minus 172. Question 17. 388 minus 216. Question 18. 888 minus 283.",
+  "pg066_p032": "Activity 1. Subtraction game. Question 1. Use the direction of the arrows to fill the missing numbers in the balloons. The diagram has six balloons connected by arrows. The left path shows 900 minus 100 equals 800. The right path shows 900 minus a missing number equals 600. The bottom row shows 800 minus a missing number equals 600."
 }
