@@ -47026,1821 +47026,6 @@
       }
     ]
   },
-  "pg053_p001": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Exercise",
-            "start": 0,
-            "end": 0.8399999737739563
-          },
-          {
-            "text": "7",
-            "start": 0.8399999737739563,
-            "end": 1.2400000095367432
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Write",
-            "start": 0,
-            "end": 0.9399999976158142
-          },
-          {
-            "text": "the",
-            "start": 0.9399999976158142,
-            "end": 1.1799999475479126
-          },
-          {
-            "text": "answer",
-            "start": 1.1799999475479126,
-            "end": 1.5
-          },
-          {
-            "text": "in",
-            "start": 1.5,
-            "end": 1.8799999952316284
-          },
-          {
-            "text": "each",
-            "start": 1.8799999952316284,
-            "end": 2.180000066757202
-          },
-          {
-            "text": "question",
-            "start": 2.180000066757202,
-            "end": 2.559999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.30000001192092896
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p005": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p006": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p007": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p008": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p009": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p010": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p011": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p013": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p014": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p015": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p016": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p017": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p018": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p019": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "3",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p021": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p022": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p023": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p024": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p025": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p026": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p027": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 1.2200000286102295
-          },
-          {
-            "text": "And",
-            "start": 2.059999942779541,
-            "end": 2.319999933242798
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p029": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p030": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p031": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p032": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p033": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p034": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p035": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 0.8399999737739563
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p037": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p038": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p039": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p040": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p041": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p042": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p043": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 1.2599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p045": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p046": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p047": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p048": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p049": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p050": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p051": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.3600000143051147
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p053": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p054": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p055": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p056": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p057": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p058": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p059": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 1.159999966621399
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p061": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p062": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p063": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p064": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p065": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p066": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p067": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "9",
-            "start": 0,
-            "end": 0.7599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p069": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p070": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p071": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p072": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p073": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p074": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p075": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "10",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p077": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p078": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p079": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p080": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p081": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p082": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p083": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "11",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p085": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p086": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p087": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p088": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p089": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p090": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p091": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "12",
-            "start": 0,
-            "end": 1.0399999618530273
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p093": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p094": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p095": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p096": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p097": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p098": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p099": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "13",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p102": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p103": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "14",
-            "start": 0,
-            "end": 0.5400000214576721
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p105": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p106": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p107": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p108": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p109": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p110": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p111": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "15",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p113": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p114": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p115": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p116": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p117": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p118": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p119": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Exercise",
-            "start": 0,
-            "end": 0.7200000286102295
-          },
-          {
-            "text": "8",
-            "start": 0.7200000286102295,
-            "end": 1.1200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p120": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Write",
-            "start": 0,
-            "end": 0.9399999976158142
-          },
-          {
-            "text": "the",
-            "start": 0.9399999976158142,
-            "end": 1.1799999475479126
-          },
-          {
-            "text": "answer",
-            "start": 1.1799999475479126,
-            "end": 1.5
-          },
-          {
-            "text": "in",
-            "start": 1.5,
-            "end": 1.8799999952316284
-          },
-          {
-            "text": "each",
-            "start": 1.8799999952316284,
-            "end": 2.180000066757202
-          },
-          {
-            "text": "question",
-            "start": 2.180000066757202,
-            "end": 2.559999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p121": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.30000001192092896
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p123": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p124": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p125": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p126": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p127": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p128": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p129": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p131": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p132": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p133": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p134": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p135": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p136": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p137": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "3",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p139": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p140": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p141": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p142": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p143": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p144": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
   "pg054_p001": {
     "timecodes": [
       null,
@@ -50470,25 +48655,6 @@
             "text": "210",
             "start": 0,
             "end": 1.059999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg053_p101": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "9",
-            "start": 0,
-            "end": 0.9399999976158142
-          },
-          {
-            "text": "9",
-            "start": 0.9399999976158142,
-            "end": 1.5800000429153442
           }
         ]
       }
@@ -148627,6 +146793,590 @@
             "text": "sixty-four",
             "start": 61.92,
             "end": 62.22
+          }
+        ]
+      }
+    ]
+  },
+  "pg053_p001": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Exercise",
+            "start": 0,
+            "end": 0.8399999737739563
+          },
+          {
+            "text": "7",
+            "start": 0.8399999737739563,
+            "end": 1.2400000095367432
+          }
+        ]
+      }
+    ]
+  },
+  "pg053_p002": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Write",
+            "start": 0,
+            "end": 0.9399999976158142
+          },
+          {
+            "text": "the",
+            "start": 0.9399999976158142,
+            "end": 1.1799999475479126
+          },
+          {
+            "text": "answer",
+            "start": 1.1799999475479126,
+            "end": 1.5
+          },
+          {
+            "text": "in",
+            "start": 1.5,
+            "end": 1.8799999952316284
+          },
+          {
+            "text": "each",
+            "start": 1.8799999952316284,
+            "end": 2.180000066757202
+          },
+          {
+            "text": "question",
+            "start": 2.180000066757202,
+            "end": 2.559999942779541
+          }
+        ]
+      }
+    ]
+  },
+  "pg053_p119": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Exercise",
+            "start": 0,
+            "end": 0.7200000286102295
+          },
+          {
+            "text": "8",
+            "start": 0.7200000286102295,
+            "end": 1.1200000047683716
+          }
+        ]
+      }
+    ]
+  },
+  "pg053_p120": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Write",
+            "start": 0,
+            "end": 0.9399999976158142
+          },
+          {
+            "text": "the",
+            "start": 0.9399999976158142,
+            "end": 1.1799999475479126
+          },
+          {
+            "text": "answer",
+            "start": 1.1799999475479126,
+            "end": 1.5
+          },
+          {
+            "text": "in",
+            "start": 1.5,
+            "end": 1.8799999952316284
+          },
+          {
+            "text": "each",
+            "start": 1.8799999952316284,
+            "end": 2.180000066757202
+          },
+          {
+            "text": "question",
+            "start": 2.180000066757202,
+            "end": 2.559999942779541
+          }
+        ]
+      }
+    ]
+  },
+  "pg053_p147": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Question",
+            "start": 0,
+            "end": 0.46
+          },
+          {
+            "text": "1",
+            "start": 0.46,
+            "end": 0.84
+          },
+          {
+            "text": "435",
+            "start": 1.42,
+            "end": 2.56
+          },
+          {
+            "text": "plus",
+            "start": 2.56,
+            "end": 3.1
+          },
+          {
+            "text": "219",
+            "start": 3.1,
+            "end": 4.2
+          },
+          {
+            "text": "Question",
+            "start": 5.16,
+            "end": 5.44
+          },
+          {
+            "text": "2",
+            "start": 5.44,
+            "end": 5.84
+          },
+          {
+            "text": "476",
+            "start": 6.62,
+            "end": 7.66
+          },
+          {
+            "text": "plus",
+            "start": 7.66,
+            "end": 8.12
+          },
+          {
+            "text": "214",
+            "start": 8.12,
+            "end": 9.18
+          },
+          {
+            "text": "Question",
+            "start": 10.33,
+            "end": 10.44
+          },
+          {
+            "text": "3",
+            "start": 10.44,
+            "end": 10.9
+          },
+          {
+            "text": "665",
+            "start": 11.72,
+            "end": 12.5
+          },
+          {
+            "text": "plus",
+            "start": 12.5,
+            "end": 13.18
+          },
+          {
+            "text": "192",
+            "start": 13.18,
+            "end": 14.3
+          },
+          {
+            "text": "Question",
+            "start": 15.11,
+            "end": 15.22
+          },
+          {
+            "text": "4",
+            "start": 15.22,
+            "end": 15.68
+          },
+          {
+            "text": "375",
+            "start": 16.62,
+            "end": 17.38
+          },
+          {
+            "text": "plus",
+            "start": 17.38,
+            "end": 18.1
+          },
+          {
+            "text": "267",
+            "start": 18.1,
+            "end": 19.48
+          },
+          {
+            "text": "Question",
+            "start": 20.21,
+            "end": 20.32
+          },
+          {
+            "text": "5",
+            "start": 20.32,
+            "end": 21.08
+          },
+          {
+            "text": "295",
+            "start": 21.7,
+            "end": 22.58
+          },
+          {
+            "text": "plus",
+            "start": 22.58,
+            "end": 23.08
+          },
+          {
+            "text": "494",
+            "start": 23.08,
+            "end": 24.2
+          },
+          {
+            "text": "Question",
+            "start": 24.58,
+            "end": 24.7
+          },
+          {
+            "text": "6",
+            "start": 24.7,
+            "end": 25.36
+          },
+          {
+            "text": "386",
+            "start": 26.1,
+            "end": 27.04
+          },
+          {
+            "text": "plus",
+            "start": 27.04,
+            "end": 27.5
+          },
+          {
+            "text": "108",
+            "start": 27.5,
+            "end": 28.24
+          },
+          {
+            "text": "Question",
+            "start": 28.62,
+            "end": 29.32
+          },
+          {
+            "text": "7",
+            "start": 29.32,
+            "end": 29.78
+          },
+          {
+            "text": "150",
+            "start": 30.3,
+            "end": 31.02
+          },
+          {
+            "text": "plus",
+            "start": 31.02,
+            "end": 31.72
+          },
+          {
+            "text": "252",
+            "start": 31.72,
+            "end": 33.02
+          },
+          {
+            "text": "Question",
+            "start": 33.56,
+            "end": 33.82
+          },
+          {
+            "text": "8",
+            "start": 33.82,
+            "end": 34.32
+          },
+          {
+            "text": "444",
+            "start": 35.16,
+            "end": 35.88
+          },
+          {
+            "text": "plus",
+            "start": 35.88,
+            "end": 36.52
+          },
+          {
+            "text": "281",
+            "start": 36.52,
+            "end": 37.64
+          },
+          {
+            "text": "Question",
+            "start": 38.33,
+            "end": 38.44
+          },
+          {
+            "text": "9",
+            "start": 38.44,
+            "end": 38.9
+          },
+          {
+            "text": "568",
+            "start": 39.68,
+            "end": 40.52
+          },
+          {
+            "text": "plus",
+            "start": 40.52,
+            "end": 41.04
+          },
+          {
+            "text": "372",
+            "start": 41.04,
+            "end": 42.16
+          },
+          {
+            "text": "Question",
+            "start": 42.95,
+            "end": 43.06
+          },
+          {
+            "text": "10",
+            "start": 43.06,
+            "end": 43.54
+          },
+          {
+            "text": "776",
+            "start": 44.48,
+            "end": 45.4
+          },
+          {
+            "text": "plus",
+            "start": 45.4,
+            "end": 46.12
+          },
+          {
+            "text": "195",
+            "start": 46.12,
+            "end": 47.22
+          },
+          {
+            "text": "Question",
+            "start": 48.2,
+            "end": 48.34
+          },
+          {
+            "text": "11",
+            "start": 48.34,
+            "end": 49.06
+          },
+          {
+            "text": "329",
+            "start": 49.82,
+            "end": 50.7
+          },
+          {
+            "text": "plus",
+            "start": 50.7,
+            "end": 51.2
+          },
+          {
+            "text": "295",
+            "start": 51.2,
+            "end": 52.44
+          },
+          {
+            "text": "Question",
+            "start": 53.23,
+            "end": 53.34
+          },
+          {
+            "text": "12",
+            "start": 53.34,
+            "end": 53.92
+          },
+          {
+            "text": "576",
+            "start": 54.82,
+            "end": 55.84
+          },
+          {
+            "text": "plus",
+            "start": 55.84,
+            "end": 56.26
+          },
+          {
+            "text": "134",
+            "start": 56.26,
+            "end": 57.4
+          },
+          {
+            "text": "Question",
+            "start": 57.68,
+            "end": 58.3
+          },
+          {
+            "text": "13",
+            "start": 58.3,
+            "end": 58.9
+          },
+          {
+            "text": "99",
+            "start": 59.46,
+            "end": 59.88
+          },
+          {
+            "text": "plus",
+            "start": 59.88,
+            "end": 60.48
+          },
+          {
+            "text": "1",
+            "start": 60.48,
+            "end": 60.86
+          },
+          {
+            "text": "Question",
+            "start": 61.69,
+            "end": 61.8
+          },
+          {
+            "text": "14",
+            "start": 61.8,
+            "end": 62.42
+          },
+          {
+            "text": "453",
+            "start": 63.24,
+            "end": 64.16
+          },
+          {
+            "text": "plus",
+            "start": 64.16,
+            "end": 64.72
+          },
+          {
+            "text": "268",
+            "start": 64.72,
+            "end": 65.8
+          },
+          {
+            "text": "Question",
+            "start": 66.51,
+            "end": 66.62
+          },
+          {
+            "text": "15",
+            "start": 66.62,
+            "end": 67.2
+          },
+          {
+            "text": "336",
+            "start": 68.06,
+            "end": 68.78
+          },
+          {
+            "text": "plus",
+            "start": 68.78,
+            "end": 69.38
+          },
+          {
+            "text": "485",
+            "start": 69.38,
+            "end": 70.4
+          }
+        ]
+      }
+    ]
+  },
+  "pg053_p148": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Question",
+            "start": 0,
+            "end": 0.44
+          },
+          {
+            "text": "1",
+            "start": 0.44,
+            "end": 0.88
+          },
+          {
+            "text": "576",
+            "start": 2.02,
+            "end": 3.22
+          },
+          {
+            "text": "plus",
+            "start": 3.22,
+            "end": 3.8
+          },
+          {
+            "text": "234",
+            "start": 3.8,
+            "end": 5.3
+          },
+          {
+            "text": "Question",
+            "start": 5.89,
+            "end": 6
+          },
+          {
+            "text": "2",
+            "start": 6,
+            "end": 6.46
+          },
+          {
+            "text": "248",
+            "start": 7.52,
+            "end": 8.3
+          },
+          {
+            "text": "plus",
+            "start": 8.3,
+            "end": 8.84
+          },
+          {
+            "text": "134",
+            "start": 8.84,
+            "end": 9.96
+          },
+          {
+            "text": "Question",
+            "start": 11.11,
+            "end": 11.22
+          },
+          {
+            "text": "3",
+            "start": 11.22,
+            "end": 11.64
+          },
+          {
+            "text": "356",
+            "start": 12.6,
+            "end": 13.48
+          },
+          {
+            "text": "plus",
+            "start": 13.48,
+            "end": 14.04
+          },
+          {
+            "text": "275",
+            "start": 14.04,
+            "end": 15.3
           }
         ]
       }
