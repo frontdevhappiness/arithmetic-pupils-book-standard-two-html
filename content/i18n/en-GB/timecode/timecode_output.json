@@ -47710,20 +47710,6 @@
       }
     ]
   },
-  "pg059_p001": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Solution",
-            "start": 0,
-            "end": 0.6600000262260437
-          }
-        ]
-      }
-    ]
-  },
   "pg058_p016": {
     "timecodes": [
       null,
@@ -47748,506 +47734,6 @@
             "text": "addition",
             "start": 1.4199999570846558,
             "end": 1.7200000286102295
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p006": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p007": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p008": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p009": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p010": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p012": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Steps",
-            "start": 0,
-            "end": 0.7799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p016": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p017": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p018": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p019": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p020": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p021": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p022": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p026": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p027": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p028": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p029": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p030": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p031": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "number",
-            "start": 0,
-            "end": 0.5
-          },
-          {
-            "text": "of",
-            "start": 0.5,
-            "end": 0.9599999785423279
-          },
-          {
-            "text": "fish",
-            "start": 0.9599999785423279,
-            "end": 1.2000000476837158
-          },
-          {
-            "text": "caught",
-            "start": 1.2000000476837158,
-            "end": 1.5800000429153442
-          },
-          {
-            "text": "in",
-            "start": 1.5800000429153442,
-            "end": 1.840000033378601
-          },
-          {
-            "text": "the",
-            "start": 1.840000033378601,
-            "end": 2.0199999809265137
-          },
-          {
-            "text": "morning",
-            "start": 2.0199999809265137,
-            "end": 2.299999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p011": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "3",
-            "start": 0,
-            "end": 0.8799999952316284
-          },
-          {
-            "text": "2",
-            "start": 0.8799999952316284,
-            "end": 1.9800000190734863
-          },
-          {
-            "text": "2",
-            "start": 1.9800000190734863,
-            "end": 3.299999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p034": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Write",
-            "start": 0,
-            "end": 0.3799999952316284
-          },
-          {
-            "text": "3",
-            "start": 0.3799999952316284,
-            "end": 0.6600000262260437
-          },
-          {
-            "text": "in",
-            "start": 0.6600000262260437,
-            "end": 0.800000011920929
-          },
-          {
-            "text": "the",
-            "start": 0.800000011920929,
-            "end": 0.9599999785423279
-          },
-          {
-            "text": "hundreds",
-            "start": 0.9599999785423279,
-            "end": 1.1799999475479126
-          },
-          {
-            "text": "place",
-            "start": 1.1799999475479126,
-            "end": 1.559999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p036": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p037": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p038": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p039": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p040": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p041": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p042": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "3",
-            "start": 0,
-            "end": 0.8799999952316284
-          },
-          {
-            "text": "2",
-            "start": 0.8799999952316284,
-            "end": 1.9800000190734863
-          },
-          {
-            "text": "2",
-            "start": 1.9800000190734863,
-            "end": 3.299999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p044": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Example",
-            "start": 0,
-            "end": 0.699999988079071
-          },
-          {
-            "text": "2",
-            "start": 0.699999988079071,
-            "end": 1.0199999809265137
           }
         ]
       }
@@ -48322,68 +47808,6 @@
             "text": "sentences",
             "start": 4.920000076293945,
             "end": 5.300000190734863
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p048": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Solution",
-            "start": 0,
-            "end": 0.6600000262260437
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p032": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5799999833106995
-          },
-          {
-            "text": "2",
-            "start": 0.5799999833106995,
-            "end": 1.1399999856948853
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p004": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Add",
-            "start": 0,
-            "end": 0.36000001430511475
-          },
-          {
-            "text": "the",
-            "start": 0.36000001430511475,
-            "end": 0.5799999833106995
-          },
-          {
-            "text": "numbers",
-            "start": 0.5799999833106995,
-            "end": 1
-          },
-          {
-            "text": "vertically",
-            "start": 1,
-            "end": 1.4800000190734863
           }
         ]
       }
@@ -48502,50 +47926,6 @@
       }
     ]
   },
-  "pg059_p003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Number",
-            "start": 0,
-            "end": 0.5199999809265137
-          },
-          {
-            "text": "of",
-            "start": 0.5199999809265137,
-            "end": 0.8600000143051147
-          },
-          {
-            "text": "fish",
-            "start": 0.8600000143051147,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "caught",
-            "start": 1.0800000429153442,
-            "end": 1.4800000190734863
-          },
-          {
-            "text": "in",
-            "start": 1.4800000190734863,
-            "end": 1.899999976158142
-          },
-          {
-            "text": "the",
-            "start": 1.899999976158142,
-            "end": 2.1600000858306885
-          },
-          {
-            "text": "evening",
-            "start": 2.1600000858306885,
-            "end": 2.319999933242798
-          }
-        ]
-      }
-    ]
-  },
   "pg060_p010": {
     "timecodes": [
       null,
@@ -48555,143 +47935,6 @@
             "text": "Steps",
             "start": 0,
             "end": 0.7799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p033": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "3",
-            "start": 0,
-            "end": 1.059999942779541
-          },
-          {
-            "text": "Add",
-            "start": 1.3799999952316284,
-            "end": 1.5800000429153442
-          },
-          {
-            "text": "hundreds",
-            "start": 1.5800000429153442,
-            "end": 1.9600000381469727
-          },
-          {
-            "text": "1",
-            "start": 2.4200000762939453,
-            "end": 2.619999885559082
-          },
-          {
-            "text": "plus",
-            "start": 2.619999885559082,
-            "end": 2.859999895095825
-          },
-          {
-            "text": "2",
-            "start": 2.859999895095825,
-            "end": 3.1600000858306885
-          },
-          {
-            "text": "equals",
-            "start": 3.1600000858306885,
-            "end": 3.700000047683716
-          },
-          {
-            "text": "3",
-            "start": 3.700000047683716,
-            "end": 4.039999961853027
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p013": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 1.2000000476837158
-          },
-          {
-            "text": "Add",
-            "start": 2.0199999809265137,
-            "end": 2.140000104904175
-          },
-          {
-            "text": "ones",
-            "start": 2.140000104904175,
-            "end": 2.5
-          },
-          {
-            "text": "2",
-            "start": 3.0399999618530273,
-            "end": 3.259999990463257
-          },
-          {
-            "text": "plus",
-            "start": 3.259999990463257,
-            "end": 3.5399999618530273
-          },
-          {
-            "text": "0",
-            "start": 3.5399999618530273,
-            "end": 3.9600000381469727
-          },
-          {
-            "text": "equals",
-            "start": 3.9600000381469727,
-            "end": 4.679999828338623
-          },
-          {
-            "text": "2",
-            "start": 4.679999828338623,
-            "end": 5.019999980926514
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p024": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Write",
-            "start": 0,
-            "end": 0.47999998927116394
-          },
-          {
-            "text": "2",
-            "start": 0.47999998927116394,
-            "end": 0.8999999761581421
-          },
-          {
-            "text": "in",
-            "start": 0.8999999761581421,
-            "end": 1.2000000476837158
-          },
-          {
-            "text": "the",
-            "start": 1.2000000476837158,
-            "end": 1.559999942779541
-          },
-          {
-            "text": "tens",
-            "start": 1.559999942779541,
-            "end": 1.6200000047683716
-          },
-          {
-            "text": "place",
-            "start": 1.6200000047683716,
-            "end": 2
           }
         ]
       }
@@ -48844,84 +48087,6 @@
       }
     ]
   },
-  "pg059_p043": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Therefore",
-            "start": 0,
-            "end": 0.6600000262260437
-          },
-          {
-            "text": "a",
-            "start": 1.0800000429153442,
-            "end": 1.2799999713897705
-          },
-          {
-            "text": "fisherman",
-            "start": 1.2799999713897705,
-            "end": 1.6399999856948853
-          },
-          {
-            "text": "caught",
-            "start": 1.6399999856948853,
-            "end": 2
-          },
-          {
-            "text": "322",
-            "start": 2,
-            "end": 3.259999990463257
-          },
-          {
-            "text": "fish",
-            "start": 3.259999990463257,
-            "end": 3.700000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p014": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Write",
-            "start": 0,
-            "end": 0.5199999809265137
-          },
-          {
-            "text": "2",
-            "start": 0.5199999809265137,
-            "end": 1.100000023841858
-          },
-          {
-            "text": "in",
-            "start": 1.100000023841858,
-            "end": 1.659999966621399
-          },
-          {
-            "text": "the",
-            "start": 1.659999966621399,
-            "end": 1.840000033378601
-          },
-          {
-            "text": "ones",
-            "start": 1.840000033378601,
-            "end": 2.119999885559082
-          },
-          {
-            "text": "place",
-            "start": 2.119999885559082,
-            "end": 2.559999942779541
-          }
-        ]
-      }
-    ]
-  },
   "pg060_p027": {
     "timecodes": [
       null,
@@ -49069,218 +48234,6 @@
       }
     ]
   },
-  "pg059_p023": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 1.1200000047683716
-          },
-          {
-            "text": "Add",
-            "start": 1.7999999523162842,
-            "end": 1.9800000190734863
-          },
-          {
-            "text": "tens",
-            "start": 1.9800000190734863,
-            "end": 2.4800000190734863
-          },
-          {
-            "text": "1",
-            "start": 2.9800000190734863,
-            "end": 3.3399999141693115
-          },
-          {
-            "text": "plus",
-            "start": 3.3399999141693115,
-            "end": 3.9000000953674316
-          },
-          {
-            "text": "1",
-            "start": 3.9000000953674316,
-            "end": 4.340000152587891
-          },
-          {
-            "text": "equals",
-            "start": 4.340000152587891,
-            "end": 5.199999809265137
-          },
-          {
-            "text": "2",
-            "start": 5.199999809265137,
-            "end": 5.539999961853027
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p045": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "A",
-            "start": 0,
-            "end": 0.2800000011920929
-          },
-          {
-            "text": "grandfather",
-            "start": 0.2800000011920929,
-            "end": 0.8199999928474426
-          },
-          {
-            "text": "has",
-            "start": 0.8199999928474426,
-            "end": 1.2200000286102295
-          },
-          {
-            "text": "389",
-            "start": 1.2200000286102295,
-            "end": 2.559999942779541
-          },
-          {
-            "text": "mango",
-            "start": 2.559999942779541,
-            "end": 2.859999895095825
-          },
-          {
-            "text": "trees",
-            "start": 2.859999895095825,
-            "end": 3.259999990463257
-          },
-          {
-            "text": "A",
-            "start": 3.880000114440918,
-            "end": 4.019999980926514
-          },
-          {
-            "text": "grandmother",
-            "start": 4.019999980926514,
-            "end": 4.400000095367432
-          },
-          {
-            "text": "has",
-            "start": 4.400000095367432,
-            "end": 4.800000190734863
-          },
-          {
-            "text": "433",
-            "start": 4.800000190734863,
-            "end": 5.880000114440918
-          },
-          {
-            "text": "mango",
-            "start": 5.880000114440918,
-            "end": 6.260000228881836
-          },
-          {
-            "text": "trees",
-            "start": 6.260000228881836,
-            "end": 6.599999904632568
-          },
-          {
-            "text": "How",
-            "start": 7.28000020980835,
-            "end": 7.300000190734863
-          },
-          {
-            "text": "many",
-            "start": 7.300000190734863,
-            "end": 7.519999980926514
-          },
-          {
-            "text": "mango",
-            "start": 7.519999980926514,
-            "end": 7.860000133514404
-          },
-          {
-            "text": "trees",
-            "start": 7.860000133514404,
-            "end": 8.140000343322754
-          },
-          {
-            "text": "do",
-            "start": 8.140000343322754,
-            "end": 8.319999694824219
-          },
-          {
-            "text": "they",
-            "start": 8.319999694824219,
-            "end": 8.460000038146973
-          },
-          {
-            "text": "both",
-            "start": 8.460000038146973,
-            "end": 8.819999694824219
-          },
-          {
-            "text": "have",
-            "start": 8.819999694824219,
-            "end": 9.119999885559082
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p050": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Grandmother′s",
-            "start": 0,
-            "end": 0.9800000190734863
-          },
-          {
-            "text": "mango",
-            "start": 0.9800000190734863,
-            "end": 1.3799999952316284
-          },
-          {
-            "text": "trees",
-            "start": 1.3799999952316284,
-            "end": 1.8200000524520874
-          },
-          {
-            "text": "equals",
-            "start": 1.8200000524520874,
-            "end": 2.5399999618530273
-          },
-          {
-            "text": "four",
-            "start": 2.5399999618530273,
-            "end": 2.9200000762939453
-          },
-          {
-            "text": "hundred",
-            "start": 2.9200000762939453,
-            "end": 3.2799999713897705
-          },
-          {
-            "text": "and",
-            "start": 3.2799999713897705,
-            "end": 3.6600000858306885
-          },
-          {
-            "text": "thirty",
-            "start": 3.6600000858306885,
-            "end": 3.9000000953674316
-          },
-          {
-            "text": "three",
-            "start": 3.9000000953674316,
-            "end": 4.21999979019165
-          }
-        ]
-      }
-    ]
-  },
   "pg060_p041": {
     "timecodes": [
       null,
@@ -49399,40 +48352,6 @@
             "text": "place",
             "start": 1.4600000381469727,
             "end": 1.899999976158142
-          }
-        ]
-      }
-    ]
-  },
-  "pg059_p049": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Grandfather′s",
-            "start": 0,
-            "end": 1.5199999809265137
-          },
-          {
-            "text": "mango",
-            "start": 1.5199999809265137,
-            "end": 1.8600000143051147
-          },
-          {
-            "text": "trees",
-            "start": 1.8600000143051147,
-            "end": 2.259999990463257
-          },
-          {
-            "text": "equals",
-            "start": 2.259999990463257,
-            "end": 3.0799999237060547
-          },
-          {
-            "text": "389",
-            "start": 3.0799999237060547,
-            "end": 4.559999942779541
           }
         ]
       }
@@ -145413,6 +144332,604 @@
             "text": "catch",
             "start": 9.2,
             "end": 9.32
+          }
+        ]
+      }
+    ]
+  },
+  "pg059_p053": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Solution",
+            "start": 0,
+            "end": 0.6
+          },
+          {
+            "text": "Number",
+            "start": 1.7,
+            "end": 1.8
+          },
+          {
+            "text": "of",
+            "start": 1.8,
+            "end": 2
+          },
+          {
+            "text": "fish",
+            "start": 2,
+            "end": 2.18
+          },
+          {
+            "text": "caught",
+            "start": 2.18,
+            "end": 2.42
+          },
+          {
+            "text": "in",
+            "start": 2.42,
+            "end": 2.56
+          },
+          {
+            "text": "the",
+            "start": 2.56,
+            "end": 2.7
+          },
+          {
+            "text": "morning",
+            "start": 2.7,
+            "end": 2.98
+          },
+          {
+            "text": "is",
+            "start": 2.98,
+            "end": 3.36
+          },
+          {
+            "text": "112",
+            "start": 3.36,
+            "end": 4.34
+          },
+          {
+            "text": "Number",
+            "start": 5.34,
+            "end": 5.44
+          },
+          {
+            "text": "of",
+            "start": 5.44,
+            "end": 5.84
+          },
+          {
+            "text": "fish",
+            "start": 5.84,
+            "end": 5.94
+          },
+          {
+            "text": "caught",
+            "start": 5.94,
+            "end": 6.06
+          },
+          {
+            "text": "in",
+            "start": 6.06,
+            "end": 6.2
+          },
+          {
+            "text": "the",
+            "start": 6.2,
+            "end": 6.64
+          },
+          {
+            "text": "evening",
+            "start": 6.64,
+            "end": 6.74
+          },
+          {
+            "text": "is",
+            "start": 6.74,
+            "end": 6.92
+          },
+          {
+            "text": "210",
+            "start": 6.92,
+            "end": 7.72
+          },
+          {
+            "text": "Add",
+            "start": 8.7,
+            "end": 8.94
+          },
+          {
+            "text": "the",
+            "start": 8.94,
+            "end": 9.4
+          },
+          {
+            "text": "numbers",
+            "start": 9.4,
+            "end": 9.5
+          },
+          {
+            "text": "vertically",
+            "start": 9.5,
+            "end": 9.76
+          },
+          {
+            "text": "112",
+            "start": 10.44,
+            "end": 11.08
+          },
+          {
+            "text": "plus",
+            "start": 11.08,
+            "end": 11.74
+          },
+          {
+            "text": "210",
+            "start": 11.74,
+            "end": 12.64
+          },
+          {
+            "text": "equals",
+            "start": 12.64,
+            "end": 13.14
+          },
+          {
+            "text": "322",
+            "start": 13.14,
+            "end": 14.4
+          },
+          {
+            "text": "Steps",
+            "start": 15.86,
+            "end": 16.42
+          },
+          {
+            "text": "Step",
+            "start": 16.74,
+            "end": 16.88
+          },
+          {
+            "text": "1",
+            "start": 16.88,
+            "end": 17.18
+          },
+          {
+            "text": "Add",
+            "start": 17.68,
+            "end": 17.78
+          },
+          {
+            "text": "the",
+            "start": 17.78,
+            "end": 18.22
+          },
+          {
+            "text": "ones",
+            "start": 18.22,
+            "end": 18.32
+          },
+          {
+            "text": "2",
+            "start": 18.68,
+            "end": 18.94
+          },
+          {
+            "text": "plus",
+            "start": 18.94,
+            "end": 19.2
+          },
+          {
+            "text": "0",
+            "start": 19.2,
+            "end": 19.54
+          },
+          {
+            "text": "equals",
+            "start": 19.54,
+            "end": 19.92
+          },
+          {
+            "text": "2",
+            "start": 19.92,
+            "end": 20.3
+          },
+          {
+            "text": "Write",
+            "start": 21.06,
+            "end": 21.16
+          },
+          {
+            "text": "2",
+            "start": 21.16,
+            "end": 21.42
+          },
+          {
+            "text": "in",
+            "start": 21.42,
+            "end": 21.62
+          },
+          {
+            "text": "the",
+            "start": 21.62,
+            "end": 21.74
+          },
+          {
+            "text": "ones",
+            "start": 21.74,
+            "end": 21.98
+          },
+          {
+            "text": "place",
+            "start": 21.98,
+            "end": 22.3
+          },
+          {
+            "text": "Step",
+            "start": 23.16,
+            "end": 23.26
+          },
+          {
+            "text": "2",
+            "start": 23.26,
+            "end": 23.64
+          },
+          {
+            "text": "Add",
+            "start": 24.08,
+            "end": 24.18
+          },
+          {
+            "text": "the",
+            "start": 24.18,
+            "end": 24.4
+          },
+          {
+            "text": "tens",
+            "start": 24.4,
+            "end": 24.72
+          },
+          {
+            "text": "1",
+            "start": 24.82,
+            "end": 25.18
+          },
+          {
+            "text": "plus",
+            "start": 25.18,
+            "end": 25.36
+          },
+          {
+            "text": "1",
+            "start": 25.36,
+            "end": 25.74
+          },
+          {
+            "text": "equals",
+            "start": 25.74,
+            "end": 26.02
+          },
+          {
+            "text": "2",
+            "start": 26.02,
+            "end": 26.38
+          },
+          {
+            "text": "Write",
+            "start": 26.82,
+            "end": 26.92
+          },
+          {
+            "text": "2",
+            "start": 26.92,
+            "end": 27.1
+          },
+          {
+            "text": "in",
+            "start": 27.1,
+            "end": 27.26
+          },
+          {
+            "text": "the",
+            "start": 27.26,
+            "end": 27.36
+          },
+          {
+            "text": "tens",
+            "start": 27.36,
+            "end": 27.64
+          },
+          {
+            "text": "place",
+            "start": 27.64,
+            "end": 27.92
+          },
+          {
+            "text": "Step",
+            "start": 28.72,
+            "end": 29.1
+          },
+          {
+            "text": "3",
+            "start": 29.1,
+            "end": 29.48
+          },
+          {
+            "text": "Add",
+            "start": 29.94,
+            "end": 30.04
+          },
+          {
+            "text": "the",
+            "start": 30.04,
+            "end": 30.28
+          },
+          {
+            "text": "hundreds",
+            "start": 30.28,
+            "end": 30.64
+          },
+          {
+            "text": "1",
+            "start": 30.98,
+            "end": 31.12
+          },
+          {
+            "text": "plus",
+            "start": 31.12,
+            "end": 31.38
+          },
+          {
+            "text": "2",
+            "start": 31.38,
+            "end": 31.68
+          },
+          {
+            "text": "equals",
+            "start": 31.68,
+            "end": 32.08
+          },
+          {
+            "text": "3",
+            "start": 32.08,
+            "end": 32.44
+          },
+          {
+            "text": "Write",
+            "start": 33.1,
+            "end": 33.2
+          },
+          {
+            "text": "3",
+            "start": 33.2,
+            "end": 33.5
+          },
+          {
+            "text": "in",
+            "start": 33.5,
+            "end": 33.66
+          },
+          {
+            "text": "the",
+            "start": 33.66,
+            "end": 33.92
+          },
+          {
+            "text": "hundreds",
+            "start": 33.92,
+            "end": 34.2
+          },
+          {
+            "text": "place",
+            "start": 34.2,
+            "end": 34.52
+          },
+          {
+            "text": "Therefore",
+            "start": 35.26,
+            "end": 35.62
+          },
+          {
+            "text": "a",
+            "start": 36.02,
+            "end": 36.18
+          },
+          {
+            "text": "fisherman",
+            "start": 36.18,
+            "end": 36.5
+          },
+          {
+            "text": "caught",
+            "start": 36.5,
+            "end": 36.86
+          },
+          {
+            "text": "322",
+            "start": 36.86,
+            "end": 37.96
+          },
+          {
+            "text": "fish",
+            "start": 37.96,
+            "end": 38.32
+          }
+        ]
+      }
+    ]
+  },
+  "pg059_p054": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Example",
+            "start": 0,
+            "end": 0.58
+          },
+          {
+            "text": "2",
+            "start": 0.58,
+            "end": 1.18
+          },
+          {
+            "text": "A",
+            "start": 1.42,
+            "end": 1.52
+          },
+          {
+            "text": "grandfather",
+            "start": 1.52,
+            "end": 1.92
+          },
+          {
+            "text": "has",
+            "start": 1.92,
+            "end": 2.32
+          },
+          {
+            "text": "389",
+            "start": 2.32,
+            "end": 3.8
+          },
+          {
+            "text": "mango",
+            "start": 3.8,
+            "end": 4.16
+          },
+          {
+            "text": "trees",
+            "start": 4.16,
+            "end": 4.44
+          },
+          {
+            "text": "A",
+            "start": 5.02,
+            "end": 5.2
+          },
+          {
+            "text": "grandmother",
+            "start": 5.2,
+            "end": 5.56
+          },
+          {
+            "text": "has",
+            "start": 5.56,
+            "end": 6.02
+          },
+          {
+            "text": "433",
+            "start": 6.02,
+            "end": 7.38
+          },
+          {
+            "text": "mango",
+            "start": 7.38,
+            "end": 7.78
+          },
+          {
+            "text": "trees",
+            "start": 7.78,
+            "end": 8.1
+          },
+          {
+            "text": "How",
+            "start": 8.7,
+            "end": 8.82
+          },
+          {
+            "text": "many",
+            "start": 8.82,
+            "end": 9.08
+          },
+          {
+            "text": "mango",
+            "start": 9.08,
+            "end": 9.46
+          },
+          {
+            "text": "trees",
+            "start": 9.46,
+            "end": 9.66
+          },
+          {
+            "text": "do",
+            "start": 9.66,
+            "end": 9.9
+          },
+          {
+            "text": "they",
+            "start": 9.9,
+            "end": 10
+          },
+          {
+            "text": "both",
+            "start": 10,
+            "end": 10.26
+          },
+          {
+            "text": "have",
+            "start": 10.26,
+            "end": 10.58
+          },
+          {
+            "text": "Solution",
+            "start": 11.56,
+            "end": 11.66
+          },
+          {
+            "text": "Grandfather's",
+            "start": 12.4,
+            "end": 12.9
+          },
+          {
+            "text": "mango",
+            "start": 12.9,
+            "end": 13.2
+          },
+          {
+            "text": "trees",
+            "start": 13.2,
+            "end": 13.5
+          },
+          {
+            "text": "equal",
+            "start": 13.5,
+            "end": 13.86
+          },
+          {
+            "text": "389",
+            "start": 13.86,
+            "end": 15.1
+          },
+          {
+            "text": "Grandmother's",
+            "start": 15.72,
+            "end": 16.3
+          },
+          {
+            "text": "mango",
+            "start": 16.3,
+            "end": 16.58
+          },
+          {
+            "text": "trees",
+            "start": 16.58,
+            "end": 16.9
+          },
+          {
+            "text": "equal",
+            "start": 16.9,
+            "end": 17.34
+          },
+          {
+            "text": "433",
+            "start": 17.34,
+            "end": 18.56
           }
         ]
       }

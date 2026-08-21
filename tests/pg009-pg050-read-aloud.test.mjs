@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 58; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 59; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1213,6 +1213,25 @@ assert.deepEqual(
   "page 58 must narrate each question and example exactly once"
 );
 
+const page59 = read("pg059_sec001.html");
+const page59Solution = "Solution. Number of fish caught in the morning is 112. Number of fish caught in the evening is 210. Add the numbers vertically. 112 plus 210 equals 322. Steps. Step 1. Add the ones. 2 plus 0 equals 2. Write 2 in the ones place. Step 2. Add the tens. 1 plus 1 equals 2. Write 2 in the tens place. Step 3. Add the hundreds. 1 plus 2 equals 3. Write 3 in the hundreds place. Therefore, a fisherman caught 322 fish.";
+const page59Example = "Example 2. A grandfather has 389 mango trees. A grandmother has 433 mango trees. How many mango trees do they both have? Solution. Grandfather's mango trees equal 389. Grandmother's mango trees equal 433.";
+for (const [id, expected, filename] of [
+  ["pg059_p053", page59Solution, "pg059_p053_adt_solution.mp3"],
+  ["pg059_p054", page59Example, "pg059_p054_adt_example.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 59 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.match(page59, /data-id="pg059_p053"[\s\S]*data-id="pg059_p001"/, "the consolidated solution must precede its visual fragments");
+assert.match(page59, /data-id="pg059_p054"[\s\S]*data-id="pg059_p044"/, "the consolidated second example must precede its visual fragments");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg059_")).sort(),
+  ["pg059_p053", "pg059_p054"],
+  "page 59 must narrate its solution and second example exactly once"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1247,4 +1266,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg058 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg059 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
