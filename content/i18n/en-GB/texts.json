@@ -3582,7 +3582,7 @@
   "pg069_p039": "–- 9",
   "pg069_p073": "6.",
   "pg070_p000": "64",
-  "pg070_im003": "Example 1 for 243 minus 127 on a place-value abacus: one hundred bead, one tens bead and six ones beads remain, with ten ones circled to show regrouping from the tens column.",
+  "pg070_im003": "",
   "pg070_p001": "4.",
   "pg070_p002": "- 3",
   "pg070_p003": "2",
@@ -3653,8 +3653,8 @@
   "pg070_p068": "Numbers can be subtracted horizontally by regrouping.",
   "pg070_p069": "Example 1",
   "pg070_p070": "243 - 127 =",
-  "pg070_im002": "Nine vertical subtraction exercises numbered 4 to 12: 328 minus 215, 776 minus 715, 824 minus 221, 624 minus 321, 515 minus 102, 345 minus 215, 467 minus 115, 349 minus 117, and 286 minus 123, each with blank lines for the answer.",
-  "pg070_im001": "Place-value abacus showing regrouping: one hundred bead, one tens bead and six ones beads, with ten ones circled and linked by an arrow from the tens column.",
+  "pg070_im002": "",
+  "pg070_im001": "",
   "pg070_p071": "hundreds tens ones",
   "pg070_p072": "ARITHMETICS PUPIL'S STD 2.indd 64",
   "pg070_p073": "06/11/2024 17:23",
@@ -6000,5 +6000,7 @@
   "pg068_p064": "Exercise 3. Write the answer in each question. Question 1. 178 minus 175. Question 2. 486 minus 244. Question 3. 490 minus 250. Question 4. 478 minus 470. Question 5. 445 minus 334. Question 6. 384 minus 251.",
   "pg069_p112": "Question 7. 287 minus 185. Question 8. 357 minus 242. Question 9. 248 minus 101.",
   "pg069_p113": "Exercise 4. Write the answer in each question. Question 1. 815 minus 604. Question 2. 744 minus 333. Question 3. 509 minus 104. Question 4. 787 minus 645. Question 5. 812 minus 710. Question 6. 555 minus 324. Question 7. 975 minus 230. Question 8. 659 minus 548. Question 9. 758 minus 234.",
-  "pg069_p114": "Exercise 5. Write the answer in each question. Question 1. 632 minus 321. Question 2. 799 minus 566. Question 3. 431 minus 221."
+  "pg069_p114": "Exercise 5. Write the answer in each question. Question 1. 632 minus 321. Question 2. 799 minus 566. Question 3. 431 minus 221.",
+  "pg070_p074": "Question 4. 328 minus 215. Question 5. 776 minus 715. Question 6. 824 minus 221. Question 7. 624 minus 321. Question 8. 515 minus 102. Question 9. 345 minus 215. Question 10. 467 minus 115. Question 11. 349 minus 117. Question 12. 286 minus 123.",
+  "pg070_p075": "Subtracting numbers horizontally by regrouping. Numbers can be subtracted horizontally by regrouping. Example 1. 243 minus 127. The counting frame starts with 2 beads in the hundreds column, 4 beads in the tens column, and 3 beads in the ones column. Regroup 1 ten as 10 ones. There are now 3 tens and 13 ones. Cross out 7 ones, leaving 6. Cross out 2 tens, leaving 1. Cross out 1 hundred, leaving 1. The remaining beads show 116."
 }
