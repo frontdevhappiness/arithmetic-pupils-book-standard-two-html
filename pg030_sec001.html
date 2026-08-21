@@ -31,6 +31,7 @@
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
 </style>
   <img src="images/pg030_page.png" alt="" role="presentation" aria-hidden="true" data-id="pg030_page" style="position:absolute;inset:0;width:558px;height:768px">
   <p data-id="pg030_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;24&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:78px;line-height:18px;width:383px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">24</span></p>
@@ -86,6 +87,85 @@
   <img src="images/pg030_im014.png" alt="" data-id="pg030_im014" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg030_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 24&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 24</span></p>
   <p data-id="pg030_p033" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
+<script>
+  (function () {
+    var content = document.getElementById("content");
+    var footer = content && content.querySelector('[data-id="pg030_p032"]');
+    if (!content || !footer) return;
+    var black = {"font-family":"SassoonPrimary,serif","font-size":"18px","color":"#231f20","position":"absolute"};
+    var blue = {"font-family":"SassoonPrimary,serif","font-size":"18px","color":"#0099da","position":"absolute"};
+    function at(style, left, top) { return Object.assign({}, style, {left:left + "px", top:top + "px"}); }
+    function render(node, segments, left, top, width, height) {
+      node.setAttribute("data-segments", JSON.stringify(segments));
+      node.setAttribute("data-adt-fit", "1");
+      node.setAttribute("style", "position:absolute;top:" + top + "px;left:" + left + "px;line-height:18px;width:" + width + "px;height:" + height + "px");
+      node.innerHTML = segments.map(function (segment) {
+        var style = Object.keys(segment.style).map(function (key) { return key + ":" + segment.style[key]; }).join(";");
+        return '<span style="' + style + '">' + segment.text + '</span>';
+      }).join("");
+    }
+    var diagrams = [
+      {id:"pg030_p001",item:"7.",h:"5",t:"0",o:"0",left:86,top:76,itemTop:34,digits:[41,60,75],labelX:120,labels:[42,58,73]},
+      {id:"pg030_p002",item:"8.",h:null,t:"6",o:"4",left:278,top:78,itemTop:32,digits:[51,73],labelX:126,labels:[47,65]},
+      {id:"pg030_p003",item:"9.",h:null,t:null,o:"6",left:86,top:169,itemTop:30,digits:[46],labelX:120,labels:[64]},
+      {id:"pg030_p004",item:"10.",h:null,t:"6",o:"1",left:273,top:170,itemTop:29,digits:[60,80],labelX:131,labels:[47,64]},
+      {id:"pg030_p005",item:"11.",h:"1",t:"3",o:"2",left:86,top:258,itemTop:38,digits:[33,55,71],labelX:121,labels:[48,66,82]},
+      {id:"pg030_p006",item:"12.",h:"3",t:"8",o:"7",left:273,top:256,itemTop:40,digits:[36,58,74],labelX:124,labels:[47,65,81]},
+      {id:"pg030_p007",item:"13.",h:"2",t:"9",o:"4",left:86,top:368,itemTop:38,digits:[33,55,71],labelX:121,labels:[48,66,82]},
+      {id:"pg030_p008",item:"14.",h:"3",t:"7",o:"1",left:273,top:367,itemTop:39,digits:[38,60,76],labelX:126,labels:[48,66,82]}
+    ];
+    diagrams.forEach(function (row) {
+      var node = content.querySelector('[data-id="' + row.id + '"]');
+      if (!node) return;
+      var segments = [{text:row.item + " ",style:at(blue,0,row.itemTop)}];
+      var index = 0;
+      if (row.h !== null) {
+        segments.push({text:row.h + " ",style:at(black,row.digits[index++],3)});
+        segments.push({text:"hundreds ",style:at(black,row.labelX,row.labels[2])});
+      }
+      if (row.t !== null) {
+        segments.push({text:row.t + " ",style:at(black,row.digits[index++],3)});
+        segments.push({text:"tens ",style:at(black,row.labelX,row.labels[row.h === null ? 1 : 1])});
+      }
+      segments.push({text:row.o + " ",style:at(black,row.digits[index],3)});
+      segments.push({text:"ones",style:at(black,row.labelX,row.labels[0])});
+      render(node, segments, row.left, row.top, 185, row.h === null && row.t === null ? 79 : 98);
+    });
+    var items = [
+      ["pg030_p012","1.","201",78,554,52], ["pg030_p014","6.","480",274,554,40],
+      ["pg030_p016","2.","700",78,583,52], ["pg030_p018","7.","11",274,583,40],
+      ["pg030_p020","3.","333",78,610,52], ["pg030_p022","8.","88",274,610,40],
+      ["pg030_p024","4.","29",78,636,52], ["pg030_p026","9.","999",274,636,40],
+      ["pg030_p028","5.","218",78,656,52], ["pg030_p030","10.","765",274,656,40]
+    ];
+    items.forEach(function (row) {
+      var node = content.querySelector('[data-id="' + row[0] + '"]');
+      if (!node) return;
+      render(node, [
+        {text:row[1] + " ",style:at(blue,0,0)},
+        {text:row[2],style:at(black,row[5],0)}
+      ], row[3], row[4], 100, 22);
+    });
+    [
+      "pg030_im001","pg030_im002","pg030_im003","pg030_im004","pg030_im005","pg030_im006","pg030_im007","pg030_im008","pg030_im009","pg030_im010"
+    ].forEach(function (id) {
+      var node = content.querySelector('[data-id="' + id + '"]');
+      if (node) { node.setAttribute("role", "presentation"); node.setAttribute("aria-hidden", "true"); node.setAttribute("alt", ""); }
+    });
+    ["pg030_p013","pg030_p015","pg030_p017","pg030_p019","pg030_p021","pg030_p023","pg030_p025","pg030_p027","pg030_p029","pg030_p031"].forEach(function (id) {
+      var node = content.querySelector('[data-id="' + id + '"]');
+      if (node) { node.style.display = "none"; node.setAttribute("aria-hidden", "true"); }
+    });
+    [
+      "pg030_p001","pg030_p002","pg030_p003","pg030_p004","pg030_p005","pg030_p006","pg030_p007","pg030_p008",
+      "pg030_p009","pg030_p010","pg030_p012","pg030_p016","pg030_p020","pg030_p024","pg030_p028",
+      "pg030_p014","pg030_p018","pg030_p022","pg030_p026","pg030_p030"
+    ].forEach(function (id) {
+      var node = content.querySelector('[data-id="' + id + '"]');
+      if (node) content.insertBefore(node, footer);
+    });
+  })();
+</script>
 <script src="./assets/auto-fit.js"></script>
 </div>
     </main>

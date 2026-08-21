@@ -129,7 +129,9 @@ function extractWhisper(id) {
 const placeValueRowIds = new Set([
   "pg028_p004", "pg028_p010", "pg028_p016", "pg028_p022", "pg028_p028",
   "pg028_p034", "pg028_p040", "pg028_p046", "pg028_p052", "pg028_p058",
-  "pg029_p009", "pg029_p010", "pg029_p011", "pg029_p012", "pg029_p013", "pg029_p014"
+  "pg029_p009", "pg029_p010", "pg029_p011", "pg029_p012", "pg029_p013", "pg029_p014",
+  "pg030_p001", "pg030_p002", "pg030_p003", "pg030_p004",
+  "pg030_p005", "pg030_p006", "pg030_p007", "pg030_p008"
 ]);
 
 function expandPlaceValueTokens(source) {
@@ -285,7 +287,7 @@ const manualStamps = {
 for (const id of [
   "pg014_p004", "pg016_p012", "pg017_p004", "pg018_p067", "pg019_p004", "pg019_p019",
   "pg022_p013", "pg024_p004", "pg025_p004", "pg026_p015", "pg027_p010",
-  "pg030_p012", "pg031_p004", "pg032_p016", "pg046_p033", "pg047_p073",
+  "pg031_p004", "pg032_p016", "pg046_p033", "pg047_p073",
   "pg049_p009", "pg050_p022"
 ]) manualStamps[id] = [["1", 0, 0.48]];
 for (const id of [
@@ -320,7 +322,7 @@ for (const id of ids) {
   const current = extractCurrent(id);
   const rawWhisper = extractWhisper(id);
   const whisper = placeValueRowIds.has(id) ? expandPlaceValueTokens(rawWhisper) : rawWhisper;
-  const preferWhisper = /^(?:pg027_|pg026_im00[2-5]$|pg028_(?:p(?:002|004|010|016|022|028|034|040|046|052|058)|im002)$|pg029_(?:p(?:009|010|011|012|013|014)|im001)$)/.test(id) && whisper.length;
+  const preferWhisper = /^(?:pg027_|pg026_im00[2-5]$|pg028_(?:p(?:002|004|010|016|022|028|034|040|046|052|058)|im002)$|pg029_(?:p(?:009|010|011|012|013|014)|im001)$|pg030_p(?:00[1-8]|012|014|016|018|020|022|024|026|028|030)$)/.test(id) && whisper.length;
   const duration = preferWhisper ? durationOf(id) : Number.POSITIVE_INFINITY;
   const currentTimingIsValid = rawCurrent.length === expected.length && current.length === expected.length && current.every(({ start, end }, index) =>
     Number.isFinite(start) && Number.isFinite(end) && end - start >= 0.099 && end <= duration + 0.05 && (!index || start >= current[index - 1].end - 1e-6)

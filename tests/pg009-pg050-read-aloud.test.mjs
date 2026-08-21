@@ -462,6 +462,43 @@ for (const number of [2,3,4,5,6,7]) {
 assert.match(page29, /\{id:"pg029_p009", item:"1\.", h:"3", t:"1", o:"2", left:105, top:396\}/, "question 1 highlight segments must align with its printed diagram");
 assert.match(page29, /\{id:"pg029_p012", item:"4\.", h:null, t:"3", o:"5", left:297, top:489\}/, "question 4 must omit a nonexistent hundreds place");
 
+const page30 = read("pg030_sec001.html");
+assert.match(page30, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 30 must use only the exact runtime word highlight");
+const page30Diagrams = {
+  pg030_p001: "7. 5 hundreds 0 tens 0 ones",
+  pg030_p002: "8. 6 tens 4 ones",
+  pg030_p003: "9. 6 ones",
+  pg030_p004: "10. 6 tens 1 ones",
+  pg030_p005: "11. 1 hundreds 3 tens 2 ones",
+  pg030_p006: "12. 3 hundreds 8 tens 7 ones",
+  pg030_p007: "13. 2 hundreds 9 tens 4 ones",
+  pg030_p008: "14. 3 hundreds 7 tens 1 ones"
+};
+for (const [id, text] of Object.entries(page30Diagrams)) {
+  assert.equal(texts[id], text, `${id} must narrate its complete place-value diagram`);
+  assert.equal(audios[id], `${id}_adt_row.mp3`, `${id} must use one complete diagram recording`);
+  const stamps = timecodes[id].timecodes[1].word_timestamps;
+  assert.deepEqual(stamps.map(({ text: word }) => word), tokens(text), `${id} must highlight its diagram from the question number through ones`);
+  assert.ok(stamps[1].start - stamps[0].end >= 0.35, `${id} question number must not run into its first place value`);
+}
+const page30Items = {
+  pg030_p012: "1. 201", pg030_p016: "2. 700", pg030_p020: "3. 333", pg030_p024: "4. 29", pg030_p028: "5. 218",
+  pg030_p014: "6. 480", pg030_p018: "7. 11", pg030_p022: "8. 88", pg030_p026: "9. 999", pg030_p030: "10. 765"
+};
+for (const [id, text] of Object.entries(page30Items)) {
+  assert.equal(texts[id], text, `${id} must keep its question number and value in one passage`);
+  assert.equal(audios[id], `${id}_adt_item.mp3`, `${id} must use one complete item recording`);
+  const stamps = timecodes[id].timecodes[1].word_timestamps;
+  assert.deepEqual(stamps.map(({ text: word }) => word), tokens(text), `${id} must highlight its number and value in order`);
+  assert.ok(stamps[1].start - stamps[0].end >= 0.35, `${id} question number must not join its printed value`);
+}
+for (const id of ["pg030_im001","pg030_im002","pg030_im003","pg030_im004","pg030_im005","pg030_im006","pg030_im007","pg030_im008","pg030_im009","pg030_im010","pg030_p013","pg030_p015","pg030_p017","pg030_p019","pg030_p021","pg030_p023","pg030_p025","pg030_p027","pg030_p029","pg030_p031"]) {
+  assert.equal(texts[id], "", `${id} obsolete duplicate must not be narrated`);
+  assert.equal(audios[id], undefined, `${id} obsolete duplicate must not interrupt a complete item`);
+}
+assert.match(page30, /\{id:"pg030_p003",item:"9\.",h:null,t:null,o:"6"/, "question 9 must narrate only its ones place");
+assert.match(page30, /"pg030_p012","pg030_p016","pg030_p020","pg030_p024","pg030_p028",[\s\S]*"pg030_p014","pg030_p018","pg030_p022","pg030_p026","pg030_p030"/, "Exercise 5 must read items 1 through 10 in numerical order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
