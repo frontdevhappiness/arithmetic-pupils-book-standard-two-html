@@ -109,6 +109,13 @@ assert.equal(audios.pg012_p030, "pg012_p030_adt_gpt4omini.mp3", "731 must use th
 assert.deepEqual(timecodes.pg012_p030.timecodes[1].word_timestamps, [{ text: "731", start: 0, end: 1.94 }], "731 highlight must follow its measured speech timestamps");
 assert.match(page12, /data-id="pg012_p029"[\s\S]*?>730<\/span><\/p>\s*<p data-id="pg012_p030"[\s\S]*?>731<\/span><\/p>/, "730 and 731 must use separate overlay and narration elements");
 
+const page13 = read("pg013_sec001.html");
+assert.equal(texts.pg013_p106, "930", "930 must be an independent table cell");
+assert.equal(texts.pg013_p107, "931", "931 must be an independent table cell");
+assert.equal(audios.pg013_p107, "pg013_p107_adt_gpt4omini.mp3", "931 must use the Arithmetic ADT voice preset");
+assert.deepEqual(timecodes.pg013_p107.timecodes[1].word_timestamps, [{ text: "931", start: 0, end: 1.26 }], "931 highlight must follow its measured speech timestamp");
+assert.match(page13, /data-id="pg013_p106"[\s\S]*?>930<\/span><\/p>\s*<p data-id="pg013_p107"[\s\S]*?>931<\/span><\/p>/, "930 and 931 must use separate overlay and narration elements");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -120,7 +127,7 @@ assert.equal(hash(audios.pg010_p166), hash(audios.pg013_p040), "both printed 360
 assert.ok(meanVolume(audios.pg010_p166) > -35, "360 must contain clearly audible speech, not a silent placeholder");
 assert.deepEqual(timecodes.pg010_p166.timecodes[1].word_timestamps, [{ text: "360", start: 0.166, end: 1.798 }], "360 highlight must span its spoken narration");
 assert.ok(duration(audios.pg010_p002) < 5, "page 10 instruction must not repeat the complete number table");
-assert.deepEqual(timecodes.pg012_p009.timecodes[1].word_timestamps.map(({ text }) => text).slice(-2), ["730", "731"], "page 12 must narrate its final table cell");
+assert.deepEqual(timecodes.pg012_p009.timecodes[1].word_timestamps.map(({ text }) => text).slice(-2), ["728", "729"], "page 12 retained row audio must end before its separate 730 and 731 cells");
 
 for (const id of ["pg044_p017", "pg044_p030", "pg045_p003", "pg045_p040", "pg046_p003", "pg046_p017"]) {
   assert.equal(texts[id], "hundreds", `${id} must use the printed place-value word`);
