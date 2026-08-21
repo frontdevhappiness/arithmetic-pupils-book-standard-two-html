@@ -47026,1640 +47026,6 @@
       }
     ]
   },
-  "pg054_p001": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 1.2200000286102295
-          },
-          {
-            "text": "And",
-            "start": 2.059999942779541,
-            "end": 2.319999933242798
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p004": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p005": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p006": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p007": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p008": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p009": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 0.8399999737739563
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p011": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p012": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p013": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p014": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p015": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p016": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p017": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 1.2599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p019": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p020": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p021": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p022": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p023": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p024": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p025": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.3600000143051147
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p027": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p028": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p029": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p030": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p031": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p032": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p033": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 1.159999966621399
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p035": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p036": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p037": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p038": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p039": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p040": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p041": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "9",
-            "start": 0,
-            "end": 0.7599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p043": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p044": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p045": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p046": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p047": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p048": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p049": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "10",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p051": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p052": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p053": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p054": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p055": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p056": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p057": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "11",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p059": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p060": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p061": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p062": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p063": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p064": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p065": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "12",
-            "start": 0,
-            "end": 1.0399999618530273
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p067": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p068": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p069": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p070": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p071": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p072": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p073": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "13",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p076": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p077": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "14",
-            "start": 0,
-            "end": 0.5400000214576721
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p080": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p081": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p082": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p083": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "15",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p085": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p086": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p087": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p088": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p089": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p090": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p094": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "101",
-            "start": 0,
-            "end": 0.7799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p095": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "102",
-            "start": 0,
-            "end": 1.440000057220459
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p096": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "103",
-            "start": 0,
-            "end": 0.9800000190734863
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p097": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "104",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p098": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "One",
-            "start": 0,
-            "end": 0.4000000059604645
-          },
-          {
-            "text": "hundred",
-            "start": 0.4000000059604645,
-            "end": 0.7200000286102295
-          },
-          {
-            "text": "and",
-            "start": 0.7200000286102295,
-            "end": 1.159999966621399
-          },
-          {
-            "text": "five",
-            "start": 1.159999966621399,
-            "end": 1.5
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p099": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "101",
-            "start": 0,
-            "end": 0.7799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p100": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "202",
-            "start": 0,
-            "end": 2.200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p101": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "203",
-            "start": 0,
-            "end": 1.2799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p102": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "two",
-            "start": 0,
-            "end": 0.30000001192092896
-          },
-          {
-            "text": "hundred",
-            "start": 0.30000001192092896,
-            "end": 0.6399999856948853
-          },
-          {
-            "text": "and",
-            "start": 0.6399999856948853,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "four",
-            "start": 1.0800000429153442,
-            "end": 1.3200000524520874
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p103": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "205",
-            "start": 0,
-            "end": 1.840000033378601
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p104": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "206",
-            "start": 0,
-            "end": 1.7999999523162842
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p105": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "102",
-            "start": 0,
-            "end": 1.440000057220459
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p106": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "203",
-            "start": 0,
-            "end": 1.2799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p107": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "two",
-            "start": 0,
-            "end": 0.30000001192092896
-          },
-          {
-            "text": "hundred",
-            "start": 0.30000001192092896,
-            "end": 0.6399999856948853
-          },
-          {
-            "text": "and",
-            "start": 0.6399999856948853,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "four",
-            "start": 1.0800000429153442,
-            "end": 1.3200000524520874
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p108": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "205",
-            "start": 0,
-            "end": 1.840000033378601
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p109": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "206",
-            "start": 0,
-            "end": 1.7999999523162842
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p110": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "207",
-            "start": 0,
-            "end": 1.5800000429153442
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p111": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "103",
-            "start": 0,
-            "end": 0.9800000190734863
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p112": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "two",
-            "start": 0,
-            "end": 0.30000001192092896
-          },
-          {
-            "text": "hundred",
-            "start": 0.30000001192092896,
-            "end": 0.6399999856948853
-          },
-          {
-            "text": "and",
-            "start": 0.6399999856948853,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "four",
-            "start": 1.0800000429153442,
-            "end": 1.3200000524520874
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p113": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "205",
-            "start": 0,
-            "end": 1.840000033378601
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p114": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "206",
-            "start": 0,
-            "end": 1.7999999523162842
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p115": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "207",
-            "start": 0,
-            "end": 1.5800000429153442
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p116": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "208",
-            "start": 0,
-            "end": 1.8200000524520874
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p117": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "104",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p118": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "205",
-            "start": 0,
-            "end": 1.840000033378601
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p119": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "206",
-            "start": 0,
-            "end": 1.7999999523162842
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p120": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "207",
-            "start": 0,
-            "end": 1.5800000429153442
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p121": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "208",
-            "start": 0,
-            "end": 1.8200000524520874
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p122": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "209",
-            "start": 0,
-            "end": 1.4800000190734863
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p123": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "One",
-            "start": 0,
-            "end": 0.4000000059604645
-          },
-          {
-            "text": "hundred",
-            "start": 0.4000000059604645,
-            "end": 0.7200000286102295
-          },
-          {
-            "text": "and",
-            "start": 0.7200000286102295,
-            "end": 1.159999966621399
-          },
-          {
-            "text": "five",
-            "start": 1.159999966621399,
-            "end": 1.5
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p124": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "206",
-            "start": 0,
-            "end": 1.7999999523162842
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p125": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "207",
-            "start": 0,
-            "end": 1.5800000429153442
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p126": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "208",
-            "start": 0,
-            "end": 1.8200000524520874
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p127": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "209",
-            "start": 0,
-            "end": 1.4800000190734863
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p128": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "210",
-            "start": 0,
-            "end": 1.059999942779541
-          }
-        ]
-      }
-    ]
-  },
   "pg055_p001": {
     "timecodes": [
       null,
@@ -48921,198 +47287,6 @@
       }
     ]
   },
-  "pg054_p079": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.6800000071525574
-          },
-          {
-            "text": "7",
-            "start": 0.6800000071525574,
-            "end": 1.2799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p075": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.6399999856948853
-          },
-          {
-            "text": "8",
-            "start": 0.6399999856948853,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p131": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Observe",
-            "start": 0,
-            "end": 0.6200000047683716
-          },
-          {
-            "text": "where",
-            "start": 0.6200000047683716,
-            "end": 1.0399999618530273
-          },
-          {
-            "text": "the",
-            "start": 1.0399999618530273,
-            "end": 1.4800000190734863
-          },
-          {
-            "text": "rows",
-            "start": 1.4800000190734863,
-            "end": 1.4800000190734863
-          },
-          {
-            "text": "and",
-            "start": 1.4800000190734863,
-            "end": 2.140000104904175
-          },
-          {
-            "text": "columns",
-            "start": 2.140000104904175,
-            "end": 2.140000104904175
-          },
-          {
-            "text": "meet",
-            "start": 2.140000104904175,
-            "end": 2.440000057220459
-          },
-          {
-            "text": "Each",
-            "start": 3.059999942779541,
-            "end": 3.200000047683716
-          },
-          {
-            "text": "number",
-            "start": 3.200000047683716,
-            "end": 3.4200000762939453
-          },
-          {
-            "text": "in",
-            "start": 3.4200000762939453,
-            "end": 3.619999885559082
-          },
-          {
-            "text": "the",
-            "start": 3.619999885559082,
-            "end": 3.680000066757202
-          },
-          {
-            "text": "box",
-            "start": 3.680000066757202,
-            "end": 3.9200000762939453
-          },
-          {
-            "text": "is",
-            "start": 3.9200000762939453,
-            "end": 4.119999885559082
-          },
-          {
-            "text": "the",
-            "start": 4.119999885559082,
-            "end": 4.420000076293945
-          },
-          {
-            "text": "sum",
-            "start": 4.420000076293945,
-            "end": 4.420000076293945
-          },
-          {
-            "text": "of",
-            "start": 4.420000076293945,
-            "end": 4.699999809265137
-          },
-          {
-            "text": "two",
-            "start": 4.699999809265137,
-            "end": 4.880000114440918
-          },
-          {
-            "text": "numbers",
-            "start": 4.880000114440918,
-            "end": 5.199999809265137
-          },
-          {
-            "text": "Those",
-            "start": 5.659999847412109,
-            "end": 5.880000114440918
-          },
-          {
-            "text": "numbers",
-            "start": 5.880000114440918,
-            "end": 6.099999904632568
-          },
-          {
-            "text": "are",
-            "start": 6.099999904632568,
-            "end": 6.360000133514404
-          },
-          {
-            "text": "in",
-            "start": 6.360000133514404,
-            "end": 6.539999961853027
-          },
-          {
-            "text": "the",
-            "start": 6.539999961853027,
-            "end": 6.619999885559082
-          },
-          {
-            "text": "first",
-            "start": 6.619999885559082,
-            "end": 6.860000133514404
-          },
-          {
-            "text": "row",
-            "start": 6.860000133514404,
-            "end": 7.119999885559082
-          },
-          {
-            "text": "and",
-            "start": 7.119999885559082,
-            "end": 7.559999942779541
-          },
-          {
-            "text": "the",
-            "start": 7.559999942779541,
-            "end": 7.71999979019165
-          },
-          {
-            "text": "first",
-            "start": 7.71999979019165,
-            "end": 7.960000038146973
-          },
-          {
-            "text": "column",
-            "start": 7.960000038146973,
-            "end": 8.180000305175781
-          }
-        ]
-      }
-    ]
-  },
   "pg055_p023": {
     "timecodes": [
       null,
@@ -49127,60 +47301,6 @@
             "text": "10",
             "start": 0.7799999713897705,
             "end": 1.2400000095367432
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p092": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "The",
-            "start": 0,
-            "end": 0.9200000166893005
-          },
-          {
-            "text": "following",
-            "start": 0.9200000166893005,
-            "end": 1.2799999713897705
-          },
-          {
-            "text": "chart",
-            "start": 1.2799999713897705,
-            "end": 1.5800000429153442
-          },
-          {
-            "text": "has",
-            "start": 1.5800000429153442,
-            "end": 1.940000057220459
-          },
-          {
-            "text": "rows",
-            "start": 1.940000057220459,
-            "end": 2.180000066757202
-          },
-          {
-            "text": "and",
-            "start": 2.180000066757202,
-            "end": 3.0199999809265137
-          },
-          {
-            "text": "columns",
-            "start": 3.0199999809265137,
-            "end": 3.0199999809265137
-          },
-          {
-            "text": "of",
-            "start": 3.0199999809265137,
-            "end": 3.3399999141693115
-          },
-          {
-            "text": "numbers",
-            "start": 3.3399999141693115,
-            "end": 3.5399999618530273
           }
         ]
       }
@@ -49263,75 +47383,6 @@
       }
     ]
   },
-  "pg054_p129": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Look",
-            "start": 0,
-            "end": 0.3400000035762787
-          },
-          {
-            "text": "at",
-            "start": 0.3400000035762787,
-            "end": 0.5199999809265137
-          },
-          {
-            "text": "the",
-            "start": 0.5199999809265137,
-            "end": 0.699999988079071
-          },
-          {
-            "text": "first",
-            "start": 0.699999988079071,
-            "end": 0.9800000190734863
-          },
-          {
-            "text": "row",
-            "start": 0.9800000190734863,
-            "end": 1.2000000476837158
-          },
-          {
-            "text": "It",
-            "start": 1.659999966621399,
-            "end": 1.6799999475479126
-          },
-          {
-            "text": "has",
-            "start": 1.6799999475479126,
-            "end": 1.9600000381469727
-          },
-          {
-            "text": "101",
-            "start": 1.9600000381469727,
-            "end": 2.619999885559082
-          },
-          {
-            "text": "102",
-            "start": 3.180000066757202,
-            "end": 3.799999952316284
-          },
-          {
-            "text": "103",
-            "start": 4.440000057220459,
-            "end": 5.159999847412109
-          },
-          {
-            "text": "104",
-            "start": 6.320000171661377,
-            "end": 6.440000057220459
-          },
-          {
-            "text": "and",
-            "start": 6.440000057220459,
-            "end": 6.900000095367432
-          }
-        ]
-      }
-    ]
-  },
   "pg055_p029": {
     "timecodes": [
       null,
@@ -49341,40 +47392,6 @@
             "text": "3",
             "start": 0,
             "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p091": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Adding",
-            "start": 0,
-            "end": 0.5199999809265137
-          },
-          {
-            "text": "numbers",
-            "start": 0.5199999809265137,
-            "end": 0.9599999785423279
-          },
-          {
-            "text": "in",
-            "start": 0.9599999785423279,
-            "end": 1.399999976158142
-          },
-          {
-            "text": "a",
-            "start": 1.399999976158142,
-            "end": 1.7599999904632568
-          },
-          {
-            "text": "chart",
-            "start": 1.7599999904632568,
-            "end": 1.7799999713897705
           }
         ]
       }
@@ -49525,65 +47542,6 @@
             "text": "6",
             "start": 0,
             "end": 1.2599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg054_p130": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "The",
-            "start": 0,
-            "end": 1.6799999475479126
-          },
-          {
-            "text": "first",
-            "start": 1.6799999475479126,
-            "end": 2.0799999237060547
-          },
-          {
-            "text": "column",
-            "start": 2.0799999237060547,
-            "end": 2.4200000762939453
-          },
-          {
-            "text": "has",
-            "start": 2.4200000762939453,
-            "end": 2.7200000286102295
-          },
-          {
-            "text": "101",
-            "start": 2.7200000286102295,
-            "end": 3.440000057220459
-          },
-          {
-            "text": "102",
-            "start": 4.760000228881836,
-            "end": 4.900000095367432
-          },
-          {
-            "text": "103",
-            "start": 6.079999923706055,
-            "end": 6.21999979019165
-          },
-          {
-            "text": "104",
-            "start": 7.460000038146973,
-            "end": 7.659999847412109
-          },
-          {
-            "text": "and",
-            "start": 7.659999847412109,
-            "end": 8.539999961853027
-          },
-          {
-            "text": "105",
-            "start": 8.539999961853027,
-            "end": 9.760000228881836
           }
         ]
       }
@@ -147377,6 +145335,1061 @@
             "text": "275",
             "start": 14.04,
             "end": 15.3
+          }
+        ]
+      }
+    ]
+  },
+  "pg054_p091": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Adding",
+            "start": 0,
+            "end": 0.5199999809265137
+          },
+          {
+            "text": "numbers",
+            "start": 0.5199999809265137,
+            "end": 0.9599999785423279
+          },
+          {
+            "text": "in",
+            "start": 0.9599999785423279,
+            "end": 1.399999976158142
+          },
+          {
+            "text": "a",
+            "start": 1.399999976158142,
+            "end": 1.7599999904632568
+          },
+          {
+            "text": "chart",
+            "start": 1.7599999904632568,
+            "end": 1.7799999713897705
+          }
+        ]
+      }
+    ]
+  },
+  "pg054_p092": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "The",
+            "start": 0,
+            "end": 0.9200000166893005
+          },
+          {
+            "text": "following",
+            "start": 0.9200000166893005,
+            "end": 1.2799999713897705
+          },
+          {
+            "text": "chart",
+            "start": 1.2799999713897705,
+            "end": 1.5800000429153442
+          },
+          {
+            "text": "has",
+            "start": 1.5800000429153442,
+            "end": 1.940000057220459
+          },
+          {
+            "text": "rows",
+            "start": 1.940000057220459,
+            "end": 2.180000066757202
+          },
+          {
+            "text": "and",
+            "start": 2.180000066757202,
+            "end": 3.0199999809265137
+          },
+          {
+            "text": "columns",
+            "start": 3.0199999809265137,
+            "end": 3.0199999809265137
+          },
+          {
+            "text": "of",
+            "start": 3.0199999809265137,
+            "end": 3.3399999141693115
+          },
+          {
+            "text": "numbers",
+            "start": 3.3399999141693115,
+            "end": 3.5399999618530273
+          }
+        ]
+      }
+    ]
+  },
+  "pg054_p136": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Question",
+            "start": 0,
+            "end": 0.6
+          },
+          {
+            "text": "4",
+            "start": 0.6,
+            "end": 1.02
+          },
+          {
+            "text": "486",
+            "start": 1.52,
+            "end": 2.98
+          },
+          {
+            "text": "plus",
+            "start": 2.98,
+            "end": 3.36
+          },
+          {
+            "text": "116",
+            "start": 3.36,
+            "end": 4.58
+          },
+          {
+            "text": "Question",
+            "start": 5.31,
+            "end": 5.42
+          },
+          {
+            "text": "5",
+            "start": 5.42,
+            "end": 5.94
+          },
+          {
+            "text": "367",
+            "start": 6.92,
+            "end": 7.78
+          },
+          {
+            "text": "plus",
+            "start": 7.78,
+            "end": 8.04
+          },
+          {
+            "text": "475",
+            "start": 8.04,
+            "end": 9.36
+          },
+          {
+            "text": "Question",
+            "start": 10.41,
+            "end": 10.52
+          },
+          {
+            "text": "6",
+            "start": 10.52,
+            "end": 11.08
+          },
+          {
+            "text": "237",
+            "start": 11.84,
+            "end": 12.74
+          },
+          {
+            "text": "plus",
+            "start": 12.74,
+            "end": 13.02
+          },
+          {
+            "text": "295",
+            "start": 13.02,
+            "end": 14.26
+          },
+          {
+            "text": "Question",
+            "start": 15.15,
+            "end": 15.26
+          },
+          {
+            "text": "7",
+            "start": 15.26,
+            "end": 15.78
+          },
+          {
+            "text": "429",
+            "start": 16.54,
+            "end": 17.3
+          },
+          {
+            "text": "plus",
+            "start": 17.3,
+            "end": 17.7
+          },
+          {
+            "text": "134",
+            "start": 17.7,
+            "end": 18.86
+          },
+          {
+            "text": "Question",
+            "start": 19.67,
+            "end": 19.78
+          },
+          {
+            "text": "8",
+            "start": 19.78,
+            "end": 20.26
+          },
+          {
+            "text": "586",
+            "start": 21.3,
+            "end": 22.48
+          },
+          {
+            "text": "plus",
+            "start": 22.48,
+            "end": 22.9
+          },
+          {
+            "text": "236",
+            "start": 22.9,
+            "end": 24.34
+          },
+          {
+            "text": "Question",
+            "start": 24.72,
+            "end": 25.38
+          },
+          {
+            "text": "9",
+            "start": 25.38,
+            "end": 25.78
+          },
+          {
+            "text": "178",
+            "start": 26.44,
+            "end": 27.72
+          },
+          {
+            "text": "plus",
+            "start": 27.72,
+            "end": 28.18
+          },
+          {
+            "text": "276",
+            "start": 28.18,
+            "end": 29.62
+          },
+          {
+            "text": "Question",
+            "start": 30.59,
+            "end": 30.7
+          },
+          {
+            "text": "10",
+            "start": 30.7,
+            "end": 31.22
+          },
+          {
+            "text": "285",
+            "start": 32.04,
+            "end": 33.1
+          },
+          {
+            "text": "plus",
+            "start": 33.1,
+            "end": 33.5
+          },
+          {
+            "text": "37",
+            "start": 33.5,
+            "end": 34.1
+          },
+          {
+            "text": "Question",
+            "start": 35.17,
+            "end": 35.28
+          },
+          {
+            "text": "11",
+            "start": 35.28,
+            "end": 35.78
+          },
+          {
+            "text": "328",
+            "start": 36.62,
+            "end": 37.54
+          },
+          {
+            "text": "plus",
+            "start": 37.54,
+            "end": 37.8
+          },
+          {
+            "text": "79",
+            "start": 37.8,
+            "end": 38.46
+          },
+          {
+            "text": "Question",
+            "start": 39.33,
+            "end": 39.44
+          },
+          {
+            "text": "12",
+            "start": 39.44,
+            "end": 40
+          },
+          {
+            "text": "467",
+            "start": 40.98,
+            "end": 41.94
+          },
+          {
+            "text": "plus",
+            "start": 41.94,
+            "end": 42.2
+          },
+          {
+            "text": "295",
+            "start": 42.2,
+            "end": 43.56
+          },
+          {
+            "text": "Question",
+            "start": 44.17,
+            "end": 44.28
+          },
+          {
+            "text": "13",
+            "start": 44.28,
+            "end": 44.94
+          },
+          {
+            "text": "88",
+            "start": 45.5,
+            "end": 45.86
+          },
+          {
+            "text": "plus",
+            "start": 45.86,
+            "end": 46.18
+          },
+          {
+            "text": "2",
+            "start": 46.18,
+            "end": 46.58
+          },
+          {
+            "text": "Question",
+            "start": 47.33,
+            "end": 47.44
+          },
+          {
+            "text": "14",
+            "start": 47.44,
+            "end": 48.06
+          },
+          {
+            "text": "179",
+            "start": 48.84,
+            "end": 49.94
+          },
+          {
+            "text": "plus",
+            "start": 49.94,
+            "end": 50.14
+          },
+          {
+            "text": "95",
+            "start": 50.14,
+            "end": 50.82
+          },
+          {
+            "text": "Question",
+            "start": 50.82,
+            "end": 51.74
+          },
+          {
+            "text": "15",
+            "start": 51.74,
+            "end": 52.34
+          },
+          {
+            "text": "587",
+            "start": 53.66,
+            "end": 54.24
+          },
+          {
+            "text": "plus",
+            "start": 54.24,
+            "end": 54.76
+          },
+          {
+            "text": "162",
+            "start": 54.76,
+            "end": 55.96
+          }
+        ]
+      }
+    ]
+  },
+  "pg054_p137": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "The",
+            "start": 0,
+            "end": 0.32
+          },
+          {
+            "text": "addition",
+            "start": 0.32,
+            "end": 0.62
+          },
+          {
+            "text": "chart",
+            "start": 0.62,
+            "end": 0.86
+          },
+          {
+            "text": "has",
+            "start": 0.86,
+            "end": 1.3
+          },
+          {
+            "text": "column",
+            "start": 1.3,
+            "end": 1.54
+          },
+          {
+            "text": "headings",
+            "start": 1.54,
+            "end": 1.94
+          },
+          {
+            "text": "101",
+            "start": 1.94,
+            "end": 2.78
+          },
+          {
+            "text": "102",
+            "start": 3.52,
+            "end": 4.28
+          },
+          {
+            "text": "103",
+            "start": 4.78,
+            "end": 5.44
+          },
+          {
+            "text": "104",
+            "start": 5.98,
+            "end": 6.74
+          },
+          {
+            "text": "and",
+            "start": 6.8,
+            "end": 7.24
+          },
+          {
+            "text": "105",
+            "start": 7.24,
+            "end": 8.06
+          },
+          {
+            "text": "and",
+            "start": 8.24,
+            "end": 8.78
+          },
+          {
+            "text": "row",
+            "start": 8.78,
+            "end": 8.9
+          },
+          {
+            "text": "headings",
+            "start": 8.9,
+            "end": 9.26
+          },
+          {
+            "text": "101",
+            "start": 9.26,
+            "end": 9.98
+          },
+          {
+            "text": "102",
+            "start": 10.6,
+            "end": 11.26
+          },
+          {
+            "text": "103",
+            "start": 12.34,
+            "end": 12.52
+          },
+          {
+            "text": "104",
+            "start": 13.66,
+            "end": 13.82
+          },
+          {
+            "text": "and",
+            "start": 14.08,
+            "end": 14.54
+          },
+          {
+            "text": "105",
+            "start": 14.54,
+            "end": 15.2
+          },
+          {
+            "text": "The",
+            "start": 15.56,
+            "end": 16.04
+          },
+          {
+            "text": "row",
+            "start": 16.04,
+            "end": 16.24
+          },
+          {
+            "text": "headed",
+            "start": 16.24,
+            "end": 16.4
+          },
+          {
+            "text": "101",
+            "start": 16.4,
+            "end": 17.3
+          },
+          {
+            "text": "contains",
+            "start": 17.3,
+            "end": 17.88
+          },
+          {
+            "text": "202",
+            "start": 17.88,
+            "end": 18.94
+          },
+          {
+            "text": "203",
+            "start": 19.36,
+            "end": 20.22
+          },
+          {
+            "text": "204",
+            "start": 20.8,
+            "end": 21.54
+          },
+          {
+            "text": "205",
+            "start": 22.06,
+            "end": 22.82
+          },
+          {
+            "text": "and",
+            "start": 22.84,
+            "end": 23.44
+          },
+          {
+            "text": "206",
+            "start": 23.44,
+            "end": 24.3
+          },
+          {
+            "text": "The",
+            "start": 24.42,
+            "end": 25.04
+          },
+          {
+            "text": "row",
+            "start": 25.04,
+            "end": 25.16
+          },
+          {
+            "text": "headed",
+            "start": 25.16,
+            "end": 25.36
+          },
+          {
+            "text": "102",
+            "start": 25.36,
+            "end": 26.16
+          },
+          {
+            "text": "contains",
+            "start": 26.16,
+            "end": 27.1
+          },
+          {
+            "text": "203",
+            "start": 27.1,
+            "end": 28.04
+          },
+          {
+            "text": "204",
+            "start": 28.54,
+            "end": 29.4
+          },
+          {
+            "text": "205",
+            "start": 29.82,
+            "end": 30.66
+          },
+          {
+            "text": "206",
+            "start": 31,
+            "end": 31.92
+          },
+          {
+            "text": "and",
+            "start": 32,
+            "end": 32.46
+          },
+          {
+            "text": "207",
+            "start": 32.46,
+            "end": 33.32
+          },
+          {
+            "text": "The",
+            "start": 33.7,
+            "end": 34.32
+          },
+          {
+            "text": "row",
+            "start": 34.32,
+            "end": 34.52
+          },
+          {
+            "text": "headed",
+            "start": 34.52,
+            "end": 34.76
+          },
+          {
+            "text": "103",
+            "start": 34.76,
+            "end": 35.68
+          },
+          {
+            "text": "contains",
+            "start": 35.68,
+            "end": 36.38
+          },
+          {
+            "text": "204",
+            "start": 36.38,
+            "end": 37.4
+          },
+          {
+            "text": "205",
+            "start": 37.8,
+            "end": 38.7
+          },
+          {
+            "text": "206",
+            "start": 39.2,
+            "end": 39.96
+          },
+          {
+            "text": "207",
+            "start": 40.48,
+            "end": 41.16
+          },
+          {
+            "text": "and",
+            "start": 41.28,
+            "end": 41.58
+          },
+          {
+            "text": "208",
+            "start": 41.58,
+            "end": 42.38
+          },
+          {
+            "text": "The",
+            "start": 42.84,
+            "end": 43.16
+          },
+          {
+            "text": "row",
+            "start": 43.16,
+            "end": 43.3
+          },
+          {
+            "text": "headed",
+            "start": 43.3,
+            "end": 43.54
+          },
+          {
+            "text": "104",
+            "start": 43.54,
+            "end": 44.56
+          },
+          {
+            "text": "contains",
+            "start": 44.56,
+            "end": 45.12
+          },
+          {
+            "text": "205",
+            "start": 45.12,
+            "end": 46.2
+          },
+          {
+            "text": "206",
+            "start": 46.84,
+            "end": 47.46
+          },
+          {
+            "text": "207",
+            "start": 48.1,
+            "end": 48.68
+          },
+          {
+            "text": "208",
+            "start": 49.3,
+            "end": 49.96
+          },
+          {
+            "text": "and",
+            "start": 49.96,
+            "end": 50.6
+          },
+          {
+            "text": "209",
+            "start": 50.6,
+            "end": 51.32
+          },
+          {
+            "text": "The",
+            "start": 51.32,
+            "end": 51.78
+          },
+          {
+            "text": "row",
+            "start": 51.78,
+            "end": 52.16
+          },
+          {
+            "text": "headed",
+            "start": 52.16,
+            "end": 52.54
+          },
+          {
+            "text": "105",
+            "start": 52.54,
+            "end": 53.88
+          },
+          {
+            "text": "contains",
+            "start": 53.88,
+            "end": 54.82
+          },
+          {
+            "text": "206",
+            "start": 54.82,
+            "end": 55.96
+          },
+          {
+            "text": "207",
+            "start": 56.42,
+            "end": 57.28
+          },
+          {
+            "text": "208",
+            "start": 57.78,
+            "end": 58.54
+          },
+          {
+            "text": "209",
+            "start": 59.2,
+            "end": 59.92
+          },
+          {
+            "text": "and",
+            "start": 59.98,
+            "end": 60.78
+          },
+          {
+            "text": "210",
+            "start": 60.78,
+            "end": 61.4
+          }
+        ]
+      }
+    ]
+  },
+  "pg054_p138": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Look",
+            "start": 0,
+            "end": 0.42
+          },
+          {
+            "text": "at",
+            "start": 0.42,
+            "end": 0.74
+          },
+          {
+            "text": "the",
+            "start": 0.74,
+            "end": 1
+          },
+          {
+            "text": "first",
+            "start": 1,
+            "end": 1.46
+          },
+          {
+            "text": "row",
+            "start": 1.46,
+            "end": 1.7
+          },
+          {
+            "text": "It",
+            "start": 2.27,
+            "end": 2.38
+          },
+          {
+            "text": "has",
+            "start": 2.38,
+            "end": 2.6
+          },
+          {
+            "text": "101",
+            "start": 2.6,
+            "end": 3.3
+          },
+          {
+            "text": "102",
+            "start": 4.04,
+            "end": 4.64
+          },
+          {
+            "text": "103",
+            "start": 5.32,
+            "end": 6
+          },
+          {
+            "text": "104",
+            "start": 7.08,
+            "end": 7.4
+          },
+          {
+            "text": "and",
+            "start": 7.72,
+            "end": 8.04
+          },
+          {
+            "text": "105",
+            "start": 8.04,
+            "end": 8.84
+          },
+          {
+            "text": "The",
+            "start": 9.28,
+            "end": 9.72
+          },
+          {
+            "text": "first",
+            "start": 9.72,
+            "end": 10.04
+          },
+          {
+            "text": "column",
+            "start": 10.04,
+            "end": 10.3
+          },
+          {
+            "text": "has",
+            "start": 10.3,
+            "end": 10.62
+          },
+          {
+            "text": "101",
+            "start": 10.62,
+            "end": 11.26
+          },
+          {
+            "text": "102",
+            "start": 12.5,
+            "end": 12.66
+          },
+          {
+            "text": "103",
+            "start": 13.75,
+            "end": 13.86
+          },
+          {
+            "text": "104",
+            "start": 15.02,
+            "end": 15.18
+          },
+          {
+            "text": "and",
+            "start": 15.54,
+            "end": 15.82
+          },
+          {
+            "text": "105",
+            "start": 15.82,
+            "end": 16.64
+          },
+          {
+            "text": "Observe",
+            "start": 17.14,
+            "end": 17.42
+          },
+          {
+            "text": "where",
+            "start": 17.42,
+            "end": 18
+          },
+          {
+            "text": "the",
+            "start": 18,
+            "end": 18.55
+          },
+          {
+            "text": "rows",
+            "start": 18.55,
+            "end": 18.66
+          },
+          {
+            "text": "and",
+            "start": 18.66,
+            "end": 19.37
+          },
+          {
+            "text": "columns",
+            "start": 19.37,
+            "end": 19.48
+          },
+          {
+            "text": "meet",
+            "start": 19.48,
+            "end": 19.84
+          },
+          {
+            "text": "Each",
+            "start": 20.73,
+            "end": 20.84
+          },
+          {
+            "text": "number",
+            "start": 20.84,
+            "end": 21.12
+          },
+          {
+            "text": "in",
+            "start": 21.12,
+            "end": 21.36
+          },
+          {
+            "text": "the",
+            "start": 21.36,
+            "end": 21.71
+          },
+          {
+            "text": "box",
+            "start": 21.71,
+            "end": 21.82
+          },
+          {
+            "text": "is",
+            "start": 21.82,
+            "end": 22.26
+          },
+          {
+            "text": "the",
+            "start": 22.26,
+            "end": 22.59
+          },
+          {
+            "text": "sum",
+            "start": 22.59,
+            "end": 22.7
+          },
+          {
+            "text": "of",
+            "start": 22.7,
+            "end": 22.98
+          },
+          {
+            "text": "two",
+            "start": 22.98,
+            "end": 23.18
+          },
+          {
+            "text": "numbers",
+            "start": 23.18,
+            "end": 23.54
+          },
+          {
+            "text": "Those",
+            "start": 24.3,
+            "end": 24.5
+          },
+          {
+            "text": "numbers",
+            "start": 24.5,
+            "end": 24.82
+          },
+          {
+            "text": "are",
+            "start": 24.82,
+            "end": 25.06
+          },
+          {
+            "text": "in",
+            "start": 25.06,
+            "end": 25.18
+          },
+          {
+            "text": "the",
+            "start": 25.18,
+            "end": 25.4
+          },
+          {
+            "text": "first",
+            "start": 25.4,
+            "end": 25.7
+          },
+          {
+            "text": "row",
+            "start": 25.7,
+            "end": 25.96
+          },
+          {
+            "text": "and",
+            "start": 25.96,
+            "end": 26.48
+          },
+          {
+            "text": "the",
+            "start": 26.48,
+            "end": 26.78
+          },
+          {
+            "text": "first",
+            "start": 26.78,
+            "end": 27.02
+          },
+          {
+            "text": "column",
+            "start": 27.02,
+            "end": 27.3
           }
         ]
       }

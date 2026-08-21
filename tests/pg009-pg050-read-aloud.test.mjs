@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 53; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 54; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1092,6 +1092,28 @@ assert.deepEqual(
   "page 53 must narrate only its headings, instructions, and two coherent question passages"
 );
 
+const page54 = read("pg054_sec001.html");
+const page54Questions = "Question 4. 486 plus 116. Question 5. 367 plus 475. Question 6. 237 plus 295. Question 7. 429 plus 134. Question 8. 586 plus 236. Question 9. 178 plus 276. Question 10. 285 plus 37. Question 11. 328 plus 79. Question 12. 467 plus 295. Question 13. 88 plus 2. Question 14. 179 plus 95. Question 15. 587 plus 162.";
+const page54Chart = "The addition chart has column headings 101, 102, 103, 104, and 105, and row headings 101, 102, 103, 104, and 105. The row headed 101 contains 202, 203, 204, 205, and 206. The row headed 102 contains 203, 204, 205, 206, and 207. The row headed 103 contains 204, 205, 206, 207, and 208. The row headed 104 contains 205, 206, 207, 208, and 209. The row headed 105 contains 206, 207, 208, 209, and 210.";
+const page54Explanation = "Look at the first row. It has 101, 102, 103, 104, and 105. The first column has 101, 102, 103, 104, and 105. Observe where the rows and columns meet. Each number in the box is the sum of two numbers. Those numbers are in the first row and the first column.";
+for (const [id, expected, filename] of [
+  ["pg054_p136", page54Questions, "pg054_p136_adt_questions4to15.mp3"],
+  ["pg054_p137", page54Chart, "pg054_p137_adt_chart.mp3"],
+  ["pg054_p138", page54Explanation, "pg054_p138_adt_explanation.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 54 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.ok(page54.indexOf('data-id="pg054_p136"') < page54.indexOf('data-id="pg054_p001"'), "questions 4–15 must precede their isolated visual fragments");
+assert.ok(page54.indexOf('data-id="pg054_p092"') < page54.indexOf('data-id="pg054_p137"'), "the chart introduction must precede its description");
+assert.ok(page54.indexOf('data-id="pg054_p128"') < page54.indexOf('data-id="pg054_p138"'), "the chart cells must precede the printed explanation");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg054_")).sort(),
+  ["pg054_p091", "pg054_p092", "pg054_p136", "pg054_p137", "pg054_p138"],
+  "page 54 must narrate only the continued questions, chart heading, introduction, chart description, and explanation"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1126,4 +1148,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg053 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg054 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
