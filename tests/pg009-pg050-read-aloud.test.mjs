@@ -152,6 +152,16 @@ assert.deepEqual(timecodes.pg015_p002.timecodes[1].word_timestamps, [
   { text: "nine", start: 2.7, end: 2.96 }
 ], "Exercise 12 item 9 highlight must follow measured clean-audio timing");
 
+const page16 = read("pg016_sec001.html");
+assert.match(page16, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 16 must not paint a second legacy highlight layer");
+for (const id of ["pg016_im001", "pg016_im002", "pg016_im003"]) {
+  assert.match(page16, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate text panel must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not repeat text already represented by word overlays`);
+}
+assert.match(page16, /\["pg016_p058", "pg016_p059", "pg016_p056"\][\s\S]*root\.insertBefore\(element, firstBodyHeading\)/, "page 16 must narrate the chapter heading before the body text");
+assert.equal(audios.pg016_p045, "pg014_p019_adt_clean.mp3", "page 16 item 4 must not contain a trailing 'and'");
+assert.deepEqual(timecodes.pg016_p045.timecodes[1].word_timestamps, [{ text: "4", start: 0, end: 0.64 }], "page 16 item 4 highlight must stop with the clean narration");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
