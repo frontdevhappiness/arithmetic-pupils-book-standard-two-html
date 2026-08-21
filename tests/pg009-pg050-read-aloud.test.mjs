@@ -266,6 +266,21 @@ assert.match(page21, /data-id="pg021_p010"[\s\S]*?left:196px;line-height:18px;wi
 assert.match(page21, /data-id="pg021_p013"[\s\S]*?left:115px;line-height:18px;width:72px;height:20px/, "Example 4 Hundreds overlay must fit its printed word");
 assert.match(page21, /data-id="pg021_p019"[\s\S]*?left:163px;line-height:19px;width:234px;height:20px/, "Example 4 answer overlay must match its centred printed sentence");
 
+const page22 = read("pg022_sec001.html");
+assert.match(page22, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 22 must not paint a second legacy highlight layer");
+assert.match(page22, /data-id="pg022_im010"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate Exercise 1 panel must be decorative");
+assert.equal(audios.pg022_im010, undefined, "the complete Exercise 1 panel must not repeat its text and images");
+for (const id of ["pg022_im007", "pg022_im008"]) {
+  assert.match(page22, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} repeated bundle crop must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not narrate one visual group as three separate images`);
+}
+assert.equal(texts.pg022_im006, "Three bundles of one hundred pencils.", "Example 5 must describe the complete hundreds group once");
+assert.equal(audios.pg022_im006, "pg022_im003.mp3", "Example 5 must use matching narration for three bundles");
+assert.match(page22, /data-id="pg022_p006"[\s\S]*?left:86px;line-height:19px;width:140px;height:20px/, "Three hundreds overlay must fit its printed phrase");
+assert.match(page22, /data-id="pg022_p009"[\s\S]*?left:147px;line-height:19px;width:254px;height:20px/, "Example 5 answer overlay must match its centred printed sentence");
+assert.match(page22, /"pg022_p001", "pg022_p002", "pg022_p003", "pg022_p004", "pg022_p005"[\s\S]*"pg022_im006", "pg022_im001", "pg022_im002"[\s\S]*"pg022_p006", "pg022_p007", "pg022_p008", "pg022_p009"/, "Example 5 must narrate text and images in visual order");
+assert.match(page22, /"pg022_p010", "pg022_p011", "pg022_p013", "pg022_p014", "pg022_p015", "pg022_p016"[\s\S]*"pg022_im003", "pg022_im004", "pg022_im005"/, "Exercise 1 must narrate its prompt and images in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
