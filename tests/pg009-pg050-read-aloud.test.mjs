@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 62; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 63; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1269,6 +1269,24 @@ assert.match(page62, /data-id="pg062_im001"[^>]*role="presentation"[^>]*aria-hid
 assert.match(page62, /data-id="pg062_p031"[\s\S]*data-id="pg062_p001"/, "the consolidated questions must precede their visual fragments");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg062_")).sort(), ["pg062_p031"], "page 62 must narrate every question exactly once");
 
+const page63 = read("pg063_sec001.html");
+const page63Intro = "Chapter Six. Subtraction. Subtracting numbers not exceeding 999. Numbers can be subtracted horizontally or vertically. Subtraction is done by considering the place value of each digit in a number. Subtracting numbers horizontally without regrouping. Numbers are subtracted starting from the right to the left.";
+const page63Example = "Example. 247 minus 123. Solution. Subtract by place value, starting from the right. In the ones place, 7 minus 3 equals 4. In the tens place, 4 minus 2 equals 2. In the hundreds place, 2 minus 1 equals 1. Therefore, 247 minus 123 equals 124. The diagram uses coloured arrows to match ones with ones, tens with tens, and hundreds with hundreds.";
+for (const [id, expected, filename] of [["pg063_p035", page63Intro, "pg063_p035_adt_intro.mp3"], ["pg063_p036", page63Example, "pg063_p036_adt_example.mp3"]]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 63 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+for (const id of ["pg063_im001", "pg063_im002"]) {
+  assert.equal(texts[id], "", `${id} duplicate composite must have no separate narration`);
+  assert.match(page63, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+for (const id of ["pg063_p011", "pg063_p014", "pg063_p017"]) assert.equal(texts[id], "hundreds", `${id} must spell hundreds correctly`);
+assert.doesNotMatch(page63, /hundres(?:&quot;|<)/, "page 63 must not retain the misspelling hundres");
+assert.match(page63, /data-id="pg063_p035"[\s\S]*data-id="pg063_p001"/, "the chapter introduction must precede its visual fragments");
+assert.match(page63, /data-id="pg063_p008"[\s\S]*data-id="pg063_p036"[\s\S]*data-id="pg063_p009"/, "the consolidated example must follow its heading");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg063_")).sort(), ["pg063_p035", "pg063_p036"], "page 63 must narrate its introduction and example exactly once");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1303,4 +1321,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg062 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg063 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
