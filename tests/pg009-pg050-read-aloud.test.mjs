@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 51; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 52; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1049,6 +1049,30 @@ assert.deepEqual(
   "page 51 must narrate only its heading, instruction, solution label, and coherent worked steps"
 );
 
+const page52 = read("pg052_sec001.html");
+const page52Instruction = "Add one hundred and sixty-six and one hundred and ninety-eight vertically.";
+const page52Solution = "Align the hundreds, tens, and ones digits in their correct columns. The first row has 1 in the hundreds column, 6 in the tens column, and 6 in the ones column. The second row has 1 in the hundreds column, 9 in the tens column, and 8 in the ones column. A plus sign appears before the second row. The answer row shows 3 in the hundreds column, 6 in the tens column, and 4 in the ones column. Steps. Step 1. Add ones: 6 plus 8 equals 14. Regroup 14 ones into 1 ten and 4 ones. Write 4 in the ones place. Take 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 9 equals 16. Regroup 16 tens into 1 hundred and 6 tens. Write 6 in the tens place. Take 1 hundred to the hundreds place. Step 3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds place. Therefore, the answer is three hundred and sixty-four.";
+for (const [id, expected, filename] of [
+  ["pg052_p065", page52Instruction, "pg052_p065_adt_instruction.mp3"],
+  ["pg052_p066", page52Solution, "pg052_p066_adt_solution.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 52 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.equal(texts.pg052_im001, "", "the page 52 composite must not repeat the worked example");
+assert.equal(audios.pg052_im001, undefined, "the page 52 composite must not play duplicate narration");
+assert.equal(timecodes.pg052_im001, undefined, "the page 52 composite must not retain duplicate timing");
+assert.match(page52, /data-id="pg052_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page 52 composite must be decorative");
+assert.ok(page52.indexOf('data-id="pg052_p001"') < page52.indexOf('data-id="pg052_p065"'), "the Example heading must precede the instruction");
+assert.ok(page52.indexOf('data-id="pg052_p065"') < page52.indexOf('data-id="pg052_p002"'), "the instruction must precede the Solution heading");
+assert.ok(page52.indexOf('data-id="pg052_p002"') < page52.indexOf('data-id="pg052_p066"'), "the Solution heading must precede the worked steps");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg052_")).sort(),
+  ["pg052_p001", "pg052_p002", "pg052_p065", "pg052_p066"],
+  "page 52 must narrate only its heading, instruction, solution label, and coherent worked steps"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1083,4 +1107,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg051 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg052 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
