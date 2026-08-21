@@ -3402,7 +3402,7 @@
   "pg067_p053": "ARITHMETICS PUPIL'S STD 2.indd 61",
   "pg067_p054": "06/11/2024 17:23",
   "pg068_p000": "62",
-  "pg068_im002": "Worked example showing 668 minus 346 equals 322, with place-value explanation and a counting-frame model labelled hundreds, tens and ones showing 3 hundreds, 2 tens and 2 ones; below, Exercise 3 asks pupils to write the answer for six subtraction questions: 178 minus 175, 486 minus 244, 490 minus 250, 478 minus 470, 445 minus 334, and 384 minus 251.",
+  "pg068_im002": "",
   "pg068_p001": "3.",
   "pg068_p002": "Subtract hundreds: 6 – 3 = 3.",
   "pg068_p003": "Write 3 in the hundreds place.",
@@ -3416,7 +3416,7 @@
   "pg068_p010": "6",
   "pg068_p012": "3 2 2",
   "pg068_p013": "Or",
-  "pg068_im001": "Place-value counting frame with three rods for hundreds, tens and ones, showing 3 green counters in hundreds, 2 blue counters in tens, and 2 red counters in ones, for a total of 322.",
+  "pg068_im001": "",
   "pg068_p014": "Therefore, the answer is 322.",
   "pg068_p015": "Exercise 3",
   "pg068_p016": "Write the answer in each question.",
@@ -5995,5 +5995,7 @@
   "pg066_p031": "Exercise 2. Write the answer in each question. Question 1. 436 minus 321. Question 2. 758 minus 643. Question 3. 239 minus 115. Question 4. 384 minus 243. Question 5. 895 minus 670. Question 6. 267 minus 145. Question 7. 530 minus 410. Question 8. 682 minus 381. Question 9. 999 minus 717. Question 10. 246 minus 123. Question 11. 896 minus 643. Question 12. 900 minus 500. Question 13. 729 minus 408. Question 14. 256 minus 113. Question 15. 446 minus 325. Question 16. 185 minus 172. Question 17. 388 minus 216. Question 18. 888 minus 283.",
   "pg066_p032": "Activity 1. Subtraction game. Question 1. Use the direction of the arrows to fill the missing numbers in the balloons. The diagram has six balloons connected by arrows. The left path shows 900 minus 100 equals 800. The right path shows 900 minus a missing number equals 600. The bottom row shows 800 minus a missing number equals 600.",
   "pg067_p055": "Question 2. Fill in the missing numbers in the balloons. The number web has 300 in the centre and six balloons around it. Starting at the upper left and moving clockwise, the outer balloons show 800, a blank, 200, a blank, 400, and a blank.",
-  "pg067_p056": "Subtracting numbers vertically without regrouping. Numbers are subtracted vertically from the right to the left. Example. 668 minus 346. Solution. 668 minus 346 equals 322. Steps. Step 1. Subtract ones. 8 minus 6 equals 2. Write 2 in the ones place. Step 2. Subtract tens. 6 minus 4 equals 2. Write 2 in the tens place."
+  "pg067_p056": "Subtracting numbers vertically without regrouping. Numbers are subtracted vertically from the right to the left. Example. 668 minus 346. Solution. 668 minus 346 equals 322. Steps. Step 1. Subtract ones. 8 minus 6 equals 2. Write 2 in the ones place. Step 2. Subtract tens. 6 minus 4 equals 2. Write 2 in the tens place.",
+  "pg068_p063": "Step 3. Subtract hundreds. 6 minus 3 equals 3. Write 3 in the hundreds place. The vertical subtraction is 668 minus 346 equals 322. Or, use the counting frame. It shows 6 counters in the hundreds column, 6 counters in the tens column, and 8 counters in the ones column. 3 hundreds, 4 tens, and 6 ones are crossed out. This leaves 3 hundreds, 2 tens, and 2 ones. Therefore, the answer is 322.",
+  "pg068_p064": "Exercise 3. Write the answer in each question. Question 1. 178 minus 175. Question 2. 486 minus 244. Question 3. 490 minus 250. Question 4. 478 minus 470. Question 5. 445 minus 334. Question 6. 384 minus 251."
 }
