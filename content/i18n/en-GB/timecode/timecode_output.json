@@ -146924,758 +146924,758 @@
         "word_timestamps": [
           {
             "text": "Align",
-            "start": 0.88,
-            "end": 1.4
+            "start": 0,
+            "end": 0.58
           },
           {
             "text": "the",
-            "start": 1.4,
-            "end": 1.81
+            "start": 0.58,
+            "end": 1.41
           },
           {
             "text": "hundreds",
-            "start": 1.81,
-            "end": 1.92
+            "start": 1.41,
+            "end": 1.52
           },
           {
             "text": "tens",
-            "start": 2.29,
-            "end": 2.4
+            "start": 1.89,
+            "end": 2
           },
           {
             "text": "and",
-            "start": 2.48,
-            "end": 2.85
+            "start": 2.1,
+            "end": 2.5
           },
           {
             "text": "ones",
-            "start": 2.85,
-            "end": 2.96
+            "start": 2.5,
+            "end": 2.62
           },
           {
             "text": "digits",
-            "start": 2.96,
-            "end": 3.26
+            "start": 2.62,
+            "end": 2.94
           },
           {
             "text": "in",
-            "start": 3.26,
-            "end": 3.54
+            "start": 2.94,
+            "end": 3.38
           },
           {
             "text": "their",
-            "start": 3.54,
-            "end": 3.7
+            "start": 3.38,
+            "end": 3.54
           },
           {
             "text": "correct",
-            "start": 3.7,
-            "end": 4.12
+            "start": 3.54,
+            "end": 3.98
           },
           {
             "text": "columns",
-            "start": 4.12,
-            "end": 4.52
+            "start": 3.98,
+            "end": 4.38
           },
           {
             "text": "The",
-            "start": 5.37,
-            "end": 5.48
+            "start": 4.93,
+            "end": 5.04
           },
           {
             "text": "first",
-            "start": 5.48,
-            "end": 5.77
+            "start": 5.04,
+            "end": 5.36
           },
           {
             "text": "row",
-            "start": 5.77,
-            "end": 5.88
+            "start": 5.36,
+            "end": 5.48
           },
           {
             "text": "has",
-            "start": 5.88,
-            "end": 6.2
+            "start": 5.48,
+            "end": 5.8
           },
           {
             "text": "1",
-            "start": 6.2,
-            "end": 6.39
+            "start": 5.8,
+            "end": 6.08
           },
           {
             "text": "in",
-            "start": 6.39,
+            "start": 6.08,
+            "end": 6.24
+          },
+          {
+            "text": "the",
+            "start": 6.24,
             "end": 6.5
           },
           {
-            "text": "the",
-            "start": 6.5,
-            "end": 6.7
-          },
-          {
             "text": "hundreds",
-            "start": 6.7,
-            "end": 7.06
+            "start": 6.5,
+            "end": 6.9
           },
           {
             "text": "column",
-            "start": 7.06,
-            "end": 7.24
+            "start": 6.9,
+            "end": 7.02
           },
           {
             "text": "6",
-            "start": 7.78,
-            "end": 8.04
+            "start": 7.54,
+            "end": 7.88
           },
           {
             "text": "in",
-            "start": 8.04,
-            "end": 8.2
+            "start": 7.88,
+            "end": 8.02
           },
           {
             "text": "the",
-            "start": 8.2,
-            "end": 8.56
+            "start": 8.02,
+            "end": 8.36
           },
           {
             "text": "tens",
-            "start": 8.56,
-            "end": 8.78
+            "start": 8.36,
+            "end": 8.62
           },
           {
             "text": "column",
-            "start": 8.78,
-            "end": 8.94
+            "start": 8.62,
+            "end": 8.8
           },
           {
             "text": "and",
-            "start": 9.12,
-            "end": 9.6
+            "start": 8.88,
+            "end": 9.24
           },
           {
             "text": "6",
-            "start": 9.6,
-            "end": 9.86
+            "start": 9.24,
+            "end": 9.5
           },
           {
             "text": "in",
-            "start": 9.86,
-            "end": 10.02
+            "start": 9.5,
+            "end": 9.68
           },
           {
             "text": "the",
-            "start": 10.02,
-            "end": 10.31
+            "start": 9.68,
+            "end": 9.93
           },
           {
             "text": "ones",
-            "start": 10.31,
-            "end": 10.42
+            "start": 9.93,
+            "end": 10.04
           },
           {
             "text": "column",
-            "start": 10.42,
-            "end": 10.68
+            "start": 10.04,
+            "end": 10.32
           },
           {
             "text": "The",
-            "start": 11.16,
-            "end": 11.58
+            "start": 10.76,
+            "end": 10.94
           },
           {
             "text": "second",
-            "start": 11.58,
-            "end": 11.9
+            "start": 10.94,
+            "end": 11.22
           },
           {
             "text": "row",
-            "start": 11.9,
-            "end": 12.06
+            "start": 11.22,
+            "end": 11.36
           },
           {
             "text": "has",
-            "start": 12.06,
-            "end": 12.3
+            "start": 11.36,
+            "end": 11.6
           },
           {
             "text": "1",
-            "start": 12.3,
-            "end": 12.61
+            "start": 11.6,
+            "end": 11.96
           },
           {
             "text": "in",
-            "start": 12.61,
-            "end": 12.72
+            "start": 11.96,
+            "end": 12.14
           },
           {
             "text": "the",
-            "start": 12.72,
-            "end": 13.08
+            "start": 12.14,
+            "end": 12.48
           },
           {
             "text": "hundreds",
-            "start": 13.08,
-            "end": 13.33
+            "start": 12.48,
+            "end": 12.75
           },
           {
             "text": "column",
-            "start": 13.33,
-            "end": 13.44
+            "start": 12.75,
+            "end": 12.86
           },
           {
             "text": "2",
-            "start": 13.96,
-            "end": 14.14
+            "start": 13.44,
+            "end": 13.74
           },
           {
             "text": "in",
-            "start": 14.14,
-            "end": 14.28
+            "start": 13.74,
+            "end": 13.92
           },
           {
             "text": "the",
-            "start": 14.28,
-            "end": 14.58
+            "start": 13.92,
+            "end": 14.24
           },
           {
             "text": "tens",
-            "start": 14.58,
-            "end": 14.82
+            "start": 14.24,
+            "end": 14.55
           },
           {
             "text": "column",
-            "start": 14.82,
-            "end": 14.96
+            "start": 14.55,
+            "end": 14.66
           },
           {
             "text": "and",
-            "start": 15.14,
-            "end": 15.52
+            "start": 14.84,
+            "end": 15.22
           },
           {
             "text": "6",
-            "start": 15.52,
-            "end": 15.78
+            "start": 15.22,
+            "end": 15.46
           },
           {
             "text": "in",
-            "start": 15.78,
-            "end": 15.96
+            "start": 15.46,
+            "end": 15.7
           },
           {
             "text": "the",
-            "start": 15.96,
-            "end": 16.2
+            "start": 15.7,
+            "end": 15.92
           },
           {
             "text": "ones",
-            "start": 16.2,
-            "end": 16.46
+            "start": 15.92,
+            "end": 16.16
           },
           {
             "text": "column",
-            "start": 16.46,
-            "end": 16.58
+            "start": 16.16,
+            "end": 16.3
           },
           {
             "text": "A",
-            "start": 17.02,
-            "end": 17.32
+            "start": 16.82,
+            "end": 17.04
           },
           {
             "text": "plus",
-            "start": 17.32,
-            "end": 17.6
+            "start": 17.04,
+            "end": 17.28
           },
           {
             "text": "sign",
-            "start": 17.6,
-            "end": 17.86
+            "start": 17.28,
+            "end": 17.52
           },
           {
             "text": "appears",
-            "start": 17.86,
-            "end": 18.22
+            "start": 17.52,
+            "end": 17.82
           },
           {
             "text": "before",
-            "start": 18.22,
-            "end": 18.58
+            "start": 17.82,
+            "end": 18.14
           },
           {
             "text": "the",
-            "start": 18.58,
-            "end": 18.88
+            "start": 18.14,
+            "end": 18.44
           },
           {
             "text": "second",
-            "start": 18.88,
-            "end": 19.1
+            "start": 18.44,
+            "end": 18.6
           },
           {
             "text": "row",
-            "start": 19.1,
-            "end": 19.3
+            "start": 18.6,
+            "end": 18.8
           },
           {
             "text": "The",
-            "start": 20.04,
-            "end": 20.2
+            "start": 19.18,
+            "end": 19.3
           },
           {
             "text": "answer",
-            "start": 20.2,
-            "end": 20.52
+            "start": 19.3,
+            "end": 19.58
           },
           {
             "text": "row",
-            "start": 20.52,
-            "end": 20.78
+            "start": 19.58,
+            "end": 19.86
           },
           {
             "text": "shows",
-            "start": 20.78,
-            "end": 21.04
+            "start": 19.86,
+            "end": 20.12
           },
           {
             "text": "2",
-            "start": 21.04,
-            "end": 21.38
+            "start": 20.12,
+            "end": 20.52
           },
           {
             "text": "in",
-            "start": 21.38,
-            "end": 21.56
+            "start": 20.52,
+            "end": 20.76
           },
           {
             "text": "the",
-            "start": 21.56,
-            "end": 21.92
+            "start": 20.76,
+            "end": 21.1
           },
           {
             "text": "hundreds",
-            "start": 21.92,
-            "end": 22.19
+            "start": 21.1,
+            "end": 21.41
           },
           {
             "text": "column",
-            "start": 22.19,
-            "end": 22.3
+            "start": 21.41,
+            "end": 21.52
           },
           {
             "text": "9",
-            "start": 22.9,
-            "end": 23.2
+            "start": 21.94,
+            "end": 22.24
           },
           {
             "text": "in",
-            "start": 23.2,
-            "end": 23.38
+            "start": 22.24,
+            "end": 22.48
           },
           {
             "text": "the",
-            "start": 23.38,
-            "end": 23.72
+            "start": 22.48,
+            "end": 22.74
           },
           {
             "text": "tens",
-            "start": 23.72,
-            "end": 23.98
+            "start": 22.74,
+            "end": 22.99
           },
           {
             "text": "column",
-            "start": 23.98,
-            "end": 24.14
+            "start": 22.99,
+            "end": 23.1
           },
           {
             "text": "and",
-            "start": 24.3,
-            "end": 24.74
+            "start": 23.36,
+            "end": 23.62
           },
           {
             "text": "2",
-            "start": 24.74,
-            "end": 24.98
+            "start": 23.62,
+            "end": 23.9
           },
           {
             "text": "in",
-            "start": 24.98,
-            "end": 25.12
+            "start": 23.9,
+            "end": 24.1
           },
           {
             "text": "the",
-            "start": 25.12,
-            "end": 25.36
+            "start": 24.1,
+            "end": 24.34
           },
           {
             "text": "ones",
-            "start": 25.36,
-            "end": 25.69
+            "start": 24.34,
+            "end": 24.56
           },
           {
             "text": "column",
-            "start": 25.69,
-            "end": 25.8
+            "start": 24.56,
+            "end": 24.72
           },
           {
             "text": "Steps",
-            "start": 26.56,
-            "end": 27.22
+            "start": 25.12,
+            "end": 25.23
           },
           {
             "text": "Step",
-            "start": 27.22,
-            "end": 27.84
+            "start": 25.23,
+            "end": 25.34
           },
           {
             "text": "1",
-            "start": 27.84,
-            "end": 28.16
+            "start": 25.34,
+            "end": 25.74
           },
           {
             "text": "Add",
-            "start": 28.81,
-            "end": 28.92
+            "start": 26.18,
+            "end": 26.46
           },
           {
             "text": "ones",
-            "start": 28.92,
-            "end": 29.32
+            "start": 26.46,
+            "end": 26.94
           },
           {
             "text": "6",
-            "start": 29.94,
-            "end": 30.08
+            "start": 26.94,
+            "end": 27.48
           },
           {
             "text": "plus",
-            "start": 30.08,
-            "end": 30.5
+            "start": 27.48,
+            "end": 27.74
           },
           {
             "text": "6",
-            "start": 30.5,
-            "end": 30.94
+            "start": 27.74,
+            "end": 28.18
           },
           {
             "text": "equals",
-            "start": 30.94,
-            "end": 31.34
+            "start": 28.18,
+            "end": 28.68
           },
           {
             "text": "12",
-            "start": 31.34,
-            "end": 31.84
+            "start": 28.68,
+            "end": 29.22
           },
           {
             "text": "Regroup",
-            "start": 32.75,
-            "end": 32.86
+            "start": 29.93,
+            "end": 30.04
           },
           {
             "text": "12",
-            "start": 32.86,
-            "end": 33.36
+            "start": 30.04,
+            "end": 30.58
           },
           {
             "text": "ones",
-            "start": 33.36,
-            "end": 33.66
+            "start": 30.58,
+            "end": 30.84
           },
           {
             "text": "into",
-            "start": 33.66,
-            "end": 33.96
+            "start": 30.84,
+            "end": 31.16
           },
           {
             "text": "1",
-            "start": 33.96,
-            "end": 34.34
+            "start": 31.16,
+            "end": 31.58
           },
           {
             "text": "ten",
-            "start": 34.34,
-            "end": 34.54
+            "start": 31.58,
+            "end": 31.82
           },
           {
             "text": "and",
-            "start": 34.54,
-            "end": 34.86
+            "start": 31.82,
+            "end": 32.38
           },
           {
             "text": "2",
-            "start": 34.86,
-            "end": 35.08
+            "start": 32.38,
+            "end": 32.62
           },
           {
             "text": "ones",
-            "start": 35.08,
-            "end": 35.5
+            "start": 32.62,
+            "end": 33.16
           },
           {
             "text": "Write",
-            "start": 36.01,
-            "end": 36.12
+            "start": 34.21,
+            "end": 34.32
           },
           {
             "text": "2",
-            "start": 36.12,
-            "end": 36.48
+            "start": 34.32,
+            "end": 34.74
           },
           {
             "text": "in",
-            "start": 36.48,
-            "end": 36.6
+            "start": 34.74,
+            "end": 34.96
           },
           {
             "text": "the",
-            "start": 36.6,
-            "end": 36.86
+            "start": 34.96,
+            "end": 35.26
           },
           {
             "text": "ones",
-            "start": 36.86,
-            "end": 37.02
+            "start": 35.26,
+            "end": 35.4
           },
           {
             "text": "place",
-            "start": 37.02,
-            "end": 37.26
+            "start": 35.4,
+            "end": 35.72
           },
           {
-            "text": "Carry",
-            "start": 37.93,
-            "end": 38.04
+            "text": "Take",
+            "start": 36.27,
+            "end": 36.38
           },
           {
             "text": "1",
-            "start": 38.04,
-            "end": 38.44
+            "start": 36.38,
+            "end": 37.14
           },
           {
             "text": "ten",
-            "start": 38.44,
-            "end": 38.7
+            "start": 37.14,
+            "end": 37.72
           },
           {
             "text": "to",
-            "start": 38.7,
-            "end": 38.92
+            "start": 37.72,
+            "end": 38.04
           },
           {
             "text": "the",
-            "start": 38.92,
-            "end": 39.26
+            "start": 38.04,
+            "end": 38.24
           },
           {
             "text": "tens",
-            "start": 39.26,
-            "end": 39.4
+            "start": 38.24,
+            "end": 38.58
           },
           {
             "text": "place",
-            "start": 39.4,
-            "end": 39.68
+            "start": 38.58,
+            "end": 38.96
           },
           {
             "text": "Step",
-            "start": 40.38,
-            "end": 40.5
+            "start": 39.77,
+            "end": 39.88
           },
           {
             "text": "2",
-            "start": 40.5,
-            "end": 40.88
+            "start": 39.88,
+            "end": 40.34
           },
           {
             "text": "Add",
-            "start": 41.41,
-            "end": 41.52
+            "start": 41.26,
+            "end": 41.4
           },
           {
             "text": "tens",
-            "start": 41.52,
-            "end": 41.9
+            "start": 41.4,
+            "end": 41.94
           },
           {
             "text": "1",
-            "start": 41.96,
-            "end": 42.28
+            "start": 42.38,
+            "end": 42.7
           },
           {
             "text": "plus",
-            "start": 42.28,
-            "end": 42.48
+            "start": 42.7,
+            "end": 42.96
           },
           {
             "text": "6",
-            "start": 42.48,
-            "end": 42.78
+            "start": 42.96,
+            "end": 43.48
           },
           {
             "text": "plus",
-            "start": 42.78,
-            "end": 43.02
+            "start": 43.48,
+            "end": 43.88
           },
           {
             "text": "2",
-            "start": 43.02,
-            "end": 43.34
+            "start": 43.88,
+            "end": 44.32
           },
           {
             "text": "equals",
-            "start": 43.34,
-            "end": 43.74
+            "start": 44.32,
+            "end": 44.84
           },
           {
             "text": "9",
-            "start": 43.74,
-            "end": 44.14
-          },
-          {
-            "text": "Write",
-            "start": 44.63,
-            "end": 44.74
-          },
-          {
-            "text": "9",
-            "start": 44.74,
-            "end": 45.11
-          },
-          {
-            "text": "in",
-            "start": 45.11,
+            "start": 44.84,
             "end": 45.22
           },
           {
-            "text": "the",
-            "start": 45.22,
-            "end": 45.52
-          },
-          {
-            "text": "tens",
-            "start": 45.52,
-            "end": 45.68
-          },
-          {
-            "text": "place",
-            "start": 45.68,
-            "end": 45.9
-          },
-          {
-            "text": "Step",
-            "start": 46.62,
-            "end": 46.76
-          },
-          {
-            "text": "3",
-            "start": 46.76,
-            "end": 47.12
-          },
-          {
-            "text": "Add",
-            "start": 47.63,
-            "end": 47.74
-          },
-          {
-            "text": "hundreds",
-            "start": 47.74,
-            "end": 48.18
-          },
-          {
-            "text": "1",
-            "start": 48.58,
-            "end": 48.86
-          },
-          {
-            "text": "plus",
-            "start": 48.86,
-            "end": 49.08
-          },
-          {
-            "text": "1",
-            "start": 49.08,
-            "end": 49.52
-          },
-          {
-            "text": "equals",
-            "start": 49.52,
-            "end": 49.86
-          },
-          {
-            "text": "2",
-            "start": 49.86,
-            "end": 50.24
-          },
-          {
             "text": "Write",
-            "start": 50.77,
-            "end": 50.88
+            "start": 45.85,
+            "end": 45.96
           },
           {
-            "text": "2",
-            "start": 50.88,
-            "end": 51.22
+            "text": "9",
+            "start": 45.96,
+            "end": 46.32
           },
           {
             "text": "in",
-            "start": 51.22,
-            "end": 51.34
+            "start": 46.32,
+            "end": 46.46
           },
           {
             "text": "the",
-            "start": 51.34,
-            "end": 51.52
+            "start": 46.46,
+            "end": 46.74
           },
           {
-            "text": "hundreds",
-            "start": 51.52,
-            "end": 51.88
+            "text": "tens",
+            "start": 46.74,
+            "end": 46.94
           },
           {
             "text": "place",
-            "start": 51.88,
-            "end": 52.08
+            "start": 46.94,
+            "end": 47.18
           },
           {
-            "text": "Therefore",
-            "start": 52.08,
-            "end": 52.96
+            "text": "Step",
+            "start": 47.72,
+            "end": 47.9
+          },
+          {
+            "text": "3",
+            "start": 47.9,
+            "end": 48.32
+          },
+          {
+            "text": "Add",
+            "start": 48.88,
+            "end": 49.22
+          },
+          {
+            "text": "hundreds",
+            "start": 49.22,
+            "end": 49.82
+          },
+          {
+            "text": "1",
+            "start": 50.28,
+            "end": 50.58
+          },
+          {
+            "text": "plus",
+            "start": 50.58,
+            "end": 50.82
+          },
+          {
+            "text": "1",
+            "start": 50.82,
+            "end": 51.4
+          },
+          {
+            "text": "equals",
+            "start": 51.4,
+            "end": 51.76
+          },
+          {
+            "text": "2",
+            "start": 51.76,
+            "end": 52.18
+          },
+          {
+            "text": "Write",
+            "start": 52.99,
+            "end": 53.1
+          },
+          {
+            "text": "2",
+            "start": 53.1,
+            "end": 53.54
+          },
+          {
+            "text": "in",
+            "start": 53.54,
+            "end": 53.74
           },
           {
             "text": "the",
-            "start": 53.13,
-            "end": 53.24
+            "start": 53.74,
+            "end": 54.02
+          },
+          {
+            "text": "hundreds",
+            "start": 54.02,
+            "end": 54.4
+          },
+          {
+            "text": "place",
+            "start": 54.4,
+            "end": 54.62
+          },
+          {
+            "text": "Therefore",
+            "start": 54.62,
+            "end": 55.8
+          },
+          {
+            "text": "the",
+            "start": 56.02,
+            "end": 56.32
           },
           {
             "text": "answer",
-            "start": 53.24,
-            "end": 53.6
+            "start": 56.32,
+            "end": 56.64
           },
           {
             "text": "is",
-            "start": 53.6,
-            "end": 53.88
+            "start": 56.64,
+            "end": 56.92
           },
           {
             "text": "two",
-            "start": 53.88,
-            "end": 54.19
+            "start": 56.92,
+            "end": 57.26
           },
           {
             "text": "hundred",
-            "start": 54.19,
-            "end": 54.5
+            "start": 57.26,
+            "end": 57.6
           },
           {
             "text": "and",
-            "start": 54.5,
-            "end": 54.81
+            "start": 57.6,
+            "end": 57.94
           },
           {
             "text": "ninety-two",
-            "start": 54.81,
-            "end": 55.12
+            "start": 57.94,
+            "end": 58.28
           }
         ]
       }
