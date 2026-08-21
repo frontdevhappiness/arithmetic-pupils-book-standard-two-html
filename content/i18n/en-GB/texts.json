@@ -3467,9 +3467,9 @@
   "pg068_p061": "ARITHMETICS PUPIL'S STD 2.indd 62",
   "pg068_p062": "06/11/2024 17:23",
   "pg069_p000": "63",
-  "pg069_im001": "Questions 7 to 9: 287 over 185 with answer lines; 357 minus 242 with answer lines; 248 minus 101 with answer lines.",
-  "pg069_im003": "Exercise 5. Write the answer in each question. 1: 632 minus 321. 2: 799 minus 566. 3: 431 minus 221. Each has answer lines below.",
-  "pg069_im002": "Exercise 4. Write the answer in each question. 1: 815 minus 604. 2: 744 minus 333. 3: 509 minus 104. 4: 787 minus 645. 5: 812 minus 710. 6: 555 minus 324. 7: 975 minus 230. 8: 659 minus 548. 9: 758 minus 234. Each question has answer lines below.",
+  "pg069_im001": "",
+  "pg069_im003": "",
+  "pg069_im002": "",
   "pg069_p001": "7.",
   "pg069_p002": "- 2",
   "pg069_p003": "1",
@@ -5997,5 +5997,8 @@
   "pg067_p055": "Question 2. Fill in the missing numbers in the balloons. The number web has 300 in the centre and six balloons around it. Starting at the upper left and moving clockwise, the outer balloons show 800, a blank, 200, a blank, 400, and a blank.",
   "pg067_p056": "Subtracting numbers vertically without regrouping. Numbers are subtracted vertically from the right to the left. Example. 668 minus 346. Solution. 668 minus 346 equals 322. Steps. Step 1. Subtract ones. 8 minus 6 equals 2. Write 2 in the ones place. Step 2. Subtract tens. 6 minus 4 equals 2. Write 2 in the tens place.",
   "pg068_p063": "Step 3. Subtract hundreds. 6 minus 3 equals 3. Write 3 in the hundreds place. The vertical subtraction is 668 minus 346 equals 322. Or, use the counting frame. It shows 6 counters in the hundreds column, 6 counters in the tens column, and 8 counters in the ones column. 3 hundreds, 4 tens, and 6 ones are crossed out. This leaves 3 hundreds, 2 tens, and 2 ones. Therefore, the answer is 322.",
-  "pg068_p064": "Exercise 3. Write the answer in each question. Question 1. 178 minus 175. Question 2. 486 minus 244. Question 3. 490 minus 250. Question 4. 478 minus 470. Question 5. 445 minus 334. Question 6. 384 minus 251."
+  "pg068_p064": "Exercise 3. Write the answer in each question. Question 1. 178 minus 175. Question 2. 486 minus 244. Question 3. 490 minus 250. Question 4. 478 minus 470. Question 5. 445 minus 334. Question 6. 384 minus 251.",
+  "pg069_p112": "Question 7. 287 minus 185. Question 8. 357 minus 242. Question 9. 248 minus 101.",
+  "pg069_p113": "Exercise 4. Write the answer in each question. Question 1. 815 minus 604. Question 2. 744 minus 333. Question 3. 509 minus 104. Question 4. 787 minus 645. Question 5. 812 minus 710. Question 6. 555 minus 324. Question 7. 975 minus 230. Question 8. 659 minus 548. Question 9. 758 minus 234.",
+  "pg069_p114": "Exercise 5. Write the answer in each question. Question 1. 632 minus 321. Question 2. 799 minus 566. Question 3. 431 minus 221."
 }
