@@ -31,12 +31,13 @@
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
 </style>
   <img src="images/pg032_page.png" alt="" role="presentation" aria-hidden="true" data-id="pg032_page" style="position:absolute;inset:0;width:558px;height:768px">
   <img src="images/pg032_im004.png" alt="" data-id="pg032_im004" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg032_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;26&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">26</span></p>
-  <img src="images/pg032_im003.png" alt="Two worked examples for writing numbers in short form: Example 1, 200 + 70 + 3 = 273; Example 2, 300 + 40 + 2 = 342." data-id="pg032_im003" style="position:absolute;top:513px;left:71px;width:405px;height:160px;opacity:0">
-  <img src="images/pg032_im002.png" alt="Exercise 7: Write the following numbers in expanded form &#x2014; 420, 46, 8, 302, 172, 93, 214, 163, 57 and 291." data-id="pg032_im002" style="position:absolute;top:284px;left:69px;width:405px;height:177px;opacity:0">
+  <img src="images/pg032_im003.png" alt="" data-id="pg032_im003" style="position:absolute;top:513px;left:71px;width:405px;height:160px;opacity:0" role="presentation" aria-hidden="true">
+  <img src="images/pg032_im002.png" alt="" data-id="pg032_im002" style="position:absolute;top:284px;left:69px;width:405px;height:177px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg032_im001.png" alt="" data-id="pg032_im001" style="position:absolute;top:143px;left:70px;width:405px;height:138px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg032_im009.png" alt="" data-id="pg032_im009" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
   <img src="images/pg032_im010.png" alt="" data-id="pg032_im010" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
@@ -88,6 +89,65 @@
   <img src="images/pg032_im008.png" alt="" data-id="pg032_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg032_p043" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 26&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 26</span></p>
   <p data-id="pg032_p044" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
+<script>
+  (function () {
+    var content = document.getElementById("content");
+    var footer = content && content.querySelector('[data-id="pg032_p043"]');
+    if (!content || !footer) return;
+    var black = {"font-family":"SassoonPrimary,serif","font-size":"18px","color":"#231f20","position":"absolute"};
+    var blue = {"font-family":"SassoonPrimary,serif","font-size":"18px","color":"#0099da","position":"absolute"};
+    function at(style, left, top) { return Object.assign({}, style, {left:left + "px", top:top + "px"}); }
+    function render(node, segments, left, top, width, height) {
+      if (!node) return;
+      node.setAttribute("data-segments", JSON.stringify(segments));
+      node.setAttribute("data-adt-fit", "1");
+      node.setAttribute("style", "position:absolute;top:" + top + "px;left:" + left + "px;line-height:18px;width:" + width + "px;height:" + height + "px");
+      node.innerHTML = segments.map(function (segment) {
+        var style = Object.keys(segment.style).map(function (key) { return key + ":" + segment.style[key]; }).join(";");
+        return '<span style="' + style + '">' + segment.text + '</span>';
+      }).join("");
+    }
+    var intro = content.querySelector('[data-id="pg032_p002"]');
+    if (intro) render(intro, [{text:"A number can be written in expanded form using the total value of its digits.",style:{"font-family":"SassoonPrimary,serif","font-size":"18px","color":"#231f20"}}], 75, 94, 405, 42);
+    var exampleTwo = content.querySelector('[data-id="pg032_p010"]');
+    if (exampleTwo) render(exampleTwo, [{text:"Write 109 in expanded form.",style:{"font-family":"SassoonPrimary,serif","font-size":"18px","color":"#231f20"}}], 286, 178, 171, 49);
+    var answerTwo = content.querySelector('[data-id="pg032_p012"]');
+    if (answerTwo) answerTwo.setAttribute("style", "position:absolute;top:227px;left:286px;line-height:18px;width:171px;height:20px");
+    var items = [
+      ["pg032_p016","1.","420",84,346], ["pg032_p019","2.","46",84,366],
+      ["pg032_p022","3.","8",84,386], ["pg032_p025","4.","302",84,407],
+      ["pg032_p028","5.","172",84,427], ["pg032_p017","6.","93",268,346],
+      ["pg032_p020","7.","214",268,366], ["pg032_p023","8.","163",268,386],
+      ["pg032_p026","9.","57",268,407], ["pg032_p029","10.","291",268,427]
+    ];
+    items.forEach(function (row) {
+      render(content.querySelector('[data-id="' + row[0] + '"]'), [
+        {text:row[1] + " ",style:at(blue,0,0)},
+        {text:row[2] + " ",style:at(black,36,0)},
+        {text:"=",style:at(black,78,0)}
+      ], row[3], row[4], 180, 21);
+    });
+    ["pg032_p003","pg032_p011","pg032_p018","pg032_p021","pg032_p024","pg032_p027"].forEach(function (id) {
+      var node = content.querySelector('[data-id="' + id + '"]');
+      if (node) { node.style.display = "none"; node.setAttribute("aria-hidden", "true"); }
+    });
+    ["pg032_im002","pg032_im003"].forEach(function (id) {
+      var node = content.querySelector('[data-id="' + id + '"]');
+      if (node) { node.setAttribute("role", "presentation"); node.setAttribute("aria-hidden", "true"); node.setAttribute("alt", ""); }
+    });
+    [
+      "pg032_p001","pg032_p002","pg032_p004","pg032_p005","pg032_p007","pg032_p008",
+      "pg032_p009","pg032_p010","pg032_p012","pg032_p013","pg032_p014","pg032_p015",
+      "pg032_p016","pg032_p019","pg032_p022","pg032_p025","pg032_p028",
+      "pg032_p017","pg032_p020","pg032_p023","pg032_p026","pg032_p029",
+      "pg032_p030","pg032_p031","pg032_p033","pg032_p034","pg032_p036","pg032_p037",
+      "pg032_p038","pg032_p039","pg032_p041","pg032_p042"
+    ].forEach(function (id) {
+      var node = content.querySelector('[data-id="' + id + '"]');
+      if (node) content.insertBefore(node, footer);
+    });
+  })();
+</script>
 <script src="./assets/auto-fit.js"></script>
 </div>
     </main>

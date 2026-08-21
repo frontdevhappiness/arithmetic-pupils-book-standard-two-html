@@ -534,6 +534,43 @@ for (const id of ["pg031_im007", "pg031_im011", "pg031_p003", "pg031_p016", "pg0
 for (const id of ["pg031_im007", "pg031_im011"]) assert.match(page31, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate image must be decorative`);
 assert.match(page31, /"pg031_p001","pg031_p002",[\s\S]*"pg031_p004","pg031_im001","pg031_p005",[\s\S]*"pg031_p006","pg031_im002",[\s\S]*"pg031_p008","pg031_im003",[\s\S]*"pg031_p010","pg031_im004",[\s\S]*"pg031_p012","pg031_im005",[\s\S]*"pg031_p014","pg031_im006"/, "page 31 must narrate each item and abacus once in visual order");
 
+const page32 = read("pg032_sec001.html");
+assert.match(page32, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 32 must use only the exact runtime word highlight");
+for (const id of ["pg032_im002", "pg032_im003"]) {
+  assert.equal(texts[id], "", `${id} duplicate panel description must be empty`);
+  assert.equal(audios[id], undefined, `${id} duplicate panel description must not repeat visible text`);
+  assert.match(page32, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+for (const [id, text, file] of [
+  ["pg032_p002", "A number can be written in expanded form using the total value of its digits.", "pg032_p002_adt_clean.mp3"],
+  ["pg032_p010", "Write 109 in expanded form.", "pg032_p010_adt_clean.mp3"]
+]) {
+  assert.equal(texts[id], text, `${id} must be one uninterrupted passage`);
+  assert.equal(audios[id], file, `${id} must use its clean narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(text), `${id} must highlight every spoken token in order`);
+}
+assert.equal(audios.pg032_p007, "pg032_p007_adt_clean.mp3", "Example 1 Answer label must use clean narration without a trailing stray word");
+assert.deepEqual(timecodes.pg032_p007.timecodes[1].word_timestamps.map(({ text: word }) => word), ["Answer"], "Example 1 Answer label must highlight only Answer");
+assert.ok(meanVolume(audios.pg032_p007) > -35, "Example 1 Answer label must be clearly audible");
+const page32Items = {
+  pg032_p016: "1. 420 =", pg032_p019: "2. 46 =", pg032_p022: "3. 8 =", pg032_p025: "4. 302 =", pg032_p028: "5. 172 =",
+  pg032_p017: "6. 93 =", pg032_p020: "7. 214 =", pg032_p023: "8. 163 =", pg032_p026: "9. 57 =", pg032_p029: "10. 291 ="
+};
+for (const [id, text] of Object.entries(page32Items)) {
+  assert.equal(texts[id], text, `${id} must contain one complete exercise item`);
+  assert.equal(audios[id], `${id}_adt_item.mp3`, `${id} must use one complete item recording`);
+  const stamps = timecodes[id].timecodes[1].word_timestamps;
+  assert.deepEqual(stamps.map(({ text: word }) => word), tokens(text), `${id} must highlight its item number, value, and equals sign in order`);
+  assert.ok(stamps[1].start - stamps[0].end >= 0.4, `${id} item number must not run into its value`);
+  assert.ok(meanVolume(audios[id]) > -35, `${id} must contain clearly audible speech`);
+}
+for (const id of ["pg032_p003", "pg032_p011", "pg032_p018", "pg032_p021", "pg032_p024", "pg032_p027"]) {
+  assert.equal(texts[id], "", `${id} obsolete fragment must be empty`);
+  assert.equal(audios[id], undefined, `${id} obsolete fragment must not interrupt narration`);
+}
+assert.match(page32, /answerTwo\.setAttribute\("style", "position:absolute;top:227px;left:286px/, "Example 2 answer highlight must stay in the right column");
+assert.match(page32, /"pg032_p016","pg032_p019","pg032_p022","pg032_p025","pg032_p028",[\s\S]*"pg032_p017","pg032_p020","pg032_p023","pg032_p026","pg032_p029"/, "Exercise 7 must read items 1 through 10 in numerical order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
