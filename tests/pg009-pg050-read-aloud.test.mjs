@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 63; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 64; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1287,6 +1287,18 @@ assert.match(page63, /data-id="pg063_p035"[\s\S]*data-id="pg063_p001"/, "the cha
 assert.match(page63, /data-id="pg063_p008"[\s\S]*data-id="pg063_p036"[\s\S]*data-id="pg063_p009"/, "the consolidated example must follow its heading");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg063_")).sort(), ["pg063_p035", "pg063_p036"], "page 63 must narrate its introduction and example exactly once");
 
+const page64 = read("pg064_sec001.html");
+const page64Steps = "Steps. Step 1. Subtract the ones. 7 minus 3 equals 4. Write 4 in the ones place. The first place value diagram shows 247 minus 123, with 4 written in the ones place. Step 2. Subtract the tens. 4 minus 2 equals 2. Write 2 in the tens place. The second diagram shows 2 tens and 4 ones in the answer. Step 3. Subtract the hundreds. 2 minus 1 equals 1. Write 1 in the hundreds place. The final diagram shows 100, 2 tens and 4 ones. Therefore, the answer is 124.";
+assert.equal(texts.pg064_p059, page64Steps, "page 64 must narrate all subtraction steps in order");
+assert.equal(audios.pg064_p059, "pg064_p059_adt_steps.mp3", "page 64 must use corrected ADT narration");
+assert.deepEqual(timecodes.pg064_p059.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(page64Steps), "page 64 must retain real word-level timing");
+assert.equal(texts.pg064_im001, "", "page 64 composite image must not duplicate the step narration");
+assert.match(page64, /data-id="pg064_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "page 64 composite image must be decorative");
+for (const id of ["pg064_p008", "pg064_p011", "pg064_p014", "pg064_p027", "pg064_p030", "pg064_p033", "pg064_p046", "pg064_p049", "pg064_p052"]) assert.equal(texts[id], "hundreds", `${id} must spell hundreds correctly`);
+assert.doesNotMatch(page64, /hundres(?:&quot;|<)/, "page 64 must not retain the misspelling hundres");
+assert.match(page64, /data-id="pg064_p059"[\s\S]*data-id="pg064_p001"/, "the ordered step narration must precede its visual fragments");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg064_")).sort(), ["pg064_p059"], "page 64 must narrate its worked example exactly once");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1321,4 +1333,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg063 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg064 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
