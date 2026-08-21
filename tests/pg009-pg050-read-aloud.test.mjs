@@ -249,6 +249,23 @@ for (const [id, word, left] of [
 }
 assert.match(page20, /"pg020_p012", "pg020_p013", "pg020_p021", "pg020_p022", "pg020_p023", "pg020_im004", "pg020_p014"/, "Example 2 must narrate its labels and counting frame before the answer");
 
+const page21 = read("pg021_sec001.html");
+assert.match(page21, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 21 must not paint a second legacy highlight layer");
+for (const id of ["pg021_im007", "pg021_im008"]) {
+  assert.match(page21, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate example panel must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not repeat the complete worked example`);
+}
+assert.match(page21, /data-id="pg021_im009"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page-number crop must be decorative");
+assert.equal(texts.pg021_p002, "Count the following pencils. Write their total in words.", "Example 3 instruction must be one uninterrupted passage");
+assert.equal(audios.pg021_p002, "pg021_p012.mp3", "Example 3 must use the complete clean instruction narration");
+assert.equal(audios.pg021_p003, undefined, "the old second instruction fragment must not cause a pause or repeat");
+assert.deepEqual(timecodes.pg021_p002.timecodes[1].word_timestamps.map(({ text }) => text), ["Count", "the", "following", "pencils", "Write", "their", "total", "in", "words"], "Example 3 instruction must highlight every word continuously");
+assert.match(page21, /"pg021_p001", "pg021_p002", "pg021_p004", "pg021_p005", "pg021_p006"[\s\S]*"pg021_im002", "pg021_im003", "pg021_im001"[\s\S]*"pg021_p007", "pg021_p008", "pg021_p009", "pg021_p010"/, "Example 3 must narrate its content and images in visual order");
+assert.match(page21, /"pg021_p011", "pg021_p012", "pg021_p013", "pg021_p014", "pg021_p015"[\s\S]*"pg021_im004", "pg021_im005", "pg021_im006"[\s\S]*"pg021_p016", "pg021_p017", "pg021_p018", "pg021_p019"/, "Example 4 must narrate its content and images in visual order");
+assert.match(page21, /data-id="pg021_p010"[\s\S]*?left:196px;line-height:18px;width:190px;height:20px/, "Example 3 answer overlay must begin at the printed sentence, not the table's left edge");
+assert.match(page21, /data-id="pg021_p013"[\s\S]*?left:115px;line-height:18px;width:72px;height:20px/, "Example 4 Hundreds overlay must fit its printed word");
+assert.match(page21, /data-id="pg021_p019"[\s\S]*?left:163px;line-height:19px;width:234px;height:20px/, "Example 4 answer overlay must match its centred printed sentence");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);

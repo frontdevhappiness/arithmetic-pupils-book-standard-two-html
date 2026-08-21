@@ -25810,42 +25810,47 @@
           {
             "text": "Count",
             "start": 0,
-            "end": 0.44
+            "end": 0.36
           },
           {
             "text": "the",
-            "start": 0.44,
-            "end": 0.74
+            "start": 0.36,
+            "end": 0.64
           },
           {
             "text": "following",
-            "start": 0.74,
-            "end": 1.16
+            "start": 0.64,
+            "end": 0.88
           },
           {
             "text": "pencils",
-            "start": 1.16,
-            "end": 1.7
+            "start": 0.88,
+            "end": 1.4
           },
           {
             "text": "Write",
-            "start": 2.48,
-            "end": 2.58
+            "start": 2.3,
+            "end": 2.4
           },
           {
             "text": "their",
-            "start": 2.58,
-            "end": 2.74
+            "start": 2.4,
+            "end": 2.56
           },
           {
             "text": "total",
-            "start": 2.74,
-            "end": 3.06
+            "start": 2.56,
+            "end": 2.82
           },
           {
             "text": "in",
-            "start": 3.06,
-            "end": 3.38
+            "start": 2.82,
+            "end": 3.18
+          },
+          {
+            "text": "words",
+            "start": 3.18,
+            "end": 3.48
           }
         ]
       }
