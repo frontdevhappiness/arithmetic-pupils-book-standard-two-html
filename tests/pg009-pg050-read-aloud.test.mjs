@@ -619,6 +619,30 @@ assert.ok(meanVolume(audios.pg034_p005) > -35, "question 3 must remain clearly a
 assert.deepEqual(timecodes.pg034_im001.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg034_im001), "the balloon illustration must highlight its description in spoken order");
 assert.match(page34, /data-id="pg034_p001"[\s\S]*data-id="pg034_p002"[\s\S]*data-id="pg034_p003"[\s\S]*data-id="pg034_p005"[\s\S]*data-id="pg034_p006"[\s\S]*data-id="pg034_p008"[\s\S]*data-id="pg034_p009"[\s\S]*data-id="pg034_p011"[\s\S]*data-id="pg034_p012"[\s\S]*data-id="pg034_p014"[\s\S]*data-id="pg034_p015"[\s\S]*data-id="pg034_im001"/, "page 34 must narrate questions and Activity 2 in visual reading order");
 
+const page35 = read("pg035_sec001.html");
+assert.match(page35, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 35 must use only the exact runtime word highlight");
+for (const id of ["pg035_im002", "pg035_im004"]) {
+  assert.equal(texts[id], "", `${id} hidden question panel must not repeat visible questions`);
+  assert.equal(audios[id], undefined, `${id} hidden question panel must not have narration audio`);
+  assert.equal(timecodes[id], undefined, `${id} hidden question panel must not retain timing data`);
+  assert.match(page35, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+const page35Questions = ["pg035_p002","pg035_p003","pg035_p004","pg035_p006","pg035_p012","pg035_p013","pg035_p014","pg035_p015"];
+for (const id of page35Questions) {
+  const stamps = timecodes[id].timecodes[1].word_timestamps;
+  assert.deepEqual(stamps.map(({ text: word }) => word), tokens(texts[id]), `${id} must highlight every spoken question word in order`);
+  const pause = stamps[1].start - stamps[0].end;
+  assert.ok(pause >= 0.25 && pause <= 0.8, `${id} must use a natural pause after its question number`);
+}
+assert.equal(audios.pg035_p002, "pg035_p002_adt_clean.mp3", "question 1 must pronounce hundreds, not hundredths");
+for (const id of ["pg035_p002","pg035_p004","pg035_p012","pg035_p013","pg035_p014"]) {
+  assert.ok(meanVolume(audios[id]) > -35, `${id} cleaned narration must remain clearly audible`);
+}
+assert.deepEqual(timecodes.pg035_im001.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg035_im001), "the arrow diagram must highlight its full spoken description in order");
+assert.deepEqual(tokens(texts.pg035_im001).filter(word => /^\d+$/.test(word)), ["101","109","207","210","290","300","304","320","360","399","476","498","500","535","564","572","602","688","743","768","822","831","849","890","900","947","963","999"], "the arrow diagram must be narrated by following every arrow from 101 to 999");
+assert.equal(audios.pg035_im001, "pg035_im001_adt_order.mp3", "the arrow diagram must use its corrected ordered narration");
+assert.match(page35, /data-id="pg035_p001"[\s\S]*data-id="pg035_p002"[\s\S]*data-id="pg035_p003"[\s\S]*data-id="pg035_p004"[\s\S]*data-id="pg035_p006"[\s\S]*data-id="pg035_p008"[\s\S]*data-id="pg035_p009"[\s\S]*data-id="pg035_im001"[\s\S]*data-id="pg035_p011"[\s\S]*data-id="pg035_p012"[\s\S]*data-id="pg035_p013"[\s\S]*data-id="pg035_p014"[\s\S]*data-id="pg035_p015"/, "page 35 must narrate both question sets and Activity 3 in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
