@@ -220,6 +220,35 @@ for (const id of ["pg019_p006", "pg019_p031"]) {
   ], `${id} highlight must stop when the clean item number ends`);
 }
 
+const page20 = read("pg020_sec001.html");
+assert.match(page20, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 20 must not paint a second legacy highlight layer");
+for (const id of ["pg020_im005", "pg020_im006"]) {
+  assert.match(page20, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate panel must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not repeat visible text and worked examples`);
+}
+assert.equal(texts.pg020_im002, "Four groups of ten pencils, representing four tens.", "the tens illustration must describe all four visible groups");
+assert.equal(texts.pg020_im003, "Two pencils, representing two ones.", "the ones illustration must describe both visible pencils");
+assert.equal(audios.pg020_im002, "pg020_im002_adt_clean.mp3", "the corrected tens description must use matching narration");
+assert.equal(audios.pg020_im003, "pg020_im003_adt_clean.mp3", "the corrected ones description must use matching narration");
+assert.deepEqual(timecodes.pg020_im002.timecodes[1].word_timestamps.map(({ text }) => text), [
+  "Four", "groups", "of", "ten", "pencils", "representing", "four", "tens"
+], "the tens description timing must follow every spoken word in order");
+assert.deepEqual(timecodes.pg020_im003.timecodes[1].word_timestamps.map(({ text }) => text), [
+  "Two", "pencils", "representing", "two", "ones"
+], "the ones description timing must follow every spoken word in order");
+assert.match(page20, /"pg020_p017", "pg020_p018", "pg020_p016"[\s\S]*"pg020_p001", "pg020_p002"/, "page 20 must narrate the chapter title before its body");
+assert.equal(audios.pg020_p015, undefined, "the old combined label overlay must not create a wide group highlight");
+for (const [id, word, left] of [
+  ["pg020_p021", "hundreds", "193px"],
+  ["pg020_p022", "tens", "272px"],
+  ["pg020_p023", "ones", "318px"]
+]) {
+  assert.equal(texts[id], word, `${id} must contain only its visible label`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text }) => text), [word], `${id} must highlight only its spoken word`);
+  assert.match(page20, new RegExp(`data-id="${id}"[\\s\\S]*?left:${left}`), `${id} must be positioned directly over its printed label`);
+}
+assert.match(page20, /"pg020_p012", "pg020_p013", "pg020_p021", "pg020_p022", "pg020_p023", "pg020_im004", "pg020_p014"/, "Example 2 must narrate its labels and counting frame before the answer");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
