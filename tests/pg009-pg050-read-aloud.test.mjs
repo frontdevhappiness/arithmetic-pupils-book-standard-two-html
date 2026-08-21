@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 56; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 57; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1168,6 +1168,30 @@ assert.deepEqual(
   "page 56 must narrate only its activity headings, introduction, path description, sequences, and consolidated steps"
 );
 
+const page57 = read("pg057_sec001.html");
+const page57Steps = "Step 5. Roll the die in the cup or tin. Step 6. Count the number of dots shown on the top face of the die. Step 7. Move your marble in the direction of the school as the picture shows. Step 8. The marble is moved in steps equal to the number of dots on a die. Step 9. The first person to reach school will be the winner.";
+const page57Scores = "Game number. Asha. Anna. Game number one. Asha, 203. Anna, 205. Game number two. Asha, 206. Anna, 211.";
+const page57Solution = "Add Asha's scores: 203 plus 206 equals 409. Add Anna's scores: 205 plus 211 equals 416. Therefore, Asha's total score is 409 and Anna's total score is 416.";
+for (const [id, expected, filename] of [
+  ["pg057_p041", page57Steps, "pg057_p041_adt_steps.mp3"],
+  ["pg057_p042", page57Scores, "pg057_p042_adt_scores.mp3"],
+  ["pg057_p043", page57Solution, "pg057_p043_adt_solution.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 57 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+assert.equal(texts.pg057_im001, "", "the duplicate example composite must not repeat the table narration");
+assert.match(page57, /data-id="pg057_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate example composite must be decorative");
+assert.ok(page57.indexOf('data-id="pg057_p041"') < page57.indexOf('data-id="pg057_p001"'), "the consolidated steps must precede their isolated visual fragments");
+assert.ok(page57.indexOf('data-id="pg057_p011"') < page57.indexOf('data-id="pg057_p042"'), "the score-table introduction must precede its narration");
+assert.ok(page57.indexOf('data-id="pg057_p024"') < page57.indexOf('data-id="pg057_p043"'), "the Solution heading must precede the worked additions");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg057_")).sort(),
+  ["pg057_p009", "pg057_p010", "pg057_p011", "pg057_p022", "pg057_p023", "pg057_p024", "pg057_p041", "pg057_p042", "pg057_p043"],
+  "page 57 must narrate only the example text and its coherent steps, scores, and solution"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1202,4 +1226,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg056 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg057 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);

@@ -2985,7 +2985,7 @@
   "pg056_p016": "ARITHMETICS PUPIL'S STD 2.indd 50",
   "pg056_p017": "06/11/2024 17:23",
   "pg057_p000": "51",
-  "pg057_im001": "Example: Asha and Anna played a home-to-school game and each played twice. The first table shows Game 1: Asha 203, Anna 205; Game 2: Asha 206, Anna 211. The solution table adds the scores to give totals of 409 for Asha and 416 for Anna, with the note that the winner is the player who is closer to the school.",
+  "pg057_im001": "",
   "pg057_p001": "5. Roll the die in the cup or tin.",
   "pg057_p002": "6. Count the number of dots shown on the top face of the die.",
   "pg057_p004": "7. Move your marble in the direction of the school as the picture shows.",
@@ -5976,5 +5976,8 @@
   "pg056_p019": "Step 1. Play in pairs. Step 2. Use a cup or a tin. Step 3. Put a die in a cup or in a tin. Step 4. Each player must have a marble of different colour for identification.",
   "pg056_p020": "301, 302, 303, 304, 305, 306, 307, 308, 309, 310.",
   "pg056_p021": "401, 402, 403, 404, 405, 406, 407, 408, 409, 410.",
-  "pg056_p022": "501 at SCHOOL."
+  "pg056_p022": "501 at SCHOOL.",
+  "pg057_p041": "Step 5. Roll the die in the cup or tin. Step 6. Count the number of dots shown on the top face of the die. Step 7. Move your marble in the direction of the school as the picture shows. Step 8. The marble is moved in steps equal to the number of dots on a die. Step 9. The first person to reach school will be the winner.",
+  "pg057_p042": "Game number. Asha. Anna. Game number one. Asha, 203. Anna, 205. Game number two. Asha, 206. Anna, 211.",
+  "pg057_p043": "Add Asha's scores: 203 plus 206 equals 409. Add Anna's scores: 205 plus 211 equals 416. Therefore, Asha's total score is 409 and Anna's total score is 416."
 }
