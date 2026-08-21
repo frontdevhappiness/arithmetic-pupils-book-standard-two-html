@@ -8,7 +8,7 @@ const audios = readJson("content/i18n/en-GB/audios.json");
 const timecodePath = new URL("content/i18n/en-GB/timecode/timecode_output.json", ROOT);
 const timecodes = JSON.parse(readFileSync(timecodePath, "utf8"));
 const wordPattern = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu;
-const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg02[57]_im00[1-6]$|pg026_im00[2-5]$)/;
+const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg02[57]_im00[1-6]$|pg026_im00[2-5]$|pg028_im002$)/;
 const ASR_DIR = process.env.ADT_ASR_DIR || "/tmp/adt-pages009-050-wav";
 const write = process.argv.includes("--write");
 
@@ -124,6 +124,28 @@ function extractWhisper(id) {
   return (json.transcription ?? [])
     .filter(({ text }) => clean(text) && clean(text) !== "-")
     .map(({ text, offsets }) => ({ text: text.trim(), start: offsets.from / 1000, end: offsets.to / 1000 }));
+}
+
+const page28RowIds = new Set([
+  "pg028_p004", "pg028_p010", "pg028_p016", "pg028_p022", "pg028_p028",
+  "pg028_p034", "pg028_p040", "pg028_p046", "pg028_p052", "pg028_p058"
+]);
+
+function expandPage28PlaceValueTokens(source) {
+  return source.flatMap((stamp) => {
+    const token = clean(stamp.text);
+    let parts;
+    if (/^[1-9]00s?$/.test(token)) parts = [token[0], "hundreds"];
+    else if (/^[0-9]10s$/.test(token)) parts = [token[0], "tens"];
+    else if (/^[0-9]1s$/.test(token)) parts = [token[0], "ones"];
+    else return [stamp];
+    const span = (stamp.end - stamp.start) / parts.length;
+    return parts.map((text, index) => ({
+      text,
+      start: stamp.start + span * index,
+      end: stamp.start + span * (index + 1)
+    }));
+  });
 }
 
 function extractCurrent(id) {
@@ -260,7 +282,7 @@ const manualStamps = {
 };
 for (const id of [
   "pg014_p004", "pg016_p012", "pg017_p004", "pg018_p067", "pg019_p004", "pg019_p019",
-  "pg022_p013", "pg024_p004", "pg025_p004", "pg026_p015", "pg027_p010", "pg028_p004",
+  "pg022_p013", "pg024_p004", "pg025_p004", "pg026_p015", "pg027_p010",
   "pg029_p009", "pg030_p012", "pg031_p004", "pg032_p016", "pg046_p033", "pg047_p073",
   "pg049_p009", "pg050_p022"
 ]) manualStamps[id] = [["1", 0, 0.48]];
@@ -294,8 +316,9 @@ for (const id of ids) {
   }
   const rawCurrent = timecodes[id]?.timecodes?.[1]?.word_timestamps ?? [];
   const current = extractCurrent(id);
-  const whisper = extractWhisper(id);
-  const preferWhisper = /^(?:pg027_|pg026_im00[2-5]$)/.test(id) && whisper.length;
+  const rawWhisper = extractWhisper(id);
+  const whisper = page28RowIds.has(id) ? expandPage28PlaceValueTokens(rawWhisper) : rawWhisper;
+  const preferWhisper = /^(?:pg027_|pg026_im00[2-5]$|pg028_(?:p(?:002|004|010|016|022|028|034|040|046|052|058)|im002)$)/.test(id) && whisper.length;
   const duration = preferWhisper ? durationOf(id) : Number.POSITIVE_INFINITY;
   const currentTimingIsValid = rawCurrent.length === expected.length && current.length === expected.length && current.every(({ start, end }, index) =>
     Number.isFinite(start) && Number.isFinite(end) && end - start >= 0.099 && end <= duration + 0.05 && (!index || start >= current[index - 1].end - 1e-6)

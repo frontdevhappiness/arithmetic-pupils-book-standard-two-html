@@ -398,6 +398,44 @@ assert.match(page27, /data-id="pg027_p021"[\s\S]*?top:547px;left:152px;line-heig
 assert.match(page27, /data-id="pg027_p028"[\s\S]*?top:645px;left:116px;line-height:18px;width:360px;height:20px/, "item 10 overlay must cover its complete printed line");
 assert.match(page27, /"pg027_p010", "pg027_p011", "pg027_p012", "pg027_p013"[\s\S]*"pg027_p014", "pg027_p015", "pg027_p016", "pg027_p017"[\s\S]*"pg027_p026", "pg027_p027", "pg027_p028"/, "Exercise 2 must narrate every item once in visual order");
 
+const page28 = read("pg028_sec001.html");
+assert.match(page28, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 28 must not paint a second legacy highlight layer");
+assert.match(page28, /data-id="pg028_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the Exercise 3 panel image must be decorative because its content is narrated by the rows");
+assert.equal(texts.pg028_im001, "", "the Exercise 3 panel image must not duplicate the row narration");
+assert.equal(audios.pg028_im001, undefined, "the Exercise 3 panel image must not repeat the exercise");
+assert.equal(texts.pg028_im002, "In 478, 4 is in the hundreds place, 7 is in the tens place, and 8 is in the ones place.", "Example 1 must clearly explain each digit's place");
+assert.equal(audios.pg028_im002, "pg028_im002_adt_clean.mp3", "Example 1 must use its clear place-value narration");
+assert.deepEqual(timecodes.pg028_im002.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg028_im002), "Example 1 must highlight its description in spoken order");
+assert.equal(texts.pg028_p002, "Write the numbers which represent the following place values:", "the Exercise 3 instruction must remain one uninterrupted passage");
+assert.equal(audios.pg028_p002, "pg028_p002_adt_clean.mp3", "the combined instruction must use matching clean narration");
+assert.deepEqual(timecodes.pg028_p002.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg028_p002), "the combined instruction must highlight every printed word in order");
+assert.equal(texts.pg028_p003, "", "the obsolete second instruction fragment must be empty");
+assert.equal(audios.pg028_p003, undefined, "the obsolete second instruction fragment must not create a pause or repetition");
+assert.match(page28, /data-id="pg028_p002"[\s\S]*?top:102px;left:81px;line-height:17px;width:388px;height:40px/, "the combined instruction overlay must cover both printed lines");
+const page28Rows = {
+  pg028_p004: "1. 2 hundreds 0 tens 1 ones =",
+  pg028_p010: "2. 3 hundreds 3 tens 4 ones =",
+  pg028_p016: "3. 0 hundreds 6 tens 9 ones =",
+  pg028_p022: "4. 0 hundreds 0 tens 5 ones =",
+  pg028_p028: "5. 4 hundreds 0 tens 0 ones =",
+  pg028_p034: "6. 1 hundreds 2 tens 3 ones =",
+  pg028_p040: "7. 2 hundreds 5 tens 6 ones =",
+  pg028_p046: "8. 4 hundreds 1 tens 0 ones =",
+  pg028_p052: "9. 3 hundreds 0 tens 8 ones =",
+  pg028_p058: "10. 2 hundreds 4 tens 1 ones ="
+};
+for (const [id, text] of Object.entries(page28Rows)) {
+  assert.equal(texts[id], text, `${id} must narrate its complete row as one passage`);
+  assert.equal(audios[id], `${id}_adt_row.mp3`, `${id} must use one complete row recording`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(text), `${id} must highlight its complete row in order`);
+}
+for (const number of [5,6,7,8,9,11,12,13,14,15,17,18,19,20,21,23,24,25,26,27,29,30,31,32,33,35,36,37,38,39,41,42,43,44,45,47,48,49,50,51,53,54,55,56,57,59,60,61,62,71,72,73,74]) {
+  const id = `pg028_p${String(number).padStart(3, "0")}`;
+  assert.equal(texts[id], "", `${id} obsolete fragment must not be narrated separately`);
+  assert.equal(audios[id], undefined, `${id} obsolete fragment must not interrupt a complete row`);
+}
+assert.match(page28, /"pg028_p066", "pg028_p067",[\s\S]*"pg028_im002",[\s\S]*"pg028_p068", "pg028_p069", "pg028_p070"/, "Example 1 must narrate its place-value diagram before the explanation beneath it");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
