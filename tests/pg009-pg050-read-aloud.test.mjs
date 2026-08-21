@@ -355,6 +355,11 @@ for (const [id, text, filename] of [
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), text.match(/[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu), `${id} timestamps must cover every printed token`);
 }
 for (const id of ["pg026_p007", "pg026_p010", "pg026_p012"]) assert.equal(audios[id], undefined, `${id} obsolete fragment must not create a pause or repetition`);
+for (const [id, number] of Object.entries({ pg026_im002: "224", pg026_im003: "185", pg026_im004: "402", pg026_im005: "306" })) {
+  assert.equal(texts[id], number, `${id} must read only the printed exercise number`);
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use number-only page 26 narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), [number], `${id} must highlight only its printed number`);
+}
 assert.equal(audios.pg026_p018, "pg014_p019_adt_clean.mp3", "exercise item 4 must say only four without a trailing and");
 assert.deepEqual(timecodes.pg026_p018.timecodes[1].word_timestamps, [{ text: "4", start: 0, end: 0.64 }], "exercise item 4 must highlight only its clean narration");
 assert.match(page26, /data-id="pg026_p006"[\s\S]*?top:324px;left:77px;line-height:18px;width:184px;height:41px/, "Example 1 instruction must highlight in the left column");

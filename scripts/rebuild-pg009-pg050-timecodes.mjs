@@ -8,7 +8,7 @@ const audios = readJson("content/i18n/en-GB/audios.json");
 const timecodePath = new URL("content/i18n/en-GB/timecode/timecode_output.json", ROOT);
 const timecodes = JSON.parse(readFileSync(timecodePath, "utf8"));
 const wordPattern = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu;
-const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg02[57]_im00[1-6]$)/;
+const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg02[57]_im00[1-6]$|pg026_im00[2-5]$)/;
 const ASR_DIR = process.env.ADT_ASR_DIR || "/tmp/adt-pages009-050-wav";
 const write = process.argv.includes("--write");
 
@@ -295,7 +295,7 @@ for (const id of ids) {
   const rawCurrent = timecodes[id]?.timecodes?.[1]?.word_timestamps ?? [];
   const current = extractCurrent(id);
   const whisper = extractWhisper(id);
-  const preferWhisper = id.startsWith("pg027_") && whisper.length;
+  const preferWhisper = /^(?:pg027_|pg026_im00[2-5]$)/.test(id) && whisper.length;
   const duration = preferWhisper ? durationOf(id) : Number.POSITIVE_INFINITY;
   const currentTimingIsValid = rawCurrent.length === expected.length && current.length === expected.length && current.every(({ start, end }, index) =>
     Number.isFinite(start) && Number.isFinite(end) && end - start >= 0.099 && end <= duration + 0.05 && (!index || start >= current[index - 1].end - 1e-6)
