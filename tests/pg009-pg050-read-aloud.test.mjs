@@ -844,6 +844,32 @@ assert.match(page43, /data-id="pg043_im002"[^>]*role="presentation"[^>]*aria-hid
 assert.ok(page43.indexOf('data-id="pg043_im001"') < page43.indexOf('data-id="pg043_p001"'), "the illustration description must precede its three box labels");
 assert.ok(page43.indexOf('data-id="pg043_p003"') < page43.indexOf('data-id="pg043_p004"'), "the coin-count passage must follow the three box labels");
 
+const page44 = read("pg044_sec001.html");
+const page44Setup = "Solution. Arrange 216 plus 102 vertically. Align the 100s, 10s, and 1s digits in their correct columns.";
+assert.equal(texts.pg044_p051, page44Setup, "page 44 must narrate the vertical setup as one coherent passage");
+assert.equal(audios.pg044_p051, "pg044_p051_adt_setup.mp3", "page 44 must use the corrected ADT setup narration");
+assert.deepEqual(
+  timecodes.pg044_p051.timecodes[1].word_timestamps.map(({ text: word }) => word),
+  tokens(page44Setup),
+  "the page 44 setup must retain real word-level timing"
+);
+assert.equal(texts.pg044_im001, "", "the page 44 composite must not repeat the complete worked example");
+assert.equal(audios.pg044_im001, undefined, "the page 44 composite must not play duplicate narration");
+assert.equal(timecodes.pg044_im001, undefined, "the page 44 composite must not retain duplicate timing");
+assert.match(page44, /data-id="pg044_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page 44 composite must be decorative");
+assert.ok(page44.indexOf('data-id="pg044_p004"') < page44.indexOf('data-id="pg044_p051"'), "the setup narration must follow the example instruction");
+assert.ok(page44.indexOf('data-id="pg044_p051"') < page44.indexOf('data-id="pg044_p014"'), "the numbered steps must follow the setup narration");
+for (const id of [
+  "pg044_p005", "pg044_p008", "pg044_p009", "pg044_p010", "pg044_p011", "pg044_p012", "pg044_p013",
+  "pg044_p017", "pg044_p018", "pg044_p019", "pg044_p021", "pg044_p022", "pg044_p023", "pg044_p024",
+  "pg044_p025", "pg044_p026", "pg044_p027", "pg044_p030", "pg044_p031", "pg044_p032", "pg044_p034",
+  "pg044_p035", "pg044_p036", "pg044_p037", "pg044_p038", "pg044_p039", "pg044_p040", "pg044_p041",
+  "pg044_p043", "pg044_p044", "pg044_p045", "pg044_p046", "pg044_p047", "pg044_p048"
+]) {
+  assert.equal(audios[id], undefined, `${id} must not play as an isolated diagram fragment`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated timing`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
