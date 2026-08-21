@@ -499,6 +499,41 @@ for (const id of ["pg030_im001","pg030_im002","pg030_im003","pg030_im004","pg030
 assert.match(page30, /\{id:"pg030_p003",item:"9\.",h:null,t:null,o:"6"/, "question 9 must narrate only its ones place");
 assert.match(page30, /"pg030_p012","pg030_p016","pg030_p020","pg030_p024","pg030_p028",[\s\S]*"pg030_p014","pg030_p018","pg030_p022","pg030_p026","pg030_p030"/, "Exercise 5 must read items 1 through 10 in numerical order");
 
+const page31 = read("pg031_sec001.html");
+assert.match(page31, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 31 must use only the exact runtime word highlight");
+assert.equal(texts.pg031_p002, "Write in numerals the numbers represented by the abacus. Question 1 is an example.", "page 31 instruction must be one uninterrupted passage");
+assert.equal(audios.pg031_p002, "pg031_p002_adt_clean.mp3", "page 31 instruction must use its clean narration");
+assert.deepEqual(timecodes.pg031_p002.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(texts.pg031_p002), "page 31 instruction must highlight every spoken word in order");
+const page31Frames = {
+  pg031_im001: "An abacus with 0 hundreds, 2 tens, and 5 ones.",
+  pg031_im002: "An abacus with 2 hundreds, 2 tens, and 5 ones.",
+  pg031_im003: "An abacus with 0 hundreds, 3 tens, and 3 ones.",
+  pg031_im004: "An abacus with 4 hundreds, 0 tens, and 4 ones.",
+  pg031_im005: "An abacus with 1 hundred, 3 tens, and 3 ones.",
+  pg031_im006: "An abacus with 3 hundreds, 7 tens, and 5 ones."
+};
+for (const [id, description] of Object.entries(page31Frames)) {
+  assert.equal(texts[id], description, `${id} must accurately describe the visible abacus`);
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use its matching clean narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(description), `${id} must highlight every description word in spoken order`);
+}
+for (const [id, number] of Object.entries({ pg031_p004: "1", pg031_p006: "2", pg031_p008: "3", pg031_p010: "4", pg031_p012: "5", pg031_p014: "6" })) {
+  assert.equal(audios[id], `${id}_adt_number.mp3`, `${id} must use a clean standalone item number`);
+  const stamps = timecodes[id].timecodes[1].word_timestamps;
+  assert.deepEqual(stamps.map(({ text: word }) => word), [number], `${id} must highlight only its printed item number`);
+  assert.ok(duration(audios[id]) - stamps.at(-1).end >= 0.5, `${id} must pause before its abacus description begins`);
+}
+for (const id of ["pg031_p004", "pg031_p006"]) {
+  assert.ok(meanVolume(audios[id]) > -35, `${id} must contain clearly audible speech`);
+  assert.ok(timecodes[id].timecodes[1].word_timestamps[0].start >= 0.3, `${id} highlight must wait for the spoken word after its leading pause`);
+}
+for (const id of ["pg031_im007", "pg031_im011", "pg031_p003", "pg031_p016", "pg031_p017", "pg031_p018", "pg031_p019", "pg031_p020", "pg031_p021"]) {
+  assert.equal(texts[id], "", `${id} duplicate narration must be empty`);
+  assert.equal(audios[id], undefined, `${id} duplicate narration must not play`);
+}
+for (const id of ["pg031_im007", "pg031_im011"]) assert.match(page31, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate image must be decorative`);
+assert.match(page31, /"pg031_p001","pg031_p002",[\s\S]*"pg031_p004","pg031_im001","pg031_p005",[\s\S]*"pg031_p006","pg031_im002",[\s\S]*"pg031_p008","pg031_im003",[\s\S]*"pg031_p010","pg031_im004",[\s\S]*"pg031_p012","pg031_im005",[\s\S]*"pg031_p014","pg031_im006"/, "page 31 must narrate each item and abacus once in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
