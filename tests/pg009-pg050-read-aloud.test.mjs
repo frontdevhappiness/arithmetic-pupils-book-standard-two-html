@@ -870,12 +870,36 @@ for (const id of [
   assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated timing`);
 }
 
+const page45 = read("pg045_sec001.html");
+const page45Setup = "Solution. Arrange 345 plus 223 vertically. Align the hundreds, tens, and ones digits in their correct columns. The sum is 568.";
+assert.equal(texts.pg045_p053, page45Setup, "page 45 must narrate Example 2 as one coherent vertical-addition setup");
+assert.equal(audios.pg045_p053, "pg045_p053_adt_setup.mp3", "page 45 must use the corrected ADT setup narration");
+assert.deepEqual(
+  timecodes.pg045_p053.timecodes[1].word_timestamps.map(({ text: word }) => word),
+  tokens(page45Setup),
+  "the page 45 setup must retain real word-level timing"
+);
+assert.ok(page45.indexOf('data-id="pg045_p017"') < page45.indexOf('data-id="pg045_p053"'), "the Example 2 label must precede its setup narration");
+assert.ok(page45.indexOf('data-id="pg045_p053"') < page45.indexOf('data-id="pg045_p037"'), "the Example 2 steps must follow its setup narration");
+for (const id of [
+  "pg045_p003", "pg045_p004", "pg045_p005", "pg045_p007", "pg045_p008", "pg045_p009",
+  "pg045_p010", "pg045_p011", "pg045_p012", "pg045_p013", "pg045_p014", "pg045_p015",
+  "pg045_p019", "pg045_p020", "pg045_p021", "pg045_p022", "pg045_p023", "pg045_p024",
+  "pg045_p025", "pg045_p028", "pg045_p029", "pg045_p030", "pg045_p031", "pg045_p032",
+  "pg045_p033", "pg045_p034", "pg045_p035", "pg045_p036", "pg045_p040", "pg045_p041",
+  "pg045_p042", "pg045_p044", "pg045_p045", "pg045_p046", "pg045_p047", "pg045_p048",
+  "pg045_p049", "pg045_p050"
+]) {
+  assert.equal(audios[id], undefined, `${id} must not play as an isolated page 45 diagram fragment`);
+  assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated page 45 timing`);
+}
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
 for (const [id, source] of [
   ["pg014_p004", oneSource], ["pg016_p012", oneSource], ["pg050_p022", oneSource],
-  ["pg028_p011", threeSource], ["pg045_p013", threeSource], ["pg048_p015", threeSource]
+  ["pg028_p011", threeSource], ["pg048_p015", threeSource]
 ]) assert.equal(hash(audios[id]), source, `${id} must use repaired audible narration`);
 assert.equal(hash(audios.pg010_p166), hash(audios.pg013_p040), "both printed 360 entries must use the same repaired narration");
 assert.ok(meanVolume(audios.pg010_p166) > -35, "360 must contain clearly audible speech, not a silent placeholder");
