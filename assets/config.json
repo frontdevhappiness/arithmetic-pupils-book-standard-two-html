@@ -20,7 +20,7 @@
     "notepad": false,
     "state": true,
     "characterDisplay": false,
-    "highlight": true,
+    "highlight": false,
     "activities": false
   },
   "analytics": {
