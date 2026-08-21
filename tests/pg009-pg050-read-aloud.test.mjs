@@ -339,6 +339,28 @@ for (const [id, left, top] of [["pg025_p016", 131, 147], ["pg025_p017", 327, 145
 }
 assert.match(page25, /"pg025_p001", "pg025_p002"[\s\S]*"pg025_p004", "pg025_p016", "pg025_im001"[\s\S]*"pg025_p006", "pg025_p017", "pg025_im002"[\s\S]*"pg025_p008", "pg025_p018", "pg025_im003"[\s\S]*"pg025_p010", "pg025_p020", "pg025_im004"[\s\S]*"pg025_p012", "pg025_p019", "pg025_im005"[\s\S]*"pg025_p014", "pg025_p021", "pg025_im006"/, "page 25 must narrate each item once in visual order");
 
+const page26 = read("pg026_sec001.html");
+assert.match(page26, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 26 must not paint a second legacy highlight layer");
+for (const id of ["pg026_im006", "pg026_im008"]) {
+  assert.match(page26, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate panel must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not repeat the chapter or exercise narration`);
+}
+for (const [id, text, filename] of [
+  ["pg026_p006", "Write the place value of each digit in 324.", "pg026_p006_adt_clean.mp3"],
+  ["pg026_p009", "Write the place value of each digit in 349.", "pg026_p009_adt_clean.mp3"],
+  ["pg026_p011", "349 = 3 hundreds 4 tens 9 ones", "pg026_p011_adt_clean.mp3"]
+]) {
+  assert.equal(texts[id], text, `${id} must be a complete uninterrupted passage`);
+  assert.equal(audios[id], filename, `${id} must use clean ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), text.match(/[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu), `${id} timestamps must cover every printed token`);
+}
+for (const id of ["pg026_p007", "pg026_p010", "pg026_p012"]) assert.equal(audios[id], undefined, `${id} obsolete fragment must not create a pause or repetition`);
+assert.equal(audios.pg026_p018, "pg014_p019_adt_clean.mp3", "exercise item 4 must say only four without a trailing and");
+assert.deepEqual(timecodes.pg026_p018.timecodes[1].word_timestamps, [{ text: "4", start: 0, end: 0.64 }], "exercise item 4 must highlight only its clean narration");
+assert.match(page26, /data-id="pg026_p006"[\s\S]*?top:324px;left:77px;line-height:18px;width:184px;height:41px/, "Example 1 instruction must highlight in the left column");
+assert.match(page26, /data-id="pg026_p009"[\s\S]*?top:324px;left:283px;line-height:18px;width:184px;height:41px/, "Example 2 instruction must highlight in the right column");
+assert.match(page26, /"pg026_p021", "pg026_p022", "pg026_p019", "pg026_p001", "pg026_p002"[\s\S]*"pg026_p005", "pg026_p006", "pg026_im001"[\s\S]*"pg026_p008", "pg026_p009", "pg026_p011"[\s\S]*"pg026_p013", "pg026_p014"[\s\S]*"pg026_p015", "pg026_im002", "pg026_p016", "pg026_im003"[\s\S]*"pg026_p017", "pg026_im004", "pg026_p018", "pg026_im005"/, "page 26 must narrate the chapter, examples, and exercise in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
