@@ -100,6 +100,15 @@ assert.equal(texts.pg011_p230, "650", "650 must be an independent table cell");
 assert.equal(texts.pg011_p245, "651", "651 must be an independent table cell");
 assert.match(page11, /data-id="pg011_p230"[\s\S]*?>650<\/span><\/p>\s*<p data-id="pg011_p245"[\s\S]*?>651<\/span><\/p>/, "650 and 651 must use separate overlay and narration elements");
 
+const page12 = read("pg012_sec001.html");
+assert.match(page12, /data-id="pg012_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "page 12 duplicate Exercise 9 panel must be decorative");
+assert.equal(audios.pg012_im002, undefined, "page 12 duplicate Exercise 9 panel must not have narration audio");
+assert.equal(texts.pg012_p029, "730", "730 must be an independent table cell");
+assert.equal(texts.pg012_p030, "731", "731 must be an independent table cell");
+assert.equal(audios.pg012_p030, "pg012_p030_adt_gpt4omini.mp3", "731 must use the Arithmetic ADT voice preset");
+assert.deepEqual(timecodes.pg012_p030.timecodes[1].word_timestamps, [{ text: "731", start: 0, end: 1.94 }], "731 highlight must follow its measured speech timestamps");
+assert.match(page12, /data-id="pg012_p029"[\s\S]*?>730<\/span><\/p>\s*<p data-id="pg012_p030"[\s\S]*?>731<\/span><\/p>/, "730 and 731 must use separate overlay and narration elements");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
