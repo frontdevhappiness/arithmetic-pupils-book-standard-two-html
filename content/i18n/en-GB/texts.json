@@ -2196,7 +2196,7 @@
   "pg046_p018": "tens",
   "pg046_p019": "ones",
   "pg047_p000": "41",
-  "pg047_im002": "Exercise 4. Write the answer in each question. Twelve vertical addition sums: 1) 465 + 334, 2) 613 + 244, 3) 472 + 324, 4) 715 + 223, 5) 678 + 210, 6) 421 + 136, 7) 714 + 133, 8) 352 + 415, 9) 526 + 313, 10) 564 + 213, 11) 215 + 421, 12) 128 + 541.",
+  "pg047_im002": "",
   "pg047_p001": "7.",
   "pg047_p002": "+",
   "pg047_p003": "4",
@@ -2365,7 +2365,7 @@
   "pg047_p166": "4",
   "pg047_p167": "8",
   "pg047_p168": "1",
-  "pg047_im001": "Nine vertical addition sums numbered 7 to 15: 7) 444 + 222, 8) 70 + 20, 9) 106 + 450, 10) 121 + 712, 11) 215 + 421, 12) 560 + 439, 13) 126 + 563, 14) 561 + 423, 15) 716 + 231.",
+  "pg047_im001": "",
   "pg047_p169": "ARITHMETICS PUPIL'S STD 2.indd 41",
   "pg047_p170": "06/11/2024 17:23",
   "pg048_p000": "42",
@@ -5951,5 +5951,7 @@
   "pg144_p007": "ARITHMETICS PUPIL'S STD 2.indd 138",
   "pg144_p008": "06/11/2024 17:24",
   "pg045_p053": "Solution. Arrange 345 plus 223 vertically. Align the hundreds, tens, and ones digits in their correct columns. The sum is 568.",
-  "pg046_p079": "Question 1. 226 plus 432. Question 2. 342 plus 22. Question 3. 432 plus 41. Question 4. 325 plus 143. Question 5. 333 plus 304. Question 6. 137 plus 200."
+  "pg046_p079": "Question 1. 226 plus 432. Question 2. 342 plus 22. Question 3. 432 plus 41. Question 4. 325 plus 143. Question 5. 333 plus 304. Question 6. 137 plus 200.",
+  "pg047_p171": "Question 7. 444 plus 222. Question 8. 70 plus 20. Question 9. 106 plus 450. Question 10. 121 plus 712. Question 11. 215 plus 421. Question 12. 560 plus 439. Question 13. 126 plus 563. Question 14. 561 plus 423. Question 15. 716 plus 231.",
+  "pg047_p172": "Question 1. 465 plus 334. Question 2. 613 plus 244. Question 3. 472 plus 324. Question 4. 715 plus 223. Question 5. 678 plus 210. Question 6. 421 plus 136. Question 7. 714 plus 133. Question 8. 352 plus 415. Question 9. 526 plus 313. Question 10. 564 plus 213. Question 11. 215 plus 421. Question 12. 128 plus 541."
 }

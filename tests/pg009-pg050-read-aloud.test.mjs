@@ -925,6 +925,31 @@ for (const id of [
   assert.equal(timecodes[id], undefined, `${id} must not retain obsolete isolated page 46 timing`);
 }
 
+const page47 = read("pg047_sec001.html");
+const page47Continuation = "Question 7. 444 plus 222. Question 8. 70 plus 20. Question 9. 106 plus 450. Question 10. 121 plus 712. Question 11. 215 plus 421. Question 12. 560 plus 439. Question 13. 126 plus 563. Question 14. 561 plus 423. Question 15. 716 plus 231.";
+const page47Exercise = "Question 1. 465 plus 334. Question 2. 613 plus 244. Question 3. 472 plus 324. Question 4. 715 plus 223. Question 5. 678 plus 210. Question 6. 421 plus 136. Question 7. 714 plus 133. Question 8. 352 plus 415. Question 9. 526 plus 313. Question 10. 564 plus 213. Question 11. 215 plus 421. Question 12. 128 plus 541.";
+for (const [id, expected, filename] of [
+  ["pg047_p171", page47Continuation, "pg047_p171_adt_questions7to15.mp3"],
+  ["pg047_p172", page47Exercise, "pg047_p172_adt_exercise4.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate the printed page 47 sums in order`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+for (const imageId of ["pg047_im001", "pg047_im002"]) {
+  assert.equal(texts[imageId], "", `${imageId} must not repeat its complete exercise`);
+  assert.equal(audios[imageId], undefined, `${imageId} must not play duplicate narration`);
+  assert.equal(timecodes[imageId], undefined, `${imageId} must not retain duplicate timing`);
+  assert.match(page47, new RegExp(`data-id="${imageId}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${imageId} must be decorative`);
+}
+assert.ok(page47.indexOf('data-id="pg047_p171"') < page47.indexOf('data-id="pg047_p001"'), "questions 7–15 must be introduced before their isolated visual fragments");
+assert.ok(page47.indexOf('data-id="pg047_p072"') < page47.indexOf('data-id="pg047_p172"'), "Exercise 4 instructions must precede its sums");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg047_")).sort(),
+  ["pg047_p071", "pg047_p072", "pg047_p171", "pg047_p172"],
+  "page 47 must narrate only its headings and two coherent equation passages"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
