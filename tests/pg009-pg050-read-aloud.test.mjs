@@ -313,6 +313,32 @@ for (const [id, description] of Object.entries({
 assert.match(page24, /data-id="pg024_p004"[\s\S]*?left:81px;line-height:18px;width:20px;height:20px/, "item 1 highlight overlay must fit only the printed item number");
 assert.match(page24, /"pg024_p001", "pg024_p002"[\s\S]*"pg024_p004", "pg024_p005", "pg024_p006", "pg024_p007", "pg024_im001"[\s\S]*"pg024_p011", "pg024_p012", "pg024_p013", "pg024_p014", "pg024_im002"[\s\S]*"pg024_p018", "pg024_p019", "pg024_p020", "pg024_p021", "pg024_im003"/, "page 24 must narrate each row and its description in visual order");
 
+const page25 = read("pg025_sec001.html");
+assert.match(page25, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 25 must not paint a second legacy highlight layer");
+for (const id of ["pg025_im007", "pg025_im008", "pg025_im009", "pg025_im010", "pg025_im011", "pg025_im012", "pg025_im013", "pg025_im014"]) {
+  assert.match(page25, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate crop must be decorative`);
+  assert.equal(audios[id], undefined, `${id} must not repeat visible headings or the page number`);
+}
+assert.equal(audios.pg025_p010, "pg014_p019_adt_clean.mp3", "item 4 must say only four without a trailing and");
+assert.deepEqual(timecodes.pg025_p010.timecodes[1].word_timestamps, [{ text: "4", start: 0, end: 0.64 }], "item 4 highlighting must cover only its clean narration");
+for (const [id, description] of Object.entries({
+  pg025_im001: "The place value frame shows two beads in the hundreds column, two beads in the tens column, and five beads in the ones column.",
+  pg025_im002: "The place value frame shows two beads in the hundreds column, five beads in the tens column, and four beads in the ones column.",
+  pg025_im003: "The place value frame shows five beads in the hundreds column, three beads in the tens column, and four beads in the ones column.",
+  pg025_im004: "The place value frame shows nine beads in the hundreds column, nine beads in the tens column, and nine beads in the ones column.",
+  pg025_im005: "The place value frame shows three beads in the hundreds column, no beads in the tens column, and four beads in the ones column.",
+  pg025_im006: "The place value frame shows one bead in the hundreds column, no beads in the tens column, and nine beads in the ones column."
+})) {
+  assert.equal(texts[id], description, `${id} must accurately describe its place-value frame`);
+  assert.equal(audios[id], `${id}_adt_clean.mp3`, `${id} must use matching ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text }) => text), description.match(/[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*/gu), `${id} timestamps must cover every description word`);
+}
+assert.match(page25, /data-id="pg025_p004"[\s\S]*?left:95px;line-height:18px;width:20px;height:20px/, "item 1 highlight overlay must fit only the printed item number");
+for (const [id, left, top] of [["pg025_p016", 131, 147], ["pg025_p017", 327, 145], ["pg025_p018", 131, 312], ["pg025_p020", 327, 313], ["pg025_p019", 131, 487], ["pg025_p021", 327, 487]]) {
+  assert.match(page25, new RegExp(`data-id="${id}"[\\s\\S]*?top:${top}px;left:${left}px;line-height:16px;width:124px;height:18px`), `${id} must align with exactly one printed column header`);
+}
+assert.match(page25, /"pg025_p001", "pg025_p002"[\s\S]*"pg025_p004", "pg025_p016", "pg025_im001"[\s\S]*"pg025_p006", "pg025_p017", "pg025_im002"[\s\S]*"pg025_p008", "pg025_p018", "pg025_im003"[\s\S]*"pg025_p010", "pg025_p020", "pg025_im004"[\s\S]*"pg025_p012", "pg025_p019", "pg025_im005"[\s\S]*"pg025_p014", "pg025_p021", "pg025_im006"/, "page 25 must narrate each item once in visual order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);

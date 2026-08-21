@@ -8,7 +8,7 @@ const audios = readJson("content/i18n/en-GB/audios.json");
 const timecodePath = new URL("content/i18n/en-GB/timecode/timecode_output.json", ROOT);
 const timecodes = JSON.parse(readFileSync(timecodePath, "utf8"));
 const wordPattern = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*|[+\-−–×÷=<>/]/gu;
-const pagePattern = /^pg(00[9]|0[1-4][0-9]|050)_p/;
+const pagePattern = /^(?:pg(00[9]|0[1-4][0-9]|050)_p|pg025_im00[1-6]$)/;
 const ASR_DIR = process.env.ADT_ASR_DIR || "/tmp/adt-pages009-050-wav";
 const write = process.argv.includes("--write");
 
@@ -101,6 +101,7 @@ function matchCost(expected, group) {
     const value = Number(wanted.slice(0, -1));
     if (numberValue(parts) === value || (value === 100 && parts.join("") === "hundreds")) return 0.2;
   }
+  if (small.has(wanted) && parts.length === 1 && /^\d+$/.test(joined) && Number(joined) === small.get(wanted)) return 0.1;
   if (operatorAliases[expected]?.includes(joined)) return 0.05 * (parts.length - 1);
   const placeValueAliases = {
     hundreds: ["100", "hundred", "100s", "100's", "hundreds"],
@@ -249,6 +250,7 @@ const manualStamps = {
   pg020_p023: [["ones", 0, 0.9]],
   pg021_p002: [["Count", 0, 0.36], ["the", 0.36, 0.64], ["following", 0.64, 0.88], ["pencils", 0.88, 1.4], ["Write", 2.3, 2.4], ["their", 2.4, 2.56], ["total", 2.56, 2.82], ["in", 2.82, 3.18], ["words", 3.18, 3.48]],
   pg024_p002: [["Count", 0, 0.44], ["the", 0.44, 0.8], ["cups", 0.8, 1.14], ["Write", 1.98, 2.14], ["their", 2.14, 2.38], ["total", 2.38, 2.72], ["in", 2.72, 2.98], ["numerals", 2.98, 3.44], ["in", 3.44, 3.68], ["the", 3.68, 3.86], ["blank", 3.86, 4.02], ["space", 4.02, 4.42]],
+  pg025_p010: [["4", 0, 0.64]],
   pg026_p011: [["349", 0, 1.94], ["=", 1.94, 2.88], ["3", 2.88, 3.56], ["hundreds", 3.56, 4.04], ["4", 4.04, 4.58], ["tens", 4.58, 4.82]],
   pg033_p009: [["4", 0, 0.64], ["400", 0.98, 1.56], ["+", 1.56, 2.16], ["80", 2.16, 2.56], ["+", 2.56, 3.12], ["6", 3.12, 3.56], ["=", 3.56, 4.24], ["9", 4.3, 4.9]],
   pg041_p001: [["5", 0, 0.78], ["632", 0.78, 2.58], ["+", 2.58, 3.38], ["267", 3.38, 4.78], ["=", 4.78, 5.58]],
