@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 61; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 62; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1258,6 +1258,17 @@ assert.deepEqual(
   "page 61 must narrate its title, instruction, and questions exactly once"
 );
 
+const page62 = read("pg062_sec001.html");
+const page62Questions = "Question 8. A headteacher bought 150 exercise books. Later, she bought 216 more exercise books. How many exercise books did she buy altogether? Question 9. A village has 446 women and 358 men. How many people are there in the village? Question 10. A school has 590 pupils. Another school has 348 pupils. What is the total number of pupils in the two schools? Question 11. On Monday, 247 cows were sent to the open market. On Tuesday, 264 cows were sent to the open market. How many cows were sent to the open market in the two days? Question 12. A shopkeeper bought 516 eggs on the first day. He bought another 378 eggs on the second day. How many eggs did he buy in the two days? Question 13. A school shop had 464 bottles of soda. The shopkeeper added 385 more bottles of soda in the shop. How many bottles of soda are in the shop? Question 14. A primary school received a gift of 625 pencils. Later, it received 286 more pencils. How many pencils did the school get in total? Question 15. A health officer gave 766 mosquito nets to the villagers. Later, she gave 186 more mosquito nets to the villagers. How many mosquito nets did the villagers get? Question 16. One lorry carried 187 pawpaws. Another lorry carried 216 pawpaws. How many pawpaws did the two lorries carry?";
+assert.equal(texts.pg062_p031, page62Questions, "page 62 must narrate questions 8 through 16 coherently");
+assert.equal(audios.pg062_p031, "pg062_p031_adt_questions.mp3", "page 62 must use corrected ADT narration");
+assert.deepEqual(timecodes.pg062_p031.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(page62Questions), "page 62 must retain real word-level timing");
+assert.ok(page62Questions.includes("Another school has 348 pupils"), "question 10 must retain the printed value 348");
+assert.equal(texts.pg062_im001, "", "the page-number crop must have no narration");
+assert.match(page62, /data-id="pg062_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the page-number crop must be decorative");
+assert.match(page62, /data-id="pg062_p031"[\s\S]*data-id="pg062_p001"/, "the consolidated questions must precede their visual fragments");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg062_")).sort(), ["pg062_p031"], "page 62 must narrate every question exactly once");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1292,4 +1303,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg061 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg062 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
