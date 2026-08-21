@@ -2369,7 +2369,7 @@
   "pg047_p169": "ARITHMETICS PUPIL'S STD 2.indd 41",
   "pg047_p170": "06/11/2024 17:23",
   "pg048_p000": "42",
-  "pg048_im002": "Worked example showing horizontal addition by regrouping: 167 + 138 = 305. Step 1 adds the ones, 7 + 8 = 15, regrouping 15 ones into 1 ten and 5 ones, writing 5 in the ones place and carrying 1 ten. Step 2 adds the tens, 1 + 6 + 3 = 10, regrouping 10 tens into 1 hundred and 0 tens, writing 0 in the tens place and carrying 1 hundred.",
+  "pg048_im002": "",
   "pg048_p001": "13.",
   "pg048_p002": "+",
   "pg048_p003": "2",
@@ -2416,7 +2416,7 @@
   "pg048_p045": "0 in the tens place. Take 1 hundreds to the hundreds place.",
   "pg048_p048": "167 +138 = 05",
   "pg048_p049": "11",
-  "pg048_im001": "Three addition questions with blank answer lines: 13. 213 plus 331; 14. 213 plus 431; 15. 785 plus 214.",
+  "pg048_im001": "",
   "pg048_p050": "ARITHMETICS PUPIL'S STD 2.indd 42",
   "pg048_p051": "06/11/2024 17:23",
   "pg049_p000": "43",
@@ -5953,5 +5953,7 @@
   "pg045_p053": "Solution. Arrange 345 plus 223 vertically. Align the hundreds, tens, and ones digits in their correct columns. The sum is 568.",
   "pg046_p079": "Question 1. 226 plus 432. Question 2. 342 plus 22. Question 3. 432 plus 41. Question 4. 325 plus 143. Question 5. 333 plus 304. Question 6. 137 plus 200.",
   "pg047_p171": "Question 7. 444 plus 222. Question 8. 70 plus 20. Question 9. 106 plus 450. Question 10. 121 plus 712. Question 11. 215 plus 421. Question 12. 560 plus 439. Question 13. 126 plus 563. Question 14. 561 plus 423. Question 15. 716 plus 231.",
-  "pg047_p172": "Question 1. 465 plus 334. Question 2. 613 plus 244. Question 3. 472 plus 324. Question 4. 715 plus 223. Question 5. 678 plus 210. Question 6. 421 plus 136. Question 7. 714 plus 133. Question 8. 352 plus 415. Question 9. 526 plus 313. Question 10. 564 plus 213. Question 11. 215 plus 421. Question 12. 128 plus 541."
+  "pg047_p172": "Question 1. 465 plus 334. Question 2. 613 plus 244. Question 3. 472 plus 324. Question 4. 715 plus 223. Question 5. 678 plus 210. Question 6. 421 plus 136. Question 7. 714 plus 133. Question 8. 352 plus 415. Question 9. 526 plus 313. Question 10. 564 plus 213. Question 11. 215 plus 421. Question 12. 128 plus 541.",
+  "pg048_p052": "Question 13. 213 plus 331. Question 14. 213 plus 431. Question 15. 785 plus 214.",
+  "pg048_p053": "167 plus 138 equals 305. Solution. Step 1. Add ones: 7 plus 8 equals 15. Regroup 15 ones into 1 ten and 5 ones. Write 5 in the ones place. Carry 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 3 equals 10. Regroup 10 tens into 1 hundred and 0 tens. Write 0 in the tens place. Carry 1 hundred to the hundreds place."
 }

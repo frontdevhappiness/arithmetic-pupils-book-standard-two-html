@@ -950,12 +950,37 @@ assert.deepEqual(
   "page 47 must narrate only its headings and two coherent equation passages"
 );
 
+const page48 = read("pg048_sec001.html");
+const page48Questions = "Question 13. 213 plus 331. Question 14. 213 plus 431. Question 15. 785 plus 214.";
+const page48Example = "167 plus 138 equals 305. Solution. Step 1. Add ones: 7 plus 8 equals 15. Regroup 15 ones into 1 ten and 5 ones. Write 5 in the ones place. Carry 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 3 equals 10. Regroup 10 tens into 1 hundred and 0 tens. Write 0 in the tens place. Carry 1 hundred to the hundreds place.";
+for (const [id, expected, filename] of [
+  ["pg048_p052", page48Questions, "pg048_p052_adt_questions13to15.mp3"],
+  ["pg048_p053", page48Example, "pg048_p053_adt_example.mp3"]
+]) {
+  assert.equal(texts[id], expected, `${id} must narrate page 48 coherently`);
+  assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+for (const imageId of ["pg048_im001", "pg048_im002"]) {
+  assert.equal(texts[imageId], "", `${imageId} must not repeat its complete content`);
+  assert.equal(audios[imageId], undefined, `${imageId} must not play duplicate narration`);
+  assert.equal(timecodes[imageId], undefined, `${imageId} must not retain duplicate timing`);
+  assert.match(page48, new RegExp(`data-id="${imageId}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${imageId} must be decorative`);
+}
+assert.ok(page48.indexOf('data-id="pg048_p052"') < page48.indexOf('data-id="pg048_p001"'), "questions 13–15 must precede their visual fragments");
+assert.ok(page48.indexOf('data-id="pg048_p029"') < page48.indexOf('data-id="pg048_p053"'), "the Example heading must precede its coherent narration");
+assert.deepEqual(
+  Object.keys(audios).filter((id) => id.startsWith("pg048_")).sort(),
+  ["pg048_p025", "pg048_p026", "pg048_p027", "pg048_p029", "pg048_p052", "pg048_p053"],
+  "page 48 must narrate only its introduction and two coherent passages"
+);
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
 for (const [id, source] of [
   ["pg014_p004", oneSource], ["pg016_p012", oneSource], ["pg050_p022", oneSource],
-  ["pg028_p011", threeSource], ["pg048_p015", threeSource]
+  ["pg028_p011", threeSource]
 ]) assert.equal(hash(audios[id]), source, `${id} must use repaired audible narration`);
 assert.equal(hash(audios.pg010_p166), hash(audios.pg013_p040), "both printed 360 entries must use the same repaired narration");
 assert.ok(meanVolume(audios.pg010_p166) > -35, "360 must contain clearly audible speech, not a silent placeholder");
