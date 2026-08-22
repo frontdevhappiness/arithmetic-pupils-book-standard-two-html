@@ -114,6 +114,70 @@
     for (var i = 0; i < els.length; i++) fit(els[i])
   }
 
+  /**
+   * Make fixed-layout pages easier to read without changing their internal
+   * coordinates. The renderer's inline fitter keeps the whole page above the
+   * dock, which is safe but leaves type unnecessarily small on shorter
+   * screens. Increase that fitted size by 20% when horizontal space permits,
+   * then let the document scroll vertically. Narrow screens still fit the
+   * complete page width and never gain horizontal scrolling.
+   */
+  function installReadablePageFit() {
+    var page = document.getElementById("content")
+    if (!page || !page.hasAttribute("data-fl-reference-width")) return
+    if (page.dataset.adtReadableFit === "true") return
+    page.dataset.adtReadableFit = "true"
+
+    var width = parseFloat(page.style.width) || page.offsetWidth || 1
+    var height = parseFloat(page.style.height) || page.offsetHeight || 1
+    var referenceWidth = parseFloat(page.getAttribute("data-fl-reference-width")) || width
+    var fallbackDockHeight = 96
+
+    function dockHeight() {
+      var value = parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue("--dock-height")
+      )
+      return value > 0 ? value : fallbackDockHeight
+    }
+
+    function resizePage() {
+      var dock = dockHeight()
+      var sideGap = Math.min(24, Math.max(8, window.innerWidth * 0.025))
+      var widthScale = Math.max(0.1, (window.innerWidth - sideGap * 2) / referenceWidth)
+      var heightScale = Math.max(0.1, (window.innerHeight - dock) / height)
+      var originalFit = Math.min(2, widthScale, heightScale)
+      var scale = Math.min(2.4, widthScale, originalFit * 1.2)
+      var availableHeight = Math.max(0, window.innerHeight - dock)
+      var scaledHeight = height * scale
+      var top = Math.max(12, (availableHeight - scaledHeight) / 2)
+
+      document.body.style.overflowX = "hidden"
+      document.body.style.overflowY = "auto"
+      document.body.style.height = "auto"
+      document.body.style.minHeight = "100%"
+
+      var main = page.closest("main")
+      if (main) {
+        main.style.position = "relative"
+        main.style.width = "100%"
+        main.style.height = Math.ceil(top + scaledHeight + dock + 12) + "px"
+      }
+
+      page.style.position = "absolute"
+      page.style.left = "50%"
+      page.style.top = top + "px"
+      page.style.margin = "0"
+      page.style.transformOrigin = "top center"
+      page.style.transform = "translateX(-50%) scale(" + scale + ")"
+      page.style.visibility = "visible"
+    }
+
+    resizePage()
+    window.addEventListener("resize", resizePage)
+    window.addEventListener("load", resizePage)
+    window.addEventListener("adt:dock-resize", resizePage)
+  }
+
   // Run schedule:
   //   1. As soon as the DOM is ready (initial pass against whatever
   //      font the browser has at parse time — typically a system
@@ -140,6 +204,7 @@
   }
   function scheduleRuns() {
     window.__adtRunAutoFit()
+    installReadablePageFit()
     if (document.fonts) {
       if (document.fonts.ready) {
         document.fonts.ready.then(runAfterPaint)
