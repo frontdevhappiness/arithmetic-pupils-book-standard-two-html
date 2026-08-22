@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 83; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 84; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1654,6 +1654,28 @@ for (const id of ["pg083_p002", "pg083_p003", "pg083_p004", "pg083_p005", "pg083
 for (const id of ["pg083_im001", "pg083_im002", "pg083_im004"]) {
   assert.equal(audios[id], undefined, `${id} description is included in a complete example and must not repeat`);
 }
+
+const page84 = read("pg084_sec001.html");
+const page84Passages = [
+  ["pg084_p001", "Exercise 2. Fill in the blank boxes. Question 1 is an example. 1. 2 × 6 = 2 + 2 + 2 + 2 + 2 + 2 = 12. 2. 4 × 7 = 4 + 4 + 4 + 4 + 4 + 4 + 4. The answer box is blank. 3. 4 × 5. The repeated addition box and answer box are blank. 4. The multiplication box is blank. It equals 6 + 6 + 6 + 6. The answer box is blank. 5. The multiplication box is blank. It equals 5 + 5 + 5 + 5 + 5 = 25. 6. 8 × 3. The repeated addition and answer boxes are blank. 7. 10 × 2. The repeated addition and answer boxes are blank. 8. 9 × 5. The repeated addition and answer boxes are blank. 9. 11 × 4. The repeated addition and answer boxes are blank. 10. 12 × 3. The repeated addition and answer boxes are blank.", "pg084_p001_adt_natural.mp3"],
+  ["pg084_p030", "Exercise 3. Write the answer in each question. 1. 2 × 1. 2. 2 × 2. 3. 2 × 3. 4. 5 × 4. 5. 2 × 5. 6. 6 × 3. 7. 7 × 2. 8. 2 × 8. 9. 2 × 9. 10. 10 × 4. 11. 2 × 11. 12. 2 × 12. 13. 9 × 2. 14. 8 × 4.", "pg084_p030_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page84Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete exercise in printed order`);
+  assert.equal(audios[id], filename, `${id} must use one complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg084_")).sort(), page84Passages.map(([id]) => id).sort(), "page 84 must narrate its two exercises exactly once");
+assert.match(page84, /data-id="pg084_p001"[\s\S]*data-id="pg084_p030"/, "page 84 exercises must follow the printed order");
+assert.match(page84, /images\/pg084_page_hq_pdf_clean\.png/, "page 84 must use the sharper watermark-free page image");
+assert.equal(texts.pg084_im001, "", "the full-page duplicate image must not repeat both exercises");
+assert.equal(audios.pg084_im001, undefined, "the full-page duplicate image must have no narration mapping");
+assert.match(page84, /data-id="pg084_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the full-page duplicate image must be decorative");
+for (const id of [...Array.from({ length: 28 }, (_, index) => `pg084_p${String(index + 2).padStart(3, "0")}`), ...Array.from({ length: 17 }, (_, index) => `pg084_p${String(index + 31).padStart(3, "0")}`)]) {
+  assert.equal(texts[id], "", `${id} duplicate OCR fragment must not be narrated`);
+  assert.equal(audios[id], undefined, `${id} duplicate OCR fragment must have no audio mapping`);
+}
+assert.doesNotMatch(texts.pg084_p001, /\b(?:28|24)\b/, "Exercise 2 narration must not solve empty answer boxes");
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
