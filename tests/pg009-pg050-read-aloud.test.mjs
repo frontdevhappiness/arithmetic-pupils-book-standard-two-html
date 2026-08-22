@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 88; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 89; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1799,6 +1799,32 @@ for (const id of Object.keys(texts).filter((id) => {
 assert.match(texts.pg088_p001, /^5\. 33 × 3\.[\s\S]*10\. 11 × 9\.$/, "Exercise 6 questions 5–10 must be complete multiplication problems without false minus signs or supplied answers");
 assert.equal(texts.pg088_p047, "Example 2. 0 × 2 =.", "the unanswered second example must remain unanswered");
 
+const page89 = read("pg089_sec001.html");
+const page89Passages = [
+  ["pg089_p001", "Solution. 0 × 2 =. This example shows that, there is nothing in the two groups. Therefore, repeated addition of an empty group equals an empty group. Therefore, 0 × 2 = 0.", "pg089_p001_adt_natural.mp3"],
+  ["pg089_p007", "Example 3. 4 × 0. Therefore, 4 × 0 = 0.", "pg089_p007_adt_natural.mp3"],
+  ["pg089_p020", "Exercise 7. Write the answer in each question. 1. 31 × 0. 2. 14 × 0. 3. 22 × 0. 4. 23 × 0. 5. 0 × 3 =. 6. 8 × 0 =. 7. 6 × 0 =. 8. 0 × 45 =. 9. 0 × 7 =. 10. 10 × 0 =.", "pg089_p020_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page89Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete section in printed order`);
+  assert.equal(audios[id], filename, `${id} must use a complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg089_")).sort(), page89Passages.map(([id]) => id).sort(), "page 89 must narrate each section exactly once");
+assert.match(page89, /data-id="pg089_p001"[\s\S]*data-id="pg089_p007"[\s\S]*data-id="pg089_p020"/, "page 89 must read the solution, Example 3, then Exercise 7");
+assert.match(page89, /images\/pg089_page_hq_pdf_clean\.png/, "page 89 must use the sharper watermark-free page image");
+for (const id of Object.keys(texts).filter((id) => {
+  const match = id.match(/^pg089_p(\d{3})$/);
+  if (!match) return false;
+  const number = Number(match[1]);
+  return number >= 2 && number <= 57 && ![7, 20].includes(number);
+})) {
+  assert.equal(texts[id], "", `${id} fragmented OCR text must not be narrated separately`);
+  assert.equal(audios[id], undefined, `${id} fragmented OCR text must have no audio mapping`);
+}
+assert.match(texts.pg089_p001, /^Solution\. 0 × 2 =\. This example[\s\S]*Therefore, 0 × 2 = 0\.$/, "the solution must preserve its initially unanswered expression and final conclusion");
+assert.match(texts.pg089_p020, /^Exercise 7\.[\s\S]*1\. 31 × 0\.[\s\S]*10\. 10 × 0 =\.$/, "Exercise 7 must read all ten questions in order without supplying answers");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1833,4 +1859,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg088 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg089 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
