@@ -118,7 +118,7 @@
    * Make fixed-layout pages easier to read without changing their internal
    * coordinates. The renderer's inline fitter keeps the whole page above the
    * dock, which is safe but leaves type unnecessarily small on shorter
-   * screens. Increase that fitted size by 20% when horizontal space permits,
+   * screens. Increase that fitted size by 80% when horizontal space permits,
    * then let the document scroll vertically. Narrow screens still fit the
    * complete page width and never gain horizontal scrolling.
    */
@@ -146,7 +146,7 @@
       var widthScale = Math.max(0.1, (window.innerWidth - sideGap * 2) / referenceWidth)
       var heightScale = Math.max(0.1, (window.innerHeight - dock) / height)
       var originalFit = Math.min(2, widthScale, heightScale)
-      var scale = Math.min(2.4, widthScale, originalFit * 1.2)
+      var scale = Math.min(3.6, widthScale, originalFit * 1.8)
       var availableHeight = Math.max(0, window.innerHeight - dock)
       var scaledHeight = height * scale
       var top = Math.max(12, (availableHeight - scaledHeight) / 2)
