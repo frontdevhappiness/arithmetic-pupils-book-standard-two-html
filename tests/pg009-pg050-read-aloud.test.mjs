@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 81; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 82; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1604,6 +1604,34 @@ for (const id of ["pg081_im003", "pg081_im004", "pg081_im006", "pg081_im007", "p
 assert.match(page81, /images\/pg081_page_hq_pdf_clean\.png/, "page 81 must use the sharper watermark-free page image");
 assert.match(texts.pg081_p038, /4 × 3/, "Example 4 must describe the three visible groups of four accurately");
 assert.equal(texts.pg081_p039, "Therefore, 4 × 3 = 12.", "the final equation must be mathematically correct");
+
+const page82 = read("pg082_sec001.html");
+const page82Passages = [
+  ["pg082_p001", "Exercise 1", "pg082_p001.mp3"],
+  ["pg082_p002", "Use objects to multiply each of the following numbers.", "pg082_p002_adt_instruction.mp3"],
+  ["pg082_p004", "1. 4 × 2. Four yellow cars plus four yellow cars.", "pg082_p004_adt_natural.mp3"],
+  ["pg082_p008", "2. 6 × 3. Six pencils plus six pencils plus six pencils.", "pg082_p008_adt_natural.mp3"],
+  ["pg082_p013", "3. Three bells plus three bells plus three bells.", "pg082_p013_adt_natural.mp3"],
+  ["pg082_p019", "4. Five green sticks plus five green sticks plus five green sticks plus five green sticks.", "pg082_p019_adt_natural.mp3"],
+  ["pg082_p026", "Multiplying using repeated addition", "pg082_p026.mp3"],
+  ["pg082_p027", "Multiplication can be done using repeated addition of a number.", "pg082_p027.mp3"],
+  ["pg082_im006", "Example 1. Two times four equals. Solution. Repeated addition: 2 + 2 + 2 + 2 = 8. Multiply: 2 × 4 = 8. Therefore, 2 × 4 = 8.", "pg082_im006_adt_example.mp3"]
+];
+for (const [id, expected, filename] of page82Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate page 82 in printed order`);
+  assert.equal(audios[id], filename, `${id} must use the reviewed page 82 narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg082_")).sort(), page82Passages.map(([id]) => id).sort(), "page 82 must narrate each passage and object group exactly once");
+assert.match(page82, /data-id="pg082_p001"[\s\S]*data-id="pg082_p002"[\s\S]*data-id="pg082_p004"[\s\S]*data-id="pg082_p008"[\s\S]*data-id="pg082_p013"[\s\S]*data-id="pg082_p019"[\s\S]*data-id="pg082_p026"[\s\S]*data-id="pg082_p027"[\s\S]*data-id="pg082_im006"/, "page 82 narration must follow the printed order");
+for (const id of ["pg082_im001", "pg082_im002", "pg082_im003", "pg082_im004"]) {
+  assert.equal(audios[id], undefined, `${id} description is included in its complete question passage and must not repeat`);
+}
+assert.match(page82, /images\/pg082_page_hq_pdf_clean\.png/, "page 82 must use the sharper watermark-free page image");
+for (const id of ["pg082_p003", "pg082_p005", "pg082_p006", "pg082_p007", "pg082_p009", "pg082_p010", "pg082_p011", "pg082_p012", "pg082_p014", "pg082_p015", "pg082_p016", "pg082_p017", "pg082_p018", "pg082_p020", "pg082_p021", "pg082_p022", "pg082_p023", "pg082_p024", "pg082_p025", "pg082_p029", "pg082_p030", "pg082_p031", "pg082_p032", "pg082_p033", "pg082_p034"]) {
+  assert.equal(texts[id], "", `${id} blank or duplicate fragment must not be narrated`);
+  assert.equal(audios[id], undefined, `${id} blank or duplicate fragment must have no audio mapping`);
+}
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
