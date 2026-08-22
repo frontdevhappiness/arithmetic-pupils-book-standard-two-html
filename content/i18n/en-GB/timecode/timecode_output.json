@@ -48837,7 +48837,7 @@
       }
     ]
   },
-  "pg076_p001": {
+  "pg076_p114": {
     "timecodes": [
       null,
       {
@@ -48845,1498 +48845,1127 @@
           {
             "text": "Exercise",
             "start": 0,
-            "end": 0.8600000143051147
+            "end": 1.12
           },
           {
-            "text": "9",
-            "start": 0.8600000143051147,
-            "end": 1.2999999523162842
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "nine",
+            "start": 1.12,
+            "end": 1.58
+          },
           {
             "text": "Write",
-            "start": 0,
-            "end": 0.9399999976158142
+            "start": 2.34,
+            "end": 2.46
           },
           {
             "text": "the",
-            "start": 0.9399999976158142,
-            "end": 1.1799999475479126
+            "start": 2.46,
+            "end": 2.56
           },
           {
             "text": "answer",
-            "start": 1.1799999475479126,
-            "end": 1.5
+            "start": 2.56,
+            "end": 2.82
           },
           {
             "text": "in",
-            "start": 1.5,
-            "end": 1.8799999952316284
+            "start": 2.82,
+            "end": 3.14
           },
           {
             "text": "each",
-            "start": 1.8799999952316284,
-            "end": 2.180000066757202
+            "start": 3.14,
+            "end": 3.4
           },
           {
             "text": "question",
-            "start": 2.180000066757202,
-            "end": 2.559999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.30000001192092896
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p004": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "9",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p005": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p006": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p007": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p008": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p009": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p010": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 1.2599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p011": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p012": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p013": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p014": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p015": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p016": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p017": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "11",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p018": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 1.059999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p019": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p020": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p021": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p022": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p023": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p024": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p026": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p027": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p028": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p029": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p030": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p031": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.3600000143051147
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p033": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p034": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p035": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p036": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p037": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p038": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "12",
-            "start": 0,
-            "end": 1.0399999618530273
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p039": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.940000057220459
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p040": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p041": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p042": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p043": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p044": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p045": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "3",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p046": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "9",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p047": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p048": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p049": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p050": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p051": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p052": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 1.159999966621399
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p054": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p055": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p056": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p057": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p058": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p059": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p060": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "13",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p061": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "9",
-            "start": 0,
-            "end": 1
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p062": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p063": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p064": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p065": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p066": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p067": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 1.2200000286102295
+            "start": 3.4,
+            "end": 4.08
           },
           {
-            "text": "And",
-            "start": 2.059999942779541,
-            "end": 2.319999933242798
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p068": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "Question",
+            "start": 4.82,
+            "end": 4.94
+          },
           {
-            "text": "5",
-            "start": 0,
-            "end": 1.940000057220459
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p069": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p070": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p071": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "one",
+            "start": 4.94,
+            "end": 5.18
+          },
           {
             "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p072": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "start": 5.6,
+            "end": 5.86
+          },
           {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p073": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "hundred",
+            "start": 5.86,
+            "end": 6.1
+          },
           {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p074": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "and",
+            "start": 6.1,
+            "end": 6.44
+          },
           {
-            "text": "9",
-            "start": 0,
-            "end": 0.7599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p075": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "seventy",
+            "start": 6.44,
+            "end": 6.64
+          },
           {
-            "text": "5",
-            "start": 0,
-            "end": 1.940000057220459
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p076": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "five",
+            "start": 6.64,
+            "end": 7.16
+          },
           {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p077": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "minus",
+            "start": 7.16,
+            "end": 7.68
+          },
           {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p078": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "six",
+            "start": 7.68,
+            "end": 8.06
+          },
           {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p079": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "hundred",
+            "start": 8.06,
+            "end": 8.2
+          },
           {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p080": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "and",
+            "start": 8.2,
+            "end": 8.6
+          },
           {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p081": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "eighty",
+            "start": 8.6,
+            "end": 8.72
+          },
           {
-            "text": "14",
-            "start": 0,
-            "end": 0.5400000214576721
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p082": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "nine",
+            "start": 8.72,
+            "end": 9.24
+          },
           {
-            "text": "8",
-            "start": 0,
-            "end": 1.059999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p083": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "Question",
+            "start": 9.92,
+            "end": 10.04
+          },
           {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p084": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "two",
+            "start": 10.04,
+            "end": 10.38
+          },
           {
-            "text": "zero",
-            "start": 0,
-            "end": 1.8799999952316284
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p085": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "Six",
+            "start": 10.92,
+            "end": 11.14
+          },
           {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p086": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "hundred",
+            "start": 11.14,
+            "end": 11.28
+          },
           {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p087": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "and",
+            "start": 11.28,
+            "end": 11.74
+          },
+          {
+            "text": "forty",
+            "start": 11.74,
+            "end": 11.86
+          },
+          {
+            "text": "seven",
+            "start": 11.86,
+            "end": 12.22
+          },
+          {
+            "text": "minus",
+            "start": 12.22,
+            "end": 12.68
+          },
+          {
+            "text": "four",
+            "start": 12.68,
+            "end": 13
+          },
+          {
+            "text": "hundred",
+            "start": 13,
+            "end": 13.1
+          },
+          {
+            "text": "and",
+            "start": 13.1,
+            "end": 13.52
+          },
+          {
+            "text": "twenty",
+            "start": 13.52,
+            "end": 13.64
+          },
+          {
+            "text": "nine",
+            "start": 13.64,
+            "end": 13.92
+          },
+          {
+            "text": "Question",
+            "start": 14.78,
+            "end": 14.9
+          },
+          {
+            "text": "three",
+            "start": 14.9,
+            "end": 15.2
+          },
           {
             "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
+            "start": 15.8,
+            "end": 16.02
+          },
+          {
+            "text": "hundred",
+            "start": 16.02,
+            "end": 16.16
+          },
+          {
+            "text": "and",
+            "start": 16.16,
+            "end": 16.72
+          },
+          {
+            "text": "sixty",
+            "start": 16.72,
+            "end": 16.84
+          },
+          {
+            "text": "eight",
+            "start": 16.84,
+            "end": 17.34
+          },
+          {
+            "text": "minus",
+            "start": 17.34,
+            "end": 17.72
+          },
+          {
+            "text": "five",
+            "start": 17.72,
+            "end": 18.12
+          },
+          {
+            "text": "hundred",
+            "start": 18.12,
+            "end": 18.24
+          },
+          {
+            "text": "and",
+            "start": 18.24,
+            "end": 18.66
+          },
+          {
+            "text": "eighty",
+            "start": 18.66,
+            "end": 18.78
+          },
+          {
+            "text": "nine",
+            "start": 18.78,
+            "end": 19
           }
         ]
       }
     ]
   },
-  "pg076_p088": {
+  "pg076_p115": {
     "timecodes": [
       null,
       {
         "word_timestamps": [
           {
-            "text": "5",
+            "text": "Question",
             "start": 0,
-            "end": 0.8399999737739563
+            "end": 0.52
+          },
+          {
+            "text": "four",
+            "start": 0.52,
+            "end": 0.96
+          },
+          {
+            "text": "Five",
+            "start": 1.42,
+            "end": 1.62
+          },
+          {
+            "text": "hundred",
+            "start": 1.62,
+            "end": 1.8
+          },
+          {
+            "text": "and",
+            "start": 1.8,
+            "end": 2.14
+          },
+          {
+            "text": "forty",
+            "start": 2.14,
+            "end": 2.24
+          },
+          {
+            "text": "eight",
+            "start": 2.24,
+            "end": 2.5
+          },
+          {
+            "text": "minus",
+            "start": 2.5,
+            "end": 2.82
+          },
+          {
+            "text": "two",
+            "start": 2.82,
+            "end": 3.1
+          },
+          {
+            "text": "hundred",
+            "start": 3.1,
+            "end": 3.26
+          },
+          {
+            "text": "and",
+            "start": 3.26,
+            "end": 3.62
+          },
+          {
+            "text": "ninety",
+            "start": 3.62,
+            "end": 3.74
+          },
+          {
+            "text": "nine",
+            "start": 3.74,
+            "end": 4.16
+          },
+          {
+            "text": "Question",
+            "start": 5.02,
+            "end": 5.14
+          },
+          {
+            "text": "five",
+            "start": 5.14,
+            "end": 5.5
+          },
+          {
+            "text": "Seven",
+            "start": 6,
+            "end": 6.22
+          },
+          {
+            "text": "hundred",
+            "start": 6.22,
+            "end": 6.38
+          },
+          {
+            "text": "and",
+            "start": 6.38,
+            "end": 6.84
+          },
+          {
+            "text": "ninety",
+            "start": 6.84,
+            "end": 6.96
+          },
+          {
+            "text": "eight",
+            "start": 6.96,
+            "end": 7.12
+          },
+          {
+            "text": "minus",
+            "start": 7.12,
+            "end": 7.38
+          },
+          {
+            "text": "three",
+            "start": 7.38,
+            "end": 7.72
+          },
+          {
+            "text": "hundred",
+            "start": 7.72,
+            "end": 7.82
+          },
+          {
+            "text": "and",
+            "start": 7.82,
+            "end": 8.26
+          },
+          {
+            "text": "forty",
+            "start": 8.26,
+            "end": 8.38
+          },
+          {
+            "text": "nine",
+            "start": 8.38,
+            "end": 8.66
+          },
+          {
+            "text": "Question",
+            "start": 9.64,
+            "end": 9.76
+          },
+          {
+            "text": "six",
+            "start": 9.76,
+            "end": 10.16
+          },
+          {
+            "text": "Seven",
+            "start": 10.92,
+            "end": 11.16
+          },
+          {
+            "text": "hundred",
+            "start": 11.16,
+            "end": 11.3
+          },
+          {
+            "text": "and",
+            "start": 11.3,
+            "end": 11.82
+          },
+          {
+            "text": "eighty",
+            "start": 11.82,
+            "end": 11.94
+          },
+          {
+            "text": "four",
+            "start": 11.94,
+            "end": 12.18
+          },
+          {
+            "text": "minus",
+            "start": 12.18,
+            "end": 12.74
+          },
+          {
+            "text": "four",
+            "start": 12.74,
+            "end": 13.12
+          },
+          {
+            "text": "hundred",
+            "start": 13.12,
+            "end": 13.22
+          },
+          {
+            "text": "and",
+            "start": 13.22,
+            "end": 13.72
+          },
+          {
+            "text": "ninety",
+            "start": 13.72,
+            "end": 13.84
+          },
+          {
+            "text": "five",
+            "start": 13.84,
+            "end": 14.08
           }
         ]
       }
     ]
   },
-  "pg076_p089": {
+  "pg076_p116": {
     "timecodes": [
       null,
       {
         "word_timestamps": [
           {
-            "text": "7",
+            "text": "Question",
             "start": 0,
-            "end": 1.1799999475479126
+            "end": 0.78
+          },
+          {
+            "text": "seven",
+            "start": 0.78,
+            "end": 1.24
+          },
+          {
+            "text": "Six",
+            "start": 1.74,
+            "end": 2
+          },
+          {
+            "text": "hundred",
+            "start": 2,
+            "end": 2.28
+          },
+          {
+            "text": "and",
+            "start": 2.28,
+            "end": 2.72
+          },
+          {
+            "text": "sixty",
+            "start": 2.72,
+            "end": 2.82
+          },
+          {
+            "text": "three",
+            "start": 2.82,
+            "end": 3.4
+          },
+          {
+            "text": "minus",
+            "start": 3.4,
+            "end": 3.92
+          },
+          {
+            "text": "four",
+            "start": 3.92,
+            "end": 4.34
+          },
+          {
+            "text": "hundred",
+            "start": 4.34,
+            "end": 4.56
+          },
+          {
+            "text": "and",
+            "start": 4.56,
+            "end": 5.1
+          },
+          {
+            "text": "eighty",
+            "start": 5.1,
+            "end": 5.22
+          },
+          {
+            "text": "seven",
+            "start": 5.22,
+            "end": 5.9
+          },
+          {
+            "text": "Question",
+            "start": 6.42,
+            "end": 6.54
+          },
+          {
+            "text": "eight",
+            "start": 6.54,
+            "end": 6.8
+          },
+          {
+            "text": "Eight",
+            "start": 7.38,
+            "end": 7.64
+          },
+          {
+            "text": "hundred",
+            "start": 7.64,
+            "end": 7.78
+          },
+          {
+            "text": "and",
+            "start": 7.78,
+            "end": 8.66
+          },
+          {
+            "text": "seventeen",
+            "start": 8.66,
+            "end": 8.78
+          },
+          {
+            "text": "minus",
+            "start": 8.78,
+            "end": 9.32
+          },
+          {
+            "text": "one",
+            "start": 9.32,
+            "end": 9.68
+          },
+          {
+            "text": "hundred",
+            "start": 9.68,
+            "end": 9.84
+          },
+          {
+            "text": "and",
+            "start": 9.84,
+            "end": 10.36
+          },
+          {
+            "text": "nine",
+            "start": 10.36,
+            "end": 10.76
+          },
+          {
+            "text": "Question",
+            "start": 11.48,
+            "end": 11.6
+          },
+          {
+            "text": "nine",
+            "start": 11.6,
+            "end": 11.88
+          },
+          {
+            "text": "Five",
+            "start": 12.46,
+            "end": 12.74
+          },
+          {
+            "text": "hundred",
+            "start": 12.74,
+            "end": 12.9
+          },
+          {
+            "text": "and",
+            "start": 12.9,
+            "end": 13.48
+          },
+          {
+            "text": "seventy",
+            "start": 13.48,
+            "end": 13.6
+          },
+          {
+            "text": "six",
+            "start": 13.6,
+            "end": 14
+          },
+          {
+            "text": "minus",
+            "start": 14,
+            "end": 14.72
+          },
+          {
+            "text": "two",
+            "start": 14.72,
+            "end": 15.18
+          },
+          {
+            "text": "hundred",
+            "start": 15.18,
+            "end": 15.28
+          },
+          {
+            "text": "and",
+            "start": 15.28,
+            "end": 15.68
+          },
+          {
+            "text": "sixty",
+            "start": 15.68,
+            "end": 15.78
+          },
+          {
+            "text": "eight",
+            "start": 15.78,
+            "end": 16.1
           }
         ]
       }
     ]
   },
-  "pg076_p090": {
+  "pg076_p117": {
     "timecodes": [
       null,
       {
         "word_timestamps": [
           {
-            "text": "You",
+            "text": "Question",
             "start": 0,
-            "end": 0.18000000715255737
+            "end": 0.42
+          },
+          {
+            "text": "ten",
+            "start": 0.42,
+            "end": 0.86
+          },
+          {
+            "text": "Seven",
+            "start": 1.46,
+            "end": 1.58
+          },
+          {
+            "text": "hundred",
+            "start": 1.58,
+            "end": 1.82
+          },
+          {
+            "text": "and",
+            "start": 1.82,
+            "end": 2.18
+          },
+          {
+            "text": "fifty",
+            "start": 2.18,
+            "end": 2.28
+          },
+          {
+            "text": "four",
+            "start": 2.28,
+            "end": 2.56
+          },
+          {
+            "text": "minus",
+            "start": 2.56,
+            "end": 2.9
+          },
+          {
+            "text": "two",
+            "start": 2.9,
+            "end": 3.24
+          },
+          {
+            "text": "hundred",
+            "start": 3.24,
+            "end": 3.38
+          },
+          {
+            "text": "and",
+            "start": 3.38,
+            "end": 3.8
+          },
+          {
+            "text": "sixty",
+            "start": 3.8,
+            "end": 3.92
+          },
+          {
+            "text": "nine",
+            "start": 3.92,
+            "end": 4.32
+          },
+          {
+            "text": "Question",
+            "start": 5.14,
+            "end": 5.26
+          },
+          {
+            "text": "eleven",
+            "start": 5.26,
+            "end": 5.52
+          },
+          {
+            "text": "Eight",
+            "start": 6.12,
+            "end": 6.32
+          },
+          {
+            "text": "hundred",
+            "start": 6.32,
+            "end": 6.52
+          },
+          {
+            "text": "and",
+            "start": 6.52,
+            "end": 7.1
+          },
+          {
+            "text": "seventy",
+            "start": 7.1,
+            "end": 7.22
+          },
+          {
+            "text": "six",
+            "start": 7.22,
+            "end": 7.52
+          },
+          {
+            "text": "minus",
+            "start": 7.52,
+            "end": 7.9
+          },
+          {
+            "text": "five",
+            "start": 7.9,
+            "end": 8.26
+          },
+          {
+            "text": "hundred",
+            "start": 8.26,
+            "end": 8.42
+          },
+          {
+            "text": "and",
+            "start": 8.42,
+            "end": 8.82
+          },
+          {
+            "text": "ninety",
+            "start": 8.82,
+            "end": 8.94
+          },
+          {
+            "text": "five",
+            "start": 8.94,
+            "end": 9.22
+          },
+          {
+            "text": "Question",
+            "start": 10.2,
+            "end": 10.32
+          },
+          {
+            "text": "twelve",
+            "start": 10.32,
+            "end": 10.66
+          },
+          {
+            "text": "Five",
+            "start": 11.26,
+            "end": 11.48
+          },
+          {
+            "text": "hundred",
+            "start": 11.48,
+            "end": 11.58
+          },
+          {
+            "text": "and",
+            "start": 11.58,
+            "end": 12.02
+          },
+          {
+            "text": "eighty",
+            "start": 12.02,
+            "end": 12.14
+          },
+          {
+            "text": "two",
+            "start": 12.14,
+            "end": 12.5
+          },
+          {
+            "text": "minus",
+            "start": 12.5,
+            "end": 13.04
+          },
+          {
+            "text": "three",
+            "start": 13.04,
+            "end": 13.42
+          },
+          {
+            "text": "hundred",
+            "start": 13.42,
+            "end": 13.52
+          },
+          {
+            "text": "and",
+            "start": 13.52,
+            "end": 14.02
+          },
+          {
+            "text": "ninety",
+            "start": 14.02,
+            "end": 14.14
+          },
+          {
+            "text": "seven",
+            "start": 14.14,
+            "end": 14.32
           }
         ]
       }
     ]
   },
-  "pg076_p091": {
+  "pg076_p118": {
     "timecodes": [
       null,
       {
         "word_timestamps": [
+          {
+            "text": "Question",
+            "start": 0,
+            "end": 0.42
+          },
+          {
+            "text": "thirteen",
+            "start": 0.42,
+            "end": 1.08
+          },
           {
             "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
+            "start": 1.76,
+            "end": 1.9
+          },
+          {
+            "text": "hundred",
+            "start": 1.9,
+            "end": 2.18
+          },
+          {
+            "text": "and",
+            "start": 2.18,
+            "end": 2.46
+          },
+          {
+            "text": "seventy",
+            "start": 2.46,
+            "end": 2.7
+          },
+          {
+            "text": "six",
+            "start": 2.7,
+            "end": 3.1
+          },
+          {
+            "text": "minus",
+            "start": 3.1,
+            "end": 3.42
+          },
+          {
+            "text": "four",
+            "start": 3.42,
+            "end": 3.78
+          },
+          {
+            "text": "hundred",
+            "start": 3.78,
+            "end": 3.98
+          },
+          {
+            "text": "and",
+            "start": 3.98,
+            "end": 4.34
+          },
+          {
+            "text": "eighty",
+            "start": 4.34,
+            "end": 4.46
+          },
+          {
+            "text": "nine",
+            "start": 4.46,
+            "end": 4.72
+          },
+          {
+            "text": "Question",
+            "start": 5.36,
+            "end": 5.48
+          },
+          {
+            "text": "fourteen",
+            "start": 5.48,
+            "end": 6
+          },
+          {
+            "text": "Eight",
+            "start": 6.5,
+            "end": 6.64
+          },
+          {
+            "text": "hundred",
+            "start": 6.64,
+            "end": 6.8
+          },
+          {
+            "text": "and",
+            "start": 6.8,
+            "end": 7.36
+          },
+          {
+            "text": "one",
+            "start": 7.36,
+            "end": 7.48
+          },
+          {
+            "text": "minus",
+            "start": 7.48,
+            "end": 7.78
+          },
+          {
+            "text": "seven",
+            "start": 7.78,
+            "end": 8.1
+          },
+          {
+            "text": "hundred",
+            "start": 8.1,
+            "end": 8.32
+          },
+          {
+            "text": "and",
+            "start": 8.32,
+            "end": 8.6
+          },
+          {
+            "text": "seventy",
+            "start": 8.6,
+            "end": 8.74
+          },
+          {
+            "text": "nine",
+            "start": 8.74,
+            "end": 9.12
+          },
+          {
+            "text": "Question",
+            "start": 9.88,
+            "end": 10
+          },
+          {
+            "text": "fifteen",
+            "start": 10,
+            "end": 10.4
+          },
+          {
+            "text": "Eight",
+            "start": 11,
+            "end": 11.16
+          },
+          {
+            "text": "hundred",
+            "start": 11.16,
+            "end": 11.32
+          },
+          {
+            "text": "and",
+            "start": 11.32,
+            "end": 11.94
+          },
+          {
+            "text": "sixty",
+            "start": 11.94,
+            "end": 12.06
+          },
+          {
+            "text": "two",
+            "start": 12.06,
+            "end": 12.42
+          },
+          {
+            "text": "minus",
+            "start": 12.42,
+            "end": 12.72
+          },
+          {
+            "text": "two",
+            "start": 12.72,
+            "end": 13.1
+          },
+          {
+            "text": "hundred",
+            "start": 13.1,
+            "end": 13.22
+          },
+          {
+            "text": "and",
+            "start": 13.22,
+            "end": 13.56
+          },
+          {
+            "text": "seventy",
+            "start": 13.56,
+            "end": 13.7
+          },
+          {
+            "text": "nine",
+            "start": 13.7,
+            "end": 14.02
           }
         ]
       }
     ]
   },
-  "pg076_p092": {
+  "pg076_p119": {
     "timecodes": [
       null,
       {
         "word_timestamps": [
           {
-            "text": "4",
+            "text": "Word",
             "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p093": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "end": 0.46
+          },
           {
-            "text": "8",
-            "start": 0,
-            "end": 0.41999998688697815
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p094": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "problems",
+            "start": 0.46,
+            "end": 0.8
+          },
           {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p095": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "on",
+            "start": 0.8,
+            "end": 1.18
+          },
           {
-            "text": "10",
-            "start": 0,
-            "end": 0.6200000047683716
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p096": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "subtraction",
+            "start": 1.18,
+            "end": 2.26
+          },
           {
-            "text": "7",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p097": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "Word",
+            "start": 2.98,
+            "end": 3.08
+          },
           {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p098": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "problems",
+            "start": 3.08,
+            "end": 3.4
+          },
           {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p099": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "involving",
+            "start": 3.4,
+            "end": 3.84
+          },
           {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p100": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "subtraction",
+            "start": 3.84,
+            "end": 4.56
+          },
           {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p101": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "are",
+            "start": 4.56,
+            "end": 4.74
+          },
           {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p102": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "questions",
+            "start": 4.74,
+            "end": 5.2
+          },
           {
-            "text": "15",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p103": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "written",
+            "start": 5.2,
+            "end": 5.46
+          },
           {
-            "text": "8",
-            "start": 0,
-            "end": 1.059999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p104": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "in",
+            "start": 5.46,
+            "end": 5.72
+          },
           {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p105": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "one",
+            "start": 5.72,
+            "end": 5.9
+          },
           {
-            "text": "6",
-            "start": 0,
-            "end": 0.5799999833106995
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p106": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "or",
+            "start": 5.9,
+            "end": 6.08
+          },
           {
-            "text": "7",
-            "start": 0,
-            "end": 1.4199999570846558
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p107": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "more",
+            "start": 6.08,
+            "end": 6.26
+          },
           {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p108": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
+            "text": "sentence",
+            "start": 6.26,
+            "end": 6.64
           }
         ]
       }
@@ -50577,104 +50206,6 @@
       }
     ]
   },
-  "pg076_p110": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Word",
-            "start": 0,
-            "end": 0.5
-          },
-          {
-            "text": "problems",
-            "start": 0.5,
-            "end": 1.0399999618530273
-          },
-          {
-            "text": "involving",
-            "start": 1.0399999618530273,
-            "end": 1.5199999809265137
-          },
-          {
-            "text": "subtraction",
-            "start": 1.5199999809265137,
-            "end": 2.259999990463257
-          },
-          {
-            "text": "are",
-            "start": 2.259999990463257,
-            "end": 2.5399999618530273
-          },
-          {
-            "text": "questions",
-            "start": 2.5399999618530273,
-            "end": 3
-          },
-          {
-            "text": "written",
-            "start": 3,
-            "end": 3.240000009536743
-          },
-          {
-            "text": "in",
-            "start": 3.240000009536743,
-            "end": 3.5399999618530273
-          },
-          {
-            "text": "one",
-            "start": 3.5399999618530273,
-            "end": 3.7200000286102295
-          },
-          {
-            "text": "or",
-            "start": 3.7200000286102295,
-            "end": 3.9000000953674316
-          },
-          {
-            "text": "more",
-            "start": 3.9000000953674316,
-            "end": 4.079999923706055
-          },
-          {
-            "text": "sentence",
-            "start": 4.079999923706055,
-            "end": 4.440000057220459
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_p109": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Word",
-            "start": 0,
-            "end": 0.5799999833106995
-          },
-          {
-            "text": "problems",
-            "start": 0.5799999833106995,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "on",
-            "start": 1.0800000429153442,
-            "end": 1.5
-          },
-          {
-            "text": "subtraction",
-            "start": 1.5,
-            "end": 2.119999885559082
-          }
-        ]
-      }
-    ]
-  },
   "pg077_p005": {
     "timecodes": [
       null,
@@ -50748,375 +50279,6 @@
             "text": "813",
             "start": 2.859999895095825,
             "end": 4.059999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg076_im001": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Exercise",
-            "start": 0.6399999856948853,
-            "end": 1.2799999713897705
-          },
-          {
-            "text": "9",
-            "start": 1.2799999713897705,
-            "end": 1.6799999475479126
-          },
-          {
-            "text": "Write",
-            "start": 2.319999933242798,
-            "end": 2.319999933242798
-          },
-          {
-            "text": "the",
-            "start": 2.319999933242798,
-            "end": 2.5199999809265137
-          },
-          {
-            "text": "answer",
-            "start": 2.5199999809265137,
-            "end": 2.759999990463257
-          },
-          {
-            "text": "in",
-            "start": 2.759999990463257,
-            "end": 2.9800000190734863
-          },
-          {
-            "text": "each",
-            "start": 2.9800000190734863,
-            "end": 3.1600000858306885
-          },
-          {
-            "text": "question",
-            "start": 3.1600000858306885,
-            "end": 3.5799999237060547
-          },
-          {
-            "text": "Fifteen",
-            "start": 4.119999885559082,
-            "end": 4.760000228881836
-          },
-          {
-            "text": "vertical",
-            "start": 4.760000228881836,
-            "end": 5.21999979019165
-          },
-          {
-            "text": "subtraction",
-            "start": 5.21999979019165,
-            "end": 5.920000076293945
-          },
-          {
-            "text": "sums",
-            "start": 5.920000076293945,
-            "end": 6.159999847412109
-          },
-          {
-            "text": "1",
-            "start": 7.019999980926514,
-            "end": 7.099999904632568
-          },
-          {
-            "text": "975",
-            "start": 7.380000114440918,
-            "end": 8.520000457763672
-          },
-          {
-            "text": "minus",
-            "start": 8.520000457763672,
-            "end": 8.920000076293945
-          },
-          {
-            "text": "689",
-            "start": 8.920000076293945,
-            "end": 9.880000114440918
-          },
-          {
-            "text": "2",
-            "start": 10.479999542236328,
-            "end": 10.819999694824219
-          },
-          {
-            "text": "647",
-            "start": 11.140000343322754,
-            "end": 12.279999732971191
-          },
-          {
-            "text": "minus",
-            "start": 12.279999732971191,
-            "end": 12.65999984741211
-          },
-          {
-            "text": "429",
-            "start": 12.65999984741211,
-            "end": 13.539999961853027
-          },
-          {
-            "text": "3",
-            "start": 14.420000076293945,
-            "end": 14.5600004196167
-          },
-          {
-            "text": "968",
-            "start": 14.84000015258789,
-            "end": 15.819999694824219
-          },
-          {
-            "text": "minus",
-            "start": 15.819999694824219,
-            "end": 16.15999984741211
-          },
-          {
-            "text": "589",
-            "start": 16.15999984741211,
-            "end": 16.979999542236328
-          },
-          {
-            "text": "4",
-            "start": 17.920000076293945,
-            "end": 18
-          },
-          {
-            "text": "548",
-            "start": 18.440000534057617,
-            "end": 19.440000534057617
-          },
-          {
-            "text": "minus",
-            "start": 19.440000534057617,
-            "end": 20.079999923706055
-          },
-          {
-            "text": "299",
-            "start": 20.079999923706055,
-            "end": 20.959999084472656
-          },
-          {
-            "text": "5",
-            "start": 22.020000457763672,
-            "end": 22.1200008392334
-          },
-          {
-            "text": "798",
-            "start": 22.459999084472656,
-            "end": 23.420000076293945
-          },
-          {
-            "text": "minus",
-            "start": 23.420000076293945,
-            "end": 24.020000457763672
-          },
-          {
-            "text": "349",
-            "start": 24.020000457763672,
-            "end": 25.100000381469727
-          },
-          {
-            "text": "6",
-            "start": 25.100000381469727,
-            "end": 25.979999542236328
-          },
-          {
-            "text": "784",
-            "start": 26.260000228881836,
-            "end": 27.31999969482422
-          },
-          {
-            "text": "minus",
-            "start": 27.31999969482422,
-            "end": 27.81999969482422
-          },
-          {
-            "text": "495",
-            "start": 27.81999969482422,
-            "end": 28.84000015258789
-          },
-          {
-            "text": "7",
-            "start": 29.299999237060547,
-            "end": 29.81999969482422
-          },
-          {
-            "text": "663",
-            "start": 30.360000610351562,
-            "end": 31.420000076293945
-          },
-          {
-            "text": "minus",
-            "start": 31.420000076293945,
-            "end": 31.739999771118164
-          },
-          {
-            "text": "487",
-            "start": 31.739999771118164,
-            "end": 33.08000183105469
-          },
-          {
-            "text": "8",
-            "start": 33.400001525878906,
-            "end": 33.540000915527344
-          },
-          {
-            "text": "817",
-            "start": 33.86000061035156,
-            "end": 34.70000076293945
-          },
-          {
-            "text": "minus",
-            "start": 34.70000076293945,
-            "end": 35.2400016784668
-          },
-          {
-            "text": "109",
-            "start": 35.2400016784668,
-            "end": 36.02000045776367
-          },
-          {
-            "text": "9",
-            "start": 36.79999923706055,
-            "end": 36.900001525878906
-          },
-          {
-            "text": "576",
-            "start": 37.380001068115234,
-            "end": 38.439998626708984
-          },
-          {
-            "text": "minus",
-            "start": 38.439998626708984,
-            "end": 38.81999969482422
-          },
-          {
-            "text": "268",
-            "start": 38.81999969482422,
-            "end": 39.81999969482422
-          },
-          {
-            "text": "10",
-            "start": 40.560001373291016,
-            "end": 40.619998931884766
-          },
-          {
-            "text": "754",
-            "start": 41.20000076293945,
-            "end": 42.2599983215332
-          },
-          {
-            "text": "minus",
-            "start": 42.2599983215332,
-            "end": 42.560001373291016
-          },
-          {
-            "text": "269",
-            "start": 42.560001373291016,
-            "end": 43.70000076293945
-          },
-          {
-            "text": "11",
-            "start": 43.70000076293945,
-            "end": 44.459999084472656
-          },
-          {
-            "text": "876",
-            "start": 44.939998626708984,
-            "end": 45.97999954223633
-          },
-          {
-            "text": "minus",
-            "start": 45.97999954223633,
-            "end": 46.619998931884766
-          },
-          {
-            "text": "595",
-            "start": 46.619998931884766,
-            "end": 47.720001220703125
-          },
-          {
-            "text": "12",
-            "start": 48.220001220703125,
-            "end": 48.619998931884766
-          },
-          {
-            "text": "582",
-            "start": 49.040000915527344,
-            "end": 50.02000045776367
-          },
-          {
-            "text": "minus",
-            "start": 50.02000045776367,
-            "end": 50.459999084472656
-          },
-          {
-            "text": "397",
-            "start": 50.459999084472656,
-            "end": 51.540000915527344
-          },
-          {
-            "text": "13",
-            "start": 52.099998474121094,
-            "end": 52.540000915527344
-          },
-          {
-            "text": "976",
-            "start": 53.2599983215332,
-            "end": 54.29999923706055
-          },
-          {
-            "text": "minus",
-            "start": 54.29999923706055,
-            "end": 54.599998474121094
-          },
-          {
-            "text": "489",
-            "start": 54.599998474121094,
-            "end": 55.560001373291016
-          },
-          {
-            "text": "14",
-            "start": 56.099998474121094,
-            "end": 56.5
-          },
-          {
-            "text": "801",
-            "start": 56.97999954223633,
-            "end": 57.63999938964844
-          },
-          {
-            "text": "minus",
-            "start": 57.63999938964844,
-            "end": 58.060001373291016
-          },
-          {
-            "text": "779",
-            "start": 58.060001373291016,
-            "end": 59.18000030517578
-          },
-          {
-            "text": "15",
-            "start": 59.720001220703125,
-            "end": 60.119998931884766
-          },
-          {
-            "text": "862",
-            "start": 60.560001373291016,
-            "end": 61.560001373291016
-          },
-          {
-            "text": "minus",
-            "start": 61.560001373291016,
-            "end": 61.97999954223633
-          },
-          {
-            "text": "279",
-            "start": 61.97999954223633,
-            "end": 63.060001373291016
           }
         ]
       }

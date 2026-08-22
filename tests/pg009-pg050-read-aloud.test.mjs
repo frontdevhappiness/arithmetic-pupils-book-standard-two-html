@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 75; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 76; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1488,6 +1488,26 @@ assert.match(page75, /data-id="pg075_im001"[^>]*role="presentation"[^>]*aria-hid
 assert.match(page75, /data-id="pg075_p125"[\s\S]*data-id="pg075_p126"[\s\S]*data-id="pg075_p127"[\s\S]*data-id="pg075_p128"[\s\S]*data-id="pg075_p129"[\s\S]*data-id="pg075_p001"/, "page 75 narration chunks must precede visual fragments in numerical order");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg075_")).sort(), page75Passages.map(([id]) => id), "page 75 must narrate five verified passages exactly once");
 
+const page76 = read("pg076_sec001.html");
+const page76Passages = [
+  ["pg076_p114", "Exercise nine. Write the answer in each question. Question one. Nine hundred and seventy five minus six hundred and eighty nine. Question two. Six hundred and forty seven minus four hundred and twenty nine. Question three. Nine hundred and sixty eight minus five hundred and eighty nine.", "pg076_p114_adt_exercise9_part1.mp3"],
+  ["pg076_p115", "Question four. Five hundred and forty eight minus two hundred and ninety nine. Question five. Seven hundred and ninety eight minus three hundred and forty nine. Question six. Seven hundred and eighty four minus four hundred and ninety five.", "pg076_p115_adt_exercise9_part2.mp3"],
+  ["pg076_p116", "Question seven. Six hundred and sixty three minus four hundred and eighty seven. Question eight. Eight hundred and seventeen minus one hundred and nine. Question nine. Five hundred and seventy six minus two hundred and sixty eight.", "pg076_p116_adt_exercise9_part3.mp3"],
+  ["pg076_p117", "Question ten. Seven hundred and fifty four minus two hundred and sixty nine. Question eleven. Eight hundred and seventy six minus five hundred and ninety five. Question twelve. Five hundred and eighty two minus three hundred and ninety seven.", "pg076_p117_adt_exercise9_part4.mp3"],
+  ["pg076_p118", "Question thirteen. Nine hundred and seventy six minus four hundred and eighty nine. Question fourteen. Eight hundred and one minus seven hundred and seventy nine. Question fifteen. Eight hundred and sixty two minus two hundred and seventy nine.", "pg076_p118_adt_exercise9_part5.mp3"],
+  ["pg076_p119", "Word problems on subtraction. Word problems involving subtraction are questions written in one or more sentence.", "pg076_p119_adt_word_problems_intro.mp3"]
+];
+for (const [id, expected, filename] of page76Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate page 76 in printed order`);
+  assert.equal(audios[id], filename, `${id} must use verified ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.doesNotMatch(page76Passages.slice(0, 5).map(([, text]) => text).join(" "), /equals|answer is/i, "page 76 must not reveal blank answers");
+assert.equal(texts.pg076_im001, "", "the duplicate page 76 exercise image must have no separate narration");
+assert.match(page76, /data-id="pg076_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate page 76 exercise image must be decorative");
+assert.match(page76, /data-id="pg076_p114"[\s\S]*data-id="pg076_p115"[\s\S]*data-id="pg076_p116"[\s\S]*data-id="pg076_p117"[\s\S]*data-id="pg076_p118"[\s\S]*data-id="pg076_p119"[\s\S]*data-id="pg076_p001"/, "page 76 narration chunks must precede visual fragments in order");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg076_")).sort(), page76Passages.map(([id]) => id), "page 76 must narrate six verified passages exactly once");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1522,4 +1542,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg075 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg076 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
