@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 86; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 87; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1737,6 +1737,36 @@ for (const id of Object.keys(texts).filter((id) => {
 assert.match(texts.pg086_p009, /1\. 13 × 2 =[\s\S]*7\. 12 × 3 =\.$/, "Exercise 5 left column must read questions 1 through 7 in order");
 assert.match(texts.pg086_p013, /^8\. 11 × 2 =[\s\S]*14\. 2 × 40 =\.$/, "Exercise 5 right column must read questions 8 through 14 without cutting off question 14");
 
+const page87 = read("pg087_sec001.html");
+const page87Passages = [
+  ["pg087_p001", "Example 1. 13 × 2. Steps. 1. Multiply 3 ones by 2: 3 × 2 = 6. Write 6 in the ones place. 2. Multiply 1 tens by 2: 1 × 2 = 2. Write 2 in the tens place. Therefore, the answer is 26.", "pg087_p001_adt_natural.mp3"],
+  ["pg087_p013", "Example 2. 34 × 2. Steps. 1. Multiply 4 ones by 2: 4 × 2 = 8. Write 8 in the ones place. 2. Multiply 3 tens by 2: 3 × 2 = 6. Write 6 in the tens place. Therefore, the answer is 68.", "pg087_p013_adt_natural.mp3"],
+  ["pg087_p025", "Exercise 6. Write the answer in each question. 1. 21 × 3. 2. 32 × 3. 3. 22 × 4. 4. 16 × 1.", "pg087_p025_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page87Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete section in printed order`);
+  assert.equal(audios[id], filename, `${id} must use a complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg087_")).sort(), page87Passages.map(([id]) => id).sort(), "page 87 must narrate each section exactly once");
+assert.match(page87, /data-id="pg087_p001"[\s\S]*data-id="pg087_p013"[\s\S]*data-id="pg087_p025"/, "page 87 must read both examples before Exercise 6");
+assert.match(page87, /images\/pg087_page_hq_pdf_clean\.png/, "page 87 must use the sharper watermark-free page image");
+for (const id of ["pg087_im001", "pg087_im002"]) {
+  assert.equal(texts[id], "", `${id} structural description must not interrupt the mathematical content`);
+  assert.equal(audios[id], undefined, `${id} structural description must have no narration mapping`);
+  assert.match(page87, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+for (const id of Object.keys(texts).filter((id) => {
+  const match = id.match(/^pg087_p(\d{3})$/);
+  if (!match) return false;
+  const number = Number(match[1]);
+  return number >= 2 && number <= 50 && ![13, 25].includes(number);
+})) {
+  assert.equal(texts[id], "", `${id} fragmented vertical-layout text must not be narrated separately`);
+  assert.equal(audios[id], undefined, `${id} fragmented vertical-layout text must have no audio mapping`);
+}
+assert.match(texts.pg087_p025, /1\. 21 × 3\. 2\. 32 × 3\. 3\. 22 × 4\. 4\. 16 × 1\.$/, "Exercise 6 must read all four vertical problems in order without supplying answers");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1771,4 +1801,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg086 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg087 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
