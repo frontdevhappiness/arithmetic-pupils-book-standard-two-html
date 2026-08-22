@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 82; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 83; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1631,6 +1631,28 @@ assert.match(page82, /images\/pg082_page_hq_pdf_clean\.png/, "page 82 must use t
 for (const id of ["pg082_p003", "pg082_p005", "pg082_p006", "pg082_p007", "pg082_p009", "pg082_p010", "pg082_p011", "pg082_p012", "pg082_p014", "pg082_p015", "pg082_p016", "pg082_p017", "pg082_p018", "pg082_p020", "pg082_p021", "pg082_p022", "pg082_p023", "pg082_p024", "pg082_p025", "pg082_p029", "pg082_p030", "pg082_p031", "pg082_p032", "pg082_p033", "pg082_p034"]) {
   assert.equal(texts[id], "", `${id} blank or duplicate fragment must not be narrated`);
   assert.equal(audios[id], undefined, `${id} blank or duplicate fragment must have no audio mapping`);
+}
+
+const page83 = read("pg083_sec001.html");
+const page83Passages = [
+  ["pg083_p001", "Example 2. 4 × 3 =. Solution. Repeated addition: 4 + 4 + 4 = 12. Multiply: 4 × 3 = 12. Therefore, 4 × 3 = 12.", "pg083_p001_adt_natural.mp3"],
+  ["pg083_p007", "Example 3. 3 × 5 =. Solution. Repeated addition: 3 + 3 + 3 + 3 + 3 = 15. Multiply: 3 × 5 = 15. Therefore, 3 × 5 = 15.", "pg083_p007_adt_natural.mp3"],
+  ["pg083_p013", "Example 4. 4 × 2. Solution. Eight blue squares are arranged in two rows of four, showing 2 fours. Adding: 4 + 4 = 8. 4 × 2 = 8. Therefore, 4 × 2 = 8.", "pg083_p013_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page83Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete example in printed order`);
+  assert.equal(audios[id], filename, `${id} must use one complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg083_")).sort(), page83Passages.map(([id]) => id).sort(), "page 83 must narrate its three examples exactly once");
+assert.match(page83, /data-id="pg083_p001"[\s\S]*data-id="pg083_p007"[\s\S]*data-id="pg083_p013"/, "page 83 examples must follow the printed order");
+assert.match(page83, /images\/pg083_page_hq_pdf_clean\.png/, "page 83 must use the sharper watermark-free page image");
+for (const id of ["pg083_p002", "pg083_p003", "pg083_p004", "pg083_p005", "pg083_p006", "pg083_p008", "pg083_p009", "pg083_p010", "pg083_p011", "pg083_p012", "pg083_p014", "pg083_p015", "pg083_p016", "pg083_p017", "pg083_p018", "pg083_p019"]) {
+  assert.equal(texts[id], "", `${id} duplicate OCR fragment must not be narrated`);
+  assert.equal(audios[id], undefined, `${id} duplicate OCR fragment must have no audio mapping`);
+}
+for (const id of ["pg083_im001", "pg083_im002", "pg083_im004"]) {
+  assert.equal(audios[id], undefined, `${id} description is included in a complete example and must not repeat`);
 }
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
