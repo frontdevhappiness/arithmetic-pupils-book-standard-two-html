@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 89; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 90; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1825,6 +1825,32 @@ for (const id of Object.keys(texts).filter((id) => {
 assert.match(texts.pg089_p001, /^Solution\. 0 × 2 =\. This example[\s\S]*Therefore, 0 × 2 = 0\.$/, "the solution must preserve its initially unanswered expression and final conclusion");
 assert.match(texts.pg089_p020, /^Exercise 7\.[\s\S]*1\. 31 × 0\.[\s\S]*10\. 10 × 0 =\.$/, "Exercise 7 must read all ten questions in order without supplying answers");
 
+const page90 = read("pg090_sec001.html");
+const page90Passages = [
+  ["pg090_p001", "Word problems on multiplication. Word problems involving multiplication are questions written in one or more sentence.", "pg090_p001_adt_natural.mp3"],
+  ["pg090_p004", "Example 1. There are 6 flower beds in a garden. Every flower bed has 5 seedlings. How many seedlings are there in the garden? Solution. Number of flower beds = 6. Number of seedlings in each flower bed = 5. Multiply the numbers: 6 × 5 = 6 + 6 + 6 + 6 + 6 = 30. Therefore, the garden has 30 flower seedlings.", "pg090_p004_adt_natural.mp3"],
+  ["pg090_p014", "Example 2. One car can carry 22 passengers at once. How many passengers can be carried by 3 cars of the same capacity? Solution. Number of passengers in one car = 22. Number of cars = 3. Multiply: 22 × 3 = 66. Therefore, 3 cars can carry 66 passengers.", "pg090_p014_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page90Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete section in printed order`);
+  assert.equal(audios[id], filename, `${id} must use a complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg090_")).sort(), page90Passages.map(([id]) => id).sort(), "page 90 must narrate each section exactly once");
+assert.match(page90, /data-id="pg090_p001"[\s\S]*data-id="pg090_p004"[\s\S]*data-id="pg090_p014"/, "page 90 must read the introduction and both examples in order");
+assert.match(page90, /images\/pg090_page_hq_pdf_clean\.png/, "page 90 must use the sharper watermark-free page image");
+for (const id of Object.keys(texts).filter((id) => {
+  const match = id.match(/^pg090_p(\d{3})$/);
+  if (!match) return false;
+  const number = Number(match[1]);
+  return number >= 2 && number <= 25 && ![4, 14].includes(number);
+})) {
+  assert.equal(texts[id], "", `${id} fragmented OCR text must not be narrated separately`);
+  assert.equal(audios[id], undefined, `${id} fragmented OCR text must have no audio mapping`);
+}
+assert.match(texts.pg090_p004, /6 × 5 = 6 \+ 6 \+ 6 \+ 6 \+ 6 = 30\./, "Example 1 must narrate the complete repeated-addition equation");
+assert.match(texts.pg090_p014, /Multiply: 22 × 3 = 66\./, "Example 2 must narrate the vertical multiplication as one equation");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1859,4 +1885,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg089 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg090 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
