@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 77; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 78; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1528,6 +1528,26 @@ assert.match(texts.pg077_p034, /Subtract ones:[\s\S]*Subtract tens:[\s\S]*Subtra
 assert.match(texts.pg077_p035, /Thirteen minus nine equals four[\s\S]*Three minus two equals one[\s\S]*Five minus one equals four/, "Example 2 must narrate the regrouped subtraction in column order");
 assert.doesNotMatch(texts.pg077_p035, /Therefore/, "Example 2 must not add an ending that is not printed");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg077_")).sort(), page77Passages.map(([id]) => id), "page 77 must narrate three verified passages exactly once");
+
+const page78 = read("pg078_sec001.html");
+const page78Passages = [
+  ["pg078_p071", "Steps. 1. Subtract ones: 3 – 9, it is not sufficient. 2. Take 1 group of tens from 4 tens. Regroup 1 tens into 10 ones. Remember that 3 tens remained in the tens place. Add ones: 10 + 3 = 13. 3. Subtract ones: 13 – 9 = 4. Write 4 in the ones place. 4. Subtract tens: 3 – 2 = 1. Write 1 in the tens place. 5. Subtract hundreds: 5 – 1 = 4. Write 4 in the hundreds place. Therefore, 414 desks were not damaged.", "pg078_p071_adt_steps.mp3"],
+  ["pg078_p072", "Exercise 10. Answer the following word problems. 1. Shija had 649 eggs. If he sold 415 eggs, how many eggs were left? 2. A passenger train carried 874 pupils. On the way, 360 pupils got off the train. Find the number of", "pg078_p072_adt_exercise10.mp3"]
+];
+for (const [id, expected, filename] of page78Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate page 78 in printed order`);
+  assert.equal(audios[id], filename, `${id} must use the verified page 78 narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
+}
+for (const id of ["pg078_im001", "pg078_im002"]) {
+  assert.equal(texts[id], "", `${id} duplicate image must have no separate narration`);
+  assert.equal(audios[id], undefined, `${id} duplicate image must not repeat the page`);
+  assert.match(page78, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+assert.match(page78, /data-id="pg078_p071"[\s\S]*data-id="pg078_p072"[\s\S]*data-id="pg078_p001"/, "page 78 narration must precede visual OCR fragments in order");
+assert.match(texts.pg078_p071, /Subtract ones:[\s\S]*Take 1 group of tens[\s\S]*Subtract tens:[\s\S]*Subtract hundreds:[\s\S]*Therefore, 414 desks were not damaged/, "page 78 must explain regrouping in mathematical order");
+assert.ok(texts.pg078_p072.endsWith("Find the number of"), "question 2 must stop where the printed page continues onto page 79");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg078_")).sort(), page78Passages.map(([id]) => id), "page 78 must narrate two verified passages exactly once");
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
