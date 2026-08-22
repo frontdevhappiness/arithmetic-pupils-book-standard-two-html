@@ -3772,7 +3772,7 @@
   "pg073_p048": "Numbers can be subtracted vertically by regrouping.",
   "pg073_p049": "ARITHMETICS PUPIL'S STD 2.indd 67",
   "pg073_p050": "06/11/2024 17:23",
-  "pg074_im004": "Text at the bottom of the worked example reads, “Therefore, the answer is 106.” Page number 68 in a blue oval below.",
+  "pg074_im004": "",
   "pg074_p000": "68",
   "pg074_p001": "Example",
   "pg074_p002": "- 3",
@@ -3813,7 +3813,7 @@
   "pg074_p038": "4",
   "pg074_p039": "8",
   "pg074_p040": "–",
-  "pg074_im002": "Worked subtraction setup for 314 minus 208, showing regrouping: the 1 in the tens place is crossed out and changed to 0, and the 4 ones are changed to 14.",
+  "pg074_im002": "",
   "pg074_p041": "0 14",
   "pg074_p042": "3. Subtract ones: 14 - 8 = 6. Write",
   "pg074_p043": "6 in the ones place.",
@@ -6009,5 +6009,6 @@
   "pg070_p075": "Subtracting numbers horizontally by regrouping. Numbers can be subtracted horizontally by regrouping. Example 1. 243 minus 127. The counting frame starts with 2 beads in the hundreds column, 4 beads in the tens column, and 3 beads in the ones column. Regroup 1 ten as 10 ones. There are now 3 tens and 13 ones. Cross out 7 ones, leaving 6. Cross out 2 tens, leaving 1. Cross out 1 hundred, leaving 1. The remaining beads show 116.",
   "pg071_p029": "Steps. 1. Put the beads in the abacus: 3 beads in the ones place, 4 beads in the tens place, and 2 beads in the hundreds place. 2. Subtract 7 beads from the ones place. It is not sufficient. There are only 3 beads in the ones place. 3. Take 1 group of tens from 4 tens. Regroup it into 10 ones. Remember that 3 tens remain. 4. Add ones: 10 plus 3 equals 13. 5. Subtract ones: 13 minus 7 equals 6. Write 6 in the ones place. 6. Subtract tens: 3 minus 2 equals 1. Write 1 in the tens place. 7. Subtract hundreds: 2 minus 1 equals 1. Write 1 in the hundreds place. Therefore, 243 minus 127 equals 116.",
   "pg071_p030": "Example 2. 100 minus 47. Solution. 100 minus 47 equals 53. Steps. 1. Subtract ones: 0 minus 7. It is not sufficient.",
-  "pg072_p038": "2. Take 1 group of tens from 0 tens. It is not sufficient. Take 1 group of hundreds from 1 hundreds. Regroup it into 10 tens. Remember that 0 hundreds remained in the hundreds place. 3. Take 1 tens from 10 tens. Regroup 1 tens into 10 ones. Remember 9 tens remained in the tens place. 4. Subtract ones: 10 minus 7 equals 3. Write 3 in the ones place. 5. Subtract tens: 9 minus 4 equals 5. Write 5 in the tens place. 6. Subtract hundreds: 0 minus 0 equals 0. Leave a blank space in the hundreds place. Therefore, the answer is 53."
+  "pg072_p038": "2. Take 1 group of tens from 0 tens. It is not sufficient. Take 1 group of hundreds from 1 hundreds. Regroup it into 10 tens. Remember that 0 hundreds remained in the hundreds place. 3. Take 1 tens from 10 tens. Regroup 1 tens into 10 ones. Remember 9 tens remained in the tens place. 4. Subtract ones: 10 minus 7 equals 3. Write 3 in the ones place. 5. Subtract tens: 9 minus 4 equals 5. Write 5 in the tens place. 6. Subtract hundreds: 0 minus 0 equals 0. Leave a blank space in the hundreds place. Therefore, the answer is 53.",
+  "pg074_p078": "Example. Three hundred and fourteen minus two hundred and eight. The numbers are arranged vertically under hundreds, tens, and ones. Solution. Three hundred and fourteen minus two hundred and eight equals one hundred and six. Steps. One. Subtract ones: four minus eight. It is not sufficient. Two. Take one group of tens from one ten. Regroup it into ten ones. Remember zero tens remain. Add ones: ten plus four equals fourteen. Three. Subtract ones: fourteen minus eight equals six. Write six in the ones place. Four. Subtract tens: zero minus zero equals zero. Write zero in the tens place. Five. Subtract hundreds: three minus two equals one. Write one in the hundreds place. Therefore, the answer is one hundred and six."
 }
