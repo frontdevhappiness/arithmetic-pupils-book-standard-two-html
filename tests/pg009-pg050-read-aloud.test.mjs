@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 84; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 85; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1677,6 +1677,36 @@ for (const id of [...Array.from({ length: 28 }, (_, index) => `pg084_p${String(i
 }
 assert.doesNotMatch(texts.pg084_p001, /\b(?:28|24)\b/, "Exercise 2 narration must not solve empty answer boxes");
 
+const page85 = read("pg085_sec001.html");
+const page85Passages = [
+  ["pg085_p001", "Exercise 4. Fill in the missing numbers in the following table. Multiplied by. The column headers are 1, 2, 3, 4, 5, 6, 7, 8, 9. The row headers are 1, 2, 3, 4, 5, 6, 7, 8, 9. The given entries are: row 1: 1, 2, 3, 4, 5. Row 2: 2, 4, 6, 8, 10. Row 3: 3, 6, 9, 12, 15.", "pg085_p001_adt_natural.mp3"],
+  ["pg085_p037", "Multiplying numbers horizontally. A two digit number can be multiplied by a one digit number horizontally. Example 1. 24 × 2 =. Steps. 1. Multiply 4 ones by 2: 4 × 2 = 8. Write 8 in the ones place. 2. Multiply 2 tens by 2: 2 × 2 = 4. Write 4 in the tens place. Therefore, 24 × 2 = 48.", "pg085_p037_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page85Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete section in printed order`);
+  assert.equal(audios[id], filename, `${id} must use one complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg085_")).sort(), page85Passages.map(([id]) => id).sort(), "page 85 must narrate its table and example exactly once");
+assert.match(page85, /data-id="pg085_p001"[\s\S]*data-id="pg085_p037"/, "page 85 sections must follow the printed order");
+assert.match(page85, /images\/pg085_page_hq_pdf_clean\.png/, "page 85 must use the sharper watermark-free page image");
+for (const id of ["pg085_im001", "pg085_im002"]) {
+  assert.equal(texts[id], "", `${id} duplicate description must not repeat the consolidated narration`);
+  assert.equal(audios[id], undefined, `${id} duplicate description must have no narration mapping`);
+  assert.match(page85, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+for (const id of Object.keys(texts).filter((id) => {
+  const match = id.match(/^pg085_p(\d{3})$/);
+  if (!match) return false;
+  const number = Number(match[1]);
+  return number >= 2 && number <= 47 && number !== 37;
+})) {
+  assert.equal(texts[id], "", `${id} duplicate OCR fragment must not be narrated`);
+  assert.equal(audios[id], undefined, `${id} duplicate OCR fragment must have no audio mapping`);
+}
+assert.match(texts.pg085_p001, /row 1: 1, 2, 3, 4, 5[\s\S]*Row 2: 2, 4, 6, 8, 10[\s\S]*Row 3: 3, 6, 9, 12, 15/, "the multiplication table must be narrated row by row");
+assert.match(texts.pg085_p037, /Multiply 4 ones by 2[\s\S]*Write 8 in the ones place[\s\S]*Multiply 2 tens by 2[\s\S]*Write 4 in the tens place/, "Example 1 must explain ones before tens");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1711,4 +1741,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg077 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg085 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
