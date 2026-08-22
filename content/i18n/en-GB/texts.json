@@ -3689,7 +3689,7 @@
   "pg072_p002": "Take 1 group of tens from",
   "pg072_p003": "0 tens. It is not sufficient.",
   "pg072_p004": "Take 1 group of hundreds from 1 hundreds. Regroup it into 10 tens. Remember that 0 hundreds remained in the hundreds place.",
-  "pg072_im001": "Worked example of 100 minus 47 using regrouping: 1 hundred is changed into 10 tens, then 1 ten is changed into 10 ones; subtract 7 ones to write 3, subtract 4 tens from 9 tens to write 5, and leave the hundreds place blank, giving 53.",
+  "pg072_im001": "",
   "pg072_p009": "100 – 47 =",
   "pg072_p010": "010",
   "pg072_p011": "3.",
@@ -6004,5 +6004,6 @@
   "pg070_p074": "Question 4. 328 minus 215. Question 5. 776 minus 715. Question 6. 824 minus 221. Question 7. 624 minus 321. Question 8. 515 minus 102. Question 9. 345 minus 215. Question 10. 467 minus 115. Question 11. 349 minus 117. Question 12. 286 minus 123.",
   "pg070_p075": "Subtracting numbers horizontally by regrouping. Numbers can be subtracted horizontally by regrouping. Example 1. 243 minus 127. The counting frame starts with 2 beads in the hundreds column, 4 beads in the tens column, and 3 beads in the ones column. Regroup 1 ten as 10 ones. There are now 3 tens and 13 ones. Cross out 7 ones, leaving 6. Cross out 2 tens, leaving 1. Cross out 1 hundred, leaving 1. The remaining beads show 116.",
   "pg071_p029": "Steps. 1. Put the beads in the abacus: 3 beads in the ones place, 4 beads in the tens place, and 2 beads in the hundreds place. 2. Subtract 7 beads from the ones place. It is not sufficient. There are only 3 beads in the ones place. 3. Take 1 group of tens from 4 tens. Regroup it into 10 ones. Remember that 3 tens remain. 4. Add ones: 10 plus 3 equals 13. 5. Subtract ones: 13 minus 7 equals 6. Write 6 in the ones place. 6. Subtract tens: 3 minus 2 equals 1. Write 1 in the tens place. 7. Subtract hundreds: 2 minus 1 equals 1. Write 1 in the hundreds place. Therefore, 243 minus 127 equals 116.",
-  "pg071_p030": "Example 2. 100 minus 47. Solution. 100 minus 47 equals 53. Steps. 1. Subtract ones: 0 minus 7. It is not sufficient."
+  "pg071_p030": "Example 2. 100 minus 47. Solution. 100 minus 47 equals 53. Steps. 1. Subtract ones: 0 minus 7. It is not sufficient.",
+  "pg072_p038": "2. Take 1 group of tens from 0 tens. It is not sufficient. Take 1 group of hundreds from 1 hundreds. Regroup it into 10 tens. Remember that 0 hundreds remained in the hundreds place. 3. Take 1 tens from 10 tens. Regroup 1 tens into 10 ones. Remember 9 tens remained in the tens place. 4. Subtract ones: 10 minus 7 equals 3. Write 3 in the ones place. 5. Subtract tens: 9 minus 4 equals 5. Write 5 in the tens place. 6. Subtract hundreds: 0 minus 0 equals 0. Leave a blank space in the hundreds place. Therefore, the answer is 53."
 }

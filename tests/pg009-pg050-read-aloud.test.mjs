@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 71; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 72; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1418,6 +1418,16 @@ assert.match(page71, /data-id="pg071_p029"[\s\S]*data-id="pg071_p001"/, "the sev
 assert.match(page71, /data-id="pg071_p030"[\s\S]*data-id="pg071_p018"/, "Example 2 narration must precede its visual fragments");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg071_")).sort(), ["pg071_p029", "pg071_p030"], "page 71 must narrate its two sections exactly once");
 
+const page72 = read("pg072_sec001.html");
+const page72Steps = "2. Take 1 group of tens from 0 tens. It is not sufficient. Take 1 group of hundreds from 1 hundreds. Regroup it into 10 tens. Remember that 0 hundreds remained in the hundreds place. 3. Take 1 tens from 10 tens. Regroup 1 tens into 10 ones. Remember 9 tens remained in the tens place. 4. Subtract ones: 10 minus 7 equals 3. Write 3 in the ones place. 5. Subtract tens: 9 minus 4 equals 5. Write 5 in the tens place. 6. Subtract hundreds: 0 minus 0 equals 0. Leave a blank space in the hundreds place. Therefore, the answer is 53.";
+assert.equal(texts.pg072_p038, page72Steps, "page 72 must preserve the printed numbered continuation exactly");
+assert.equal(audios.pg072_p038, "pg072_p038_adt_exact_v1.mp3", "page 72 must use corrected ADT narration");
+assert.deepEqual(timecodes.pg072_p038.timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(page72Steps), "page 72 must retain real word-level timing");
+assert.equal(texts.pg072_im001, "", "the duplicate worked-example image must have no separate narration");
+assert.match(page72, /data-id="pg072_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate worked-example image must be decorative");
+assert.match(page72, /data-id="pg072_p038"[\s\S]*data-id="pg072_p009"/, "the corrected continuation must precede its repeated diagram fragments");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg072_")).sort(), ["pg072_p038"], "page 72 must narrate its continuation exactly once");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1452,4 +1462,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg071 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg072 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
