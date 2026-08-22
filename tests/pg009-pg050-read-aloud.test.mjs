@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 79; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 80; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1557,6 +1557,25 @@ assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg079_")).sor
 assert.match(page79, /data-id="pg079_p029"[\s\S]*data-id="pg079_p001"/, "page 79 consolidated narration must precede visual OCR fragments");
 assert.match(page79, /images\/pg079_page_hq_pdf_clean\.png/, "page 79 must use the sharper watermark-free page image");
 assert.ok(texts.pg078_p072.endsWith("of") && texts.pg079_p029.startsWith("pupils who"), "question 2 must continue cleanly from page 78 to page 79");
+
+const page80 = read("pg080_sec001.html");
+const page80Passages = [
+  ["pg080_p020", "Chapter Seven: Multiplication. Multiplication using objects. Multiplication is a repeated addition of a number or objects. The operation of multiplication is represented by the sign ×. For example, 2 × 1 is read as, 2 multiplied by 1. It is also read as 2 times 1. Example 1. 2 × 1 =. Steps. 1. Put two cups in one group only once. This means, 2 × 1.", "pg080_p020_adt_before_cup_image.mp3"],
+  ["pg080_im001", "Two cups shown side by side to represent one group of two.", "pg080_im001.mp3"],
+  ["pg080_p022", "2. Add the number of cups. The sum is 2 cups. Therefore, 2 × 1 = 2.", "pg080_p022_adt_after_cup_image.mp3"],
+  ["pg080_p021", "Example 2. 2 × 2 =.", "pg080_p021_adt_example2_start.mp3"]
+];
+for (const [id, expected, filename] of page80Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate page 80 in printed order`);
+  assert.equal(audios[id], filename, `${id} must use the consolidated page 80 narration`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg080_")).sort(), page80Passages.map(([id]) => id).sort(), "page 80 must narrate its content exactly once");
+assert.match(page80, /data-id="pg080_im001"[^>]*alt="Two cups shown side by side to represent one group of two\."/, "the cup picture must have a useful description");
+assert.equal(texts.pg080_im002, "", "the duplicated chapter banner must not have separate narration");
+assert.equal(audios.pg080_im002, undefined, "the duplicated chapter banner must not repeat page 80 narration");
+assert.match(page80, /data-id="pg080_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the chapter banner extraction must be decorative");
+assert.match(page80, /data-id="pg080_p020"[\s\S]*data-id="pg080_im001"[\s\S]*data-id="pg080_p022"[\s\S]*data-id="pg080_p021"[\s\S]*data-id="pg080_p000"/, "page 80 narration and cup description must follow printed reading order");
+assert.match(page80, /images\/pg080_page_hq_pdf_clean\.png/, "page 80 must use the sharper watermark-free page image");
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
