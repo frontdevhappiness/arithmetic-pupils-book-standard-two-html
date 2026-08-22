@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 87; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 88; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1767,6 +1767,38 @@ for (const id of Object.keys(texts).filter((id) => {
 }
 assert.match(texts.pg087_p025, /1\. 21 × 3\. 2\. 32 × 3\. 3\. 22 × 4\. 4\. 16 × 1\.$/, "Exercise 6 must read all four vertical problems in order without supplying answers");
 
+const page88 = read("pg088_sec001.html");
+const page88Passages = [
+  ["pg088_p001", "5. 33 × 3. 6. 40 × 2. 7. 14 × 2. 8. 12 × 4. 9. 44 × 2. 10. 11 × 9.", "pg088_p001_adt_natural.mp3"],
+  ["pg088_p037", "Multiplying numbers by zero. Zero means there is nothing. When a number is multiplied by 0, the answer is 0. For example, you want to pick 2 oranges from the garden but there are no oranges. This means you will not have any orange. This is written 0 × 2 = 0. If you go 2 times and come back without an orange, you will not have any orange. This is written 0 × 2 = 0.", "pg088_p037_adt_natural.mp3"],
+  ["pg088_p045", "Example 1. 0 × 2 = 0.", "pg088_p045_adt_natural.mp3"],
+  ["pg088_p047", "Example 2. 0 × 2 =.", "pg088_p047_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page88Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete section in printed order`);
+  assert.equal(audios[id], filename, `${id} must use a complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg088_")).sort(), page88Passages.map(([id]) => id).sort(), "page 88 must narrate each section exactly once");
+assert.match(page88, /data-id="pg088_p001"[\s\S]*data-id="pg088_p037"[\s\S]*data-id="pg088_p045"[\s\S]*data-id="pg088_p047"/, "page 88 must read questions 5–10, the explanation, then both examples");
+assert.match(page88, /images\/pg088_page_hq_pdf_clean\.png/, "page 88 must use the sharper watermark-free page image");
+for (const id of ["pg088_im002", "pg088_im003"]) {
+  assert.equal(texts[id], "", `${id} duplicate description must not repeat an example`);
+  assert.equal(audios[id], undefined, `${id} duplicate description must have no narration mapping`);
+  assert.match(page88, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+for (const id of Object.keys(texts).filter((id) => {
+  const match = id.match(/^pg088_p(\d{3})$/);
+  if (!match) return false;
+  const number = Number(match[1]);
+  return number >= 2 && number <= 48 && ![37, 45, 47].includes(number);
+})) {
+  assert.equal(texts[id], "", `${id} fragmented OCR text must not be narrated separately`);
+  assert.equal(audios[id], undefined, `${id} fragmented OCR text must have no audio mapping`);
+}
+assert.match(texts.pg088_p001, /^5\. 33 × 3\.[\s\S]*10\. 11 × 9\.$/, "Exercise 6 questions 5–10 must be complete multiplication problems without false minus signs or supplied answers");
+assert.equal(texts.pg088_p047, "Example 2. 0 × 2 =.", "the unanswered second example must remain unanswered");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1801,4 +1833,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg087 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg088 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
