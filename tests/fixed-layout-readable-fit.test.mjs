@@ -14,8 +14,8 @@ for (let pageNumber = 1; pageNumber <= 144; pageNumber += 1) {
   assert.match(page, /<script src="\.\/assets\/auto-fit\.js"><\/script>/, `${filename} must load the shared readable-page fitter`);
 }
 
-assert.match(fitter, /originalFit \* 1\.8/, "desktop pages must grow 80% beyond whole-page fit");
-assert.match(fitter, /Math\.min\(3\.6, widthScale, originalFit \* 1\.8\)/, "enlargement must remain bounded and fit the viewport width");
+assert.match(fitter, /originalFit \* 2/, "desktop pages must grow 100% beyond whole-page fit");
+assert.match(fitter, /Math\.min\(4, widthScale, originalFit \* 2\)/, "enlargement must remain bounded and fit the viewport width");
 assert.match(fitter, /overflowY = "auto"/, "enlarged pages must scroll vertically");
 assert.match(fitter, /overflowX = "hidden"/, "fixed-layout pages must not scroll horizontally");
 assert.match(fitter, /transformOrigin = "top center"/, "enlarged pages must stay centred without clipping their top edge");
