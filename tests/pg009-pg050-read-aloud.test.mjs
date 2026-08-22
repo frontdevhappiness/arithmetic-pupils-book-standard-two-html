@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 78; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 79; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1532,7 +1532,7 @@ assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg077_")).sor
 const page78 = read("pg078_sec001.html");
 const page78Passages = [
   ["pg078_p071", "Steps. 1. Subtract ones: 3 – 9, it is not sufficient. 2. Take 1 group of tens from 4 tens. Regroup 1 tens into 10 ones. Remember that 3 tens remained in the tens place. Add ones: 10 + 3 = 13. 3. Subtract ones: 13 – 9 = 4. Write 4 in the ones place. 4. Subtract tens: 3 – 2 = 1. Write 1 in the tens place. 5. Subtract hundreds: 5 – 1 = 4. Write 4 in the hundreds place. Therefore, 414 desks were not damaged.", "pg078_p071_adt_steps.mp3"],
-  ["pg078_p072", "Exercise 10. Answer the following word problems. 1. Shija had 649 eggs. If he sold 415 eggs, how many eggs were left? 2. A passenger train carried 874 pupils. On the way, 360 pupils got off the train. Find the number of", "pg078_p072_adt_exercise10.mp3"]
+  ["pg078_p072", "Exercise 10. Answer the following word problems. 1. Shija had 649 eggs. If he sold 415 eggs, how many eggs were left? 2. A passenger train carried 874 pupils. On the way, 360 pupils got off the train. Find the number of", "pg078_p072_adt_exercise10_ends_of_v2.mp3"]
 ];
 for (const [id, expected, filename] of page78Passages) {
   assert.equal(texts[id], expected, `${id} must narrate page 78 in printed order`);
@@ -1548,6 +1548,15 @@ assert.match(page78, /data-id="pg078_p071"[\s\S]*data-id="pg078_p072"[\s\S]*data
 assert.match(texts.pg078_p071, /Subtract ones:[\s\S]*Take 1 group of tens[\s\S]*Subtract tens:[\s\S]*Subtract hundreds:[\s\S]*Therefore, 414 desks were not damaged/, "page 78 must explain regrouping in mathematical order");
 assert.ok(texts.pg078_p072.endsWith("Find the number of"), "question 2 must stop where the printed page continues onto page 79");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg078_")).sort(), page78Passages.map(([id]) => id), "page 78 must narrate two verified passages exactly once");
+
+const page79 = read("pg079_sec001.html");
+const page79Text = "pupils who continued with the journey. 3. A teacher had 596 books. He gave out 421 books to his pupils. How many books did the teacher remain with? 4. Roza had 365 oranges. If she sold 365 oranges, how many oranges did she remain with? 5. There were 635 pencils in a shop. If 412 pencils were sold, how many pencils were left in the shop? 6. A second-hand toy vendor had 888 toys. He sold 573 toys. Find the number of toys that remained. 7. A businesswoman bought 760 bottles of juice. She sold 650 bottles. How many bottles was she left with? 8. Erika had 500 shillings for buying exercise book. If an exercise book costs 355 shillings, how much money did she remain with? 9. Some ducks laid 734 eggs. If 218 eggs were broken, how many eggs remained? 10. A flock of 500 birds landed on a tree. Some 308 birds flew away. How many birds remained on the tree? 11. Juma had 463 oranges. He sold 185 oranges. How many oranges remained? 12. In a class of 210 students, 170 students sat for an examination. How many students did not sit for the examination?";
+assert.equal(texts.pg079_p029, page79Text, "page 79 must narrate the printed continuation and questions in order");
+assert.equal(audios.pg079_p029, "pg079_p029_adt_questions.mp3", "page 79 must use its consolidated narration");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg079_")).sort(), ["pg079_p029"], "page 79 must narrate its questions exactly once");
+assert.match(page79, /data-id="pg079_p029"[\s\S]*data-id="pg079_p001"/, "page 79 consolidated narration must precede visual OCR fragments");
+assert.match(page79, /images\/pg079_page_hq_pdf_clean\.png/, "page 79 must use the sharper watermark-free page image");
+assert.ok(texts.pg078_p072.endsWith("of") && texts.pg079_p029.startsWith("pupils who"), "question 2 must continue cleanly from page 78 to page 79");
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
