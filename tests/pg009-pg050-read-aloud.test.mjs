@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 80; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 81; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1576,6 +1576,34 @@ assert.equal(audios.pg080_im002, undefined, "the duplicated chapter banner must 
 assert.match(page80, /data-id="pg080_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the chapter banner extraction must be decorative");
 assert.match(page80, /data-id="pg080_p020"[\s\S]*data-id="pg080_im001"[\s\S]*data-id="pg080_p022"[\s\S]*data-id="pg080_p021"[\s\S]*data-id="pg080_p000"/, "page 80 narration and cup description must follow printed reading order");
 assert.match(page80, /images\/pg080_page_hq_pdf_clean\.png/, "page 80 must use the sharper watermark-free page image");
+
+const page81 = read("pg081_sec001.html");
+const page81Passages = [
+  ["pg081_p036", "Solution.", "pg081_p001.mp3"],
+  ["pg081_im001", "Two sticks plus two sticks equals four sticks.", "pg081_im001.mp3"],
+  ["pg081_p037", "Therefore, 2 × 2 = 4. Example 3. 3 × 2 =. Solution.", "pg081_p037_adt_examples.mp3"],
+  ["pg081_im002", "Three balls plus three balls equals six balls.", "pg081_im002_adt_equation.mp3"],
+  ["pg081_p038", "Therefore, 3 × 2 = 6. Example 4. 4 × 3 =. Solution.", "pg081_p038_adt_example4.mp3"],
+  ["pg081_im005", "Four bottle tops plus four bottle tops plus four bottle tops equals twelve bottle tops.", "pg081_im005_adt_equation.mp3"],
+  ["pg081_p039", "Therefore, 4 × 3 = 12.", "pg081_p039_adt_conclusion.mp3"]
+];
+for (const [id, expected, filename] of page81Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate page 81 in printed order`);
+  assert.equal(audios[id], filename, `${id} must use the consolidated page 81 narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg081_")).sort(), page81Passages.map(([id]) => id).sort(), "page 81 must narrate each passage and image exactly once");
+assert.match(page81, /data-id="pg081_p036"[\s\S]*data-id="pg081_im001"[\s\S]*data-id="pg081_p037"[\s\S]*data-id="pg081_im002"[\s\S]*data-id="pg081_p038"[\s\S]*data-id="pg081_im005"[\s\S]*data-id="pg081_p039"[\s\S]*data-id="pg081_p000"/, "page 81 text and image descriptions must follow the mathematical reading order");
+assert.match(page81, /alt="Three balls plus three balls equals six balls\." data-id="pg081_im002"/, "the ball picture must have a useful equation description");
+assert.match(page81, /alt="Four bottle tops plus four bottle tops plus four bottle tops equals twelve bottle tops\." data-id="pg081_im005"/, "the bottle-top picture must have a useful equation description");
+for (const id of ["pg081_im003", "pg081_im004", "pg081_im006", "pg081_im007", "pg081_im008"]) {
+  assert.equal(texts[id], "", `${id} duplicate picture must have no narration`);
+  assert.equal(audios[id], undefined, `${id} duplicate picture must not repeat page 81`);
+  assert.match(page81, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
+}
+assert.match(page81, /images\/pg081_page_hq_pdf_clean\.png/, "page 81 must use the sharper watermark-free page image");
+assert.match(texts.pg081_p038, /4 × 3/, "Example 4 must describe the three visible groups of four accurately");
+assert.equal(texts.pg081_p039, "Therefore, 4 × 3 = 12.", "the final equation must be mathematically correct");
 
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
