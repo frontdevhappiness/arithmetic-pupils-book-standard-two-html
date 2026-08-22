@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 74; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 75; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1469,6 +1469,25 @@ for (const id of ["pg074_im002", "pg074_im004"]) {
 assert.match(page74, /data-id="pg074_p078"[\s\S]*data-id="pg074_p001"/, "the ordered page 74 narration must precede its visual fragments");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg074_")).sort(), ["pg074_p078"], "page 74 must narrate one ordered passage exactly once");
 
+const page75 = read("pg075_sec001.html");
+const page75Passages = [
+  ["pg075_p125", "Exercise 8. Write the answer in each question. Question 1. 564 minus 235. Question 2. 487 minus 9. Question 3. 600 minus 482. Question 4. 925 minus 688. Question 5. 841 minus 759. Question 6. 100 minus 90. Question 7. 753 minus 65. Question 8. 896 minus 618.", "pg075_p125_adt_exercise8_part1.mp3"],
+  ["pg075_p126", "Question nine. Eight hundred and fifty six minus sixty seven.", "pg075_p126_adt_exercise8.mp3"],
+  ["pg075_p127", "Question ten. Nine hundred and eighty two minus five hundred and ninety three.", "pg075_p127_adt_exercise8.mp3"],
+  ["pg075_p128", "Question eleven. Eight hundred and ninety six minus six hundred and seventeen.", "pg075_p128_adt_exercise8.mp3"],
+  ["pg075_p129", "Question twelve. Four hundred and seventy seven minus two hundred and eighty nine. Question thirteen. Eight hundred and seventy eight minus four hundred and ninety eight. Question fourteen. Nine hundred minus seven hundred and ninety eight. Question fifteen. One hundred minus nineteen.", "pg075_p129_adt_exercise8.mp3"]
+];
+for (const [id, expected, filename] of page75Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate the printed subtraction questions in order`);
+  assert.equal(audios[id], filename, `${id} must use verified ADT narration`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.doesNotMatch(page75Passages.map(([, text]) => text).join(" "), /equals|answer is/i, "page 75 must not reveal the blank answers");
+assert.equal(texts.pg075_im001, "", "the duplicate page 75 exercise image must have no separate narration");
+assert.match(page75, /data-id="pg075_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate page 75 exercise image must be decorative");
+assert.match(page75, /data-id="pg075_p125"[\s\S]*data-id="pg075_p126"[\s\S]*data-id="pg075_p127"[\s\S]*data-id="pg075_p128"[\s\S]*data-id="pg075_p129"[\s\S]*data-id="pg075_p001"/, "page 75 narration chunks must precede visual fragments in numerical order");
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg075_")).sort(), page75Passages.map(([id]) => id), "page 75 must narrate five verified passages exactly once");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1503,4 +1522,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg074 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg075 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
