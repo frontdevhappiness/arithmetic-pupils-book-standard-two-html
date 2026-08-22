@@ -4092,8 +4092,8 @@
   "pg076_p112": "ARITHMETICS PUPIL'S STD 2.indd 70",
   "pg076_p113": "06/11/2024 17:23",
   "pg077_p000": "71",
-  "pg077_im002": "Vertical subtraction for 543 minus 129, with borrowing marks above the digits and the answer 414 below.",
-  "pg077_im001": "Worked example showing that Kabula had 956 sweets, gave away 813, and remained with 143, with step-by-step subtraction of ones, tens and hundreds.",
+  "pg077_im002": "",
+  "pg077_im001": "",
   "pg077_p001": "Example 1",
   "pg077_p002": "Kabula had 956 sweets. She gave her sibling 813",
   "pg077_p003": "sweets. How many sweets did she remain with?",
@@ -6021,5 +6021,8 @@
   "pg076_p116": "Question seven. Six hundred and sixty three minus four hundred and eighty seven. Question eight. Eight hundred and seventeen minus one hundred and nine. Question nine. Five hundred and seventy six minus two hundred and sixty eight.",
   "pg076_p117": "Question ten. Seven hundred and fifty four minus two hundred and sixty nine. Question eleven. Eight hundred and seventy six minus five hundred and ninety five. Question twelve. Five hundred and eighty two minus three hundred and ninety seven.",
   "pg076_p118": "Question thirteen. Nine hundred and seventy six minus four hundred and eighty nine. Question fourteen. Eight hundred and one minus seven hundred and seventy nine. Question fifteen. Eight hundred and sixty two minus two hundred and seventy nine.",
-  "pg076_p119": "Word problems on subtraction. Word problems involving subtraction are questions written in one or more sentence."
+  "pg076_p119": "Word problems on subtraction. Word problems involving subtraction are questions written in one or more sentence.",
+  "pg077_p033": "Example one. Kabula had nine hundred and fifty six sweets. She gave her sibling eight hundred and thirteen sweets. How many sweets did she remain with? Solution. Number of sweets equals nine hundred and fifty six. Number of sweets given away equals eight hundred and thirteen. Subtract: nine hundred and fifty six minus eight hundred and thirteen equals one hundred and forty three.",
+  "pg077_p034": "Steps. One. Subtract ones: six minus three equals three. Write three in the ones place. Nine hundred and fifty six minus eight hundred and thirteen equals three. Two. Subtract tens: five minus one equals four. Write four in the tens place. Nine hundred and fifty six minus eight hundred and thirteen equals forty three. Three. Subtract hundreds: nine minus eight equals one. Write one in the hundreds place. Nine hundred and fifty six minus eight hundred and thirteen equals one hundred and forty three. Therefore, Kabula remained with one hundred and forty three sweets.",
+  "pg077_p035": "Example two. A school had five hundred and forty three desks. If one hundred and twenty nine desks were damaged, how many desks were not damaged? Solution. Total number of desks equals five hundred and forty three. Number of damaged desks equals one hundred and twenty nine. Subtract: five hundred and forty three minus one hundred and twenty nine equals four hundred and fourteen. The vertical subtraction shows regrouping one ten as ten ones. Thirteen minus nine equals four. Three minus two equals one. Five minus one equals four."
 }

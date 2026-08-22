@@ -49971,7 +49971,7 @@
       }
     ]
   },
-  "pg077_p001": {
+  "pg077_p033": {
     "timecodes": [
       null,
       {
@@ -49979,166 +49979,323 @@
           {
             "text": "Example",
             "start": 0,
-            "end": 0.8199999928474426
+            "end": 0.7
           },
           {
-            "text": "1",
-            "start": 0.8199999928474426,
-            "end": 1.3200000524520874
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p004": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Solution",
-            "start": 0,
-            "end": 0.6600000262260437
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_im001": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Worked",
-            "start": 0,
-            "end": 0.6600000262260437
-          },
-          {
-            "text": "example",
-            "start": 0.6600000262260437,
-            "end": 1.059999942779541
-          },
-          {
-            "text": "showing",
-            "start": 1.059999942779541,
-            "end": 1.8200000524520874
-          },
-          {
-            "text": "that",
-            "start": 1.8200000524520874,
-            "end": 2.119999885559082
+            "text": "one",
+            "start": 0.7,
+            "end": 1.02
           },
           {
             "text": "Kabula",
-            "start": 2.119999885559082,
-            "end": 2.5199999809265137
+            "start": 1.46,
+            "end": 1.66
           },
           {
             "text": "had",
-            "start": 2.5199999809265137,
-            "end": 2.9000000953674316
+            "start": 1.66,
+            "end": 1.98
           },
           {
-            "text": "956",
-            "start": 2.9000000953674316,
-            "end": 4.320000171661377
+            "text": "nine",
+            "start": 1.98,
+            "end": 2.24
+          },
+          {
+            "text": "hundred",
+            "start": 2.24,
+            "end": 2.52
+          },
+          {
+            "text": "and",
+            "start": 2.52,
+            "end": 2.98
+          },
+          {
+            "text": "fifty",
+            "start": 2.98,
+            "end": 3.1
+          },
+          {
+            "text": "six",
+            "start": 3.1,
+            "end": 3.58
           },
           {
             "text": "sweets",
-            "start": 4.320000171661377,
-            "end": 4.639999866485596
+            "start": 3.58,
+            "end": 3.98
+          },
+          {
+            "text": "She",
+            "start": 3.98,
+            "end": 4.22
           },
           {
             "text": "gave",
-            "start": 5.400000095367432,
-            "end": 5.440000057220459
+            "start": 4.22,
+            "end": 4.42
           },
           {
-            "text": "away",
-            "start": 5.440000057220459,
-            "end": 5.739999771118164
+            "text": "her",
+            "start": 4.42,
+            "end": 4.72
           },
           {
-            "text": "813",
-            "start": 5.739999771118164,
-            "end": 6.920000076293945
+            "text": "sibling",
+            "start": 4.72,
+            "end": 4.96
+          },
+          {
+            "text": "eight",
+            "start": 4.96,
+            "end": 5.42
+          },
+          {
+            "text": "hundred",
+            "start": 5.42,
+            "end": 5.58
           },
           {
             "text": "and",
-            "start": 7.28000020980835,
-            "end": 7.940000057220459
+            "start": 5.58,
+            "end": 6.18
           },
           {
-            "text": "remained",
-            "start": 7.940000057220459,
-            "end": 7.940000057220459
+            "text": "thirteen",
+            "start": 6.18,
+            "end": 6.3
+          },
+          {
+            "text": "sweets",
+            "start": 6.3,
+            "end": 6.46
+          },
+          {
+            "text": "How",
+            "start": 7.18,
+            "end": 7.32
+          },
+          {
+            "text": "many",
+            "start": 7.32,
+            "end": 7.56
+          },
+          {
+            "text": "sweets",
+            "start": 7.56,
+            "end": 7.84
+          },
+          {
+            "text": "did",
+            "start": 7.84,
+            "end": 8.1
+          },
+          {
+            "text": "she",
+            "start": 8.1,
+            "end": 8.26
+          },
+          {
+            "text": "remain",
+            "start": 8.26,
+            "end": 8.52
           },
           {
             "text": "with",
-            "start": 7.940000057220459,
-            "end": 8.399999618530273
+            "start": 8.52,
+            "end": 8.92
           },
           {
-            "text": "143",
-            "start": 8.399999618530273,
-            "end": 9.84000015258789
+            "text": "Solution",
+            "start": 10.1,
+            "end": 10.5
           },
           {
-            "text": "with",
-            "start": 10.399999618530273,
-            "end": 10.640000343322754
-          },
-          {
-            "text": "step",
-            "start": 10.640000343322754,
-            "end": 10.880000114440918
-          },
-          {
-            "text": "by",
-            "start": 10.880000114440918,
-            "end": 11.100000381469727
-          },
-          {
-            "text": "step",
-            "start": 11.100000381469727,
-            "end": 11.420000076293945
-          },
-          {
-            "text": "subtraction",
-            "start": 11.420000076293945,
-            "end": 12.0600004196167
+            "text": "Number",
+            "start": 10.96,
+            "end": 11.08
           },
           {
             "text": "of",
-            "start": 12.0600004196167,
-            "end": 12.619999885559082
+            "start": 11.08,
+            "end": 11.46
           },
           {
-            "text": "ones",
-            "start": 12.619999885559082,
-            "end": 12.619999885559082
+            "text": "sweets",
+            "start": 11.46,
+            "end": 11.58
           },
           {
-            "text": "tens",
-            "start": 13.380000114440918,
-            "end": 13.380000114440918
+            "text": "equals",
+            "start": 11.58,
+            "end": 11.86
+          },
+          {
+            "text": "nine",
+            "start": 11.86,
+            "end": 12.26
+          },
+          {
+            "text": "hundred",
+            "start": 12.26,
+            "end": 12.46
           },
           {
             "text": "and",
-            "start": 13.380000114440918,
-            "end": 13.720000267028809
+            "start": 12.46,
+            "end": 12.96
           },
           {
-            "text": "hundreds",
-            "start": 13.720000267028809,
-            "end": 14.119999885559082
+            "text": "fifty",
+            "start": 12.96,
+            "end": 13.08
+          },
+          {
+            "text": "six",
+            "start": 13.08,
+            "end": 13.36
+          },
+          {
+            "text": "Number",
+            "start": 14.04,
+            "end": 14.14
+          },
+          {
+            "text": "of",
+            "start": 14.14,
+            "end": 14.64
+          },
+          {
+            "text": "sweets",
+            "start": 14.64,
+            "end": 14.76
+          },
+          {
+            "text": "given",
+            "start": 14.76,
+            "end": 14.88
+          },
+          {
+            "text": "away",
+            "start": 14.88,
+            "end": 15.32
+          },
+          {
+            "text": "equals",
+            "start": 15.32,
+            "end": 15.82
+          },
+          {
+            "text": "eight",
+            "start": 15.82,
+            "end": 16.22
+          },
+          {
+            "text": "hundred",
+            "start": 16.22,
+            "end": 16.34
+          },
+          {
+            "text": "and",
+            "start": 16.34,
+            "end": 17.04
+          },
+          {
+            "text": "thirteen",
+            "start": 17.04,
+            "end": 17.44
+          },
+          {
+            "text": "Subtract",
+            "start": 18.1,
+            "end": 18.44
+          },
+          {
+            "text": "nine",
+            "start": 18.86,
+            "end": 19.14
+          },
+          {
+            "text": "hundred",
+            "start": 19.14,
+            "end": 19.28
+          },
+          {
+            "text": "and",
+            "start": 19.28,
+            "end": 19.76
+          },
+          {
+            "text": "fifty",
+            "start": 19.76,
+            "end": 19.88
+          },
+          {
+            "text": "six",
+            "start": 19.88,
+            "end": 20.14
+          },
+          {
+            "text": "minus",
+            "start": 20.14,
+            "end": 20.46
+          },
+          {
+            "text": "eight",
+            "start": 20.46,
+            "end": 20.84
+          },
+          {
+            "text": "hundred",
+            "start": 20.84,
+            "end": 20.94
+          },
+          {
+            "text": "and",
+            "start": 20.94,
+            "end": 21.6
+          },
+          {
+            "text": "thirteen",
+            "start": 21.6,
+            "end": 21.72
+          },
+          {
+            "text": "equals",
+            "start": 21.72,
+            "end": 22.3
+          },
+          {
+            "text": "one",
+            "start": 22.3,
+            "end": 22.68
+          },
+          {
+            "text": "hundred",
+            "start": 22.68,
+            "end": 22.8
+          },
+          {
+            "text": "and",
+            "start": 22.8,
+            "end": 23.2
+          },
+          {
+            "text": "forty",
+            "start": 23.2,
+            "end": 23.32
+          },
+          {
+            "text": "three",
+            "start": 23.32,
+            "end": 23.54
           }
         ]
       }
     ]
   },
-  "pg077_p008": {
+  "pg077_p034": {
     "timecodes": [
       null,
       {
@@ -50146,145 +50303,478 @@
           {
             "text": "Steps",
             "start": 0,
-            "end": 0.7799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "end": 1.06
+          },
+          {
+            "text": "One",
+            "start": 1.2,
+            "end": 1.62
+          },
+          {
+            "text": "Subtract",
+            "start": 2.28,
+            "end": 2.38
+          },
+          {
+            "text": "ones",
+            "start": 2.38,
+            "end": 2.68
+          },
+          {
+            "text": "six",
+            "start": 2.84,
+            "end": 3.32
+          },
+          {
+            "text": "minus",
+            "start": 3.32,
+            "end": 3.58
+          },
+          {
+            "text": "three",
+            "start": 3.58,
+            "end": 3.94
+          },
+          {
+            "text": "equals",
+            "start": 3.94,
+            "end": 4.24
+          },
+          {
+            "text": "three",
+            "start": 4.24,
+            "end": 4.6
+          },
+          {
+            "text": "Write",
+            "start": 5.22,
+            "end": 5.32
+          },
+          {
+            "text": "three",
+            "start": 5.32,
+            "end": 5.6
+          },
+          {
+            "text": "in",
+            "start": 5.6,
+            "end": 5.8
+          },
+          {
+            "text": "the",
+            "start": 5.8,
+            "end": 6.1
+          },
+          {
+            "text": "ones",
+            "start": 6.1,
+            "end": 6.22
+          },
+          {
+            "text": "place",
+            "start": 6.22,
+            "end": 6.5
+          },
+          {
+            "text": "Nine",
+            "start": 7.08,
+            "end": 7.42
+          },
+          {
+            "text": "hundred",
+            "start": 7.42,
+            "end": 7.62
+          },
+          {
+            "text": "and",
+            "start": 7.62,
+            "end": 8.08
+          },
+          {
+            "text": "fifty",
+            "start": 8.08,
+            "end": 8.2
+          },
+          {
+            "text": "six",
+            "start": 8.2,
+            "end": 8.4
+          },
+          {
+            "text": "minus",
+            "start": 8.4,
+            "end": 8.7
+          },
+          {
+            "text": "eight",
+            "start": 8.7,
+            "end": 9.04
+          },
+          {
+            "text": "hundred",
+            "start": 9.04,
+            "end": 9.14
+          },
+          {
+            "text": "and",
+            "start": 9.14,
+            "end": 9.68
+          },
+          {
+            "text": "thirteen",
+            "start": 9.68,
+            "end": 9.8
+          },
+          {
+            "text": "equals",
+            "start": 9.8,
+            "end": 10
+          },
+          {
+            "text": "three",
+            "start": 10,
+            "end": 10.36
+          },
+          {
+            "text": "Two",
+            "start": 11.22,
+            "end": 11.52
+          },
+          {
+            "text": "Subtract",
+            "start": 12.22,
+            "end": 12.32
+          },
+          {
+            "text": "tens",
+            "start": 12.32,
+            "end": 12.56
+          },
+          {
+            "text": "five",
+            "start": 12.92,
+            "end": 13.16
+          },
+          {
+            "text": "minus",
+            "start": 13.16,
+            "end": 13.42
+          },
+          {
+            "text": "one",
+            "start": 13.42,
+            "end": 13.74
+          },
+          {
+            "text": "equals",
+            "start": 13.74,
+            "end": 14
+          },
+          {
+            "text": "four",
+            "start": 14,
+            "end": 14.3
+          },
+          {
+            "text": "Write",
+            "start": 14.92,
+            "end": 15.04
+          },
+          {
+            "text": "four",
+            "start": 15.04,
+            "end": 15.2
+          },
+          {
+            "text": "in",
+            "start": 15.2,
+            "end": 15.36
+          },
+          {
+            "text": "the",
+            "start": 15.36,
+            "end": 15.66
+          },
+          {
+            "text": "tens",
+            "start": 15.66,
+            "end": 15.78
+          },
+          {
+            "text": "place",
+            "start": 15.78,
+            "end": 16.02
+          },
+          {
+            "text": "Nine",
+            "start": 16.6,
+            "end": 16.88
+          },
+          {
+            "text": "hundred",
+            "start": 16.88,
+            "end": 17.02
+          },
+          {
+            "text": "and",
+            "start": 17.02,
+            "end": 17.48
+          },
+          {
+            "text": "fifty",
+            "start": 17.48,
+            "end": 17.6
+          },
+          {
+            "text": "six",
+            "start": 17.6,
+            "end": 17.8
+          },
+          {
+            "text": "minus",
+            "start": 17.8,
+            "end": 18.08
+          },
+          {
+            "text": "eight",
+            "start": 18.08,
+            "end": 18.38
+          },
+          {
+            "text": "hundred",
+            "start": 18.38,
+            "end": 18.5
+          },
+          {
+            "text": "and",
+            "start": 18.5,
+            "end": 19.08
+          },
+          {
+            "text": "thirteen",
+            "start": 19.08,
+            "end": 19.2
+          },
+          {
+            "text": "equals",
+            "start": 19.2,
+            "end": 19.42
+          },
+          {
+            "text": "forty",
+            "start": 19.42,
+            "end": 19.7
+          },
+          {
+            "text": "three",
+            "start": 19.7,
+            "end": 20.06
+          },
+          {
+            "text": "Three",
+            "start": 20.74,
+            "end": 21
+          },
+          {
+            "text": "Subtract",
+            "start": 21.82,
+            "end": 21.94
+          },
+          {
+            "text": "hundreds",
+            "start": 21.94,
+            "end": 22.24
+          },
+          {
+            "text": "nine",
+            "start": 22.44,
+            "end": 22.7
+          },
+          {
+            "text": "minus",
+            "start": 22.7,
+            "end": 22.96
+          },
+          {
+            "text": "eight",
+            "start": 22.96,
+            "end": 23.3
+          },
+          {
+            "text": "equals",
+            "start": 23.3,
+            "end": 23.58
+          },
+          {
+            "text": "one",
+            "start": 23.58,
+            "end": 23.9
+          },
+          {
+            "text": "Write",
+            "start": 23.9,
+            "end": 24.56
+          },
+          {
+            "text": "one",
+            "start": 24.56,
+            "end": 24.86
+          },
+          {
+            "text": "in",
+            "start": 24.86,
+            "end": 24.98
+          },
+          {
+            "text": "the",
+            "start": 24.98,
+            "end": 25.18
+          },
+          {
+            "text": "hundreds",
+            "start": 25.18,
+            "end": 25.4
+          },
+          {
+            "text": "place",
+            "start": 25.4,
+            "end": 25.82
+          },
+          {
+            "text": "Nine",
+            "start": 26.58,
+            "end": 26.7
+          },
+          {
+            "text": "hundred",
+            "start": 26.7,
+            "end": 26.8
+          },
+          {
+            "text": "and",
+            "start": 26.8,
+            "end": 27.22
+          },
+          {
+            "text": "fifty",
+            "start": 27.22,
+            "end": 27.34
+          },
+          {
+            "text": "six",
+            "start": 27.34,
+            "end": 27.52
+          },
+          {
+            "text": "minus",
+            "start": 27.52,
+            "end": 27.82
+          },
+          {
+            "text": "eight",
+            "start": 27.82,
+            "end": 28.12
+          },
+          {
+            "text": "hundred",
+            "start": 28.12,
+            "end": 28.26
+          },
+          {
+            "text": "and",
+            "start": 28.26,
+            "end": 28.84
+          },
+          {
+            "text": "thirteen",
+            "start": 28.84,
+            "end": 28.96
+          },
+          {
+            "text": "equals",
+            "start": 28.96,
+            "end": 29.24
+          },
+          {
+            "text": "one",
+            "start": 29.24,
+            "end": 29.48
+          },
+          {
+            "text": "hundred",
+            "start": 29.48,
+            "end": 29.68
+          },
+          {
+            "text": "and",
+            "start": 29.68,
+            "end": 30.04
+          },
+          {
+            "text": "forty",
+            "start": 30.04,
+            "end": 30.16
+          },
+          {
+            "text": "three",
+            "start": 30.16,
+            "end": 30.44
+          },
+          {
+            "text": "Therefore",
+            "start": 31.04,
+            "end": 31.42
+          },
           {
             "text": "Kabula",
-            "start": 0,
-            "end": 0.5600000023841858
+            "start": 31.78,
+            "end": 31.92
           },
           {
-            "text": "had",
-            "start": 0.5600000023841858,
-            "end": 1.0199999809265137
+            "text": "remained",
+            "start": 31.92,
+            "end": 32.36
           },
           {
-            "text": "956",
-            "start": 1.0199999809265137,
-            "end": 2.5
+            "text": "with",
+            "start": 32.36,
+            "end": 32.66
+          },
+          {
+            "text": "one",
+            "start": 32.66,
+            "end": 32.76
+          },
+          {
+            "text": "hundred",
+            "start": 32.76,
+            "end": 32.98
+          },
+          {
+            "text": "and",
+            "start": 32.98,
+            "end": 33.42
+          },
+          {
+            "text": "forty",
+            "start": 33.42,
+            "end": 33.54
+          },
+          {
+            "text": "three",
+            "start": 33.54,
+            "end": 33.7
           },
           {
             "text": "sweets",
-            "start": 2.5,
-            "end": 2.880000114440918
-          },
-          {
-            "text": "She",
-            "start": 3.6600000858306885,
-            "end": 3.819999933242798
-          },
-          {
-            "text": "gave",
-            "start": 3.819999933242798,
-            "end": 4
-          },
-          {
-            "text": "her",
-            "start": 4,
-            "end": 4.21999979019165
-          },
-          {
-            "text": "sibling",
-            "start": 4.21999979019165,
-            "end": 4.480000019073486
-          },
-          {
-            "text": "813",
-            "start": 4.480000019073486,
-            "end": 5.619999885559082
+            "start": 33.7,
+            "end": 33.96
           }
         ]
       }
     ]
   },
-  "pg077_p005": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Number",
-            "start": 0,
-            "end": 0.6600000262260437
-          },
-          {
-            "text": "of",
-            "start": 0.6600000262260437,
-            "end": 0.9800000190734863
-          },
-          {
-            "text": "sweets",
-            "start": 0.9800000190734863,
-            "end": 1.4199999570846558
-          },
-          {
-            "text": "equals",
-            "start": 1.4199999570846558,
-            "end": 2.1600000858306885
-          },
-          {
-            "text": "956",
-            "start": 2.1600000858306885,
-            "end": 4.039999961853027
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p006": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Number",
-            "start": 0,
-            "end": 0.6600000262260437
-          },
-          {
-            "text": "of",
-            "start": 0.6600000262260437,
-            "end": 0.9399999976158142
-          },
-          {
-            "text": "sweets",
-            "start": 0.9399999976158142,
-            "end": 1.340000033378601
-          },
-          {
-            "text": "given",
-            "start": 1.340000033378601,
-            "end": 1.7000000476837158
-          },
-          {
-            "text": "away",
-            "start": 1.7000000476837158,
-            "end": 2.140000104904175
-          },
-          {
-            "text": "equals",
-            "start": 2.140000104904175,
-            "end": 2.859999895095825
-          },
-          {
-            "text": "813",
-            "start": 2.859999895095825,
-            "end": 4.059999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p016": {
+  "pg077_p035": {
     "timecodes": [
       null,
       {
@@ -50292,527 +50782,447 @@
           {
             "text": "Example",
             "start": 0,
-            "end": 0.699999988079071
+            "end": 0.58
           },
           {
-            "text": "2",
-            "start": 0.699999988079071,
-            "end": 1.0199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p003": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "How",
-            "start": 0.8199999928474426,
-            "end": 1.399999976158142
+            "text": "two",
+            "start": 0.58,
+            "end": 0.92
           },
           {
-            "text": "many",
-            "start": 1.399999976158142,
-            "end": 1.7200000286102295
+            "text": "A",
+            "start": 1.4,
+            "end": 1.6
           },
           {
-            "text": "sweets",
-            "start": 1.7200000286102295,
-            "end": 2.0799999237060547
+            "text": "school",
+            "start": 1.6,
+            "end": 1.72
           },
           {
-            "text": "did",
-            "start": 2.0799999237060547,
-            "end": 2.3399999141693115
+            "text": "had",
+            "start": 1.72,
+            "end": 2.1
           },
           {
-            "text": "she",
-            "start": 2.3399999141693115,
-            "end": 2.5199999809265137
+            "text": "five",
+            "start": 2.1,
+            "end": 2.32
           },
           {
-            "text": "remain",
-            "start": 2.5199999809265137,
-            "end": 2.799999952316284
-          },
-          {
-            "text": "with",
-            "start": 2.799999952316284,
-            "end": 3.0999999046325684
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p019": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Solution",
-            "start": 0,
-            "end": 0.6600000262260437
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p009": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.6800000071525574
-          },
-          {
-            "text": "Subtract",
-            "start": 1.2799999713897705,
-            "end": 1.659999966621399
-          },
-          {
-            "text": "ones",
-            "start": 1.659999966621399,
-            "end": 2.119999885559082
-          },
-          {
-            "text": "6–3",
-            "start": 2.759999990463257,
-            "end": 3.680000066757202
-          },
-          {
-            "text": "equals",
-            "start": 3.680000066757202,
-            "end": 4.440000057220459
-          },
-          {
-            "text": "3",
-            "start": 4.440000057220459,
-            "end": 4.78000020980835
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_im002": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Vertical",
-            "start": 0,
-            "end": 0.9200000166893005
-          },
-          {
-            "text": "subtraction",
-            "start": 0.9200000166893005,
-            "end": 1.6200000047683716
-          },
-          {
-            "text": "for",
-            "start": 1.6200000047683716,
-            "end": 1.9800000190734863
-          },
-          {
-            "text": "543",
-            "start": 1.9800000190734863,
-            "end": 3.240000009536743
-          },
-          {
-            "text": "minus",
-            "start": 3.240000009536743,
-            "end": 4.260000228881836
-          },
-          {
-            "text": "129",
-            "start": 4.260000228881836,
-            "end": 5.679999828338623
-          },
-          {
-            "text": "with",
-            "start": 5.960000038146973,
-            "end": 6.260000228881836
-          },
-          {
-            "text": "borrowing",
-            "start": 6.260000228881836,
-            "end": 6.639999866485596
-          },
-          {
-            "text": "marks",
-            "start": 6.639999866485596,
-            "end": 7
-          },
-          {
-            "text": "above",
-            "start": 7,
-            "end": 7.320000171661377
-          },
-          {
-            "text": "the",
-            "start": 7.320000171661377,
-            "end": 7.900000095367432
-          },
-          {
-            "text": "digits",
-            "start": 7.900000095367432,
-            "end": 7.900000095367432
+            "text": "hundred",
+            "start": 2.32,
+            "end": 2.58
           },
           {
             "text": "and",
-            "start": 7.900000095367432,
-            "end": 8.579999923706055
+            "start": 2.58,
+            "end": 2.98
           },
           {
-            "text": "the",
-            "start": 8.579999923706055,
-            "end": 9.079999923706055
+            "text": "forty",
+            "start": 2.98,
+            "end": 3.08
           },
           {
-            "text": "answer",
-            "start": 9.079999923706055,
-            "end": 9.079999923706055
+            "text": "three",
+            "start": 3.08,
+            "end": 3.56
           },
           {
-            "text": "414",
-            "start": 9.079999923706055,
-            "end": 10.34000015258789
+            "text": "desks",
+            "start": 3.56,
+            "end": 3.68
           },
           {
-            "text": "below",
-            "start": 10.34000015258789,
-            "end": 10.720000267028809
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p007": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Subtract",
-            "start": 0,
-            "end": 0.7200000286102295
+            "text": "If",
+            "start": 4.36,
+            "end": 4.5
           },
           {
-            "text": "956",
-            "start": 0.7200000286102295,
-            "end": 2.940000057220459
+            "text": "one",
+            "start": 4.5,
+            "end": 4.72
           },
           {
-            "text": "–",
-            "start": 2.940000057220459,
-            "end": 3.700000047683716
+            "text": "hundred",
+            "start": 4.72,
+            "end": 4.82
           },
           {
-            "text": "813",
-            "start": 3.700000047683716,
-            "end": 4.900000095367432
+            "text": "and",
+            "start": 4.82,
+            "end": 5.24
           },
           {
-            "text": "equals",
-            "start": 4.900000095367432,
-            "end": 5.820000171661377
+            "text": "twenty",
+            "start": 5.24,
+            "end": 5.34
           },
           {
-            "text": "143",
-            "start": 5.820000171661377,
-            "end": 7.059999942779541
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p023": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "5",
-            "start": 0,
-            "end": 1.1799999475479126
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p024": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "1",
-            "start": 0,
-            "end": 0.47999998927116394
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p025": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.8999999761581421
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p026": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5199999809265137
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p027": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "You",
-            "start": 0,
-            "end": 0.18000000715255737
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p028": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Nine",
-            "start": 0,
-            "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p011": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "2",
-            "start": 0,
-            "end": 0.5
+            "text": "nine",
+            "start": 5.34,
+            "end": 5.64
           },
           {
-            "text": "Subtract",
-            "start": 1.2799999713897705,
-            "end": 1.3600000143051147
+            "text": "desks",
+            "start": 5.64,
+            "end": 5.82
           },
           {
-            "text": "tens",
-            "start": 1.3600000143051147,
-            "end": 1.8600000143051147
+            "text": "were",
+            "start": 5.82,
+            "end": 6.48
           },
           {
-            "text": "5–1",
-            "start": 2.3399999141693115,
-            "end": 3.3399999141693115
+            "text": "damaged",
+            "start": 6.48,
+            "end": 6.58
+          },
+          {
+            "text": "how",
+            "start": 7.18,
+            "end": 7.3
+          },
+          {
+            "text": "many",
+            "start": 7.3,
+            "end": 7.54
+          },
+          {
+            "text": "desks",
+            "start": 7.54,
+            "end": 7.82
+          },
+          {
+            "text": "were",
+            "start": 7.82,
+            "end": 8.16
+          },
+          {
+            "text": "not",
+            "start": 8.16,
+            "end": 8.46
+          },
+          {
+            "text": "damaged",
+            "start": 8.46,
+            "end": 8.8
+          },
+          {
+            "text": "Solution",
+            "start": 9.92,
+            "end": 10.02
+          },
+          {
+            "text": "Total",
+            "start": 10.92,
+            "end": 11.08
+          },
+          {
+            "text": "number",
+            "start": 11.08,
+            "end": 11.28
+          },
+          {
+            "text": "of",
+            "start": 11.28,
+            "end": 11.82
+          },
+          {
+            "text": "desks",
+            "start": 11.82,
+            "end": 11.92
           },
           {
             "text": "equals",
-            "start": 3.3399999141693115,
-            "end": 4.21999979019165
+            "start": 11.92,
+            "end": 12.28
           },
           {
-            "text": "4",
-            "start": 4.21999979019165,
-            "end": 4.900000095367432
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p013": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
+            "text": "five",
+            "start": 12.28,
+            "end": 12.72
+          },
           {
-            "text": "3",
-            "start": 0,
-            "end": 0.699999988079071
+            "text": "hundred",
+            "start": 12.72,
+            "end": 12.82
+          },
+          {
+            "text": "and",
+            "start": 12.82,
+            "end": 13.24
+          },
+          {
+            "text": "forty",
+            "start": 13.24,
+            "end": 13.34
+          },
+          {
+            "text": "three",
+            "start": 13.34,
+            "end": 13.62
+          },
+          {
+            "text": "Number",
+            "start": 14.16,
+            "end": 14.48
+          },
+          {
+            "text": "of",
+            "start": 14.48,
+            "end": 14.94
+          },
+          {
+            "text": "damaged",
+            "start": 14.94,
+            "end": 15.04
+          },
+          {
+            "text": "desks",
+            "start": 15.04,
+            "end": 15.28
+          },
+          {
+            "text": "equals",
+            "start": 15.28,
+            "end": 15.66
+          },
+          {
+            "text": "one",
+            "start": 15.66,
+            "end": 15.94
+          },
+          {
+            "text": "hundred",
+            "start": 15.94,
+            "end": 16.04
+          },
+          {
+            "text": "and",
+            "start": 16.04,
+            "end": 16.42
+          },
+          {
+            "text": "twenty",
+            "start": 16.42,
+            "end": 16.52
+          },
+          {
+            "text": "nine",
+            "start": 16.52,
+            "end": 16.82
           },
           {
             "text": "Subtract",
-            "start": 1.4600000381469727,
-            "end": 1.4800000190734863
+            "start": 17.88,
+            "end": 17.98
           },
           {
-            "text": "hundreds",
-            "start": 1.4800000190734863,
-            "end": 1.9800000190734863
+            "text": "five",
+            "start": 18.26,
+            "end": 18.66
           },
           {
-            "text": "9–8",
-            "start": 2.4800000190734863,
-            "end": 3.4000000953674316
+            "text": "hundred",
+            "start": 18.66,
+            "end": 18.76
           },
           {
-            "text": "1",
-            "start": 3.6600000858306885,
-            "end": 3.9600000381469727
+            "text": "and",
+            "start": 18.76,
+            "end": 19.16
           },
           {
-            "text": "Write",
-            "start": 4.460000038146973,
-            "end": 4.539999961853027
+            "text": "forty",
+            "start": 19.16,
+            "end": 19.26
           },
           {
-            "text": "1",
-            "start": 4.539999961853027,
-            "end": 4.840000152587891
+            "text": "three",
+            "start": 19.26,
+            "end": 19.54
           },
           {
-            "text": "in",
-            "start": 4.840000152587891,
-            "end": 5.039999961853027
+            "text": "minus",
+            "start": 19.54,
+            "end": 19.86
           },
           {
-            "text": "the",
-            "start": 5.039999961853027,
-            "end": 5.539999961853027
+            "text": "one",
+            "start": 19.86,
+            "end": 20.16
           },
           {
-            "text": "hundreds",
-            "start": 5.539999961853027,
-            "end": 5.539999961853027
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p015": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Therefore",
-            "start": 0,
-            "end": 0.7400000095367432
+            "text": "hundred",
+            "start": 20.16,
+            "end": 20.26
           },
           {
-            "text": "Kabula",
-            "start": 1.059999942779541,
-            "end": 1.399999976158142
+            "text": "and",
+            "start": 20.26,
+            "end": 20.64
           },
           {
-            "text": "remained",
-            "start": 1.399999976158142,
-            "end": 1.899999976158142
+            "text": "twenty",
+            "start": 20.64,
+            "end": 20.74
           },
           {
-            "text": "with",
-            "start": 1.899999976158142,
-            "end": 2.259999990463257
+            "text": "nine",
+            "start": 20.74,
+            "end": 21.04
           },
           {
-            "text": "143",
-            "start": 2.259999990463257,
-            "end": 3.640000104904175
+            "text": "equals",
+            "start": 21.04,
+            "end": 21.66
           },
           {
-            "text": "sweets",
-            "start": 3.640000104904175,
-            "end": 3.9600000381469727
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p010": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Write",
-            "start": 0,
-            "end": 0.5199999809265137
+            "text": "four",
+            "start": 21.66,
+            "end": 22.02
           },
           {
-            "text": "3",
-            "start": 0.5199999809265137,
-            "end": 1.059999942779541
+            "text": "hundred",
+            "start": 22.02,
+            "end": 22.12
           },
           {
-            "text": "in",
-            "start": 1.059999942779541,
-            "end": 1.4199999570846558
+            "text": "and",
+            "start": 22.12,
+            "end": 22.74
           },
           {
-            "text": "the",
-            "start": 1.4199999570846558,
-            "end": 1.5800000429153442
+            "text": "fourteen",
+            "start": 22.74,
+            "end": 22.84
+          },
+          {
+            "text": "The",
+            "start": 23.34,
+            "end": 23.9
+          },
+          {
+            "text": "vertical",
+            "start": 23.9,
+            "end": 24
+          },
+          {
+            "text": "subtraction",
+            "start": 24,
+            "end": 24.58
+          },
+          {
+            "text": "shows",
+            "start": 24.58,
+            "end": 24.86
+          },
+          {
+            "text": "regrouping",
+            "start": 24.86,
+            "end": 25.46
+          },
+          {
+            "text": "one",
+            "start": 25.46,
+            "end": 25.7
+          },
+          {
+            "text": "ten",
+            "start": 25.7,
+            "end": 25.92
+          },
+          {
+            "text": "as",
+            "start": 25.92,
+            "end": 26.24
+          },
+          {
+            "text": "ten",
+            "start": 26.24,
+            "end": 26.58
           },
           {
             "text": "ones",
-            "start": 1.5800000429153442,
-            "end": 1.7599999904632568
+            "start": 26.58,
+            "end": 26.84
           },
           {
-            "text": "place",
-            "start": 1.7599999904632568,
-            "end": 2.2200000286102295
+            "text": "Thirteen",
+            "start": 27.72,
+            "end": 28.08
           },
           {
-            "text": "956",
-            "start": 3.180000066757202,
-            "end": 4.21999979019165
+            "text": "minus",
+            "start": 28.08,
+            "end": 28.36
           },
           {
-            "text": "–",
-            "start": 4.21999979019165,
-            "end": 4.78000020980835
-          },
-          {
-            "text": "813",
-            "start": 4.78000020980835,
-            "end": 5.980000019073486
+            "text": "nine",
+            "start": 28.36,
+            "end": 28.74
           },
           {
             "text": "equals",
-            "start": 5.980000019073486,
-            "end": 6.920000076293945
+            "start": 28.74,
+            "end": 29.1
           },
           {
-            "text": "3",
-            "start": 6.920000076293945,
-            "end": 7.340000152587891
+            "text": "four",
+            "start": 29.1,
+            "end": 29.48
+          },
+          {
+            "text": "Three",
+            "start": 30.1,
+            "end": 30.28
+          },
+          {
+            "text": "minus",
+            "start": 30.28,
+            "end": 30.56
+          },
+          {
+            "text": "two",
+            "start": 30.56,
+            "end": 30.94
+          },
+          {
+            "text": "equals",
+            "start": 30.94,
+            "end": 31.28
+          },
+          {
+            "text": "one",
+            "start": 31.28,
+            "end": 31.64
+          },
+          {
+            "text": "Five",
+            "start": 32.4,
+            "end": 32.5
+          },
+          {
+            "text": "minus",
+            "start": 32.5,
+            "end": 32.74
+          },
+          {
+            "text": "one",
+            "start": 32.74,
+            "end": 33.1
+          },
+          {
+            "text": "equals",
+            "start": 33.1,
+            "end": 33.4
+          },
+          {
+            "text": "four",
+            "start": 33.4,
+            "end": 33.8
           }
         ]
       }
@@ -50827,70 +51237,6 @@
             "text": "Steps",
             "start": 0,
             "end": 0.7799999713897705
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p012": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Write",
-            "start": 0,
-            "end": 0.699999988079071
-          },
-          {
-            "text": "4",
-            "start": 0.699999988079071,
-            "end": 1.1200000047683716
-          },
-          {
-            "text": "in",
-            "start": 1.1200000047683716,
-            "end": 1.4600000381469727
-          },
-          {
-            "text": "the",
-            "start": 1.4600000381469727,
-            "end": 1.7200000286102295
-          },
-          {
-            "text": "tens",
-            "start": 1.7200000286102295,
-            "end": 1.9199999570846558
-          },
-          {
-            "text": "place",
-            "start": 1.9199999570846558,
-            "end": 2.4200000762939453
-          },
-          {
-            "text": "956",
-            "start": 3.299999952316284,
-            "end": 4.420000076293945
-          },
-          {
-            "text": "–",
-            "start": 4.420000076293945,
-            "end": 5
-          },
-          {
-            "text": "813",
-            "start": 5,
-            "end": 6.239999771118164
-          },
-          {
-            "text": "equals",
-            "start": 6.239999771118164,
-            "end": 6.960000038146973
-          },
-          {
-            "text": "43",
-            "start": 6.960000038146973,
-            "end": 7.519999980926514
           }
         ]
       }
@@ -50980,226 +51326,6 @@
       }
     ]
   },
-  "pg077_p017": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "A",
-            "start": 0,
-            "end": 0.5400000214576721
-          },
-          {
-            "text": "school",
-            "start": 0.5400000214576721,
-            "end": 0.800000011920929
-          },
-          {
-            "text": "had",
-            "start": 0.800000011920929,
-            "end": 1.159999966621399
-          },
-          {
-            "text": "543",
-            "start": 1.159999966621399,
-            "end": 2.559999942779541
-          },
-          {
-            "text": "desks",
-            "start": 2.559999942779541,
-            "end": 3.0799999237060547
-          },
-          {
-            "text": "If",
-            "start": 3.700000047683716,
-            "end": 3.8399999141693115
-          },
-          {
-            "text": "129",
-            "start": 3.8399999141693115,
-            "end": 5.059999942779541
-          },
-          {
-            "text": "desks",
-            "start": 5.059999942779541,
-            "end": 5.340000152587891
-          },
-          {
-            "text": "were",
-            "start": 5.340000152587891,
-            "end": 5.639999866485596
-          },
-          {
-            "text": "damaged",
-            "start": 5.639999866485596,
-            "end": 6.039999961853027
-          },
-          {
-            "text": "how",
-            "start": 6.679999828338623,
-            "end": 6.820000171661377
-          },
-          {
-            "text": "many",
-            "start": 6.820000171661377,
-            "end": 7.099999904632568
-          },
-          {
-            "text": "desks",
-            "start": 7.099999904632568,
-            "end": 7.440000057220459
-          },
-          {
-            "text": "were",
-            "start": 7.440000057220459,
-            "end": 7.71999979019165
-          },
-          {
-            "text": "not",
-            "start": 7.71999979019165,
-            "end": 8.039999961853027
-          },
-          {
-            "text": "damaged",
-            "start": 8.039999961853027,
-            "end": 8.279999732971191
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p020": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Total",
-            "start": 0,
-            "end": 0.800000011920929
-          },
-          {
-            "text": "number",
-            "start": 0.800000011920929,
-            "end": 1.0800000429153442
-          },
-          {
-            "text": "of",
-            "start": 1.0800000429153442,
-            "end": 1.340000033378601
-          },
-          {
-            "text": "desks",
-            "start": 1.340000033378601,
-            "end": 1.8200000524520874
-          },
-          {
-            "text": "equals",
-            "start": 1.8200000524520874,
-            "end": 2.5999999046325684
-          },
-          {
-            "text": "543",
-            "start": 2.5999999046325684,
-            "end": 4.179999828338623
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p014": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Place",
-            "start": 0,
-            "end": 1.2200000286102295
-          },
-          {
-            "text": "956",
-            "start": 1.2200000286102295,
-            "end": 2.8399999141693115
-          },
-          {
-            "text": "–",
-            "start": 2.8399999141693115,
-            "end": 3.5399999618530273
-          },
-          {
-            "text": "813",
-            "start": 3.5399999618530273,
-            "end": 4.5
-          },
-          {
-            "text": "equals",
-            "start": 4.5,
-            "end": 5.199999809265137
-          },
-          {
-            "text": "143",
-            "start": 5.199999809265137,
-            "end": 6.420000076293945
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p022": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Subtract",
-            "start": 0,
-            "end": 1.159999966621399
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p021": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "Number",
-            "start": 0,
-            "end": 0.47999998927116394
-          },
-          {
-            "text": "of",
-            "start": 0.47999998927116394,
-            "end": 0.8199999928474426
-          },
-          {
-            "text": "damaged",
-            "start": 0.8199999928474426,
-            "end": 1.2000000476837158
-          },
-          {
-            "text": "desks",
-            "start": 1.2000000476837158,
-            "end": 1.8200000524520874
-          },
-          {
-            "text": "equals",
-            "start": 1.8200000524520874,
-            "end": 2.559999942779541
-          },
-          {
-            "text": "129",
-            "start": 2.559999942779541,
-            "end": 4.059999942779541
-          }
-        ]
-      }
-    ]
-  },
   "pg078_p017": {
     "timecodes": [
       null,
@@ -51279,49 +51405,6 @@
             "text": "Nine",
             "start": 0,
             "end": 0.5600000023841858
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p029": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "4",
-            "start": 0,
-            "end": 0.699999988079071
-          },
-          {
-            "text": "1",
-            "start": 0.699999988079071,
-            "end": 1.1799999475479126
-          },
-          {
-            "text": "4",
-            "start": 1.1799999475479126,
-            "end": 1.7599999904632568
-          }
-        ]
-      }
-    ]
-  },
-  "pg077_p030": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "3",
-            "start": 0,
-            "end": 0.6800000071525574
-          },
-          {
-            "text": "13",
-            "start": 0.6800000071525574,
-            "end": 1.100000023841858
           }
         ]
       }
