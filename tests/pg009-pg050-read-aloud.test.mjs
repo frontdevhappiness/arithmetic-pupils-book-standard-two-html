@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 85; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 86; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1707,6 +1707,36 @@ for (const id of Object.keys(texts).filter((id) => {
 assert.match(texts.pg085_p001, /row 1: 1, 2, 3, 4, 5[\s\S]*Row 2: 2, 4, 6, 8, 10[\s\S]*Row 3: 3, 6, 9, 12, 15/, "the multiplication table must be narrated row by row");
 assert.match(texts.pg085_p037, /Multiply 4 ones by 2[\s\S]*Write 8 in the ones place[\s\S]*Multiply 2 tens by 2[\s\S]*Write 4 in the tens place/, "Example 1 must explain ones before tens");
 
+const page86 = read("pg086_sec001.html");
+const page86Passages = [
+  ["pg086_p001", "Example 2. 4 × 21 =. Steps. 1. Multiply 4 by 1 ones: 4 × 1 = 4. Write 4 in the ones place. 2. Multiply 4 by 2 tens: 4 × 2 = 8. Write 8 in the tens place. Therefore, 4 × 21 = 84.", "pg086_p001_adt_natural.mp3"],
+  ["pg086_p009", "Exercise 5. Write the answer in each question. 1. 13 × 2 =. 2. 11 × 7 =. 3. 14 × 2 =. 4. 10 × 5 =. 5. 30 × 2 =. 6. 33 × 3 =. 7. 12 × 3 =.", "pg086_p009_adt_natural.mp3"],
+  ["pg086_p013", "8. 11 × 2 =. 9. 10 × 4 =. 10. 3 × 13 =. 11. 5 × 11 =. 12. 4 × 12 =. 13. 12 × 2 =. 14. 2 × 40 =.", "pg086_p013_adt_natural.mp3"],
+  ["pg086_p039", "Multiplying numbers vertically. A two digit number can be multiplied by a one digit number vertically.", "pg086_p039_adt_natural.mp3"]
+];
+for (const [id, expected, filename] of page86Passages) {
+  assert.equal(texts[id], expected, `${id} must narrate its complete section in printed order`);
+  assert.equal(audios[id], filename, `${id} must use a complete natural narration clip`);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain measured word-level timing`);
+}
+assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg086_")).sort(), page86Passages.map(([id]) => id).sort(), "page 86 must narrate each section exactly once");
+assert.match(page86, /data-id="pg086_p001"[\s\S]*data-id="pg086_p009"[\s\S]*data-id="pg086_p013"[\s\S]*data-id="pg086_p039"/, "page 86 must read Example 2, Exercise 5 questions 1–7 and 8–14, then the vertical-multiplication introduction");
+assert.match(page86, /images\/pg086_page_hq_pdf_clean\.png/, "page 86 must use the sharper watermark-free page image");
+assert.equal(texts.pg086_im002, "", "the duplicate Exercise 5 image description must not repeat all questions");
+assert.equal(audios.pg086_im002, undefined, "the duplicate Exercise 5 image must have no narration mapping");
+assert.match(page86, /data-id="pg086_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate Exercise 5 image must be decorative");
+for (const id of Object.keys(texts).filter((id) => {
+  const match = id.match(/^pg086_p(\d{3})$/);
+  if (!match) return false;
+  const number = Number(match[1]);
+  return number >= 2 && number <= 40 && ![9, 13, 39].includes(number);
+})) {
+  assert.equal(texts[id], "", `${id} duplicate OCR fragment must not be narrated`);
+  assert.equal(audios[id], undefined, `${id} duplicate OCR fragment must have no audio mapping`);
+}
+assert.match(texts.pg086_p009, /1\. 13 × 2 =[\s\S]*7\. 12 × 3 =\.$/, "Exercise 5 left column must read questions 1 through 7 in order");
+assert.match(texts.pg086_p013, /^8\. 11 × 2 =[\s\S]*14\. 2 × 40 =\.$/, "Exercise 5 right column must read questions 8 through 14 without cutting off question 14");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1741,4 +1771,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg085 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg086 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
