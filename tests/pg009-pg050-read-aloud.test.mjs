@@ -1909,6 +1909,11 @@ const page101To120Passages = {
   113:["pg113_p001","pg113_p007"],114:["pg114_p001","pg114_p011"],115:["pg115_p001","pg115_p004"],116:["pg116_p001"],
   117:["pg117_p001","pg117_p020","pg117_p033"],118:["pg118_p001","pg118_p010"],119:["pg119_p001"],120:["pg120_p001","pg120_p008"]
 };
+for (let pageNumber = 101; pageNumber <= 144; pageNumber += 1) {
+  const page = String(pageNumber).padStart(3, "0");
+  const markup = read(`pg${page}_sec001.html`);
+  assert.match(markup, /<style>\s*html \{ width: 100%; height: 100%; \}\s*#content \{ visibility: hidden; \}\s*<\/style>/, `page ${pageNumber} must wrap its layout CSS in a style element`);
+}
 for (const [pageNumber, ids] of Object.entries(page101To120Passages)) {
   const page = pageNumber.padStart(3, "0");
   const prefix = `pg${page}_`;
