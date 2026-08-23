@@ -1976,6 +1976,8 @@ assert.match(texts.pg125_p001, /Both objects rest on the same ground line\. The 
 assert.match(texts.pg126_p001, /^Exercise 5\. Circle the object with a shorter length or height than the other\. 1\. a\. Clear bottle[\s\S]*b\. Clear bottle[\s\S]*2\. a\. Ruler[\s\S]*b\. Ruler[\s\S]*3\. a\. Horizontal pencil[\s\S]*b\. Horizontal pencil[\s\S]*4\. a\. Pair of trousers[\s\S]*b\. Pair of trousers[\s\S]*5\. a\. Tree[\s\S]*b\. Tree/, "page 126 must read each label once immediately before its corresponding description");
 assert.doesNotMatch(texts.pg126_p001, /Picture [ab] shows/i, "page 126 must not repeat a or b inside a picture description");
 assert.match(texts.pg127_p006, /Example\. A brick is heavier than a bottle of soda\. The picture shows a rectangular reddish-brown brick on the left and an upright dark bottle of soda on the right\. Exercise 6\./, "page 127 must describe the example image immediately after its printed sentence");
+assert.match(texts.pg133_p001, /^Exercise 8 continues\. 3\. bowl\. pot\. Exercise 9\./, "page 133 item 3 must read the exact printed labels bowl and pot");
+assert.doesNotMatch(texts.pg133_p001.split("Exercise 9.")[0], /\b(?:a|cooking)\b/i, "page 133 item 3 must not add a or cooking");
 
 const page121To144Passages = {
   121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
