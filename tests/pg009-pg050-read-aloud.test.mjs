@@ -1549,6 +1549,15 @@ assert.match(texts.pg078_p071, /Subtract ones:[\s\S]*Take 1 group of tens[\s\S]*
 assert.ok(texts.pg078_p072.endsWith("Find the number of"), "question 2 must stop where the printed page continues onto page 79");
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg078_")).sort(), page78Passages.map(([id]) => id), "page 78 must narrate two verified passages exactly once");
 
+for (let pageNumber = 1; pageNumber <= 70; pageNumber += 1) {
+  const page = String(pageNumber).padStart(3, "0");
+  const markup = read(pageNumber === 1 ? "index.html" : `pg${page}_sec001.html`);
+  const image = `images/pg${page}_page_hq_pdf_clean.png`;
+  assert.match(markup, new RegExp(image.replace(".", "\\.")), `page ${pageNumber} must use its sharper watermark-free background image`);
+  assert.ok(existsSync(new URL(image, root)), `page ${pageNumber} clear background image must exist`);
+  assert.ok(statSync(new URL(image, root)).size > 0, `page ${pageNumber} clear background image must not be empty`);
+}
+
 const page79 = read("pg079_sec001.html");
 const page79Text = "pupils who continued with the journey. 3. A teacher had 596 books. He gave out 421 books to his pupils. How many books did the teacher remain with? 4. Roza had 365 oranges. If she sold 365 oranges, how many oranges did she remain with? 5. There were 635 pencils in a shop. If 412 pencils were sold, how many pencils were left in the shop? 6. A second-hand toy vendor had 888 toys. He sold 573 toys. Find the number of toys that remained. 7. A businesswoman bought 760 bottles of juice. She sold 650 bottles. How many bottles was she left with? 8. Erika had 500 shillings for buying exercise book. If an exercise book costs 355 shillings, how much money did she remain with? 9. Some ducks laid 734 eggs. If 218 eggs were broken, how many eggs remained? 10. A flock of 500 birds landed on a tree. Some 308 birds flew away. How many birds remained on the tree? 11. Juma had 463 oranges. He sold 185 oranges. How many oranges remained? 12. In a class of 210 students, 170 students sat for an examination. How many students did not sit for the examination?";
 assert.equal(texts.pg079_p029, page79Text, "page 79 must narrate the printed continuation and questions in order");

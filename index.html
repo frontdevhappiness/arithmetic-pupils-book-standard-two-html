@@ -25,13 +25,13 @@
       <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
 <style>
 #content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. Paint one translucent
-   highlight on the word wrapper so the source glyph remains readable; the
-   normal runtime rule paints an opaque fill on both wrapper and child span. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{background-color:rgba(253,224,71,.48)!important;color:transparent!important;mix-blend-mode:multiply}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300 span{background-color:transparent!important;color:transparent!important}
+/* Word highlighting is intentionally disabled while the overlay alignment is
+   being reviewed. Keep runtime highlight classes visually transparent. */
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300,
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300 span{background-color:transparent!important;color:transparent!important;mix-blend-mode:normal!important}
+#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important;display:none!important;background:transparent!important}
 </style>
-  <img src="images/pg001_page.png" alt="" role="presentation" aria-hidden="true" data-id="pg001_page" style="position:absolute;inset:0;width:558px;height:768px">
+  <img src="images/pg001_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg001_page" style="position:absolute;inset:0;width:558px;height:768px">
   <p data-id="pg001_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Arithmetic&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;50px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:63px;left:167px;line-height:50px;width:238px;height:56px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:50px;color:#0099da;font-weight:bold">Arithmetic</span></p>
   <p data-id="pg001_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Pupil&#x2019;s Book&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;26px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:121px;left:212px;line-height:26px;width:147px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:26px;color:#0099da;font-weight:bold">Pupil&#x2019;s Book</span></p>
   <p data-id="pg001_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Standard Two&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;30px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:162px;left:193px;line-height:30px;width:186px;height:34px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:30px;color:#231f20;font-weight:bold">Standard Two</span></p>

@@ -9,18 +9,32 @@
 
 /* Word highlighting is temporarily disabled book-wide. Read-aloud remains
    enabled; these rules only suppress the visual yellow marker. */
-#adt-runtime-word-highlight {
+html body #adt-runtime-word-highlight,
+html body #adt-pg006-word-highlight,
+html body #adt-pg007-word-highlight,
+html body #adt-pg008-word-highlight,
+html body [id^='adt-pg'][id$='-word-highlight'] {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300,
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300 > span {
+html body #content .adt-page-overlay-text span[data-word-index].bg-yellow-300,
+html body #content .adt-page-overlay-text span[data-word-index].bg-yellow-300 > span {
   background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before {
+html body #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before,
+html body #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::after {
   content: none !important;
   display: none !important;
+  background: transparent !important;
 }
 @font-face {
   font-family: 'Atkinson Hyperlegible';
