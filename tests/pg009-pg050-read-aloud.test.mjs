@@ -1941,6 +1941,8 @@ assert.match(texts.pg101_p001, /2\. Share equally 20 buns[\s\S]*10\. One hundred
 assert.match(texts.pg104_p006, /Example 1\. The table has three columns: Whole object, First half, and Second half\.[\s\S]*Example 2\.[\s\S]*The whole object is a pineapple\.[\s\S]*The second half is half a pineapple\.$/, "page 104 must narrate both tables by column and entry");
 assert.match(texts.pg105_p001, /Example 3\. The table has three columns: Whole object, First half, and Second half\.[\s\S]*The whole object is a tomato\.[\s\S]*The second half is half a tomato\./, "page 105 must narrate the tomato table by column and entry");
 assert.match(texts.pg107_p001, /1\. A triangle[\s\S]*9\. A chain of four circles/, "page 107 must describe all nine shaded figures accurately and in numeric order");
+assert.match(texts.pg108_p001, /Example 3\. A group of four coloured circles[\s\S]*The pink circle is the fourth quarter\./, "page 108 Example 3 must describe the pictured items as circles");
+assert.doesNotMatch(texts.pg108_p001, /counter/, "page 108 must not call the coloured circles counters");
 assert.match(texts.pg110_p004, /1 over 3[\s\S]*2 over 3/, "page 110 must read both fraction numerals correctly");
 assert.match(texts.pg114_p001, /1\. Three equal circles[\s\S]*8\. Three equal ovals/, "page 114 must describe all eight labelled figures in numeric order");
 assert.match(texts.pg117_p001, /1\. 1 over 2[\s\S]*6\. Whole object\.$/, "page 117 first table passage must contain rows 1 through 6");
