@@ -1966,6 +1966,8 @@ assert.match(texts.pg119_p001, /Solution\. Use the computer application in the T
 assert.match(texts.pg119_p001, /5\. Do other questions to practice more on recognizing fractions\.$/, "page 119 step 5 must use the exact printed wording");
 assert.equal(texts.pg120_p008, "Exercise 1. Study the following pictures. Fill in the blanks with the words near to or far from. The football and bottle are close together on the left. The chair is on the right, separated from them by a large empty space.", "page 120 Exercise 1 must convey the visible spacing without supplying the answer words");
 assert.doesNotMatch(texts.pg121_p001, /\bblank\b/i, "page 121 Exercise 1 must pause at answer spaces instead of saying blank");
+assert.match(texts.pg123_p001, /^Example\. The door is higher than the chair\. The picture shows/, "page 123 must read the printed example before its image description");
+assert.match(texts.pg123_p003, /^Recognizing standard measuring tools of length\. Tape measure\.[\s\S]*Ruler\.[\s\S]*Recognizing non-standard tools for measuring length\. Footsteps\./, "page 123 must read every printed heading and label in page order");
 
 const page121To144Passages = {
   121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
