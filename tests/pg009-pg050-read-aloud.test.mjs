@@ -1955,6 +1955,11 @@ assert.equal(texts.pg115_p001, "2. Write two-thirds in numerals in each of the f
 assert.match(texts.pg117_p001, /1\. 1 over 2[\s\S]*6\. Whole object\.$/, "page 117 first table passage must contain rows 1 through 6");
 assert.match(texts.pg117_p020, /7\. 1 over 3[\s\S]*11\. One-third\.$/, "page 117 second table passage must contain rows 7 through 11");
 assert.equal(texts.pg117_p033, "12. Two-thirds.", "page 117 final row must not be omitted");
+assert.doesNotMatch(
+  `${texts.pg117_p001} ${texts.pg117_p020} ${texts.pg117_p033}`,
+  /\brow\b/i,
+  "page 117 narration must use the printed item numbers without adding the word row",
+);
 assert.match(texts.pg119_p001, /Two computer-screen pictures[\s\S]*5\. Do other questions/, "page 119 must describe both ICT screens and all five steps");
 
 const page121To144Passages = {
