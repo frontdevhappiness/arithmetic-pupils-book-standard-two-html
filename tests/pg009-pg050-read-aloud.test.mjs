@@ -1950,6 +1950,7 @@ assert.equal(texts.pg112_p001, "The picture shows three schoolchildren standing 
 assert.match(texts.pg113_p001, /2\. A rectangle[\s\S]*3\. A triangle[\s\S]*4\. Three equal circles/, "page 113 Example 1 must narrate item 3 in sequence");
 assert.doesNotMatch(texts.pg113_p007, /question/i, "page 113 Example 2 must not insert the word question");
 assert.match(texts.pg114_p001, /1\. Three equal circles[\s\S]*8\. Three equal ovals/, "page 114 must describe all eight labelled figures in numeric order");
+assert.equal(texts.pg114_p011, "Exercise 6. Answer the following questions: 1. Write one-third in numerals in each of the following boxes. The image shows six empty rectangular boxes arranged in two rows of three.", "page 114 Exercise 6 must read the exact printed words before describing the boxes");
 assert.match(texts.pg117_p001, /1\. 1 over 2[\s\S]*6\. Whole object\.$/, "page 117 first table passage must contain rows 1 through 6");
 assert.match(texts.pg117_p020, /7\. 1 over 3[\s\S]*11\. One-third\.$/, "page 117 second table passage must contain rows 7 through 11");
 assert.equal(texts.pg117_p033, "12. Two-thirds.", "page 117 final row must not be omitted");
