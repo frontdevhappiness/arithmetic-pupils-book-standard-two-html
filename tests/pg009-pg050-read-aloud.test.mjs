@@ -1900,6 +1900,7 @@ assert.match(texts.pg098_p003, /6 − 2 = 4\. 4 − 2 = 2\. 2 − 2 = 0\./, "pag
 assert.equal(texts.pg098_p001, "5. The picture shows 16 orange-drink bottles. 16 ÷ 4 =.", "page 98 must state the bottle total without inventing visual groups or an answer");
 assert.match(texts.pg099_p027, /1\. 84 ÷ 7 =\.[\s\S]*9\. 32 ÷ 4 =\.[\s\S]*15\. 66 ÷ 6 =\.$/, "page 99 Exercise 3 must read questions 1 through 15 without omissions");
 assert.match(texts.pg100_p001, /12 ÷ 3 = 4\.[\s\S]*Desi will take 4 days/, "page 100 Example 1 must narrate its complete solution");
+assert.match(texts.pg100_p013, /36 ÷ 6 = 6\./, "page 100 Example 2 must retain the complete equals equation");
 
 const page101To120Passages = {
   101:["pg101_p001"],102:["pg102_p001","pg102_p017"],103:["pg103_p001"],104:["pg104_p001","pg104_p006"],
