@@ -1897,6 +1897,7 @@ assert.match(texts.pg094_p010, /^2\. Count the number of stars/, "page 94 step 2
 assert.match(texts.pg097_p001, /18 ice-cream cones[\s\S]*15 cubes[\s\S]*6 watermelons[\s\S]*20 avocados/, "page 97 must describe every pictured group in order");
 assert.doesNotMatch(texts.pg097_p001, /(?:15 cubes|6 watermelons|20 avocados) arranged in \d+ equal groups/, "page 97 must not invent visual groups for questions 2 through 4");
 assert.match(texts.pg098_p003, /6 − 2 = 4\. 4 − 2 = 2\. 2 − 2 = 0\./, "page 98 repeated subtraction must be mathematically correct and complete");
+assert.equal(texts.pg098_p001, "5. The picture shows 16 orange-drink bottles. 16 ÷ 4 =.", "page 98 must state the bottle total without inventing visual groups or an answer");
 assert.match(texts.pg099_p027, /1\. 84 ÷ 7 =\.[\s\S]*9\. 32 ÷ 4 =\.[\s\S]*15\. 66 ÷ 6 =\.$/, "page 99 Exercise 3 must read questions 1 through 15 without omissions");
 assert.match(texts.pg100_p001, /12 ÷ 3 = 4\.[\s\S]*Desi will take 4 days/, "page 100 Example 1 must narrate its complete solution");
 
