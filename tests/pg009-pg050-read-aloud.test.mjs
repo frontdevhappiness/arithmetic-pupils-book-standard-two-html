@@ -1961,6 +1961,9 @@ assert.doesNotMatch(
   "page 117 narration must use the printed item numbers without adding the word row",
 );
 assert.match(texts.pg119_p001, /Two computer-screen pictures[\s\S]*5\. Do other questions/, "page 119 must describe both ICT screens and all five steps");
+assert.match(texts.pg119_p001, /^Example\. One over two\. Solution\./, "page 119 must read the displayed fraction once as one over two");
+assert.match(texts.pg119_p001, /Solution\. Use the computer application in the TIE online library, https:\/\/tie\.go\.tz\/pages\/download-software, to divide numbers\./, "page 119 solution must use the exact printed wording");
+assert.match(texts.pg119_p001, /5\. Do other questions to practice more on recognizing fractions\.$/, "page 119 step 5 must use the exact printed wording");
 
 const page121To144Passages = {
   121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
