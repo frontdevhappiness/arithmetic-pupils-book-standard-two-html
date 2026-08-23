@@ -2026,6 +2026,8 @@ assert.match(texts.pg138_p001, /Leader: Tumpeleke hospitalini asije kusema kwa b
 assert.equal(texts.pg140_p014, "A cube is shown with a die.", "page 140 must not omit the cube example");
 assert.match(texts.pg140_p005, /^The following are examples of non-plane figures and their real objects\./, "page 140 must begin with the exact printed sentence");
 assert.doesNotMatch(texts.pg140_p005, /^Example\./, "page 140 must not insert an unprinted Example heading");
+assert.match(texts.pg141_p001, /The table shows a cuboid, sphere, pyramid, parallelogram, football, cylinder, cone, cube, triangle and square\.$/, "page 141 Exercise 5 must finish the first column before reading the second column");
+assert.doesNotMatch(texts.pg141_p001, /cuboid, cylinder, sphere, cone/, "page 141 Exercise 5 must not alternate between its two columns");
 assert.equal(texts.pg143_p017, "9. A shape of a sphere. 10. A shape of a pyramid.", "page 143 must not omit shape 10");
 assert.match(texts.pg144_p001, /11\. A shape of a cone[\s\S]*14\. A shape of a cube/, "page 144 must read questions 11 through 14 in order");
 
