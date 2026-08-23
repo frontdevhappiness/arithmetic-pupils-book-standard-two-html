@@ -1973,6 +1973,8 @@ assert.doesNotMatch(texts.pg124_p001.replace(/^.*?1\. Ana\. Juma\./s, ""), /\b(?
 assert.match(texts.pg125_p001, /^3\. A barrel\. A bucket\. The picture shows[\s\S]*Recognizing objects with equal lengths or heights\. Example\. Study the following pictures\. The bottles have equal height\.[\s\S]*The pencils have equal length\.[\s\S]*The walls of the houses have equal height\./, "page 125 must read its printed labels and sentences before image descriptions");
 assert.doesNotMatch(texts.pg125_p001.split("Recognizing objects with equal lengths or heights.")[0], /\b(?:shortest|taller|shorter)\b/i, "page 125 item 3 description must not supply the exercise answer");
 assert.match(texts.pg125_p001, /Both objects rest on the same ground line\. The top of the barrel reaches much higher than the top of the bucket\./, "page 125 item 3 must convey the visible height comparison without naming the answer");
+assert.match(texts.pg126_p001, /^Exercise 5\. Circle the object with a shorter length or height than the other\. 1\. a\. Clear bottle[\s\S]*b\. Clear bottle[\s\S]*2\. a\. Ruler[\s\S]*b\. Ruler[\s\S]*3\. a\. Horizontal pencil[\s\S]*b\. Horizontal pencil[\s\S]*4\. a\. Pair of trousers[\s\S]*b\. Pair of trousers[\s\S]*5\. a\. Tree[\s\S]*b\. Tree/, "page 126 must read each label once immediately before its corresponding description");
+assert.doesNotMatch(texts.pg126_p001, /Picture [ab] shows/i, "page 126 must not repeat a or b inside a picture description");
 
 const page121To144Passages = {
   121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
