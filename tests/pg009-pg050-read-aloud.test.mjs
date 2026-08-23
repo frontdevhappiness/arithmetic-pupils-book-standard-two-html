@@ -2021,6 +2021,8 @@ assert.match(texts.pg126_p001, /1\. A short tree[\s\S]*5\. A short pencil/, "pag
 assert.match(texts.pg130_p001, /1\. A leopard[\s\S]*10\. A boy/, "page 130 must describe all ten mass comparisons in numeric order");
 assert.equal(texts.pg131_p006, "Example. A cup has a smaller volume than a bucket.", "page 131 volume comparison must not cut off the bucket");
 assert.match(texts.pg138_p001, /Leader: Ukuti-ukuti[\s\S]*Followers: Yesa, yesa, yesa, yee\.$/, "page 138 must retain the complete printed song");
+assert.equal(texts.pg138_p001.match(/Leader:/g)?.length, 5, "page 138 must retain and narrate all five Leader labels");
+assert.match(texts.pg138_p001, /Leader: Tumpeleke hospitalini asije kusema kwa baba yake\./, "page 138 must narrate Leader before the Tumpeleke line");
 assert.equal(texts.pg140_p014, "A cube is shown with a die.", "page 140 must not omit the cube example");
 assert.equal(texts.pg143_p017, "9. A shape of a sphere. 10. A shape of a pyramid.", "page 143 must not omit shape 10");
 assert.match(texts.pg144_p001, /11\. A shape of a cone[\s\S]*14\. A shape of a cube/, "page 144 must read questions 11 through 14 in order");
