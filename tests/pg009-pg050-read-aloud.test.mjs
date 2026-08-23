@@ -38,7 +38,7 @@ function meanVolume(filename) {
 
 let passageCount = 0;
 let tokenCount = 0;
-for (let pageNumber = 9; pageNumber <= 90; pageNumber += 1) {
+for (let pageNumber = 9; pageNumber <= 144; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
   const markup = read(`pg${page}_sec001.html`).split("</main>", 1)[0];
   const domIds = [...markup.matchAll(new RegExp(`<[^>]+\\sdata-id="(pg${page}_[^"]+)"`, "g"))].map((match) => match[1]);
@@ -1851,6 +1851,133 @@ for (const id of Object.keys(texts).filter((id) => {
 assert.match(texts.pg090_p004, /6 × 5 = 6 \+ 6 \+ 6 \+ 6 \+ 6 = 30\./, "Example 1 must narrate the complete repeated-addition equation");
 assert.match(texts.pg090_p014, /Multiply: 22 × 3 = 66\./, "Example 2 must narrate the vertical multiplication as one equation");
 
+const page91To100Passages = {
+  91: ["pg091_p001"],
+  92: ["pg092_p001", "pg092_p004"],
+  93: ["pg093_p001", "pg093_p009"],
+  94: ["pg094_p001", "pg094_p010"],
+  95: ["pg095_p001", "pg095_p009"],
+  96: ["pg096_p001", "pg096_p015"],
+  97: ["pg097_p001"],
+  98: ["pg098_p001", "pg098_p003", "pg098_p016"],
+  99: ["pg099_p001", "pg099_p005", "pg099_p027"],
+  100: ["pg100_p001", "pg100_p013", "pg100_p020"]
+};
+for (const [pageNumber, ids] of Object.entries(page91To100Passages)) {
+  const prefix = `pg${pageNumber.padStart(3, "0")}_`;
+  const page = read(`pg${pageNumber.padStart(3, "0")}_sec001.html`);
+  assert.match(page, new RegExp(`images/${prefix.slice(0, -1)}_page_hq_pdf_clean\\.png`), `page ${pageNumber} must use the sharper watermark-free page image`);
+  assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith(prefix)).sort(), [...ids].sort(), `page ${pageNumber} must narrate each consolidated passage exactly once`);
+  let previousPosition = -1;
+  for (const id of ids) {
+    assert.equal(audios[id], `${id}_adt_natural.mp3`, `${id} must use the consistent ADT narration voice`);
+    assert.ok(texts[id]?.length > 0, `${id} must retain its complete printed narration`);
+    const words = timecodes[id]?.timecodes?.[1]?.word_timestamps;
+    assert.deepEqual(words?.map(({ text }) => text), tokens(texts[id]), `${id} must retain every displayed token in order`);
+    assert.ok(words.every(({ start, end }) => Number.isFinite(start) && Number.isFinite(end) && end > start), `${id} must use valid word timing spans`);
+    assert.ok(words.every((word, index) => index === 0 || word.start >= words[index - 1].start), `${id} word timing must be monotonic`);
+    assert.ok(words.at(-1).end <= duration(audios[id]) + 0.15, `${id} timing must remain inside its audio duration`);
+    const position = page.indexOf(`data-id="${id}"`);
+    assert.ok(position > previousPosition, `${id} must remain in printed reading order`);
+    previousPosition = position;
+  }
+  for (const id of Object.keys(texts).filter((id) => id.startsWith(prefix) && /^pg\d{3}_p(?!000)\d{3}$/.test(id) && !ids.includes(id))) {
+    assert.equal(texts[id], "", `${id} fragmented OCR text must not duplicate narration`);
+    assert.equal(audios[id], undefined, `${id} fragmented OCR text must have no audio mapping`);
+  }
+  for (const id of Object.keys(texts).filter((id) => id.startsWith(prefix) && /^pg\d{3}_im\d{3}$/.test(id))) {
+    assert.equal(texts[id], "", `${id} image description must be incorporated into the ordered page narration`);
+    assert.equal(audios[id], undefined, `${id} must not duplicate the incorporated image description`);
+  }
+}
+assert.match(texts.pg091_p001, /1\. A class has 34 pupils\.[\s\S]*10\. A teacher gave an equal number of biscuits to 6 pupils\./, "page 91 must read all ten questions in numeric order");
+assert.match(texts.pg092_p004, /Two computer-screen pictures show the question 1 × 5 and the completed answer 1 × 5 = 5\./, "page 92 must describe both ICT example screens");
+assert.match(texts.pg093_p001, /represented by the sign ÷\.[\s\S]*8 divided by 4 equals 2\./, "page 93 must identify and explain the division sign");
+assert.match(texts.pg094_p010, /^2\. Count the number of stars/, "page 94 step 2 must remain a separate narrated passage");
+assert.match(texts.pg097_p001, /18 ice-cream cones[\s\S]*15 cubes[\s\S]*6 watermelons[\s\S]*20 avocados/, "page 97 must describe every pictured group in order");
+assert.match(texts.pg098_p003, /6 − 2 = 4\. 4 − 2 = 2\. 2 − 2 = 0\./, "page 98 repeated subtraction must be mathematically correct and complete");
+assert.match(texts.pg099_p027, /1\. 84 ÷ 7 =\.[\s\S]*9\. 32 ÷ 4 =\.[\s\S]*15\. 66 ÷ 6 =\.$/, "page 99 Exercise 3 must read questions 1 through 15 without omissions");
+assert.match(texts.pg100_p001, /12 ÷ 3 = 4\.[\s\S]*Desi will take 4 days/, "page 100 Example 1 must narrate its complete solution");
+
+const page101To120Passages = {
+  101:["pg101_p001"],102:["pg102_p001","pg102_p017"],103:["pg103_p001"],104:["pg104_p001","pg104_p006"],
+  105:["pg105_p001","pg105_p011"],106:["pg106_p001"],107:["pg107_p001","pg107_p013"],108:["pg108_p001","pg108_p034"],
+  109:["pg109_p001","pg109_p015"],110:["pg110_p001","pg110_p004"],111:["pg111_p001","pg111_p017"],112:["pg112_p001"],
+  113:["pg113_p001","pg113_p007"],114:["pg114_p001","pg114_p011"],115:["pg115_p001","pg115_p004"],116:["pg116_p001"],
+  117:["pg117_p001","pg117_p020","pg117_p033"],118:["pg118_p001","pg118_p010"],119:["pg119_p001"],120:["pg120_p001","pg120_p008"]
+};
+for (const [pageNumber, ids] of Object.entries(page101To120Passages)) {
+  const page = pageNumber.padStart(3, "0");
+  const prefix = `pg${page}_`;
+  const markup = read(`pg${page}_sec001.html`);
+  assert.match(markup, new RegExp(`images/pg${page}_page_hq_pdf_clean\\.png`), `page ${pageNumber} must use its sharper watermark-free image`);
+  assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith(prefix)).sort(), [...ids].sort(), `page ${pageNumber} must narrate each consolidated passage exactly once`);
+  let previousPosition = -1;
+  for (const id of ids) {
+    assert.equal(audios[id], `${id}_adt_natural.mp3`, `${id} must use the consistent ADT narration voice`);
+    assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text }) => text), tokens(texts[id]), `${id} must retain every displayed token in order`);
+    const position = markup.indexOf(`data-id="${id}"`);
+    assert.ok(position > previousPosition, `${id} must remain in printed reading order`);
+    previousPosition = position;
+  }
+  for (const id of Object.keys(texts).filter((id) => id.startsWith(prefix) && /^pg\d{3}_p(?!000)\d{3}$/.test(id) && !ids.includes(id))) {
+    assert.equal(texts[id], "", `${id} fragmented OCR text must not duplicate narration`);
+    assert.equal(audios[id], undefined, `${id} fragmented OCR text must have no audio mapping`);
+  }
+  for (const id of Object.keys(texts).filter((id) => id.startsWith(prefix) && /^pg\d{3}_im\d{3}$/.test(id))) {
+    assert.equal(texts[id], "", `${id} image content must be incorporated in reading order`);
+    assert.equal(audios[id], undefined, `${id} must not duplicate its incorporated description`);
+  }
+}
+assert.match(texts.pg101_p001, /2\. Share equally 20 buns[\s\S]*10\. One hundred hectares/, "page 101 must read questions 2 through 10 in order");
+assert.match(texts.pg107_p001, /1\. A triangle[\s\S]*9\. A chain of five circles/, "page 107 must describe all nine shaded figures in numeric order");
+assert.match(texts.pg110_p004, /1 over 3[\s\S]*2 over 3/, "page 110 must read both fraction numerals correctly");
+assert.match(texts.pg114_p001, /1\. Three equal circles[\s\S]*8\. Three equal ovals/, "page 114 must describe all eight labelled figures in numeric order");
+assert.match(texts.pg117_p001, /1\. 1 over 2[\s\S]*6\. Whole object\.$/, "page 117 first table passage must contain rows 1 through 6");
+assert.match(texts.pg117_p020, /7\. 1 over 3[\s\S]*11\. One-third\.$/, "page 117 second table passage must contain rows 7 through 11");
+assert.equal(texts.pg117_p033, "12. Two-thirds.", "page 117 final row must not be omitted");
+assert.match(texts.pg119_p001, /Two computer-screen pictures[\s\S]*5\. Do other questions/, "page 119 must describe both ICT screens and all five steps");
+
+const page121To144Passages = {
+  121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
+  125:["pg125_p001"],126:["pg126_p001"],127:["pg127_p001","pg127_p006"],128:["pg128_p001"],129:["pg129_p001"],
+  130:["pg130_p001"],131:["pg131_p001","pg131_p006","pg131_p008"],132:["pg132_p001","pg132_p009"],133:["pg133_p001"],
+  134:["pg134_p001"],135:["pg135_p001"],136:["pg136_p001","pg136_p012"],137:["pg137_p001","pg137_p007"],
+  138:["pg138_p001","pg138_p020"],139:["pg139_p001","pg139_p010"],140:["pg140_p001","pg140_p005","pg140_p014"],
+  141:["pg141_p001"],142:["pg142_p001"],143:["pg143_p001","pg143_p017"],144:["pg144_p001"]
+};
+for (const [pageNumber, ids] of Object.entries(page121To144Passages)) {
+  const page = pageNumber.padStart(3, "0");
+  const prefix = `pg${page}_`;
+  const markup = read(`pg${page}_sec001.html`);
+  assert.match(markup, new RegExp(`images/pg${page}_page_hq_pdf_clean\\.png`), `page ${pageNumber} must use its sharper watermark-free image`);
+  assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith(prefix)).sort(), [...ids].sort(), `page ${pageNumber} must narrate each consolidated passage exactly once`);
+  let previousPosition = -1;
+  for (const id of ids) {
+    assert.equal(audios[id], `${id}_adt_natural.mp3`, `${id} must use the consistent ADT narration voice`);
+    assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text }) => text), tokens(texts[id]), `${id} must retain every displayed token in order`);
+    const position = markup.indexOf(`data-id="${id}"`);
+    assert.ok(position > previousPosition, `${id} must remain in printed reading order`);
+    previousPosition = position;
+  }
+  for (const id of Object.keys(texts).filter((id) => id.startsWith(prefix) && /^pg\d{3}_p(?!000)\d{3}$/.test(id) && !ids.includes(id))) {
+    assert.equal(texts[id], "", `${id} fragmented OCR text must not duplicate narration`);
+    assert.equal(audios[id], undefined, `${id} fragmented OCR text must have no audio mapping`);
+  }
+  for (const id of Object.keys(texts).filter((id) => id.startsWith(prefix) && /^pg\d{3}_im\d{3}$/.test(id))) {
+    assert.equal(texts[id], "", `${id} image content must be incorporated in reading order`);
+    assert.equal(audios[id], undefined, `${id} must not duplicate its incorporated description`);
+  }
+}
+assert.match(texts.pg122_p001, /village map[\s\S]*5\. Which one among the open market/, "page 122 must describe the map before all five questions");
+assert.match(texts.pg126_p001, /1\. A short tree[\s\S]*5\. A short pencil/, "page 126 must describe all five comparison pairs in numeric order");
+assert.match(texts.pg130_p001, /1\. A leopard[\s\S]*10\. A boy/, "page 130 must describe all ten mass comparisons in numeric order");
+assert.equal(texts.pg131_p006, "Example. A cup has a smaller volume than a bucket.", "page 131 volume comparison must not cut off the bucket");
+assert.match(texts.pg138_p001, /Leader: Ukuti-ukuti[\s\S]*Followers: Yesa, yesa, yesa, yee\.$/, "page 138 must retain the complete printed song");
+assert.equal(texts.pg140_p014, "A cube is shown with a die.", "page 140 must not omit the cube example");
+assert.equal(texts.pg143_p017, "9. A shape of a sphere. 10. A shape of a pyramid.", "page 143 must not omit shape 10");
+assert.match(texts.pg144_p001, /11\. A shape of a cone[\s\S]*14\. A shape of a cube/, "page 144 must read questions 11 through 14 in order");
+
 const hash = (filename) => createHash("sha256").update(readFileSync(new URL(`content/i18n/en-GB/audio/${filename}`, root))).digest("hex");
 const oneSource = hash(audios.pg028_p008);
 const threeSource = hash(audios.pg014_p014);
@@ -1885,4 +2012,4 @@ assert.match(runtime, /description\.length > 0 && !textNarration\.includes\(desc
 assert.match(runtime, /normalizeNarrationComparison/, "duplicate-image comparison must ignore punctuation differences");
 assert.match(runtime, /aria-hidden.*presentation/, "decorative images must be excluded from narration");
 
-console.log(`pg009-pg090 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
+console.log(`pg009-pg144 read-aloud regression: ${passageCount} passages and ${tokenCount} printed tokens verified`);
