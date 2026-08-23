@@ -1968,6 +1968,8 @@ assert.equal(texts.pg120_p008, "Exercise 1. Study the following pictures. Fill i
 assert.doesNotMatch(texts.pg121_p001, /\bblank\b/i, "page 121 Exercise 1 must pause at answer spaces instead of saying blank");
 assert.match(texts.pg123_p001, /^Example\. The door is higher than the chair\. The picture shows/, "page 123 must read the printed example before its image description");
 assert.match(texts.pg123_p003, /^Recognizing standard measuring tools of length\. Tape measure\.[\s\S]*Ruler\.[\s\S]*Recognizing non-standard tools for measuring length\. Footsteps\./, "page 123 must read every printed heading and label in page order");
+assert.match(texts.pg124_p001, /^Arm span\.[\s\S]*Rope\.[\s\S]*Exercise 4\. Write the name of the shortest object or person\. 1\. Ana\. Juma\.[\s\S]*2\. A cup\. A flask bottle\./, "page 124 must read every printed label and instruction in page order");
+assert.doesNotMatch(texts.pg124_p001.replace(/^.*?1\. Ana\. Juma\./s, ""), /\b(?:shortest|taller|shorter)\b/i, "page 124 Exercise 4 descriptions must support comparison without supplying answer words");
 
 const page121To144Passages = {
   121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
