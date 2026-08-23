@@ -1944,6 +1944,8 @@ assert.match(texts.pg107_p001, /1\. A triangle[\s\S]*9\. A chain of four circles
 assert.match(texts.pg108_p001, /Example 3\. A group of four coloured circles[\s\S]*The pink circle is the fourth quarter\./, "page 108 Example 3 must describe the pictured items as circles");
 assert.doesNotMatch(texts.pg108_p001, /counter/, "page 108 must not call the coloured circles counters");
 assert.match(texts.pg110_p004, /1 over 3[\s\S]*2 over 3/, "page 110 must read both fraction numerals correctly");
+assert.equal(texts.pg111_p001, "The orange is divided into three equal parts. One piece of the orange is removed. The piece of the orange removed is one-third. One-third, 1 over 3. The remaining two pieces of the orange are two-thirds. Two-thirds, 2 over 3.", "page 111 must follow the printed wording and corrected fractions without added explanation");
+assert.match(read("pg111_sec001.html"), /class="adt-visible-fraction-correction"[^>]*>1<\/span>/, "page 111 must visibly correct the one-third numerator to 1");
 assert.match(texts.pg114_p001, /1\. Three equal circles[\s\S]*8\. Three equal ovals/, "page 114 must describe all eight labelled figures in numeric order");
 assert.match(texts.pg117_p001, /1\. 1 over 2[\s\S]*6\. Whole object\.$/, "page 117 first table passage must contain rows 1 through 6");
 assert.match(texts.pg117_p020, /7\. 1 over 3[\s\S]*11\. One-third\.$/, "page 117 second table passage must contain rows 7 through 11");
