@@ -3556,43 +3556,43 @@
         "word_timestamps": [
           {
             "text": "Reading",
-            "start": 0.08,
-            "end": 0.55
+            "start": 0,
+            "end": 0.56
           },
           {
             "text": "and",
-            "start": 0.55,
-            "end": 0.78
+            "start": 0.56,
+            "end": 0.9
           },
           {
             "text": "writing",
-            "start": 0.78,
-            "end": 1.33
+            "start": 0.9,
+            "end": 1.12
           },
           {
             "text": "numbers",
-            "start": 1.33,
-            "end": 1.87
+            "start": 1.12,
+            "end": 1.52
           },
           {
             "text": "from",
-            "start": 2,
-            "end": 2.19
+            "start": 1.52,
+            "end": 1.92
           },
           {
             "text": "101",
-            "start": 2.19,
-            "end": 2.8
+            "start": 1.92,
+            "end": 2.68
           },
           {
             "text": "to",
-            "start": 3.08,
-            "end": 3.23
+            "start": 2.68,
+            "end": 3.46
           },
           {
             "text": "999",
-            "start": 3.23,
-            "end": 4.42
+            "start": 3.46,
+            "end": 4.62
           }
         ]
       }

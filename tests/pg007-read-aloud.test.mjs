@@ -14,6 +14,11 @@ const texts = json("content/i18n/en-GB/texts.json");
 const audios = json("content/i18n/en-GB/audios.json");
 const timecodes = json("content/i18n/en-GB/timecode/timecode_output.json");
 
+assert.equal(audios.pg007_p001, "pg007_p001_adt_standard.mp3", "the page heading must use the corrected standard-number narration");
+const headingStamps = timecodes.pg007_p001.timecodes[1].word_timestamps;
+const oneHundredAndOne = headingStamps.find(({ text }) => text === "101");
+assert.ok(oneHundredAndOne.end - oneHundredAndOne.start >= 0.7, "101 must have enough spoken time for ‘one hundred and one’");
+
 const spokenOrder = [
   "pg007_p023", "pg007_p024", "pg007_p021", "pg007_p001", "pg007_p002",
   "pg007_p005", "pg007_p006", "pg007_p007", "pg007_p008", "pg007_p011",
