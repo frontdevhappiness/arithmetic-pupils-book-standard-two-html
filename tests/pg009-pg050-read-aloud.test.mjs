@@ -1978,6 +1978,8 @@ assert.doesNotMatch(texts.pg126_p001, /Picture [ab] shows/i, "page 126 must not 
 assert.match(texts.pg127_p006, /Example\. A brick is heavier than a bottle of soda\. The picture shows a rectangular reddish-brown brick on the left and an upright dark bottle of soda on the right\. Exercise 6\./, "page 127 must describe the example image immediately after its printed sentence");
 assert.match(texts.pg133_p001, /^Exercise 8 continues\. 3\. bowl\. pot\. Exercise 9\./, "page 133 item 3 must read the exact printed labels bowl and pot");
 assert.doesNotMatch(texts.pg133_p001.split("Exercise 9.")[0], /\b(?:a|cooking)\b/i, "page 133 item 3 must not add a or cooking");
+assert.match(texts.pg134_p001, /1\. rectangle\. The shape of a rectangle\. 2\. square\. The shape of a square\. 3\. circle\. A shape of a circle\.$/, "page 134 example must read the printed labels in order");
+assert.doesNotMatch(texts.pg134_p001, /\b(?:A rectangle and|A square and|A circle and)\b/, "page 134 example must not insert A or and between printed labels");
 
 const page121To144Passages = {
   121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
