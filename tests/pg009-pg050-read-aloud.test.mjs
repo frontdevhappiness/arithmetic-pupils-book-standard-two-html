@@ -1970,6 +1970,9 @@ assert.match(texts.pg123_p001, /^Example\. The door is higher than the chair\. T
 assert.match(texts.pg123_p003, /^Recognizing standard measuring tools of length\. Tape measure\.[\s\S]*Ruler\.[\s\S]*Recognizing non-standard tools for measuring length\. Footsteps\./, "page 123 must read every printed heading and label in page order");
 assert.match(texts.pg124_p001, /^Arm span\.[\s\S]*Rope\.[\s\S]*Exercise 4\. Write the name of the shortest object or person\. 1\. Ana\. Juma\.[\s\S]*2\. A cup\. A flask bottle\./, "page 124 must read every printed label and instruction in page order");
 assert.doesNotMatch(texts.pg124_p001.replace(/^.*?1\. Ana\. Juma\./s, ""), /\b(?:shortest|taller|shorter)\b/i, "page 124 Exercise 4 descriptions must support comparison without supplying answer words");
+assert.match(texts.pg125_p001, /^3\. A barrel\. A bucket\. The picture shows[\s\S]*Recognizing objects with equal lengths or heights\. Example\. Study the following pictures\. The bottles have equal height\.[\s\S]*The pencils have equal length\.[\s\S]*The walls of the houses have equal height\./, "page 125 must read its printed labels and sentences before image descriptions");
+assert.doesNotMatch(texts.pg125_p001.split("Recognizing objects with equal lengths or heights.")[0], /\b(?:shortest|taller|shorter)\b/i, "page 125 item 3 description must not supply the exercise answer");
+assert.match(texts.pg125_p001, /Both objects rest on the same ground line\. The top of the barrel reaches much higher than the top of the bucket\./, "page 125 item 3 must convey the visible height comparison without naming the answer");
 
 const page121To144Passages = {
   121:["pg121_p001","pg121_p005"],122:["pg122_p001","pg122_p012"],123:["pg123_p001","pg123_p003"],124:["pg124_p001"],
