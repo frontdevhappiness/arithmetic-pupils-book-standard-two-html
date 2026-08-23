@@ -1939,6 +1939,7 @@ for (const [pageNumber, ids] of Object.entries(page101To120Passages)) {
 }
 assert.match(texts.pg101_p001, /2\. Share equally 20 buns[\s\S]*10\. One hundred hectares/, "page 101 must read questions 2 through 10 in order");
 assert.match(texts.pg104_p006, /Example 1\. The table has three columns: Whole object, First half, and Second half\.[\s\S]*Example 2\.[\s\S]*The whole object is a pineapple\.[\s\S]*The second half is half a pineapple\.$/, "page 104 must narrate both tables by column and entry");
+assert.match(texts.pg105_p001, /Example 3\. The table has three columns: Whole object, First half, and Second half\.[\s\S]*The whole object is a tomato\.[\s\S]*The second half is half a tomato\./, "page 105 must narrate the tomato table by column and entry");
 assert.match(texts.pg107_p001, /1\. A triangle[\s\S]*9\. A chain of five circles/, "page 107 must describe all nine shaded figures in numeric order");
 assert.match(texts.pg110_p004, /1 over 3[\s\S]*2 over 3/, "page 110 must read both fraction numerals correctly");
 assert.match(texts.pg114_p001, /1\. Three equal circles[\s\S]*8\. Three equal ovals/, "page 114 must describe all eight labelled figures in numeric order");
