@@ -1,140 +1,89 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chapter Three: Counting objects</title>
     <meta name="title-id" content="pg020_sec001" />
     <meta name="page-section-id" content="20" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+        :root { color-scheme: light; --chapter-blue: #00a9e8; --chapter-title-blue: #00aeef; --chapter-teal: #00aaa9; --example-blue: #219ade; --example-border: #90ccee; --table-blue: #31459c; --ink: #231f20; }
+        html, body { min-height: 100%; }
+        body { margin: 0; overflow-x: hidden; overflow-y: auto; color: var(--ink); background: radial-gradient(circle at 18% 7%, rgba(111, 194, 224, 0.25), transparent 30rem), linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%); }
+        .semantic-page-shell { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px)); padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem) calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem)); }
+        #content { box-sizing: border-box; width: min(100%, 64rem); margin: 0 auto; visibility: visible; }
+        .chapter-page { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px) - clamp(2rem, 8vw, 6rem)); padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem); font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; background: #fff; border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb; border-radius: clamp(1.15rem, 3vw, 2.25rem); box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14); }
+        .chapter-page [data-id] { font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif !important; }
+        .chapter-page [data-id] span { font-family: inherit !important; font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+        .chapter-banner { position: relative; display: grid; grid-template-columns: clamp(10rem, 27vw, 15rem) 1fr; align-items: center; min-height: clamp(10rem, 27vw, 14rem); margin: 0 0 clamp(2.8rem, 6vw, 4.5rem); isolation: isolate; }
+        .chapter-banner::after { content: ""; position: absolute; z-index: -3; right: 0; left: clamp(8rem, 21vw, 12rem); height: 66%; background: #fff; border: 0.35rem solid var(--chapter-teal); border-radius: 0 2rem 2rem 0; box-shadow: 0 0.8rem 1.8rem rgba(0, 135, 158, 0.1); }
+        .chapter-badge { position: relative; z-index: 2; display: grid; place-items: center; width: clamp(9rem, 25vw, 13.5rem); aspect-ratio: 1; padding: 1rem; color: #fff; background: linear-gradient(145deg, #039cc8 0%, #0084bc 100%); border: 0.28rem solid #6ac6cf; border-radius: 50%; box-shadow: 0 0 0 0.35rem #ffe762, 0 0 0 0.7rem rgba(0, 139, 190, 0.62), 0 1rem 2rem rgba(27, 84, 110, 0.24); }
+        .chapter-badge::before, .chapter-badge::after { content: ""; position: absolute; z-index: -2; border-radius: 42% 58% 53% 47%; background: rgba(0, 169, 169, 0.72); }
+        .chapter-badge::before { inset: -12% -33% 37% 30%; transform: rotate(28deg); }
+        .chapter-badge::after { inset: 42% -35% -20% -27%; transform: rotate(-18deg); }
+        .chapter-label { display: grid; gap: 0.15rem; text-align: center; font-size: clamp(1.65rem, 4.7vw, 2.55rem); font-weight: 700; line-height: 1.05; }
+        .chapter-title { z-index: 1; margin: 0; padding: 1rem clamp(0.8rem, 3vw, 2rem) 1rem clamp(1rem, 4vw, 3rem); color: var(--chapter-title-blue); font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 700; line-height: 1.05; text-align: center; }
+        .lesson-title { margin: 0 0 0.4rem; font-size: clamp(1.55rem, 3.8vw, 2.15rem); font-weight: 700; line-height: 1.2; }
+        .introduction { margin: 0 0 clamp(2.8rem, 7vw, 4.5rem); font-size: clamp(1.25rem, 2.8vw, 1.7rem); font-style: italic; line-height: 1.4; }
+        .example-card { position: relative; box-sizing: border-box; padding: clamp(2.7rem, 6vw, 3.5rem) clamp(0.65rem, 2vw, 1rem) clamp(0.65rem, 2vw, 1rem); border: 0.2rem solid var(--example-border); border-radius: 1.25rem; }
+        .example-card + .example-card { margin-top: clamp(3rem, 7vw, 4.5rem); }
+        .example-label { position: absolute; top: 0; left: clamp(1.25rem, 4vw, 2.5rem); min-width: clamp(8.5rem, 23vw, 11rem); margin: 0; padding: 0.25rem 1rem; color: #fff; background: var(--example-blue); border: 0.2rem solid var(--example-blue); border-radius: 999px; font-size: clamp(1.4rem, 3.3vw, 1.9rem); font-weight: 700; line-height: 1.1; text-align: center; transform: translateY(-50%); }
+        .instruction { margin: 0 0 clamp(0.75rem, 2vw, 1rem); font-size: clamp(1.2rem, 2.8vw, 1.7rem); line-height: 1.35; }
+        .place-table { display: grid; grid-template-columns: 1fr 1.75fr 0.72fr; border-top: 0.12rem solid var(--table-blue); border-left: 0.12rem solid var(--table-blue); }
+        .place-cell { box-sizing: border-box; min-width: 0; padding: clamp(0.35rem, 1.5vw, 0.7rem); border-right: 0.12rem solid var(--table-blue); border-bottom: 0.12rem solid var(--table-blue); text-align: center; }
+        .place-heading, .place-label { font-size: clamp(1.1rem, 2.6vw, 1.55rem); line-height: 1.15; }
+        .place-objects { display: flex; justify-content: center; align-items: center; min-height: clamp(7.5rem, 22vw, 13rem); }
+        .pencil-bundle { width: min(72%, 8.5rem); height: auto; }
+        .tens-groups { display: grid; grid-template-columns: repeat(4, minmax(1.6rem, 1fr)); gap: clamp(0.25rem, 1.2vw, 0.75rem); width: min(96%, 19rem); align-items: end; }
+        .ten-pencils { width: 100%; max-height: 10rem; object-fit: contain; }
+        .ones-pencils { display: flex; gap: clamp(0.8rem, 3vw, 2rem); justify-content: center; }
+        .one-pencil { width: clamp(0.8rem, 2.5vw, 1.35rem); max-height: 9rem; object-fit: contain; }
+        .place-answer { grid-column: 1 / -1; padding-block: clamp(0.25rem, 1vw, 0.5rem); font-size: clamp(1.2rem, 2.8vw, 1.7rem); line-height: 1.2; }
+        .frame-labels { display: grid; grid-template-columns: repeat(3, 1fr); width: min(100%, 24rem); margin: 0 auto 0.25rem; font-size: clamp(1.05rem, 2.5vw, 1.45rem); text-align: center; }
+        .counting-frame { display: block; width: min(78%, 24rem); height: auto; margin: 0 auto; }
+        .frame-answer { margin: 0.35rem 0 0; font-size: clamp(1.2rem, 2.8vw, 1.7rem); line-height: 1.2; text-align: center; }
+        .page-marker { display: grid; place-items: center; width: clamp(3.5rem, 10vw, 5.25rem); aspect-ratio: 1.65 / 1; margin: clamp(2.2rem, 6vw, 4rem) auto 0; color: #fff; background: var(--chapter-blue); border-radius: 50%; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; line-height: 1; }
+        @media (max-width: 42rem) { .chapter-page { border-width: 0.45rem; border-radius: 1.15rem; } .chapter-banner { grid-template-columns: 1fr; justify-items: center; gap: 1.1rem; min-height: 0; } .chapter-banner::after { inset: auto 0 0; height: 48%; border-radius: 1.5rem; } .chapter-title { padding: 1.1rem 0.75rem 1.35rem; } .introduction { text-align: left; } }
+        @media (max-width: 30rem) { .place-table { grid-template-columns: 1fr 1.35fr 0.72fr; } .place-cell { padding-inline: 0.25rem; } .tens-groups { gap: 0.15rem; } }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
-</style>
-  <img src="images/pg020_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg020_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <p data-id="pg020_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;14&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:171px;line-height:18px;width:213px;height:20px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">14</span></p>
-  <img src="images/pg020_im006.png" alt="" data-id="pg020_im006" role="presentation" aria-hidden="true" style="position:absolute;top:266px;left:68px;width:407px;height:455px;opacity:0">
-  <p data-id="pg020_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Counting objects in ones, tens, and hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:215px;left:72px;line-height:18px;width:377px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Counting objects in ones, tens, and hundreds</span></p>
-  <p data-id="pg020_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Objects can be counted in ones, tens, and hundreds.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:239px;left:72px;line-height:18px;width:401px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;font-style:italic">Objects can be counted in ones, tens, and hundreds.</span></p>
-  <p data-id="pg020_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;Example 1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#1accff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:269px;left:72px;line-height:17px;width:113px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic"> </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#1accff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Example 1</span></p>
-  <p data-id="pg020_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Count the following pencils. Write their total in words.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:293px;left:80px;line-height:18px;width:381px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Count the following pencils. Write their total in words.</span></p>
-  <p data-id="pg020_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:316px;left:80px;line-height:18px;width:381px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">Hundreds</span></p>
-  <p data-id="pg020_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tens&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:316px;left:274px;line-height:18px;width:38px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Tens</span></p>
-  <p data-id="pg020_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Ones&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:316px;left:409px;line-height:18px;width:35px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Ones</span></p>
-  <img src="images/pg020_im001.jpg" alt="A bundle of one hundred pencils representing hundreds." data-id="pg020_im001" style="position:absolute;top:341px;left:98px;width:79px;height:91px;opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg020_im002" clipPathUnits="userSpaceOnUse"><path d="M223.84 419.3L252.9 419.3L252.9 341.21L223.84 341.21Z" transform="translate(-223,-341)"/></clipPath></defs></svg>
-  <img src="images/pg020_im002.jpg" alt="Four groups of ten pencils, representing four tens." data-id="pg020_im002" style="position:absolute;top:341px;left:223px;width:31px;height:78px;clip-path:url(#clip-pg020_im002);opacity:0">
-  <img src="images/pg020_im013.png" alt="" data-id="pg020_im013" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg020_im003" clipPathUnits="userSpaceOnUse"><path d="M409.26 341.21L425.08 341.21L425.08 415.49L409.26 415.49Z" transform="translate(-408,-340)"/></clipPath></defs></svg>
-  <img src="images/pg020_im003.jpg" alt="Two pencils, representing two ones." data-id="pg020_im003" style="position:absolute;top:340px;left:408px;width:18px;height:75px;clip-path:url(#clip-pg020_im003);opacity:0">
-  <img src="images/pg020_im014.png" alt="" data-id="pg020_im014" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im015.png" alt="" data-id="pg020_im015" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im016.png" alt="" data-id="pg020_im016" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im017.png" alt="" data-id="pg020_im017" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im018.png" alt="" data-id="pg020_im018" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg020_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;One hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:451px;left:88px;line-height:18px;width:289px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">One hundreds</span></p>
-  <p data-id="pg020_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Four tens&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:451px;left:256px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Four tens</span></p>
-  <p data-id="pg020_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Two ones&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:451px;left:392px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Two ones</span></p>
-  <p data-id="pg020_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;One hundred and forty-two.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:475px;left:88px;line-height:18px;width:289px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">One hundred and forty-two.</span></p>
-  <p data-id="pg020_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;Example 2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:511px;left:83px;line-height:17px;width:98px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic"> </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#ffffff;font-weight:bold">Example 2</span></p>
-  <p data-id="pg020_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Count then write the number in words.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:536px;left:83px;line-height:18px;width:284px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Count then write the number in words.</span></p>
-  <p data-id="pg020_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Four hundred and thirty-two.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:660px;left:171px;line-height:18px;width:213px;height:35px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Four hundred and thirty-two.</span></p>
-  <img src="images/pg020_im004.png" alt="A place-value counting frame with 4 counters in the hundreds column, 3 in the tens column and 2 in the ones column, showing four hundred and thirty-two." data-id="pg020_im004" style="position:absolute;top:575px;left:208px;width:149px;height:85px;opacity:0">
-  <p data-id="pg020_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:556px;left:193px;line-height:18px;width:70px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">hundreds</span></p>
-  <p data-id="pg020_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;tens&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:556px;left:272px;line-height:18px;width:39px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">tens</span></p>
-  <p data-id="pg020_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ones&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:556px;left:318px;line-height:18px;width:42px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">ones</span></p>
-  <img src="images/pg020_im007.png" alt="" data-id="pg020_im007" style="position:absolute;top:26px;left:31px;width:496px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im008.png" alt="" data-id="pg020_im008" style="position:absolute;top:24px;left:29px;width:500px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im005.png" alt="" data-id="pg020_im005" role="presentation" aria-hidden="true" style="position:absolute;top:36px;left:45px;width:430px;height:176px;opacity:0">
-  <p data-id="pg020_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Counting objects&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:108px;left:236px;line-height:24px;width:183px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">Counting objects</span></p>
-  <p data-id="pg020_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Chapter&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:81px;left:85px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold">Chapter</span></p>
-  <p data-id="pg020_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Three&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:108px;left:85px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold">Three</span></p>
-  <img src="images/pg020_im009.png" alt="" data-id="pg020_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im010.png" alt="" data-id="pg020_im010" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im011.png" alt="" data-id="pg020_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg020_im012.png" alt="" data-id="pg020_im012" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg020_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 14&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 14</span></p>
-  <p data-id="pg020_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script>
-  (function () {
-    var root = document.getElementById("content");
-    var insertionPoint = root && root.querySelector('[data-id="pg020_p019"]');
-    if (!root || !insertionPoint) return;
-    var order = [
-      "pg020_p017", "pg020_p018", "pg020_p016",
-      "pg020_p001", "pg020_p002",
-      "pg020_p003", "pg020_p004",
-      "pg020_p005", "pg020_p006", "pg020_p007",
-      "pg020_im001", "pg020_im002", "pg020_im003",
-      "pg020_p008", "pg020_p009", "pg020_p010", "pg020_p011",
-      "pg020_p012", "pg020_p013", "pg020_p021", "pg020_p022", "pg020_p023", "pg020_im004", "pg020_p014"
-    ];
-    var ordered = document.createDocumentFragment();
-    order.forEach(function (id) {
-      var element = root.querySelector('[data-id="' + id + '"]');
-      if (element) ordered.appendChild(element);
-    });
-    root.insertBefore(ordered, insertionPoint);
-  })();
-</script>
-<script src="./assets/auto-fit.js"></script>
-</div>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-label="Chapter Three: Counting objects">
+            <section class="chapter-page" role="article" data-section-type="text_and_images" data-section-id="pg020_sec001">
+                <header class="chapter-banner">
+                    <div class="chapter-badge" aria-label="Chapter Three"><div class="chapter-label"><span data-id="pg020_p017">Chapter</span><span data-id="pg020_p018">Three</span></div></div>
+                    <h1 class="chapter-title" data-id="pg020_p016">Counting objects</h1>
+                </header>
+                <h2 class="lesson-title" data-id="pg020_p001">Counting objects in ones, tens, and hundreds</h2>
+                <p class="introduction" data-id="pg020_p002">Objects can be counted in ones, tens, and hundreds.</p>
+                <section class="example-card" aria-labelledby="example-1-label">
+                    <h2 class="example-label" id="example-1-label" data-id="pg020_p003">Example 1</h2>
+                    <p class="instruction" data-id="pg020_p004">Count the following pencils. Write their total in words.</p>
+                    <div class="place-table" role="group" aria-label="Pencils grouped by place value">
+                        <div class="place-cell place-heading" data-id="pg020_p005">Hundreds</div><div class="place-cell place-heading" data-id="pg020_p006">Tens</div><div class="place-cell place-heading" data-id="pg020_p007">Ones</div>
+                        <div class="place-cell place-objects"><img class="pencil-bundle" src="images/pg020_im001.jpg" alt="A bundle of one hundred pencils representing hundreds." data-id="pg020_im001"></div>
+                        <div class="place-cell place-objects"><div class="tens-groups"><img class="ten-pencils" src="images/pg020_im002.jpg" alt="Four groups of ten pencils, representing four tens." data-id="pg020_im002"><img class="ten-pencils" src="images/pg020_im002.jpg" alt="" aria-hidden="true"><img class="ten-pencils" src="images/pg020_im002.jpg" alt="" aria-hidden="true"><img class="ten-pencils" src="images/pg020_im002.jpg" alt="" aria-hidden="true"></div></div>
+                        <div class="place-cell place-objects"><div class="ones-pencils"><img class="one-pencil" src="images/pg020_im003.jpg" alt="Two pencils, representing two ones." data-id="pg020_im003"><img class="one-pencil" src="images/pg020_im003.jpg" alt="" aria-hidden="true"></div></div>
+                        <div class="place-cell place-label" data-id="pg020_p008">One hundreds</div><div class="place-cell place-label" data-id="pg020_p009">Four tens</div><div class="place-cell place-label" data-id="pg020_p010">Two ones</div>
+                        <div class="place-cell place-answer" data-id="pg020_p011">One hundred and forty-two.</div>
+                    </div>
+                </section>
+                <section class="example-card" aria-labelledby="example-2-label">
+                    <h2 class="example-label" id="example-2-label" data-id="pg020_p012">Example 2</h2>
+                    <p class="instruction" data-id="pg020_p013">Count then write the number in words.</p>
+                    <div class="frame-labels"><span data-id="pg020_p021">hundreds</span><span data-id="pg020_p022">tens</span><span data-id="pg020_p023">ones</span></div>
+                    <img class="counting-frame" src="images/pg020_im004.png" alt="A place-value counting frame with 4 counters in the hundreds column, 3 in the tens column and 2 in the ones column, showing four hundred and thirty-two." data-id="pg020_im004">
+                    <p class="frame-answer" data-id="pg020_p014">Four hundred and thirty-two.</p>
+                </section>
+                <p class="page-marker" data-id="pg020_p000">14</p>
+            </section>
+        </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
@@ -142,5 +91,4 @@
     <script src="./assets/sign-language-sync.js?v=1"></script>
     <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
