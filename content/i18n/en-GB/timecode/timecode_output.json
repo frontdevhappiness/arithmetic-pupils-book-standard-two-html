@@ -27001,6 +27001,62 @@
       }
     ]
   },
+  "pg023_p005": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "__________",
+            "start": 0.274958,
+            "end": 2.04917
+          }
+        ]
+      }
+    ]
+  },
+  "pg023_p006": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "_________",
+            "start": 0.264625,
+            "end": 2.01096
+          }
+        ]
+      }
+    ]
+  },
+  "pg023_p007": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "__________",
+            "start": 0.280667,
+            "end": 2.05475
+          }
+        ]
+      }
+    ]
+  },
+  "pg023_p008": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "____________________________",
+            "start": 0.287167,
+            "end": 3.05204
+          }
+        ]
+      }
+    ]
+  },
   "pg023_p009": {
     "timecodes": [
       null,
