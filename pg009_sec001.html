@@ -1,162 +1,95 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Counting game and numbers from 151 to 200</title>
     <meta name="title-id" content="pg009_sec001" />
     <meta name="page-section-id" content="9" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+        :root { color-scheme: light; --exercise-blue: #219ade; --exercise-border: #90ccee; --table-blue: #2a3c9a; --question-green: #40ad49; --question-pale: #eff8e8; --page-marker-blue: #00aeef; }
+        html, body { min-height: 100%; }
+        body { margin: 0; overflow-x: hidden; overflow-y: auto; color: #231f20; background: radial-gradient(circle at 18% 7%, rgba(111, 194, 224, 0.25), transparent 30rem), linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%); }
+        .semantic-page-shell { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px)); padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem) calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem)); }
+        #content { box-sizing: border-box; width: min(100%, 64rem); margin: 0 auto; visibility: visible; }
+        .numbers-page { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px) - clamp(2rem, 8vw, 6rem)); padding: clamp(1.75rem, 5vw, 3.5rem) clamp(1rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem); font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; background: #fff; border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb; border-radius: clamp(1.15rem, 3vw, 2.25rem); box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14); }
+        .numbers-page [data-id], .numbers-page [data-id] span { font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; }
+        .game-figure { position: relative; width: min(100%, 48rem); margin: 0 auto clamp(1.4rem, 4vw, 2.4rem); padding-top: 2.25rem; }
+        .game-figure img { display: block; width: 100%; height: auto; }
+        .game-number { position: absolute; z-index: 1; font-size: clamp(0.82rem, 2.1vw, 1.4rem); line-height: 1; transform: translate(-50%, -50%); }
+        .n101 { left: 9%; top: 16%; } .n102 { left: 21%; top: 9%; } .n103 { left: 33%; top: 5%; } .n104 { left: 45%; top: 5%; } .n105 { left: 64%; top: 5%; }
+        .n106 { left: 79%; top: 10%; } .n107 { left: 93%; top: 22%; } .n108 { left: 72%; top: 94%; } .n109 { left: 48%; top: 97%; } .n110 { left: 22%; top: 91%; }
+        .question-card { position: relative; box-sizing: border-box; margin: 0 0 clamp(2.4rem, 6vw, 3.5rem); padding: clamp(2rem, 4vw, 2.7rem) clamp(1rem, 3vw, 1.5rem) clamp(0.8rem, 2vw, 1rem); background: var(--question-pale); border: 0.12rem solid #9bd78f; border-radius: 1rem; }
+        .question-label, .exercise-label { position: absolute; top: 0; left: clamp(1.25rem, 4vw, 2.5rem); min-width: clamp(8.5rem, 25vw, 11rem); margin: 0; padding: 0.25rem 1rem; background: #fff; border-radius: 999px; font-size: clamp(1.45rem, 3.5vw, 2rem); font-weight: 700; line-height: 1.1; text-align: center; transform: translateY(-50%); }
+        .question-label { color: var(--question-green); border: 0.2rem solid var(--question-green); }
+        .question-copy, .table-instruction { margin: 0; font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.45; }
+        .exercise-card { position: relative; box-sizing: border-box; padding: clamp(2.3rem, 5vw, 3.2rem) clamp(0.8rem, 3vw, 1.4rem) clamp(1rem, 3vw, 1.5rem); border: 0.2rem solid var(--exercise-border); border-radius: 1.25rem; }
+        .exercise-label { color: var(--exercise-blue); border: 0.2rem solid var(--exercise-blue); }
+        .table-wrap { width: 100%; margin-top: clamp(0.8rem, 2.5vw, 1.35rem); overflow-x: auto; overscroll-behavior-inline: contain; }
+        .number-table { width: 100%; min-width: 43rem; border-collapse: collapse; table-layout: fixed; font-size: clamp(1.05rem, 2.5vw, 1.45rem); }
+        .number-table td { box-sizing: border-box; height: clamp(2.8rem, 7vw, 3.8rem); padding: 0.35rem 0.25rem; border: 1px solid var(--table-blue); text-align: center; vertical-align: middle; }
+        .number-table td[colspan="2"] { background-image: linear-gradient(to right, transparent calc(50% - 0.5px), var(--table-blue) calc(50% - 0.5px), var(--table-blue) calc(50% + 0.5px), transparent calc(50% + 0.5px)); word-spacing: clamp(1.6rem, 5vw, 3.25rem); }
+        .page-marker { display: grid; place-items: center; width: clamp(3.5rem, 10vw, 5.25rem); aspect-ratio: 1.65 / 1; margin: clamp(3.5rem, 12vw, 8rem) auto 0; color: #fff; background: var(--page-marker-blue); border-radius: 50%; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; line-height: 1; }
+        @media (max-width: 42rem) { .numbers-page { border-width: 0.45rem; border-radius: 1.15rem; } .game-figure { padding-top: 1.6rem; } }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-label="Counting game and numbers from 151 to 200">
+            <section class="numbers-page" role="article" data-section-type="text_and_single_image" data-section-id="pg009_sec001">
+                <figure class="game-figure">
+                    <img src="images/pg009_im001.jpg" data-id="pg009_im001" alt="Ten schoolchildren stand in a circle on a green field, following arrows around the circle while one child throws a ball to another in a counting game.">
+                    <span class="game-number n101" data-id="pg009_p046">101</span>
+                    <span class="game-number n102" data-id="pg009_p047">102</span>
+                    <span class="game-number n103" data-id="pg009_p048">103</span>
+                    <span class="game-number n104" data-id="pg009_p049">104</span>
+                    <span class="game-number n105" data-id="pg009_p050">105</span>
+                    <span class="game-number n106" data-id="pg009_p051">106</span>
+                    <span class="game-number n107" data-id="pg009_p052">107</span>
+                    <span class="game-number n108" data-id="pg009_p053">108</span>
+                    <span class="game-number n109" data-id="pg009_p054">109</span>
+                    <span class="game-number n110" data-id="pg009_p055">110</span>
+                </figure>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg009_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg009_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg009_im004.png" alt="Page 3" data-id="pg009_im004" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0">
-  <p data-id="pg009_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:280px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">3</span></p>
-  <img src="images/pg009_im002.png" alt="" data-id="pg009_im002" style="position:absolute;top:291px;left:84px;width:403px;height:82px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im003.png" alt="" data-id="pg009_im003" style="position:absolute;top:383px;left:83px;width:405px;height:287px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im009.png" alt="" data-id="pg009_im009" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im010.png" alt="" data-id="pg009_im010" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im011.png" alt="" data-id="pg009_im011" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im012.png" alt="" data-id="pg009_im012" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg009_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Question&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#40ad49&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:317px;left:86px;line-height:17px;width:107px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#40ad49;font-weight:bold"> Question</span></p>
-  <img src="images/pg009_im013.png" alt="" data-id="pg009_im013" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg009_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Read all the numbers mentioned in the game.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:345px;left:98px;line-height:18px;width:332px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Read all the numbers mentioned in the game.</span></p>
-  <img src="images/pg009_im014.png" alt="" data-id="pg009_im014" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg009_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Exercise 3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:389px;left:86px;line-height:17px;width:100px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;font-weight:bold"> Exercise 3</span></p>
-  <p data-id="pg009_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Read all the numbers from 151 to 200 in the following &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;table.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:416px;left:95px;line-height:18px;width:380px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Read all the numbers from 151 to 200 in the following </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">table.</span></p>
-  <p data-id="pg009_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;151&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:99px;line-height:16px;width:23px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">151</span></p>
-  <p data-id="pg009_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;152 153&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:139px;line-height:16px;width:59px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">152 153</span></p>
-  <p data-id="pg009_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;154&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:214px;line-height:16px;width:23px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">154</span></p>
-  <p data-id="pg009_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;155&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:254px;line-height:16px;width:23px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">155</span></p>
-  <p data-id="pg009_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;156 157&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:292px;line-height:16px;width:59px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">156 157</span></p>
-  <p data-id="pg009_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;158&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:365px;line-height:16px;width:23px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">158</span></p>
-  <p data-id="pg009_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;159&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:403px;line-height:16px;width:23px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">159</span></p>
-  <p data-id="pg009_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;160&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:477px;left:440px;line-height:16px;width:23px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">160</span></p>
-  <p data-id="pg009_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;161&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:99px;line-height:16px;width:23px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">161</span></p>
-  <p data-id="pg009_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;162 163&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:139px;line-height:16px;width:59px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">162 163</span></p>
-  <p data-id="pg009_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;164&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:214px;line-height:16px;width:23px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">164</span></p>
-  <p data-id="pg009_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;165&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:254px;line-height:16px;width:23px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">165</span></p>
-  <p data-id="pg009_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;166 167&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:292px;line-height:16px;width:59px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">166 167</span></p>
-  <p data-id="pg009_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;168&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:365px;line-height:16px;width:23px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">168</span></p>
-  <p data-id="pg009_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;169&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:403px;line-height:16px;width:23px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">169</span></p>
-  <p data-id="pg009_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;170&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:440px;line-height:16px;width:23px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">170</span></p>
-  <p data-id="pg009_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;171&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:99px;line-height:16px;width:23px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">171</span></p>
-  <p data-id="pg009_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;172 173&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:139px;line-height:16px;width:59px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">172 173</span></p>
-  <p data-id="pg009_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;174&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:214px;line-height:16px;width:23px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">174</span></p>
-  <p data-id="pg009_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;175&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:254px;line-height:16px;width:23px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">175</span></p>
-  <p data-id="pg009_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;176 177&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:292px;line-height:16px;width:59px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">176 177</span></p>
-  <p data-id="pg009_p027" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;178&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:365px;line-height:16px;width:23px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">178</span></p>
-  <p data-id="pg009_p028" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;179&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:403px;line-height:16px;width:23px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">179</span></p>
-  <p data-id="pg009_p029" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;180&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:560px;left:440px;line-height:16px;width:23px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">180</span></p>
-  <p data-id="pg009_p030" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;181&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:99px;line-height:16px;width:23px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">181</span></p>
-  <p data-id="pg009_p031" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;182 183&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:139px;line-height:16px;width:59px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">182 183</span></p>
-  <p data-id="pg009_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;184&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:214px;line-height:16px;width:23px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">184</span></p>
-  <p data-id="pg009_p033" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;185&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:254px;line-height:16px;width:23px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">185</span></p>
-  <p data-id="pg009_p034" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;186 187&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:292px;line-height:16px;width:59px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">186 187</span></p>
-  <p data-id="pg009_p035" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;188&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:365px;line-height:16px;width:23px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">188</span></p>
-  <p data-id="pg009_p036" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;189&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:403px;line-height:16px;width:23px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">189</span></p>
-  <p data-id="pg009_p037" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;190&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:440px;line-height:16px;width:23px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">190</span></p>
-  <p data-id="pg009_p038" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;191&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:99px;line-height:16px;width:23px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">191</span></p>
-  <p data-id="pg009_p039" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;192 193&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:139px;line-height:16px;width:59px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">192 193</span></p>
-  <p data-id="pg009_p040" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;194&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:214px;line-height:16px;width:23px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">194</span></p>
-  <p data-id="pg009_p041" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;195&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:254px;line-height:16px;width:23px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">195</span></p>
-  <p data-id="pg009_p042" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;196 197&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:292px;line-height:16px;width:59px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">196 197</span></p>
-  <p data-id="pg009_p043" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;198&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:365px;line-height:16px;width:23px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">198</span></p>
-  <p data-id="pg009_p044" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;199&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:403px;line-height:16px;width:23px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">199</span></p>
-  <p data-id="pg009_p045" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;200&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:440px;line-height:16px;width:23px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16px;color:#231f20">200</span></p>
-  <img src="images/pg009_im001.jpg" alt="Ten schoolchildren stand in a circle on a green field, following arrows around the circle while one child throws a ball to another in a counting game." data-id="pg009_im001" style="position:absolute;top:79px;left:98px;width:381px;height:235px;opacity:0">
-  <p data-id="pg009_p046" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;101&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:102px;left:122px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">101</span></p>
-  <p data-id="pg009_p047" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;102&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:89px;left:165px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">102</span></p>
-  <p data-id="pg009_p048" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;103&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:82px;left:210px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">103</span></p>
-  <p data-id="pg009_p049" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;104&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:82px;left:256px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">104</span></p>
-  <p data-id="pg009_p050" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;105&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:82px;left:335px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">105</span></p>
-  <p data-id="pg009_p051" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;106&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:89px;left:394px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">106</span></p>
-  <p data-id="pg009_p052" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;107&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:121px;left:441px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">107</span></p>
-  <p data-id="pg009_p053" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;108&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:296px;left:367px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">108</span></p>
-  <p data-id="pg009_p054" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;109&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:301px;left:98px;line-height:18px;width:332px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">109</span></p>
-  <p data-id="pg009_p055" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;110&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:291px;left:165px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">110</span></p>
-  <img src="images/pg009_im005.png" alt="" data-id="pg009_im005" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im006.png" alt="" data-id="pg009_im006" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im007.png" alt="" data-id="pg009_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg009_im008.png" alt="" data-id="pg009_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg009_p056" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:96px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 3</span></p>
-  <p data-id="pg009_p057" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+                <section class="question-card" aria-labelledby="question-title">
+                    <h1 class="question-label" id="question-title" data-id="pg009_p001">Question</h1>
+                    <p class="question-copy" data-id="pg009_p002">Read all the numbers mentioned in the game.</p>
+                </section>
+
+                <section class="exercise-card" aria-labelledby="exercise-three">
+                    <h2 class="exercise-label" id="exercise-three" data-id="pg009_p003">Exercise 3</h2>
+                    <p class="table-instruction" data-id="pg009_p004">Read all the numbers from 151 to 200 in the following table.</p>
+                    <div class="table-wrap">
+                        <table class="number-table" aria-label="Numbers from 151 to 200">
+                            <tbody>
+                                <tr>
+                                    <td data-id="pg009_p006">151</td><td colspan="2" data-id="pg009_p007">152 153</td><td data-id="pg009_p008">154</td><td data-id="pg009_p009">155</td><td colspan="2" data-id="pg009_p010">156 157</td><td data-id="pg009_p011">158</td><td data-id="pg009_p012">159</td><td data-id="pg009_p013">160</td>
+                                </tr>
+                                <tr>
+                                    <td data-id="pg009_p014">161</td><td colspan="2" data-id="pg009_p015">162 163</td><td data-id="pg009_p016">164</td><td data-id="pg009_p017">165</td><td colspan="2" data-id="pg009_p018">166 167</td><td data-id="pg009_p019">168</td><td data-id="pg009_p020">169</td><td data-id="pg009_p021">170</td>
+                                </tr>
+                                <tr>
+                                    <td data-id="pg009_p022">171</td><td colspan="2" data-id="pg009_p023">172 173</td><td data-id="pg009_p024">174</td><td data-id="pg009_p025">175</td><td colspan="2" data-id="pg009_p026">176 177</td><td data-id="pg009_p027">178</td><td data-id="pg009_p028">179</td><td data-id="pg009_p029">180</td>
+                                </tr>
+                                <tr>
+                                    <td data-id="pg009_p030">181</td><td colspan="2" data-id="pg009_p031">182 183</td><td data-id="pg009_p032">184</td><td data-id="pg009_p033">185</td><td colspan="2" data-id="pg009_p034">186 187</td><td data-id="pg009_p035">188</td><td data-id="pg009_p036">189</td><td data-id="pg009_p037">190</td>
+                                </tr>
+                                <tr>
+                                    <td data-id="pg009_p038">191</td><td colspan="2" data-id="pg009_p039">192 193</td><td data-id="pg009_p040">194</td><td data-id="pg009_p041">195</td><td colspan="2" data-id="pg009_p042">196 197</td><td data-id="pg009_p043">198</td><td data-id="pg009_p044">199</td><td data-id="pg009_p045">200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <p class="page-marker" data-id="pg009_p000">3</p>
+            </section>
+        </article>
     </main>
-    <script>
-      // Keep the visual layout fixed while putting the page's narration in
-      // reading order: illustration, its labels, question, then exercise.
-      (function () {
-        var root = document.getElementById("content");
-        var question = root && root.querySelector('[data-id="pg009_p001"]');
-        if (!root || !question) return;
-        [
-          "pg009_im001", "pg009_p046", "pg009_p047", "pg009_p048",
-          "pg009_p049", "pg009_p050", "pg009_p051", "pg009_p052",
-          "pg009_p053", "pg009_p054", "pg009_p055"
-        ].forEach(function (id) {
-          var element = root.querySelector('[data-id="' + id + '"]');
-          if (element) root.insertBefore(element, question);
-        });
-      })();
-    </script>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
@@ -164,5 +97,4 @@
     <script src="./assets/sign-language-sync.js?v=1"></script>
     <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
