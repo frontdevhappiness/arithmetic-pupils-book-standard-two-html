@@ -1,151 +1,91 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Missing numbers in sequences</title>
     <meta name="title-id" content="pg019_sec001" />
     <meta name="page-section-id" content="19" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+        :root { color-scheme: light; --exercise-blue: #219ade; --exercise-border: #90ccee; --page-blue: #00aeef; --ink: #231f20; }
+        html, body { min-height: 100%; }
+        body { margin: 0; overflow-x: hidden; overflow-y: auto; color: var(--ink); background: radial-gradient(circle at 82% 8%, rgba(111, 194, 224, 0.25), transparent 30rem), linear-gradient(200deg, #f5fbfe 0%, #e7f4fa 100%); }
+        .semantic-page-shell { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px)); padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem) calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem)); }
+        #content { box-sizing: border-box; width: min(100%, 64rem); margin: 0 auto; visibility: visible; }
+        .lesson-page { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px) - clamp(2rem, 8vw, 6rem)); padding: clamp(3.5rem, 8vw, 6rem) clamp(1rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem); font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; background: #fff; border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb; border-radius: clamp(1.15rem, 3vw, 2.25rem); box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14); }
+        .lesson-page [data-id] { font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif !important; }
+        .lesson-page [data-id] span { font-family: inherit !important; font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+        .exercise-card { position: relative; box-sizing: border-box; padding: clamp(2.7rem, 6vw, 3.6rem) clamp(0.9rem, 4vw, 2.2rem) clamp(1.25rem, 3vw, 1.8rem); border: 0.2rem solid var(--exercise-border); border-radius: 1.25rem; }
+        .exercise-card + .exercise-card { margin-top: clamp(3.4rem, 8vw, 5rem); }
+        .exercise-label { position: absolute; top: 0; left: clamp(1.25rem, 4vw, 2.5rem); min-width: clamp(8.5rem, 23vw, 11rem); margin: 0; padding: 0.25rem 1rem; color: var(--exercise-blue); background: #fff; border: 0.2rem solid var(--exercise-blue); border-radius: 999px; font-size: clamp(1.4rem, 3.3vw, 1.9rem); font-weight: 700; line-height: 1.1; text-align: center; transform: translateY(-50%); }
+        .instruction { margin: 0 0 clamp(1.1rem, 3vw, 1.6rem); font-size: clamp(1.25rem, 3vw, 1.8rem); line-height: 1.35; }
+        .sequence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.6rem, 6vw, 4.5rem); }
+        .sequence-column { display: grid; gap: clamp(0.6rem, 2vw, 1rem); align-content: start; }
+        .sequence-item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(0.65rem, 2vw, 1rem); align-items: baseline; min-width: 0; font-size: clamp(1.2rem, 3vw, 1.75rem); line-height: 1.25; }
+        .question-number { min-width: 1.8rem; color: var(--exercise-blue); }
+        .sequence { white-space: nowrap; }
+        .combined-sequence { color: var(--ink); }
+        .combined-sequence .combined-number { color: var(--exercise-blue) !important; }
+        .combined-sequence span[data-word-index="0"] { color: var(--exercise-blue) !important; }
+        .page-marker { display: grid; place-items: center; width: clamp(3.5rem, 10vw, 5.25rem); aspect-ratio: 1.65 / 1; margin: clamp(6rem, 18vw, 14rem) auto 0; color: #fff; background: var(--page-blue); border-radius: 50%; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; line-height: 1; }
+        @media (max-width: 38rem) {
+            .lesson-page { padding-inline: clamp(0.75rem, 4vw, 1.25rem); border-width: 0.45rem; border-radius: 1.15rem; }
+            .exercise-card { padding-inline: clamp(0.7rem, 3vw, 1rem); }
+            .sequence-grid { column-gap: clamp(0.8rem, 3vw, 1.4rem); }
+            .sequence-item { gap: 0.35rem; }
+            .question-number { min-width: 1.35rem; }
+        }
+        @media (max-width: 29rem) { .sequence-grid { grid-template-columns: 1fr; gap: clamp(0.6rem, 2vw, 1rem); } }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
-</style>
-  <img src="images/pg019_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg019_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg019_im003.png" alt="" data-id="pg019_im003" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg019_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;13&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:276px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">13</span></p>
-  <img src="images/pg019_im002.png" alt="" data-id="pg019_im002" style="position:absolute;top:227px;left:83px;width:405px;height:206px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im001.png" alt="" data-id="pg019_im001" style="position:absolute;top:70px;left:84px;width:405px;height:150px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im008.png" alt="" data-id="pg019_im008" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im009.png" alt="" data-id="pg019_im009" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im010.png" alt="" data-id="pg019_im010" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im011.png" alt="" data-id="pg019_im011" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg019_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Exercise 7&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:74px;left:112px;line-height:17px;width:74px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;font-weight:bold">Exercise 7</span></p>
-  <img src="images/pg019_im012.png" alt="" data-id="pg019_im012" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg019_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write the missing numbers in each of the following&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:104px;left:95px;line-height:18px;width:388px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write the missing numbers in each of the following</span></p>
-  <img src="images/pg019_im013.png" alt="" data-id="pg019_im013" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg019_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;sequences:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:126px;left:95px;line-height:18px;width:388px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">sequences:</span></p>
-  <p data-id="pg019_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:152px;left:95px;line-height:18px;width:388px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <p data-id="pg019_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;200, _____, 198&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:152px;left:134px;line-height:18px;width:126px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">200, _____, 198</span></p>
-  <p data-id="pg019_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:152px;left:282px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <p data-id="pg019_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;380, _____, 378&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:152px;left:311px;line-height:18px;width:120px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">380, _____, 378</span></p>
-  <p data-id="pg019_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:172px;left:95px;line-height:18px;width:388px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <p data-id="pg019_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;451, _____, 449&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:172px;left:134px;line-height:18px;width:126px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">451, _____, 449</span></p>
-  <p data-id="pg019_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:172px;left:282px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <p data-id="pg019_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;203, _____, 201&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:172px;left:311px;line-height:18px;width:120px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">203, _____, 201</span></p>
-  <p data-id="pg019_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:192px;left:95px;line-height:18px;width:388px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <p data-id="pg019_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;224, _____, 222&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:192px;left:134px;line-height:18px;width:126px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">224, _____, 222</span></p>
-  <p data-id="pg019_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:192px;left:282px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <p data-id="pg019_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;315, _____, 113&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:192px;left:311px;line-height:18px;width:120px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">315, _____, 113</span></p>
-  <p data-id="pg019_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Exercise 8&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:231px;left:112px;line-height:17px;width:74px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;font-weight:bold">Exercise 8</span></p>
-  <p data-id="pg019_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write the number that comes before in each of the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;following sequences:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:257px;left:95px;line-height:18px;width:388px;height:50px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write the number that comes before in each of the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">following sequences:</span></p>
-  <p data-id="pg019_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:307px;left:95px;line-height:18px;width:388px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <p data-id="pg019_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 159, 158&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:307px;left:136px;line-height:18px;width:120px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 159, 158</span></p>
-  <p data-id="pg019_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:307px;left:297px;line-height:18px;width:153px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <p data-id="pg019_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 407, 406&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:307px;left:330px;line-height:18px;width:120px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 407, 406</span></p>
-  <p data-id="pg019_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:334px;left:95px;line-height:18px;width:388px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <p data-id="pg019_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 313, 312&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:334px;left:136px;line-height:18px;width:120px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 313, 312</span></p>
-  <p data-id="pg019_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;7.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:334px;left:297px;line-height:18px;width:153px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">7.</span></p>
-  <p data-id="pg019_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 333, 332&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:334px;left:330px;line-height:18px;width:120px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 333, 332</span></p>
-  <p data-id="pg019_p027" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:356px;left:95px;line-height:18px;width:388px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <p data-id="pg019_p028" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 400, 399&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:356px;left:136px;line-height:18px;width:120px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 400, 399</span></p>
-  <p data-id="pg019_p029" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:356px;left:297px;line-height:18px;width:153px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span></p>
-  <p data-id="pg019_p030" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 179, 178&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:356px;left:330px;line-height:18px;width:120px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 179, 178</span></p>
-  <p data-id="pg019_p031" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:380px;left:95px;line-height:18px;width:388px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <p data-id="pg019_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 210, 209&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:380px;left:136px;line-height:18px;width:120px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 210, 209</span></p>
-  <p data-id="pg019_p033" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:380px;left:297px;line-height:18px;width:153px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span></p>
-  <p data-id="pg019_p034" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 164, 163&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:380px;left:330px;line-height:18px;width:120px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 164, 163</span></p>
-  <p data-id="pg019_p035" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:401px;left:95px;line-height:18px;width:388px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <p data-id="pg019_p036" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____, 355, 354&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:401px;left:136px;line-height:18px;width:120px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____, 355, 354</span></p>
-  <p data-id="pg019_p037" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;10.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; _____, 220, 219&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:401px;left:297px;line-height:18px;width:153px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">10.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> _____, 220, 219</span></p>
-  <img src="images/pg019_im004.png" alt="" data-id="pg019_im004" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im005.png" alt="" data-id="pg019_im005" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im006.png" alt="" data-id="pg019_im006" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg019_im007.png" alt="" data-id="pg019_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg019_p038" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 13&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 13</span></p>
-  <p data-id="pg019_p039" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script>
-  (function () {
-    var root = document.getElementById("content");
-    if (!root) return;
-    function reorder(ids, insertionId) {
-      var insertionPoint = root.querySelector('[data-id="' + insertionId + '"]');
-      if (!insertionPoint) return;
-      var orderedItems = document.createDocumentFragment();
-      ids.forEach(function (id) {
-        var element = root.querySelector('[data-id="' + id + '"]');
-        if (element) orderedItems.appendChild(element);
-      });
-      root.insertBefore(orderedItems, insertionPoint);
-    }
-    reorder([
-      "pg019_p004", "pg019_p005", "pg019_p008", "pg019_p009", "pg019_p012", "pg019_p013",
-      "pg019_p006", "pg019_p007", "pg019_p010", "pg019_p011", "pg019_p014", "pg019_p015"
-    ], "pg019_p016");
-    reorder([
-      "pg019_p019", "pg019_p020", "pg019_p023", "pg019_p024", "pg019_p027", "pg019_p028",
-      "pg019_p031", "pg019_p032", "pg019_p035", "pg019_p036", "pg019_p021", "pg019_p022",
-      "pg019_p025", "pg019_p026", "pg019_p029", "pg019_p030", "pg019_p033", "pg019_p034", "pg019_p037"
-    ], "pg019_im004");
-  })();
-</script>
-<script src="./assets/auto-fit.js"></script>
-</div>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-label="Missing numbers in sequences">
+            <section class="lesson-page" role="article" data-section-type="text" data-section-id="pg019_sec001">
+                <section class="exercise-card" aria-labelledby="exercise-7-label">
+                    <h1 class="exercise-label" id="exercise-7-label" data-id="pg019_p001">Exercise 7</h1>
+                    <p class="instruction"><span data-id="pg019_p002">Write the missing numbers in each of the following</span> <span data-id="pg019_p003">sequences:</span></p>
+                    <div class="sequence-grid">
+                        <div class="sequence-column">
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p004">1.</span><span class="sequence" data-id="pg019_p005">200, _____, 198</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p008">2.</span><span class="sequence" data-id="pg019_p009">451, _____, 449</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p012">3.</span><span class="sequence" data-id="pg019_p013">224, _____, 222</span></div>
+                        </div>
+                        <div class="sequence-column">
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p006">4.</span><span class="sequence" data-id="pg019_p007">380, _____, 378</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p010">5.</span><span class="sequence" data-id="pg019_p011">203, _____, 201</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p014">6.</span><span class="sequence" data-id="pg019_p015">315, _____, 113</span></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="exercise-card" aria-labelledby="exercise-8-label">
+                    <h2 class="exercise-label" id="exercise-8-label" data-id="pg019_p016">Exercise 8</h2>
+                    <p class="instruction" data-id="pg019_p017">Write the number that comes before in each of the following sequences:</p>
+                    <div class="sequence-grid">
+                        <div class="sequence-column">
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p019">1.</span><span class="sequence" data-id="pg019_p020">_____, 159, 158</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p023">2.</span><span class="sequence" data-id="pg019_p024">_____, 313, 312</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p027">3.</span><span class="sequence" data-id="pg019_p028">_____, 400, 399</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p031">4.</span><span class="sequence" data-id="pg019_p032">_____, 210, 209</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p035">5.</span><span class="sequence" data-id="pg019_p036">_____, 355, 354</span></div>
+                        </div>
+                        <div class="sequence-column">
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p021">6.</span><span class="sequence" data-id="pg019_p022">_____, 407, 406</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p025">7.</span><span class="sequence" data-id="pg019_p026">_____, 333, 332</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p029">8.</span><span class="sequence" data-id="pg019_p030">_____, 179, 178</span></div>
+                            <div class="sequence-item"><span class="question-number" data-id="pg019_p033">9.</span><span class="sequence" data-id="pg019_p034">_____, 164, 163</span></div>
+                            <div class="sequence-item"><span class="combined-sequence" data-id="pg019_p037" data-segments="[{&quot;text&quot;:&quot;10.&quot;,&quot;style&quot;:{&quot;color&quot;:&quot;#219ade&quot;}},{&quot;text&quot;:&quot; _____, 220, 219&quot;,&quot;style&quot;:{&quot;color&quot;:&quot;#231f20&quot;}}]"><span class="combined-number">10.</span> _____, 220, 219</span></div>
+                        </div>
+                    </div>
+                </section>
+                <p class="page-marker" data-id="pg019_p000">13</p>
+            </section>
+        </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
@@ -153,5 +93,4 @@
     <script src="./assets/sign-language-sync.js?v=1"></script>
     <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
