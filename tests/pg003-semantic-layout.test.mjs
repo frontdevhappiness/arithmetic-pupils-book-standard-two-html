@@ -51,6 +51,10 @@ test("page 3 mirrors timed word highlights onto every visible contents entry", (
     assert.match(html, /nextVisualWord === currentVisualWord/);
 });
 
+test("page 3 highlight wrappers retain the Sassoon Primary font", () => {
+    assert.match(html, /\.contents-page \[data-id\] span/);
+});
+
 test("page 3 offline copy matches the source HTML", () => {
     assert.equal(offlineFiles()["./pg003_sec001.html"], html);
 });

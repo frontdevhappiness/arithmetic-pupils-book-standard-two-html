@@ -46,6 +46,10 @@ test("page 4 keeps visible narration elements available for timed word highlight
     }
 });
 
+test("page 4 highlight wrappers retain the Sassoon Primary font", () => {
+    assert.match(html, /\.acknowledgements-page \[data-id\] span/);
+});
+
 test("page 4 offline copy matches the source HTML", () => {
     assert.equal(offlineFiles()["./pg004_sec001.html"], html);
 });

@@ -48,6 +48,10 @@ test("page 1 uses the supplied Sassoon Primary font locally", () => {
     );
 });
 
+test("page 1 highlight wrappers retain the Sassoon Primary font", () => {
+    assert.match(html, /\.cover-content \[data-id\] span/);
+});
+
 test("page 1 uses the original PDF blue for the blue cover text", () => {
     assert.equal(occurrences(html, "color: #0099da;"), 2);
     assert.doesNotMatch(html, /#078fc9/i);

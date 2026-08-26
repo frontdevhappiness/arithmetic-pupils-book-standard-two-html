@@ -26,6 +26,10 @@ test("page 2 uses responsive semantic HTML instead of a fixed image overlay", ()
     assert.doesNotMatch(html, /pg002_page|data-fl-reference-width|adt-page-overlay-text|--adt-page-fit-scale/);
 });
 
+test("page 2 highlight wrappers retain the Sassoon Primary font", () => {
+    assert.match(html, /\.publication-page \[data-id\] span/);
+});
+
 test("page 2 preserves every narration-backed text ID exactly once", () => {
     const ids = Array.from({ length: 16 }, (_, index) =>
         `pg002_p${String(index + 1).padStart(3, "0")}`,
