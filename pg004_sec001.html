@@ -1,115 +1,154 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acknowledgements — Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg004_sec001" />
     <meta name="page-section-id" content="4" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face {
+            font-family: "Sassoon Primary Std";
+            src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+        }
+        :root { color-scheme: light; --book-blue: #223e99; --page-blue: #00a5df; }
+        html, body { min-height: 100%; }
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            color: #231f20;
+            background: radial-gradient(circle at 82% 7%, rgba(111, 194, 224, 0.25), transparent 30rem),
+                linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%);
+        }
+        .semantic-page-shell {
+            box-sizing: border-box;
+            min-height: calc(100vh - var(--dock-height, 96px));
+            padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem)
+                calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem));
+        }
+        #content {
+            box-sizing: border-box;
+            width: min(100%, 58rem);
+            margin: 0 auto;
+            visibility: visible;
+        }
+        .acknowledgements-page {
+            box-sizing: border-box;
+            padding: clamp(2rem, 6vw, 4.5rem) clamp(1.15rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 3rem);
+            font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif;
+            background: #fff;
+            border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb;
+            border-radius: clamp(1.15rem, 3vw, 2.25rem);
+            box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14);
+        }
+        .acknowledgements-page [data-id] { font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; }
+        .page-title {
+            margin: 0 0 clamp(1.4rem, 4vw, 2.5rem);
+            color: var(--book-blue);
+            font-size: clamp(2rem, 5.2vw, 3rem);
+            font-weight: 700;
+            line-height: 1.1;
+            text-align: center;
+        }
+        .intro, .closing {
+            margin: 0;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            line-height: 1.5;
+            text-align: justify;
+        }
+        .intro [data-id], .closing [data-id], .names [data-id] { display: inline; }
+        .contributors {
+            display: grid;
+            gap: clamp(1rem, 3vw, 1.6rem);
+            margin: clamp(1.5rem, 4vw, 2.5rem) 0;
+        }
+        .contributor-row {
+            display: grid;
+            grid-template-columns: minmax(8.5rem, 0.7fr) minmax(0, 2fr);
+            column-gap: clamp(1rem, 4vw, 2.5rem);
+            align-items: start;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            line-height: 1.45;
+        }
+        .contributor-row p, .contributor-row div { margin: 0; }
+        .segmented-credit {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: minmax(8.5rem, 0.7fr) minmax(0, 2fr);
+            column-gap: clamp(1rem, 4vw, 2.5rem);
+        }
+        .role { font-weight: 700; }
+        .page-marker {
+            display: grid;
+            place-items: center;
+            width: clamp(3.5rem, 10vw, 5.25rem);
+            aspect-ratio: 1.65 / 1;
+            margin: clamp(2rem, 6vw, 4rem) auto 0;
+            color: #fff;
+            background: var(--page-blue);
+            border-radius: 50%;
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 700;
+            line-height: 1;
+        }
+        @media (max-width: 40rem) {
+            .acknowledgements-page { border-width: 0.45rem; border-radius: 1.15rem; }
+            .intro, .closing { text-align: left; }
+            .contributor-row, .segmented-credit { grid-template-columns: 1fr; row-gap: 0.2rem; }
+        }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:-1px;right:-1px;top:1px;bottom:1px;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:none;transform-origin:center}
-#content [data-id^="pg004_p"] span[data-word-index].bg-yellow-300{line-height:inherit!important}
-</style>
-  <img src="images/pg004_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg004_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg004_im001.png" alt="Page iv" data-id="pg004_im001" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0">
-  <img src="images/pg004_im006.png" alt="" data-id="pg004_im006" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg004_im007.png" alt="" data-id="pg004_im007" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg004_im008.png" alt="" data-id="pg004_im008" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg004_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;iv&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:72px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">iv</span></p>
-  <img src="images/pg004_im009.png" alt="" data-id="pg004_im009" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg004_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Acknowledgements&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;23.290847778320312px&quot;,&quot;color&quot;:&quot;#223e99&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:68px;left:170px;line-height:23.290847778320312px;width:204px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:23.290847778320312px;color:#223e99;font-weight:bold">Acknowledgements</span></p>
-  <img src="images/pg004_im010.png" alt="" data-id="pg004_im010" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg004_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The Tanzania Institute of Education (TIE) would like to&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:105px;left:72px;line-height:18px;width:406px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The Tanzania Institute of Education (TIE) would like to</span></p>
-  <img src="images/pg004_im011.png" alt="" data-id="pg004_im011" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg004_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;acknowledge the contributions of all the organisations and&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.82318115234375px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:126px;left:72px;line-height:18px;width:406px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.82318115234375px;color:#231f20">acknowledge the contributions of all the organisations and</span></p>
-  <p data-id="pg004_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;individuals who participated in designing and developing&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.975032806396484px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:147px;left:72px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.975032806396484px;color:#231f20">individuals who participated in designing and developing</span></p>
-  <p data-id="pg004_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;this textbook. In particular, TIE wishes to thank the&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18.219066619873047px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:168px;left:72px;line-height:18.219066619873047px;width:406px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18.219066619873047px;color:#231f20">this textbook. In particular, TIE wishes to thank the</span></p>
-  <p data-id="pg004_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;University of Dar es Salaam (UDSM), University of Dodoma&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.770538330078125px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:189px;left:72px;line-height:18px;width:406px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.770538330078125px;color:#231f20">University of Dar es Salaam (UDSM), University of Dodoma</span></p>
-  <p data-id="pg004_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;(UDOM), Sokoine University of Agriculture (SUA), Ardhi&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:210px;left:72px;line-height:18px;width:406px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">(UDOM), Sokoine University of Agriculture (SUA), Ardhi</span></p>
-  <p data-id="pg004_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;University (ARU), Dar es Salaam University College of&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:231px;left:72px;line-height:18px;width:406px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">University (ARU), Dar es Salaam University College of</span></p>
-  <p data-id="pg004_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Education (DUCE), Marian University College Bagamoyo&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:252px;left:72px;line-height:18px;width:406px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Education (DUCE), Marian University College Bagamoyo</span></p>
-  <p data-id="pg004_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;(MARUCo), the School Quality Assurance (SQA) Department,&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:273px;left:72px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">(MARUCo), the School Quality Assurance (SQA) Department,</span></p>
-  <p data-id="pg004_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;teachers&#x2019; training colleges, and primary schools. Besides,&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.992347717285156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:294px;left:72px;line-height:18px;width:406px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.992347717285156px;color:#231f20">teachers&#x2019; training colleges, and primary schools. Besides,</span></p>
-  <p data-id="pg004_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;the following individuals are acknowledged:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:315px;left:72px;line-height:18px;width:405px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">the following individuals are acknowledged:</span></p>
-  <p data-id="pg004_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Writers:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:346px;left:72px;line-height:18px;width:405px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Writers:</span></p>
-  <p data-id="pg004_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Mr Luckford D. Hamsini (TIE), Ms&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:346px;left:183px;line-height:18px;width:295px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Mr Luckford D. Hamsini (TIE), Ms</span></p>
-  <p data-id="pg004_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Emaline J. Ndelwa (TIE), Ms Christina D.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:367px;left:183px;line-height:18px;width:295px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Emaline J. Ndelwa (TIE), Ms Christina D.</span></p>
-  <p data-id="pg004_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Kamamba (TIE), Dr Neterindwa Ainea&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:388px;left:183px;line-height:18px;width:295px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Kamamba (TIE), Dr Neterindwa Ainea</span></p>
-  <p data-id="pg004_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;(SUA), &amp; Dr Pitos S. Biganda (SUA)&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:409px;left:183px;line-height:18px;width:295px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">(SUA), &amp; Dr Pitos S. Biganda (SUA)</span></p>
-  <p data-id="pg004_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Editors:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:440px;left:72px;line-height:18px;width:405px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Editors:</span></p>
-  <p data-id="pg004_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Prof. Ralph P. Masenge (MARUCo), Dr&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:440px;left:183px;line-height:18px;width:295px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Prof. Ralph P. Masenge (MARUCo), Dr</span></p>
-  <p data-id="pg004_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Makungu S. Mwanzalima (UDSM) &amp; Ms.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:461px;left:183px;line-height:18px;width:295px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Makungu S. Mwanzalima (UDSM) &amp; Ms.</span></p>
-  <p data-id="pg004_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Theresia W. Magesa&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:482px;left:183px;line-height:18px;width:295px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Theresia W. Magesa</span></p>
-  <p data-id="pg004_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Designer: &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:513px;left:72px;line-height:18px;width:405px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Designer: </span></p>
-  <p data-id="pg004_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Mr Frank P. Maridadi&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:513px;left:183px;line-height:18px;width:154px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Mr Frank P. Maridadi</span></p>
-  <p data-id="pg004_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Illustrator:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot; Ms Victoria R. Mwinyi&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:544px;left:72px;line-height:18px;width:405px;height:32px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Illustrator:</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Ms Victoria R. Mwinyi</span></p>
-  <p data-id="pg004_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Coordinator:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot; Ms Emaline J. Ndelwa&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:576px;left:72px;line-height:18px;width:405px;height:39px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Coordinator:</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Ms Emaline J. Ndelwa</span></p>
-  <p data-id="pg004_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;TIE also appreciates contributions from the primary &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;school teachers and pupils who participated in the trial &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;phase of the manuscript. Likewise, the Institute would&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:615px;left:72px;line-height:18px;width:405px;height:80px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">TIE also appreciates contributions from the primary </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">school teachers and pupils who participated in the trial </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">phase of the manuscript. Likewise, the Institute would</span></p>
-  <img src="images/pg004_im002.png" alt="" data-id="pg004_im002" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg004_im003.png" alt="" data-id="pg004_im003" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg004_im004.png" alt="" data-id="pg004_im004" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg004_im005.png" alt="" data-id="pg004_im005" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg004_p029" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:96px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 4</span></p>
-  <p data-id="pg004_p030" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-labelledby="acknowledgements-title">
+            <section class="acknowledgements-page" role="article" data-section-type="text_only" data-section-id="pg004_sec001">
+                <h1 id="acknowledgements-title" class="page-title" data-id="pg004_p001">Acknowledgements</h1>
+                <p class="intro"><span data-id="pg004_p002">The Tanzania Institute of Education (TIE) would like to</span>
+                    <span data-id="pg004_p003">acknowledge the contributions of all the organisations and</span>
+                    <span data-id="pg004_p004">individuals who participated in designing and developing</span>
+                    <span data-id="pg004_p005">this textbook. In particular, TIE wishes to thank the</span>
+                    <span data-id="pg004_p006">University of Dar es Salaam (UDSM), University of Dodoma</span>
+                    <span data-id="pg004_p007">(UDOM), Sokoine University of Agriculture (SUA), Ardhi</span>
+                    <span data-id="pg004_p008">University (ARU), Dar es Salaam University College of</span>
+                    <span data-id="pg004_p009">Education (DUCE), Marian University College Bagamoyo</span>
+                    <span data-id="pg004_p010">(MARUCo), the School Quality Assurance (SQA) Department,</span>
+                    <span data-id="pg004_p011">teachers’ training colleges, and primary schools. Besides,</span>
+                    <span data-id="pg004_p012">the following individuals are acknowledged:</span></p>
+                <section class="contributors" aria-label="Contributors">
+                    <div class="contributor-row">
+                        <p class="role" data-id="pg004_p013">Writers:</p>
+                        <div class="names"><span data-id="pg004_p014">Mr Luckford D. Hamsini (TIE), Ms</span>
+                            <span data-id="pg004_p015">Emaline J. Ndelwa (TIE), Ms Christina D.</span>
+                            <span data-id="pg004_p016">Kamamba (TIE), Dr Neterindwa Ainea</span>
+                            <span data-id="pg004_p017">(SUA), &amp; Dr Pitos S. Biganda (SUA)</span></div>
+                    </div>
+                    <div class="contributor-row">
+                        <p class="role" data-id="pg004_p018">Editors:</p>
+                        <div class="names"><span data-id="pg004_p019">Prof. Ralph P. Masenge (MARUCo), Dr</span>
+                            <span data-id="pg004_p020">Makungu S. Mwanzalima (UDSM) &amp; Ms.</span>
+                            <span data-id="pg004_p021">Theresia W. Magesa</span></div>
+                    </div>
+                    <div class="contributor-row">
+                        <p class="role" data-id="pg004_p022">Designer:</p>
+                        <p data-id="pg004_p023">Mr Frank P. Maridadi</p>
+                    </div>
+                    <div class="contributor-row"><p class="segmented-credit" data-id="pg004_p024" aria-label="Illustrator: Ms Victoria R. Mwinyi"
+                            data-segments="[{&quot;text&quot;:&quot;Illustrator:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon Primary Std,serif&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot; Ms Victoria R. Mwinyi&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon Primary Std,serif&quot;}}]"><span class="role">Illustrator:</span><span>Ms Victoria R. Mwinyi</span></p></div>
+                    <div class="contributor-row"><p class="segmented-credit" data-id="pg004_p025" aria-label="Coordinator: Ms Emaline J. Ndelwa"
+                            data-segments="[{&quot;text&quot;:&quot;Coordinator:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon Primary Std,serif&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot; Ms Emaline J. Ndelwa&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon Primary Std,serif&quot;}}]"><span class="role">Coordinator:</span><span>Ms Emaline J. Ndelwa</span></p></div>
+                </section>
+                <p class="closing"><span data-id="pg004_p026">TIE also appreciates contributions from the primary school teachers and pupils who participated in the trial phase of the manuscript. Likewise, the Institute would</span></p>
+                <p class="page-marker" data-id="pg004_p000">iv</p>
+            </section>
+        </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
@@ -117,5 +156,4 @@
     <script src="./assets/sign-language-sync.js?v=1"></script>
     <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
