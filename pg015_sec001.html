@@ -1,108 +1,109 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Writing numbers in numerals</title>
     <meta name="title-id" content="pg015_sec001" />
     <meta name="page-section-id" content="15" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+        :root { color-scheme: light; --exercise-blue: #219ade; --exercise-border: #90ccee; --page-marker-blue: #00aeef; --ink: #231f20; }
+        html, body { min-height: 100%; }
+        body { margin: 0; overflow-x: hidden; overflow-y: auto; color: var(--ink); background: radial-gradient(circle at 18% 7%, rgba(111, 194, 224, 0.25), transparent 30rem), linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%); }
+        .semantic-page-shell { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px)); padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem) calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem)); }
+        #content { box-sizing: border-box; width: min(100%, 64rem); margin: 0 auto; visibility: visible; }
+        .writing-page { box-sizing: border-box; display: flex; flex-direction: column; min-height: calc(100vh - var(--dock-height, 96px) - clamp(2rem, 8vw, 6rem)); padding: clamp(2.5rem, 7vw, 5rem) clamp(1rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem); font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; background: #fff; border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb; border-radius: clamp(1.15rem, 3vw, 2.25rem); box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14); }
+        .writing-page [data-id], .writing-page [data-id] span, .writing-page .mirrored-entry, .writing-page .mirrored-entry span { font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif !important; font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+        .continuation-card { box-sizing: border-box; padding: clamp(0.8rem, 2.5vw, 1.5rem) clamp(0.8rem, 3vw, 1.5rem) clamp(1.2rem, 3vw, 1.8rem); border: 0.2rem solid var(--exercise-border); border-top: 0; border-radius: 0 0 1.25rem 1.25rem; }
+        .exercise-list { display: grid; gap: clamp(0.7rem, 2vw, 1.05rem); margin: 0; padding: 0; list-style: none; font-size: clamp(1.28rem, 3vw, 1.8rem); line-height: 1.25; }
+        .exercise-item { display: grid; grid-template-columns: 3.3rem max-content minmax(7rem, 1fr); align-items: baseline; column-gap: clamp(0.3rem, 1vw, 0.7rem); min-width: 0; }
+        .visual-question { color: var(--exercise-blue); }
+        .visual-answer-line { min-width: 5rem; border-bottom: 0.11rem solid var(--ink); transform: translateY(-0.18em); }
+        .narration-source { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+        [data-visual-word-index] { border-radius: 0.14em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+        [data-visual-word-index].pg015-word-active { background: rgba(253, 224, 71, 0.42); }
+        .page-marker { display: grid; place-items: center; width: clamp(3.5rem, 10vw, 5.25rem); aspect-ratio: 1.65 / 1; margin: auto auto 0; color: #fff; background: var(--page-marker-blue); border-radius: 50%; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; line-height: 1; }
+        @media (max-width: 42rem) { .writing-page { border-width: 0.45rem; border-radius: 1.15rem; } .exercise-item { grid-template-columns: 2.7rem minmax(0, max-content) minmax(4rem, 1fr); } }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
-</style>
-  <img src="images/pg015_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg015_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg015_im002.png" alt="" data-id="pg015_im002" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im007.png" alt="" data-id="pg015_im007" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im008.png" alt="" data-id="pg015_im008" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg015_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:280px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">9</span></p>
-  <img src="images/pg015_im009.png" alt="" data-id="pg015_im009" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg015_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Four hundred and ninety ____________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;______&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;16.789281845092773px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;_&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:74px;left:95px;line-height:18px;width:414px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Four hundred and ninety ____________</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:16.789281845092773px;color:#231f20">______</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_</span></p>
-  <img src="images/pg015_im010.png" alt="" data-id="pg015_im010" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im011.png" alt="" data-id="pg015_im011" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im012.png" alt="" data-id="pg015_im012" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg015_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; One hundred and nine ____________________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:100px;left:95px;line-height:18px;width:408px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> One hundred and nine ____________________</span></p>
-  <p data-id="pg015_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;10.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Three hundred and thirty _________________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:125px;left:95px;line-height:18px;width:408px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">10.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Three hundred and thirty _________________</span></p>
-  <p data-id="pg015_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;11.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Two hundred and twenty-two _____________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:151px;left:95px;line-height:18px;width:408px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">11.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Two hundred and twenty-two _____________</span></p>
-  <p data-id="pg015_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;12.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; One hundred and one __________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;19.134262084960938px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;_&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:177px;left:95px;line-height:19.134262084960938px;width:408px;height:25px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">12.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> One hundred and one __________</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:19.134262084960938px;color:#231f20">________</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_</span></p>
-  <p data-id="pg015_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;13.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Three hundred and fifty-five _______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:202px;left:95px;line-height:18px;width:408px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">13.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Three hundred and fifty-five _______________</span></p>
-  <p data-id="pg015_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;14.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Four hundred and one ____________________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:224px;left:95px;line-height:18px;width:408px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">14.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Four hundred and one ____________________</span></p>
-  <p data-id="pg015_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;15.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Two hundred and twenty-five ______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:250px;left:95px;line-height:18px;width:408px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">15.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Two hundred and twenty-five ______________</span></p>
-  <p data-id="pg015_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;16.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Six hundred and one ______________________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:276px;left:95px;line-height:18px;width:408px;height:25px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">16.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Six hundred and one ______________________</span></p>
-  <p data-id="pg015_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;17.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Eight hundred and eight __________________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:301px;left:95px;line-height:18px;width:408px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">17.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Eight hundred and eight __________________</span></p>
-  <p data-id="pg015_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;18.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Seven hundred and thirty-one _____________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:327px;left:95px;line-height:18px;width:408px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">18.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Seven hundred and thirty-one _____________</span></p>
-  <p data-id="pg015_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;19.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Nine hundred and ninety-nine _____________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:353px;left:95px;line-height:18px;width:408px;height:25px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">19.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Nine hundred and ninety-nine _____________</span></p>
-  <p data-id="pg015_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;20.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Eight hundred and thirteen __________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.45164680480957px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;__&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:378px;left:95px;line-height:18px;width:408px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">20.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Eight hundred and thirteen __________</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.45164680480957px;color:#231f20">____</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">__</span></p>
-  <img src="images/pg015_im001.png" alt="" data-id="pg015_im001" style="position:absolute;top:68px;left:80px;width:411px;height:344px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im003.png" alt="" data-id="pg015_im003" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im004.png" alt="" data-id="pg015_im004" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im005.png" alt="" data-id="pg015_im005" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg015_im006.png" alt="" data-id="pg015_im006" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg015_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:96px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 9</span></p>
-  <p data-id="pg015_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-label="Writing numbers in numerals, continued">
+            <section class="writing-page" role="article" data-section-type="text" data-section-id="pg015_sec001">
+                <section class="continuation-card" aria-label="Exercise 12 continued, questions 8 to 20">
+                    <ol class="exercise-list" start="8">
+                        <li><span class="narration-source" data-id="pg015_p001">8. Four hundred and ninety ___________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">8.</span><span>Four hundred and ninety</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p002">9. One hundred and nine ____________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">9.</span><span>One hundred and nine</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p003">10. Three hundred and thirty _________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">10.</span><span>Three hundred and thirty</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p004">11. Two hundred and twenty-two _____________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">11.</span><span>Two hundred and twenty-two</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p005">12. One hundred and one ___________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">12.</span><span>One hundred and one</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p006">13. Three hundred and fifty-five _______________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">13.</span><span>Three hundred and fifty-five</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p007">14. Four hundred and one ____________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">14.</span><span>Four hundred and one</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p008">15. Two hundred and twenty-five ______________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">15.</span><span>Two hundred and twenty-five</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p009">16. Six hundred and one ______________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">16.</span><span>Six hundred and one</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p010">17. Eight hundred and eight __________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">17.</span><span>Eight hundred and eight</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p011">18. Seven hundred and thirty-one _____________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">18.</span><span>Seven hundred and thirty-one</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p012">19. Nine hundred and ninety-nine _____________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">19.</span><span>Nine hundred and ninety-nine</span><span class="visual-answer-line"></span></span></li>
+                        <li><span class="narration-source" data-id="pg015_p013">20. Eight hundred and thirteen ________________</span><span class="exercise-item mirrored-entry" aria-hidden="true"><span class="visual-question">20.</span><span>Eight hundred and thirteen</span><span class="visual-answer-line"></span></span></li>
+                    </ol>
+                </section>
+                <p class="page-marker" data-id="pg015_p000">9</p>
+            </section>
+        </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=1"></script>
+    <script>
+        (function () {
+            var root = document.getElementById("content");
+            if (!root) return;
+            var wordPattern = /[\p{L}\p{N}\p{M}]+(?:[’'-][\p{L}\p{N}\p{M}]+)*/gu;
+            function wrapVisibleWords(element) {
+                var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+                var nodes = [];
+                while (walker.nextNode()) nodes.push(walker.currentNode);
+                var index = 0;
+                nodes.forEach(function (node) {
+                    var source = node.nodeValue || "";
+                    var fragment = document.createDocumentFragment();
+                    var cursor = 0;
+                    for (var match of source.matchAll(wordPattern)) {
+                        if (match.index > cursor) fragment.append(source.slice(cursor, match.index));
+                        var word = document.createElement("span");
+                        word.dataset.visualWordIndex = String(index++);
+                        word.textContent = match[0];
+                        fragment.append(word);
+                        cursor = match.index + match[0].length;
+                    }
+                    if (cursor < source.length) fragment.append(source.slice(cursor));
+                    node.replaceWith(fragment);
+                });
+            }
+            root.querySelectorAll(".mirrored-entry").forEach(wrapVisibleWords);
+            var currentVisualWord = null;
+            function syncVisibleHighlight() {
+                var nextVisualWord = null;
+                root.querySelectorAll(".narration-source[data-id]").forEach(function (source) {
+                    var active = source.querySelector("[data-word-index].bg-yellow-300");
+                    var visual = source.nextElementSibling;
+                    if (!active || !visual || !visual.classList.contains("mirrored-entry")) return;
+                    nextVisualWord = visual.querySelector('[data-visual-word-index="' + active.dataset.wordIndex + '"]');
+                });
+                if (nextVisualWord === currentVisualWord) return;
+                if (currentVisualWord) currentVisualWord.classList.remove("pg015-word-active");
+                if (nextVisualWord) nextVisualWord.classList.add("pg015-word-active");
+                currentVisualWord = nextVisualWord;
+            }
+            new MutationObserver(syncVisibleHighlight).observe(root, { subtree: true, childList: true, attributes: true, attributeFilter: ["class"] });
+        })();
+    </script>
     <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
