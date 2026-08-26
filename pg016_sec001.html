@@ -1,158 +1,105 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chapter Two: Arranging numbers sequentially</title>
     <meta name="title-id" content="pg016_sec001" />
     <meta name="page-section-id" content="16" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+        :root { color-scheme: light; --chapter-blue: #00a9e8; --chapter-title-blue: #00aeef; --chapter-teal: #00aaa9; --exercise-blue: #219ade; --exercise-border: #90ccee; --ink: #231f20; }
+        html, body { min-height: 100%; }
+        body { margin: 0; overflow-x: hidden; overflow-y: auto; color: var(--ink); background: radial-gradient(circle at 18% 7%, rgba(111, 194, 224, 0.25), transparent 30rem), linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%); }
+        .semantic-page-shell { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px)); padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem) calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem)); }
+        #content { box-sizing: border-box; width: min(100%, 64rem); margin: 0 auto; visibility: visible; }
+        .chapter-page { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px) - clamp(2rem, 8vw, 6rem)); padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem); font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; background: #fff; border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb; border-radius: clamp(1.15rem, 3vw, 2.25rem); box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14); }
+        .chapter-page [data-id] { font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif !important; }
+        .chapter-page [data-id] span { font-family: inherit !important; font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+        .chapter-banner { position: relative; display: grid; grid-template-columns: clamp(10rem, 27vw, 15rem) 1fr; align-items: center; min-height: clamp(10rem, 27vw, 14rem); margin: 0 0 clamp(1.5rem, 4vw, 2.5rem); isolation: isolate; }
+        .chapter-banner::after { content: ""; position: absolute; z-index: -3; right: 0; left: clamp(8rem, 21vw, 12rem); height: 66%; background: #fff; border: 0.35rem solid var(--chapter-teal); border-radius: 0 2rem 2rem 0; box-shadow: 0 0.8rem 1.8rem rgba(0, 135, 158, 0.1); }
+        .chapter-badge { position: relative; z-index: 2; display: grid; place-items: center; width: clamp(9rem, 25vw, 13.5rem); aspect-ratio: 1; padding: 1rem; color: #fff; background: linear-gradient(145deg, #039cc8 0%, #0084bc 100%); border: 0.28rem solid #6ac6cf; border-radius: 50%; box-shadow: 0 0 0 0.35rem #ffe762, 0 0 0 0.7rem rgba(0, 139, 190, 0.62), 0 1rem 2rem rgba(27, 84, 110, 0.24); }
+        .chapter-badge::before, .chapter-badge::after { content: ""; position: absolute; z-index: -2; border-radius: 42% 58% 53% 47%; background: rgba(0, 169, 169, 0.72); }
+        .chapter-badge::before { inset: -12% -33% 37% 30%; transform: rotate(28deg); }
+        .chapter-badge::after { inset: 42% -35% -20% -27%; transform: rotate(-18deg); }
+        .chapter-label { display: grid; gap: 0.15rem; text-align: center; font-size: clamp(1.65rem, 4.7vw, 2.55rem); font-weight: 700; line-height: 1.05; }
+        .chapter-title { z-index: 1; box-sizing: border-box; justify-self: center; width: 100%; max-width: 36rem; margin: 0; padding: 1rem clamp(0.8rem, 3vw, 2rem) 1rem clamp(1rem, 4vw, 3rem); color: var(--chapter-title-blue); font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 700; line-height: 1.05; text-align: center; text-wrap: balance; }
+        .lesson-title { position: relative; z-index: 4; margin: 0 0 clamp(0.65rem, 2vw, 1rem); color: var(--ink); font-size: clamp(1.55rem, 3.8vw, 2.15rem); font-weight: 700; line-height: 1.2; }
+        .introduction { margin: 0 0 clamp(1.4rem, 4vw, 2.2rem); font-size: clamp(1.25rem, 2.9vw, 1.75rem); line-height: 1.45; }
+        .content-card { position: relative; box-sizing: border-box; padding: clamp(2.4rem, 5vw, 3rem) clamp(0.8rem, 3vw, 1.5rem) clamp(1rem, 3vw, 1.5rem); border: 0.2rem solid var(--exercise-border); border-radius: 1.25rem; }
+        .content-card + .content-card { margin-top: clamp(2.8rem, 7vw, 4.3rem); }
+        .card-label { position: absolute; top: 0; left: clamp(1.25rem, 4vw, 2.5rem); min-width: clamp(8rem, 22vw, 10.5rem); margin: 0; padding: 0.25rem 1rem; background: #fff; border: 0.2rem solid var(--exercise-blue); border-radius: 999px; font-size: clamp(1.35rem, 3.2vw, 1.85rem); font-weight: 700; line-height: 1.1; text-align: center; transform: translateY(-50%); }
+        .example-label { color: #fff; background: var(--exercise-blue); }
+        .exercise-label { color: var(--exercise-blue); }
+        .example-lines { display: grid; gap: clamp(0.7rem, 2vw, 1rem); font-size: clamp(1.15rem, 2.7vw, 1.65rem); line-height: 1.35; }
+        .example-row { display: grid; grid-template-columns: max-content 1fr; gap: clamp(0.7rem, 2vw, 1.2rem); align-items: baseline; }
+        .number-sequence { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.35rem clamp(0.8rem, 3vw, 2rem); }
+        .arranged { display: inline-block; flex: none; width: 13em; padding-bottom: 0.16em; word-spacing: 0.98em; white-space: nowrap; text-decoration: none; background: repeating-linear-gradient(to right, currentColor 0 1.6em, transparent 1.6em 2.85em) left bottom / auto 0.08em no-repeat; }
+        .arranged span { text-decoration: none; }
+        .exercise-instruction { margin: 0 0 clamp(1rem, 3vw, 1.5rem); font-size: clamp(1.2rem, 2.9vw, 1.75rem); line-height: 1.4; }
+        .ordering-list { display: grid; gap: clamp(0.9rem, 2.5vw, 1.3rem); margin: 0; padding: 0; list-style: none; font-size: clamp(1.1rem, 2.7vw, 1.65rem); }
+        .ordering-question { display: grid; grid-template-columns: 2.5rem repeat(5, minmax(3.6rem, 1fr)); gap: 0.35rem clamp(0.35rem, 1.3vw, 0.9rem); align-items: center; }
+        .question-number { grid-row: 1 / span 2; align-self: start; color: var(--exercise-blue); }
+        .given-number, .answer-slot { text-align: center; }
+        .answer-slot { min-height: 1em; color: transparent; border-bottom: 0.1rem solid var(--ink); }
+        .page-marker { display: grid; place-items: center; width: clamp(3.5rem, 10vw, 5.25rem); aspect-ratio: 1.65 / 1; margin: clamp(3.5rem, 10vw, 6rem) auto 0; color: #fff; background: var(--chapter-blue); border-radius: 50%; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; line-height: 1; }
+        @media (min-width: 42.01rem) { .chapter-banner { margin-bottom: clamp(4.5rem, 7vw, 6rem); } }
+        @media (max-width: 42rem) { .chapter-page { border-width: 0.45rem; border-radius: 1.15rem; } .chapter-banner { grid-template-columns: 1fr; justify-items: center; gap: 1.1rem; min-height: 0; } .chapter-banner::after { inset: auto 0 0; height: 48%; border-radius: 1.5rem; } .chapter-title { max-width: none; padding: 1.1rem 0.75rem 1.35rem; font-size: clamp(1.35rem, 6vw, 2rem); } .chapter-label { font-size: clamp(1.35rem, 6vw, 1.8rem); } .example-row { grid-template-columns: 1fr; gap: 0.25rem; } .number-sequence { justify-content: flex-start; } .ordering-question { grid-template-columns: 2rem repeat(5, minmax(2.6rem, 1fr)); } }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-label="Chapter Two: Arranging numbers sequentially">
+            <section class="chapter-page" role="article" data-section-type="text" data-section-id="pg016_sec001">
+                <header class="chapter-banner">
+                    <div class="chapter-badge"><div class="chapter-label"><span data-id="pg016_p058">Chapter</span><span data-id="pg016_p059">Two</span></div></div>
+                    <h1 class="chapter-title" data-id="pg016_p056">Arranging numbers sequentially</h1>
+                </header>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
-</style>
-  <img src="images/pg016_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg016_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <p data-id="pg016_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;10&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:84px;line-height:18px;width:381px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">10</span></p>
-  <img src="images/pg016_im003.png" alt="" data-id="pg016_im003" style="position:absolute;top:421px;left:69px;width:405px;height:300px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg016_im002.png" alt="" data-id="pg016_im002" style="position:absolute;top:317px;left:71px;width:405px;height:97px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Arranging numbers sequentially from the smallest &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot;to the largest&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:213px;left:73px;line-height:17px;width:406px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#231f20;font-weight:bold">Arranging numbers sequentially from the smallest </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#231f20;font-weight:bold">to the largest</span></p>
-  <p data-id="pg016_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Numbers can be arranged from the smallest to the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;largest as follows:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:262px;left:73px;line-height:18px;width:406px;height:41px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Numbers can be arranged from the smallest to the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">largest as follows:</span></p>
-  <p data-id="pg016_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Example&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:321px;left:73px;line-height:17px;width:112px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#ffffff;font-weight:bold"> Example</span></p>
-  <p data-id="pg016_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Non-arranged numbers: 107 103 109 106 101&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:353px;left:88px;line-height:18px;width:367px;height:25px;text-align:right"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Non-arranged numbers: 107 103 109 106 101</span></p>
-  <p data-id="pg016_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Arranged numbers:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:378px;left:88px;line-height:18px;width:139px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Arranged numbers:</span></p>
-  <p data-id="pg016_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;101 103 106 107 109&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:378px;left:88px;line-height:18px;width:367px;height:20px;text-align:right"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">101 103 106 107 109</span></p>
-  <p data-id="pg016_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Exercise 1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:425px;left:98px;line-height:17px;width:74px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;font-weight:bold">Exercise 1</span></p>
-  <p data-id="pg016_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Arrange the following numbers sequentially from &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;the smallest to the largest:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:453px;left:84px;line-height:18px;width:381px;height:47px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Arrange the following numbers sequentially from </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">the smallest to the largest:</span></p>
-  <p data-id="pg016_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:500px;left:84px;line-height:18px;width:381px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <p data-id="pg016_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;245&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:500px;left:129px;line-height:18px;width:45px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">245</span></p>
-  <p data-id="pg016_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;237&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:500px;left:193px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">237</span></p>
-  <p data-id="pg016_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;220&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:500px;left:269px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">220</span></p>
-  <p data-id="pg016_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;253&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:500px;left:342px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">253</span></p>
-  <p data-id="pg016_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;212&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:500px;left:410px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">212</span></p>
-  <p data-id="pg016_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:521px;left:84px;line-height:18px;width:381px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:521px;left:129px;line-height:18px;width:45px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:521px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:521px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:521px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:84px;line-height:18px;width:381px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <p data-id="pg016_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;483&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:129px;line-height:18px;width:45px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">483</span></p>
-  <p data-id="pg016_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;464&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:193px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">464</span></p>
-  <p data-id="pg016_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;433&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:269px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">433</span></p>
-  <p data-id="pg016_p027" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;344&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:342px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">344</span></p>
-  <p data-id="pg016_p028" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;423&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:410px;line-height:18px;width:27px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">423</span></p>
-  <p data-id="pg016_p029" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:563px;left:84px;line-height:18px;width:381px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p030" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:563px;left:129px;line-height:18px;width:45px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <img src="images/pg016_im010.png" alt="" data-id="pg016_im010" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p031" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:563px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <img src="images/pg016_im011.png" alt="" data-id="pg016_im011" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:563px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <img src="images/pg016_im012.png" alt="" data-id="pg016_im012" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p033" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:563px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <img src="images/pg016_im013.png" alt="" data-id="pg016_im013" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p034" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:584px;left:84px;line-height:18px;width:381px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <img src="images/pg016_im014.png" alt="" data-id="pg016_im014" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p035" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;377&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:584px;left:129px;line-height:18px;width:45px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">377</span></p>
-  <img src="images/pg016_im015.png" alt="" data-id="pg016_im015" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p036" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;368&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:584px;left:193px;line-height:18px;width:27px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">368</span></p>
-  <p data-id="pg016_p037" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;381&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:584px;left:269px;line-height:18px;width:27px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">381</span></p>
-  <p data-id="pg016_p038" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;399&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:584px;left:342px;line-height:18px;width:27px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">399</span></p>
-  <p data-id="pg016_p039" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;309&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:584px;left:410px;line-height:18px;width:27px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">309</span></p>
-  <p data-id="pg016_p040" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:605px;left:84px;line-height:18px;width:381px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p041" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:605px;left:129px;line-height:18px;width:45px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p042" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:605px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p043" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:605px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p044" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:605px;left:130px;line-height:18px;width:45px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p045" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:627px;left:84px;line-height:18px;width:381px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <p data-id="pg016_p046" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;189&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:627px;left:129px;line-height:18px;width:45px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">189</span></p>
-  <p data-id="pg016_p047" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;164&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:627px;left:193px;line-height:18px;width:27px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">164</span></p>
-  <p data-id="pg016_p048" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;199&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:627px;left:269px;line-height:18px;width:27px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">199</span></p>
-  <p data-id="pg016_p049" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;177&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:627px;left:342px;line-height:18px;width:27px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">177</span></p>
-  <p data-id="pg016_p050" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;130&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:627px;left:410px;line-height:18px;width:27px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">130</span></p>
-  <p data-id="pg016_p051" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:647px;left:84px;line-height:18px;width:381px;height:48px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p052" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:647px;left:129px;line-height:18px;width:45px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p053" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:647px;left:130px;line-height:18px;width:45px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p054" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:647px;left:130px;line-height:18px;width:45px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <p data-id="pg016_p055" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:647px;left:130px;line-height:18px;width:45px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">_____</span></p>
-  <img src="images/pg016_im004.png" alt="" data-id="pg016_im004" style="position:absolute;top:26px;left:31px;width:496px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg016_im005.png" alt="" data-id="pg016_im005" style="position:absolute;top:24px;left:29px;width:500px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg016_im001.png" alt="" data-id="pg016_im001" style="position:absolute;top:36px;left:45px;width:430px;height:176px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p056" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Arranging numbers &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot;sequentially&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:92px;left:223px;line-height:24px;width:218px;height:52px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">Arranging numbers </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">sequentially</span></p>
-  <p data-id="pg016_p058" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Chapter&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:81px;left:85px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold">Chapter</span></p>
-  <p data-id="pg016_p059" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Two&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:108px;left:85px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold">Two</span></p>
-  <img src="images/pg016_im006.png" alt="" data-id="pg016_im006" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg016_im007.png" alt="" data-id="pg016_im007" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg016_im008.png" alt="" data-id="pg016_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg016_im009.png" alt="" data-id="pg016_im009" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg016_p060" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 10&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 10</span></p>
-  <p data-id="pg016_p061" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script>
-  (function () {
-    var root = document.getElementById("content");
-    var firstBodyHeading = root && root.querySelector('[data-id="pg016_p001"]');
-    if (!root || !firstBodyHeading) return;
-    ["pg016_p058", "pg016_p059", "pg016_p056"].forEach(function (id) {
-      var element = root.querySelector('[data-id="' + id + '"]');
-      if (element) root.insertBefore(element, firstBodyHeading);
-    });
-  })();
-</script>
-<script src="./assets/auto-fit.js"></script>
-</div>
+                <h2 class="lesson-title" data-id="pg016_p001">Arranging numbers sequentially from the smallest to the largest</h2>
+                <p class="introduction" data-id="pg016_p003">Numbers can be arranged from the smallest to the largest as follows:</p>
+
+                <section class="content-card" aria-labelledby="example-label">
+                    <h2 class="card-label example-label" id="example-label" data-id="pg016_p005">Example</h2>
+                    <div class="example-lines">
+                        <div class="example-row"><span data-id="pg016_p006">Non-arranged numbers: 107 103 109 106 101</span></div>
+                        <div class="example-row"><span data-id="pg016_p007">Arranged numbers:</span><span class="number-sequence arranged" data-id="pg016_p008">101 103 106 107 109</span></div>
+                    </div>
+                </section>
+
+                <section class="content-card" aria-labelledby="exercise-label">
+                    <h2 class="card-label exercise-label" id="exercise-label" data-id="pg016_p009">Exercise 1</h2>
+                    <p class="exercise-instruction" data-id="pg016_p010">Arrange the following numbers sequentially from the smallest to the largest:</p>
+                    <ol class="ordering-list">
+                        <li class="ordering-question">
+                            <span class="question-number" data-id="pg016_p012">1.</span>
+                            <span class="given-number" data-id="pg016_p013">245</span><span class="given-number" data-id="pg016_p014">237</span><span class="given-number" data-id="pg016_p015">220</span><span class="given-number" data-id="pg016_p016">253</span><span class="given-number" data-id="pg016_p017">212</span>
+                            <span class="answer-slot" data-id="pg016_p018">_____</span><span class="answer-slot" data-id="pg016_p019">_____</span><span class="answer-slot" data-id="pg016_p020">_____</span><span class="answer-slot" data-id="pg016_p021">_____</span><span class="answer-slot" data-id="pg016_p022">_____</span>
+                        </li>
+                        <li class="ordering-question">
+                            <span class="question-number" data-id="pg016_p023">2.</span>
+                            <span class="given-number" data-id="pg016_p024">483</span><span class="given-number" data-id="pg016_p025">464</span><span class="given-number" data-id="pg016_p026">433</span><span class="given-number" data-id="pg016_p027">344</span><span class="given-number" data-id="pg016_p028">423</span>
+                            <span class="answer-slot" data-id="pg016_p029">_____</span><span class="answer-slot" data-id="pg016_p030">_____</span><span class="answer-slot" data-id="pg016_p031">_____</span><span class="answer-slot" data-id="pg016_p032">_____</span><span class="answer-slot" data-id="pg016_p033">_____</span>
+                        </li>
+                        <li class="ordering-question">
+                            <span class="question-number" data-id="pg016_p034">3.</span>
+                            <span class="given-number" data-id="pg016_p035">377</span><span class="given-number" data-id="pg016_p036">368</span><span class="given-number" data-id="pg016_p037">381</span><span class="given-number" data-id="pg016_p038">399</span><span class="given-number" data-id="pg016_p039">309</span>
+                            <span class="answer-slot" data-id="pg016_p040">_____</span><span class="answer-slot" data-id="pg016_p041">_____</span><span class="answer-slot" data-id="pg016_p042">_____</span><span class="answer-slot" data-id="pg016_p043">_____</span><span class="answer-slot" data-id="pg016_p044">_____</span>
+                        </li>
+                        <li class="ordering-question">
+                            <span class="question-number" data-id="pg016_p045">4.</span>
+                            <span class="given-number" data-id="pg016_p046">189</span><span class="given-number" data-id="pg016_p047">164</span><span class="given-number" data-id="pg016_p048">199</span><span class="given-number" data-id="pg016_p049">177</span><span class="given-number" data-id="pg016_p050">130</span>
+                            <span class="answer-slot" data-id="pg016_p051">_____</span><span class="answer-slot" data-id="pg016_p052">_____</span><span class="answer-slot" data-id="pg016_p053">_____</span><span class="answer-slot" data-id="pg016_p054">_____</span><span class="answer-slot" data-id="pg016_p055">_____</span>
+                        </li>
+                    </ol>
+                </section>
+                <p class="page-marker" data-id="pg016_p000">10</p>
+            </section>
+        </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
@@ -160,5 +107,4 @@
     <script src="./assets/sign-language-sync.js?v=1"></script>
     <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
