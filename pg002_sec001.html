@@ -3,205 +3,198 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publication information — Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg002_sec001" />
     <meta name="page-section-id" content="2" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face {
+            font-family: "Sassoon Primary Std";
+            src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        :root {
+            color-scheme: light;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            color: #231f20;
+            background:
+                radial-gradient(circle at 18% 8%, rgba(111, 194, 224, 0.25), transparent 28rem),
+                linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%);
+        }
+
+        .semantic-page-shell {
+            box-sizing: border-box;
+            min-height: calc(100vh - var(--dock-height, 96px));
+            padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem)
+                calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem));
+        }
+
+        #content {
+            box-sizing: border-box;
+            width: min(100%, 54rem);
+            margin: 0 auto;
+            visibility: visible;
+        }
+
+        .publication-page {
+            box-sizing: border-box;
+            min-height: calc(100vh - var(--dock-height, 96px) - clamp(2rem, 8vw, 6rem));
+            padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 7vw, 5.25rem) clamp(1.5rem, 5vw, 3rem);
+            background: #ffffff;
+            border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb;
+            border-radius: clamp(1.15rem, 3vw, 2.25rem);
+            box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14);
+        }
+
+        .publication-page [data-id] {
+            margin-top: 0;
+            font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif;
+            font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+            line-height: 1.45;
+        }
+
+        .copyright {
+            margin-bottom: clamp(2.25rem, 7vw, 4.5rem);
+            font-size: clamp(1.45rem, 3vw, 2rem) !important;
+        }
+
+        .publication-history {
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+        }
+
+        .publication-history p,
+        .address p {
+            margin-bottom: 0;
+        }
+
+        .isbn {
+            margin-bottom: clamp(2.25rem, 7vw, 4.5rem);
+        }
+
+        .address {
+            margin-bottom: clamp(2.25rem, 7vw, 4.5rem);
+            font-style: normal;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: max-content minmax(0, 1fr);
+            column-gap: clamp(1rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 6vw, 3.5rem);
+        }
+
+        .contact-details p {
+            margin-bottom: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-details .website {
+            grid-column: 1 / -1;
+        }
+
+        .rights {
+            margin: 0;
+            text-align: justify;
+        }
+
+        .rights [data-id] {
+            display: inline;
+        }
+
+        .page-marker {
+            display: grid;
+            place-items: center;
+            width: clamp(3.5rem, 10vw, 5.25rem);
+            aspect-ratio: 1.65 / 1;
+            margin: clamp(2rem, 6vw, 4rem) auto 0;
+            color: #ffffff;
+            background: #00a5df;
+            border-radius: 50%;
+            font-size: clamp(1.25rem, 3vw, 1.75rem) !important;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        @media (max-width: 34rem) {
+            .publication-page {
+                border-width: 0.45rem;
+                border-radius: 1.15rem;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details .website {
+                grid-column: auto;
+                margin-top: 0.5rem;
+            }
+
+            .rights {
+                text-align: left;
+            }
+        }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-/* The photographed page uses the embedded Sassoon typeface, which is not
-   available to the browser overlay. Position each active-word band from the
-   PDF's real word boxes so metric substitution cannot make it drift. */
-#content :is([data-id="pg002_p001"],[data-id="pg002_p002"],[data-id="pg002_p003"],[data-id="pg002_p004"],[data-id="pg002_p005"],[data-id="pg002_p006"],[data-id="pg002_p007"],[data-id="pg002_p008"],[data-id="pg002_p009"],[data-id="pg002_p010"],[data-id="pg002_p011"],[data-id="pg002_p012"],[data-id="pg002_p013"],[data-id="pg002_p014"],[data-id="pg002_p015"]) span[data-word-index].bg-yellow-300{position:static!important}
-#content :is([data-id="pg002_p001"],[data-id="pg002_p002"],[data-id="pg002_p003"],[data-id="pg002_p004"],[data-id="pg002_p005"],[data-id="pg002_p006"],[data-id="pg002_p007"],[data-id="pg002_p008"],[data-id="pg002_p009"],[data-id="pg002_p010"],[data-id="pg002_p011"],[data-id="pg002_p012"],[data-id="pg002_p013"],[data-id="pg002_p014"],[data-id="pg002_p015"]) span[data-word-index].bg-yellow-300::before{right:auto!important;bottom:auto!important;height:17px!important;transform:none!important}
-#content [data-id="pg002_p001"] span[data-word-index="0"].bg-yellow-300::before{left:18.37px!important;top:2.16px!important;width:70.21px!important}
-#content [data-id="pg002_p001"] span[data-word-index="1"].bg-yellow-300::before{left:93.62px!important;top:2.16px!important;width:64.84px!important}
-#content [data-id="pg002_p001"] span[data-word-index="2"].bg-yellow-300::before{left:163.49px!important;top:2.16px!important;width:15.42px!important}
-#content [data-id="pg002_p001"] span[data-word-index="3"].bg-yellow-300::before{left:183.94px!important;top:2.16px!important;width:78.10px!important}
-#content [data-id="pg002_p001"] span[data-word-index="4"].bg-yellow-300::before{left:267.07px!important;top:2.16px!important;width:40.26px!important}
-#content [data-id="pg002_p002"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:75.89px!important}
-#content [data-id="pg002_p002"] span[data-word-index="1"].bg-yellow-300::before{left:81.29px!important;top:2.96px!important;width:40.26px!important}
-#content [data-id="pg002_p003"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:75.09px!important}
-#content [data-id="pg002_p003"] span[data-word-index="1"].bg-yellow-300::before{left:80.49px!important;top:2.96px!important;width:40.26px!important}
-#content [data-id="pg002_p004"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:72.90px!important}
-#content [data-id="pg002_p004"] span[data-word-index="1"].bg-yellow-300::before{left:78.30px!important;top:2.96px!important;width:40.26px!important}
-#content [data-id="pg002_p005"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.16px!important;width:43.44px!important}
-#content [data-id="pg002_p005"] span[data-word-index="1"].bg-yellow-300::before{left:48.21px!important;top:2.16px!important;width:30.19px!important}
-#content [data-id="pg002_p005"] span[data-word-index="2"].bg-yellow-300::before{left:83.76px!important;top:2.16px!important;width:40.26px!important}
-#content [data-id="pg002_p005"] span[data-word-index="3"].bg-yellow-300::before{left:129.37px!important;top:2.16px!important;width:30.19px!important}
-#content [data-id="pg002_p005"] span[data-word-index="4"].bg-yellow-300::before{left:164.91px!important;top:2.16px!important;width:20.13px!important}
-#content [data-id="pg002_p005"] span[data-word-index="5"].bg-yellow-300::before{left:190.40px!important;top:2.16px!important;width:10.06px!important}
-#content [data-id="pg002_p006"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.96px!important;width:70.21px!important}
-#content [data-id="pg002_p006"] span[data-word-index="1"].bg-yellow-300::before{left:75.61px!important;top:2.96px!important;width:64.84px!important}
-#content [data-id="pg002_p006"] span[data-word-index="2"].bg-yellow-300::before{left:145.48px!important;top:2.96px!important;width:15.42px!important}
-#content [data-id="pg002_p006"] span[data-word-index="3"].bg-yellow-300::before{left:165.93px!important;top:2.96px!important;width:78.10px!important}
-#content [data-id="pg002_p007"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:79.02px!important}
-#content [data-id="pg002_p007"] span[data-word-index="1"].bg-yellow-300::before{left:83.79px!important;top:2.95px!important;width:36.21px!important}
-#content [data-id="pg002_p008"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:30.19px!important}
-#content [data-id="pg002_p008"] span[data-word-index="1"].bg-yellow-300::before{left:34.97px!important;top:2.95px!important;width:20.79px!important}
-#content [data-id="pg002_p008"] span[data-word-index="2"].bg-yellow-300::before{left:60.79px!important;top:2.95px!important;width:56.97px!important}
-#content [data-id="pg002_p008"] span[data-word-index="3"].bg-yellow-300::before{left:122.79px!important;top:2.95px!important;width:57.29px!important}
-#content [data-id="pg002_p008"] span[data-word-index="4"].bg-yellow-300::before{left:185.11px!important;top:2.95px!important;width:39.98px!important}
-#content [data-id="pg002_p009"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:13.55px!important}
-#content [data-id="pg002_p009"] span[data-word-index="1"].bg-yellow-300::before{left:18.95px!important;top:2.95px!important;width:17.41px!important}
-#content [data-id="pg002_p009"] span[data-word-index="2"].bg-yellow-300::before{left:41.39px!important;top:2.95px!important;width:29.29px!important}
-#content [data-id="pg002_p009"] span[data-word-index="3"].bg-yellow-300::before{left:75.71px!important;top:2.95px!important;width:50.32px!important}
-#content [data-id="pg002_p010"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.95px!important;width:50.32px!important}
-#content [data-id="pg002_p010"] span[data-word-index="1"].bg-yellow-300::before{left:55.72px!important;top:2.95px!important;width:28.95px!important}
-#content [data-id="pg002_p010"] span[data-word-index="2"].bg-yellow-300::before{left:89.71px!important;top:2.95px!important;width:16.05px!important}
-#content [data-id="pg002_p010"] span[data-word-index="3"].bg-yellow-300::before{left:110.79px!important;top:2.95px!important;width:58.24px!important}
-#content [data-id="pg002_p011"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.76px!important;width:26.45px!important}
-#content [data-id="pg002_p012"] span[data-word-index="0"].bg-yellow-300::before{left:25.53px!important;top:2.76px!important;width:40.39px!important}
-#content [data-id="pg002_p012"] span[data-word-index="1"].bg-yellow-300::before{left:70.95px!important;top:2.76px!important;width:30.19px!important}
-#content [data-id="pg002_p012"] span[data-word-index="2"].bg-yellow-300::before{left:106.17px!important;top:2.76px!important;width:30.19px!important}
-#content [data-id="pg002_p012"] span[data-word-index="3"].bg-yellow-300::before{left:141.40px!important;top:2.76px!important;width:30.19px!important}
-#content [data-id="pg002_p012"] span[data-word-index="4"].bg-yellow-300::before{left:178.02px!important;top:2.76px!important;width:40.58px!important}
-#content [data-id="pg002_p012"] span[data-word-index="5"].bg-yellow-300::before{left:223.63px!important;top:2.76px!important;width:30.19px!important}
-#content [data-id="pg002_p012"] span[data-word-index="6"].bg-yellow-300::before{left:258.85px!important;top:2.76px!important;width:30.19px!important}
-#content [data-id="pg002_p012"] span[data-word-index="7"].bg-yellow-300::before{left:294.07px!important;top:2.76px!important;width:30.19px!important}
-#content [data-id="pg002_p013"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.76px!important;width:48.81px!important}
-#content [data-id="pg002_p014"] span[data-word-index="0"].bg-yellow-300::before{left:25.53px!important;top:2.76px!important;width:55.60px!important}
-#content [data-id="pg002_p014"] span[data-word-index="1"].bg-yellow-300::before{left:84.90px!important;top:2.76px!important;width:51.70px!important}
-#content [data-id="pg002_p014"] span[data-word-index="2"].bg-yellow-300::before{left:139.80px!important;top:2.76px!important;width:16.80px!important}
-#content [data-id="pg002_p014"] span[data-word-index="3"].bg-yellow-300::before{left:159.80px!important;top:2.76px!important;width:20.40px!important}
-#content [data-id="pg002_p014"] span[data-word-index="4"].bg-yellow-300::before{left:183.40px!important;top:2.76px!important;width:18.80px!important}
-#content [data-id="pg002_p014"] span[data-word-index="5"].bg-yellow-300::before{left:205.40px!important;top:2.76px!important;width:19.77px!important}
-#content [data-id="pg002_p015"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.76px!important;width:70.77px!important}
-#content [data-id="pg002_p015"] span[data-word-index="1"].bg-yellow-300::before{left:97.53px!important;top:2.76px!important;width:38.40px!important}
-#content [data-id="pg002_p015"] span[data-word-index="2"].bg-yellow-300::before{left:141.40px!important;top:2.76px!important;width:19.70px!important}
-#content [data-id="pg002_p015"] span[data-word-index="3"].bg-yellow-300::before{left:166.20px!important;top:2.76px!important;width:19.70px!important}
-#content [data-id="pg002_p015"] span[data-word-index="4"].bg-yellow-300::before{left:191.40px!important;top:2.76px!important;width:15.84px!important}
-#content [data-id="pg002_p016"]{top:540px!important;transform:none!important}
-#content [data-id="pg002_p016"] span[data-word-index].bg-yellow-300{position:static!important}
-#content [data-id="pg002_p016"] span[data-word-index].bg-yellow-300::before{right:auto!important;bottom:auto!important;height:17px!important;transform:none!important}
-#content [data-id="pg002_p016"] span[data-word-index="0"].bg-yellow-300::before{left:.37px!important;top:2.16px!important;width:20.79px!important}
-#content [data-id="pg002_p016"] span[data-word-index="1"].bg-yellow-300::before{left:23.92px!important;top:2.16px!important;width:45.17px!important}
-#content [data-id="pg002_p016"] span[data-word-index="2"].bg-yellow-300::before{left:71.84px!important;top:2.16px!important;width:70.53px!important}
-#content [data-id="pg002_p016"] span[data-word-index="3"].bg-yellow-300::before{left:144.49px!important;top:2.16px!important;width:31.81px!important}
-#content [data-id="pg002_p016"] span[data-word-index="4"].bg-yellow-300::before{left:179.05px!important;top:2.16px!important;width:38.40px!important}
-#content [data-id="pg002_p016"] span[data-word-index="5"].bg-yellow-300::before{left:220.21px!important;top:2.16px!important;width:34.31px!important}
-#content [data-id="pg002_p016"] span[data-word-index="6"].bg-yellow-300::before{left:257.27px!important;top:2.16px!important;width:26.13px!important}
-#content [data-id="pg002_p016"] span[data-word-index="7"].bg-yellow-300::before{left:286.15px!important;top:2.16px!important;width:18.26px!important}
-#content [data-id="pg002_p016"] span[data-word-index="8"].bg-yellow-300::before{left:307.16px!important;top:2.16px!important;width:93.21px!important}
-#content [data-id="pg002_p016"] span[data-word-index="9"].bg-yellow-300::before{left:.37px!important;top:22.56px!important;width:48.79px!important}
-#content [data-id="pg002_p016"] span[data-word-index="10"].bg-yellow-300::before{left:58.41px!important;top:22.56px!important;width:14.81px!important}
-#content [data-id="pg002_p016"] span[data-word-index="11"].bg-yellow-300::before{left:82.46px!important;top:22.56px!important;width:29.60px!important}
-#content [data-id="pg002_p016"] span[data-word-index="12"].bg-yellow-300::before{left:121.31px!important;top:22.56px!important;width:64.53px!important}
-#content [data-id="pg002_p016"] span[data-word-index="13"].bg-yellow-300::before{left:195.09px!important;top:22.56px!important;width:54.43px!important}
-#content [data-id="pg002_p016"] span[data-word-index="14"].bg-yellow-300::before{left:258.77px!important;top:22.56px!important;width:16.68px!important}
-#content [data-id="pg002_p016"] span[data-word-index="15"].bg-yellow-300::before{left:284.70px!important;top:22.56px!important;width:90.97px!important}
-#content [data-id="pg002_p016"] span[data-word-index="16"].bg-yellow-300::before{left:384.91px!important;top:22.56px!important;width:14.81px!important}
-#content [data-id="pg002_p016"] span[data-word-index="17"].bg-yellow-300::before{left:.37px!important;top:42.96px!important;width:29.60px!important}
-#content [data-id="pg002_p016"] span[data-word-index="18"].bg-yellow-300::before{left:35.56px!important;top:42.96px!important;width:37.13px!important}
-#content [data-id="pg002_p016"] span[data-word-index="19"].bg-yellow-300::before{left:78.28px!important;top:42.96px!important;width:16.68px!important}
-#content [data-id="pg002_p016"] span[data-word-index="20"].bg-yellow-300::before{left:100.55px!important;top:42.96px!important;width:19.52px!important}
-#content [data-id="pg002_p016"] span[data-word-index="21"].bg-yellow-300::before{left:125.66px!important;top:42.96px!important;width:29.60px!important}
-#content [data-id="pg002_p016"] span[data-word-index="22"].bg-yellow-300::before{left:160.85px!important;top:42.96px!important;width:56.03px!important}
-#content [data-id="pg002_p016"] span[data-word-index="23"].bg-yellow-300::before{left:221.85px!important;top:42.96px!important;width:79.99px!important}
-#content [data-id="pg002_p016"] span[data-word-index="24"].bg-yellow-300::before{left:306.80px!important;top:42.96px!important;width:93.52px!important}
-#content [data-id="pg002_p016"] span[data-word-index="25"].bg-yellow-300::before{left:.37px!important;top:63.36px!important;width:112.20px!important}
-#content [data-id="pg002_p016"] span[data-word-index="26"].bg-yellow-300::before{left:124.74px!important;top:63.36px!important;width:78.85px!important}
-#content [data-id="pg002_p016"] span[data-word-index="27"].bg-yellow-300::before{left:215.76px!important;top:63.36px!important;width:16.68px!important}
-#content [data-id="pg002_p016"] span[data-word-index="28"].bg-yellow-300::before{left:245.24px!important;top:63.36px!important;width:81.23px!important}
-#content [data-id="pg002_p016"] span[data-word-index="29"].bg-yellow-300::before{left:338.63px!important;top:63.36px!important;width:61.08px!important}
-#content [data-id="pg002_p016"] span[data-word-index="30"].bg-yellow-300::before{left:.37px!important;top:83.76px!important;width:37.93px!important}
-#content [data-id="pg002_p016"] span[data-word-index="31"].bg-yellow-300::before{left:42.65px!important;top:83.76px!important;width:56.51px!important}
-#content [data-id="pg002_p016"] span[data-word-index="32"].bg-yellow-300::before{left:103.51px!important;top:83.76px!important;width:84.35px!important}
-#content [data-id="pg002_p016"] span[data-word-index="33"].bg-yellow-300::before{left:192.22px!important;top:83.76px!important;width:15.42px!important}
-#content [data-id="pg002_p016"] span[data-word-index="34"].bg-yellow-300::before{left:211.99px!important;top:83.76px!important;width:24.87px!important}
-#content [data-id="pg002_p016"] span[data-word-index="35"].bg-yellow-300::before{left:240.57px!important;top:83.76px!important;width:70.21px!important}
-#content [data-id="pg002_p016"] span[data-word-index="36"].bg-yellow-300::before{left:315.14px!important;top:83.76px!important;width:64.84px!important}
-#content [data-id="pg002_p016"] span[data-word-index="37"].bg-yellow-300::before{left:384.33px!important;top:83.76px!important;width:15.42px!important}
-</style>
-  <img src="images/pg002_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg002_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg002_im001.png" alt="Page ii" data-id="pg002_im001" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0">
-  <img src="images/pg002_im006.png" alt="" data-id="pg002_im006" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg002_im007.png" alt="" data-id="pg002_im007" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg002_im008.png" alt="" data-id="pg002_im008" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg002_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ii&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:266px;line-height:18px;width:11px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">ii</span></p>
-  <img src="images/pg002_im009.png" alt="" data-id="pg002_im009" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg002_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;&#xa9; Tanzania Institute of Education 2024&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:70px;left:72px;line-height:17px;width:307px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">&#xa9; Tanzania Institute of Education 2024</span></p>
-  <img src="images/pg002_im010.png" alt="" data-id="pg002_im010" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg002_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Published 2019&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:132px;left:72px;line-height:17px;width:121px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Published 2019</span></p>
-  <img src="images/pg002_im011.png" alt="" data-id="pg002_im011" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg002_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Reprinted 2021&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:154px;left:72px;line-height:17px;width:121px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Reprinted 2021</span></p>
-  <p data-id="pg002_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Reviewed 2024&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:176px;left:72px;line-height:17px;width:121px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Reviewed 2024</span></p>
-  <p data-id="pg002_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ISBN: 978 9912 753 59 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:238px;left:72px;line-height:17px;width:200px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">ISBN: 978 9912 753 59 4</span></p>
-  <p data-id="pg002_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tanzania Institute of Education&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:300px;left:72px;line-height:17px;width:244px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Tanzania Institute of Education</span></p>
-  <p data-id="pg002_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Mikocheni Area&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:322px;left:72px;line-height:17px;width:244px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Mikocheni Area</span></p>
-  <p data-id="pg002_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;132 Ali Hassan Mwinyi Road&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:344px;left:72px;line-height:17px;width:244px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">132 Ali Hassan Mwinyi Road</span></p>
-  <p data-id="pg002_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;P. O. Box 35094&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:366px;left:72px;line-height:17px;width:244px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">P. O. Box 35094</span></p>
-  <p data-id="pg002_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;14112 Dar es Salaam&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:388px;left:72px;line-height:17px;width:244px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">14112 Dar es Salaam</span></p>
-  <p data-id="pg002_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tel:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:451px;left:72px;line-height:17px;width:187px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Tel:</span></p>
-  <p data-id="pg002_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; +255 735 041 170/+255 735 041 168&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:451px;left:144px;line-height:17px;width:324px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic"> +255 735 041 170/+255 735 041 168</span></p>
-  <p data-id="pg002_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Email:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:473px;left:72px;line-height:17px;width:187px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Email:</span></p>
-  <p data-id="pg002_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; director.general@tie.go.tz&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:473px;left:144px;line-height:17px;width:324px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic"> director.general@tie.go.tz</span></p>
-  <p data-id="pg002_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Website: www.tie.go.tz&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:495px;left:72px;line-height:17px;width:187px;height:17px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Website: www.tie.go.tz</span></p>
-  <p data-id="pg002_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;All rights reserved. This book may not be reproduced,\n&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;stored in any retrieval system or transmitted in\n&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;any form or by any means, electronic, mechanical,\n&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;photocopying, recording, or otherwise, without\n&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;prior written permission of the Tanzania Institute of&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:540px;left:72px;line-height:17px;width:404px;height:102px;white-space:pre-line"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">All rights reserved. This book may not be reproduced,</span><br><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">stored in any retrieval system or transmitted in</span><br><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">any form or by any means, electronic, mechanical,</span><br><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">photocopying, recording, or otherwise, without</span><br><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">prior written permission of the Tanzania Institute of</span></p>
-  <p data-id="pg002_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Education.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:642px;left:72px;line-height:17px;width:404px;height:20px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">Education.</span></p>
-  <img src="images/pg002_im002.png" alt="" data-id="pg002_im002" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg002_im003.png" alt="" data-id="pg002_im003" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg002_im004.png" alt="" data-id="pg002_im004" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg002_im005.png" alt="" data-id="pg002_im005" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg002_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:96px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 2</span></p>
-  <p data-id="pg002_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-label="Publication information">
+            <section class="publication-page" role="article" data-section-type="text_only"
+                data-section-id="pg002_sec001">
+                <header>
+                    <p class="copyright" data-id="pg002_p001">© Tanzania Institute of Education 2024</p>
+                </header>
+
+                <section class="publication-history" aria-label="Publication history">
+                    <p data-id="pg002_p002">Published 2019</p>
+                    <p data-id="pg002_p003">Reprinted 2021</p>
+                    <p data-id="pg002_p004">Reviewed 2024</p>
+                </section>
+
+                <p class="isbn" data-id="pg002_p005">ISBN: 978-9912-753-59-4</p>
+
+                <address class="address">
+                    <p data-id="pg002_p006">Tanzania Institute of Education</p>
+                    <p data-id="pg002_p007">Mikocheni Area</p>
+                    <p data-id="pg002_p008">132 Ali Hassan Mwinyi Road</p>
+                    <p data-id="pg002_p009">P. O. Box 35094</p>
+                    <p data-id="pg002_p010">14112 Dar es Salaam</p>
+                </address>
+
+                <section class="contact-details" aria-label="Contact details">
+                    <p data-id="pg002_p011">Tel:</p>
+                    <p data-id="pg002_p012">+255 735 041 170/+255 735 041 168</p>
+                    <p data-id="pg002_p013">Email:</p>
+                    <p data-id="pg002_p014">director.general@tie.go.tz</p>
+                    <p class="website" data-id="pg002_p015">Website: www.tie.go.tz</p>
+                </section>
+
+                <p class="rights"><span data-id="pg002_p016">All rights reserved. This book may not be reproduced,
+                        stored in any retrieval system or transmitted in any form or by any means, electronic,
+                        mechanical, photocopying, recording, or otherwise, without prior written permission of the
+                        Tanzania Institute of</span> <span data-id="pg002_p021">Education.</span></p>
+
+                <p class="page-marker" data-id="pg002_p000">ii</p>
+            </section>
+        </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
 
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
