@@ -26865,6 +26865,62 @@
       }
     ]
   },
+  "pg022_p017": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "________",
+            "start": 0.274958,
+            "end": 2.04917
+          }
+        ]
+      }
+    ]
+  },
+  "pg022_p018": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "________",
+            "start": 0.264625,
+            "end": 2.01096
+          }
+        ]
+      }
+    ]
+  },
+  "pg022_p019": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "________",
+            "start": 0.280667,
+            "end": 2.05475
+          }
+        ]
+      }
+    ]
+  },
+  "pg022_p020": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "____________________________",
+            "start": 0.287167,
+            "end": 3.05204
+          }
+        ]
+      }
+    ]
+  },
   "pg023_p001": {
     "timecodes": [
       null,
