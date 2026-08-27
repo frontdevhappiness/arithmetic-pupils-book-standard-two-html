@@ -1,134 +1,92 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercise 2: Counting cups</title>
     <meta name="title-id" content="pg024_sec001" />
     <meta name="page-section-id" content="24" />
     <link href="./content/tailwind_output.css" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+        @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+        :root { color-scheme: light; --exercise-blue: #219ade; --exercise-border: #90ccee; --table-blue: #31459c; --page-blue: #00a9e8; --ink: #231f20; }
+        html, body { min-height: 100%; }
+        body { margin: 0; overflow-x: hidden; overflow-y: auto; color: var(--ink); background: radial-gradient(circle at 18% 7%, rgba(111, 194, 224, 0.25), transparent 30rem), linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%); }
+        .semantic-page-shell { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px)); padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem) calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem)); }
+        #content { box-sizing: border-box; width: min(100%, 64rem); margin: 0 auto; visibility: visible; }
+        .book-page { box-sizing: border-box; min-height: calc(100vh - var(--dock-height, 96px) - clamp(2rem, 8vw, 6rem)); padding: clamp(3.5rem, 8vw, 5.5rem) clamp(1rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem); font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif; background: #fff; border: clamp(0.45rem, 1vw, 0.8rem) solid #e1f3fb; border-radius: clamp(1.15rem, 3vw, 2.25rem); box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.14); }
+        .book-page [data-id] { font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif !important; }
+        .book-page [data-id] span { font-family: inherit !important; font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+        .exercise-card { position: relative; box-sizing: border-box; padding: clamp(3rem, 7vw, 4rem) clamp(0.55rem, 2vw, 1rem) clamp(0.7rem, 2vw, 1rem); border: 0.2rem solid var(--exercise-border); border-radius: 1.35rem; }
+        .exercise-label { position: absolute; top: 0; left: clamp(1.25rem, 4vw, 2.5rem); min-width: clamp(8.5rem, 23vw, 11rem); margin: 0; padding: 0.25rem 1rem; color: var(--exercise-blue); background: #fff; border: 0.2rem solid var(--exercise-blue); border-radius: 999px; font-size: clamp(1.4rem, 3.3vw, 1.9rem); font-weight: 700; line-height: 1.1; text-align: center; transform: translateY(-50%); }
+        .instruction { margin: 0 0 clamp(0.8rem, 2.5vw, 1.25rem); font-size: clamp(1.2rem, 2.9vw, 1.75rem); line-height: 1.35; }
+        .cup-board { overflow: hidden; border-top: 0.12rem solid var(--table-blue); border-left: 0.12rem solid var(--table-blue); }
+        .question { position: relative; display: grid; grid-template-columns: 1.05fr 0.9fr 0.98fr; }
+        .question-number { position: absolute; z-index: 1; top: 0.55rem; left: 0.6rem; margin: 0; color: var(--exercise-blue); font-size: clamp(1.15rem, 2.8vw, 1.6rem); line-height: 1; }
+        .column-heading { box-sizing: border-box; min-width: 0; margin: 0; padding: clamp(0.35rem, 1.3vw, 0.6rem); border-right: 0.12rem solid var(--table-blue); border-bottom: 0.12rem solid var(--table-blue); font-size: clamp(1.1rem, 2.7vw, 1.55rem); font-weight: 400; line-height: 1.15; text-align: center; }
+        .question > .column-heading:first-of-type { padding-left: 2.25rem; }
+        .cups { display: flex; align-items: center; justify-content: center; gap: clamp(0.22rem, 1vw, 0.55rem); min-width: 0; min-height: clamp(7rem, 19vw, 11rem); padding: clamp(0.5rem, 1.6vw, 0.8rem); border-right: 0.12rem solid var(--table-blue); border-bottom: 0.12rem solid var(--table-blue); }
+        .cups img { display: block; width: auto; max-width: 25%; max-height: clamp(3.8rem, 11vw, 6rem); object-fit: contain; }
+        .cups.five img { max-width: 17%; }
+        .empty-cups::after { content: ""; display: block; min-height: clamp(3.8rem, 11vw, 6rem); }
+        .answer-cell { min-height: clamp(2.5rem, 6vw, 3.25rem); border-right: 0.12rem solid var(--table-blue); border-bottom: 0.12rem solid var(--table-blue); }
+        .answer-line { display: block; width: min(72%, 10rem); height: 0.2rem; margin: clamp(0.9rem, 2.3vw, 1.2rem) auto 0; overflow: hidden; color: transparent; background: var(--ink); }
+        .page-marker { display: grid; place-items: center; width: clamp(3.5rem, 10vw, 5.25rem); aspect-ratio: 1.65 / 1; margin: clamp(2.2rem, 6vw, 4rem) auto 0; color: #fff; background: var(--page-blue); border-radius: 50%; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; line-height: 1; }
+        @media (max-width: 42rem) { .book-page { padding-inline: 0.55rem; border-width: 0.45rem; border-radius: 1.15rem; } .exercise-card { padding-inline: 0.35rem; } .question { grid-template-columns: 1fr 0.88fr 0.82fr; } .question > .column-heading:first-of-type { padding-left: 1.8rem; } .cups { padding-inline: 0.15rem; } }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:none!important}
-</style>
-  <img src="images/pg024_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg024_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg024_im005.png" alt="" data-id="pg024_im005" role="presentation" aria-hidden="true" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0">
-  <p data-id="pg024_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;18&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">18</span></p>
-  <img src="images/pg024_im004.png" alt="" data-id="pg024_im004" role="presentation" aria-hidden="true" style="position:absolute;top:73px;left:70px;width:405px;height:577px;opacity:0">
-  <img src="images/pg024_im010.png" alt="" data-id="pg024_im010" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg024_im011.png" alt="" data-id="pg024_im011" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg024_im012.png" alt="" data-id="pg024_im012" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg024_im013.png" alt="" data-id="pg024_im013" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg024_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Exercise 2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:77px;left:98px;line-height:17px;width:84px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;font-weight:bold"> Exercise 2</span></p>
-  <img src="images/pg024_im014.png" alt="" data-id="pg024_im014" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg024_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Count the cups. Write their total in numerals in the blank space.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:103px;left:81px;line-height:18px;width:391px;height:54px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Count the cups. Write their total in numerals in the blank space.</span></p>
-  <img src="images/pg024_im015.png" alt="" data-id="pg024_im015" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg024_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:157px;left:81px;line-height:18px;width:20px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <p data-id="pg024_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:157px;left:136px;line-height:18px;width:74px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Hundreds</span></p>
-  <p data-id="pg024_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tens&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:157px;left:269px;line-height:18px;width:32px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Tens</span></p>
-  <p data-id="pg024_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Ones&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:157px;left:382px;line-height:18px;width:41px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Ones</span></p>
-  <p data-id="pg024_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;__________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:303px;left:121px;line-height:17px;width:85px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">__________</span></p>
-  <p data-id="pg024_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:303px;left:244px;line-height:17px;width:68px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">________</span></p>
-  <p data-id="pg024_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;___________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:303px;left:351px;line-height:17px;width:94px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">___________</span></p>
-  <p data-id="pg024_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:329px;left:88px;line-height:18px;width:19px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <p data-id="pg024_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:329px;left:136px;line-height:18px;width:74px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Hundreds</span></p>
-  <p data-id="pg024_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tens&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:329px;left:269px;line-height:18px;width:32px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Tens</span></p>
-  <p data-id="pg024_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Ones&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:329px;left:382px;line-height:18px;width:41px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Ones</span></p>
-  <p data-id="pg024_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;___________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:463px;left:121px;line-height:17px;width:94px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">___________</span></p>
-  <p data-id="pg024_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:463px;left:244px;line-height:17px;width:77px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">_________</span></p>
-  <p data-id="pg024_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;___________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:463px;left:121px;line-height:17px;width:94px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">___________</span></p>
-  <p data-id="pg024_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:485px;left:88px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <p data-id="pg024_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Hundreds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:485px;left:136px;line-height:18px;width:74px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Hundreds</span></p>
-  <p data-id="pg024_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tens&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:485px;left:269px;line-height:18px;width:32px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Tens</span></p>
-  <p data-id="pg024_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Ones&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:485px;left:382px;line-height:18px;width:41px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Ones</span></p>
-  <p data-id="pg024_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;___________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:614px;left:121px;line-height:17px;width:94px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">___________</span></p>
-  <p data-id="pg024_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:614px;left:244px;line-height:17px;width:77px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">_________</span></p>
-  <p data-id="pg024_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;__________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:614px;left:351px;line-height:17px;width:85px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">__________</span></p>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg024_im001" clipPathUnits="userSpaceOnUse"><path d="M109.87 198.41L149.65 198.41L149.65 235.96L109.87 235.96Z" transform="translate(-108,-197)"/></clipPath></defs></svg>
-  <img src="images/pg024_im001.png" alt="Row 1 shows three cups in the hundreds column, two cups in the tens column, and five cups in the ones column." data-id="pg024_im001" style="position:absolute;top:197px;left:108px;width:42px;height:40px;clip-path:url(#clip-pg024_im001);opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg024_im002" clipPathUnits="userSpaceOnUse"><path d="M245.67 356.95L282.07 356.95L282.07 394.5L245.67 394.5Z" transform="translate(-244,-356)"/></clipPath></defs></svg>
-  <img src="images/pg024_im002.png" alt="Row 2 shows two cups in the hundreds column, three cups in the tens column, and four cups in the ones column." data-id="pg024_im002" style="position:absolute;top:356px;left:244px;width:39px;height:40px;clip-path:url(#clip-pg024_im002);opacity:0">
-  <img src="images/pg024_im003.png" alt="Row 3 shows four cups in the hundreds column, three cups in the tens column, and no cups in the ones column." data-id="pg024_im003" style="position:absolute;top:530px;left:108px;width:38px;height:33px;opacity:0">
-  <img src="images/pg024_im006.png" alt="" data-id="pg024_im006" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg024_im007.png" alt="" data-id="pg024_im007" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg024_im008.png" alt="" data-id="pg024_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg024_im009.png" alt="" data-id="pg024_im009" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg024_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 18&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 18</span></p>
-  <p data-id="pg024_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script>
-  (function () {
-    var content = document.getElementById("content");
-    var footer = content && content.querySelector('[data-id="pg024_p025"]');
-    if (!content || !footer) return;
-    [
-      "pg024_p001", "pg024_p002",
-      "pg024_p004", "pg024_p005", "pg024_p006", "pg024_p007", "pg024_im001",
-      "pg024_p011", "pg024_p012", "pg024_p013", "pg024_p014", "pg024_im002",
-      "pg024_p018", "pg024_p019", "pg024_p020", "pg024_p021", "pg024_im003"
-    ].forEach(function (id) {
-      var node = content.querySelector('[data-id="' + id + '"]');
-      if (node) content.insertBefore(node, footer);
-    });
-  })();
-</script>
-<script src="./assets/auto-fit.js"></script>
-</div>
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-label="Exercise 2: Counting cups">
+            <section class="book-page" role="article" data-section-type="text_and_images" data-section-id="pg024_sec001">
+                <section class="exercise-card" aria-labelledby="exercise-2-label">
+                    <h1 class="exercise-label" id="exercise-2-label" data-id="pg024_p001">Exercise 2</h1>
+                    <p class="instruction" data-id="pg024_p002">Count the cups. Write their total in numerals in the blank space.</p>
+                    <div class="cup-board">
+                        <section class="question" aria-label="Question 1">
+                            <p class="question-number" data-id="pg024_p004">1.</p>
+                            <h2 class="column-heading" data-id="pg024_p005">Hundreds</h2>
+                            <h2 class="column-heading" data-id="pg024_p006">Tens</h2>
+                            <h2 class="column-heading" data-id="pg024_p007">Ones</h2>
+                            <div class="cups"><img src="images/pg024_im001.png" alt="Row 1 shows three cups in the hundreds column, two cups in the tens column, and five cups in the ones column." data-id="pg024_im001"><img src="images/pg024_im001.png" alt="" aria-hidden="true"><img src="images/pg024_im001.png" alt="" aria-hidden="true"></div>
+                            <div class="cups"><img src="images/pg024_im002.png" alt="" aria-hidden="true"><img src="images/pg024_im002.png" alt="" aria-hidden="true"></div>
+                            <div class="cups five"><img src="images/pg024_im003.png" alt="" aria-hidden="true"><img src="images/pg024_im003.png" alt="" aria-hidden="true"><img src="images/pg024_im003.png" alt="" aria-hidden="true"><img src="images/pg024_im003.png" alt="" aria-hidden="true"><img src="images/pg024_im003.png" alt="" aria-hidden="true"></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p008">__________</span></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p009">________</span></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p010">___________</span></div>
+                        </section>
+                        <section class="question" aria-label="Question 2">
+                            <p class="question-number" data-id="pg024_p011">2.</p>
+                            <h2 class="column-heading" data-id="pg024_p012">Hundreds</h2>
+                            <h2 class="column-heading" data-id="pg024_p013">Tens</h2>
+                            <h2 class="column-heading" data-id="pg024_p014">Ones</h2>
+                            <div class="cups"><img src="images/pg024_im001.png" alt="" aria-hidden="true"><img src="images/pg024_im001.png" alt="" aria-hidden="true"></div>
+                            <div class="cups"><img src="images/pg024_im002.png" alt="Row 2 shows two cups in the hundreds column, three cups in the tens column, and four cups in the ones column." data-id="pg024_im002"><img src="images/pg024_im002.png" alt="" aria-hidden="true"><img src="images/pg024_im002.png" alt="" aria-hidden="true"></div>
+                            <div class="cups"><img src="images/pg024_im003.png" alt="" aria-hidden="true"><img src="images/pg024_im003.png" alt="" aria-hidden="true"><img src="images/pg024_im003.png" alt="" aria-hidden="true"><img src="images/pg024_im003.png" alt="" aria-hidden="true"></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p015">___________</span></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p016">_________</span></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p017">___________</span></div>
+                        </section>
+                        <section class="question" aria-label="Question 3">
+                            <p class="question-number" data-id="pg024_p018">3.</p>
+                            <h2 class="column-heading" data-id="pg024_p019">Hundreds</h2>
+                            <h2 class="column-heading" data-id="pg024_p020">Tens</h2>
+                            <h2 class="column-heading" data-id="pg024_p021">Ones</h2>
+                            <div class="cups"><img src="images/pg024_im001.png" alt="Row 3 shows four cups in the hundreds column, three cups in the tens column, and no cups in the ones column." data-id="pg024_im003"><img src="images/pg024_im001.png" alt="" aria-hidden="true"><img src="images/pg024_im001.png" alt="" aria-hidden="true"><img src="images/pg024_im001.png" alt="" aria-hidden="true"></div>
+                            <div class="cups"><img src="images/pg024_im002.png" alt="" aria-hidden="true"><img src="images/pg024_im002.png" alt="" aria-hidden="true"><img src="images/pg024_im002.png" alt="" aria-hidden="true"></div>
+                            <div class="cups empty-cups" aria-hidden="true"></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p022">___________</span></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p023">_________</span></div>
+                            <div class="answer-cell"><span class="answer-line" data-id="pg024_p024">__________</span></div>
+                        </section>
+                    </div>
+                </section>
+                <p class="page-marker" data-id="pg024_p000">18</p>
+            </section>
+        </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
@@ -136,5 +94,4 @@
     <script src="./assets/sign-language-sync.js?v=1"></script>
     <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
