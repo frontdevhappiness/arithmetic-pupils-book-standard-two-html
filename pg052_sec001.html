@@ -1,157 +1,325 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg052_sec001" />
     <meta name="page-section-id" content="52" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="./content/tailwind_output.css" rel="stylesheet" />
+    <link href="./assets/fonts.css" rel="stylesheet" />
+    <link href="./assets/semantic-pages-052-071.css" rel="stylesheet" />
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+      /* Page 52 is intentionally tuned to the proportions of PDF page 46. */
+      article[data-section-id="pg052_sec001"] {
+        width: min(100%, 58rem);
+        min-height: 79.8rem;
+        margin: 1rem auto;
+        padding: 6.35rem 6.5rem 3.1rem;
+        background:
+          linear-gradient(90deg, rgba(79, 183, 235, 0.12), transparent 8%, transparent 92%, rgba(79, 183, 235, 0.12)),
+          #fff;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked {
+        width: 100%; min-height: 61.5rem; margin: 0;
+        padding: 3.35rem 1.35rem 1.15rem;
+        border-color: #75c5ef; border-radius: 1.25rem;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .card-label {
+        top: 0;
+        left: clamp(1.2rem, 4vw, 2.5rem);
+        min-width: clamp(7.5rem, 22vw, 11rem);
+        margin: 0;
+        padding: 0.25rem 0.9rem;
+        color: #fff;
+        background: #219ade;
+        border: 0.2rem solid #219ade;
+        border-radius: 999px;
+        font-size: clamp(1.3rem, 3.2vw, 1.85rem);
+        font-weight: 700;
+        line-height: 1.1;
+        transform: translateY(-50%);
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .worked-top {
+        grid-template-columns: 11rem 1fr; gap: 1.45rem;
+        min-height: 15.3rem; margin: 0;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .solution-title {
+        margin: 0.05rem 0 2rem; font-size: 1.9rem;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .vertical-sum {
+        width: 6.9rem; margin: 6.15rem auto 0;
+        font-size: 1.62rem; line-height: 1.15;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .top-sum .sum-rule { margin: 0.25rem 0 1.85rem; }
+      article[data-section-id="pg052_sec001"] .pg052-worked .place-sum {
+        width: 22.8rem; max-width: 100%; font-size: 1.72rem;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .place-sum .labels {
+        margin-bottom: 0.65rem; font-size: 1.4rem;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .place-sum .row { line-height: 1.38; }
+      article[data-section-id="pg052_sec001"] .pg052-worked .steps-title {
+        margin: 0.2rem 0 0.65rem; font-size: 1.9rem;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-row {
+        grid-template-columns: minmax(0, 3.52fr) minmax(8.35rem, 1fr);
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-row:nth-child(1) { min-height: 12rem; }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-row:nth-child(2) { min-height: 14rem; }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-row:nth-child(3) { min-height: 10.2rem; }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-copy {
+        padding: 0.42rem 0.95rem; font-size: 1.65rem; line-height: 1.25;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-copy p + p { margin-top: 0.28rem; }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-math { padding: 0.25rem; }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-math .vertical-sum {
+        width: 6.5rem; margin: 0.25rem auto; font-size: 1.53rem;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .step-math .vertical-sum .carry {
+        height: 0.78rem;
+        font-size: 1.16rem;
+        line-height: 0.9;
+      }
+      article[data-section-id="pg052_sec001"] .pg052-worked .therefore {
+        padding: 0.25rem 1rem 0.35rem; text-align: left; font-size: 1.65rem;
+      }
+      article[data-section-id="pg052_sec001"] > .page-number {
+        display: grid;
+        place-items: center;
+        width: clamp(3.5rem, 10vw, 5.25rem);
+        aspect-ratio: 1.65 / 1;
+        margin: clamp(2.2rem, 6vw, 4rem) auto 0;
+        padding: 0;
+        color: #fff;
+        background: #00a9e8;
+        border-radius: 50%;
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-weight: 700;
+        line-height: 1;
+      }
+      @media (max-width: 42rem) {
+        article[data-section-id="pg052_sec001"] { min-height: 100vh; margin: 0; padding: 4.5rem 1rem 2rem; }
+        article[data-section-id="pg052_sec001"] .pg052-worked { min-height: 0; padding: 3rem 0.7rem 1rem; }
+        article[data-section-id="pg052_sec001"] .pg052-worked .worked-top,
+        article[data-section-id="pg052_sec001"] .pg052-worked .step-row { grid-template-columns: 1fr; }
+        article[data-section-id="pg052_sec001"] .pg052-worked .vertical-sum { margin: 1rem auto; }
+        article[data-section-id="pg052_sec001"] .pg052-worked .step-row:nth-child(n) { min-height: 0; }
+        article[data-section-id="pg052_sec001"] > .page-number { margin-top: 2rem; }
+      }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
-</head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg052_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg052_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg052_im002.png" alt="" data-id="pg052_im002" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg052_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;46&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">46</span></p>
-  <img src="images/pg052_im001.png" alt="" data-id="pg052_im001" style="position:absolute;top:70px;left:70px;width:405px;height:576px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg052_im007.png" alt="" data-id="pg052_im007" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg052_im008.png" alt="" data-id="pg052_im008" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg052_im009.png" alt="" data-id="pg052_im009" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg052_im010.png" alt="" data-id="pg052_im010" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg052_p001" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Example 2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:73px;left:72px;line-height:18px;width:307px;height:35px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold"> Example 2</span></p>
-  <p data-id="pg052_p065" style="position:absolute;top:107px;left:65px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none"></p>
-  <img src="images/pg052_im011.png" alt="" data-id="pg052_im011" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg052_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Solution&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:108px;left:72px;line-height:18px;width:307px;height:39px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold"> Solution</span></p>
-  <p data-id="pg052_p066" style="position:absolute;top:146px;left:65px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none"></p>
-  <img src="images/pg052_im012.png" alt="" data-id="pg052_im012" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg052_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;+&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:195px;left:89px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">+</span></p>
-  <p data-id="pg052_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:171px;left:72px;line-height:18px;width:307px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:195px;left:72px;line-height:18px;width:307px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:171px;left:118px;line-height:18px;width:9px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:195px;left:118px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">9</span></p>
-  <p data-id="pg052_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:171px;left:118px;line-height:18px;width:23px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:195px;left:118px;line-height:18px;width:23px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">8</span></p>
-  <p data-id="pg052_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;hundreds tens ones&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:147px;left:72px;line-height:18px;width:307px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">hundreds tens ones</span></p>
-  <p data-id="pg052_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;+&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:196px;left:191px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">+</span></p>
-  <p data-id="pg052_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:173px;left:216px;line-height:18px;width:10px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:196px;left:216px;line-height:18px;width:10px;height:318px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:173px;left:277px;line-height:18px;width:9px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:196px;left:277px;line-height:18px;width:9px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">9</span></p>
-  <p data-id="pg052_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:173px;left:277px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:196px;left:348px;line-height:18px;width:11px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">8</span></p>
-  <p data-id="pg052_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:218px;left:72px;line-height:18px;width:307px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">3</span></p>
-  <p data-id="pg052_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:218px;left:277px;line-height:18px;width:9px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:218px;left:348px;line-height:18px;width:11px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p data-id="pg052_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Steps&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:249px;left:72px;line-height:18px;width:307px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">Steps</span></p>
-  <p data-id="pg052_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;Add ones: 6 + 8 = 14.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:276px;left:72px;line-height:18px;width:307px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Add ones: 6 + 8 = 14.</span></p>
-  <p data-id="pg052_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Regroup 14 ones into 1 tens and 4 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;ones. Write 4 in the ones place. Take&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:297px;left:72px;line-height:18px;width:307px;height:38px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Regroup 14 ones into 1 tens and 4 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">ones. Write 4 in the ones place. Take</span></p>
-  <p data-id="pg052_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1 tens to the tens place.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:335px;left:72px;line-height:18px;width:307px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">1 tens to the tens place.</span></p>
-  <p data-id="pg052_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;+&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:313px;left:383px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">+</span></p>
-  <p data-id="pg052_p027" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:290px;left:397px;line-height:18px;width:37px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p028" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:313px;left:397px;line-height:18px;width:37px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p029" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:290px;left:412px;line-height:18px;width:9px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p030" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:313px;left:412px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">9</span></p>
-  <p data-id="pg052_p031" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:290px;left:412px;line-height:18px;width:23px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:313px;left:412px;line-height:18px;width:23px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">8</span></p>
-  <p data-id="pg052_p033" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;15px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:276px;left:414px;line-height:15px;width:7px;height:17px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:15px;color:#000000">1</span></p>
-  <p data-id="pg052_p034" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:335px;left:397px;line-height:18px;width:37px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p data-id="pg052_p035" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Add tens:1 + 6 + 9 = 16. Regroup&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:385px;left:92px;line-height:18px;width:286px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Add tens:1 + 6 + 9 = 16. Regroup</span></p>
-  <p data-id="pg052_p036" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;16 tens into 1 hundreds and 6 tens.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:407px;left:397px;line-height:18px;width:50px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">16 tens into 1 hundreds and 6 tens.</span></p>
-  <p data-id="pg052_p037" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write 6 in the tens place.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:429px;left:92px;line-height:18px;width:286px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write 6 in the tens place.</span></p>
-  <p data-id="pg052_p038" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Take 1 hundreds to the hundreds &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;place.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:456px;left:92px;line-height:18px;width:286px;height:39px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Take 1 hundreds to the hundreds </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">place.</span></p>
-  <p data-id="pg052_p040" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;+&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:421px;left:383px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">+</span></p>
-  <p data-id="pg052_p041" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:397px;left:397px;line-height:18px;width:25px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p042" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:421px;left:397px;line-height:18px;width:50px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p043" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:397px;left:416px;line-height:18px;width:28px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p044" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:421px;left:397px;line-height:18px;width:25px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">9</span></p>
-  <p data-id="pg052_p045" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:397px;left:416px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p046" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:421px;left:416px;line-height:18px;width:28px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">8</span></p>
-  <p data-id="pg052_p047" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;12px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:387px;left:402px;line-height:12px;width:6px;height:13px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:12px;color:#000000">1</span></p>
-  <p data-id="pg052_p048" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;12px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:387px;left:402px;line-height:12px;width:6px;height:13px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:12px;color:#000000">1</span></p>
-  <p data-id="pg052_p049" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:442px;left:397px;line-height:18px;width:50px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6 4</span></p>
-  <p data-id="pg052_p050" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;Addhundreds:1+1+1=3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:514px;left:216px;line-height:18px;width:10px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Addhundreds:1+1+1=3.</span></p>
-  <p data-id="pg052_p051" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write 3 to the hundreds place.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:108px;line-height:18px;width:222px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write 3 to the hundreds place.</span></p>
-  <p data-id="pg052_p052" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;+&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:550px;left:383px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">+</span></p>
-  <p data-id="pg052_p053" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:526px;left:397px;line-height:18px;width:46px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p054" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:550px;left:397px;line-height:18px;width:46px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg052_p055" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:526px;left:414px;line-height:18px;width:11px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p056" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:550px;left:414px;line-height:18px;width:11px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">9</span></p>
-  <p data-id="pg052_p057" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:526px;left:416px;line-height:18px;width:28px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6</span></p>
-  <p data-id="pg052_p058" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:550px;left:416px;line-height:18px;width:28px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">8</span></p>
-  <p data-id="pg052_p059" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;12px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:515px;left:402px;line-height:12px;width:6px;height:13px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:12px;color:#000000">1</span></p>
-  <p data-id="pg052_p060" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;12px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:515px;left:402px;line-height:12px;width:6px;height:13px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:12px;color:#000000">1</span></p>
-  <p data-id="pg052_p061" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6 6 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:571px;left:397px;line-height:18px;width:46px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">6 6 4</span></p>
-  <p data-id="pg052_p062" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Therefore, the answer is 364.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:610px;left:88px;line-height:18px;width:218px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Therefore, the answer is 364.</span></p>
-  <img src="images/pg052_im003.png" alt="" data-id="pg052_im003" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg052_im004.png" alt="" data-id="pg052_im004" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg052_im005.png" alt="" data-id="pg052_im005" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg052_im006.png" alt="" data-id="pg052_im006" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg052_p063" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 46&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 46</span></p>
-  <p data-id="pg052_p064" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+  </head>
+  <body>
+    <main id="content">
+      <article
+        class="semantic-52-71"
+        role="article"
+        data-section-id="pg052_sec001"
+      >
+        <section class="book-card pg052-worked">
+          <div class="card-label">Example 2</div>
+          <div class="worked-top">
+            <div>
+              <div class="vertical-sum top-sum">
+                <div>166</div>
+                <div><span class="op">+</span>198</div>
+                <div class="sum-rule"></div>
+                <div>&nbsp;</div>
+                <div class="sum-rule"></div>
+              </div>
+            </div>
+            <div class="place-solution">
+              <h2 class="solution-title">Solution</h2>
+              <div class="place-sum">
+                <div class="labels"><i>hundreds</i><i>tens</i><i>ones</i></div>
+                <div class="row">
+                  <span></span><span>1</span><span>6</span><span>6</span>
+                </div>
+                <div class="row">
+                  <b>+</b><span>1</span><span>9</span><span>8</span>
+                </div>
+                <div class="rule"></div>
+                <div class="row">
+                  <span></span><span>3</span><span>6</span><span>4</span>
+                </div>
+                <div class="rule"></div>
+              </div>
+            </div>
+          </div>
+          <h2 class="steps-title">Steps</h2>
+          <div class="step-table">
+            <div class="step-row">
+              <div class="step-copy">
+                <p class="step-lead">
+                  <span class="number">1.</span
+                  ><span>Add ones: 6 + 8 = 14.</span>
+                </p>
+                <p>
+                  Regroup 14 ones into 1 tens and 4 ones.<br />Write 4 in the
+                  ones place. Take 1 tens to the tens place.
+                </p>
+              </div>
+              <div class="step-math">
+                <div class="vertical-sum has-carry">
+                  <div class="carry carry-1"><span>1</span></div>
+                  <div>166</div>
+                  <div><span class="op">+</span>198</div>
+                  <div class="sum-rule"></div>
+                  <div>4</div>
+                  <div class="sum-rule"></div>
+                </div>
+              </div>
+            </div>
+            <div class="step-row">
+              <div class="step-copy">
+                <p class="step-lead">
+                  <span class="number">2.</span
+                  ><span>Add tens: 1 + 6 + 9 = 16.</span>
+                </p>
+                <p>
+                  Regroup 16 tens into 1 hundreds and 6 tens.<br />Write 6 in
+                  the tens place. Take 1 hundreds to the hundreds place.
+                </p>
+              </div>
+              <div class="step-math">
+                <div class="vertical-sum has-carry">
+                  <div class="carry carry-2"><span>1</span><span>1</span></div>
+                  <div>166</div>
+                  <div><span class="op">+</span>198</div>
+                  <div class="sum-rule"></div>
+                  <div>64</div>
+                  <div class="sum-rule"></div>
+                </div>
+              </div>
+            </div>
+            <div class="step-row">
+              <div class="step-copy">
+                <p class="step-lead">
+                  <span class="number">3.</span
+                  ><span>Add hundreds: 1 + 1 + 1 = 3.</span>
+                </p>
+                <p>Write 3 in the hundreds place.</p>
+              </div>
+              <div class="step-math">
+                <div class="vertical-sum has-carry">
+                  <div class="carry carry-2"><span>1</span><span>1</span></div>
+                  <div>166</div>
+                  <div><span class="op">+</span>198</div>
+                  <div class="sum-rule"></div>
+                  <div>364</div>
+                  <div class="sum-rule"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="therefore">Therefore, the answer is 364.</div>
+        </section>
+        <p class="page-number">46</p>
+        <span class="sr-only" data-id="pg052_page"></span
+        ><span class="sr-only" data-id="pg052_im002"></span
+        ><span class="sr-only" data-id="pg052_p000">46</span
+        ><span class="sr-only" data-id="pg052_im001"></span
+        ><span class="sr-only" data-id="pg052_im007"></span
+        ><span class="sr-only" data-id="pg052_im008"></span
+        ><span class="sr-only" data-id="pg052_im009"></span
+        ><span class="sr-only" data-id="pg052_im010"></span
+        ><span class="sr-only" data-id="pg052_p001">Example 2</span
+        ><span class="sr-only" data-id="pg052_p065"
+          >Add one hundred and sixty-six and one hundred and ninety-eight
+          vertically.</span
+        ><span class="sr-only" data-id="pg052_im011"></span
+        ><span class="sr-only" data-id="pg052_p002">Solution</span
+        ><span class="sr-only" data-id="pg052_p066"
+          >Align the hundreds, tens, and ones digits in their correct columns.
+          The first row has 1 in the hundreds column, 6 in the tens column, and
+          6 in the ones column. The second row has 1 in the hundreds column, 9
+          in the tens column, and 8 in the ones column. A plus sign appears
+          before the second row. The answer row shows 3 in the hundreds column,
+          6 in the tens column, and 4 in the ones column. Steps. Step 1. Add
+          ones: 6 plus 8 equals 14. Regroup 14 ones into 1 ten and 4 ones. Write
+          4 in the ones place. Take 1 ten to the tens place. Step 2. Add tens: 1
+          plus 6 plus 9 equals 16. Regroup 16 tens into 1 hundred and 6 tens.
+          Write 6 in the tens place. Take 1 hundred to the hundreds place. Step
+          3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds
+          place. Therefore, the answer is three hundred and sixty-four.</span
+        ><span class="sr-only" data-id="pg052_im012"></span
+        ><span class="sr-only" data-id="pg052_p003">+</span
+        ><span class="sr-only" data-id="pg052_p004">1</span
+        ><span class="sr-only" data-id="pg052_p005">1</span
+        ><span class="sr-only" data-id="pg052_p006">6</span
+        ><span class="sr-only" data-id="pg052_p007">9</span
+        ><span class="sr-only" data-id="pg052_p008">6</span
+        ><span class="sr-only" data-id="pg052_p009">8</span
+        ><span class="sr-only" data-id="pg052_p010">hundreds tens ones</span
+        ><span class="sr-only" data-id="pg052_p011">+</span
+        ><span class="sr-only" data-id="pg052_p012">1</span
+        ><span class="sr-only" data-id="pg052_p013">1</span
+        ><span class="sr-only" data-id="pg052_p014">6</span
+        ><span class="sr-only" data-id="pg052_p015">9</span
+        ><span class="sr-only" data-id="pg052_p016">6</span
+        ><span class="sr-only" data-id="pg052_p017">8</span
+        ><span class="sr-only" data-id="pg052_p018">3</span
+        ><span class="sr-only" data-id="pg052_p019">6</span
+        ><span class="sr-only" data-id="pg052_p020">4</span
+        ><span class="sr-only" data-id="pg052_p021">Steps</span
+        ><span class="sr-only" data-id="pg052_p022"
+          >1. Add ones: 6 + 8 = 14.</span
+        ><span class="sr-only" data-id="pg052_p023"
+          >Regroup 14 ones into 1 tens and 4 ones. Write 4 in the ones place.
+          Take</span
+        ><span class="sr-only" data-id="pg052_p025"
+          >1 tens to the tens place.</span
+        ><span class="sr-only" data-id="pg052_p026">+</span
+        ><span class="sr-only" data-id="pg052_p027">1</span
+        ><span class="sr-only" data-id="pg052_p028">1</span
+        ><span class="sr-only" data-id="pg052_p029">6</span
+        ><span class="sr-only" data-id="pg052_p030">9</span
+        ><span class="sr-only" data-id="pg052_p031">6</span
+        ><span class="sr-only" data-id="pg052_p032">8</span
+        ><span class="sr-only" data-id="pg052_p033">1</span
+        ><span class="sr-only" data-id="pg052_p034">4</span
+        ><span class="sr-only" data-id="pg052_p035"
+          >2. Add tens:1 + 6 + 9 = 16. Regroup</span
+        ><span class="sr-only" data-id="pg052_p036"
+          >16 tens into 1 hundreds and 6 tens.</span
+        ><span class="sr-only" data-id="pg052_p037"
+          >Write 6 in the tens place.</span
+        ><span class="sr-only" data-id="pg052_p038"
+          >Take 1 hundreds to the hundreds place.</span
+        ><span class="sr-only" data-id="pg052_p040">+</span
+        ><span class="sr-only" data-id="pg052_p041">1</span
+        ><span class="sr-only" data-id="pg052_p042">1</span
+        ><span class="sr-only" data-id="pg052_p043">6</span
+        ><span class="sr-only" data-id="pg052_p044">9</span
+        ><span class="sr-only" data-id="pg052_p045">6</span
+        ><span class="sr-only" data-id="pg052_p046">8</span
+        ><span class="sr-only" data-id="pg052_p047">1</span
+        ><span class="sr-only" data-id="pg052_p048">1</span
+        ><span class="sr-only" data-id="pg052_p049">6 4</span
+        ><span class="sr-only" data-id="pg052_p050">3.Addhundreds:1+1+1=3.</span
+        ><span class="sr-only" data-id="pg052_p051"
+          >Write 3 to the hundreds place.</span
+        ><span class="sr-only" data-id="pg052_p052">+</span
+        ><span class="sr-only" data-id="pg052_p053">1</span
+        ><span class="sr-only" data-id="pg052_p054">1</span
+        ><span class="sr-only" data-id="pg052_p055">6</span
+        ><span class="sr-only" data-id="pg052_p056">9</span
+        ><span class="sr-only" data-id="pg052_p057">6</span
+        ><span class="sr-only" data-id="pg052_p058">8</span
+        ><span class="sr-only" data-id="pg052_p059">1</span
+        ><span class="sr-only" data-id="pg052_p060">1</span
+        ><span class="sr-only" data-id="pg052_p061">6 6 4</span
+        ><span class="sr-only" data-id="pg052_p062"
+          >Therefore, the answer is 364.</span
+        ><span class="sr-only" data-id="pg052_im003"></span
+        ><span class="sr-only" data-id="pg052_im004"></span
+        ><span class="sr-only" data-id="pg052_im005"></span
+        ><span class="sr-only" data-id="pg052_im006"></span
+        ><span class="sr-only" data-id="pg052_p063"
+          >ARITHMETICS PUPIL'S STD 2.indd 46</span
+        ><span class="sr-only" data-id="pg052_p064">06/11/2024 17:23</span>
+      </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
-</body>
-
+    <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
+  </body>
 </html>
