@@ -1,0 +1,107 @@
+/* Editable layouts for pages 52–71.  The source pages used a photographed PDF
+ * page behind invisible text.  This stylesheet deliberately draws the book
+ * furniture in CSS so equations, questions and tables remain selectable. */
+@import url("./semantic-pages-042-051.css");
+
+@font-face {
+  font-family:"Sassoon Primary Std";
+  src:url("./fonts/SassoonPrimaryStd-Regular.otf") format("opentype");
+  font-weight:400 700;
+  font-style:normal;
+  font-display:swap;
+}
+:root { --math-blue:#159fe0; --math-line:#9bcbed; --math-ink:#231f20; --math-green:#69ba45; --math-orange:#e29530; }
+body { overflow:auto !important; background:#eef9ff; }
+#content { visibility:visible !important; position:relative !important; width:auto !important; height:auto !important; margin:0 auto !important; overflow:visible !important; transform:none !important; left:auto !important; top:auto !important; }
+.semantic-52-71 { font-family:"Sassoon Primary Std", SassoonPrimary, serif!important; color:var(--math-ink); width:min(100%, 58rem); min-height:calc(100vh - 2rem); box-sizing:border-box; margin:1rem auto; padding:clamp(1.4rem,4vw,3.2rem); background:white; box-shadow:0 0 2rem #bde1f344; }
+.semantic-52-71 * { box-sizing:border-box; font-family:"Sassoon Primary Std", SassoonPrimary, serif!important; }
+.semantic-52-71 .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+.semantic-52-71 .page-number { width:3.1rem; margin:1.4rem auto 0; padding:.3rem; text-align:center; border-radius:999px; background:var(--math-blue); color:white; font-weight:bold; }
+.book-card { position:relative; border:2px solid var(--math-line); border-radius:1.5rem; padding:2.6rem 1.4rem 1.1rem; margin:.6rem 0 1.4rem; }
+.card-label { position:absolute; top:-1.2rem; left:2rem; min-width:8.2rem; padding:.38rem 1.25rem; border-radius:1.5rem; background:#5d9cdb; color:#fff; text-align:center; font-size:1.55rem; font-weight:bold; }
+.heading { margin:1rem 0 .55rem; font-size:clamp(1.35rem,3vw,1.85rem); font-weight:bold; }
+.intro { font-size:clamp(1.1rem,2.25vw,1.4rem); line-height:1.45; margin:.42rem 0; }
+.steps-title { color:var(--math-blue); font-size:1.5rem; font-weight:bold; margin:1.1rem 0 .55rem; }
+.exercise-card { position:relative; border:2px solid var(--math-line); border-radius:1.15rem; padding:2.35rem 1.35rem 1.25rem; margin:2rem 0; }
+.exercise-label { position:absolute; left:2rem; top:-1.13rem; padding:.32rem 1.15rem; border:2px solid #5d9cdb; border-radius:1.2rem; background:#fff; color:#5d9cdb; font-size:1.42rem; font-weight:bold; }
+.exercise-label.filled { background:#5d9cdb; color:#fff; }
+.sum-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.45rem 2rem; margin:1.4rem 0 .4rem; }
+.sum-problem { display:grid; grid-template-columns:1.65rem auto; align-items:start; column-gap:.35rem; min-width:0; }
+.qno { color:var(--math-blue); font-size:1.22rem; }
+.sum-stack { width:6.4rem; margin:auto; font-family:"Sassoon Primary Std", SassoonPrimary, serif; font-size:1.25rem; letter-spacing:.25rem; text-align:right; }
+.sum-stack .operator { letter-spacing:0; float:left; margin-left:-1rem; }
+.sum-stack .rule { clear:both; border-top:2px solid currentColor; margin:.13rem 0 .62rem; }
+.sum-stack .answer-rule { border-top:2px solid currentColor; }
+.equation-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem 3.3rem; font-size:1.22rem; line-height:1.75; }
+.equation { display:flex; gap:.5rem; white-space:nowrap; }
+.answer-line { display:inline-block; width:4rem; border-bottom:2px solid var(--math-ink); transform:translateY(-.2rem); }
+.worked-top { display:grid; grid-template-columns:1fr 1.1fr; align-items:center; gap:1rem; }
+.solution-title { text-align:center; font-weight:bold; font-size:1.55rem; }
+.vertical-sum { width:7.7rem; margin:.9rem auto; font-size:1.55rem; letter-spacing:.32rem; text-align:right; }
+.vertical-sum .op { float:left; letter-spacing:0; margin-left:-1.1rem; }
+.vertical-sum .sum-rule { clear:both; border-top:2px solid var(--math-ink); margin:.25rem 0 .9rem; }
+.place-sum { display:grid; grid-template-columns:1.5rem repeat(3,1fr); width:min(100%,15rem); margin:.3rem auto; text-align:center; font-size:1.3rem; }
+.place-sum .labels { grid-column:2 / -1; display:grid; grid-template-columns:repeat(3,1fr); font-size:.93rem; font-style:italic; margin-bottom:.45rem; }
+.place-sum .row { grid-column:1 / -1; display:grid; grid-template-columns:1.5rem repeat(3,1fr); line-height:1.45; }
+.place-sum .rule { grid-column:1 / -1; border-top:2px solid var(--math-ink); margin:.13rem 0 .6rem; }
+.step-table { border:1.5px solid #394cc7; margin-top:.35rem; }
+.step-row { display:grid; grid-template-columns:1.65fr .85fr; min-height:7rem; border-bottom:1.5px solid #394cc7; }
+.step-row:last-child { border-bottom:0; }
+.step-copy { padding:.65rem .8rem; font-size:1.16rem; line-height:1.42; }
+.step-copy .number { color:var(--math-blue); }
+.step-math { border-left:1.5px solid #394cc7; display:flex; align-items:center; justify-content:center; padding:.45rem; }
+.therefore { border:1.5px solid #394cc7; border-top:0; padding:.35rem .8rem; text-align:center; font-size:1.18rem; }
+.chart { width:100%; border-collapse:collapse; font-size:1.2rem; text-align:center; margin:.7rem 0; }
+.chart th,.chart td { border:1px solid #424242; padding:.38rem; }
+.chart th { font-weight:normal; }
+.question-box { border:2px solid #b5dfb5; border-radius:1.2rem; padding:1.2rem 1.35rem; background:#f9fff9; }
+.question-box .card-label { background:var(--math-green); }
+.word-list { margin:.45rem 0; padding-left:1.4rem; font-size:1.12rem; line-height:1.43; }
+.word-list li { padding:.25rem 0 .6rem; }
+.two-col { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem 2.8rem; }
+.chapter { min-height:38rem; padding-top:4rem; background:linear-gradient(160deg,#fff 15%,#f6fdff 70%); }
+.chapter h1 { color:var(--math-blue); font-size:clamp(2rem,6vw,3.4rem); margin:.2rem 0; }
+.chapter .chapter-no { font-size:1.45rem; color:var(--math-blue); }
+.place-table { display:grid; grid-template-columns:repeat(10,1fr); border:1px solid #777; margin:1rem auto; max-width:38rem; text-align:center; font-size:.78rem; }
+.place-table > span { min-height:2rem; padding:.26rem .08rem; border-right:1px solid #777; border-bottom:1px solid #777; }
+.place-table > span:nth-child(10n) { border-right:0; }
+.place-table > span:nth-last-child(-n+10) { border-bottom:0; }
+.place-table .place-head { writing-mode:vertical-rl; transform:rotate(180deg); min-height:7rem; display:grid; place-items:center; }
+.subtraction-note { display:grid; grid-template-columns:1.5fr .8fr; gap:1rem; align-items:center; }
+.abacus-image { display:block; max-width:22rem; width:70%; height:auto; margin:1rem auto; }
+.activity { border:2px solid #a1d9a1; border-radius:1.2rem; padding:2.1rem 1.3rem 1rem; position:relative; }
+.activity .card-label { background:#53a55a; }
+.mini-arrow { color:var(--math-green); font-size:1.4rem; }
+
+/* Page 52 has a denser worked-example panel than the later examples. */
+.pg052-worked { padding:2.35rem 1.65rem 1rem; border-color:#98c8e9; background:#fff; }
+.pg052-worked .card-label { top:-1.25rem; left:1.8rem; min-width:9.4rem; padding:.42rem 1.4rem; font-size:1.65rem; background:#5d9cdb; }
+.pg052-worked .worked-top { grid-template-columns:.72fr 1.28fr; align-items:start; gap:1.55rem; margin:.05rem 0 .35rem; }
+.pg052-worked .solution-title { margin:.05rem 0 .42rem; font-size:1.62rem; font-weight:900; line-height:1; text-align:center; -webkit-text-stroke:.015em currentColor; }
+.pg052-worked .place-solution { min-width:0; padding-top:.08rem; }
+.pg052-worked .vertical-sum { width:8.6rem; margin:1.55rem auto .55rem; font-size:1.74rem; line-height:1.2; letter-spacing:.34rem; }
+.pg052-worked .vertical-sum .sum-rule { border-width:2.2px; margin:.26rem 0 .55rem; }
+.pg052-worked .vertical-sum.has-carry { padding-top:.78rem; }
+.pg052-worked .vertical-sum .carry { display:grid; grid-template-columns:repeat(3,1fr); width:4.65rem; height:.78rem; margin:0 0 .03rem auto; font-size:1.08rem; line-height:.75; letter-spacing:0; text-align:center; }
+.pg052-worked .vertical-sum .carry-1 > span { grid-column:2; }
+.pg052-worked .vertical-sum .carry-2 > span:first-child { grid-column:1; }
+.pg052-worked .place-sum { width:17.25rem; font-size:1.48rem; }
+.pg052-worked .place-sum .labels { margin-bottom:.38rem; font-size:1.09rem; font-style:italic; }
+.pg052-worked .place-sum .row { line-height:1.25; }
+.pg052-worked .place-sum .rule { border-width:2.2px; margin:.18rem 0 .48rem; }
+.pg052-worked .steps-title { margin:.58rem 0 .38rem; color:var(--math-ink); font-size:1.62rem; font-weight:900; line-height:1; -webkit-text-stroke:.015em currentColor; }
+.pg052-worked .step-table { border-width:1.6px; }
+.pg052-worked .step-row { grid-template-columns:1.7fr .8fr; min-height:0; }
+.pg052-worked .step-copy { display:block; padding:.52rem .7rem .46rem; font-size:1.31rem; line-height:1.24; }
+.pg052-worked .step-copy p { margin:0; }
+.pg052-worked .step-copy p + p { margin-top:.24rem; }
+.pg052-worked .step-copy .step-lead { display:flex; align-items:baseline; gap:.35rem; white-space:nowrap; }
+.pg052-worked .step-copy .number { display:inline-block; flex:0 0 auto; color:var(--math-blue); }
+.pg052-worked .step-math { padding:.15rem .4rem; }
+.pg052-worked .step-math .vertical-sum { width:6.7rem; margin:.24rem auto; font-size:1.38rem; line-height:1.14; }
+.pg052-worked .step-math .vertical-sum .sum-rule { margin:.18rem 0 .35rem; }
+.pg052-worked .step-math .vertical-sum.has-carry { padding-top:.56rem; }
+.pg052-worked .step-math .vertical-sum .carry { width:3.7rem; height:.58rem; margin-bottom:.04rem; font-size:.88rem; }
+.pg052-worked .therefore { padding:.25rem .8rem; font-size:1.28rem; line-height:1.25; }
+.pg052-worked + .page-number { width:3.3rem; margin-top:1.25rem; padding:.38rem .35rem; font-size:1.12rem; background:#1d9fd8; }
+@media (max-width:42rem) { .semantic-52-71 { margin:0; min-height:100vh; padding:1rem; } .worked-top,.step-row,.subtraction-note { grid-template-columns:1fr; } .step-math { border-left:0; border-top:1.5px solid #394cc7; } .sum-grid { gap:1.1rem .55rem; } .sum-stack { width:5.2rem; font-size:1.08rem; } .two-col,.equation-grid { gap:1rem; } .card-label { left:1rem; } }
