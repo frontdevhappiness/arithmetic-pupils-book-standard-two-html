@@ -11,14 +11,24 @@
     <link href="./assets/semantic-pages-052-071.css" rel="stylesheet" />
     <style>
       /* Page 52 is intentionally tuned to the proportions of PDF page 46. */
+      .semantic-page-shell > #content {
+        box-sizing: border-box !important;
+        position: static !important;
+        width: min(100%, 64rem) !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
       article[data-section-id="pg052_sec001"] {
         width: min(100%, 58rem);
         min-height: 79.8rem;
         margin: 1rem auto;
         padding: 6.35rem 6.5rem 3.1rem;
-        background:
-          linear-gradient(90deg, rgba(79, 183, 235, 0.12), transparent 8%, transparent 92%, rgba(79, 183, 235, 0.12)),
-          #fff;
+        background: #fff;
+        box-shadow: none;
       }
       article[data-section-id="pg052_sec001"] .pg052-worked {
         width: 100%; min-height: 61.5rem; margin: 0;
@@ -36,9 +46,10 @@
         border: 0.2rem solid #219ade;
         border-radius: 999px;
         font-size: clamp(1.3rem, 3.2vw, 1.85rem);
-        font-weight: 700;
+        font-weight: 900;
         line-height: 1.1;
         transform: translateY(-50%);
+        -webkit-text-stroke: 0.015em currentColor;
       }
       article[data-section-id="pg052_sec001"] .pg052-worked .worked-top {
         grid-template-columns: 11rem 1fr; gap: 1.45rem;
@@ -95,8 +106,9 @@
         background: #00a9e8;
         border-radius: 50%;
         font-size: clamp(1.25rem, 3vw, 1.75rem);
-        font-weight: 700;
+        font-weight: 900;
         line-height: 1;
+        -webkit-text-stroke: 0.015em currentColor;
       }
       @media (max-width: 42rem) {
         article[data-section-id="pg052_sec001"] { min-height: 100vh; margin: 0; padding: 4.5rem 1rem 2rem; }
@@ -110,12 +122,14 @@
     </style>
   </head>
   <body>
-    <main id="content">
-      <article
-        class="semantic-52-71"
-        role="article"
-        data-section-id="pg052_sec001"
-      >
+    <main class="semantic-page-shell">
+      <article id="content">
+        <section class="book-page">
+        <article
+          class="semantic-52-71"
+          role="article"
+          data-section-id="pg052_sec001"
+        >
         <section class="book-card pg052-worked">
           <div class="card-label">Example 2</div>
           <div class="worked-top">
@@ -318,8 +332,15 @@
         ><span class="sr-only" data-id="pg052_p063"
           >ARITHMETICS PUPIL'S STD 2.indd 46</span
         ><span class="sr-only" data-id="pg052_p064">06/11/2024 17:23</span>
+          </article>
+        </section>
       </article>
     </main>
-    <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
+    <div id="interface-container"></div>
+    <div id="nav-container"></div>
+    <script src="./assets/offline-preloader.js"></script>
+    <script src="./assets/scorm.js"></script>
+    <script src="./assets/sign-language-sync.js?v=1"></script>
+    <script src="./assets/base.bundle.local.js"></script>
   </body>
 </html>
