@@ -1,135 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg101_sec001" />
-    <meta name="page-section-id" content="101" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg101_sec001">
+  <meta name="page-section-id" content="101">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg101-blue:#159fe0; --pg101-line:#83c9ee; --pg101-ink:#231f20; }
+    html, body { min-height:100%; }
+    body { margin:0; overflow-x:hidden; color:var(--pg101-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg101-shell { box-sizing:border-box; min-height:calc(100vh - var(--dock-height,96px)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--dock-height,96px) + clamp(1.5rem,4vw,3rem)); visibility:visible; }
+    .page101 {
+      position:relative!important; box-sizing:border-box; width:min(100%,58rem)!important; min-height:79.75rem!important; height:auto!important;
+      margin:0 auto!important; padding:7.45rem 7.45rem 2.8rem!important; overflow:hidden!important; visibility:visible!important; opacity:1!important;
+      transform:none!important; left:auto!important; top:auto!important; color:var(--pg101-ink); background:#fff;
+      border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14);
+      font-family:"SassoonPrimary","Sassoon Primary Std",Arial,sans-serif!important;
+    }
+    .page101, .page101 * { box-sizing:border-box; font-family:"SassoonPrimary","Sassoon Primary Std",Arial,sans-serif!important; }
+    .pg101-card { width:100%; min-height:57.7rem; margin:0 auto; padding:.05rem .75rem 1.1rem; border:.18rem solid var(--pg101-line); border-top:0; border-radius:0 0 1.2rem 1.2rem; background:rgba(255,255,255,.96); }
+    .pg101-questions { margin:0; padding:0; list-style:none; }
+    .pg101-question { display:grid; grid-template-columns:3.5rem minmax(0,1fr); margin:0 0 .4rem; font-size:1.65rem; line-height:1.45; letter-spacing:.005em; }
+    .pg101-question:last-child { margin-bottom:0; }
+    .pg101-qno { color:var(--pg101-blue); }
+    .pg101-copy { min-width:0; }
+    .pg101-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg101-shell { padding:0 0 calc(var(--dock-height,96px) + 1rem); }
+      .page101 { width:100%!important; min-height:100vh!important; padding:4.5rem 5% 7rem!important; border-radius:0; }
+      .pg101-card { width:100%; min-height:0; padding-inline:clamp(.35rem,2vw,.75rem); }
+      .pg101-question { grid-template-columns:clamp(2rem,8vw,3.5rem) minmax(0,1fr); margin-bottom:clamp(.28rem,1.6vw,.62rem); font-size:clamp(1.04rem,4.1vw,1.78rem); }
+      .pg101-marker { bottom:2rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg101_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg101_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg101_im002.png" alt="" data-id="pg101_im002" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg101_im007.png" alt="" data-id="pg101_im007" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg101_im008.png" alt="" data-id="pg101_im008" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg101_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;95&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:276px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">95</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p000" aria-hidden="true" style="position:absolute;top:695px;left:276px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">95</span></p>
-  <img src="images/pg101_im009.png" alt="" data-id="pg101_im009" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg101_p001" class="adt-page-overlay-text" style="position:absolute;top:64px;left:92px;line-height:18px;width:488px;height:24px">2. Share equally 20 buns to 5 friends. How many buns will each friend get? 3. A bunch of 30 carrots were equally distributed in 10 small bunches. How many carrots does each bunch have? 4. A total of 42 exercise books were equally shared to 7 pupils. How many exercise books did each pupil get? 5. A total of 32 loaves of bread were equally distributed to 8 people. How many loaves of bread did each person get? 6. A total of 45 pencils were equally distributed to 5 pupils. How many pencils did each pupil get? 7. A tourist gave a gift of 64 rubbers to 8 pupils. If they equally shared them, how many rubbers did each pupil get? 8. A total of 72 eggs were equally laid by 6 chickens. How many eggs did each chicken lay? 9. A total of 40 books were equally distributed to 4 pupils. How many books did each pupil get? 10. One hundred hectares of land were distributed to 10 villagers. How many hectares did each villager get?</p>
-  <img src="images/pg101_im010.png" alt="" data-id="pg101_im010" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg101_im011.png" alt="" data-id="pg101_im011" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg101_im012.png" alt="" data-id="pg101_im012" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg101_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;will each friend get?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:88px;left:92px;line-height:18px;width:488px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">will each friend get?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p002" aria-hidden="true" style="position:absolute;top:88px;left:92px;line-height:18px;width:488px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">will each friend get?</span></p>
-  <p data-id="pg101_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; A bunch of 30 carrots were equally distributed in 10 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;small bunches. How many carrots does each bunch &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;have?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:115px;left:92px;line-height:18px;width:488px;height:75px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A bunch of 30 carrots were equally distributed in 10 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">small bunches. How many carrots does each bunch </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">have?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p003" aria-hidden="true" style="position:absolute;top:115px;left:92px;line-height:18px;width:488px;height:75px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A bunch of 30 carrots were equally distributed in 10 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">small bunches. How many carrots does each bunch </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">have?</span></p>
-  <p data-id="pg101_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; A total of 42 exercise books were equally shared to&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:190px;left:92px;line-height:18px;width:488px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A total of 42 exercise books were equally shared to</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p006" aria-hidden="true" style="position:absolute;top:190px;left:92px;line-height:18px;width:488px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A total of 42 exercise books were equally shared to</span></p>
-  <p data-id="pg101_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;7 pupils. How many exercise books did each pupil &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;get?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:214px;left:92px;line-height:18px;width:488px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">7 pupils. How many exercise books did each pupil </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">get?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p007" aria-hidden="true" style="position:absolute;top:214px;left:92px;line-height:18px;width:488px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">7 pupils. How many exercise books did each pupil </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">get?</span></p>
-  <p data-id="pg101_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.61835479736328px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; A total of 32 loaves of bread were equally distributed&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.61835479736328px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:264px;left:92px;line-height:18px;width:502px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.61835479736328px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.61835479736328px;color:#231f20"> A total of 32 loaves of bread were equally distributed</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p009" aria-hidden="true" style="position:absolute;top:264px;left:92px;line-height:18px;width:502px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.61835479736328px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.61835479736328px;color:#231f20"> A total of 32 loaves of bread were equally distributed</span></p>
-  <p data-id="pg101_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;to 8 people. How many loaves of bread did each &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;person get?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:288px;left:92px;line-height:18px;width:479px;height:51px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">to 8 people. How many loaves of bread did each </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">person get?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p010" aria-hidden="true" style="position:absolute;top:288px;left:92px;line-height:18px;width:479px;height:51px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">to 8 people. How many loaves of bread did each </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">person get?</span></p>
-  <p data-id="pg101_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; A total of 45 pencils were equally distributed to 5 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;pupils. How many pencils did each pupil get?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:339px;left:92px;line-height:18px;width:479px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">6.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A total of 45 pencils were equally distributed to 5 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">pupils. How many pencils did each pupil get?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p012" aria-hidden="true" style="position:absolute;top:339px;left:92px;line-height:18px;width:479px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">6.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A total of 45 pencils were equally distributed to 5 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">pupils. How many pencils did each pupil get?</span></p>
-  <p data-id="pg101_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;7.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.679039001464844px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; A tourist gave a gift of 64 rubbers to 8 pupils. If they&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.679039001464844px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:390px;left:92px;line-height:18px;width:522px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.679039001464844px;color:#0099da">7.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.679039001464844px;color:#231f20"> A tourist gave a gift of 64 rubbers to 8 pupils. If they</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p014" aria-hidden="true" style="position:absolute;top:390px;left:92px;line-height:18px;width:522px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.679039001464844px;color:#0099da">7.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.679039001464844px;color:#231f20"> A tourist gave a gift of 64 rubbers to 8 pupils. If they</span></p>
-  <p data-id="pg101_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;equally shared them, how many rubbers did each &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;pupil get?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:414px;left:92px;line-height:18px;width:479px;height:51px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">equally shared them, how many rubbers did each </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">pupil get?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p015" aria-hidden="true" style="position:absolute;top:414px;left:92px;line-height:18px;width:479px;height:51px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">equally shared them, how many rubbers did each </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">pupil get?</span></p>
-  <p data-id="pg101_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; A total of 72 eggs were equally laid by 6 chickens.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:465px;left:92px;line-height:18px;width:479px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">8.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A total of 72 eggs were equally laid by 6 chickens.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p017" aria-hidden="true" style="position:absolute;top:465px;left:92px;line-height:18px;width:479px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">8.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> A total of 72 eggs were equally laid by 6 chickens.</span></p>
-  <p data-id="pg101_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;How many eggs did each chicken lay?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:489px;left:92px;line-height:18px;width:479px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">How many eggs did each chicken lay?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p018" aria-hidden="true" style="position:absolute;top:489px;left:92px;line-height:18px;width:479px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">How many eggs did each chicken lay?</span></p>
-  <p data-id="pg101_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.7542724609375px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.66253662109375px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;A total of 40 books were equally distributed to 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.66253662109375px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:516px;left:92px;line-height:18px;width:462px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.7542724609375px;color:#0099da">9</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.66253662109375px;color:#0099da">. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.66253662109375px;color:#231f20">A total of 40 books were equally distributed to 4</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p019" aria-hidden="true" style="position:absolute;top:516px;left:92px;line-height:18px;width:462px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.7542724609375px;color:#0099da">9</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.66253662109375px;color:#0099da">. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.66253662109375px;color:#231f20">A total of 40 books were equally distributed to 4</span></p>
-  <p data-id="pg101_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;pupils. How many books did each pupil get?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.63632583618164px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:540px;left:123px;line-height:18px;width:305px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.63632583618164px;color:#231f20">pupils. How many books did each pupil get?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p020" aria-hidden="true" style="position:absolute;top:540px;left:123px;line-height:18px;width:305px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.63632583618164px;color:#231f20">pupils. How many books did each pupil get?</span></p>
-  <p data-id="pg101_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;10.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; One hundred hectares of land were distributed to 10 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;villagers. How many hectors did each villager get?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:567px;left:92px;line-height:18px;width:394px;height:44px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">10.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> One hundred hectares of land were distributed to 10 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">villagers. How many hectors did each villager get?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p021" aria-hidden="true" style="position:absolute;top:567px;left:92px;line-height:18px;width:394px;height:44px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#0099da">10.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20"> One hundred hectares of land were distributed to 10 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">villagers. How many hectors did each villager get?</span></p>
-  <img src="images/pg101_im001.png" alt="Division word problems numbered 2 to 10 about sharing equally: 20 buns among 5 friends, 30 carrots into 10 bunches, 42 exercise books to 7 pupils, 32 loaves of bread to 8 people, 45 pencils to 5 pupils, 64 rubbers to 8 pupils, 72 eggs by 6 chickens, 40 books to 4 pupils, and 100 hectares of land to 10 villagers." data-id="pg101_im001" style="position:absolute;top:69px;left:82px;width:408px;height:559px;opacity:0">
-  <img src="images/pg101_im003.png" alt="" data-id="pg101_im003" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg101_im004.png" alt="" data-id="pg101_im004" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg101_im005.png" alt="" data-id="pg101_im005" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg101_im006.png" alt="" data-id="pg101_im006" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg101_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 95&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 95</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p023" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 95</span></p>
-  <p data-id="pg101_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg101_p024" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg101-shell">
+    <article class="page101" role="article" data-section-id="pg101_sec001" aria-label="Division word problems">
+      <section class="pg101-card" aria-label="Questions 2 to 10">
+        <ol class="pg101-questions" start="2">
+          <li class="pg101-question"><span class="pg101-qno">2.</span><span class="pg101-copy">Share equally 20 buns to 5 friends. How many buns<br>will each friend get?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">3.</span><span class="pg101-copy">A bunch of 30 carrots were equally distributed in 10<br>small bunches. How many carrots does each bunch<br>have?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">4.</span><span class="pg101-copy">A total of 42 exercise books were equally shared to<br>7 pupils. How many exercise books did each pupil<br>get?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">5.</span><span class="pg101-copy">A total of 32 loaves of bread were equally distributed<br>to 8 people. How many loaves of bread did each<br>person get?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">6.</span><span class="pg101-copy">A total of 45 pencils were equally distributed to 5<br>pupils. How many pencils did each pupil get?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">7.</span><span class="pg101-copy">A tourist gave a gift of 64 rubbers to 8 pupils. If they<br>equally shared them, how many rubbers did each<br>pupil get?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">8.</span><span class="pg101-copy">A total of 72 eggs were equally laid by 6 chickens.<br>How many eggs did each chicken lay?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">9.</span><span class="pg101-copy">A total of 40 books were equally distributed to 4<br>pupils. How many books did each pupil get?</span></li>
+          <li class="pg101-question"><span class="pg101-qno">10.</span><span class="pg101-copy">One hundred hectares of land were distributed to 10<br>villagers. How many hectors did each villager get?</span></li>
+        </ol>
+      </section>
+      <p class="pg101-marker" aria-label="Page 95">95</p>
+      <span class="sr-only" data-id="pg101_page"></span>
+      <span class="sr-only" data-id="pg101_p000">95</span>
+      <span class="sr-only" data-id="pg101_p001">2. Share equally 20 buns to 5 friends. How many buns will each friend get? 3. A bunch of 30 carrots were equally distributed in 10 small bunches. How many carrots does each bunch have? 4. A total of 42 exercise books were equally shared to 7 pupils. How many exercise books did each pupil get? 5. A total of 32 loaves of bread were equally distributed to 8 people. How many loaves of bread did each person get? 6. A total of 45 pencils were equally distributed to 5 pupils. How many pencils did each pupil get? 7. A tourist gave a gift of 64 rubbers to 8 pupils. If they equally shared them, how many rubbers did each pupil get? 8. A total of 72 eggs were equally laid by 6 chickens. How many eggs did each chicken lay? 9. A total of 40 books were equally distributed to 4 pupils. How many books did each pupil get? 10. One hundred hectares of land were distributed to 10 villagers. How many hectares did each villager get?</span>
+      <span class="sr-only" data-id="pg101_p002"></span><span class="sr-only" data-id="pg101_p003"></span><span class="sr-only" data-id="pg101_p006"></span><span class="sr-only" data-id="pg101_p007"></span><span class="sr-only" data-id="pg101_p009"></span><span class="sr-only" data-id="pg101_p010"></span><span class="sr-only" data-id="pg101_p012"></span><span class="sr-only" data-id="pg101_p014"></span><span class="sr-only" data-id="pg101_p015"></span><span class="sr-only" data-id="pg101_p017"></span><span class="sr-only" data-id="pg101_p018"></span><span class="sr-only" data-id="pg101_p019"></span><span class="sr-only" data-id="pg101_p020"></span><span class="sr-only" data-id="pg101_p021"></span><span class="sr-only" data-id="pg101_p023"></span><span class="sr-only" data-id="pg101_p024"></span>
+      <span class="sr-only" data-id="pg101_im001"></span><span class="sr-only" data-id="pg101_im002"></span><span class="sr-only" data-id="pg101_im003"></span><span class="sr-only" data-id="pg101_im004"></span><span class="sr-only" data-id="pg101_im005"></span><span class="sr-only" data-id="pg101_im006"></span><span class="sr-only" data-id="pg101_im007"></span><span class="sr-only" data-id="pg101_im008"></span><span class="sr-only" data-id="pg101_im009"></span><span class="sr-only" data-id="pg101_im010"></span><span class="sr-only" data-id="pg101_im011"></span><span class="sr-only" data-id="pg101_im012"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
