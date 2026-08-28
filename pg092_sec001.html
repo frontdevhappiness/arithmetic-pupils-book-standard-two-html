@@ -1,131 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg092_sec001" />
-    <meta name="page-section-id" content="92" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg092_sec001" />
+  <meta name="page-section-id" content="92" />
+  <link href="./content/tailwind_output.css" rel="stylesheet" />
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet" />
+  <link href="./assets/fonts.css" rel="stylesheet" />
+  <style>
+    :root { --page-blue:#219ade; --line-blue:#83caee; --ink:#231f20; }
+    * { box-sizing:border-box; }
+    html, body { min-height:100%; }
+    body.pg092-body {
+      margin:0; overflow-x:hidden; overflow-y:auto; color:var(--ink);
+      background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%);
+    }
+    #content.pg092-shell {
+      width:auto; min-height:calc(100vh - var(--dock-height,96px)); opacity:1; visibility:visible;
+      padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--dock-height,96px) + clamp(1.5rem,4vw,3rem));
+    }
+    .page92 {
+      position:relative; width:min(100%,58rem); min-height:79.8rem; margin:0 auto;
+      padding:5.15rem 5.85rem 2.7rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #e1f3fb;
+      border-radius:clamp(1.15rem,3vw,2.25rem); background:#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14);
+      font-family:"SassoonPrimary","Sassoon Primary Std",Arial,sans-serif; font-size:1.72rem; line-height:1.22;
+    }
+    .page92, .page92 * {
+      font-family:"SassoonPrimary","Sassoon Primary Std","Sassoon",Arial,sans-serif !important;
+    }
+    .question-box { margin:0 0 1.3rem; padding:.15rem 1.25rem .75rem 1.6rem; border:.18rem solid var(--line-blue); border-top:0; border-radius:0 0 1.25rem 1.25rem; }
+    .question-box p { display:grid; grid-template-columns:2.35rem 1fr; gap:.15rem; margin:0; }
+    .question-number,.step-number { color:var(--page-blue); }
+    .question-copy { text-align:left; }
+    .topic-title { margin:0 0 .6rem; font-size:1.82rem; font-weight:900; line-height:1.1; -webkit-text-stroke:.012em currentColor; }
+    .topic-copy { margin:0 0 2.8rem; }
+    .example-card { position:relative; margin:0; padding:2.65rem 1rem 1.25rem; border:.18rem solid var(--line-blue); border-radius:1.3rem; }
+    .example-label {
+      position:absolute; top:0; left:2.35rem; min-width:10.4rem; margin:0; padding:.25rem 1.15rem;
+      border:.2rem solid var(--page-blue); border-radius:999px; background:var(--page-blue); color:#fff;
+      font-size:1.85rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.02em currentColor;
+    }
+    .equation { margin:0 0 1.3rem; }
+    .solution-title,.steps-title { margin:0; font-size:1.78rem; font-weight:900; line-height:1.1; -webkit-text-stroke:.012em currentColor; }
+    .solution-copy { margin:.25rem 0 1rem; }
+    .app-shots { display:grid; grid-template-columns:1.075fr .925fr; gap:1rem; align-items:stretch; margin:0 0 1.35rem; }
+    .app-shots img { display:block; width:100%; height:12.1rem; object-fit:fill; }
+    .steps-title { margin:0 0 .65rem .2rem; }
+    .steps { margin:0; padding:0 0 0 .15rem; list-style:none; }
+    .steps li { display:grid; grid-template-columns:2.25rem 1fr; gap:.1rem; margin:0 0 .28rem; }
+    .page-number {
+      display:grid; place-items:center; width:5.25rem; aspect-ratio:1.65/1; margin:1.9rem auto 0; padding:0;
+      border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; -webkit-text-stroke:.02em currentColor;
+    }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:50rem) {
+      #content.pg092-shell { padding:0 0 calc(var(--dock-height,96px) + 1rem); }
+      .page92 { min-height:100vh; padding:4.2rem clamp(1rem,7vw,4rem) 2rem; border-radius:0; font-size:clamp(1.15rem,4.3vw,1.65rem); }
+      .topic-title,.solution-title,.steps-title { font-size:1.08em; }
+      .example-label { left:1.5rem; font-size:1.08em; }
+      .app-shots img { height:auto; aspect-ratio:1.7/1; }
+    }
+    @media (max-width:31rem) {
+      .app-shots { gap:.45rem; }
+      .question-box { padding-inline:.7rem; }
+      .question-box p { grid-template-columns:2rem 1fr; }
+      .steps li { grid-template-columns:1.8rem 1fr; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-#content > img[data-id="pg092_im004"]{display:none!important}
-#content::before{content:"Multiplying numbers by using ICT";position:absolute;top:153px;left:68px;z-index:2;color:#231f20;font:700 18px/22px SassoonPrimary,serif}
-</style>
-  <img src="images/pg092_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg092_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <p data-id="pg092_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;86&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:77px;line-height:18px;width:486px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">86</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p000" aria-hidden="true" style="position:absolute;top:695px;left:77px;line-height:18px;width:486px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">86</span></p>
-  <img src="images/pg092_im004.png" alt="Worked example for multiplying 1 &#xd7; 5 using an ICT application, with two screen views showing the question and the completed answer 1 &#xd7; 5 = 5, followed by five steps: open the multiplication application, read the question on the screen, type the answer using the keyboard, click OK to check, and continue practising." data-id="pg092_im004" style="position:absolute;top:211px;left:66px;width:409px;height:509px;opacity:0">
-  <img src="images/pg092_im011.png" alt="" data-id="pg092_im011" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg092_p001" class="adt-page-overlay-text" style="position:absolute;top:69px;left:68px;line-height:18px;width:464px;height:22px">10. John planted 4 rows of orange seedlings in his garden. He planted 12 seedlings in each row. How many seedlings did he plant?</p>
-  <img src="images/pg092_im012.png" alt="" data-id="pg092_im012" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im013.png" alt="" data-id="pg092_im013" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im014.png" alt="" data-id="pg092_im014" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im015.png" alt="" data-id="pg092_im015" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg092_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;garden. He planted 12 seedlings in each row.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:91px;left:68px;line-height:18px;width:464px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">garden. He planted 12 seedlings in each row.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p002" aria-hidden="true" style="position:absolute;top:91px;left:68px;line-height:18px;width:464px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">garden. He planted 12 seedlings in each row.</span></p>
-  <img src="images/pg092_im016.png" alt="" data-id="pg092_im016" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg092_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;How many seedlings did he plant?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:113px;left:68px;line-height:18px;width:464px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">How many seedlings did he plant?</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p003" aria-hidden="true" style="position:absolute;top:113px;left:68px;line-height:18px;width:464px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">How many seedlings did he plant?</span></p>
-  <p data-id="pg092_p004" class="adt-page-overlay-text" style="position:absolute;top:153px;left:68px;line-height:18px;width:464px;height:26px">Multiplying numbers by using ICT. Numbers can be multiplied by using ICT. Example. 1 × 5 =. Solution. Use the computer application in the TIE online library, https://tie.go.tz/pages/download-software, to multiply numbers. Two computer-screen pictures show the question 1 × 5 and the completed answer 1 × 5 = 5. Steps. 1. Open the application for multiplication of numbers. 2. Read the question that appears on the screen clearly. 3. Type the answer by clicking on the keyboard. 4. Click OK to check your answer. 5. Do the next questions to practice multiplication of numbers by using ICT.</p>
-  <p data-id="pg092_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Numbers can be multiplied by using ICT.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:179px;left:68px;line-height:18px;width:464px;height:35px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Numbers can be multiplied by using ICT.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p005" aria-hidden="true" style="position:absolute;top:179px;left:68px;line-height:18px;width:464px;height:35px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Numbers can be multiplied by using ICT.</span></p>
-  <p data-id="pg092_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Example&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#1accff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:214px;left:68px;line-height:18px;width:464px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#1accff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Example</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p006" aria-hidden="true" style="position:absolute;top:214px;left:68px;line-height:18px;width:464px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#1accff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Example</span></p>
-  <p data-id="pg092_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; 1&#xd7;5=&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:234px;left:68px;line-height:18px;width:464px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> 1&#xd7;5=</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p007" aria-hidden="true" style="position:absolute;top:234px;left:68px;line-height:18px;width:464px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> 1&#xd7;5=</span></p>
-  <p data-id="pg092_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Solution&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:274px;left:68px;line-height:18px;width:464px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Solution</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p008" aria-hidden="true" style="position:absolute;top:274px;left:68px;line-height:18px;width:464px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Solution</span></p>
-  <p data-id="pg092_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Use the computer application in the TIE online library &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;https:// tie.go.tz/pages/download-software to multiply &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;numbers.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:294px;left:68px;line-height:18px;width:464px;height:60px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Use the computer application in the TIE online library </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">https:// tie.go.tz/pages/download-software to multiply </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">numbers.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p009" aria-hidden="true" style="position:absolute;top:294px;left:68px;line-height:18px;width:464px;height:60px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Use the computer application in the TIE online library </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">https:// tie.go.tz/pages/download-software to multiply </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">numbers.</span></p>
-  <p data-id="pg092_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Steps&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:489px;left:77px;line-height:18px;width:486px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Steps</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p012" aria-hidden="true" style="position:absolute;top:489px;left:77px;line-height:18px;width:486px;height:26px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Steps</span></p>
-  <p data-id="pg092_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Open the application for multiplication of numbers.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:515px;left:77px;line-height:18px;width:486px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Open the application for multiplication of numbers.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p013" aria-hidden="true" style="position:absolute;top:515px;left:77px;line-height:18px;width:486px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Open the application for multiplication of numbers.</span></p>
-  <p data-id="pg092_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Read the question that appears on the screen &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;clearly.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:537px;left:77px;line-height:18px;width:486px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Read the question that appears on the screen </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">clearly.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p014" aria-hidden="true" style="position:absolute;top:537px;left:77px;line-height:18px;width:486px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Read the question that appears on the screen </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">clearly.</span></p>
-  <p data-id="pg092_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Type the answer by clicking on the keyboard.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:581px;left:77px;line-height:18px;width:486px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Type the answer by clicking on the keyboard.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p016" aria-hidden="true" style="position:absolute;top:581px;left:77px;line-height:18px;width:486px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Type the answer by clicking on the keyboard.</span></p>
-  <p data-id="pg092_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Click OK to check your answer.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:603px;left:77px;line-height:18px;width:486px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Click OK to check your answer.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p017" aria-hidden="true" style="position:absolute;top:603px;left:77px;line-height:18px;width:486px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Click OK to check your answer.</span></p>
-  <p data-id="pg092_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Do the next questions to practice multiplication of &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;numbers by using ICT.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:625px;left:77px;line-height:18px;width:486px;height:70px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Do the next questions to practice multiplication of </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">numbers by using ICT.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p018" aria-hidden="true" style="position:absolute;top:625px;left:77px;line-height:18px;width:486px;height:70px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Do the next questions to practice multiplication of </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">numbers by using ICT.</span></p>
-  <img src="images/pg092_im001.png" alt="Multiplication app screen showing 1 &#xd7; 5 = 5 above a sea scene, with an OK button and navigation icons." data-id="pg092_im001" style="position:absolute;top:361px;left:284px;width:176px;height:116px;opacity:0">
-  <img src="images/pg092_im002.png" alt="Multiplication app screen showing the question 1 &#xd7; 5 = above a sea scene, with an OK button and navigation icons." data-id="pg092_im002" style="position:absolute;top:361px;left:78px;width:197px;height:115px;opacity:0">
-  <img src="images/pg092_im003.png" alt="Question 10: John planted 4 rows of orange seedlings in his garden. He planted 12 seedlings in each row. How many seedlings did he plant?" data-id="pg092_im003" style="position:absolute;top:68px;left:66px;width:408px;height:75px;opacity:0">
-  <img src="images/pg092_im005.png" alt="" data-id="pg092_im005" style="position:absolute;top:21px;left:535px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im006.png" alt="" data-id="pg092_im006" style="position:absolute;top:19px;left:533px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im007.png" alt="" data-id="pg092_im007" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im008.png" alt="" data-id="pg092_im008" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im009.png" alt="" data-id="pg092_im009" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg092_im010.png" alt="" data-id="pg092_im010" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg092_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 86&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 86</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p020" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 86</span></p>
-  <p data-id="pg092_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg092_p021" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body class="pg092-body">
+  <main>
+    <div id="content" class="pg092-shell">
+      <article class="page92" role="article" data-section-id="pg092_sec001">
+        <section class="question-box" aria-label="Question 10">
+          <p><span class="question-number">10.</span><span class="question-copy">John planted 4 rows of orange seedlings in his garden. He planted 12 seedlings in each row. How many seedlings did he plant?</span></p>
+        </section>
+        <h1 class="topic-title">Multiplying numbers by using ICT</h1>
+        <p class="topic-copy">Numbers can be multiplied by using ICT.</p>
+        <section class="example-card" aria-labelledby="pg092-example-title">
+          <h2 id="pg092-example-title" class="example-label">Example</h2>
+          <p class="equation">1 × 5 =</p>
+          <h3 class="solution-title">Solution</h3>
+          <p class="solution-copy">Use the computer application in the TIE online library<br />https://tie.go.tz/pages/download-software to multiply numbers.</p>
+          <div class="app-shots">
+            <img src="images/pg092_im002.png" alt="Multiplication app screen showing the question 1 × 5 = above a sea scene, with an OK button and navigation icons." />
+            <img src="images/pg092_im001.png" alt="Multiplication app screen showing 1 × 5 = 5 above a sea scene, with an OK button and navigation icons." />
+          </div>
+          <h3 class="steps-title">Steps</h3>
+          <ol class="steps">
+            <li><span class="step-number">1.</span><span>Open the application for multiplication of numbers.</span></li>
+            <li><span class="step-number">2.</span><span>Read the question that appears on the screen clearly.</span></li>
+            <li><span class="step-number">3.</span><span>Type the answer by clicking on the keyboard.</span></li>
+            <li><span class="step-number">4.</span><span>Click OK to check your answer.</span></li>
+            <li><span class="step-number">5.</span><span>Do the next questions to practice multiplication of numbers by using ICT.</span></li>
+          </ol>
+        </section>
+        <p class="page-number">86</p>
+        <span class="sr-only" data-id="pg092_p000">86</span>
+        <span class="sr-only" data-id="pg092_p001">Question 10: John planted 4 rows of orange seedlings in his garden. He planted 12 seedlings in each row. How many seedlings did he plant?</span>
+        <span class="sr-only" data-id="pg092_p002"></span><span class="sr-only" data-id="pg092_p003"></span>
+        <span class="sr-only" data-id="pg092_p004">Multiplying numbers by using ICT. Numbers can be multiplied by using ICT. Example. 1 × 5 =. Solution. Use the computer application in the TIE online library, https://tie.go.tz/pages/download-software, to multiply numbers. Two computer-screen pictures show the question 1 × 5 and the completed answer 1 × 5 = 5. Steps. 1. Open the application for multiplication of numbers. 2. Read the question that appears on the screen clearly. 3. Type the answer by clicking on the keyboard. 4. Click OK to check your answer. 5. Do the next questions to practice multiplication of numbers by using ICT.</span>
+        <span class="sr-only" data-id="pg092_p005"></span><span class="sr-only" data-id="pg092_p006"></span><span class="sr-only" data-id="pg092_p007"></span><span class="sr-only" data-id="pg092_p008"></span><span class="sr-only" data-id="pg092_p009"></span>
+        <span class="sr-only" data-id="pg092_p012"></span><span class="sr-only" data-id="pg092_p013"></span><span class="sr-only" data-id="pg092_p014"></span><span class="sr-only" data-id="pg092_p016"></span><span class="sr-only" data-id="pg092_p017"></span><span class="sr-only" data-id="pg092_p018"></span>
+        <span class="sr-only" data-id="pg092_im001"></span><span class="sr-only" data-id="pg092_im002"></span><span class="sr-only" data-id="pg092_im003"></span><span class="sr-only" data-id="pg092_im004"></span>
+        <span class="sr-only" data-id="pg092_p020"></span><span class="sr-only" data-id="pg092_p021"></span>
+      </article>
+    </div>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
