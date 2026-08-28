@@ -1,156 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg104_sec001" />
-    <meta name="page-section-id" content="104" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg104_sec001">
+  <meta name="page-section-id" content="104">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    @font-face{font-family:"Sassoon Primary Std";src:url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");font-style:normal;font-weight:400;font-display:swap}
+    :root{--blue:#159fdf;--teal:#04aaad;--line:#82cdf0;--grid:#3546b4;--ink:#231f20;--dock:var(--dock-height,96px)}
+    *{box-sizing:border-box}html,body{min-height:100%}
+    body{margin:0;overflow-x:hidden;color:var(--ink);background:radial-gradient(circle at 16% 8%,rgba(111,194,224,.24),transparent 30rem),linear-gradient(160deg,#f5fbfe,#e7f4fa)}
+    #content.shell{box-sizing:border-box;min-height:calc(100vh - var(--dock));padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--dock) + clamp(1.5rem,4vw,3rem));visibility:visible!important}
+    .page,.page *{box-sizing:border-box;font-family:"Sassoon Primary Std",SassoonPrimary,Sassoon,Arial,sans-serif!important}
+    .page{position:relative;width:min(100%,58rem);aspect-ratio:558/768;min-height:79.8rem;margin:auto;padding:0 0 2.6rem;overflow:hidden;background:#fff;border:clamp(.45rem,1vw,.8rem) solid #e1f3fb;border-radius:clamp(1.15rem,3vw,2.25rem);box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14)}
+    .page:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 0 12%,rgba(133,205,238,.25),transparent 10%),radial-gradient(circle at 100% 35%,rgba(133,205,238,.22),transparent 9%)}
+    .chapter-banner{position:relative;z-index:2;display:grid;grid-template-columns:clamp(10rem,27vw,15rem) 1fr;align-items:center;width:calc(100% - 7rem);min-height:clamp(10rem,27vw,14rem);margin:3rem auto clamp(2.5rem,6vw,4rem);isolation:isolate}
+    .chapter-banner:after{content:"";position:absolute;z-index:-3;right:0;left:clamp(8rem,21vw,12rem);height:66%;background:#fff;border:.35rem solid #00aaa9;border-radius:0 2rem 2rem 0;box-shadow:0 .8rem 1.8rem rgba(0,135,158,.1)}
+    .chapter-badge{position:relative;z-index:2;display:grid;place-items:center;width:clamp(9rem,25vw,13.5rem);aspect-ratio:1;padding:1rem;color:#fff;background:linear-gradient(145deg,#039cc8,#0084bc);border:.28rem solid #6ac6cf;border-radius:50%;box-shadow:0 0 0 .35rem #ffe762,0 0 0 .7rem rgba(0,139,190,.62),0 1rem 2rem rgba(27,84,110,.24)}
+    .chapter-badge:before,.chapter-badge:after{content:"";position:absolute;z-index:-2;border-radius:42% 58% 53% 47%;background:rgba(0,169,169,.72)}
+    .chapter-badge:before{inset:-12% -33% 37% 30%;transform:rotate(28deg)}.chapter-badge:after{inset:42% -35% -20% -27%;transform:rotate(-18deg)}
+    .chapter-label{display:grid;gap:.15rem;text-align:center;font-size:clamp(1.65rem,4.7vw,2.55rem);font-weight:700;line-height:1.05}
+    .chapter-title{z-index:1;margin:0;padding:1rem clamp(.8rem,3vw,2rem) 1rem clamp(1rem,4vw,3rem);color:#00aeef;font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.05;text-align:center}
+    .content{position:relative;z-index:1;width:73.5%;margin:auto}.topic{margin:0 0 .55rem;font-size:1.82rem;font-weight:900;line-height:1.1;-webkit-text-stroke:.018em currentColor}
+    .intro{margin:0 0 2.25rem;font-size:1.68rem;line-height:1.34;text-align:justify;text-justify:inter-word}
+    .example{position:relative;margin:0;padding:2.25rem 1rem .85rem;border:.2rem solid var(--line);border-radius:1.25rem;background:#fff}.example+.example{margin-top:2.35rem}
+    .example-label{position:absolute;top:0;left:2.7rem;min-width:10.5rem;margin:0;padding:.28rem .95rem .36rem;color:#fff;background:var(--blue);border-radius:999px;font-size:1.82rem;font-weight:900;line-height:1.05;text-align:center;transform:translateY(-50%);-webkit-text-stroke:.018em currentColor}
+    .fraction-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:1.72rem;font-style:italic;line-height:1.05;text-align:center}.fraction-table th,.fraction-table td{border:.1rem solid var(--grid);font-weight:400}.fraction-table th{height:2.8rem;padding:.18rem .25rem;white-space:nowrap}.fraction-table td.picture{height:7.8rem;padding:.45rem}.fraction-table td.caption{height:2.8rem;padding:.2rem .15rem;white-space:nowrap}.fraction-table img{display:block;width:100%;height:6.6rem;margin:auto;object-fit:contain}.example-two .fraction-table td.picture{height:8.5rem}.example-two .fraction-table img{height:7.5rem}
+    .page-number{position:relative;z-index:1;display:grid;place-items:center;width:5.25rem;aspect-ratio:1.65/1;margin:2rem auto 0;color:#fff;background:#00a9e8;border-radius:50%;font-size:1.75rem;font-weight:900;line-height:1;-webkit-text-stroke:.018em currentColor}
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    @media(max-width:44rem){#content.shell{padding:0 0 calc(var(--dock) + 1rem)}.page{width:100%;min-height:100vh;aspect-ratio:auto;border-radius:0;padding-bottom:2rem}.chapter-banner{grid-template-columns:clamp(8rem,33vw,11rem) 1fr;width:88%;margin-top:2rem}.chapter-title{font-size:clamp(1.5rem,6vw,2.2rem)}.content{width:88%}.topic{font-size:clamp(1.25rem,4.7vw,1.82rem)}.intro{font-size:clamp(1.12rem,4.25vw,1.76rem);line-height:1.34;margin-bottom:1.8rem}.example{padding:clamp(1.7rem,7vw,2.25rem) clamp(.3rem,2vw,1rem) .55rem}.example+.example{margin-top:2rem}.example-label{left:1.5rem;min-width:8rem;font-size:clamp(1.2rem,5vw,1.82rem)}.fraction-table{font-size:clamp(.88rem,3.75vw,1.72rem)}.fraction-table th{height:clamp(2rem,8vw,2.8rem)}.fraction-table td.picture{height:clamp(5.5rem,25vw,7.8rem)}.fraction-table img{height:clamp(4.8rem,22vw,6.6rem)}.fraction-table td.caption{height:clamp(2rem,8vw,2.8rem)}.example-two .fraction-table td.picture{height:clamp(6rem,27vw,8.5rem)}.example-two .fraction-table img{height:clamp(5.2rem,24vw,7.5rem)}.page-number{margin-top:2.2rem}}
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg104_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg104_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg104_im009.png" alt="Page 98" data-id="pg104_im009" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0">
-  <p data-id="pg104_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;98&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">98</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p000" aria-hidden="true" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">98</span></p>
-  <img src="images/pg104_im008.png" alt="" data-id="pg104_im008" style="position:absolute;top:325px;left:69px;width:405px;height:339px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg104_p001" class="adt-page-overlay-text" style="position:absolute;top:199px;left:71px;line-height:18px;width:319px;height:20px">Chapter Nine. Recognizing fractions. Recognizing one-half of a whole object. Two equal parts of the same object form one whole object. A half is one of the two equal parts. For example, an orange can be cut into two equal pieces. Each piece is one-half of the orange. Formally, one-half is also known as a half.</p>
-  <p data-id="pg104_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Two equal parts of the same object form one whole object.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.758378982543945px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:223px;left:71px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.758378982543945px;color:#231f20">Two equal parts of the same object form one whole object.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p002" aria-hidden="true" style="position:absolute;top:223px;left:71px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.758378982543945px;color:#231f20">Two equal parts of the same object form one whole object.</span></p>
-  <p data-id="pg104_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;A half is one of the two equal parts. For example, an orange&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.625965118408203px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:245px;left:71px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.625965118408203px;color:#231f20">A half is one of the two equal parts. For example, an orange</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p003" aria-hidden="true" style="position:absolute;top:245px;left:71px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.625965118408203px;color:#231f20">A half is one of the two equal parts. For example, an orange</span></p>
-  <p data-id="pg104_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;can be cut into two equal pieces. Each piece is one half of &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;the orange. Formally, one-half is also known as, a half.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:267px;left:71px;line-height:18px;width:405px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20">can be cut into two equal pieces. Each piece is one half of </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20">the orange. Formally, one-half is also known as, a half.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p004" aria-hidden="true" style="position:absolute;top:267px;left:71px;line-height:18px;width:405px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20">can be cut into two equal pieces. Each piece is one half of </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20">the orange. Formally, one-half is also known as, a half.</span></p>
-  <p data-id="pg104_p006" class="adt-page-overlay-text" style="position:absolute;top:318px;left:71px;line-height:18px;width:116px;height:20px">Example 1. The table has three columns: Whole object, First half, and Second half. The whole object is an orange. The first half is half an orange. The second half is half an orange. Example 2. The table has three columns: Whole object, First half, and Second half. The whole object is a pineapple. The first half is half a pineapple. The second half is half a pineapple.</p>
-  <p data-id="pg104_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Whole object&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:350px;left:91px;line-height:18px;width:107px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Whole object</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p007" aria-hidden="true" style="position:absolute;top:350px;left:91px;line-height:18px;width:107px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Whole object</span></p>
-  <p data-id="pg104_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;First half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:350px;left:239px;line-height:18px;width:74px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">First half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p008" aria-hidden="true" style="position:absolute;top:350px;left:239px;line-height:18px;width:74px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">First half</span></p>
-  <p data-id="pg104_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Second half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:350px;left:356px;line-height:18px;width:96px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Second half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p009" aria-hidden="true" style="position:absolute;top:350px;left:356px;line-height:18px;width:96px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Second half</span></p>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg104_im001" clipPathUnits="userSpaceOnUse"><path d="M115.38 433.78L173.06 433.78L173.06 377.97L115.38 377.97Z" transform="translate(-114,-377)"/></clipPath></defs></svg>
-  <img src="images/pg104_im001.jpg" alt="A whole orange" data-id="pg104_im001" style="position:absolute;top:377px;left:114px;width:61px;height:59px;clip-path:url(#clip-pg104_im001);opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg104_im002" clipPathUnits="userSpaceOnUse"><path d="M257.01 435.8L294.06 435.8L294.06 375.95L257.01 375.95Z" transform="translate(-255,-376)"/></clipPath></defs></svg>
-  <img src="images/pg104_im002.jpg" alt="Half an orange" data-id="pg104_im002" style="position:absolute;top:376px;left:255px;width:41px;height:62px;clip-path:url(#clip-pg104_im002);opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg104_im003" clipPathUnits="userSpaceOnUse"><path d="M386.13 435.8L421.95 435.8L421.95 375.95L386.13 375.95Z" transform="translate(-384,-376)"/></clipPath></defs></svg>
-  <img src="images/pg104_im003.jpg" alt="Half an orange" data-id="pg104_im003" style="position:absolute;top:376px;left:384px;width:38px;height:62px;clip-path:url(#clip-pg104_im003);opacity:0">
-  <p data-id="pg104_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;an orange&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:441px;left:87px;line-height:18px;width:84px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">an orange</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p010" aria-hidden="true" style="position:absolute;top:441px;left:87px;line-height:18px;width:84px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">an orange</span></p>
-  <p data-id="pg104_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;half an orange&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:441px;left:215px;line-height:18px;width:121px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">half an orange</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p011" aria-hidden="true" style="position:absolute;top:441px;left:215px;line-height:18px;width:121px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">half an orange</span></p>
-  <p data-id="pg104_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;half an orange&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;16.885496139526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:441px;left:215px;line-height:17px;width:121px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:16.885496139526367px;color:#231f20;font-style:italic">half an orange</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p012" aria-hidden="true" style="position:absolute;top:441px;left:215px;line-height:17px;width:121px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:16.885496139526367px;color:#231f20;font-style:italic">half an orange</span></p>
-  <img src="images/pg104_im010.png" alt="" data-id="pg104_im010" style="position:absolute;top:17px;left:26px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im011.png" alt="" data-id="pg104_im011" style="position:absolute;top:14px;left:24px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im007.png" alt="Chapter Nine: Recognizing fractions" data-id="pg104_im007" style="position:absolute;top:27px;left:40px;width:405px;height:176px;opacity:0">
-  <p data-id="pg104_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Recognizing &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot;fractions&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:81px;left:245px;line-height:24px;width:138px;height:52px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">Recognizing </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">fractions</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p013" aria-hidden="true" style="position:absolute;top:81px;left:245px;line-height:24px;width:138px;height:52px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">Recognizing </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">fractions</span></p>
-  <img src="images/pg104_im016.png" alt="" data-id="pg104_im016" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im017.png" alt="" data-id="pg104_im017" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im018.png" alt="" data-id="pg104_im018" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im019.png" alt="" data-id="pg104_im019" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im020.png" alt="" data-id="pg104_im020" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im021.png" alt="" data-id="pg104_im021" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg104_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Chapter&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:65px;left:81px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold">Chapter</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p015" aria-hidden="true" style="position:absolute;top:65px;left:81px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold">Chapter</span></p>
-  <p data-id="pg104_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Nine&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:92px;left:81px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Nine</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p016" aria-hidden="true" style="position:absolute;top:92px;left:81px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Nine</span></p>
-  <p data-id="pg104_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Example 2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:486px;left:101px;line-height:18px;width:83px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">Example 2</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p017" aria-hidden="true" style="position:absolute;top:486px;left:101px;line-height:18px;width:83px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">Example 2</span></p>
-  <p data-id="pg104_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Whole object&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:516px;left:91px;line-height:18px;width:107px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Whole object</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p018" aria-hidden="true" style="position:absolute;top:516px;left:91px;line-height:18px;width:107px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Whole object</span></p>
-  <p data-id="pg104_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;First half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:516px;left:237px;line-height:18px;width:74px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">First half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p019" aria-hidden="true" style="position:absolute;top:516px;left:237px;line-height:18px;width:74px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">First half</span></p>
-  <p data-id="pg104_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Second half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:516px;left:355px;line-height:18px;width:96px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Second half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p020" aria-hidden="true" style="position:absolute;top:516px;left:355px;line-height:18px;width:96px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Second half</span></p>
-  <img src="images/pg104_im004.jpg" alt="A whole pineapple" data-id="pg104_im004" style="position:absolute;top:545px;left:112px;width:65px;height:70px;opacity:0">
-  <img src="images/pg104_im005.jpg" alt="Half a pineapple" data-id="pg104_im005" style="position:absolute;top:545px;left:246px;width:48px;height:70px;opacity:0">
-  <img src="images/pg104_im006.jpg" alt="Half a pineapple" data-id="pg104_im006" style="position:absolute;top:545px;left:382px;width:37px;height:69px;opacity:0">
-  <p data-id="pg104_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;a pineapple&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:620px;left:94px;line-height:18px;width:99px;height:18px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">a pineapple</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p021" aria-hidden="true" style="position:absolute;top:620px;left:94px;line-height:18px;width:99px;height:18px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">a pineapple</span></p>
-  <p data-id="pg104_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;half a pineapple&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17.26499366760254px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot; half a pineapple&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;16.59518051147461px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:620px;left:212px;line-height:17.26499366760254px;width:248px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17.26499366760254px;color:#231f20;font-style:italic">half a pineapple</span><span style="font-family:Sassoon,Merriweather,serif;font-size:16.59518051147461px;color:#231f20;font-style:italic"> half a pineapple</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p022" aria-hidden="true" style="position:absolute;top:620px;left:212px;line-height:17.26499366760254px;width:248px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17.26499366760254px;color:#231f20;font-style:italic">half a pineapple</span><span style="font-family:Sassoon,Merriweather,serif;font-size:16.59518051147461px;color:#231f20;font-style:italic"> half a pineapple</span></p>
-  <img src="images/pg104_im012.png" alt="" data-id="pg104_im012" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im013.png" alt="" data-id="pg104_im013" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im014.png" alt="" data-id="pg104_im014" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg104_im015.png" alt="" data-id="pg104_im015" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg104_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 98&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 98</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p023" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 98</span></p>
-  <p data-id="pg104_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg104_p024" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="shell">
+    <article class="page" role="article" data-section-id="pg104_sec001" aria-label="Chapter Nine: Recognizing fractions">
+      <div aria-hidden="true">
+        <header class="chapter-banner"><div class="chapter-badge"><div class="chapter-label"><span>Chapter</span><span>Nine</span></div></div><h1 class="chapter-title">Recognizing<br>fractions</h1></header>
+        <div class="content">
+          <h2 class="topic">Recognizing one-half of a whole object</h2>
+          <p class="intro">Two equal parts of the same object form one whole object.<br>A half is one of the two equal parts. For example, an orange<br>can be cut into two equal pieces. Each piece is one half of<br>the orange. Formally, one-half is also known as, a half.</p>
+          <section class="example"><h2 class="example-label">Example 1</h2><table class="fraction-table"><thead><tr><th>Whole object</th><th>First half</th><th>Second half</th></tr></thead><tbody><tr><td class="picture"><img src="images/pg104_im001.jpg" alt=""></td><td class="picture"><img src="images/pg104_im002.jpg" alt=""></td><td class="picture"><img src="images/pg104_im003.jpg" alt=""></td></tr><tr><td class="caption">an orange</td><td class="caption">half an orange</td><td class="caption">half an orange</td></tr></tbody></table></section>
+          <section class="example example-two"><h2 class="example-label">Example 2</h2><table class="fraction-table"><thead><tr><th>Whole object</th><th>First half</th><th>Second half</th></tr></thead><tbody><tr><td class="picture"><img src="images/pg104_im004.jpg" alt=""></td><td class="picture"><img src="images/pg104_im005.jpg" alt=""></td><td class="picture"><img src="images/pg104_im006.jpg" alt=""></td></tr><tr><td class="caption">a pineapple</td><td class="caption">half a pineapple</td><td class="caption">half a pineapple</td></tr></tbody></table></section>
+        </div><p class="page-number">98</p>
+      </div>
+      <div class="sr-only">
+        <span data-id="pg104_page"></span><span data-id="pg104_im009"></span><span data-id="pg104_p000">98</span><span data-id="pg104_p001">Chapter Nine. Recognizing fractions. Recognizing one-half of a whole object. Two equal parts of the same object form one whole object. A half is one of the two equal parts. For example, an orange can be cut into two equal pieces. Each piece is one-half of the orange. Formally, one-half is also known as a half.</span><span data-id="pg104_p006">Example 1. The table has three columns: Whole object, First half, and Second half. The whole object is an orange. The first half is half an orange. The second half is half an orange. Example 2. The table has three columns: Whole object, First half, and Second half. The whole object is a pineapple. The first half is half a pineapple. The second half is half a pineapple.</span>
+        <span data-id="pg104_p002"></span><span data-id="pg104_p003"></span><span data-id="pg104_p004"></span><span data-id="pg104_p007"></span><span data-id="pg104_p008"></span><span data-id="pg104_p009"></span><span data-id="pg104_p010"></span><span data-id="pg104_p011"></span><span data-id="pg104_p012"></span><span data-id="pg104_p013"></span><span data-id="pg104_p015"></span><span data-id="pg104_p016"></span><span data-id="pg104_p017"></span><span data-id="pg104_p018"></span><span data-id="pg104_p019"></span><span data-id="pg104_p020"></span><span data-id="pg104_p021"></span><span data-id="pg104_p022"></span><span data-id="pg104_p023"></span><span data-id="pg104_p024"></span>
+        <span data-id="pg104_im001"></span><span data-id="pg104_im002"></span><span data-id="pg104_im003"></span><span data-id="pg104_im004"></span><span data-id="pg104_im005"></span><span data-id="pg104_im006"></span><span data-id="pg104_im007"></span><span data-id="pg104_im008"></span><span data-id="pg104_im010"></span><span data-id="pg104_im011"></span><span data-id="pg104_im012"></span><span data-id="pg104_im013"></span><span data-id="pg104_im014"></span><span data-id="pg104_im015"></span><span data-id="pg104_im016"></span><span data-id="pg104_im017"></span><span data-id="pg104_im018"></span><span data-id="pg104_im019"></span><span data-id="pg104_im020"></span><span data-id="pg104_im021"></span>
+      </div>
+    </article>
+  </main>
+  <div id="interface-container"></div><div id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script><script src="./assets/scorm.js"></script><script src="./assets/sign-language-sync.js?v=1"></script><script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
