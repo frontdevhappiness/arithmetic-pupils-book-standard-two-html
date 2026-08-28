@@ -1,159 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg105_sec001" />
-    <meta name="page-section-id" content="105" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg105_sec001">
+  <meta name="page-section-id" content="105">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg105-blue:#159fe0; --pg105-pale-blue:#83c9ee; --pg105-grid-blue:#3546b4; --pg105-ink:#231f20; --pg105-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg105-ink); background:#eef9ff; }
+    #content.pg105-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg105-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg105-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page105 {
+      position:relative; box-sizing:border-box; width:min(100%,58rem); aspect-ratio:558/768; min-height:79.75rem; margin:0 auto; padding:8.15rem 7.35rem 3rem; overflow:hidden;
+      border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem);
+      background:radial-gradient(circle at 0 12%,rgba(133,205,238,.25),transparent 12%),radial-gradient(circle at 100% 37%,rgba(133,205,238,.22),transparent 11%),#fff;
+      box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif;
+    }
+    .page105,.page105 * { box-sizing:border-box; }
+    .page105 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg105-layout { position:relative; z-index:1; width:100%; }
+    .pg105-card { position:relative; border:.18rem solid var(--pg105-pale-blue); border-radius:1.2rem; background:rgba(255,255,255,.98); }
+    .pg105-label { position:absolute; top:0; left:2.5rem; z-index:2; min-width:10.4rem; margin:0; padding:.34rem .9rem .28rem; border-radius:999px; color:#fff; background:var(--pg105-blue); font-size:1.82rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor; }
+    .pg105-example { padding:1.95rem 1rem .62rem; }
+    .pg105-object-table { display:grid; grid-template-columns:1fr 1.14fr .95fr; grid-template-rows:2.6rem 7.25rem 2.55rem; border-top:.1rem solid var(--pg105-grid-blue); border-left:.1rem solid var(--pg105-grid-blue); }
+    .pg105-object-table>div { display:flex; align-items:center; justify-content:center; min-width:0; border-right:.1rem solid var(--pg105-grid-blue); border-bottom:.1rem solid var(--pg105-grid-blue); font-size:1.76rem; font-style:italic; line-height:1; white-space:nowrap; }
+    .pg105-object-table .pg105-picture { padding:.35rem; }
+    .pg105-picture img { display:block; max-width:100%; object-fit:contain; }
+    .pg105-whole img { width:5.8rem; height:5.25rem; }
+    .pg105-first img { width:3.75rem; height:5rem; }
+    .pg105-second img { width:3.2rem; height:5rem; }
+    .pg105-writing { margin:1rem 0 2.65rem; }
+    .pg105-writing h2 { margin:0 0 .35rem; font-size:1.88rem; font-weight:900; line-height:1; -webkit-text-stroke:.02em currentColor; }
+    .pg105-writing p { margin:0; font-size:1.78rem; line-height:1.28; }
+    .pg105-fraction { position:relative; display:inline-block; width:1.35em; height:1em; margin:0 .12em; vertical-align:-.18em; color:#000; font-size:.88em; line-height:1; text-align:center; }
+    .pg105-fraction span { position:absolute; left:0; width:100%; }
+    .pg105-fraction span:first-child { top:-.45em; padding-bottom:.08em; border-bottom:.08em solid currentColor; }
+    .pg105-fraction span:last-child { top:.58em; }
+    .pg105-exercise { padding:3rem 1.05rem .45rem; }
+    .pg105-exercise .pg105-label { min-width:11.35rem; border:.18rem solid var(--pg105-blue); color:var(--pg105-blue); background:#fff; }
+    .pg105-directions { margin:0 0 2.2rem; font-size:1.76rem; line-height:1.42; }
+    .pg105-exercise-grid { display:grid; grid-template-columns:3.1rem 1.72fr 1.34fr .86fr; grid-template-rows:11.5rem 12rem; border-top:.1rem solid var(--pg105-grid-blue); border-left:.1rem solid var(--pg105-grid-blue); }
+    .pg105-exercise-grid>div { position:relative; display:flex; align-items:center; justify-content:center; min-width:0; border-right:.1rem solid var(--pg105-grid-blue); border-bottom:.1rem solid var(--pg105-grid-blue); }
+    .pg105-exercise-grid .pg105-qno { align-items:flex-start; justify-content:flex-start; padding:.35rem .45rem; color:var(--pg105-blue); font-size:1.45rem; line-height:1; }
+    .pg105-exercise-grid img { display:block; max-width:88%; object-fit:contain; }
+    .pg105-circle-whole img { width:6.2rem; height:6rem; }
+    .pg105-circle-half img { width:5rem; height:5.2rem; }
+    .pg105-rectangle img { width:10.5rem; height:5.4rem; }
+    .pg105-square img { width:6.2rem; height:6.5rem; }
+    .pg105-answer-word { position:absolute; bottom:.35rem; left:0; right:0; margin:0; font-size:1.72rem; font-style:italic; line-height:1; text-align:center; }
+    .pg105-grid-fraction { font-size:1.75rem; }
+    .pg105-blank { align-items:flex-end!important; padding-bottom:.65rem; }
+    .pg105-blank span { width:4.85rem; border-bottom:.12rem solid var(--pg105-ink); }
+    .pg105-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:4.2rem; width:5.2rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; color:#fff; background:#00a9e8; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg105-shell { padding:0 0 calc(var(--pg105-dock) + 1rem); }
+      .page105 { width:100%; min-height:100vh; padding:clamp(4.2rem,14vw,8.15rem) 5% 7rem; border-radius:0; }
+      .pg105-label { left:1.5rem; min-width:8rem; font-size:clamp(1.12rem,4.4vw,1.82rem); }
+      .pg105-object-table { grid-template-rows:clamp(2rem,8vw,2.6rem) clamp(5rem,23vw,7.25rem) clamp(2rem,8vw,2.55rem); }
+      .pg105-object-table>div,.pg105-writing h2,.pg105-writing p,.pg105-directions { font-size:clamp(1.02rem,4.1vw,1.78rem); }
+      .pg105-whole img { width:clamp(4rem,18vw,5.8rem); }
+      .pg105-first img,.pg105-second img { height:clamp(3.6rem,16vw,5rem); }
+      .pg105-writing { margin-bottom:clamp(2rem,8vw,2.65rem); }
+      .pg105-exercise { padding:clamp(2.25rem,9vw,3rem) .55rem .4rem; }
+      .pg105-directions { margin-bottom:clamp(1.25rem,7vw,2.2rem); }
+      .pg105-exercise-grid { grid-template-columns:2.25rem 1.72fr 1.34fr .86fr; grid-template-rows:clamp(8rem,36vw,11.8rem) clamp(8.5rem,39vw,12.75rem); }
+      .pg105-exercise-grid .pg105-qno { padding:.3rem; font-size:clamp(1rem,4vw,1.45rem); }
+      .pg105-answer-word,.pg105-grid-fraction { font-size:clamp(1.05rem,4.4vw,1.75rem); }
+      .pg105-marker { bottom:2rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg105_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg105_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg105_im010.png" alt="Page 99" data-id="pg105_im010" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0">
-  <p data-id="pg105_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;99&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:276px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">99</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p000" aria-hidden="true" style="position:absolute;top:695px;left:276px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">99</span></p>
-  <img src="images/pg105_im009.png" alt="" data-id="pg105_im009" style="position:absolute;top:321px;left:84px;width:408px;height:343px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im008.png" alt="" data-id="pg105_im008" style="position:absolute;top:78px;left:84px;width:408px;height:197px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im017.png" alt="" data-id="pg105_im017" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im018.png" alt="" data-id="pg105_im018" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im019.png" alt="" data-id="pg105_im019" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im020.png" alt="" data-id="pg105_im020" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im021.png" alt="" data-id="pg105_im021" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im022.png" alt="" data-id="pg105_im022" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg105_p001" class="adt-page-overlay-text" style="position:absolute;top:103px;left:106px;line-height:18px;width:107px;height:22px">Example 3. The table has three columns: Whole object, First half, and Second half. The whole object is a tomato. The first half is half a tomato. The second half is half a tomato. Writing a half. In numerals, a half is written as 1 over 2. It is read as a half or one over two.</p>
-  <p data-id="pg105_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;First half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:103px;left:254px;line-height:18px;width:74px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">First half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p002" aria-hidden="true" style="position:absolute;top:103px;left:254px;line-height:18px;width:74px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">First half</span></p>
-  <p data-id="pg105_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Second half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:103px;left:371px;line-height:18px;width:96px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Second half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p003" aria-hidden="true" style="position:absolute;top:103px;left:371px;line-height:18px;width:96px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Second half</span></p>
-  <img src="images/pg105_im001.jpg" alt="A whole tomato" data-id="pg105_im001" style="position:absolute;top:130px;left:125px;width:69px;height:63px;opacity:0">
-  <img src="images/pg105_im002.jpg" alt="Half a tomato" data-id="pg105_im002" style="position:absolute;top:130px;left:268px;width:45px;height:60px;opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg105_im003" clipPathUnits="userSpaceOnUse"><path d="M400.79 186.93L436.99 186.93L436.99 129.88L400.79 129.88Z" transform="translate(-399,-130)"/></clipPath></defs></svg>
-  <img src="images/pg105_im003.jpg" alt="Half a tomato" data-id="pg105_im003" style="position:absolute;top:130px;left:399px;width:38px;height:59px;clip-path:url(#clip-pg105_im003);opacity:0">
-  <p data-id="pg105_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; a tomato&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:197px;left:102px;line-height:17px;width:87px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> a tomato</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p004" aria-hidden="true" style="position:absolute;top:197px;left:102px;line-height:17px;width:87px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> a tomato</span></p>
-  <p data-id="pg105_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;half a tomato&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:197px;left:224px;line-height:17px;width:107px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">half a tomato</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p005" aria-hidden="true" style="position:absolute;top:197px;left:224px;line-height:17px;width:107px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">half a tomato</span></p>
-  <p data-id="pg105_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;half a tomato&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:197px;left:224px;line-height:17px;width:107px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">half a tomato</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p006" aria-hidden="true" style="position:absolute;top:197px;left:224px;line-height:17px;width:107px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">half a tomato</span></p>
-  <p data-id="pg105_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Writing a half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:233px;left:86px;line-height:18px;width:248px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Writing a half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p007" aria-hidden="true" style="position:absolute;top:233px;left:86px;line-height:18px;width:248px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Writing a half</span></p>
-  <p data-id="pg105_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;In numeral, a half is written as &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:255px;left:86px;line-height:18px;width:248px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">In numeral, a half is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p008" aria-hidden="true" style="position:absolute;top:255px;left:86px;line-height:18px;width:248px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">In numeral, a half is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2</span></p>
-  <p data-id="pg105_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot; . It is read as a half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:247px;left:325px;line-height:18px;width:167px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> . It is read as a half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p009" aria-hidden="true" style="position:absolute;top:247px;left:325px;line-height:18px;width:167px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> . It is read as a half</span></p>
-  <p data-id="pg105_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;or one over two.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:279px;left:86px;line-height:18px;width:248px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">or one over two.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p010" aria-hidden="true" style="position:absolute;top:279px;left:86px;line-height:18px;width:248px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">or one over two.</span></p>
-  <p data-id="pg105_p011" class="adt-page-overlay-text" style="position:absolute;top:315px;left:86px;line-height:18px;width:248px;height:36px">Exercise 1. Write a half or 1 over 2 in the blank spaces. Question 1 is an example. 1. A circle is divided into two equal parts, with the right half shaded blue. The shaded part is a half, written 1 over 2. 2. A rectangle is divided into two equal parts, with the left half shaded orange. Write a half and the matching fraction in the blank spaces.</p>
-  <p data-id="pg105_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write a half or &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:351px;left:86px;line-height:18px;width:248px;height:30px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Write a half or </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p012" aria-hidden="true" style="position:absolute;top:351px;left:86px;line-height:18px;width:248px;height:30px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Write a half or </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2</span></p>
-  <p data-id="pg105_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot; in the blank spaces. Question 1 is&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:344px;left:435px;line-height:18px;width:9px;height:149px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> in the blank spaces. Question 1 is</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p013" aria-hidden="true" style="position:absolute;top:344px;left:435px;line-height:18px;width:9px;height:149px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> in the blank spaces. Question 1 is</span></p>
-  <p data-id="pg105_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;an example.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:381px;left:86px;line-height:18px;width:248px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">an example.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p014" aria-hidden="true" style="position:absolute;top:381px;left:86px;line-height:18px;width:248px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">an example.</span></p>
-  <p data-id="pg105_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:422px;left:108px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">1.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p015" aria-hidden="true" style="position:absolute;top:422px;left:108px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">1.</span></p>
-  <img src="images/pg105_im004.png" alt="A circle divided into two equal halves, with the right half shaded blue" data-id="pg105_im004" style="position:absolute;top:429px;left:170px;width:74px;height:72px;opacity:0">
-  <img src="images/pg105_im005.png" alt="One half of a circle, shaded blue" data-id="pg105_im005" style="position:absolute;top:430px;left:306px;width:73px;height:75px;opacity:0">
-  <p data-id="pg105_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;a half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:507px;left:319px;line-height:17px;width:45px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">a half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p016" aria-hidden="true" style="position:absolute;top:507px;left:319px;line-height:17px;width:45px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">a half</span></p>
-  <p data-id="pg105_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:493px;left:435px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p017" aria-hidden="true" style="position:absolute;top:493px;left:435px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span></p>
-  <p data-id="pg105_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:474px;left:435px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p018" aria-hidden="true" style="position:absolute;top:474px;left:435px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg105_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:533px;left:108px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da">2.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p019" aria-hidden="true" style="position:absolute;top:533px;left:108px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da">2.</span></p>
-  <img src="images/pg105_im006.png" alt="A rectangle divided into two equal halves, with the left half shaded orange" data-id="pg105_im006" style="position:absolute;top:536px;left:140px;width:133px;height:68px;opacity:0">
-  <img src="images/pg105_im007.png" alt="A square representing one half of the rectangle" data-id="pg105_im007" style="position:absolute;top:541px;left:309px;width:66px;height:69px;opacity:0">
-  <p data-id="pg105_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;a half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:630px;left:319px;line-height:17px;width:45px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">a half</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p020" aria-hidden="true" style="position:absolute;top:630px;left:319px;line-height:17px;width:45px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">a half</span></p>
-  <p data-id="pg105_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:627px;left:417px;line-height:18px;width:45px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">_____</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p021" aria-hidden="true" style="position:absolute;top:627px;left:417px;line-height:18px;width:45px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">_____</span></p>
-  <img src="images/pg105_im011.png" alt="" data-id="pg105_im011" style="position:absolute;top:17px;left:-473px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im012.png" alt="" data-id="pg105_im012" style="position:absolute;top:14px;left:-475px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg105_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Example 3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:73px;left:114px;line-height:18px;width:83px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Example 3</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p022" aria-hidden="true" style="position:absolute;top:73px;left:114px;line-height:18px;width:83px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Example 3</span></p>
-  <img src="images/pg105_im013.png" alt="" data-id="pg105_im013" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im014.png" alt="" data-id="pg105_im014" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im015.png" alt="" data-id="pg105_im015" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg105_im016.png" alt="" data-id="pg105_im016" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg105_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 99&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 99</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p023" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 99</span></p>
-  <p data-id="pg105_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg105_p024" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg105-shell">
+    <article class="page105" role="article" data-section-id="pg105_sec001" aria-label="Writing a half">
+      <div class="pg105-layout">
+        <section class="pg105-card pg105-example" aria-label="Example 3">
+          <h1 class="pg105-label">Example 3</h1>
+          <div class="pg105-object-table">
+            <div>Whole object</div><div>First half</div><div>Second half</div>
+            <div class="pg105-picture pg105-whole"><img src="images/pg105_im001.jpg" alt="A whole tomato" data-id="pg105_im001"></div>
+            <div class="pg105-picture pg105-first"><img src="images/pg105_im002.jpg" alt="The first half of a tomato" data-id="pg105_im002"></div>
+            <div class="pg105-picture pg105-second"><img src="images/pg105_im003.jpg" alt="The second half of a tomato" data-id="pg105_im003"></div>
+            <div>a tomato</div><div>half a tomato</div><div>half a tomato</div>
+          </div>
+        </section>
+        <section class="pg105-writing">
+          <h2>Writing a half</h2>
+          <p>In numeral, a half is written as <span class="pg105-fraction" aria-label="one half"><span>1</span><span>2</span></span>. It is read as a half<br>or one over two.</p>
+        </section>
+        <section class="pg105-card pg105-exercise" aria-label="Exercise 1">
+          <h2 class="pg105-label">Exercise 1</h2>
+          <p class="pg105-directions">Write a half or <span class="pg105-fraction" aria-label="one half"><span>1</span><span>2</span></span> in the blank spaces. Question 1 is<br>an example.</p>
+          <div class="pg105-exercise-grid">
+            <div class="pg105-qno">1.</div>
+            <div class="pg105-circle-whole"><img src="images/pg105_im004.png" alt="A circle divided into two equal halves, with the right half shaded blue" data-id="pg105_im004"></div>
+            <div class="pg105-circle-half"><img src="images/pg105_im005.png" alt="One half of a circle, shaded blue" data-id="pg105_im005"><p class="pg105-answer-word">a half</p></div>
+            <div class="pg105-grid-fraction"><span class="pg105-fraction" aria-label="one half"><span>1</span><span>2</span></span></div>
+            <div class="pg105-qno">2.</div>
+            <div class="pg105-rectangle"><img src="images/pg105_im006.png" alt="A rectangle divided into two equal halves, with the left half shaded orange" data-id="pg105_im006"></div>
+            <div class="pg105-square"><img src="images/pg105_im007.png" alt="A square representing one half of the rectangle" data-id="pg105_im007"><p class="pg105-answer-word">a half</p></div>
+            <div class="pg105-blank" aria-label="Blank answer"><span></span></div>
+          </div>
+        </section>
+      </div>
+      <p class="pg105-marker" aria-label="Page 99">99</p>
+      <span class="sr-only" data-id="pg105_page"></span><span class="sr-only" data-id="pg105_im010"></span><span class="sr-only" data-id="pg105_p000">99</span>
+      <span class="sr-only" data-id="pg105_p001">Example 3. The table has three columns: Whole object, First half, and Second half. The whole object is a tomato. The first half is half a tomato. The second half is half a tomato. Writing a half. In numerals, a half is written as 1 over 2. It is read as a half or one over two.</span>
+      <span class="sr-only" data-id="pg105_p002"></span><span class="sr-only" data-id="pg105_p003"></span><span class="sr-only" data-id="pg105_p004"></span><span class="sr-only" data-id="pg105_p005"></span><span class="sr-only" data-id="pg105_p006"></span><span class="sr-only" data-id="pg105_p007"></span><span class="sr-only" data-id="pg105_p008"></span><span class="sr-only" data-id="pg105_p009"></span><span class="sr-only" data-id="pg105_p010"></span>
+      <span class="sr-only" data-id="pg105_p011">Exercise 1. Write a half or 1 over 2 in the blank spaces. Question 1 is an example. 1. A circle is divided into two equal parts, with the right half shaded blue. The shaded part is a half, written 1 over 2. 2. A rectangle is divided into two equal parts, with the left half shaded orange. Write a half and the matching fraction in the blank spaces.</span>
+      <span class="sr-only" data-id="pg105_p012"></span><span class="sr-only" data-id="pg105_p013"></span><span class="sr-only" data-id="pg105_p014"></span><span class="sr-only" data-id="pg105_p015"></span><span class="sr-only" data-id="pg105_p016"></span><span class="sr-only" data-id="pg105_p017"></span><span class="sr-only" data-id="pg105_p018"></span><span class="sr-only" data-id="pg105_p019"></span><span class="sr-only" data-id="pg105_p020"></span><span class="sr-only" data-id="pg105_p021"></span><span class="sr-only" data-id="pg105_p022"></span><span class="sr-only" data-id="pg105_p023"></span><span class="sr-only" data-id="pg105_p024"></span>
+      <span class="sr-only" data-id="pg105_im008"></span><span class="sr-only" data-id="pg105_im009"></span><span class="sr-only" data-id="pg105_im011"></span><span class="sr-only" data-id="pg105_im012"></span><span class="sr-only" data-id="pg105_im013"></span><span class="sr-only" data-id="pg105_im014"></span><span class="sr-only" data-id="pg105_im015"></span><span class="sr-only" data-id="pg105_im016"></span><span class="sr-only" data-id="pg105_im017"></span><span class="sr-only" data-id="pg105_im018"></span><span class="sr-only" data-id="pg105_im019"></span><span class="sr-only" data-id="pg105_im020"></span><span class="sr-only" data-id="pg105_im021"></span><span class="sr-only" data-id="pg105_im022"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
