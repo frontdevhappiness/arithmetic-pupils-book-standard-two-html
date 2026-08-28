@@ -1,130 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg098_sec001" />
     <meta name="page-section-id" content="98" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="./content/tailwind_output.css" rel="stylesheet" />
+    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/fonts.css" rel="stylesheet" />
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+      :root { --pg098-blue:#159fdf; --pg098-line:#86cef2; --pg098-grid:#3546b4; --pg098-ink:#231f20; }
+      html, body { min-height:100%; }
+      body.pg098-body { margin:0; overflow-x:hidden; color:var(--pg098-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+      #content.pg098-shell { box-sizing:border-box; min-height:calc(100vh - var(--dock-height,96px)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--dock-height,96px) + clamp(1.5rem,4vw,3rem)); visibility:visible; }
+      .page98 {
+        position:relative!important; box-sizing:border-box; width:min(100%,58rem)!important; min-height:79.75rem!important; height:auto!important;
+        margin:0 auto!important; padding:7.45rem 7.45rem 2.8rem!important; overflow:hidden!important; visibility:visible!important; opacity:1!important;
+        transform:none!important; left:auto!important; top:auto!important; color:var(--pg098-ink); background:#fff;
+        border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14);
+        font-family:"SassoonPrimary","Sassoon Primary Std",Arial,sans-serif!important;
+      }
+      .page98, .page98 * { box-sizing:border-box; font-family:"SassoonPrimary","Sassoon Primary Std",Arial,sans-serif!important; }
+      .pg098-visual { width:100%; }
+      .pg098-picture-question { position:relative; display:grid; grid-template-columns:5.9rem minmax(0,17.1rem) minmax(0,1fr); min-height:13.45rem; border:.2rem solid var(--pg098-line); border-top:0; border-radius:0 0 1.25rem 1.25rem; }
+      .pg098-picture-question::before { content:""; position:absolute; inset:-.42rem 1rem .9rem; z-index:0; border:.1rem solid var(--pg098-grid); }
+      .pg098-qno, .pg098-bottles, .pg098-picture-equation { position:relative; z-index:1; }
+      .pg098-qno { padding:.2rem 0 0 .9rem; color:var(--pg098-blue); font-size:1.85rem; line-height:1; }
+      .pg098-bottles { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); align-content:center; justify-items:center; gap:1.35rem .15rem; padding:.55rem .35rem .75rem; border-inline:.1rem solid var(--pg098-grid); }
+      .pg098-bottles img { display:block; width:1.95rem; height:5.3rem; object-fit:contain; }
+      .pg098-picture-equation { display:flex; align-items:center; padding-left:1.45rem; font-size:1.88rem; line-height:1; }
+      .pg098-heading { margin:1.1rem 0 .65rem; font-size:1.9rem; font-weight:700; line-height:1.05; letter-spacing:.01em; -webkit-text-stroke:.018em currentColor; }
+      .pg098-intro { margin:0 0 1.6rem; font-size:1.83rem; line-height:1.42; }
+      .pg098-example { position:relative; margin:0; padding:2.5rem 1.65rem .65rem; border:.2rem solid var(--pg098-line); border-radius:1rem; background:rgba(255,255,255,.94); }
+      .pg098-example + .pg098-example { min-height:11.2rem; margin-top:1.65rem; border-bottom:0; border-radius:1rem 1rem 0 0; }
+      .pg098-banner { position:absolute; top:0; left:2.9rem; min-width:10.3rem; margin:0; padding:.28rem .9rem .34rem; color:#fff; background:var(--pg098-blue); border-radius:999px; font-size:1.85rem; font-weight:700; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor; }
+      .pg098-example p { margin:0; font-size:1.82rem; line-height:1.2; }
+      .pg098-example .pg098-solution { margin:.55rem 0 .35rem; font-weight:700; -webkit-text-stroke:.018em currentColor; }
+      .pg098-example .pg098-steps { margin-top:.25rem; }
+      .pg098-example .pg098-conclusion { line-height:1.18; }
+      .pg098-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; padding:0; color:#fff; background:#00a9e8; border-radius:50%; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+      .page98 .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+      @media (max-width:44rem) {
+        #content.pg098-shell { padding:0 0 calc(var(--dock-height,96px) + 1rem); }
+        .page98 { width:100%!important; min-height:100vh!important; padding:4.5rem 5% 7rem!important; border-radius:0; }
+        .pg098-picture-question { grid-template-columns:3rem minmax(0,58%) minmax(0,1fr); min-height:clamp(8rem,31vw,12rem); }
+        .pg098-qno, .pg098-heading, .pg098-intro, .pg098-example p, .pg098-banner, .pg098-picture-equation { font-size:clamp(1.1rem,4vw,1.82rem); }
+        .pg098-bottles { gap:clamp(.35rem,2.5vw,1.2rem) .05rem; padding-inline:.15rem; }
+        .pg098-bottles img { width:clamp(.8rem,3.5vw,1.8rem); height:clamp(2.3rem,9.5vw,5rem); }
+        .pg098-picture-equation { padding-left:.65rem; }
+        .pg098-heading { margin-top:1rem; }
+        .pg098-intro { margin-bottom:1.6rem; }
+        .pg098-example { padding:2.5rem 1rem .8rem; }
+        .pg098-banner { left:1.5rem; min-width:8rem; }
+        .pg098-marker { bottom:2rem; }
+      }
     </style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
-</head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-  <img src="images/pg098_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg098_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg098_im004.png" alt="" data-id="pg098_im004" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg098_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;92&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">92</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p000" aria-hidden="true" style="position:absolute;top:695px;left:262px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">92</span></p>
-  <img src="images/pg098_im003.png" alt="" data-id="pg098_im003" style="position:absolute;top:313px;left:69px;width:406px;height:350px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im009.png" alt="" data-id="pg098_im009" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im010.png" alt="" data-id="pg098_im010" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im011.png" alt="" data-id="pg098_im011" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im012.png" alt="" data-id="pg098_im012" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im013.png" alt="" data-id="pg098_im013" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im014.png" alt="" data-id="pg098_im014" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg098_p001" class="adt-page-overlay-text" style="position:absolute;top:73px;left:91px;line-height:20px;width:15px;height:22px">5. The picture shows 16 orange-drink bottles. 16 ÷ 4 =.</p>
-  <img src="images/pg098_im001.jpg" alt="An orange drink bottle." data-id="pg098_im001" style="position:absolute;top:76px;left:136px;width:19px;height:51px;opacity:0">
-  <p data-id="pg098_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;16 &#xf7; 4 =&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.63632583618164px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:124px;left:300px;line-height:18px;width:60px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.63632583618164px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">16 &#xf7; 4 =</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p002" aria-hidden="true" style="position:absolute;top:124px;left:300px;line-height:18px;width:60px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.63632583618164px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">16 &#xf7; 4 =</span></p>
-  <p data-id="pg098_p003" class="adt-page-overlay-text" style="position:absolute;top:209px;left:72px;line-height:18px;width:405px;height:25px">Division by using repeated subtraction. Repeated subtraction is the process of subtracting the same number repeatedly. The process stops when a 0 is obtained. Example 1. 6 ÷ 2 =. Solution. Subtract 2 from 6 repeatedly. 6 − 2 = 4. 4 − 2 = 2. 2 − 2 = 0. Repeated subtraction has been done 3 times. Therefore, 6 ÷ 2 = 3.</p>
-  <p data-id="pg098_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Repeated subtraction is the process of subtracting the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;same number repeatedly. The process stops when a 0 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;is obtained.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:234px;left:72px;line-height:18px;width:405px;height:79px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Repeated subtraction is the process of subtracting the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">same number repeatedly. The process stops when a 0 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">is obtained.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p004" aria-hidden="true" style="position:absolute;top:234px;left:72px;line-height:18px;width:405px;height:79px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Repeated subtraction is the process of subtracting the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">same number repeatedly. The process stops when a 0 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">is obtained.</span></p>
-  <p data-id="pg098_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Example 1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:313px;left:72px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Example 1</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p007" aria-hidden="true" style="position:absolute;top:313px;left:72px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Example 1</span></p>
-  <p data-id="pg098_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;&#xf7; &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;2 =&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:341px;left:86px;line-height:18px;width:58px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#xf7; </span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2 =</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p008" aria-hidden="true" style="position:absolute;top:341px;left:86px;line-height:18px;width:58px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#xf7; </span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2 =</span></p>
-  <p data-id="pg098_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Solution&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:369px;left:86px;line-height:18px;width:221px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Solution</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p009" aria-hidden="true" style="position:absolute;top:369px;left:86px;line-height:18px;width:221px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Solution</span></p>
-  <p data-id="pg098_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Subtract 2 from 6 repeatedly.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:396px;left:86px;line-height:18px;width:221px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Subtract 2 from 6 repeatedly.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p010" aria-hidden="true" style="position:absolute;top:396px;left:86px;line-height:18px;width:221px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Subtract 2 from 6 repeatedly.</span></p>
-  <p data-id="pg098_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;&#x2013;&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot; 2 = 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:419px;left:89px;line-height:18px;width:67px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#x2013;</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> 2 = 4</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p011" aria-hidden="true" style="position:absolute;top:419px;left:89px;line-height:18px;width:67px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#x2013;</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> 2 = 4</span></p>
-  <p data-id="pg098_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;&#x2013;&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot; 2 = 2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:442px;left:89px;line-height:18px;width:67px;height:25px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#x2013;</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> 2 = 2</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p012" aria-hidden="true" style="position:absolute;top:442px;left:89px;line-height:18px;width:67px;height:25px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#x2013;</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> 2 = 2</span></p>
-  <p data-id="pg098_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6 &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;&#x2013;&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot; 2 = 0&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:467px;left:89px;line-height:18px;width:67px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#x2013;</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> 2 = 0</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p013" aria-hidden="true" style="position:absolute;top:467px;left:89px;line-height:18px;width:67px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">6 </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">&#x2013;</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> 2 = 0</span></p>
-  <p data-id="pg098_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Repeated subtraction has been done 3 times.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:488px;left:72px;line-height:18px;width:346px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Repeated subtraction has been done 3 times.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p014" aria-hidden="true" style="position:absolute;top:488px;left:72px;line-height:18px;width:346px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Repeated subtraction has been done 3 times.</span></p>
-  <p data-id="pg098_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Therefore,6&#xf7;2=3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:510px;left:72px;line-height:18px;width:346px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Therefore,6&#xf7;2=3</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p015" aria-hidden="true" style="position:absolute;top:510px;left:72px;line-height:18px;width:346px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Therefore,6&#xf7;2=3</span></p>
-  <p data-id="pg098_p016" class="adt-page-overlay-text" style="position:absolute;top:539px;left:72px;line-height:18px;width:346px;height:20px">Example 2. 8 ÷ 4 =. Solution. Subtract 4 from 8 repeatedly.</p>
-  <p data-id="pg098_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;8&#xf7;4=&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:567px;left:75px;line-height:18px;width:45px;height:18px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">8&#xf7;4=</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p017" aria-hidden="true" style="position:absolute;top:567px;left:75px;line-height:18px;width:45px;height:18px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">8&#xf7;4=</span></p>
-  <p data-id="pg098_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Solution&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:604px;left:89px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Solution</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p018" aria-hidden="true" style="position:absolute;top:604px;left:89px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Solution</span></p>
-  <p data-id="pg098_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Subtract 4 from 8 repeatedly.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.819089889526367px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:629px;left:89px;line-height:18px;width:217px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Subtract 4 from 8 repeatedly.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p019" aria-hidden="true" style="position:absolute;top:629px;left:89px;line-height:18px;width:217px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.819089889526367px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Subtract 4 from 8 repeatedly.</span></p>
-  <img src="images/pg098_im002.png" alt="" data-id="pg098_im002" style="position:absolute;top:69px;left:70px;width:405px;height:136px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im005.png" alt="" data-id="pg098_im005" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im006.png" alt="" data-id="pg098_im006" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im007.png" alt="" data-id="pg098_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg098_im008.png" alt="" data-id="pg098_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg098_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 92&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 92</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p020" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 92</span></p>
-  <p data-id="pg098_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg098_p021" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+  </head>
+  <body class="pg098-body">
+    <main id="content" class="pg098-shell">
+      <article class="page98" role="article" data-section-id="pg098_sec001" aria-label="Division by using repeated subtraction">
+        <div class="pg098-visual" aria-hidden="true">
+          <section class="pg098-picture-question">
+            <span class="pg098-qno">5.</span>
+            <div class="pg098-bottles">
+              <img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" />
+              <img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" />
+              <img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" />
+              <img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" /><img src="images/pg098_im001.jpg" alt="" />
+            </div>
+            <div class="pg098-picture-equation">16 ÷ 4 =</div>
+          </section>
+          <h1 class="pg098-heading">Division by using repeated subtraction</h1>
+          <p class="pg098-intro">Repeated subtraction is the process of subtracting the same number repeatedly. The process stops when a 0 is obtained.</p>
+          <section class="pg098-example">
+            <h2 class="pg098-banner">Example 1</h2>
+            <p>6 ÷ 2 =</p>
+            <p class="pg098-solution">Solution</p>
+            <p>Subtract 2 from 6 repeatedly.</p>
+            <div class="pg098-steps"><p>6 − 2 = 4</p><p>4 − 2 = 2</p><p>2 − 2 = 0</p></div>
+            <p class="pg098-conclusion">Repeated subtraction has been done 3 times.<br />Therefore, 6 ÷ 2 = 3</p>
+          </section>
+          <section class="pg098-example">
+            <h2 class="pg098-banner">Example 2</h2>
+            <p>8 ÷ 4 =</p>
+            <p class="pg098-solution">Solution</p>
+            <p>Subtract 4 from 8 repeatedly.</p>
+          </section>
+          <p class="pg098-marker">92</p>
+        </div>
+        <span class="sr-only" data-id="pg098_page"></span><span class="sr-only" data-id="pg098_p000">92</span>
+        <span class="sr-only" data-id="pg098_p001">5. The picture shows 16 orange-drink bottles. 16 ÷ 4 =.</span><span class="sr-only" data-id="pg098_im001"></span><span class="sr-only" data-id="pg098_p002"></span>
+        <span class="sr-only" data-id="pg098_p003">Division by using repeated subtraction. Repeated subtraction is the process of subtracting the same number repeatedly. The process stops when a 0 is obtained. Example 1. 6 ÷ 2 =. Solution. Subtract 2 from 6 repeatedly. 6 − 2 = 4. 4 − 2 = 2. 2 − 2 = 0. Repeated subtraction has been done 3 times. Therefore, 6 ÷ 2 = 3.</span>
+        <span class="sr-only" data-id="pg098_p004"></span><span class="sr-only" data-id="pg098_p007"></span><span class="sr-only" data-id="pg098_p008"></span><span class="sr-only" data-id="pg098_p009"></span><span class="sr-only" data-id="pg098_p010"></span><span class="sr-only" data-id="pg098_p011"></span><span class="sr-only" data-id="pg098_p012"></span><span class="sr-only" data-id="pg098_p013"></span><span class="sr-only" data-id="pg098_p014"></span><span class="sr-only" data-id="pg098_p015"></span>
+        <span class="sr-only" data-id="pg098_p016">Example 2. 8 ÷ 4 =. Solution. Subtract 4 from 8 repeatedly.</span><span class="sr-only" data-id="pg098_p017"></span><span class="sr-only" data-id="pg098_p018"></span><span class="sr-only" data-id="pg098_p019"></span>
+        <span class="sr-only" data-id="pg098_im002"></span><span class="sr-only" data-id="pg098_im003"></span><span class="sr-only" data-id="pg098_im004"></span><span class="sr-only" data-id="pg098_im005"></span><span class="sr-only" data-id="pg098_im006"></span><span class="sr-only" data-id="pg098_im007"></span><span class="sr-only" data-id="pg098_im008"></span><span class="sr-only" data-id="pg098_im009"></span><span class="sr-only" data-id="pg098_im010"></span><span class="sr-only" data-id="pg098_im011"></span><span class="sr-only" data-id="pg098_im012"></span><span class="sr-only" data-id="pg098_im013"></span><span class="sr-only" data-id="pg098_im014"></span>
+        <span class="sr-only" data-id="pg098_p020">ARITHMETICS PUPIL'S STD 2.indd 92</span><span class="sr-only" data-id="pg098_p021">06/11/2024 17:23</span>
+      </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
-</body>
-
+    <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
+  </body>
 </html>
