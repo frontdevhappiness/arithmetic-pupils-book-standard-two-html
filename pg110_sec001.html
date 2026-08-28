@@ -1,133 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg110_sec001" />
     <meta name="page-section-id" content="110" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="./content/tailwind_output.css" rel="stylesheet" />
+    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/fonts.css" rel="stylesheet" />
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+      :root {
+        --pg110-blue: #159fdf;
+        --pg110-line: #86cef2;
+        --pg110-grid: #3546b4;
+        --pg110-ink: #231f20;
+        --pg110-dock: var(--dock-height, 96px);
+      }
+      html, body { min-height: 100%; }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--pg110-ink);
+        background: radial-gradient(circle at 18% 7%, rgba(111, 194, 224, .25), transparent 30rem), linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%);
+      }
+      #content.pg110-shell {
+        box-sizing: border-box;
+        width: auto !important;
+        min-height: calc(100vh - var(--pg110-dock));
+        padding: clamp(1rem, 4vw, 3rem) clamp(.75rem, 4vw, 2.5rem) calc(var(--pg110-dock) + clamp(1.5rem, 4vw, 3rem));
+        visibility: visible !important;
+      }
+      .page110 {
+        position: relative;
+        box-sizing: border-box;
+        width: min(100%, 58rem);
+        min-height: 79.75rem;
+        margin: 0 auto;
+        padding: 5.35rem 7.45rem 6.8rem;
+        overflow: hidden;
+        border: clamp(.45rem, 1vw, .8rem) solid #e1f3fb;
+        border-radius: clamp(1.15rem, 3vw, 2.25rem);
+        background: radial-gradient(circle at 0 10%, rgba(133, 205, 238, .24), transparent 11%), radial-gradient(circle at 100% 32%, rgba(133, 205, 238, .2), transparent 10%), #fff;
+        box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, .14);
+        font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif;
+      }
+      .page110, .page110 * { box-sizing: border-box; }
+      .page110 * { font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important; }
+      .pg110-visual { z-index: 1; }
+      .pg110-continuation {
+        width: 100%;
+        margin: 0 0 2rem;
+        overflow: hidden;
+        border: 0;
+        background: #fff;
+      }
+      .pg110-continuation img { display: block; width: 100%; height: auto; }
+      .pg110-heading {
+        margin: 0 0 .65rem;
+        font-size: 1.9rem;
+        font-weight: 900;
+        line-height: 1.14;
+        letter-spacing: .01em;
+        -webkit-text-stroke: .018em currentColor;
+      }
+      .pg110-copy {
+        margin: 0 0 1.5rem;
+        font-size: 1.82rem;
+        line-height: 1.42;
+        letter-spacing: .006em;
+      }
+      .pg110-copy:last-of-type { margin-bottom: 1.8rem; }
+      .pg110-fraction {
+        display: inline-grid;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        min-width: 1.45em;
+        margin: 0 .08em;
+        vertical-align: -.43em;
+        font-size: .82em;
+        line-height: .88;
+        text-align: center;
+      }
+      .pg110-fraction span:first-child { border-bottom: .08em solid currentColor; }
+      .pg110-orange-card {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center !important;
+        min-height: 14.1rem;
+        padding: .7rem 1rem .25rem;
+        border: .12rem solid var(--pg110-grid);
+        background: #fff;
+      }
+      .pg110-orange-card img { display: block; width: 9.7rem; height: 9.2rem; object-fit: contain; }
+      .pg110-caption { margin: -.1rem 0 0; font-size: 1.82rem; line-height: 1; }
+      .pg110-marker {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        left: 50%;
+        bottom: 2.55rem;
+        width: 5.25rem;
+        aspect-ratio: 1.65 / 1;
+        margin: 0;
+        border-radius: 50%;
+        background: #00a9e8;
+        color: #fff;
+        font-size: 1.75rem;
+        font-weight: 900;
+        line-height: 1;
+        text-align: center;
+        transform: translateX(-50%);
+        -webkit-text-stroke: .015em currentColor;
+      }
+      .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+      @media (max-width: 44rem) {
+        #content.pg110-shell { padding: 0 0 calc(var(--pg110-dock) + 1rem); }
+        .page110 { width: 100%; min-height: 100vh; padding: clamp(3rem, 10vw, 5.35rem) 5% 7rem; border-radius: 0; }
+        .pg110-continuation { margin-bottom: clamp(1.15rem, 5vw, 2rem); }
+        .pg110-heading { font-size: clamp(1.18rem, 4.6vw, 1.9rem); }
+        .pg110-copy, .pg110-caption { font-size: clamp(1.08rem, 4.2vw, 1.82rem); }
+        .pg110-copy { margin-bottom: clamp(.85rem, 4vw, 1.5rem); }
+        .pg110-orange-card { min-height: clamp(10rem, 44vw, 14.1rem); }
+        .pg110-orange-card img { width: clamp(6.6rem, 27vw, 9.7rem); height: clamp(6.3rem, 26vw, 9.2rem); }
+        .pg110-marker { bottom: 2rem; }
+      }
     </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
-</head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg110_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg110_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg110_im007.png" alt="" data-id="pg110_im007" style="position:absolute;top:653px;left:223px;width:86px;height:67px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg110_im012.png" alt="" data-id="pg110_im012" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg110_im013.png" alt="" data-id="pg110_im013" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg110_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;104&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">104</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p000" aria-hidden="true" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">104</span></p>
-  <img src="images/pg110_im014.png" alt="" data-id="pg110_im014" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg110_p001" class="adt-page-overlay-text" style="position:absolute;top:73px;left:99px;line-height:18px;width:14px;height:20px">Exercise 4 continues. 7. A four-part polygon has its top-right section shaded. 8. Two overlapping ovals are shown, with the left oval shaded and the right oval unshaded. 9. A rectangle is divided into two equal vertical parts, with the right half shaded green.</p>
-  <img src="images/pg110_im001.png" alt="A four-part polygon with one part shaded, the top-right section." data-id="pg110_im001" style="position:absolute;top:77px;left:125px;width:75px;height:57px;opacity:0">
-  <img src="images/pg110_im015.png" alt="" data-id="pg110_im015" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg110_im016.png" alt="" data-id="pg110_im016" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg110_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:73px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p002" aria-hidden="true" style="position:absolute;top:73px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span></p>
-  <img src="images/pg110_im002.png" alt="Two overlapping ovals, with the left oval shaded and the right oval unshaded." data-id="pg110_im002" style="position:absolute;top:76px;left:247px;width:54px;height:59px;opacity:0">
-  <img src="images/pg110_im017.png" alt="" data-id="pg110_im017" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg110_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:73px;left:338px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p003" aria-hidden="true" style="position:absolute;top:73px;left:338px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span></p>
-  <img src="images/pg110_im003.png" alt="A rectangle divided into two equal vertical parts, with the right half shaded green." data-id="pg110_im003" style="position:absolute;top:86px;left:366px;width:50px;height:40px;opacity:0">
-  <img src="images/pg110_im004.png" alt="" data-id="pg110_im004" style="position:absolute;top:147px;left:125px;width:78px;height:9px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg110_p004" class="adt-page-overlay-text" style="position:absolute;top:184px;left:72px;line-height:18px;width:406px;height:45px">Recognizing one-third and two-thirds of a whole object. Three equal parts of the same object form one whole object. One-third is one of the three equal parts. For example, an orange can be cut into three equal pieces. Each piece is one-third of the orange. After removing one-third from an orange, the remaining part is two-thirds. In numerals, one-third is written as 1 over 3. It is read as one-third or one over three. Two-thirds is written as 2 over 3. It is read as two-thirds or two over three. The following pictures show an orange being divided into three equal parts, beginning with a whole orange.</p>
-  <p data-id="pg110_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Three equal parts of the same object form one whole &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;object. One-third is one of the three equal parts. For &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;example, an orange can be cut into three equal pieces.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:229px;left:72px;line-height:18px;width:406px;height:69px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Three equal parts of the same object form one whole </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">object. One-third is one of the three equal parts. For </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">example, an orange can be cut into three equal pieces.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p006" aria-hidden="true" style="position:absolute;top:229px;left:72px;line-height:18px;width:406px;height:69px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Three equal parts of the same object form one whole </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">object. One-third is one of the three equal parts. For </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">example, an orange can be cut into three equal pieces.</span></p>
-  <p data-id="pg110_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Each piece is one-third of the orange. After removing &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;one-third from an orange, the remaining part is two-&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;thirds.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:298px;left:72px;line-height:18px;width:406px;height:70px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Each piece is one-third of the orange. After removing </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">one-third from an orange, the remaining part is two-</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">thirds.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p009" aria-hidden="true" style="position:absolute;top:298px;left:72px;line-height:18px;width:406px;height:70px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Each piece is one-third of the orange. After removing </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">one-third from an orange, the remaining part is two-</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">thirds.</span></p>
-  <p data-id="pg110_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;In numeral, one-third is written as &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:378px;left:72px;line-height:18px;width:260px;height:30px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">In numeral, one-third is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">3</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p012" aria-hidden="true" style="position:absolute;top:378px;left:72px;line-height:18px;width:260px;height:30px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">In numeral, one-third is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">3</span></p>
-  <p data-id="pg110_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1 .&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot; It is read as, &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;one-&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.45164680480957px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:368px;left:72px;line-height:18px;width:406px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1 .</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> It is read as, </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.45164680480957px;color:#231f20">one-</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p013" aria-hidden="true" style="position:absolute;top:368px;left:72px;line-height:18px;width:406px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1 .</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> It is read as, </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.45164680480957px;color:#231f20">one-</span></p>
-  <p data-id="pg110_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;third or one over three. Two-thirds is written as &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.45164680480957px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:412px;left:72px;line-height:18px;width:358px;height:33px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.45164680480957px;color:#231f20">third or one over three. Two-thirds is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">3</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p014" aria-hidden="true" style="position:absolute;top:412px;left:72px;line-height:18px;width:358px;height:33px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.45164680480957px;color:#231f20">third or one over three. Two-thirds is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">3</span></p>
-  <p data-id="pg110_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot;. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.45164680480957px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;It is &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;read as, two-thirds or two over three.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:405px;left:72px;line-height:18px;width:406px;height:79px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.45164680480957px;color:#231f20">. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">It is </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">read as, two-thirds or two over three.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p015" aria-hidden="true" style="position:absolute;top:405px;left:72px;line-height:18px;width:406px;height:79px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.45164680480957px;color:#231f20">. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">It is </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">read as, two-thirds or two over three.</span></p>
-  <p data-id="pg110_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The following pictures show an orange being divided &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;into three equal parts.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:484px;left:72px;line-height:18px;width:406px;height:41px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The following pictures show an orange being divided </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">into three equal parts.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p017" aria-hidden="true" style="position:absolute;top:484px;left:72px;line-height:18px;width:406px;height:41px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The following pictures show an orange being divided </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">into three equal parts.</span></p>
-  <img src="images/pg110_im005.jpg" alt="A whole orange." data-id="pg110_im005" style="position:absolute;top:551px;left:219px;width:94px;height:90px;opacity:0">
-  <p data-id="pg110_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;An orange&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:654px;left:224px;line-height:18px;width:85px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">An orange</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p019" aria-hidden="true" style="position:absolute;top:654px;left:224px;line-height:18px;width:85px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">An orange</span></p>
-  <img src="images/pg110_im006.png" alt="Exercises 7 to 9 showing three shapes for naming fractions: a four-part polygon with one part shaded, two overlapping ovals with one shaded, and a rectangle split into two equal parts with one half shaded." data-id="pg110_im006" style="position:absolute;top:69px;left:70px;width:404px;height:104px;opacity:0">
-  <img src="images/pg110_im008.png" alt="" data-id="pg110_im008" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg110_im009.png" alt="" data-id="pg110_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg110_im010.png" alt="" data-id="pg110_im010" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg110_im011.png" alt="" data-id="pg110_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg110_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 104&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 104</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p020" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 104</span></p>
-  <p data-id="pg110_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg110_p021" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+  </head>
+  <body>
+    <main id="content" class="pg110-shell">
+      <article class="page110" role="article" data-section-id="pg110_sec001" aria-label="Recognizing one-third and two-thirds of a whole object">
+        <div class="pg110-visual" aria-hidden="true">
+          <section class="pg110-continuation"><img src="images/pg110_im006.png" alt="" /></section>
+          <h1 class="pg110-heading">Recognizing one-third and two-thirds of a whole<br />object</h1>
+          <p class="pg110-copy">Three equal parts of the same object form one whole object. One-third is one of the three equal parts. For example, an orange can be cut into three equal pieces. Each piece is one-third of the orange. After removing one-third from an orange, the remaining part is two-thirds.</p>
+          <p class="pg110-copy">In numeral, one-third is written as <span class="pg110-fraction"><span>1</span><span>3</span></span>. It is read as, one-third or one over three. Two-thirds is written as <span class="pg110-fraction"><span>2</span><span>3</span></span>. It is read as, two-thirds or two over three.</p>
+          <p class="pg110-copy">The following pictures show an orange being divided<br />into three equal parts.</p>
+          <figure class="pg110-orange-card"><img src="images/pg110_im005.jpg" alt="" /><figcaption class="pg110-caption">An orange</figcaption></figure>
+          <p class="pg110-marker">104</p>
+        </div>
+        <span class="sr-only" data-id="pg110_page"></span>
+        <span class="sr-only" data-id="pg110_p000">104</span>
+        <span class="sr-only" data-id="pg110_p001">Exercise 4 continues. 7. A four-part polygon has its top-right section shaded. 8. Two overlapping ovals are shown, with the left oval shaded and the right oval unshaded. 9. A rectangle is divided into two equal vertical parts, with the right half shaded green.</span>
+        <span class="sr-only" data-id="pg110_p002">8.</span><span class="sr-only" data-id="pg110_p003">9.</span><span class="sr-only" data-id="pg110_p004">Recognizing one-third and two-thirds of a whole object.</span>
+        <span class="sr-only" data-id="pg110_p006">Three equal parts of the same object form one whole object. One-third is one of the three equal parts. For example, an orange can be cut into three equal pieces.</span>
+        <span class="sr-only" data-id="pg110_p009">Each piece is one-third of the orange. After removing one-third from an orange, the remaining part is two-thirds.</span>
+        <span class="sr-only" data-id="pg110_p012">In numeral, one-third is written as one-third.</span><span class="sr-only" data-id="pg110_p013">It is read as, one-third or one over three.</span>
+        <span class="sr-only" data-id="pg110_p014">Two-thirds is written as two-thirds.</span><span class="sr-only" data-id="pg110_p015">It is read as, two-thirds or two over three.</span>
+        <span class="sr-only" data-id="pg110_p017">The following pictures show an orange being divided into three equal parts.</span><span class="sr-only" data-id="pg110_p019">An orange</span>
+        <span class="sr-only" data-id="pg110_p020">ARITHMETICS PUPIL'S STD 2.indd 104</span><span class="sr-only" data-id="pg110_p021">06/11/2024 17:23</span>
+        <span class="sr-only" data-id="pg110_im001"></span><span class="sr-only" data-id="pg110_im002"></span><span class="sr-only" data-id="pg110_im003"></span><span class="sr-only" data-id="pg110_im004"></span><span class="sr-only" data-id="pg110_im005"></span><span class="sr-only" data-id="pg110_im006"></span><span class="sr-only" data-id="pg110_im007"></span><span class="sr-only" data-id="pg110_im008"></span><span class="sr-only" data-id="pg110_im009"></span><span class="sr-only" data-id="pg110_im010"></span><span class="sr-only" data-id="pg110_im011"></span><span class="sr-only" data-id="pg110_im012"></span><span class="sr-only" data-id="pg110_im013"></span><span class="sr-only" data-id="pg110_im014"></span><span class="sr-only" data-id="pg110_im015"></span><span class="sr-only" data-id="pg110_im016"></span><span class="sr-only" data-id="pg110_im017"></span>
+      </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
-</body>
-
+    <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
+  </body>
 </html>
