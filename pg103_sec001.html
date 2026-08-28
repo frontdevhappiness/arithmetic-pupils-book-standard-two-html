@@ -1,119 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg103_sec001" />
     <meta name="page-section-id" content="103" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="./content/tailwind_output.css" rel="stylesheet" />
+    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/fonts.css" rel="stylesheet" />
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+      :root {
+        --pg103-blue: #159fdf;
+        --pg103-line: #86cef2;
+        --pg103-ink: #231f20;
+        --pg103-dock: var(--dock-height, 96px);
+      }
+
+      html, body { min-height: 100%; }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--pg103-ink);
+        background:
+          radial-gradient(circle at 18% 7%, rgba(111, 194, 224, .25), transparent 30rem),
+          linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%);
+      }
+
+      #content.pg103-shell {
+        box-sizing: border-box;
+        min-height: calc(100vh - var(--pg103-dock));
+        padding: clamp(1rem, 4vw, 3rem) clamp(.75rem, 4vw, 2.5rem)
+          calc(var(--pg103-dock) + clamp(1.5rem, 4vw, 3rem));
+        visibility: visible !important;
+      }
+
+      .page103 {
+        position: relative !important;
+        box-sizing: border-box;
+        width: min(100%, 58rem) !important;
+        min-height: 79.75rem !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        padding: 7.45rem 0 2.8rem !important;
+        overflow: hidden !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+        border: clamp(.45rem, 1vw, .8rem) solid #e1f3fb;
+        border-radius: clamp(1.15rem, 3vw, 2.25rem);
+        background: #fff;
+        box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, .14);
+        font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important;
+      }
+
+      .page103, .page103 * {
+        box-sizing: border-box;
+        font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important;
+      }
+
+      .pg103-panel {
+        width: 74%;
+        min-height: 31.65rem;
+        margin: 0 auto;
+        overflow: hidden;
+        border: .18rem solid var(--pg103-line);
+        border-top: 0;
+        border-radius: 0 0 1rem 1rem;
+        background: #fff;
+      }
+
+      .pg103-screens {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .28rem;
+        width: 100%;
+        height: 11.15rem;
+        background: #fff;
+      }
+
+      .pg103-screen {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+
+      .pg103-instructions { padding: .9rem .85rem 1.2rem; }
+      .pg103-heading {
+        margin: 0 0 .65rem;
+        color: var(--pg103-blue);
+        font-size: 1.9rem;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: .01em;
+        -webkit-text-stroke: .018em currentColor;
+      }
+
+      .pg103-steps {
+        display: grid;
+        row-gap: .64rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pg103-step {
+        display: grid;
+        grid-template-columns: 2.75rem minmax(0, 1fr);
+        align-items: baseline;
+        margin: 0;
+        font-size: 1.76rem;
+        line-height: 1.08;
+        letter-spacing: .005em;
+      }
+
+      .pg103-number { color: var(--pg103-blue); }
+      .pg103-text { color: var(--pg103-ink); white-space: nowrap; }
+
+      .pg103-marker {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        left: 50%;
+        bottom: 3rem;
+        width: 5.25rem;
+        aspect-ratio: 1.65 / 1;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        background: #00a9e8;
+        color: #fff;
+        font-size: 1.75rem;
+        font-weight: 900;
+        line-height: 1;
+        text-align: center;
+        transform: translateX(-50%);
+        -webkit-text-stroke: .015em currentColor;
+      }
+
+      .page103 .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+
+      @media (max-width: 44rem) {
+        #content.pg103-shell { padding: 0 0 calc(var(--pg103-dock) + 1rem); }
+        .page103 {
+          width: 100% !important;
+          min-height: 100vh !important;
+          padding: clamp(3.6rem, 13vw, 7.45rem) 0 7rem !important;
+          border-radius: 0;
+        }
+        .pg103-panel { width: 88%; min-height: 0; }
+        .pg103-screens { height: clamp(6.8rem, 24vw, 11.15rem); gap: clamp(.12rem, .7vw, .28rem); }
+        .pg103-instructions { padding: clamp(.55rem, 2.5vw, .9rem) clamp(.45rem, 2vw, .85rem) 1.1rem; }
+        .pg103-heading { margin-bottom: clamp(.38rem, 2vw, .65rem); font-size: clamp(1.2rem, 5vw, 1.9rem); }
+        .pg103-steps { row-gap: clamp(.34rem, 2vw, .64rem); }
+        .pg103-step {
+          grid-template-columns: clamp(1.75rem, 8vw, 2.75rem) minmax(0, 1fr);
+          font-size: clamp(.78rem, 3.2vw, 1.76rem);
+        }
+        .pg103-marker { bottom: 2rem; }
+      }
     </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
-</head>
+  </head>
+  <body>
+    <main id="content" class="pg103-shell">
+      <article class="page103" role="article" data-section-id="pg103_sec001" aria-label="Steps for practising division with an application">
+        <section class="pg103-panel" aria-label="Division application instructions">
+          <div class="pg103-screens">
+            <img class="pg103-screen" src="images/pg103_im002.png" alt="Division app screen showing 7 divided by 1 with a blank answer space, an OK button, a small sailing boat on the water, a ship and mountains in the background." />
+            <img class="pg103-screen" src="images/pg103_im001.png" alt="Division app screen showing 7 divided by 1 equals 7, with an OK button, a small sailing boat on the water, a ship and mountains in the background." />
+          </div>
+          <div class="pg103-instructions">
+            <h1 class="pg103-heading">Steps</h1>
+            <ol class="pg103-steps">
+              <li class="pg103-step"><span class="pg103-number">1.</span><span class="pg103-text">Open the application for division of numbers.</span></li>
+              <li class="pg103-step"><span class="pg103-number">2.</span><span class="pg103-text">Read the question that appears on the screen clearly.</span></li>
+              <li class="pg103-step"><span class="pg103-number">3.</span><span class="pg103-text">Type the answer by clicking on the keyboard.</span></li>
+              <li class="pg103-step"><span class="pg103-number">4.</span><span class="pg103-text">Click OK to check your answer.</span></li>
+              <li class="pg103-step"><span class="pg103-number">5.</span><span class="pg103-text">Do other questions to practice division of numbers.</span></li>
+            </ol>
+          </div>
+        </section>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg103_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg103_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg103_im004.png" alt="" data-id="pg103_im004" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg103_im009.png" alt="" data-id="pg103_im009" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg103_im010.png" alt="" data-id="pg103_im010" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg103_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;97&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:276px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">97</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p000" aria-hidden="true" style="position:absolute;top:695px;left:276px;line-height:18px;width:18px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">97</span></p>
-  <img src="images/pg103_im001.png" alt="Division app screen showing 7 divided by 1 equals 7, with an OK button, a small sailing boat on the water, a ship and mountains in the background." data-id="pg103_im001" style="position:absolute;top:73px;left:289px;width:197px;height:104px;opacity:0">
-  <img src="images/pg103_im011.png" alt="" data-id="pg103_im011" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg103_im002.png" alt="Division app screen showing 7 divided by 1 with a blank answer space, an OK button, a small sailing boat on the water, a ship and mountains in the background." data-id="pg103_im002" style="position:absolute;top:72px;left:85px;width:201px;height:107px;opacity:0">
-  <img src="images/pg103_im012.png" alt="" data-id="pg103_im012" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg103_im013.png" alt="" data-id="pg103_im013" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg103_p001" class="adt-page-overlay-text" style="position:absolute;top:185px;left:86px;line-height:18px;width:435px;height:24px">Two computer-screen pictures show the question 7 divided by 1 and the completed answer, 7 divided by 1 equals 7. Steps. 1. Open the application for division of numbers. 2. Read the question that appears on the screen clearly. 3. Type the answer by clicking on the keyboard. 4. Click OK to check your answer. 5. Do other questions to practise division of numbers.</p>
-  <img src="images/pg103_im014.png" alt="" data-id="pg103_im014" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg103_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Open the application for division of numbers.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:209px;left:86px;line-height:18px;width:435px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Open the application for division of numbers.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p002" aria-hidden="true" style="position:absolute;top:209px;left:86px;line-height:18px;width:435px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Open the application for division of numbers.</span></p>
-  <p data-id="pg103_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.753664016723633px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;Read the question that appears on the screen clearly.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.753664016723633px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:233px;left:89px;line-height:18px;width:497px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.753664016723633px;color:#0099da">2. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.753664016723633px;color:#231f20">Read the question that appears on the screen clearly.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p003" aria-hidden="true" style="position:absolute;top:233px;left:89px;line-height:18px;width:497px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.753664016723633px;color:#0099da">2. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.753664016723633px;color:#231f20">Read the question that appears on the screen clearly.</span></p>
-  <p data-id="pg103_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Type the answer by clicking on the keyboard.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:257px;left:89px;line-height:18px;width:423px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Type the answer by clicking on the keyboard.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p004" aria-hidden="true" style="position:absolute;top:257px;left:89px;line-height:18px;width:423px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Type the answer by clicking on the keyboard.</span></p>
-  <p data-id="pg103_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;Click OK to check your answer.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:281px;left:89px;line-height:18px;width:423px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Click OK to check your answer.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p005" aria-hidden="true" style="position:absolute;top:281px;left:89px;line-height:18px;width:423px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Click OK to check your answer.</span></p>
-  <p data-id="pg103_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.96536636352539px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;Do other questions to practice division of numbers.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.96536636352539px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:305px;left:89px;line-height:18px;width:485px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.96536636352539px;color:#0099da">5. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.96536636352539px;color:#231f20">Do other questions to practice division of numbers.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p006" aria-hidden="true" style="position:absolute;top:305px;left:89px;line-height:18px;width:485px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.96536636352539px;color:#0099da">5. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.96536636352539px;color:#231f20">Do other questions to practice division of numbers.</span></p>
-  <img src="images/pg103_im003.png" alt="Instruction panel with two division app screens, one showing 7 divided by 1 and the other showing 7 divided by 1 equals 7, followed by steps for using the application: open the division app, read the question, type the answer on the keyboard, click OK to check, and continue practising." data-id="pg103_im003" style="position:absolute;top:68px;left:80px;width:413px;height:311px;opacity:0">
-  <img src="images/pg103_im005.png" alt="" data-id="pg103_im005" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg103_im006.png" alt="" data-id="pg103_im006" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg103_im007.png" alt="" data-id="pg103_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg103_im008.png" alt="" data-id="pg103_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg103_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 97&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 97</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p007" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:99px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 97</span></p>
-  <p data-id="pg103_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg103_p008" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+        <p class="pg103-marker" aria-label="Page 97">97</p>
+
+        <span class="sr-only" data-id="pg103_page"></span>
+        <span class="sr-only" data-id="pg103_p000">97</span>
+        <span class="sr-only" data-id="pg103_p001">Two computer-screen pictures show the question 7 divided by 1 and the completed answer, 7 divided by 1 equals 7. Steps. 1. Open the application for division of numbers. 2. Read the question that appears on the screen clearly. 3. Type the answer by clicking on the keyboard. 4. Click OK to check your answer. 5. Do other questions to practice division of numbers.</span>
+        <span class="sr-only" data-id="pg103_p002">1. Open the application for division of numbers.</span>
+        <span class="sr-only" data-id="pg103_p003">2. Read the question that appears on the screen clearly.</span>
+        <span class="sr-only" data-id="pg103_p004">3. Type the answer by clicking on the keyboard.</span>
+        <span class="sr-only" data-id="pg103_p005">4. Click OK to check your answer.</span>
+        <span class="sr-only" data-id="pg103_p006">5. Do other questions to practice division of numbers.</span>
+        <span class="sr-only" data-id="pg103_p007">ARITHMETICS PUPIL'S STD 2.indd 97</span>
+        <span class="sr-only" data-id="pg103_p008">06/11/2024 17:23</span>
+        <span class="sr-only" data-id="pg103_im001"></span><span class="sr-only" data-id="pg103_im002"></span>
+        <span class="sr-only" data-id="pg103_im003"></span><span class="sr-only" data-id="pg103_im004"></span>
+        <span class="sr-only" data-id="pg103_im005"></span><span class="sr-only" data-id="pg103_im006"></span>
+        <span class="sr-only" data-id="pg103_im007"></span><span class="sr-only" data-id="pg103_im008"></span>
+        <span class="sr-only" data-id="pg103_im009"></span><span class="sr-only" data-id="pg103_im010"></span>
+        <span class="sr-only" data-id="pg103_im011"></span><span class="sr-only" data-id="pg103_im012"></span>
+        <span class="sr-only" data-id="pg103_im013"></span><span class="sr-only" data-id="pg103_im014"></span>
+      </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
-</body>
-
+    <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
+  </body>
 </html>
