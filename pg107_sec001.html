@@ -1,145 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg107_sec001" />
-    <meta name="page-section-id" content="107" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg107_sec001">
+  <meta name="page-section-id" content="107">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg107-blue:#159fe0; --pg107-line:#83c9ee; --pg107-ink:#231f20; --pg107-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg107-ink); background:#eef9ff; }
+    #content.pg107-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg107-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg107-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page107 { position:relative; box-sizing:border-box; width:min(100%,64rem); aspect-ratio:558/768; min-height:79rem; margin:0 auto; padding:7.15rem 0 3rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(circle at 0 10%,rgba(133,205,238,.24),transparent 11%),radial-gradient(circle at 100% 32%,rgba(133,205,238,.2),transparent 10%),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page107,.page107 * { box-sizing:border-box; }
+    .page107 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg107-layout { position:relative; z-index:1; width:74%; margin:0 auto; }
+    .pg107-exercise { position:relative; margin:0; padding:2.65rem 1rem .8rem; border:.18rem solid var(--pg107-line); border-radius:1.2rem; background:rgba(255,255,255,.98); }
+    .pg107-label { position:absolute; top:0; left:4.15rem; min-width:12.4rem; margin:0; padding:.33rem 1rem .28rem; border:.19rem solid var(--pg107-blue); border-radius:999px; background:#fff; color:var(--pg107-blue); font-size:1.8rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.025em currentColor; }
+    .pg107-instruction { margin:0 0 .72rem; font-size:1.78rem; line-height:1.28; letter-spacing:.005em; }
+    .pg107-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:1.2rem; row-gap:.15rem; }
+    .pg107-item { display:grid; grid-template-columns:1.65rem minmax(0,1fr); align-items:start; min-width:0; }
+    .pg107-qno { position:relative; z-index:1; padding-top:.15rem; color:var(--pg107-blue); font-size:1.72rem; line-height:1; }
+    .pg107-item img { display:block; width:100%; height:7.15rem; object-fit:contain; object-position:center; }
+    .pg107-copy { margin-top:1.2rem; }
+    .pg107-heading { margin:0 0 .35rem; font-size:1.85rem; font-weight:900; line-height:1.08; letter-spacing:.01em; -webkit-text-stroke:.025em currentColor; }
+    .pg107-copy p { margin:0; font-size:1.78rem; line-height:1.42; letter-spacing:.005em; }
+    .pg107-copy .pg107-numerals { margin-top:.45rem; }
+    .pg107-fraction { display:inline-grid; grid-template-rows:1fr 1fr; align-items:center; justify-items:center; width:1.55rem; margin:0 .12rem; vertical-align:-.45rem; font-size:1.38rem; line-height:.82; }
+    .pg107-fraction .numerator { width:100%; border-bottom:.1rem solid currentColor; text-align:center; }
+    .pg107-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.2rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg107-shell { padding:0 0 calc(var(--pg107-dock) + 1rem); }
+      .page107 { min-height:100vh; padding-top:clamp(3.8rem,13vw,7.15rem); border-radius:0; }
+      .pg107-layout { width:88%; }
+      .pg107-exercise { padding:clamp(1.8rem,8vw,2.65rem) .55rem .55rem; }
+      .pg107-label { left:1.8rem; min-width:9rem; font-size:clamp(1.15rem,4.4vw,1.8rem); }
+      .pg107-instruction { font-size:clamp(1.02rem,4vw,1.78rem); }
+      .pg107-grid { column-gap:.15rem; }
+      .pg107-item { grid-template-columns:clamp(1.1rem,5vw,1.65rem) minmax(0,1fr); }
+      .pg107-qno { font-size:clamp(1rem,4.1vw,1.72rem); }
+      .pg107-item img { height:clamp(4.2rem,20vw,7.15rem); }
+      .pg107-heading { font-size:clamp(1.08rem,4.2vw,1.85rem); }
+      .pg107-copy p { font-size:clamp(1rem,4vw,1.78rem); }
+      .pg107-marker { bottom:2rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg107_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg107_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg107_im011.png" alt="" data-id="pg107_im011" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg107_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;101&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">101</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p000" aria-hidden="true" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">101</span></p>
-  <img src="images/pg107_im010.png" alt="Exercise 2. Write Yes if the shaded part is a half. Write No if the shaded part is not a half. Nine numbered shapes are shown: a triangle with one side shaded, a circle half shaded vertically, a square divided diagonally with one triangular half shaded, a rectangle with the left half shaded, a circle divided into four parts with one quarter shaded, a long rectangle with a small right section shaded, a pointed triangle-like shape with a small inner triangle shaded, a vertical rectangle with the top half shaded, and a chain of five circles with the first two shaded." data-id="pg107_im010" style="position:absolute;top:70px;left:84px;width:405px;height:325px;opacity:0">
-  <img src="images/pg107_im016.png" alt="" data-id="pg107_im016" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg107_im017.png" alt="" data-id="pg107_im017" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg107_im018.png" alt="" data-id="pg107_im018" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg107_im019.png" alt="" data-id="pg107_im019" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg107_p001" class="adt-page-overlay-text" style="position:absolute;top:76px;left:95px;line-height:18px;width:386px;height:31px">Exercise 2. Write Yes if the shaded part is a half. Write No if the shaded part is not a half. 1. A triangle has its right section shaded blue. 2. A circle is divided into two equal vertical halves, with the left half shaded blue. 3. A square is divided diagonally into two equal triangles, with one triangle shaded blue. 4. A rectangle is divided into two equal vertical parts, with the left half shaded. 5. A circle is divided into four equal parts, with one quarter shaded blue. 6. A long rectangle has only a small right-hand section shaded. 7. A pointed triangular shape has a small inner triangle shaded blue. 8. A vertical rectangle is divided into two equal horizontal parts, with the top half shaded blue. 9. A chain of four circles has the first two shaded blue.</p>
-  <img src="images/pg107_im020.png" alt="" data-id="pg107_im020" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg107_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write Yes if the shaded part is a half. Write No if the&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:107px;left:95px;line-height:18px;width:386px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write Yes if the shaded part is a half. Write No if the</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p002" aria-hidden="true" style="position:absolute;top:107px;left:95px;line-height:18px;width:386px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write Yes if the shaded part is a half. Write No if the</span></p>
-  <img src="images/pg107_im021.png" alt="" data-id="pg107_im021" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg107_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;shaded part is not a half.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:128px;left:95px;line-height:18px;width:386px;height:32px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">shaded part is not a half.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p003" aria-hidden="true" style="position:absolute;top:128px;left:95px;line-height:18px;width:386px;height:32px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">shaded part is not a half.</span></p>
-  <p data-id="pg107_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:160px;left:95px;line-height:18px;width:386px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p004" aria-hidden="true" style="position:absolute;top:160px;left:95px;line-height:18px;width:386px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <img src="images/pg107_im001.png" alt="Triangle divided by a vertical line, with the right part shaded blue." data-id="pg107_im001" style="position:absolute;top:163px;left:125px;width:80px;height:64px;opacity:0">
-  <p data-id="pg107_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:160px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p005" aria-hidden="true" style="position:absolute;top:160px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <img src="images/pg107_im002.png" alt="Rectangle divided into two equal vertical parts, with the left half shaded dark." data-id="pg107_im002" style="position:absolute;top:163px;left:246px;width:82px;height:63px;opacity:0">
-  <p data-id="pg107_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;7.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:160px;left:347px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">7.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p006" aria-hidden="true" style="position:absolute;top:160px;left:347px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">7.</span></p>
-  <img src="images/pg107_im003.png" alt="Large pointed triangular shape divided by a horizontal line and a diagonal line, with a small lower inner triangle shaded blue." data-id="pg107_im003" style="position:absolute;top:163px;left:372px;width:80px;height:64px;opacity:0">
-  <p data-id="pg107_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:232px;left:99px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p007" aria-hidden="true" style="position:absolute;top:232px;left:99px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <img src="images/pg107_im004.png" alt="Circle divided into two equal vertical halves, with the left half shaded blue." data-id="pg107_im004" style="position:absolute;top:235px;left:124px;width:82px;height:77px;opacity:0">
-  <p data-id="pg107_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:232px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p008" aria-hidden="true" style="position:absolute;top:232px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <img src="images/pg107_im005.png" alt="Circle divided into four equal parts by a cross, with the bottom-left quarter shaded blue." data-id="pg107_im005" style="position:absolute;top:235px;left:246px;width:88px;height:75px;opacity:0">
-  <p data-id="pg107_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:232px;left:347px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p009" aria-hidden="true" style="position:absolute;top:232px;left:347px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span></p>
-  <img src="images/pg107_im006.png" alt="Vertical rectangle divided into two equal horizontal parts, with the top half shaded blue." data-id="pg107_im006" style="position:absolute;top:235px;left:372px;width:88px;height:73px;opacity:0">
-  <p data-id="pg107_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:317px;left:99px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p010" aria-hidden="true" style="position:absolute;top:317px;left:99px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <img src="images/pg107_im007.png" alt="Square divided diagonally from top left to bottom right, with the upper-right triangular half shaded blue." data-id="pg107_im007" style="position:absolute;top:320px;left:125px;width:77px;height:66px;opacity:0">
-  <p data-id="pg107_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:317px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p011" aria-hidden="true" style="position:absolute;top:317px;left:222px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <img src="images/pg107_im008.png" alt="Long horizontal rectangle with a small right-hand section shaded dark and the larger left section unshaded." data-id="pg107_im008" style="position:absolute;top:320px;left:246px;width:92px;height:66px;opacity:0">
-  <p data-id="pg107_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:317px;left:347px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p012" aria-hidden="true" style="position:absolute;top:317px;left:347px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span></p>
-  <img src="images/pg107_im009.png" alt="Chain of five connected circles, with the first two shaded blue and the last three unshaded." data-id="pg107_im009" style="position:absolute;top:320px;left:372px;width:97px;height:66px;opacity:0">
-  <p data-id="pg107_p013" class="adt-page-overlay-text" style="position:absolute;top:401px;left:86px;line-height:18px;width:406px;height:23px">Recognizing a quarter of a whole object. Four equal parts of an object form one whole object. A quarter is one of the four equal parts. For example, an orange can be cut into four equal pieces. Each piece is a quarter of the orange. In numerals, a quarter is written as 1 over 4. It is read as a quarter or one over four.</p>
-  <p data-id="pg107_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Four equal parts of an object form one whole object. A &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;quarter is one of the four equal parts. For example, an &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;orange can be cut into four equal pieces. Each piece is &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;a quarter of the orange.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:424px;left:86px;line-height:18px;width:406px;height:88px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Four equal parts of an object form one whole object. A </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">quarter is one of the four equal parts. For example, an </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">orange can be cut into four equal pieces. Each piece is </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">a quarter of the orange.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p014" aria-hidden="true" style="position:absolute;top:424px;left:86px;line-height:18px;width:406px;height:88px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Four equal parts of an object form one whole object. A </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">quarter is one of the four equal parts. For example, an </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">orange can be cut into four equal pieces. Each piece is </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">a quarter of the orange.</span></p>
-  <p data-id="pg107_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;In numerals, a quarter is written as &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:519px;left:86px;line-height:18px;width:279px;height:33px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">In numerals, a quarter is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p018" aria-hidden="true" style="position:absolute;top:519px;left:86px;line-height:18px;width:279px;height:33px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">In numerals, a quarter is written as </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p data-id="pg107_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot;. It is read as, a &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;quarter or one over four.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:512px;left:86px;line-height:18px;width:406px;height:48px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">. It is read as, a </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">quarter or one over four.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p019" aria-hidden="true" style="position:absolute;top:512px;left:86px;line-height:18px;width:406px;height:48px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">. It is read as, a </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">quarter or one over four.</span></p>
-  <img src="images/pg107_im012.png" alt="" data-id="pg107_im012" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg107_im013.png" alt="" data-id="pg107_im013" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg107_im014.png" alt="" data-id="pg107_im014" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg107_im015.png" alt="" data-id="pg107_im015" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg107_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 101&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 101</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p021" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 101</span></p>
-  <p data-id="pg107_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg107_p022" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg107-shell">
+    <article class="page107" role="article" data-section-id="pg107_sec001" aria-label="Recognizing halves and quarters">
+      <div class="pg107-layout">
+        <section class="pg107-exercise" aria-labelledby="pg107-exercise-title">
+          <h1 id="pg107-exercise-title" class="pg107-label">Exercise 2</h1>
+          <p class="pg107-instruction">Write Yes if the shaded part is a half. Write No if the<br>shaded part is not a half.</p>
+          <div class="pg107-grid" aria-label="Nine shaded-shape questions">
+            <div class="pg107-item"><span class="pg107-qno">1.</span><img src="images/pg107_im001.png" alt="Triangle divided by a vertical line, with the right part shaded blue."></div>
+            <div class="pg107-item"><span class="pg107-qno">4.</span><img src="images/pg107_im002.png" alt="Rectangle divided into two equal vertical parts, with the left half shaded dark."></div>
+            <div class="pg107-item"><span class="pg107-qno">7.</span><img src="images/pg107_im003.png" alt="Pointed triangular shape divided into parts, with a small lower triangle shaded blue."></div>
+            <div class="pg107-item"><span class="pg107-qno">2.</span><img src="images/pg107_im004.png" alt="Circle divided into two equal vertical halves, with the left half shaded blue."></div>
+            <div class="pg107-item"><span class="pg107-qno">5.</span><img src="images/pg107_im005.png" alt="Circle divided into four equal parts, with the bottom-left quarter shaded blue."></div>
+            <div class="pg107-item"><span class="pg107-qno">8.</span><img src="images/pg107_im006.png" alt="Vertical rectangle divided into two equal horizontal parts, with the top half shaded blue."></div>
+            <div class="pg107-item"><span class="pg107-qno">3.</span><img src="images/pg107_im007.png" alt="Square divided diagonally into two equal triangles, with the upper-right triangle shaded blue."></div>
+            <div class="pg107-item"><span class="pg107-qno">6.</span><img src="images/pg107_im008.png" alt="Long rectangle with a small right-hand section shaded dark."></div>
+            <div class="pg107-item"><span class="pg107-qno">9.</span><img src="images/pg107_im009.png" alt="Chain of circles with the first two shaded blue."></div>
+          </div>
+        </section>
+        <section class="pg107-copy" aria-labelledby="pg107-quarter-title">
+          <h2 id="pg107-quarter-title" class="pg107-heading">Recognizing a quarter of a whole object</h2>
+          <p>Four equal parts of an object form one whole object. A<br>quarter is one of the four equal parts. For example, an<br>orange can be cut into four equal pieces. Each piece is<br>a quarter of the orange.</p>
+          <p class="pg107-numerals">In numerals, a quarter is written as <span class="pg107-fraction" aria-label="one over four"><span class="numerator">1</span><span>4</span></span>. It is read as, a<br>quarter or one over four.</p>
+        </section>
+      </div>
+      <p class="pg107-marker">101</p>
+      <span class="sr-only" data-id="pg107_page"></span><span class="sr-only" data-id="pg107_p000">101</span><span class="sr-only" data-id="pg107_im010"></span>
+      <span class="sr-only" data-id="pg107_p001">Exercise 2. Write Yes if the shaded part is a half. Write No if the shaded part is not a half. Nine numbered shaded-shape questions.</span>
+      <span class="sr-only" data-id="pg107_p002"></span><span class="sr-only" data-id="pg107_p003"></span><span class="sr-only" data-id="pg107_p004"></span>
+      <span class="sr-only" data-id="pg107_im001"></span><span class="sr-only" data-id="pg107_p005"></span><span class="sr-only" data-id="pg107_im002"></span><span class="sr-only" data-id="pg107_p006"></span><span class="sr-only" data-id="pg107_im003"></span>
+      <span class="sr-only" data-id="pg107_p007"></span><span class="sr-only" data-id="pg107_im004"></span><span class="sr-only" data-id="pg107_p008"></span><span class="sr-only" data-id="pg107_im005"></span><span class="sr-only" data-id="pg107_p009"></span><span class="sr-only" data-id="pg107_im006"></span>
+      <span class="sr-only" data-id="pg107_p010"></span><span class="sr-only" data-id="pg107_im007"></span><span class="sr-only" data-id="pg107_p011"></span><span class="sr-only" data-id="pg107_im008"></span><span class="sr-only" data-id="pg107_p012"></span><span class="sr-only" data-id="pg107_im009"></span>
+      <span class="sr-only" data-id="pg107_p013">Recognizing a quarter of a whole object. Four equal parts of an object form one whole object. A quarter is one of the four equal parts. For example, an orange can be cut into four equal pieces. Each piece is a quarter of the orange. In numerals, a quarter is written as one over four. It is read as, a quarter or one over four.</span>
+      <span class="sr-only" data-id="pg107_p014"></span><span class="sr-only" data-id="pg107_p018"></span><span class="sr-only" data-id="pg107_p019"></span><span class="sr-only" data-id="pg107_p021"></span><span class="sr-only" data-id="pg107_p022"></span>
+    </article>
+  </main>
+  <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
 </body>
-
 </html>
