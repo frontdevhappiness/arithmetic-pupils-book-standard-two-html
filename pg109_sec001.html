@@ -1,163 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg109_sec001" />
     <meta name="page-section-id" content="109" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="./content/tailwind_output.css" rel="stylesheet" />
+    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/fonts.css" rel="stylesheet" />
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+      :root {
+        --pg109-blue: #159fdf;
+        --pg109-line: #82ccef;
+        --pg109-grid: #3d50b5;
+        --pg109-ink: #231f20;
+        --pg109-dock: var(--dock-height, 96px);
+      }
+
+      html, body { margin: 0; min-height: 100%; }
+      body { overflow-x: hidden; overflow-y: auto; color: var(--pg109-ink); background: #eef9ff; }
+      #content.pg109-shell {
+        box-sizing: border-box;
+        width: auto !important;
+        min-height: calc(100vh - var(--pg109-dock));
+        padding: clamp(1rem, 4vw, 3rem) clamp(.75rem, 4vw, 2.5rem) calc(var(--pg109-dock) + clamp(1.5rem, 4vw, 3rem));
+        visibility: visible !important;
+      }
+
+      .page109 {
+        position: relative;
+        box-sizing: border-box;
+        width: min(100%, 58rem);
+        min-height: 79.75rem;
+        margin: 0 auto;
+        padding: 7.45rem 0 2.7rem;
+        overflow: hidden;
+        border: clamp(.45rem, 1vw, .8rem) solid #dff2fb;
+        border-radius: clamp(1.15rem, 3vw, 2.25rem);
+        background:
+          radial-gradient(circle at 2% 9%, rgba(133, 205, 238, .22), transparent 9rem),
+          radial-gradient(circle at 98% 34%, rgba(133, 205, 238, .18), transparent 8rem),
+          #fff;
+        box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, .14);
+        font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif;
+      }
+
+      .page109, .page109 * { box-sizing: border-box; }
+      .page109 * { font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important; }
+      .pg109-continuation {
+        width: 42rem;
+        margin: 0 auto;
+        padding: 0 1.55rem .9rem;
+        border: .18rem solid var(--pg109-line);
+        border-top: 0;
+        border-radius: 0 0 1.25rem 1.25rem;
+        background: rgba(255, 255, 255, .97);
+      }
+
+      .pg109-table {
+        display: grid;
+        grid-template-columns: 3rem 14.6rem 10.9rem 10.3rem;
+        grid-template-rows: 7.05rem 8.85rem 5.85rem 7.25rem;
+        width: 38.8rem;
+        border-left: .1rem solid var(--pg109-grid);
+        border-top: .1rem solid var(--pg109-grid);
+      }
+
+      .pg109-cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        border-right: .1rem solid var(--pg109-grid);
+        border-bottom: .1rem solid var(--pg109-grid);
+        font-size: 1.72rem;
+        line-height: 1;
+      }
+
+      .pg109-qno { justify-content: flex-start; padding-left: .55rem; color: var(--pg109-blue); font-size: 1.72rem; }
+      .pg109-picture img { display: block; max-width: 82%; max-height: 78%; object-fit: contain; }
+      .pg109-picture .pg109-cross { max-width: 54%; max-height: 77%; }
+      .pg109-picture .pg109-small-rectangle { max-width: 57%; max-height: 64%; }
+      .pg109-picture .pg109-square { max-width: 44%; max-height: 78%; }
+      .pg109-answer { font-size: 1.66rem; }
+      .pg109-line { display: block; width: 4.55rem; border-bottom: .12rem solid var(--pg109-ink); }
+      .pg109-fraction {
+        display: inline-grid;
+        grid-template-rows: 1fr 1fr;
+        min-width: 1.5rem;
+        font-size: 1.56rem;
+        line-height: .9;
+        text-align: center;
+        vertical-align: -.42em;
+      }
+      .pg109-fraction > span:first-child { padding: 0 .14rem .08rem; border-bottom: .1rem solid currentColor; }
+      .pg109-fraction > span:last-child { padding-top: .08rem; }
+
+      .pg109-exercise {
+        position: relative;
+        width: 42rem;
+        min-height: 30.35rem;
+        margin: 2.05rem auto 0;
+        padding: 4.15rem 2.7rem 1.5rem;
+        border: .18rem solid var(--pg109-line);
+        border-bottom: 0;
+        border-radius: 1.25rem 1.25rem 0 0;
+        background: rgba(255, 255, 255, .98);
+      }
+
+      .pg109-banner {
+        position: absolute;
+        top: 0;
+        left: 3.45rem;
+        min-width: 10.45rem;
+        margin: 0;
+        padding: .3rem .9rem .28rem;
+        border: .18rem solid var(--pg109-blue);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--pg109-blue);
+        font-size: 1.75rem;
+        font-weight: 900;
+        line-height: 1.05;
+        text-align: center;
+        transform: translateY(-50%);
+        -webkit-text-stroke: .025em currentColor;
+      }
+
+      .pg109-instruction { margin: 0 0 2.45rem; font-size: 1.72rem; line-height: 1.25; }
+      .pg109-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 2.1rem; row-gap: 1.55rem; }
+      .pg109-item { position: relative; display: grid; grid-template-rows: 5.65rem 1.35rem; min-width: 0; padding-left: 1.7rem; }
+      .pg109-item-no { position: absolute; top: -.25rem; left: 0; color: var(--pg109-blue); font-size: 1.65rem; line-height: 1; }
+      .pg109-shape { display: flex; align-items: center; justify-content: center; }
+      .pg109-shape img { display: block; max-width: 100%; max-height: 5.25rem; object-fit: contain; }
+      .pg109-shape .pg109-item-oval { width: 8.5rem; max-width: 112%; }
+      .pg109-shape .pg109-item-triangle { max-height: 6.15rem; transform: translateY(.35rem); }
+      .pg109-shape .pg109-item-diamond { max-height: 6.25rem; transform: translateY(.4rem); }
+      .pg109-blank { width: 100%; border-bottom: .15rem dotted var(--pg109-ink); align-self: end; }
+      .pg109-marker {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        left: 50%;
+        bottom: 2.55rem;
+        width: 5.2rem;
+        aspect-ratio: 1.65 / 1;
+        margin: 0;
+        border-radius: 50%;
+        background: #00a9e8;
+        color: #fff;
+        font-size: 1.75rem;
+        font-weight: 900;
+        font-style: italic;
+        line-height: 1;
+        text-align: center;
+        transform: translateX(-50%);
+        -webkit-text-stroke: .015em currentColor;
+      }
+
+      .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+
+      @media (max-width: 44rem) {
+        #content.pg109-shell { padding: 0 0 calc(var(--pg109-dock) + 1rem); }
+        .page109 { width: 100%; min-height: 100vh; padding-top: clamp(4.2rem, 13vw, 7.45rem); border-radius: 0; }
+        .pg109-continuation, .pg109-exercise { width: 88%; }
+        .pg109-continuation { padding-inline: 3.25%; }
+        .pg109-table { grid-template-columns: 8% 37.7% 28.1% 26.2%; width: 100%; }
+        .pg109-qno, .pg109-cell, .pg109-answer { font-size: clamp(1rem, 4vw, 1.72rem); }
+        .pg109-exercise { padding: clamp(3rem, 11vw, 4.15rem) 5% 1.5rem; }
+        .pg109-banner { left: 1.8rem; min-width: 9rem; font-size: clamp(1.15rem, 4.4vw, 1.75rem); }
+        .pg109-instruction { font-size: clamp(1.05rem, 4vw, 1.72rem); }
+        .pg109-items { column-gap: clamp(.65rem, 4vw, 2.1rem); }
+        .pg109-item { padding-left: clamp(1rem, 5vw, 1.7rem); }
+        .pg109-item-no { font-size: clamp(1rem, 4vw, 1.65rem); }
+      }
     </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content > img[src*="_page_hq_pdf_clean"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text:not([data-segments]){display:none!important}
-#content > img:not([role="presentation"]):not([src*="_page_hq_pdf_clean"]){opacity:1!important}
-#content .adt-static-page-text{position:absolute!important;margin:0!important;opacity:1!important;z-index:1}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
-</head>
+  </head>
+  <body>
+    <main id="content" class="pg109-shell">
+      <article class="page109" role="article" data-section-id="pg109_sec001" aria-label="Fractions exercises">
+        <div aria-hidden="true">
+          <section class="pg109-continuation">
+            <div class="pg109-table">
+              <div class="pg109-cell pg109-qno">2.</div>
+              <div class="pg109-cell pg109-picture"><img src="images/pg109_im001.png" alt="" /></div>
+              <div class="pg109-cell"><span class="pg109-line"></span></div>
+              <div class="pg109-cell pg109-answer"><span class="pg109-fraction"><span>1</span><span>4</span></span></div>
+              <div class="pg109-cell pg109-qno">3.</div>
+              <div class="pg109-cell pg109-picture"><img class="pg109-cross" src="images/pg109_im002.png" alt="" /></div>
+              <div class="pg109-cell pg109-answer">a quarter</div>
+              <div class="pg109-cell"><span class="pg109-line"></span></div>
+              <div class="pg109-cell pg109-qno">4.</div>
+              <div class="pg109-cell pg109-picture"><img class="pg109-small-rectangle" src="images/pg109_im004.png" alt="" /></div>
+              <div class="pg109-cell pg109-answer">a quarter</div>
+              <div class="pg109-cell"><span class="pg109-line"></span></div>
+              <div class="pg109-cell pg109-qno">5.</div>
+              <div class="pg109-cell pg109-picture"><img class="pg109-square" src="images/pg109_im005.png" alt="" /></div>
+              <div class="pg109-cell"><span class="pg109-line"></span></div>
+              <div class="pg109-cell pg109-answer"><span class="pg109-fraction"><span>1</span><span>4</span></span></div>
+            </div>
+          </section>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg109_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg109_page" style="position:absolute;inset:0;width:558px;height:768px">
-  <img src="images/pg109_im013.png" alt="" data-id="pg109_im013" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg109_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;103&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">103</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p000" aria-hidden="true" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">103</span></p>
-  <img src="images/pg109_im012.png" alt="Fraction exercise page showing shapes divided into equal parts, with some parts shaded and blanks to fill in with one half or one quarter." data-id="pg109_im012" style="position:absolute;top:69px;left:82px;width:410px;height:604px;opacity:0">
-  <img src="images/pg109_im018.png" alt="" data-id="pg109_im018" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im019.png" alt="" data-id="pg109_im019" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im020.png" alt="" data-id="pg109_im020" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im021.png" alt="" data-id="pg109_im021" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im022.png" alt="" data-id="pg109_im022" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im023.png" alt="" data-id="pg109_im023" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg109_p001" class="adt-page-overlay-text" style="position:absolute;top:97px;left:105px;line-height:18px;width:14px;height:20px">Exercise 3 continues. 2. A bar is divided into four equal parts, with the last part shaded green. Write the fraction in words. 3. A cross-shaped figure is divided into four equal parts, with the top-left part shaded blue. The shaded part is a quarter. Write the matching fraction. 4. A rectangle is divided into four equal parts, with the top-left part shaded dark green. The shaded part is a quarter. Write the matching fraction. 5. A square is divided into four equal triangles, with the left triangle shaded dark blue. Write the fraction in words and numerals.</p>
-  <img src="images/pg109_im001.png" alt="A bar divided into four equal parts, with one part shaded green." data-id="pg109_im001" style="position:absolute;top:84px;left:134px;width:132px;height:44px;opacity:0">
-  <p data-id="pg109_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:97px;left:301px;line-height:18px;width:45px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">_____</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p002" aria-hidden="true" style="position:absolute;top:97px;left:301px;line-height:18px;width:45px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">_____</span></p>
-  <p data-id="pg109_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:106px;left:382px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p003" aria-hidden="true" style="position:absolute;top:106px;left:382px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p data-id="pg109_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:87px;left:382px;line-height:18px;width:9px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p004" aria-hidden="true" style="position:absolute;top:87px;left:382px;line-height:18px;width:9px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg109_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:173px;left:105px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p005" aria-hidden="true" style="position:absolute;top:173px;left:105px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <img src="images/pg109_im002.png" alt="A cross-shaped figure divided into four equal parts, with the top-left part shaded blue." data-id="pg109_im002" style="position:absolute;top:151px;left:157px;width:87px;height:63px;opacity:0">
-  <p data-id="pg109_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;a quarter&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:173px;left:289px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">a quarter</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p006" aria-hidden="true" style="position:absolute;top:173px;left:289px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">a quarter</span></p>
-  <p data-id="pg109_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;_______&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;11px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:177px;left:406px;line-height:11px;width:39px;height:13px"><span style="font-family:Sassoon,Merriweather,serif;font-size:11px;color:#231f20;font-style:italic">_______</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p007" aria-hidden="true" style="position:absolute;top:177px;left:406px;line-height:11px;width:39px;height:13px"><span style="font-family:Sassoon,Merriweather,serif;font-size:11px;color:#231f20;font-style:italic">_______</span></p>
-  <p data-id="pg109_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:244px;left:105px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p008" aria-hidden="true" style="position:absolute;top:244px;left:105px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <img src="images/pg109_im004.png" alt="A rectangle divided into four equal parts, with the top-left part shaded dark green." data-id="pg109_im004" style="position:absolute;top:229px;left:157px;width:85px;height:48px;opacity:0">
-  <p data-id="pg109_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;a quarter&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:244px;left:289px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">a quarter</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p009" aria-hidden="true" style="position:absolute;top:244px;left:289px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">a quarter</span></p>
-  <p data-id="pg109_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:243px;left:407px;line-height:18px;width:36px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">____</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p010" aria-hidden="true" style="position:absolute;top:243px;left:407px;line-height:18px;width:36px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">____</span></p>
-  <p data-id="pg109_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:306px;left:105px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p011" aria-hidden="true" style="position:absolute;top:306px;left:105px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <img src="images/pg109_im005.png" alt="A square divided into four triangles, with the left triangle shaded dark blue." data-id="pg109_im005" style="position:absolute;top:285px;left:167px;width:66px;height:61px;opacity:0">
-  <p data-id="pg109_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;____&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:306px;left:305px;line-height:18px;width:36px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">____</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p012" aria-hidden="true" style="position:absolute;top:306px;left:305px;line-height:18px;width:36px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">____</span></p>
-  <p data-id="pg109_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:315px;left:382px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p013" aria-hidden="true" style="position:absolute;top:315px;left:382px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p data-id="pg109_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:296px;left:382px;line-height:18px;width:9px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p014" aria-hidden="true" style="position:absolute;top:296px;left:382px;line-height:18px;width:9px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg109_p015" class="adt-page-overlay-text" style="position:absolute;top:369px;left:132px;line-height:18px;width:78px;height:20px">Exercise 4. Write 1 over 2 or 1 over 4 in the blank spaces. 1. A rectangle is divided into two equal halves, with the top half shaded turquoise. 2. A circle is divided into four equal parts, with the top-right quarter shaded orange. 3. Two equal ovals are side by side, with the right oval shaded pink. 4. A triangle is divided into two equal parts, with the left half shaded dark blue. 5. A diamond is divided into four equal triangles, with the top-left triangle shaded pink. 6. A rectangle is divided into four equal parts, with the bottom-left part shaded blue.</p>
-  <p data-id="pg109_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:420px;left:113px;line-height:18px;width:64px;height:34px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Write </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p016" aria-hidden="true" style="position:absolute;top:420px;left:113px;line-height:18px;width:64px;height:34px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Write </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span></p>
-  <p data-id="pg109_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot; or &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:414px;left:382px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> or </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p017" aria-hidden="true" style="position:absolute;top:414px;left:382px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> or </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p data-id="pg109_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot; in the blank spaces.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:415px;left:212px;line-height:18px;width:179px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> in the blank spaces.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p018" aria-hidden="true" style="position:absolute;top:415px;left:212px;line-height:18px;width:179px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> in the blank spaces.</span></p>
-  <p data-id="pg109_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:474px;left:113px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p019" aria-hidden="true" style="position:absolute;top:474px;left:113px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <img src="images/pg109_im006.png" alt="A rectangle divided into two equal halves, with the top half shaded turquoise." data-id="pg109_im006" style="position:absolute;top:487px;left:140px;width:74px;height:44px;opacity:0">
-  <p data-id="pg109_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:474px;left:236px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p020" aria-hidden="true" style="position:absolute;top:474px;left:236px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <img src="images/pg109_im007.png" alt="A circle divided into four equal parts, with the top-right quarter shaded orange." data-id="pg109_im007" style="position:absolute;top:479px;left:261px;width:59px;height:60px;opacity:0">
-  <p data-id="pg109_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:474px;left:352px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p021" aria-hidden="true" style="position:absolute;top:474px;left:352px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <img src="images/pg109_im008.png" alt="Two equal ovals side by side, with the right oval shaded pink." data-id="pg109_im008" style="position:absolute;top:486px;left:380px;width:88px;height:36px;opacity:0">
-  <img src="images/pg109_im009.png" alt="" data-id="pg109_im009" style="position:absolute;top:554px;left:140px;width:78px;height:9px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg109_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:569px;left:113px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p022" aria-hidden="true" style="position:absolute;top:569px;left:113px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <img src="images/pg109_im010.png" alt="A triangle divided into two equal parts, with the left half shaded dark blue." data-id="pg109_im010" style="position:absolute;top:573px;left:140px;width:55px;height:60px;opacity:0">
-  <p data-id="pg109_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:569px;left:236px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p023" aria-hidden="true" style="position:absolute;top:569px;left:236px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <img src="images/pg109_im011.png" alt="A diamond divided into four equal triangles, with the top-left triangle shaded pink." data-id="pg109_im011" style="position:absolute;top:572px;left:261px;width:30px;height:62px;opacity:0">
-  <p data-id="pg109_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:569px;left:352px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p024" aria-hidden="true" style="position:absolute;top:569px;left:352px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <img src="images/pg109_im003.png" alt="A rectangle divided into four equal parts, with the bottom-left part shaded blue." data-id="pg109_im003" style="position:absolute;top:583px;left:380px;width:77px;height:41px;opacity:0">
-  <img src="images/pg109_im014.png" alt="" data-id="pg109_im014" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im015.png" alt="" data-id="pg109_im015" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im016.png" alt="" data-id="pg109_im016" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg109_im017.png" alt="" data-id="pg109_im017" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg109_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 103&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 103</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p025" aria-hidden="true" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 103</span></p>
-  <p data-id="pg109_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p class="adt-static-page-text" data-visual-id="pg109_p026" aria-hidden="true" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+          <section class="pg109-exercise">
+            <h1 class="pg109-banner">Exercise 4</h1>
+            <p class="pg109-instruction">Write <span class="pg109-fraction"><span>1</span><span>2</span></span> or <span class="pg109-fraction"><span>1</span><span>4</span></span> in the blank spaces.</p>
+            <div class="pg109-items">
+              <div class="pg109-item"><span class="pg109-item-no">1.</span><div class="pg109-shape"><img src="images/pg109_im006.png" alt="" /></div><span class="pg109-blank"></span></div>
+              <div class="pg109-item"><span class="pg109-item-no">2.</span><div class="pg109-shape"><img src="images/pg109_im007.png" alt="" /></div><span class="pg109-blank"></span></div>
+              <div class="pg109-item"><span class="pg109-item-no">3.</span><div class="pg109-shape"><img class="pg109-item-oval" src="images/pg109_im008.png" alt="" /></div><span class="pg109-blank"></span></div>
+              <div class="pg109-item"><span class="pg109-item-no">4.</span><div class="pg109-shape"><img class="pg109-item-triangle" src="images/pg109_im010.png" alt="" /></div><span class="pg109-blank"></span></div>
+              <div class="pg109-item"><span class="pg109-item-no">5.</span><div class="pg109-shape"><img class="pg109-item-diamond" src="images/pg109_im011.png" alt="" /></div><span class="pg109-blank"></span></div>
+              <div class="pg109-item"><span class="pg109-item-no">6.</span><div class="pg109-shape"><img src="images/pg109_im003.png" alt="" /></div><span class="pg109-blank"></span></div>
+            </div>
+          </section>
+          <p class="pg109-marker">103</p>
+        </div>
+
+        <span class="sr-only" data-id="pg109_page"></span><span class="sr-only" data-id="pg109_p000">103</span>
+        <span class="sr-only" data-id="pg109_p001">Exercise 3 continues. 2. A bar is divided into four equal parts, with the last part shaded green. Write the fraction in words. 3. A cross-shaped figure is divided into four equal parts, with the top-left part shaded blue. The shaded part is a quarter. Write the matching fraction. 4. A rectangle is divided into four equal parts, with the top-left part shaded dark green. The shaded part is a quarter. Write the matching fraction. 5. A square is divided into four equal triangles, with the left triangle shaded dark blue. Write the fraction in words and numerals.</span>
+        <span class="sr-only" data-id="pg109_p002">_____</span><span class="sr-only" data-id="pg109_p003">4</span><span class="sr-only" data-id="pg109_p004">1</span><span class="sr-only" data-id="pg109_p005">3.</span><span class="sr-only" data-id="pg109_p006">a quarter</span><span class="sr-only" data-id="pg109_p007">_______</span><span class="sr-only" data-id="pg109_p008">4.</span><span class="sr-only" data-id="pg109_p009">a quarter</span><span class="sr-only" data-id="pg109_p010">____</span><span class="sr-only" data-id="pg109_p011">5.</span><span class="sr-only" data-id="pg109_p012">____</span><span class="sr-only" data-id="pg109_p013">4</span><span class="sr-only" data-id="pg109_p014">1</span>
+        <span class="sr-only" data-id="pg109_p015">Exercise 4. Write 1 over 2 or 1 over 4 in the blank spaces. 1. A rectangle is divided into two equal halves, with the top half shaded turquoise. 2. A circle is divided into four equal parts, with the top-right quarter shaded orange. 3. Two equal ovals are side by side, with the right oval shaded pink. 4. A triangle is divided into two equal parts, with the left half shaded dark blue. 5. A diamond is divided into four equal triangles, with the top-left triangle shaded pink. 6. A rectangle is divided into four equal parts, with the bottom-left part shaded blue.</span>
+        <span class="sr-only" data-id="pg109_p016">Write 1 over 2</span><span class="sr-only" data-id="pg109_p017">1 over 4</span><span class="sr-only" data-id="pg109_p018">in the blank spaces.</span><span class="sr-only" data-id="pg109_p019">1.</span><span class="sr-only" data-id="pg109_p020">2.</span><span class="sr-only" data-id="pg109_p021">3.</span><span class="sr-only" data-id="pg109_p022">4.</span><span class="sr-only" data-id="pg109_p023">5.</span><span class="sr-only" data-id="pg109_p024">6.</span><span class="sr-only" data-id="pg109_p025">ARITHMETICS PUPIL'S STD 2.indd 103</span><span class="sr-only" data-id="pg109_p026">06/11/2024 17:23</span>
+        <span class="sr-only" data-id="pg109_im001"></span><span class="sr-only" data-id="pg109_im002"></span><span class="sr-only" data-id="pg109_im003"></span><span class="sr-only" data-id="pg109_im004"></span><span class="sr-only" data-id="pg109_im005"></span><span class="sr-only" data-id="pg109_im006"></span><span class="sr-only" data-id="pg109_im007"></span><span class="sr-only" data-id="pg109_im008"></span><span class="sr-only" data-id="pg109_im009"></span><span class="sr-only" data-id="pg109_im010"></span><span class="sr-only" data-id="pg109_im011"></span><span class="sr-only" data-id="pg109_im012"></span><span class="sr-only" data-id="pg109_im013"></span><span class="sr-only" data-id="pg109_im014"></span><span class="sr-only" data-id="pg109_im015"></span><span class="sr-only" data-id="pg109_im016"></span><span class="sr-only" data-id="pg109_im017"></span><span class="sr-only" data-id="pg109_im018"></span><span class="sr-only" data-id="pg109_im019"></span><span class="sr-only" data-id="pg109_im020"></span><span class="sr-only" data-id="pg109_im021"></span><span class="sr-only" data-id="pg109_im022"></span><span class="sr-only" data-id="pg109_im023"></span>
+      </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
-</body>
-
+    <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
+  </body>
 </html>
