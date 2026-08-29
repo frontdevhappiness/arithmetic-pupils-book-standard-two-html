@@ -1,111 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg129_sec001" />
-    <meta name="page-section-id" content="129" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg129_sec001">
+  <meta name="page-section-id" content="129">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root {
+      --pg129-blue: #159fdf;
+      --pg129-grid: #3546b4;
+      --pg129-ink: #231f20;
+      --pg129-dock: var(--dock-height, 96px);
+    }
+
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: var(--pg129-ink);
+      background: radial-gradient(circle at 18% 7%, rgba(111, 194, 224, .25), transparent 30rem),
+        linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%);
+    }
+
+    #content.pg129-shell {
+      box-sizing: border-box;
+      width: auto !important;
+      min-height: calc(100vh - var(--pg129-dock));
+      padding: clamp(1rem, 4vw, 3rem) clamp(.75rem, 4vw, 2.5rem)
+        calc(var(--pg129-dock) + clamp(1.5rem, 4vw, 3rem));
+      visibility: visible !important;
+    }
+
+    .page129 {
+      position: relative !important;
+      box-sizing: border-box;
+      width: min(100%, 58rem) !important;
+      aspect-ratio: 558 / 768;
+      min-height: 79.75rem !important;
+      height: auto !important;
+      margin: 0 auto !important;
+      padding: 6.35rem 6.65rem 8rem 8.15rem;
+      overflow: hidden !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      transform: none !important;
+      left: auto !important;
+      top: auto !important;
+      border: clamp(.45rem, 1vw, .8rem) solid #e1f3fb;
+      border-radius: clamp(1.15rem, 3vw, 2.25rem);
+      background: #fff;
+      box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, .14);
+      font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif;
+    }
+
+    .page129, .page129 * { box-sizing: border-box; }
+    .page129 * { font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important; }
+    .pg129-layout { position: relative; z-index: 1; }
+    .pg129-heading {
+      margin: 0 0 .45rem;
+      font-size: 1.92rem;
+      font-weight: 900;
+      letter-spacing: .012em;
+      line-height: 1.08;
+      white-space: nowrap;
+      -webkit-text-stroke: .018em currentColor;
+    }
+    .pg129-intro { margin: 0 0 1.05rem; font-size: 1.86rem; line-height: 1.34; white-space: nowrap; }
+
+    .pg129-table {
+      display: grid;
+      grid-template-columns: 1fr 1.02fr;
+      grid-template-rows: repeat(4, 1fr);
+      width: 100%;
+      height: 53rem;
+      border: .11rem solid var(--pg129-grid);
+      background: rgba(255, 255, 255, .94);
+    }
+    .pg129-cell {
+      min-width: 0;
+      min-height: 0;
+      border-right: .11rem solid var(--pg129-grid);
+      border-bottom: .11rem solid var(--pg129-grid);
+    }
+    .pg129-cell:nth-child(2n) { border-right: 0; }
+    .pg129-cell:nth-last-child(-n + 2) { border-bottom: 0; }
+    .pg129-label {
+      margin: 0;
+      padding: .28rem 0 0 1.65rem;
+      font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important;
+      font-size: 1.92rem;
+      font-style: normal;
+      line-height: 1.1;
+    }
+    .pg129-picture { display: grid; place-items: center; padding: .35rem 1rem; overflow: hidden; }
+    .pg129-picture img { display: block; max-width: 88%; max-height: 91%; object-fit: contain; }
+    .pg129-picture-sacks img { width: 17.55rem; }
+    .pg129-picture-bucket img { width: 10.6rem; }
+    .pg129-picture-tin img { width: 13.7rem; }
+    .pg129-picture-hands img { width: 14.85rem; }
+
+    .pg129-marker {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      left: 50%;
+      bottom: 4.4rem;
+      width: 5.15rem;
+      aspect-ratio: 1.65 / 1;
+      margin: 0;
+      border-radius: 50%;
+      background: var(--pg129-blue);
+      color: #fff;
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1;
+      text-align: center;
+      transform: translateX(-50%);
+      -webkit-text-stroke: .015em currentColor;
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 44rem) {
+      #content.pg129-shell { padding: 0 0 calc(var(--pg129-dock) + 1rem); }
+      .page129 {
+        min-height: auto !important;
+        padding: 7vw 12.9% 10% 15.4%;
+        border-radius: 0;
+      }
+      .pg129-heading { font-size: clamp(.78rem, 3.4vw, 1.92rem); }
+      .pg129-intro { font-size: clamp(.82rem, 3.4vw, 1.86rem); }
+      .pg129-table { height: 91.3vw; }
+      .pg129-label { padding-left: clamp(.75rem, 4vw, 1.65rem); font-size: clamp(1.1rem, 4.3vw, 1.92rem); }
+      .pg129-picture { padding: .2rem .45rem; }
+      .pg129-picture img { max-width: 86%; max-height: 88%; }
+      .pg129-picture-sacks img { width: 30.3vw; }
+      .pg129-picture-bucket img { width: 18.3vw; }
+      .pg129-picture-tin img { width: 23.6vw; }
+      .pg129-picture-hands img { width: 25.6vw; }
+      .pg129-marker {
+        bottom: 3.4%;
+        width: clamp(3.4rem, 13vw, 5.15rem);
+        font-size: clamp(1.1rem, 4vw, 1.75rem);
+      }
+    }
+  </style>
 </head>
+<body>
+  <main id="content" class="pg129-shell">
+    <article class="page129" role="article" data-section-id="pg129_sec001" aria-label="Recognizing non-standard tools for measuring mass">
+      <div class="pg129-layout" aria-hidden="true">
+        <h1 class="pg129-heading">Recognizing non-standard tools for measuring mass</h1>
+        <p class="pg129-intro">The following are some non-standard tools for measuring<br>mass:</p>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg129_im005.png" alt="" data-id="pg129_im005" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg129_im010.png" alt="" data-id="pg129_im010" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg129_im011.png" alt="" data-id="pg129_im011" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg129_im012.png" alt="" data-id="pg129_im012" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg129_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;123&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">123</span></p>
-  <img src="images/pg129_im013.png" alt="" data-id="pg129_im013" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg129_p001" class="adt-page-overlay-text" style="position:absolute;top:69px;left:86px;line-height:18px;width:400px;height:20px">Recognizing non-standard tools for measuring mass. The following are some non-standard tools for measuring mass: sacks, buckets, a tin and hands. The pictures show two sacks, a metal bucket, an open tin container and two cupped hands holding grain.</p>
-  <img src="images/pg129_im014.png" alt="" data-id="pg129_im014" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg129_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The following are some non-standard tools for measuring&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.888404846191406px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:93px;left:86px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.888404846191406px;color:#231f20">The following are some non-standard tools for measuring</span></p>
-  <img src="images/pg129_im015.png" alt="" data-id="pg129_im015" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg129_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;mass:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:117px;left:86px;line-height:18px;width:40px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">mass:</span></p>
-  <p data-id="pg129_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;sacks&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:153px;left:102px;line-height:18px;width:50px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">sacks</span></p>
-  <img src="images/pg129_im001.png" alt="Two sacks, one standing upright and one lying on its side." data-id="pg129_im001" style="position:absolute;top:156px;left:301px;width:169px;height:109px;opacity:0">
-  <p data-id="pg129_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;buckets&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:276px;left:102px;line-height:18px;width:73px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">buckets</span></p>
-  <img src="images/pg129_im002.png" alt="A metal bucket with a wire handle." data-id="pg129_im002" style="position:absolute;top:278px;left:334px;width:102px;height:109px;opacity:0">
-  <p data-id="pg129_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;tin&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:397px;left:102px;line-height:18px;width:33px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">tin</span></p>
-  <img src="images/pg129_im003.png" alt="A rectangular open tin container." data-id="pg129_im003" style="position:absolute;top:400px;left:319px;width:132px;height:113px;opacity:0">
-  <p data-id="pg129_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;hands&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:534px;left:102px;line-height:18px;width:56px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">hands</span></p>
-  <img src="images/pg129_im004.png" alt="Two cupped hands holding a pile of grain." data-id="pg129_im004" style="position:absolute;top:537px;left:314px;width:143px;height:114px;opacity:0">
-  <img src="images/pg129_im006.png" alt="" data-id="pg129_im006" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg129_im007.png" alt="" data-id="pg129_im007" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg129_im008.png" alt="" data-id="pg129_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg129_im009.png" alt="" data-id="pg129_im009" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg129_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 123&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 123</span></p>
-  <p data-id="pg129_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
+        <div class="pg129-table">
+          <p class="pg129-cell pg129-label">sacks</p>
+          <div class="pg129-cell pg129-picture pg129-picture-sacks"><img src="images/pg129_im001.png" alt=""></div>
+          <p class="pg129-cell pg129-label">buckets</p>
+          <div class="pg129-cell pg129-picture pg129-picture-bucket"><img src="images/pg129_im002.png" alt=""></div>
+          <p class="pg129-cell pg129-label">tin</p>
+          <div class="pg129-cell pg129-picture pg129-picture-tin"><img src="images/pg129_im003.png" alt=""></div>
+          <p class="pg129-cell pg129-label">hands</p>
+          <div class="pg129-cell pg129-picture pg129-picture-hands"><img src="images/pg129_im004.png" alt=""></div>
+        </div>
+      </div>
 
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+      <p class="pg129-marker" aria-label="Page 123">123</p>
+
+      <span class="sr-only" data-id="pg129_p000">123</span>
+      <span class="sr-only" data-id="pg129_p001">Recognizing non-standard tools for measuring mass. The following are some non-standard tools for measuring mass: sacks, buckets, a tin and hands. The pictures show two sacks, a metal bucket, an open tin container and two cupped hands holding grain.</span>
+      <span class="sr-only" data-id="pg129_p002"></span><span class="sr-only" data-id="pg129_p003"></span>
+      <span class="sr-only" data-id="pg129_p004"></span><span class="sr-only" data-id="pg129_p005"></span>
+      <span class="sr-only" data-id="pg129_p006"></span><span class="sr-only" data-id="pg129_p007"></span>
+      <span class="sr-only" data-id="pg129_p008"></span><span class="sr-only" data-id="pg129_p009"></span>
+      <span class="sr-only" data-id="pg129_im001"></span><span class="sr-only" data-id="pg129_im002"></span>
+      <span class="sr-only" data-id="pg129_im003"></span><span class="sr-only" data-id="pg129_im004"></span>
+      <span class="sr-only" data-id="pg129_im005"></span><span class="sr-only" data-id="pg129_im006"></span>
+      <span class="sr-only" data-id="pg129_im007"></span><span class="sr-only" data-id="pg129_im008"></span>
+      <span class="sr-only" data-id="pg129_im009"></span><span class="sr-only" data-id="pg129_im010"></span>
+      <span class="sr-only" data-id="pg129_im011"></span><span class="sr-only" data-id="pg129_im012"></span>
+      <span class="sr-only" data-id="pg129_im013"></span><span class="sr-only" data-id="pg129_im014"></span>
+      <span class="sr-only" data-id="pg129_im015"></span>
+    </article>
+  </main>
+
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
