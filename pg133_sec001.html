@@ -18,7 +18,7 @@
       #content { visibility: hidden; }
     </style>
 <style>
-#content .adt-page-overlay-text{opacity:0!important}
+#content .adt-page-overlay-text{opacity:1!important}
 </style>
     <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
@@ -27,7 +27,16 @@
     <main>
       <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
 <style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
+#content .adt-page-overlay-text{z-index:3}
+#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
+#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
+#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
+#content img[data-id="pg133_im007"]{opacity:0!important}
+#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
+#content [data-id="pg133_p000"] span[data-word-index]{color:#fff!important}
+#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
+#content [data-id="pg133_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
+#content [data-id="pg133_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:267px!important}
 /* The photographed page supplies the visible glyphs. The invisible overlay's
    font metrics can sit slightly below those photographed glyphs, so paint a
    separate, raised highlight band instead of using the inline text box. */
@@ -35,7 +44,6 @@
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
 </style>
-  <img src="images/pg133_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg133_page" style="position:absolute;inset:0;width:558px;height:768px">
   <img src="images/pg133_im008.png" alt="" data-id="pg133_im008" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
   <p data-id="pg133_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;127&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">127</span></p>
   <img src="images/pg133_im007.png" alt="Example 3 shows a bowl and a pot. Exercise 9 asks which bottle has more soda, showing bottle a fuller than bottle b, and which jug has more juice, showing jug a fuller than jug b." data-id="pg133_im007" style="position:absolute;top:69px;left:81px;width:411px;height:562px;opacity:0">
