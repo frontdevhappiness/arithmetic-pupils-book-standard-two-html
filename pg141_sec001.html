@@ -1,125 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg141_sec001" />
-    <meta name="page-section-id" content="141" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg141_sec001">
+  <meta name="page-section-id" content="141">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg141-blue:#159fe0; --pg141-line:#83c9ee; --pg141-grid:#3546b4; --pg141-ink:#231f20; --pg141-dock:var(--dock-height,96px); }
+    html, body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg141-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg141-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg141-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg141-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page141 {
+      position:relative!important; box-sizing:border-box; width:min(100%,58rem)!important; aspect-ratio:558/768; min-height:79.75rem!important; height:auto!important; margin:0 auto!important; padding:7.2rem 7.35rem 7.8rem!important; overflow:hidden!important; visibility:visible!important; opacity:1!important; transform:none!important; left:auto!important; top:auto!important;
+      color:var(--pg141-ink); border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:#fff;
+      box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important;
+    }
+    .page141, .page141 * { box-sizing:border-box; }
+    .page141 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg141-canvas { container-type:inline-size; position:absolute; inset:0; }
+    .pg141-layout { position:absolute; top:9.35%; left:12.95%; width:74.1%; }
+    .pg141-comparison { display:grid; grid-template-columns:39% 32% 29%; grid-template-rows:repeat(2,1fr); width:100%; aspect-ratio:400/194; margin:0; border:.16rem solid var(--pg141-grid); background:#fff; }
+    .pg141-compare-cell { display:flex; flex-direction:column; align-items:center; justify-content:center; min-width:0; min-height:0; border-right:.12rem solid var(--pg141-grid); border-bottom:.12rem solid var(--pg141-grid); }
+    .pg141-compare-cell:nth-child(3n) { border-right:0; }
+    .pg141-compare-cell:nth-child(n+4) { border-bottom:0; }
+    .pg141-compare-cell img { display:block; object-fit:contain; }
+    .pg141-top-ball { width:44%; } .pg141-top-football { width:49%; } .pg141-sphere-outline { width:47%; margin-top:2%; }
+    .pg141-pyramid { width:49%; } .pg141-real-pyramid { width:55%; } .pg141-pyramid-outline { width:45%; height:48%; overflow:visible; }
+    .pg141-pyramid-outline .solid { fill:none; stroke:#231f20; stroke-width:1.35; stroke-linejoin:round; }
+    .pg141-pyramid-outline .hidden-edge { fill:none; stroke:#231f20; stroke-width:1.1; stroke-dasharray:2.3 2.3; }
+    .pg141-shape-name { margin:-.1em 0 .08em; font-family:Sassoon,"SassoonPrimary",Arial,sans-serif!important; font-size:3.35cqw; font-style:normal; line-height:.95; }
+    .pg141-exercise { position:relative; width:100%; aspect-ratio:400/376; margin-top:4.55%; padding:7.5% 4.6% 2.3%; border:.24rem solid var(--pg141-line); border-radius:1.35rem; background:rgba(255,255,255,.97); }
+    .pg141-banner { position:absolute; top:0; left:8.5%; min-width:25%; margin:0; padding:.16em .72em .2em; border:.2rem solid var(--pg141-blue); border-radius:999px; background:#fff; color:var(--pg141-blue); font-size:3.15cqw; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.025em currentColor; }
+    .pg141-instruction { margin:0 0 3.5%; font-size:3.05cqw; line-height:1.34; letter-spacing:.01em; }
+    .pg141-shape-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(5,1fr); width:100%; aspect-ratio:370/289; border:.15rem solid var(--pg141-grid); background:#fff; }
+    .pg141-shape-cell { display:grid; place-items:center; min-width:0; min-height:0; border-right:.12rem solid var(--pg141-grid); border-bottom:.12rem solid var(--pg141-grid); }
+    .pg141-shape-cell:nth-child(2n) { border-right:0; } .pg141-shape-cell:nth-child(n+9) { border-bottom:0; }
+    .pg141-shape-cell img { display:block; max-width:64%; max-height:76%; object-fit:contain; }
+    .pg141-shape-cell .pg141-cuboid { width:47%; } .pg141-shape-cell .pg141-cylinder { width:39%; } .pg141-shape-cell .pg141-small-ball { width:27%; }
+    .pg141-shape-cell .pg141-cone { width:25%; } .pg141-shape-cell .pg141-small-pyramid { width:28%; } .pg141-shape-cell .pg141-cube { width:34%; }
+    .pg141-shape-cell .pg141-parallelogram { width:42%; } .pg141-shape-cell .pg141-triangle { width:43%; } .pg141-shape-cell .pg141-small-football { width:25%; } .pg141-shape-cell .pg141-square { width:28%; }
+    .pg141-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-style:normal; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) { #content.pg141-shell { padding:0 0 calc(var(--pg141-dock) + 1rem); } .page141 { width:100%!important; min-height:auto!important; padding:clamp(3.7rem,11vw,5.5rem) 5% 7rem!important; border-radius:0; } .pg141-exercise { border-width:.16rem; border-radius:.8rem; } .pg141-banner { border-width:.14rem; } .pg141-marker { bottom:clamp(1.5rem,6vw,3rem); width:clamp(3rem,10vw,5.25rem); font-size:clamp(1rem,3.4vw,1.75rem); } }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content img[data-id="pg141_im016"]{opacity:0!important}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg141_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg141_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg141_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg141_im017.png" alt="" data-id="pg141_im017" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg141_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;135&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">135</span></p>
-  <img src="images/pg141_im016.png" alt="Exercise 5. Identify and then draw the plane figures in the following shapes. The table shows a cuboid, sphere, pyramid, parallelogram, football, cylinder, cone, cube, triangle and square." data-id="pg141_im016" style="position:absolute;top:144px;left:82px;width:408px;height:523px;opacity:0">
-  <img src="images/pg141_im022.png" alt="" data-id="pg141_im022" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im023.png" alt="" data-id="pg141_im023" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im024.png" alt="" data-id="pg141_im024" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im025.png" alt="" data-id="pg141_im025" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im026.png" alt="" data-id="pg141_im026" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im027.png" alt="" data-id="pg141_im027" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im001.png" alt="Blue sphere" data-id="pg141_im001" style="position:absolute;top:76px;left:121px;width:86px;height:66px;opacity:0">
-  <img src="images/pg141_im002.png" alt="Black and white football" data-id="pg141_im002" style="position:absolute;top:76px;left:261px;width:90px;height:63px;opacity:0">
-  <img src="images/pg141_im008.png" alt="Sphere outline with curved centre line" data-id="pg141_im008" style="position:absolute;top:76px;left:392px;width:72px;height:56px;opacity:0">
-  <p data-id="pg141_p001" class="adt-page-overlay-text" style="position:absolute;top:145px;left:401px;line-height:18px;width:59px;height:22px">The non-plane figures continue with a sphere shown beside a football, and a pyramid shown beside a real pyramid. Exercise 5. Identify and then draw the plane figures in the following shapes. The table shows a cuboid, sphere, pyramid, parallelogram, football, cylinder, cone, cube, triangle and square.</p>
-  <img src="images/pg141_im009.png" alt="Triangular pyramid" data-id="pg141_im009" style="position:absolute;top:180px;left:119px;width:90px;height:70px;opacity:0">
-  <img src="images/pg141_im010.png" alt="Layered coloured pyramid" data-id="pg141_im010" style="position:absolute;top:180px;left:257px;width:98px;height:71px;opacity:0">
-  <p data-id="pg141_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;pyramid&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:235px;left:393px;line-height:18px;width:69px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">pyramid</span></p>
-  <p data-id="pg141_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Exercise 5&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:278px;left:103px;line-height:18px;width:371px;height:39px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;font-weight:bold">Exercise 5</span></p>
-  <p data-id="pg141_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Identify and then draw the plane figures in the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;following shapes.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:317px;left:103px;line-height:18px;width:371px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Identify and then draw the plane figures in the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">following shapes.</span></p>
-  <img src="images/pg141_im011.png" alt="Orange and yellow cuboid" data-id="pg141_im011" style="position:absolute;top:376px;left:157px;width:94px;height:36px;opacity:0">
-  <img src="images/pg141_im012.png" alt="Blue cylinder" data-id="pg141_im012" style="position:absolute;top:376px;left:355px;width:65px;height:37px;opacity:0">
-  <img src="images/pg141_im013.png" alt="Blue sphere" data-id="pg141_im013" style="position:absolute;top:421px;left:172px;width:63px;height:46px;opacity:0">
-  <img src="images/pg141_im014.png" alt="Red cone" data-id="pg141_im014" style="position:absolute;top:421px;left:362px;width:51px;height:52px;opacity:0">
-  <img src="images/pg141_im015.png" alt="Triangular pyramid" data-id="pg141_im015" style="position:absolute;top:481px;left:174px;width:59px;height:47px;opacity:0">
-  <img src="images/pg141_im003.png" alt="Blue cube" data-id="pg141_im003" style="position:absolute;top:481px;left:352px;width:71px;height:50px;opacity:0">
-  <img src="images/pg141_im004.png" alt="Blue parallelogram" data-id="pg141_im004" style="position:absolute;top:539px;left:160px;width:88px;height:52px;opacity:0">
-  <img src="images/pg141_im005.png" alt="Green triangle" data-id="pg141_im005" style="position:absolute;top:539px;left:343px;width:90px;height:52px;opacity:0">
-  <img src="images/pg141_im006.png" alt="Black and white football" data-id="pg141_im006" style="position:absolute;top:599px;left:174px;width:59px;height:53px;opacity:0">
-  <img src="images/pg141_im007.png" alt="Pink square" data-id="pg141_im007" style="position:absolute;top:599px;left:359px;width:58px;height:58px;opacity:0">
-  <img src="images/pg141_im018.png" alt="" data-id="pg141_im018" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im019.png" alt="" data-id="pg141_im019" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im020.png" alt="" data-id="pg141_im020" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg141_im021.png" alt="" data-id="pg141_im021" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg141_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 135&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 135</span></p>
-  <p data-id="pg141_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:24&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:24</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg141-shell">
+    <article class="page141" role="article" data-section-id="pg141_sec001" aria-label="Plane and non-plane figures">
+      <div class="pg141-canvas">
+      <div class="pg141-layout">
+        <section class="pg141-comparison" aria-label="Sphere and pyramid examples">
+          <div class="pg141-compare-cell"><img class="pg141-top-ball" src="images/pg141_im001.png" alt="Blue sphere" data-id="pg141_im001"></div>
+          <div class="pg141-compare-cell"><img class="pg141-top-football" src="images/pg141_im002.png" alt="Black and white football" data-id="pg141_im002"></div>
+          <div class="pg141-compare-cell"><img class="pg141-sphere-outline" src="images/pg141_im008.png" alt="Sphere outline with curved centre line" data-id="pg141_im008"><p class="pg141-shape-name">sphere</p></div>
+          <div class="pg141-compare-cell"><img class="pg141-pyramid" src="images/pg141_im009.png" alt="Triangular pyramid" data-id="pg141_im009"></div>
+          <div class="pg141-compare-cell"><img class="pg141-real-pyramid" src="images/pg141_im010.png" alt="Layered coloured pyramid" data-id="pg141_im010"></div>
+          <div class="pg141-compare-cell">
+            <svg class="pg141-pyramid-outline" viewBox="0 0 100 88" role="img" aria-label="Pyramid outline">
+              <path class="solid" d="M50 3 L4 58 L51 84 L96 58 Z M50 3 L51 84"></path>
+              <path class="hidden-edge" d="M4 58 L50 46 L96 58 M50 3 L50 46 L51 84"></path>
+            </svg>
+            <p class="pg141-shape-name">pyramid</p>
+          </div>
+        </section>
+        <section class="pg141-exercise" aria-labelledby="pg141-exercise-title">
+          <h1 id="pg141-exercise-title" class="pg141-banner">Exercise 5</h1>
+          <p class="pg141-instruction">Identify and then draw the plane figures in the<br>following shapes.</p>
+          <div class="pg141-shape-grid" aria-label="Shapes to identify">
+            <div class="pg141-shape-cell"><img class="pg141-cuboid" src="images/pg141_im011.png" alt="Orange and yellow cuboid" data-id="pg141_im011"></div>
+            <div class="pg141-shape-cell"><img class="pg141-cylinder" src="images/pg141_im012.png" alt="Blue cylinder" data-id="pg141_im012"></div>
+            <div class="pg141-shape-cell"><img class="pg141-small-ball" src="images/pg141_im013.png" alt="Blue sphere" data-id="pg141_im013"></div>
+            <div class="pg141-shape-cell"><img class="pg141-cone" src="images/pg141_im014.png" alt="Red cone" data-id="pg141_im014"></div>
+            <div class="pg141-shape-cell"><img class="pg141-small-pyramid" src="images/pg141_im015.png" alt="Triangular pyramid" data-id="pg141_im015"></div>
+            <div class="pg141-shape-cell"><img class="pg141-cube" src="images/pg141_im003.png" alt="Blue cube" data-id="pg141_im003"></div>
+            <div class="pg141-shape-cell"><img class="pg141-parallelogram" src="images/pg141_im004.png" alt="Blue parallelogram" data-id="pg141_im004"></div>
+            <div class="pg141-shape-cell"><img class="pg141-triangle" src="images/pg141_im005.png" alt="Green triangle" data-id="pg141_im005"></div>
+            <div class="pg141-shape-cell"><img class="pg141-small-football" src="images/pg141_im006.png" alt="Black and white football" data-id="pg141_im006"></div>
+            <div class="pg141-shape-cell"><img class="pg141-square" src="images/pg141_im007.png" alt="Pink square" data-id="pg141_im007"></div>
+          </div>
+        </section>
+      </div>
+      <p class="pg141-marker" aria-label="Page 135">135</p>
+      </div>
+      <span class="sr-only" data-id="pg141_p000">135</span>
+      <span class="sr-only" data-id="pg141_p001">The non-plane figures continue with a sphere shown beside a football, and a pyramid shown beside a real pyramid. Exercise 5. Identify and then draw the plane figures in the following shapes. The table shows a cuboid, sphere, pyramid, parallelogram, football, cylinder, cone, cube, triangle and square.</span>
+      <span class="sr-only" data-id="pg141_p002"></span><span class="sr-only" data-id="pg141_p003"></span><span class="sr-only" data-id="pg141_p004"></span>
+      <span class="sr-only" data-id="pg141_im016"></span><span class="sr-only" data-id="pg141_im017"></span><span class="sr-only" data-id="pg141_im018"></span><span class="sr-only" data-id="pg141_im019"></span><span class="sr-only" data-id="pg141_im020"></span><span class="sr-only" data-id="pg141_im021"></span><span class="sr-only" data-id="pg141_im022"></span><span class="sr-only" data-id="pg141_im023"></span><span class="sr-only" data-id="pg141_im024"></span><span class="sr-only" data-id="pg141_im025"></span><span class="sr-only" data-id="pg141_im026"></span><span class="sr-only" data-id="pg141_im027"></span>
+      <span class="sr-only" data-id="pg141_p006"></span><span class="sr-only" data-id="pg141_p007"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
