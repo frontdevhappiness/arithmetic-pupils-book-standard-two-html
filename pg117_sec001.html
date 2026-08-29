@@ -1,133 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg117_sec001" />
-    <meta name="page-section-id" content="117" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg117_sec001">
+  <meta name="page-section-id" content="117">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --blue:#129fe2; --grid:#273fc5; --ink:#231f20; --dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--ink); background:#eef9ff; }
+    #content.pg117-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page117 { position:relative; box-sizing:border-box; width:min(100%,64rem); aspect-ratio:558/768; min-height:79.75rem; margin:0 auto; padding:8.2rem 6.65rem 2.75rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(ellipse at 50% 0,rgba(132,204,239,.23),transparent 19%),radial-gradient(ellipse at 0 45%,rgba(132,204,239,.18),transparent 11%),radial-gradient(ellipse at 100% 46%,rgba(132,204,239,.18),transparent 11%),radial-gradient(ellipse at 50% 100%,rgba(132,204,239,.2),transparent 17%),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page117,.page117 * { box-sizing:border-box; }
+    .page117 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg117-card { position:relative; width:100%; padding:2.75rem 1.3rem 1.9rem; border:.2rem solid var(--blue); border-radius:1.45rem; background:rgba(255,255,255,.96); }
+    .pg117-banner { position:absolute; top:0; left:4.2rem; min-width:12.7rem; margin:0; padding:.36rem 1rem .3rem; border:.2rem solid var(--blue); border-radius:999px; background:#fff; color:var(--blue); font-size:2rem; font-weight:900; line-height:1; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.02em currentColor; }
+    .pg117-instruction { margin:0 0 .55rem; font-size:2rem; line-height:1.1; }
+    .pg117-table { width:100%; border-collapse:collapse; table-layout:fixed; border:.12rem solid var(--grid); font-size:1.9rem; line-height:1.08; }
+    .pg117-table col:first-child { width:14.4%; } .pg117-table col:nth-child(2) { width:35.8%; } .pg117-table col:nth-child(3) { width:49.8%; }
+    .pg117-table th,.pg117-table td { border:.105rem solid var(--grid); }
+    .pg117-table thead tr { height:5.8rem; }
+    .pg117-table th { padding:.45rem .62rem; font-weight:400; text-align:left; vertical-align:top; }
+    .pg117-table th:first-child { padding:0; }
+    .pg117-table tbody tr { height:4rem; }
+    .pg117-table tbody tr:nth-child(1),.pg117-table tbody tr:nth-child(3),.pg117-table tbody tr:nth-child(7),.pg117-table tbody tr:nth-child(9) { height:6.4rem; }
+    .pg117-table td { padding:.28rem .6rem; vertical-align:middle; }
+    .pg117-table .pg117-no { padding:0; color:var(--blue); text-align:center; }
+    .pg117-table .pg117-numeral { text-align:center; } .pg117-table .pg117-word { text-align:left; }
+    .pg117-fraction { display:inline-grid; grid-template-rows:1fr 1fr; min-width:1.45rem; font-size:1.85rem; line-height:.92; text-align:center; vertical-align:middle; }
+    .pg117-fraction>span:first-child { padding:0 .12rem .11rem; border-bottom:.12rem solid #111; } .pg117-fraction>span:last-child { padding-top:.09rem; }
+    .pg117-marker { display:grid; place-items:center; width:5.25rem; aspect-ratio:1.65/1; margin:3.8rem auto 0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg117-shell { padding:0 0 calc(var(--dock) + 1rem); }
+      .page117 { min-height:100vh; padding:clamp(4.5rem,15vw,8.2rem) 5% 4rem; border-radius:0; }
+      .pg117-card { padding:clamp(1.8rem,7vw,2.75rem) clamp(.45rem,3vw,1.3rem) 1rem; }
+      .pg117-banner { left:clamp(1.3rem,10vw,4.2rem); min-width:8.5rem; font-size:clamp(1.15rem,5vw,2rem); }
+      .pg117-instruction,.pg117-table { font-size:clamp(1.05rem,4.5vw,1.9rem); }
+      .pg117-table thead tr { height:clamp(3.7rem,17vw,5.8rem); } .pg117-table tbody tr { height:clamp(2.5rem,11vw,4rem); }
+      .pg117-table tbody tr:nth-child(1),.pg117-table tbody tr:nth-child(3),.pg117-table tbody tr:nth-child(7),.pg117-table tbody tr:nth-child(9) { height:clamp(3.9rem,18vw,6.4rem); }
+      .pg117-fraction { min-width:1rem; font-size:clamp(1rem,4.5vw,1.85rem); } .pg117-marker { margin-top:clamp(2rem,10vw,3.8rem); }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg117_im002.png" alt="" data-id="pg117_im002" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg117_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;111&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">111</span></p>
-  <img src="images/pg117_im003.png" alt="Exercise 9: fill in the blanks in a table matching fractions in numerals with fractions in words, including one-half, one-third, one-fourth, half, whole object and two-thirds." data-id="pg117_im003" style="position:absolute;top:85px;left:86px;width:400px;height:577px;opacity:0">
-  <img src="images/pg117_im008.png" alt="" data-id="pg117_im008" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg117_im009.png" alt="" data-id="pg117_im009" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg117_im010.png" alt="" data-id="pg117_im010" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg117_im011.png" alt="" data-id="pg117_im011" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg117_p001" class="adt-page-overlay-text" style="position:absolute;top:75px;left:95px;line-height:18px;width:144px;height:34px">Exercise 9. Fill in the blanks. The table columns are Fraction in numerals and Fraction in words. 1. 1 over 2. 2. One-third. 3. 1 over 4. 4. 1. 5. Half. 6. Whole object.</p>
-  <img src="images/pg117_im012.png" alt="" data-id="pg117_im012" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg117_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Fill in the blanks.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:109px;left:95px;line-height:18px;width:144px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">Fill in the blanks.</span></p>
-  <img src="images/pg117_im013.png" alt="" data-id="pg117_im013" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg117_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Fraction in &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;numerals&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:137px;left:95px;line-height:18px;width:144px;height:49px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Fraction in </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">numerals</span></p>
-  <p data-id="pg117_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Fraction in words&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:135px;left:291px;line-height:18px;width:127px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Fraction in words</span></p>
-  <p data-id="pg117_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:197px;left:118px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <p data-id="pg117_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:206px;left:95px;line-height:18px;width:144px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span></p>
-  <p data-id="pg117_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:186px;left:95px;line-height:18px;width:144px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg117_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:234px;left:95px;line-height:18px;width:144px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">2.</span></p>
-  <p data-id="pg117_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;one-third&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:232px;left:291px;line-height:18px;width:65px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">one-third</span></p>
-  <p data-id="pg117_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:269px;left:118px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <p data-id="pg117_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:277px;left:95px;line-height:18px;width:144px;height:33px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">4</span></p>
-  <p data-id="pg117_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:258px;left:95px;line-height:18px;width:144px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg117_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:310px;left:95px;line-height:18px;width:144px;height:33px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <p data-id="pg117_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:310px;left:215px;line-height:18px;width:9px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">1</span></p>
-  <p data-id="pg117_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:343px;left:95px;line-height:18px;width:144px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <p data-id="pg117_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;half&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:338px;left:291px;line-height:18px;width:91px;height:32px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">half</span></p>
-  <p data-id="pg117_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:374px;left:95px;line-height:18px;width:144px;height:32px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <p data-id="pg117_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;whole object&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:370px;left:291px;line-height:18px;width:91px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">whole object</span></p>
-  <p data-id="pg117_p020" class="adt-page-overlay-text" style="position:absolute;top:416px;left:118px;line-height:18px;width:14px;height:20px">7. 1 over 3. 8. Two-thirds. 9. 2 over 3. 10. One-fourth. 11. One-third.</p>
-  <p data-id="pg117_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:426px;left:95px;line-height:18px;width:144px;height:30px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">3</span></p>
-  <p data-id="pg117_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:406px;left:95px;line-height:18px;width:144px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">1</span></p>
-  <p data-id="pg117_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:456px;left:95px;line-height:18px;width:144px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span></p>
-  <p data-id="pg117_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;two-thirds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:454px;left:291px;line-height:18px;width:73px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">two-thirds</span></p>
-  <p data-id="pg117_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:496px;left:118px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span></p>
-  <p data-id="pg117_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:505px;left:95px;line-height:18px;width:144px;height:35px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">3</span></p>
-  <p data-id="pg117_p027" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:485px;left:95px;line-height:18px;width:144px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">2</span></p>
-  <p data-id="pg117_p028" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;10.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:540px;left:95px;line-height:18px;width:144px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">10.</span></p>
-  <p data-id="pg117_p029" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;one-fourth&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:532px;left:291px;line-height:18px;width:75px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">one-fourth</span></p>
-  <p data-id="pg117_p030" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;11.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:577px;left:95px;line-height:18px;width:144px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">11.</span></p>
-  <p data-id="pg117_p031" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;one-third&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:569px;left:291px;line-height:18px;width:75px;height:38px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">one-third</span></p>
-  <p data-id="pg117_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;12.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:614px;left:95px;line-height:18px;width:144px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">12.</span></p>
-  <p data-id="pg117_p033" class="adt-page-overlay-text" style="position:absolute;top:607px;left:291px;line-height:18px;width:75px;height:19px">12. Two-thirds.</p>
-  <img src="images/pg117_im004.png" alt="" data-id="pg117_im004" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg117_im005.png" alt="" data-id="pg117_im005" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg117_im006.png" alt="" data-id="pg117_im006" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg117_im007.png" alt="" data-id="pg117_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg117_p034" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 111&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 111</span></p>
-  <p data-id="pg117_p035" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg117-shell">
+    <article class="page117" role="article" data-section-id="pg117_sec001" aria-label="Exercise 9: fractions in numerals and words">
+      <section class="pg117-card">
+        <h1 class="pg117-banner">Exercise 9</h1>
+        <p class="pg117-instruction">Fill in the blanks.</p>
+        <table class="pg117-table" aria-label="Match fractions in numerals with fractions in words">
+          <colgroup><col><col><col></colgroup>
+          <thead><tr><th aria-label="Question number"></th><th>Fraction in<br>numerals</th><th>Fraction in words</th></tr></thead>
+          <tbody>
+            <tr><td class="pg117-no">1.</td><td class="pg117-numeral"><span class="pg117-fraction" aria-label="one-half"><span>1</span><span>2</span></span></td><td class="pg117-word"></td></tr>
+            <tr><td class="pg117-no">2.</td><td class="pg117-numeral"></td><td class="pg117-word">one-third</td></tr>
+            <tr><td class="pg117-no">3.</td><td class="pg117-numeral"><span class="pg117-fraction" aria-label="one-fourth"><span>1</span><span>4</span></span></td><td class="pg117-word"></td></tr>
+            <tr><td class="pg117-no">4.</td><td class="pg117-numeral">1</td><td class="pg117-word"></td></tr>
+            <tr><td class="pg117-no">5.</td><td class="pg117-numeral"></td><td class="pg117-word">half</td></tr>
+            <tr><td class="pg117-no">6.</td><td class="pg117-numeral"></td><td class="pg117-word">whole object</td></tr>
+            <tr><td class="pg117-no">7.</td><td class="pg117-numeral"><span class="pg117-fraction" aria-label="one-third"><span>1</span><span>3</span></span></td><td class="pg117-word"></td></tr>
+            <tr><td class="pg117-no">8.</td><td class="pg117-numeral"></td><td class="pg117-word">two-thirds</td></tr>
+            <tr><td class="pg117-no">9.</td><td class="pg117-numeral"><span class="pg117-fraction" aria-label="two-thirds"><span>2</span><span>3</span></span></td><td class="pg117-word"></td></tr>
+            <tr><td class="pg117-no">10.</td><td class="pg117-numeral"></td><td class="pg117-word">one-fourth</td></tr>
+            <tr><td class="pg117-no">11.</td><td class="pg117-numeral"></td><td class="pg117-word">one-third</td></tr>
+            <tr><td class="pg117-no">12.</td><td class="pg117-numeral"></td><td class="pg117-word">two-thirds</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <p class="pg117-marker">111</p>
+      <div class="sr-only">
+        <span data-id="pg117_p000">111</span><span data-id="pg117_im003"></span>
+        <span data-id="pg117_p001">Exercise 9. Fill in the blanks. The table columns are Fraction in numerals and Fraction in words. 1. 1 over 2. 2. One-third. 3. 1 over 4. 4. 1. 5. Half. 6. Whole object.</span>
+        <span data-id="pg117_p002"></span><span data-id="pg117_p003"></span><span data-id="pg117_p005"></span><span data-id="pg117_p006"></span><span data-id="pg117_p007"></span><span data-id="pg117_p008"></span><span data-id="pg117_p009"></span><span data-id="pg117_p010"></span><span data-id="pg117_p011"></span><span data-id="pg117_p012"></span><span data-id="pg117_p013"></span><span data-id="pg117_p014"></span><span data-id="pg117_p015"></span><span data-id="pg117_p016"></span><span data-id="pg117_p017"></span><span data-id="pg117_p018"></span><span data-id="pg117_p019"></span>
+        <span data-id="pg117_p020">7. 1 over 3. 8. Two-thirds. 9. 2 over 3. 10. One-fourth. 11. One-third.</span>
+        <span data-id="pg117_p021"></span><span data-id="pg117_p022"></span><span data-id="pg117_p023"></span><span data-id="pg117_p024"></span><span data-id="pg117_p025"></span><span data-id="pg117_p026"></span><span data-id="pg117_p027"></span><span data-id="pg117_p028"></span><span data-id="pg117_p029"></span><span data-id="pg117_p030"></span><span data-id="pg117_p031"></span><span data-id="pg117_p032"></span><span data-id="pg117_p033">12. Two-thirds.</span><span data-id="pg117_p034"></span><span data-id="pg117_p035"></span>
+        <span data-id="pg117_im002"></span><span data-id="pg117_im004"></span><span data-id="pg117_im005"></span><span data-id="pg117_im006"></span><span data-id="pg117_im007"></span><span data-id="pg117_im008"></span><span data-id="pg117_im009"></span><span data-id="pg117_im010"></span><span data-id="pg117_im011"></span><span data-id="pg117_im012"></span><span data-id="pg117_im013"></span>
+      </div>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div><div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script><script src="./assets/scorm.js"></script><script src="./assets/sign-language-sync.js?v=1"></script><script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
