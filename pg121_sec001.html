@@ -1,119 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg121_sec001" />
-    <meta name="page-section-id" content="121" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg121_sec001">
+  <meta name="page-section-id" content="121">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg121-blue:#159fe0; --pg121-line:#83c9ee; --pg121-ink:#231f20; --pg121-dock:var(--dock-height,96px); }
+    html, body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg121-ink); background:#eef9ff; }
+    #content.pg121-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg121-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg121-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; opacity:1!important; }
+    .page121 { position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:6.35rem 7.05rem 2.8rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(circle at 7% 12%,rgba(133,205,238,.26),transparent 10rem),radial-gradient(circle at 95% 63%,rgba(133,205,238,.2),transparent 11rem),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); color:var(--pg121-ink); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page121, .page121 * { box-sizing:border-box; }
+    .page121 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg121-layout { width:100%; margin:0 auto; }
+    .pg121-card { position:relative; margin:0; border:.18rem solid var(--pg121-line); border-radius:1.2rem; background:rgba(255,255,255,.98); }
+    .pg121-continuation { height:11.6rem; margin-top:-6.55rem; padding:1.35rem 1.05rem .65rem; overflow:hidden; border-top:0; border-radius:0 0 1.2rem 1.2rem; }
+    .pg121-position-list { display:grid; gap:.62rem; height:9.6rem; padding:.2rem 1.05rem .7rem; }
+    .pg121-position-row { display:grid; grid-template-columns:2.8rem max-content minmax(7.5rem,1fr) max-content; align-items:baseline; column-gap:.55rem; margin:0; font-size:1.78rem; line-height:1.05; white-space:nowrap; }
+    .pg121-position-row .pg121-qno { text-align:right; }
+    .pg121-blank { display:block; min-width:0; border-bottom:.13rem solid var(--pg121-ink); transform:translateY(-.18rem); }
+    .pg121-exercise { margin-top:2.55rem; padding:2.25rem .6rem .65rem; }
+    .pg121-exercise-three { min-height:14.3rem; margin-top:3.35rem; padding:2.35rem .8rem 1.2rem; border-bottom:0; border-radius:1.2rem 1.2rem 0 0; }
+    .pg121-label { position:absolute; top:0; left:4.05rem; min-width:11.2rem; margin:0; padding:.28rem .9rem .3rem; border:.19rem solid var(--pg121-blue); border-radius:999px; background:#fff; color:var(--pg121-blue); font-size:1.82rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor; }
+    .pg121-intro { margin:0; font-size:1.82rem; line-height:1.25; }
+    .pg121-pictures { display:flex; align-items:center; justify-content:center; gap:2.2rem; height:12.8rem; padding-top:.5rem; }
+    .pg121-pen { width:10.2rem; height:auto; transform:translateY(-.35rem); }
+    .pg121-cup-book { width:17rem; height:auto; }
+    .pg121-questions { display:grid; gap:.38rem; margin:.1rem .6rem 0; }
+    .pg121-question { display:grid; grid-template-columns:2.45rem 1fr; margin:0; font-size:1.77rem; line-height:1.22; }
+    .pg121-qno { color:var(--pg121-blue); }
+    .pg121-marker { display:grid; place-items:center; width:5.25rem; aspect-ratio:1.65/1; margin:1.55rem auto 0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg121-shell { padding:0 0 calc(var(--pg121-dock) + 1rem); }
+      .page121 { width:100%; min-height:100vh; padding:clamp(4rem,14vw,6.35rem) 6% 2rem; border-radius:0; }
+      .pg121-continuation { height:clamp(7rem,25vw,11.6rem); margin-top:clamp(-6.55rem,-14vw,-4rem); padding:clamp(.65rem,3vw,1.35rem) .45rem .35rem; }
+      .pg121-position-list { gap:clamp(.2rem,1.5vw,.62rem); height:100%; padding:.1rem clamp(.15rem,2vw,1.05rem) .45rem; }
+      .pg121-position-row { grid-template-columns:clamp(1.45rem,6vw,2.8rem) max-content minmax(3.1rem,1fr) max-content; column-gap:clamp(.18rem,1.5vw,.55rem); font-size:clamp(.83rem,3.55vw,1.78rem); }
+      .pg121-exercise { margin-top:clamp(2rem,8vw,2.55rem); padding:clamp(1.75rem,7vw,2.25rem) .55rem .65rem; }
+      .pg121-exercise-three { min-height:clamp(10rem,31vw,14.3rem); margin-top:clamp(2.5rem,10vw,3.35rem); }
+      .pg121-label { left:clamp(1.5rem,10vw,4.05rem); min-width:8.5rem; font-size:clamp(1.15rem,4.6vw,1.82rem); }
+      .pg121-intro, .pg121-question { font-size:clamp(1rem,4.1vw,1.82rem); }
+      .pg121-pictures { gap:5%; height:clamp(7rem,29vw,12.8rem); }
+      .pg121-pen { width:28%; } .pg121-cup-book { width:44%; }
+      .pg121-questions { gap:.28rem; margin-inline:.15rem; }
+      .pg121-question { grid-template-columns:clamp(1.55rem,7vw,2.45rem) 1fr; }
+      .pg121-marker { margin-top:1.2rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <p data-id="pg121_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;115&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">115</span></p>
-  <img src="images/pg121_im005.png" alt="" data-id="pg121_im005" style="position:absolute;top:574px;left:83px;width:405px;height:146px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im004.png" alt="" data-id="pg121_im004" style="position:absolute;top:197px;left:84px;width:408px;height:363px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im012.png" alt="" data-id="pg121_im012" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg121_p001" class="adt-page-overlay-text" style="position:absolute;top:69px;left:92px;line-height:18px;width:394px;height:27px">Exercise 1 continues. 1. The ball is ... the flask bottle. 2. The ball is ... the chair. 3. The chair is ... the ball. 4. The chair is ... the flask bottle.</p>
-  <img src="images/pg121_im013.png" alt="" data-id="pg121_im013" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im014.png" alt="" data-id="pg121_im014" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im015.png" alt="" data-id="pg121_im015" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg121_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;The ball is ___________ the chair.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:96px;left:92px;line-height:18px;width:394px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The ball is ___________ the chair.</span></p>
-  <img src="images/pg121_im016.png" alt="" data-id="pg121_im016" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im017.png" alt="" data-id="pg121_im017" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg121_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; The chair is ___________ the ball.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:124px;left:92px;line-height:18px;width:394px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> The chair is ___________ the ball.</span></p>
-  <p data-id="pg121_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; The chair is ___________ the flask bottle.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:153px;left:92px;line-height:18px;width:394px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> The chair is ___________ the flask bottle.</span></p>
-  <p data-id="pg121_p005" class="adt-page-overlay-text" style="position:absolute;top:189px;left:92px;line-height:18px;width:394px;height:31px">Exercise 2. Study the following pictures, then answer the questions that follow. The pictures show a blue pen, a yellow cup and a small book. 1. Name the object that is near to the book. 2. Which object is far from the cup? 3. Which object is far from the book among the pen and the cup? 4. Which object is far from the pen? 5. Which object is near the cup? Exercise 3. Study the following picture and answer the questions that follow.</p>
-  <p data-id="pg121_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Study the following pictures then answer the questions &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;that follow.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:220px;left:92px;line-height:18px;width:394px;height:41px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Study the following pictures then answer the questions </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">that follow.</span></p>
-  <img src="images/pg121_im001.png" alt="A blue pen slanting downwards to the right." data-id="pg121_im001" style="position:absolute;top:279px;left:137px;width:108px;height:100px;opacity:0">
-  <img src="images/pg121_im002.png" alt="A yellow cup beside a small book with a bicycle on the cover." data-id="pg121_im002" style="position:absolute;top:289px;left:269px;width:179px;height:99px;opacity:0">
-  <p data-id="pg121_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Name the object that is near to the book.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:411px;left:95px;line-height:18px;width:397px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Name the object that is near to the book.</span></p>
-  <p data-id="pg121_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which object is far from the cup?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:435px;left:95px;line-height:18px;width:397px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which object is far from the cup?</span></p>
-  <p data-id="pg121_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which object is far from the book among the pen &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;and the cup?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:459px;left:95px;line-height:18px;width:397px;height:48px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which object is far from the book among the pen </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">and the cup?</span></p>
-  <p data-id="pg121_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which object is far from the pen?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:507px;left:95px;line-height:18px;width:397px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which object is far from the pen?</span></p>
-  <p data-id="pg121_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which object is near the cup?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:531px;left:95px;line-height:18px;width:397px;height:46px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which object is near the cup?</span></p>
-  <p data-id="pg121_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Exercise 3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:577px;left:95px;line-height:18px;width:397px;height:30px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;font-weight:bold">Exercise 3</span></p>
-  <p data-id="pg121_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Study the following picture and answer the questions &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;that follow.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:607px;left:95px;line-height:18px;width:397px;height:41px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Study the following picture and answer the questions </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">that follow.</span></p>
-  <img src="images/pg121_im003.png" alt="Four incomplete sentences asking for position words to describe a ball, a chair and a flask bottle." data-id="pg121_im003" style="position:absolute;top:69px;left:84px;width:405px;height:113px;opacity:0">
-  <img src="images/pg121_im006.png" alt="" data-id="pg121_im006" style="position:absolute;top:21px;left:-473px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im007.png" alt="" data-id="pg121_im007" style="position:absolute;top:18px;left:-475px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im008.png" alt="" data-id="pg121_im008" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im009.png" alt="" data-id="pg121_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im010.png" alt="" data-id="pg121_im010" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg121_im011.png" alt="" data-id="pg121_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg121_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 115&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 115</span></p>
-  <p data-id="pg121_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg121-shell">
+    <article class="page121" role="article" data-section-id="pg121_sec001" aria-label="Position and distance exercises">
+      <div class="pg121-layout">
+        <section class="pg121-card pg121-continuation" aria-label="Exercise 1 continued">
+          <div class="pg121-position-list">
+            <p class="pg121-position-row"><span class="pg121-qno">1.</span><span>The ball is</span><span class="pg121-blank" aria-label="blank"></span><span>the flask bottle.</span></p>
+            <p class="pg121-position-row"><span class="pg121-qno">2.</span><span>The ball is</span><span class="pg121-blank" aria-label="blank"></span><span>the chair.</span></p>
+            <p class="pg121-position-row"><span class="pg121-qno">3.</span><span>The chair is</span><span class="pg121-blank" aria-label="blank"></span><span>the ball.</span></p>
+            <p class="pg121-position-row"><span class="pg121-qno">4.</span><span>The chair is</span><span class="pg121-blank" aria-label="blank"></span><span>the flask bottle.</span></p>
+          </div>
+        </section>
+        <section class="pg121-card pg121-exercise" aria-labelledby="pg121-exercise-2">
+          <h1 id="pg121-exercise-2" class="pg121-label">Exercise 2</h1>
+          <p class="pg121-intro">Study the following pictures then answer the questions<br>that follow.</p>
+          <div class="pg121-pictures">
+            <img class="pg121-pen" src="images/pg121_im001.png" alt="A blue pen slanting downwards to the right.">
+            <img class="pg121-cup-book" src="images/pg121_im002.png" alt="A yellow cup beside a small book with a bicycle on the cover.">
+          </div>
+          <div class="pg121-questions">
+            <p class="pg121-question"><span class="pg121-qno">1.</span><span>Name the object that is near to the book.</span></p>
+            <p class="pg121-question"><span class="pg121-qno">2.</span><span>Which object is far from the cup?</span></p>
+            <p class="pg121-question"><span class="pg121-qno">3.</span><span>Which object is far from the book among the pen<br>and the cup?</span></p>
+            <p class="pg121-question"><span class="pg121-qno">4.</span><span>Which object is far from the pen?</span></p>
+            <p class="pg121-question"><span class="pg121-qno">5.</span><span>Which object is near the cup?</span></p>
+          </div>
+        </section>
+        <section class="pg121-card pg121-exercise-three" aria-labelledby="pg121-exercise-3">
+          <h2 id="pg121-exercise-3" class="pg121-label">Exercise 3</h2>
+          <p class="pg121-intro">Study the following picture and answer the questions<br>that follow.</p>
+        </section>
+      </div>
+      <p class="pg121-marker" aria-label="Page 115">115</p>
+      <span class="sr-only" data-id="pg121_p000">115</span>
+      <span class="sr-only" data-id="pg121_p001">Exercise 1 continues. 1. The ball is ... the flask bottle. 2. The ball is ... the chair. 3. The chair is ... the ball. 4. The chair is ... the flask bottle.</span>
+      <span class="sr-only" data-id="pg121_p002"></span><span class="sr-only" data-id="pg121_p003"></span><span class="sr-only" data-id="pg121_p004"></span>
+      <span class="sr-only" data-id="pg121_p005">Exercise 2. Study the following pictures, then answer the questions that follow. The pictures show a blue pen, a yellow cup and a small book. 1. Name the object that is near to the book. 2. Which object is far from the cup? 3. Which object is far from the book among the pen and the cup? 4. Which object is far from the pen? 5. Which object is near the cup? Exercise 3. Study the following picture and answer the questions that follow.</span>
+      <span class="sr-only" data-id="pg121_p006"></span><span class="sr-only" data-id="pg121_im001"></span><span class="sr-only" data-id="pg121_im002"></span>
+      <span class="sr-only" data-id="pg121_p008"></span><span class="sr-only" data-id="pg121_p009"></span><span class="sr-only" data-id="pg121_p010"></span><span class="sr-only" data-id="pg121_p012"></span><span class="sr-only" data-id="pg121_p013"></span><span class="sr-only" data-id="pg121_p014"></span><span class="sr-only" data-id="pg121_p015"></span>
+      <span class="sr-only" data-id="pg121_im003"></span><span class="sr-only" data-id="pg121_p017"></span><span class="sr-only" data-id="pg121_p018"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
