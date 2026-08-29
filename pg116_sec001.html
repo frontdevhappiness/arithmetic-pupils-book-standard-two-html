@@ -1,127 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg116_sec001" />
-    <meta name="page-section-id" content="116" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg116_sec001">
+  <meta name="page-section-id" content="116">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg116-blue:#159fdf; --pg116-grid:#3546b4; --pg116-ink:#231f20; --pg116-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg116-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg116-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg116-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg116-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page116 { position:relative!important; box-sizing:border-box; width:min(100%,58rem)!important; aspect-ratio:558/768; min-height:79.75rem!important; height:auto!important; margin:0 auto!important; overflow:hidden!important; visibility:visible!important; opacity:1!important; transform:none!important; left:auto!important; top:auto!important; border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .page116,.page116 * { box-sizing:border-box; }
+    .page116 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg116-exercise { position:absolute; top:8.75rem; left:13%; width:74%; height:62.1rem; padding:2.55rem 1.3rem 1.15rem; border:.2rem solid var(--pg116-blue); border-radius:1.3rem; background:rgba(255,255,255,.98); }
+    .pg116-banner { position:absolute; top:0; left:4.15rem; min-width:12.4rem; margin:0; padding:.33rem 1rem .28rem; border:.19rem solid var(--pg116-blue); border-radius:999px; background:#fff; color:var(--pg116-blue); font-size:1.82rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.025em currentColor; }
+    .pg116-instruction { margin:0 0 1rem; font-size:1.78rem; line-height:1.22; letter-spacing:.01em; }
+    .pg116-table { display:grid; grid-template-columns:7.2% 28.6% 26.5% 37.7%; grid-template-rows:7.6rem repeat(9,5.12rem); width:100%; border-top:.1rem solid var(--pg116-grid); border-left:.1rem solid var(--pg116-grid); background:#fff; }
+    .pg116-cell { position:relative; z-index:1; min-width:0; padding:.35rem .48rem; border-right:.1rem solid var(--pg116-grid); border-bottom:.1rem solid var(--pg116-grid); background:rgba(255,255,255,.82); font-size:1.7rem; line-height:1.08; }
+    .pg116-head { padding-top:.48rem; font-size:1.76rem; line-height:1.08; }
+    .pg116-number { padding:.45rem .16rem 0; color:var(--pg116-blue); text-align:center; }
+    .pg116-figure { display:flex; align-items:center; justify-content:center; padding:.28rem .7rem; }
+    .pg116-figure img { display:block; max-width:88%; max-height:92%; object-fit:contain; }
+    .pg116-figure-1 img { height:4.15rem; } .pg116-figure-2 img { height:4.7rem; }
+    .pg116-figure-3 img { width:6.3rem; } .pg116-figure-4 img { width:7rem; }
+    .pg116-figure-5 img { height:4.3rem; } .pg116-figure-6 img { height:4.05rem; }
+    .pg116-figure-7 img { width:6.25rem; } .pg116-figure-8 img { width:6.05rem; } .pg116-figure-9 img { width:6.1rem; }
+    .pg116-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:2.8rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg116-shell { padding:0 0 calc(var(--pg116-dock) + 1rem); }
+      .page116 { min-height:auto!important; border-radius:0; }
+      .pg116-exercise { top:10.8%; height:76%; padding:5% 2.3% 1.5%; }
+      .pg116-banner { left:10%; min-width:9rem; font-size:clamp(1.05rem,4vw,1.82rem); }
+      .pg116-instruction { margin-bottom:2%; font-size:clamp(.95rem,3.7vw,1.78rem); }
+      .pg116-table { grid-template-rows:14.2% repeat(9,9.53%); height:92%; }
+      .pg116-cell { padding:1.5% 3%; font-size:clamp(.75rem,3.3vw,1.7rem); }
+      .pg116-head { padding-top:3%; font-size:clamp(.75rem,3.25vw,1.76rem); }
+      .pg116-number { padding:8% 0 0; } .pg116-figure { padding:3% 7%; }
+      .pg116-figure img { width:auto; height:auto; max-width:88%; max-height:92%; }
+      .pg116-marker { bottom:3.4%; width:clamp(3.4rem,13vw,5.25rem); font-size:clamp(1.1rem,4vw,1.75rem); }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg116_im011.png" alt="" data-id="pg116_im011" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg116_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;110&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">110</span></p>
-  <img src="images/pg116_im012.png" alt="" data-id="pg116_im012" style="position:absolute;top:85px;left:72px;width:400px;height:583px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg116_im017.png" alt="" data-id="pg116_im017" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg116_im010.png" alt="Exercise 8" data-id="pg116_im010" style="position:absolute;top:70px;left:83px;width:126px;height:29px;opacity:0">
-  <img src="images/pg116_im018.png" alt="" data-id="pg116_im018" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg116_im019.png" alt="" data-id="pg116_im019" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg116_im020.png" alt="" data-id="pg116_im020" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg116_p001" class="adt-page-overlay-text" style="position:absolute;top:75px;left:81px;line-height:18px;width:388px;height:25px">Exercise 8. Write in words and in numerals the fraction of the region labelled A. The table columns are Figure, Name of the fraction labelled A in words, and Name of the fraction labelled A in numerals. 1. A rectangle is divided into three equal horizontal parts, with the middle part labelled A. 2. A circle is divided into three equal parts, with two parts labelled A. 3. A rectangle is divided into three equal vertical parts, with the left and right parts labelled A. 4. A rectangle is divided into four equal parts, with the top-right part labelled A. 5. A whole circle is labelled A. 6. A circle is divided into four equal parts, with the bottom-left part labelled A. 7. A triangle is divided into two equal parts, with the left part labelled A. 8. A whole rectangle is labelled A. 9. A rectangle is divided into two equal vertical parts, with the right part labelled A.</p>
-  <img src="images/pg116_im021.png" alt="" data-id="pg116_im021" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg116_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write in words and in numerals the fraction of the&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:100px;left:81px;line-height:18px;width:388px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write in words and in numerals the fraction of the</span></p>
-  <img src="images/pg116_im022.png" alt="" data-id="pg116_im022" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg116_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;region labelled A.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:119px;left:81px;line-height:18px;width:388px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">region labelled A.</span></p>
-  <p data-id="pg116_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Figure&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:148px;left:81px;line-height:18px;width:388px;height:18px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">Figure</span></p>
-  <p data-id="pg116_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Name of&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:148px;left:220px;line-height:18px;width:67px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">Name of</span></p>
-  <p data-id="pg116_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;the fraction &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot;labelled A in &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot;words&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:166px;left:81px;line-height:18px;width:388px;height:56px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">the fraction </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">labelled A in </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">words</span></p>
-  <p data-id="pg116_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Name of the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot;fraction labelled A &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}},{&quot;text&quot;:&quot;in numerals&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#000000&quot;}}]" data-adt-fit="1" style="position:absolute;top:148px;left:323px;line-height:18px;width:139px;height:60px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">Name of the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">fraction labelled A </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#000000">in numerals</span></p>
-  <p data-id="pg116_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:222px;left:81px;line-height:18px;width:388px;height:44px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">1.</span></p>
-  <img src="images/pg116_im001.png" alt="Rectangle divided into three equal horizontal parts, with the middle part labelled A." data-id="pg116_im001" style="position:absolute;top:225px;left:151px;width:27px;height:36px;opacity:0">
-  <p data-id="pg116_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:266px;left:81px;line-height:18px;width:388px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">2.</span></p>
-  <img src="images/pg116_im002.png" alt="Circle divided into three equal parts, with two parts labelled A." data-id="pg116_im002" style="position:absolute;top:269px;left:140px;width:48px;height:47px;opacity:0">
-  <p data-id="pg116_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:321px;left:88px;line-height:18px;width:14px;height:45px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">3.</span></p>
-  <img src="images/pg116_im003.png" alt="Rectangle divided into three equal vertical parts, with the left and right parts labelled A." data-id="pg116_im003" style="position:absolute;top:324px;left:137px;width:55px;height:38px;opacity:0">
-  <p data-id="pg116_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:366px;left:88px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">4.</span></p>
-  <img src="images/pg116_im004.png" alt="Rectangle divided into four equal parts, with the top-right part labelled A." data-id="pg116_im004" style="position:absolute;top:370px;left:129px;width:71px;height:43px;opacity:0">
-  <p data-id="pg116_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:417px;left:88px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <img src="images/pg116_im005.png" alt="Whole circle labelled A." data-id="pg116_im005" style="position:absolute;top:420px;left:143px;width:44px;height:44px;opacity:0">
-  <p data-id="pg116_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:469px;left:88px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <img src="images/pg116_im006.png" alt="Circle divided into four equal parts, with the bottom-left part labelled A." data-id="pg116_im006" style="position:absolute;top:479px;left:147px;width:35px;height:33px;opacity:0">
-  <p data-id="pg116_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;7.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:525px;left:88px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">7.</span></p>
-  <img src="images/pg116_im007.png" alt="Triangle divided into two equal parts, with the left part labelled A." data-id="pg116_im007" style="position:absolute;top:533px;left:137px;width:55px;height:32px;opacity:0">
-  <p data-id="pg116_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:576px;left:88px;line-height:18px;width:14px;height:39px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span></p>
-  <img src="images/pg116_im008.png" alt="Whole rectangle labelled A." data-id="pg116_im008" style="position:absolute;top:580px;left:138px;width:53px;height:29px;opacity:0">
-  <p data-id="pg116_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;9.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:615px;left:88px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">9.</span></p>
-  <img src="images/pg116_im009.png" alt="Rectangle divided into two equal vertical parts, with the right part labelled A." data-id="pg116_im009" style="position:absolute;top:618px;left:138px;width:54px;height:38px;opacity:0">
-  <img src="images/pg116_im013.png" alt="" data-id="pg116_im013" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg116_im014.png" alt="" data-id="pg116_im014" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg116_im015.png" alt="" data-id="pg116_im015" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg116_im016.png" alt="" data-id="pg116_im016" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg116_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 110&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 110</span></p>
-  <p data-id="pg116_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg116-shell">
+    <article class="page116" role="article" data-section-id="pg116_sec001" aria-label="Exercise 8: fractions of labelled regions">
+      <div aria-hidden="true">
+        <section class="pg116-exercise">
+          <h1 class="pg116-banner">Exercise 8</h1>
+          <p class="pg116-instruction">Write in words and in numerals the fraction of the<br>region labelled A.</p>
+          <div class="pg116-table">
+            <div class="pg116-cell pg116-head"></div><div class="pg116-cell pg116-head">Figure</div><div class="pg116-cell pg116-head">Name of<br>the fraction<br>labelled A in<br>words</div><div class="pg116-cell pg116-head">Name of the<br>fraction labelled A<br>in numerals</div>
+            <div class="pg116-cell pg116-number">1.</div><div class="pg116-cell pg116-figure pg116-figure-1"><img src="images/pg116_im001.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">2.</div><div class="pg116-cell pg116-figure pg116-figure-2"><img src="images/pg116_im002.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">3.</div><div class="pg116-cell pg116-figure pg116-figure-3"><img src="images/pg116_im003.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">4.</div><div class="pg116-cell pg116-figure pg116-figure-4"><img src="images/pg116_im004.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">5.</div><div class="pg116-cell pg116-figure pg116-figure-5"><img src="images/pg116_im005.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">6.</div><div class="pg116-cell pg116-figure pg116-figure-6"><img src="images/pg116_im006.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">7.</div><div class="pg116-cell pg116-figure pg116-figure-7"><img src="images/pg116_im007.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">8.</div><div class="pg116-cell pg116-figure pg116-figure-8"><img src="images/pg116_im008.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+            <div class="pg116-cell pg116-number">9.</div><div class="pg116-cell pg116-figure pg116-figure-9"><img src="images/pg116_im009.png" alt=""></div><div class="pg116-cell"></div><div class="pg116-cell"></div>
+          </div>
+        </section>
+        <p class="pg116-marker">110</p>
+      </div>
+      <span class="sr-only" data-id="pg116_p000">110</span>
+      <span class="sr-only" data-id="pg116_p001">Exercise 8. Write in words and in numerals the fraction of the region labelled A. The table columns are Figure, Name of the fraction labelled A in words, and Name of the fraction labelled A in numerals. 1. A rectangle is divided into three equal horizontal parts, with the middle part labelled A. 2. A circle is divided into three equal parts, with two parts labelled A. 3. A rectangle is divided into three equal vertical parts, with the left and right parts labelled A. 4. A rectangle is divided into four equal parts, with the top-right part labelled A. 5. A whole circle is labelled A. 6. A circle is divided into four equal parts, with the bottom-left part labelled A. 7. A triangle is divided into two equal parts, with the left part labelled A. 8. A whole rectangle is labelled A. 9. A rectangle is divided into two equal vertical parts, with the right part labelled A.</span>
+      <span class="sr-only" data-id="pg116_p002">Write in words and in numerals the fraction of the</span><span class="sr-only" data-id="pg116_p003">region labelled A.</span><span class="sr-only" data-id="pg116_p004">Figure</span><span class="sr-only" data-id="pg116_p005">Name of</span><span class="sr-only" data-id="pg116_p006">the fraction labelled A in words</span><span class="sr-only" data-id="pg116_p009">Name of the fraction labelled A in numerals</span>
+      <span class="sr-only" data-id="pg116_p012">1.</span><span class="sr-only" data-id="pg116_p013">2.</span><span class="sr-only" data-id="pg116_p014">3.</span><span class="sr-only" data-id="pg116_p015">4.</span><span class="sr-only" data-id="pg116_p016">5.</span><span class="sr-only" data-id="pg116_p017">6.</span><span class="sr-only" data-id="pg116_p018">7.</span><span class="sr-only" data-id="pg116_p019">8.</span><span class="sr-only" data-id="pg116_p020">9.</span><span class="sr-only" data-id="pg116_p021"></span><span class="sr-only" data-id="pg116_p022"></span>
+      <span class="sr-only" data-id="pg116_im001"></span><span class="sr-only" data-id="pg116_im002"></span><span class="sr-only" data-id="pg116_im003"></span><span class="sr-only" data-id="pg116_im004"></span><span class="sr-only" data-id="pg116_im005"></span><span class="sr-only" data-id="pg116_im006"></span><span class="sr-only" data-id="pg116_im007"></span><span class="sr-only" data-id="pg116_im008"></span><span class="sr-only" data-id="pg116_im009"></span><span class="sr-only" data-id="pg116_im010"></span><span class="sr-only" data-id="pg116_im011"></span><span class="sr-only" data-id="pg116_im012"></span><span class="sr-only" data-id="pg116_im013"></span><span class="sr-only" data-id="pg116_im014"></span><span class="sr-only" data-id="pg116_im015"></span><span class="sr-only" data-id="pg116_im016"></span><span class="sr-only" data-id="pg116_im017"></span><span class="sr-only" data-id="pg116_im018"></span><span class="sr-only" data-id="pg116_im019"></span><span class="sr-only" data-id="pg116_im020"></span><span class="sr-only" data-id="pg116_im021"></span><span class="sr-only" data-id="pg116_im022"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
