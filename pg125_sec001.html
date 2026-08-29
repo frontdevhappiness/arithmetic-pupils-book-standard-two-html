@@ -1,117 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg125_sec001" />
-    <meta name="page-section-id" content="125" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg125_sec001">
+  <meta name="page-section-id" content="125">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg125-blue:#159fdf; --pg125-pale-blue:#83ccef; --pg125-grid-blue:#3546b4; --pg125-ink:#231f20; --pg125-dock:var(--dock-height,96px); }
+    html, body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg125-ink); background:#eef9ff; }
+    #content.pg125-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg125-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg125-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible; }
+    .page125 {
+      position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:6.55rem 7.35rem 3rem; overflow:hidden;
+      border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem);
+      background:radial-gradient(circle,rgba(71,177,222,.2) 0 .055rem,transparent .065rem) 0 0/.34rem .34rem,linear-gradient(90deg,rgba(255,255,255,.97),#fff 10%,#fff 90%,rgba(255,255,255,.97));
+      box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif;
+    }
+    .page125::before { content:""; position:absolute; inset:3.1rem 3rem; z-index:0; background:#fff; box-shadow:0 0 2.5rem 2.5rem rgba(255,255,255,.98); }
+    .page125, .page125 * { box-sizing:border-box; }
+    .page125 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg125-layout { position:relative; z-index:1; }
+    .pg125-comparison {
+      position:relative; display:grid; grid-template-columns:2.4rem 1fr 1fr; grid-template-rows:11.2rem 2.6rem; align-items:end; margin:0 0 1.45rem; padding:.6rem .75rem .2rem;
+      border:.16rem solid var(--pg125-grid-blue); border-radius:.05rem;
+    }
+    .pg125-comparison::before { content:""; position:absolute; inset:-.2rem -1.15rem -.85rem; z-index:-1; border:.2rem solid var(--pg125-pale-blue); border-top:0; border-radius:0 0 1.15rem 1.15rem; }
+    .pg125-number { grid-row:1; align-self:start; margin:.15rem 0 0; color:var(--pg125-blue); font-size:1.9rem; line-height:1; }
+    .pg125-object { display:flex; align-items:flex-end; justify-content:center; height:100%; min-width:0; }
+    .pg125-object img { display:block; object-fit:contain; }
+    .pg125-barrel img { width:7.4rem; max-height:10.7rem; }
+    .pg125-bucket img { width:6.9rem; max-height:7.2rem; }
+    .pg125-caption { align-self:center; margin:0; font-size:1.83rem; line-height:1; text-align:center; }
+    .pg125-heading { margin:1.8rem 0 2.45rem; font-size:1.92rem; font-weight:900; letter-spacing:.015em; line-height:1.08; white-space:nowrap; -webkit-text-stroke:.02em currentColor; }
+    .pg125-example { position:relative; padding:2.9rem 1.3rem 1rem; border:.2rem solid var(--pg125-pale-blue); border-radius:1.15rem; background:#fff; }
+    .pg125-banner {
+      position:absolute; top:0; left:2.25rem; min-width:10.2rem; margin:0; padding:.32rem 1.05rem .38rem; border-radius:999px; color:#fff; background:var(--pg125-blue);
+      font-size:1.85rem; font-weight:900; line-height:1; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor;
+    }
+    .pg125-instruction { margin:0 0 1.05rem; font-size:1.8rem; line-height:1.15; }
+    .pg125-table { display:grid; grid-template-columns:1fr 1.15fr; grid-template-rows:11.3rem 10.8rem 11.55rem; border:.12rem solid var(--pg125-grid-blue); }
+    .pg125-picture, .pg125-description { min-width:0; border-bottom:.1rem solid var(--pg125-grid-blue); }
+    .pg125-picture { display:flex; align-items:center; justify-content:center; border-right:.1rem solid var(--pg125-grid-blue); }
+    .pg125-description { margin:0; padding:.35rem 1.5rem; font-size:1.75rem; line-height:1.35; }
+    .pg125-picture:nth-last-child(2), .pg125-description:last-child { border-bottom:0; }
+    .pg125-bottles { width:10.2rem; max-height:9.6rem; object-fit:contain; }
+    .pg125-pencils { width:10.6rem; max-height:9.8rem; object-fit:contain; }
+    .pg125-houses { width:18.1rem; max-height:8.6rem; object-fit:contain; }
+    .pg125-marker { display:grid; place-items:center; width:5.2rem; aspect-ratio:1.65/1; margin:3rem auto 0; border-radius:50%; color:#fff; background:#00a9e8; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg125-shell { padding:0 0 calc(var(--pg125-dock) + 1rem); }
+      .page125 { min-height:100vh; padding:clamp(3rem,11vw,5rem) 6% 2rem; border-radius:0; }
+      .pg125-comparison { grid-template-columns:1.5rem 1fr 1fr; grid-template-rows:clamp(7.4rem,29vw,11.2rem) 2rem; }
+      .pg125-number, .pg125-caption, .pg125-heading, .pg125-banner, .pg125-instruction, .pg125-description { font-size:clamp(1.05rem,4vw,1.85rem); }
+      .pg125-barrel img { width:clamp(4.3rem,18vw,7.4rem); max-height:clamp(6.7rem,26vw,10.7rem); }
+      .pg125-bucket img { width:clamp(4rem,17vw,6.9rem); max-height:clamp(4.5rem,18vw,7.2rem); }
+      .pg125-heading { margin:1.5rem 0 2rem; white-space:normal; }
+      .pg125-example { padding:clamp(2.3rem,9vw,2.9rem) .7rem .7rem; }
+      .pg125-banner { left:1.5rem; min-width:8.5rem; }
+      .pg125-table { grid-template-rows:repeat(3,clamp(8rem,30vw,11.55rem)); }
+      .pg125-description { padding:.3rem .65rem; }
+      .pg125-bottles, .pg125-pencils { width:72%; }
+      .pg125-houses { width:92%; }
+      .pg125-marker { margin-top:2rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg125_im008.png" alt="" data-id="pg125_im008" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg125_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;119&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">119</span></p>
-  <img src="images/pg125_im007.png" alt="Example panel showing two matching bottles standing side by side, three matching pencils standing upright, and two matching houses standing side by side." data-id="pg125_im007" style="position:absolute;top:268px;left:84px;width:405px;height:399px;opacity:0">
-  <img src="images/pg125_im013.png" alt="" data-id="pg125_im013" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im014.png" alt="" data-id="pg125_im014" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im015.png" alt="" data-id="pg125_im015" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im016.png" alt="" data-id="pg125_im016" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im017.png" alt="" data-id="pg125_im017" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im018.png" alt="" data-id="pg125_im018" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg125_p001" class="adt-page-overlay-text" style="position:absolute;top:77px;left:103px;line-height:18px;width:14px;height:20px">3. A barrel. A bucket. The picture shows a grey metal barrel on the left and a blue bucket with a handle on the right. Both objects rest on the same ground line. The top of the barrel reaches much higher than the top of the bucket. Recognizing objects with equal lengths or heights. Example. Study the following pictures. The bottles have equal height. The picture shows two matching bottles standing side by side. The pencils have equal length. The picture shows three matching pencils standing upright. The walls of the houses have equal height. The picture shows two matching houses standing side by side.</p>
-  <p data-id="pg125_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;A barrel&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:200px;left:86px;line-height:18px;width:405px;height:38px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">A barrel</span></p>
-  <p data-id="pg125_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;A bucket&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:201px;left:285px;line-height:18px;width:64px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">A bucket</span></p>
-  <p data-id="pg125_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Recognizing objects with equal lengths or heights&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:238px;left:86px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Recognizing objects with equal lengths or heights</span></p>
-  <p data-id="pg125_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Example&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:272px;left:86px;line-height:17px;width:207px;height:33px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#ffffff;font-weight:bold"> Example</span></p>
-  <p data-id="pg125_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Study the following pictures.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:305px;left:86px;line-height:17px;width:207px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#231f20">Study the following pictures.</span></p>
-  <img src="images/pg125_im001.jpg" alt="Two bottles of equal height." data-id="pg125_im001" style="position:absolute;top:335px;left:127px;width:108px;height:91px;opacity:0">
-  <p data-id="pg125_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The bottles have equal &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;height&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:333px;left:289px;line-height:18px;width:170px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The bottles have equal </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">height</span></p>
-  <img src="images/pg125_im002.jpg" alt="Three pencils of equal length." data-id="pg125_im002" style="position:absolute;top:443px;left:131px;width:109px;height:93px;opacity:0">
-  <p data-id="pg125_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The pencils have equal &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;length&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:441px;left:289px;line-height:18px;width:170px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The pencils have equal </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">length</span></p>
-  <img src="images/pg125_im003.jpg" alt="Two houses with walls of equal height." data-id="pg125_im003" style="position:absolute;top:570px;left:102px;width:168px;height:71px;opacity:0">
-  <p data-id="pg125_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The walls of the houses &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;have equal height&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:545px;left:289px;line-height:18px;width:176px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The walls of the houses </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">have equal height</span></p>
-  <img src="images/pg125_im006.png" alt="A grey metal barrel on the left and a blue bucket with a handle on the right. Both rest on the same ground line. The top of the barrel reaches much higher than the top of the bucket." data-id="pg125_im006" style="position:absolute;top:67px;left:84px;width:408px;height:167px;opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg125_im004" clipPathUnits="userSpaceOnUse"><path d="M175.96 78.8L251.91 78.8L251.91 186.66L175.96 186.66Z" transform="translate(-174,-77)"/></clipPath></defs></svg>
-  <img src="images/pg125_im004.png" alt="A grey metal barrel resting on the same ground line as the bucket, with its top reaching much higher." data-id="pg125_im004" style="position:absolute;top:77px;left:174px;width:79px;height:110px;clip-path:url(#clip-pg125_im004);opacity:0">
-  <img src="images/pg125_im005.png" alt="A blue bucket with a handle resting on the same ground line as the barrel, with its top lower on the page." data-id="pg125_im005" style="position:absolute;top:114px;left:301px;width:78px;height:73px;opacity:0">
-  <img src="images/pg125_im009.png" alt="" data-id="pg125_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im010.png" alt="" data-id="pg125_im010" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im011.png" alt="" data-id="pg125_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg125_im012.png" alt="" data-id="pg125_im012" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg125_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 119&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 119</span></p>
-  <p data-id="pg125_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg125-shell">
+    <article class="page125" role="article" data-section-id="pg125_sec001" aria-label="Recognizing objects with equal lengths or heights">
+      <div class="pg125-layout">
+        <section class="pg125-comparison" aria-label="Question 3: compare a barrel and a bucket">
+          <p class="pg125-number">3.</p>
+          <div class="pg125-object pg125-barrel"><img src="images/pg125_im004.png" alt="A grey metal barrel"></div>
+          <div class="pg125-object pg125-bucket"><img src="images/pg125_im005.png" alt="A blue bucket with a handle"></div>
+          <span aria-hidden="true"></span><p class="pg125-caption">A barrel</p><p class="pg125-caption">A bucket</p>
+        </section>
+        <h1 class="pg125-heading">Recognizing objects with equal lengths or heights</h1>
+        <section class="pg125-example" aria-label="Example">
+          <h2 class="pg125-banner">Example</h2>
+          <p class="pg125-instruction">Study the following pictures.</p>
+          <div class="pg125-table">
+            <div class="pg125-picture"><img class="pg125-bottles" src="images/pg125_im001.jpg" alt="Two matching bottles standing side by side"></div><p class="pg125-description">The bottles have equal<br>height</p>
+            <div class="pg125-picture"><img class="pg125-pencils" src="images/pg125_im002.jpg" alt="Three matching pencils standing upright"></div><p class="pg125-description">The pencils have equal<br>length</p>
+            <div class="pg125-picture"><img class="pg125-houses" src="images/pg125_im003.jpg" alt="Two matching houses standing side by side"></div><p class="pg125-description">The walls of the houses<br>have equal height</p>
+          </div>
+        </section>
+        <p class="pg125-marker">119</p>
+      </div>
+      <span class="sr-only" data-id="pg125_p000">119</span>
+      <span class="sr-only" data-id="pg125_p001">3. A barrel. A bucket. The picture shows a grey metal barrel on the left and a blue bucket with a handle on the right. Both objects rest on the same ground line. The top of the barrel reaches much higher than the top of the bucket. Recognizing objects with equal lengths or heights. Example. Study the following pictures. The bottles have equal height. The picture shows two matching bottles standing side by side. The pencils have equal length. The picture shows three matching pencils standing upright. The walls of the houses have equal height. The picture shows two matching houses standing side by side.</span>
+      <span class="sr-only" data-id="pg125_p002"></span><span class="sr-only" data-id="pg125_p003"></span><span class="sr-only" data-id="pg125_p004"></span><span class="sr-only" data-id="pg125_p005"></span><span class="sr-only" data-id="pg125_p006"></span>
+      <span class="sr-only" data-id="pg125_im001"></span><span class="sr-only" data-id="pg125_p007"></span><span class="sr-only" data-id="pg125_im002"></span><span class="sr-only" data-id="pg125_p009"></span><span class="sr-only" data-id="pg125_im003"></span><span class="sr-only" data-id="pg125_p011"></span>
+      <span class="sr-only" data-id="pg125_im006"></span><span class="sr-only" data-id="pg125_im004"></span><span class="sr-only" data-id="pg125_im005"></span><span class="sr-only" data-id="pg125_im007"></span><span class="sr-only" data-id="pg125_im008"></span><span class="sr-only" data-id="pg125_im009"></span><span class="sr-only" data-id="pg125_im010"></span><span class="sr-only" data-id="pg125_im011"></span><span class="sr-only" data-id="pg125_im012"></span><span class="sr-only" data-id="pg125_im013"></span><span class="sr-only" data-id="pg125_im014"></span><span class="sr-only" data-id="pg125_im015"></span><span class="sr-only" data-id="pg125_im016"></span><span class="sr-only" data-id="pg125_im017"></span><span class="sr-only" data-id="pg125_im018"></span>
+      <span class="sr-only" data-id="pg125_p013">ARITHMETICS PUPIL'S STD 2.indd 119</span><span class="sr-only" data-id="pg125_p014">06/11/2024 17:23</span>
+    </article>
+  </main>
+  <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
 </body>
-
 </html>
