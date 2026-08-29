@@ -19,6 +19,12 @@
     </style>
 <style>
 #content .adt-page-overlay-text{opacity:0!important}
+#content img[style*="opacity:0"]{opacity:1!important}
+#content img[data-id$="_page"],
+#content img[style*="width:558px"][style*="height:768px"],
+#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
+#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
+#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
 </style>
     <noscript><style>#content { visibility: visible !important; }</style></noscript>
 </head>
@@ -27,15 +33,12 @@
     <main>
       <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
 <style>
-#content .adt-page-overlay-text,#content .adt-page-overlay-text *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
+#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
+/* Keep the semantic Sassoon layer selectable and above the visual assets. */
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
 #content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
 </style>
-  <img src="images/pg124_page_hq_pdf_clean.png" alt="" role="presentation" aria-hidden="true" data-id="pg124_page" style="position:absolute;inset:0;width:558px;height:768px">
   <p data-id="pg124_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;118&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">118</span></p>
   <img src="images/pg124_im007.png" alt="Page showing arm span and rope, followed by Exercise 4. Ana and Juma stand on the same ground line, with the top of Ana's head lower on the page. A cup and flask bottle rest on the same level, with the top of the cup lower on the page." data-id="pg124_im007" style="position:absolute;top:67px;left:67px;width:408px;height:653px;opacity:0">
   <img src="images/pg124_im012.png" alt="" data-id="pg124_im012" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
