@@ -1,126 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg133_sec001" />
-    <meta name="page-section-id" content="133" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg133_sec001">
+  <meta name="page-section-id" content="133">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg133-blue:#159fdf; --pg133-line:#86cef2; --pg133-grid:#3546b4; --pg133-ink:#231f20; --pg133-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg133-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg133-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg133-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg133-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page133 { position:relative!important; box-sizing:border-box; width:min(100%,58rem)!important; aspect-ratio:558/768; min-height:79.75rem!important; height:auto!important; margin:0 auto!important; padding:7rem 6.6rem 3rem; overflow:hidden!important; visibility:visible!important; opacity:1!important; transform:none!important; left:auto!important; top:auto!important; border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page133,.page133 * { box-sizing:border-box; }
+    .page133 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg133-continuation { position:relative; display:grid; grid-template-columns:4.1rem 1fr 1fr; min-height:11.6rem; border:.17rem solid var(--pg133-line); border-top:0; border-radius:0 0 1.3rem 1.3rem; background:rgba(255,255,255,.98); }
+    .pg133-continuation::before { content:""; position:absolute; inset:-.15rem 1.9rem 1.55rem; border:.1rem solid var(--pg133-grid); pointer-events:none; }
+    .pg133-top-number,.pg133-object { position:relative; z-index:1; }
+    .pg133-top-number { padding:.55rem 0 0 .5rem; color:var(--pg133-blue); font-size:2.15rem; line-height:1; }
+    .pg133-object { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.6rem; padding-top:.25rem; }
+    .pg133-object:first-of-type { border-left:.1rem solid var(--pg133-grid); }
+    .pg133-object img { display:block; width:5.45rem; height:3.9rem; object-fit:contain; }
+    .pg133-object:nth-of-type(3) img { width:5.7rem; height:4.2rem; }
+    .pg133-object em { font-size:2.15rem; line-height:1; }
+    .pg133-exercise { position:relative; margin-top:2.35rem; padding:3.6rem 1.4rem 2.05rem; border:.2rem solid var(--pg133-line); border-radius:1.25rem; background:rgba(255,255,255,.98); }
+    .pg133-banner { position:absolute; top:0; left:4.25rem; min-width:12.65rem; margin:0; padding:.32rem 1rem .27rem; border:.2rem solid var(--pg133-blue); border-radius:999px; background:#fff; color:var(--pg133-blue); font-size:1.85rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.02em currentColor; }
+    .pg133-question { margin:0; font-size:1.86rem; line-height:1.25; }
+    .pg133-question+.pg133-question { margin-top:.72rem; }
+    .pg133-qno { display:inline-block; min-width:2.35rem; color:var(--pg133-blue); }
+    .pg133-picture-question { margin-bottom:2.1rem; }
+    .pg133-answer-row { display:grid; grid-template-columns:repeat(2,1fr); margin:.85rem 1rem 0 2.75rem; }
+    .pg133-choice { display:grid; grid-template-columns:3rem 1fr; align-items:center; min-height:8.5rem; font-size:1.9rem; line-height:1; }
+    .pg133-choice img { display:block; justify-self:center; object-fit:contain; }
+    .pg133-bottle { width:3.4rem; height:8.1rem; }
+    .pg133-jug { width:6.2rem; height:7.4rem; }
+    .pg133-written .pg133-qno { vertical-align:top; }
+    .pg133-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg133-shell { padding:0 0 calc(var(--pg133-dock) + 1rem); }
+      .page133 { min-height:auto!important; padding:clamp(3.5rem,11vw,6rem) 5% 7rem; border-radius:0; }
+      .pg133-continuation { grid-template-columns:2.5rem 1fr 1fr; min-height:clamp(7.2rem,30vw,11.6rem); }
+      .pg133-continuation::before { inset:-.1rem 1rem 1rem; }
+      .pg133-top-number,.pg133-object em,.pg133-question,.pg133-choice,.pg133-banner { font-size:clamp(1.05rem,4.2vw,1.86rem); }
+      .pg133-object img { width:clamp(3.2rem,14vw,5.45rem); height:clamp(2.5rem,10vw,3.9rem); }
+      .pg133-object:nth-of-type(3) img { width:clamp(3.4rem,15vw,5.7rem); height:clamp(2.7rem,11vw,4.2rem); }
+      .pg133-exercise { margin-top:2rem; padding:2.7rem .8rem 1.35rem; }
+      .pg133-banner { left:2.7rem; min-width:9.2rem; }
+      .pg133-picture-question { margin-bottom:1.35rem; }
+      .pg133-answer-row { margin:.5rem .25rem 0 1.5rem; }
+      .pg133-choice { grid-template-columns:2.2rem 1fr; min-height:clamp(5rem,23vw,8.5rem); }
+      .pg133-bottle { width:clamp(2rem,8vw,3.4rem); height:clamp(4.7rem,21vw,8.1rem); }
+      .pg133-jug { width:clamp(3.8rem,16vw,6.2rem); height:clamp(4.4rem,19vw,7.4rem); }
+      .pg133-question+.pg133-question { margin-top:.58rem; }
+      .pg133-qno { min-width:clamp(1.55rem,6vw,2.35rem); }
+      .pg133-marker { bottom:2rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content img[data-id="pg133_im007"]{opacity:0!important}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg133_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg133_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg133_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:267px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg133_im008.png" alt="" data-id="pg133_im008" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg133_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;127&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">127</span></p>
-  <img src="images/pg133_im007.png" alt="Example 3 shows a bowl and a pot. Exercise 9 asks which bottle has more soda, showing bottle a fuller than bottle b, and which jug has more juice, showing jug a fuller than jug b." data-id="pg133_im007" style="position:absolute;top:69px;left:81px;width:411px;height:562px;opacity:0">
-  <img src="images/pg133_im013.png" alt="" data-id="pg133_im013" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im014.png" alt="" data-id="pg133_im014" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im015.png" alt="" data-id="pg133_im015" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im016.png" alt="" data-id="pg133_im016" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im017.png" alt="" data-id="pg133_im017" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im018.png" alt="" data-id="pg133_im018" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg133_p001" class="adt-page-overlay-text" style="position:absolute;top:74px;left:108px;line-height:18px;width:16px;height:22px">Exercise 8 continues. 3. bowl. pot. Exercise 9. 1. Which bottle has more soda than the other? Bottle a is filled to about three-quarters, and bottle b is filled to about half. 2. Which jug has more juice than the other? Jug a is filled to about half, while jug b has a small amount at the bottom. 3. Which objects at your home have the same volume? 4. Which objects at your school have the same volume? 5. Which objects in the shop have the same volume? 6. Mention containers with equal volumes for storing water at your home.</p>
-  <img src="images/pg133_im001.png" alt="Green bowl with a pink inside." data-id="pg133_im001" style="position:absolute;top:80px;left:170px;width:65px;height:43px;opacity:0">
-  <img src="images/pg133_im002.png" alt="Silver pot viewed from above." data-id="pg133_im002" style="position:absolute;top:80px;left:339px;width:64px;height:47px;opacity:0">
-  <p data-id="pg133_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;bowl&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:133px;left:183px;line-height:18px;width:40px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">bowl</span></p>
-  <p data-id="pg133_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;pot&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:133px;left:357px;line-height:18px;width:27px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">pot</span></p>
-  <p data-id="pg133_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Exercise 9&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:184px;left:132px;line-height:17px;width:74px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;font-weight:bold">Exercise 9</span></p>
-  <p data-id="pg133_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which bottle has more soda than the other?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:221px;left:95px;line-height:18px;width:341px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which bottle has more soda than the other?</span></p>
-  <p data-id="pg133_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;(a)&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:276px;left:122px;line-height:18px;width:26px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">(a)</span></p>
-  <img src="images/pg133_im003.png" alt="Bottle a with more soda, filled to about three quarters." data-id="pg133_im003" style="position:absolute;top:247px;left:205px;width:27px;height:76px;opacity:0">
-  <p data-id="pg133_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;(b)&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:276px;left:285px;line-height:18px;width:26px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">(b)</span></p>
-  <img src="images/pg133_im004.png" alt="Bottle b with less soda, filled to about half." data-id="pg133_im004" style="position:absolute;top:248px;left:370px;width:28px;height:74px;opacity:0">
-  <p data-id="pg133_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which jug has more juice than the other?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:341px;left:86px;line-height:18px;width:330px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which jug has more juice than the other?</span></p>
-  <p data-id="pg133_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; (a)&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:401px;left:119px;line-height:18px;width:31px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> (a)</span></p>
-  <img src="images/pg133_im005.jpg" alt="Jug a with more juice, filled to about half." data-id="pg133_im005" style="position:absolute;top:376px;left:186px;width:63px;height:70px;opacity:0">
-  <p data-id="pg133_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;(b)&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:401px;left:286px;line-height:18px;width:26px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">(b)</span></p>
-  <img src="images/pg133_im006.png" alt="Jug b with a small amount of juice at the bottom." data-id="pg133_im006" style="position:absolute;top:376px;left:362px;width:58px;height:69px;opacity:0">
-  <p data-id="pg133_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which objects at your home have the same volume?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:466px;left:95px;line-height:18px;width:386px;height:25px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which objects at your home have the same volume?</span></p>
-  <p data-id="pg133_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which objects at your school have the same &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;volume?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:491px;left:95px;line-height:18px;width:386px;height:50px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which objects at your school have the same </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">volume?</span></p>
-  <p data-id="pg133_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which objects in the shop have the same volume?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:541px;left:95px;line-height:18px;width:386px;height:25px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which objects in the shop have the same volume?</span></p>
-  <p data-id="pg133_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Mention containers with equal volumes for storing &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;water at your home.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:566px;left:95px;line-height:18px;width:386px;height:45px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Mention containers with equal volumes for storing </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">water at your home.</span></p>
-  <img src="images/pg133_im009.png" alt="" data-id="pg133_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im010.png" alt="" data-id="pg133_im010" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im011.png" alt="" data-id="pg133_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg133_im012.png" alt="" data-id="pg133_im012" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg133_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 127&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 127</span></p>
-  <p data-id="pg133_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg133-shell">
+    <article class="page133" role="article" data-section-id="pg133_sec001" aria-label="Comparing volumes">
+      <div aria-hidden="true">
+        <section class="pg133-continuation">
+          <span class="pg133-top-number">3.</span>
+          <div class="pg133-object"><img src="images/pg133_im001.png" alt=""><em>bowl</em></div>
+          <div class="pg133-object"><img src="images/pg133_im002.png" alt=""><em>pot</em></div>
+        </section>
+        <section class="pg133-exercise">
+          <h1 class="pg133-banner">Exercise 9</h1>
+          <div class="pg133-picture-question">
+            <p class="pg133-question"><span class="pg133-qno">1.</span>Which bottle has more soda than the other?</p>
+            <div class="pg133-answer-row">
+              <div class="pg133-choice"><span>(a)</span><img class="pg133-bottle" src="images/pg133_im003.png" alt=""></div>
+              <div class="pg133-choice"><span>(b)</span><img class="pg133-bottle" src="images/pg133_im004.png" alt=""></div>
+            </div>
+          </div>
+          <div class="pg133-picture-question">
+            <p class="pg133-question"><span class="pg133-qno">2.</span>Which jug has more juice than the other?</p>
+            <div class="pg133-answer-row">
+              <div class="pg133-choice"><span>(a)</span><img class="pg133-jug" src="images/pg133_im005.jpg" alt=""></div>
+              <div class="pg133-choice"><span>(b)</span><img class="pg133-jug" src="images/pg133_im006.png" alt=""></div>
+            </div>
+          </div>
+          <p class="pg133-question pg133-written"><span class="pg133-qno">3.</span>Which objects at your home have the same volume?</p>
+          <p class="pg133-question pg133-written"><span class="pg133-qno">4.</span>Which objects at your school have the same volume?</p>
+          <p class="pg133-question pg133-written"><span class="pg133-qno">5.</span>Which objects in the shop have the same volume?</p>
+          <p class="pg133-question pg133-written"><span class="pg133-qno">6.</span>Mention containers with equal volumes for storing water at your home.</p>
+        </section>
+        <p class="pg133-marker">127</p>
+      </div>
+      <span class="sr-only" data-id="pg133_p000">127</span>
+      <span class="sr-only" data-id="pg133_p001">Exercise 8 continues. 3. bowl. pot. Exercise 9. 1. Which bottle has more soda than the other? Bottle a is filled to about three-quarters, and bottle b is filled to about half. 2. Which jug has more juice than the other? Jug a is filled to about half, while jug b has a small amount at the bottom. 3. Which objects at your home have the same volume? 4. Which objects at your school have the same volume? 5. Which objects in the shop have the same volume? 6. Mention containers with equal volumes for storing water at your home.</span>
+      <span class="sr-only" data-id="pg133_im001"></span><span class="sr-only" data-id="pg133_im002"></span><span class="sr-only" data-id="pg133_im003"></span><span class="sr-only" data-id="pg133_im004"></span><span class="sr-only" data-id="pg133_im005"></span><span class="sr-only" data-id="pg133_im006"></span><span class="sr-only" data-id="pg133_im007"></span>
+      <span class="sr-only" data-id="pg133_p002"></span><span class="sr-only" data-id="pg133_p003"></span><span class="sr-only" data-id="pg133_p004"></span><span class="sr-only" data-id="pg133_p005"></span><span class="sr-only" data-id="pg133_p006"></span><span class="sr-only" data-id="pg133_p007"></span><span class="sr-only" data-id="pg133_p008"></span><span class="sr-only" data-id="pg133_p009"></span><span class="sr-only" data-id="pg133_p010"></span><span class="sr-only" data-id="pg133_p011"></span><span class="sr-only" data-id="pg133_p012"></span><span class="sr-only" data-id="pg133_p014"></span><span class="sr-only" data-id="pg133_p015"></span><span class="sr-only" data-id="pg133_p017"></span><span class="sr-only" data-id="pg133_p018"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
