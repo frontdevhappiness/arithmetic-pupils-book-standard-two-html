@@ -1,106 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg112_sec001" />
-    <meta name="page-section-id" content="112" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg112_sec001">
+  <meta name="page-section-id" content="112">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root {
+      --pg112-blue: #00a9e8;
+      --pg112-ink: #231f20;
+      --pg112-dock: var(--dock-height, 96px);
+    }
+
+    html, body { margin: 0; min-height: 100%; }
+    body { overflow-x: hidden; overflow-y: auto; color: var(--pg112-ink); background: #eef9ff; }
+
+    #content.pg112-shell {
+      box-sizing: border-box;
+      width: auto !important;
+      min-height: calc(100vh - var(--pg112-dock));
+      padding: clamp(1rem, 4vw, 3rem) clamp(.75rem, 4vw, 2.5rem)
+        calc(var(--pg112-dock) + clamp(1.5rem, 4vw, 3rem));
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .page112 {
+      position: relative;
+      box-sizing: border-box;
+      width: min(100%, 58rem);
+      min-height: 79.75rem;
+      margin: 0 auto;
+      padding: 7.45rem 7.35rem 3rem;
+      overflow: hidden;
+      border: clamp(.45rem, 1vw, .8rem) solid #e1f3fb;
+      border-radius: clamp(1.15rem, 3vw, 2.25rem);
+      background:
+        radial-gradient(circle at 0 12%, rgba(125, 199, 235, .23), transparent 11%),
+        radial-gradient(circle at 100% 34%, rgba(125, 199, 235, .2), transparent 10%),
+        #fff;
+      box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118,.14);
+      font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif;
+    }
+
+    .page112, .page112 * { box-sizing: border-box; }
+    .page112 * { font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important; }
+
+    .pg112-picture { display: block; width: 100%; height: auto; object-fit: contain; }
+    .pg112-copy {
+      margin: .7rem 0 .82rem;
+      font-size: 1.88rem;
+      line-height: 1.18;
+      letter-spacing: .006em;
+    }
+    .pg112-second-picture { width: 100%; height: 23.45rem; overflow: hidden; }
+    .pg112-second-picture img {
+      width: 113%;
+      max-width: none;
+      height: 100%;
+      margin-left: -6.9%;
+      object-fit: fill;
+    }
+    .pg112-copy-last { margin-top: 1.15rem; margin-bottom: 0; white-space: nowrap; }
+
+    .pg112-marker {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      left: 50%;
+      bottom: 2.7rem;
+      width: 5.2rem;
+      aspect-ratio: 1.65 / 1;
+      margin: 0;
+      border-radius: 50%;
+      background: var(--pg112-blue);
+      color: #fff;
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1;
+      text-align: center;
+      transform: translateX(-50%);
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 44rem) {
+      #content.pg112-shell { padding: 0 0 calc(var(--pg112-dock) + 1rem); }
+      .page112 {
+        width: 100%;
+        min-height: max(100vh, 137.6vw);
+        padding: clamp(3.7rem, 12.8vw, 7.45rem) 6.5% 6.5rem;
+        border-radius: 0;
+      }
+      .pg112-copy { font-size: clamp(.88rem, 3.24vw, 1.88rem); }
+      .pg112-second-picture { height: auto; aspect-ratio: 399 / 225; }
+      .pg112-marker { bottom: 3%; width: 12%; font-size: clamp(.9rem, 3vw, 1.75rem); }
+    }
+  </style>
 </head>
+<body>
+  <main id="content" class="pg112-shell">
+    <article class="page112" role="article" data-section-id="pg112_sec001" aria-label="One-third and two-thirds activity">
+      <img class="pg112-picture" src="images/pg112_im001.jpg" alt="Three schoolchildren stand in a line holding hands.">
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg112_im003.png" alt="" data-id="pg112_im003" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg112_im008.png" alt="" data-id="pg112_im008" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg112_im009.png" alt="" data-id="pg112_im009" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg112_im010.png" alt="" data-id="pg112_im010" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg112_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;106&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">106</span></p>
-  <img src="images/pg112_im001.jpg" alt="Three schoolchildren stand in a line holding hands." data-id="pg112_im001" style="position:absolute;top:72px;left:72px;width:399px;height:208px;opacity:0">
-  <img src="images/pg112_im011.png" alt="" data-id="pg112_im011" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg112_im012.png" alt="" data-id="pg112_im012" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg112_p001" class="adt-page-overlay-text" style="position:absolute;top:291px;left:72px;line-height:18px;width:405px;height:21px">The picture shows three schoolchildren standing in a line and holding hands. I have to leave the line. Goodbye. Look, now I am far from you. The following picture shows I am far from you. The following picture shows one pupil standing apart while the other two schoolchildren stand together holding hands. I am one third of the three of us. What about you? We are two-thirds of the three of us.</p>
-  <img src="images/pg112_im013.png" alt="" data-id="pg112_im013" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg112_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;from you. The following picture shows I am far from &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;you.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:312px;left:72px;line-height:18px;width:405px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">from you. The following picture shows I am far from </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">you.</span></p>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg112_im002" clipPathUnits="userSpaceOnUse"><path d="M72.02 361.75L471.71 361.75L471.71 586.34L72.02 586.34Z" transform="translate(-44,-362)"/></clipPath></defs></svg>
-  <img src="images/pg112_im002.jpg" alt="One child stands apart while the other two schoolchildren stand together holding hands." data-id="pg112_im002" style="position:absolute;top:362px;left:44px;width:451px;height:225px;clip-path:url(#clip-pg112_im002);opacity:0">
-  <p data-id="pg112_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;I am one third of the three of us. What about you? We &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;are two-thirds of the three of us.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:72px;line-height:18px;width:406px;height:41px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">I am one third of the three of us. What about you? We </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">are two-thirds of the three of us.</span></p>
-  <img src="images/pg112_im004.png" alt="" data-id="pg112_im004" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg112_im005.png" alt="" data-id="pg112_im005" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg112_im006.png" alt="" data-id="pg112_im006" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg112_im007.png" alt="" data-id="pg112_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg112_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 106&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 106</span></p>
-  <p data-id="pg112_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
+      <p class="pg112-copy">I have to leave the line. Goodbye. Look, now I am far<br>
+        from you. The following picture shows I am far from<br>
+        you.</p>
 
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+      <div class="pg112-second-picture">
+        <img class="pg112-picture" src="images/pg112_im002.jpg" alt="One child stands apart while the other two schoolchildren stand together holding hands.">
+      </div>
+
+      <p class="pg112-copy pg112-copy-last">I am one third of the three of us. What about you? We<br>
+        are two-thirds of the three of us.</p>
+
+      <p class="pg112-marker" aria-label="Page 106">106</p>
+
+      <span class="sr-only" data-id="pg112_page"></span>
+      <span class="sr-only" data-id="pg112_p000">106</span>
+      <span class="sr-only" data-id="pg112_im001"></span>
+      <span class="sr-only" data-id="pg112_p001">The picture shows three schoolchildren standing in a line and holding hands. I have to leave the line. Goodbye. Look, now I am far from you. The following picture shows I am far from you. The following picture shows one pupil standing apart while the other two schoolchildren stand together holding hands. I am one third of the three of us. What about you? We are two-thirds of the three of us.</span>
+      <span class="sr-only" data-id="pg112_p002"></span>
+      <span class="sr-only" data-id="pg112_im002"></span>
+      <span class="sr-only" data-id="pg112_p004"></span>
+      <span class="sr-only" data-id="pg112_im003"></span><span class="sr-only" data-id="pg112_im004"></span>
+      <span class="sr-only" data-id="pg112_im005"></span><span class="sr-only" data-id="pg112_im006"></span>
+      <span class="sr-only" data-id="pg112_im007"></span><span class="sr-only" data-id="pg112_im008"></span>
+      <span class="sr-only" data-id="pg112_im009"></span><span class="sr-only" data-id="pg112_im010"></span>
+      <span class="sr-only" data-id="pg112_im011"></span><span class="sr-only" data-id="pg112_im012"></span>
+      <span class="sr-only" data-id="pg112_im013"></span>
+      <span class="sr-only" data-id="pg112_p006"></span><span class="sr-only" data-id="pg112_p007"></span>
+    </article>
+  </main>
+  <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
 </body>
-
 </html>
