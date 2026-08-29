@@ -1,114 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg137_sec001" />
     <meta name="page-section-id" content="137" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="./content/tailwind_output.css" rel="stylesheet" />
+    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/fonts.css" rel="stylesheet" />
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+      :root {
+        --pg137-blue: #159fdf;
+        --pg137-line: #86cef2;
+        --pg137-green: #39aa41;
+        --pg137-ink: #231f20;
+        --pg137-dock: var(--dock-height, 96px);
+      }
+      html, body { min-height: 100%; }
+      body { margin: 0; overflow-x: hidden; color: var(--pg137-ink); background: #eef9ff; }
+      #content.pg137-shell {
+        box-sizing: border-box; width: auto !important; min-height: calc(100vh - var(--pg137-dock));
+        padding: clamp(1rem, 4vw, 3rem) clamp(.75rem, 4vw, 2.5rem) calc(var(--pg137-dock) + clamp(1.5rem, 4vw, 3rem));
+        visibility: visible !important;
+      }
+      .page137 {
+        position: relative; box-sizing: border-box; width: min(100%, 58rem); min-height: 79.75rem; margin: 0 auto;
+        padding: 7.05rem 0 3rem; overflow: hidden; border: clamp(.45rem, 1vw, .8rem) solid #dff2fb;
+        border-radius: clamp(1.15rem, 3vw, 2.25rem);
+        background: radial-gradient(circle at 0 11%, rgba(133,205,238,.22), transparent 11%), radial-gradient(circle at 100% 35%, rgba(133,205,238,.18), transparent 10%), #fff;
+        box-shadow: 0 1.25rem 3.5rem rgba(24,91,118,.14);
+        font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif;
+      }
+      .page137, .page137 * { box-sizing: border-box; }
+      .page137 * { font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important; }
+      .pg137-layout { position: relative; z-index: 1; width: 74%; margin: 0 auto; }
+      .pg137-exercise {
+        margin: 0; padding: .05rem .75rem .55rem; border: .18rem solid var(--pg137-line); border-top: 0;
+        border-radius: 0 0 1.25rem 1.25rem; background: rgba(255,255,255,.97);
+      }
+      .pg137-questions { margin: 0; padding: 0; list-style: none; counter-reset: pg137-question; }
+      .pg137-questions li {
+        display: grid; grid-template-columns: 2.15rem minmax(0,1fr); align-items: start; margin: 0;
+        font-size: 1.82rem; line-height: 1.35; letter-spacing: .01em; counter-increment: pg137-question;
+      }
+      .pg137-questions li::before { content: counter(pg137-question) "."; color: var(--pg137-blue); }
+      .pg137-activity { margin-top: 2.55rem; }
+      .pg137-label {
+        width: 10.4rem; margin: 0 0 .9rem; padding: .22rem .9rem .2rem; border: .28rem solid var(--pg137-green);
+        border-radius: 999px; color: var(--pg137-green); background: #fff; font-size: 1.82rem; font-weight: 900;
+        line-height: 1.05; text-align: center; -webkit-text-stroke: .018em currentColor;
+      }
+      .pg137-title {
+        margin: 0 0 1.15rem .25rem; font-size: 1.85rem; font-weight: 900;
+        line-height: 1.1; letter-spacing: .015em; -webkit-text-stroke: .018em currentColor;
+      }
+      .pg137-instruction { margin: 0 0 1.55rem .25rem; font-size: 1.82rem; line-height: 1.25; letter-spacing: .01em; }
+      .pg137-picture { display: block; width: calc(100% - .8rem); aspect-ratio: 1.238 / 1; margin: 0 auto; object-fit: cover; object-position: center; }
+      .pg137-marker {
+        display: grid; place-items: center; position: absolute; left: 50%; bottom: 3rem; width: 5.25rem; aspect-ratio: 1.65 / 1;
+        margin: 0; border-radius: 50%; background: #00a9e8; color: #fff; font-size: 1.75rem; font-weight: 900;
+        line-height: 1; text-align: center; transform: translateX(-50%); -webkit-text-stroke: .015em currentColor;
+      }
+      .sr-only {
+        position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important;
+        overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important;
+      }
+      @media (max-width: 44rem) {
+        #content.pg137-shell { padding: 0 0 calc(var(--pg137-dock) + 1rem); }
+        .page137 { width: 100%; min-height: 100vh; padding-top: clamp(3.8rem,12vw,6rem); padding-bottom: 6.5rem; border-radius: 0; }
+        .pg137-layout { width: 86%; }
+        .pg137-exercise { padding-inline: .55rem; }
+        .pg137-questions li, .pg137-label, .pg137-title, .pg137-instruction { font-size: clamp(1.05rem,4.1vw,1.82rem); }
+        .pg137-questions li { grid-template-columns: clamp(1.45rem,7vw,2.15rem) minmax(0,1fr); }
+        .pg137-activity { margin-top: clamp(1.8rem,7vw,2.55rem); }
+        .pg137-label { width: clamp(7.8rem,40vw,10.4rem); }
+        .pg137-title { margin-bottom: clamp(.7rem,4vw,1.15rem); }
+        .pg137-instruction { margin-bottom: clamp(1rem,5vw,1.55rem); }
+        .pg137-marker { bottom: 2rem; }
+      }
     </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
-</head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg137_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg137_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg137_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg137_im004.png" alt="" data-id="pg137_im004" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg137_im009.png" alt="" data-id="pg137_im009" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg137_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;131&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">131</span></p>
-  <img src="images/pg137_im010.png" alt="" data-id="pg137_im010" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg137_p001" class="adt-page-overlay-text" style="position:absolute;top:69px;left:86px;line-height:18px;width:380px;height:22px">Exercise 2 questions. 1. List all similar shapes by writing their letters together. 2. Write the letters of all the shapes of triangles. 3. Write the letters of all the shapes with four sides. 4. Write the names of all the shapes of plane figures you know.</p>
-  <img src="images/pg137_im011.png" alt="" data-id="pg137_im011" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg137_im012.png" alt="" data-id="pg137_im012" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg137_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;together.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:91px;left:86px;line-height:18px;width:380px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">together.</span></p>
-  <img src="images/pg137_im013.png" alt="" data-id="pg137_im013" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg137_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot; Write the letters of all the shapes of triangles.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:113px;left:86px;line-height:18px;width:380px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Write the letters of all the shapes of triangles.</span></p>
-  <img src="images/pg137_im014.png" alt="" data-id="pg137_im014" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg137_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot; Write the letters of all the shapes with four sides.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:135px;left:86px;line-height:18px;width:380px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Write the letters of all the shapes with four sides.</span></p>
-  <p data-id="pg137_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot; Write the names of all the shapes of plane figures &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}},{&quot;text&quot;:&quot;you know.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:157px;left:86px;line-height:18px;width:380px;height:66px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Write the names of all the shapes of plane figures </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">you know.</span></p>
-  <p data-id="pg137_p007" class="adt-page-overlay-text" style="position:absolute;top:223px;left:86px;line-height:18px;width:380px;height:32px">Activity. Playing ukuti-ukuti. Let us play together by joining our hands. The picture shows nine schoolchildren holding hands in a circle outdoors.</p>
-  <p data-id="pg137_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Playing ukuti-ukuti&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:255px;left:86px;line-height:18px;width:380px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Playing ukuti-ukuti</span></p>
-  <p data-id="pg137_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Let us play together by joining our hands.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:284px;left:86px;line-height:18px;width:380px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Let us play together by joining our hands.</span></p>
-  <img src="images/pg137_im002.png" alt="" data-id="pg137_im002" style="position:absolute;top:65px;left:82px;width:408px;height:139px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg137_im001.jpg" alt="Nine schoolchildren in uniform hold hands in a circle outdoors, playing together on a grassy field." data-id="pg137_im001" style="position:absolute;top:313px;left:84px;width:400px;height:325px;opacity:0">
-  <img src="images/pg137_im005.png" alt="" data-id="pg137_im005" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg137_im006.png" alt="" data-id="pg137_im006" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg137_im007.png" alt="" data-id="pg137_im007" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg137_im008.png" alt="" data-id="pg137_im008" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg137_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 131&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 131</span></p>
-  <p data-id="pg137_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+  </head>
+  <body>
+    <main id="content" class="pg137-shell">
+      <article class="page137" role="article" data-section-id="pg137_sec001" aria-label="Shapes exercise and activity">
+        <div class="pg137-layout" aria-hidden="true">
+          <section class="pg137-exercise">
+            <ol class="pg137-questions">
+              <li>List all similar shapes by writing their letters together.</li>
+              <li>Write the letters of all the shapes of triangles.</li>
+              <li>Write the letters of all the shapes with four sides.</li>
+              <li>Write the names of all the shapes of plane figures you know.</li>
+            </ol>
+          </section>
+          <section class="pg137-activity">
+            <h1 class="pg137-label">Activity</h1>
+            <h2 class="pg137-title">Playing ukuti-ukuti</h2>
+            <p class="pg137-instruction">Let us play together by joining our hands.</p>
+            <img class="pg137-picture" src="images/pg137_im001.jpg" alt="" />
+          </section>
+        </div>
+        <p class="pg137-marker" aria-hidden="true">131</p>
+        <span class="sr-only" data-id="pg137_p000">131</span>
+        <span class="sr-only" data-id="pg137_p001">Exercise 2 questions. 1. List all similar shapes by writing their letters together. 2. Write the letters of all the shapes of triangles. 3. Write the letters of all the shapes with four sides. 4. Write the names of all the shapes of plane figures you know.</span>
+        <span class="sr-only" data-id="pg137_p002"></span><span class="sr-only" data-id="pg137_p003"></span>
+        <span class="sr-only" data-id="pg137_p004"></span><span class="sr-only" data-id="pg137_p005"></span>
+        <span class="sr-only" data-id="pg137_p007">Activity. Playing ukuti-ukuti. Let us play together by joining our hands. The picture shows nine schoolchildren holding hands in a circle outdoors.</span>
+        <span class="sr-only" data-id="pg137_p008"></span><span class="sr-only" data-id="pg137_p009"></span>
+        <span class="sr-only" data-id="pg137_im001">Nine schoolchildren in uniform hold hands in a circle outdoors, playing together on a grassy field.</span>
+        <span class="sr-only" data-id="pg137_im002"></span>
+        <span class="sr-only" data-id="pg137_im004"></span><span class="sr-only" data-id="pg137_im005"></span>
+        <span class="sr-only" data-id="pg137_im006"></span><span class="sr-only" data-id="pg137_im007"></span>
+        <span class="sr-only" data-id="pg137_im008"></span><span class="sr-only" data-id="pg137_im009"></span>
+        <span class="sr-only" data-id="pg137_im010"></span><span class="sr-only" data-id="pg137_im011"></span>
+        <span class="sr-only" data-id="pg137_im012"></span><span class="sr-only" data-id="pg137_im013"></span>
+        <span class="sr-only" data-id="pg137_im014"></span><span class="sr-only" data-id="pg137_p010"></span>
+        <span class="sr-only" data-id="pg137_p011"></span>
+      </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=1"></script>
     <script src="./assets/base.bundle.local.js"></script>
-</body>
-
+  </body>
 </html>
