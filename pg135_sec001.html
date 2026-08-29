@@ -1,132 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg135_sec001" />
-    <meta name="page-section-id" content="135" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg135_sec001">
+  <meta name="page-section-id" content="135">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg135-blue:#159fdf; --pg135-grid:#3546b4; --pg135-line:#86cef2; --pg135-ink:#231f20; --pg135-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg135-ink); background:#eef9ff; }
+    #content.pg135-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg135-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg135-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page135 { position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:7.35rem 0 3rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(circle at 0 12%,rgba(133,205,238,.22),transparent 11%),radial-gradient(circle at 100% 28%,rgba(133,205,238,.19),transparent 10%),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page135,.page135 * { box-sizing:border-box; }
+    .page135 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg135-frame { width:74%; margin:0 auto; padding:0 1rem 1rem; border-right:.18rem solid var(--pg135-line); border-bottom:.18rem solid var(--pg135-line); border-left:.18rem solid var(--pg135-line); border-radius:0 0 1.25rem 1.25rem; background:rgba(255,255,255,.96); }
+    .pg135-table { display:grid; grid-template-rows:12.65rem 12.3rem 13.25rem 12.2rem 11.8rem; margin:0; border-top:.12rem solid var(--pg135-grid); border-left:.12rem solid var(--pg135-grid); }
+    .pg135-row { display:grid; grid-template-columns:9% 39% 52%; min-height:0; }
+    .pg135-row>* { min-width:0; border-right:.12rem solid var(--pg135-grid); border-bottom:.12rem solid var(--pg135-grid); }
+    .pg135-number { padding:.3rem .25rem 0 .55rem; color:var(--pg135-blue); font-size:1.72rem; line-height:1; }
+    .pg135-cell { display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:1rem .55rem .75rem; }
+    .pg135-cell img { display:block; width:auto; max-width:88%; height:6rem; object-fit:contain; }
+    .pg135-row:nth-child(2) .pg135-cell img { height:6.6rem; }
+    .pg135-row:nth-child(3) .pg135-cell img { height:8rem; }
+    .pg135-row:nth-child(4) .pg135-cell img { height:7rem; }
+    .pg135-row:nth-child(5) .pg135-cell img { height:6.5rem; }
+    .pg135-label { margin:.35rem 0 0; font-size:1.72rem; line-height:1.08; text-align:center; }
+    .pg135-description { justify-content:center; gap:1.25rem; }
+    .pg135-description .pg135-label { max-width:100%; }
+    .pg135-marker { display:grid; place-items:center; width:5.2rem; aspect-ratio:1.65/1; margin:1.4rem auto 0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg135-shell { padding:0 0 calc(var(--pg135-dock) + 1rem); }
+      .page135 { width:100%; min-height:100vh; padding-top:clamp(3.4rem,11vw,5rem); border-radius:0; }
+      .pg135-frame { width:88%; padding-inline:clamp(.35rem,2vw,.75rem); }
+      .pg135-table { grid-template-rows:repeat(5,clamp(8.8rem,29vw,12.2rem)); }
+      .pg135-number,.pg135-label { font-size:clamp(1rem,4.1vw,1.72rem); }
+      .pg135-number { padding-left:.25rem; }
+      .pg135-cell { padding:clamp(.45rem,2vw,1rem) .25rem .45rem; }
+      .pg135-cell img,.pg135-row:nth-child(n) .pg135-cell img { height:clamp(4.2rem,17vw,7.2rem); }
+      .pg135-description { gap:clamp(.3rem,2vw,1rem); }
+      .pg135-marker { margin-top:1.2rem; }
+    }
+  </style>
 </head>
+<body>
+  <main id="content" class="pg135-shell">
+    <article class="page135" role="article" data-section-id="pg135_sec001" aria-label="Examples of plane figures continued">
+      <div class="pg135-frame">
+        <div class="pg135-table" role="table" aria-label="Plane figures and examples">
+          <div class="pg135-row" role="row"><div class="pg135-number" role="rowheader">4.</div><div class="pg135-cell" role="cell"><img src="images/pg135_im001.png" alt="Outlined parallelogram"><p class="pg135-label">parallelogram</p></div><div class="pg135-cell pg135-description" role="cell"><img src="images/pg135_im002.png" alt="Orange parallelogram"><p class="pg135-label">The shape of a<br>parallelogram</p></div></div>
+          <div class="pg135-row" role="row"><div class="pg135-number" role="rowheader">5.</div><div class="pg135-cell" role="cell"><img src="images/pg135_im003.png" alt="Outlined trapezium"><p class="pg135-label">trapezium</p></div><div class="pg135-cell pg135-description" role="cell"><img src="images/pg135_im004.png" alt="Purple trapezium"><p class="pg135-label">The shape of a trapezium</p></div></div>
+          <div class="pg135-row" role="row"><div class="pg135-number" role="rowheader">6.</div><div class="pg135-cell" role="cell"><img src="images/pg135_im005.png" alt="Outlined triangle"><p class="pg135-label">triangle</p></div><div class="pg135-cell pg135-description" role="cell"><img src="images/pg135_im006.png" alt="Yellow triangle"><p class="pg135-label">The shape of a triangle</p></div></div>
+          <div class="pg135-row" role="row"><div class="pg135-number" role="rowheader">7.</div><div class="pg135-cell" role="cell"><img src="images/pg135_im007.png" alt="Outlined rhombus"><p class="pg135-label">rhombus</p></div><div class="pg135-cell pg135-description" role="cell"><img src="images/pg135_im008.png" alt="Red rhombus"><p class="pg135-label">The shape of a rhombus</p></div></div>
+          <div class="pg135-row" role="row"><div class="pg135-number" role="rowheader">8.</div><div class="pg135-cell" role="cell"><img src="images/pg135_im009.png" alt="Outlined oval"><p class="pg135-label">oval</p></div><div class="pg135-cell pg135-description" role="cell"><img src="images/pg135_im010.png" alt="Blue oval"><p class="pg135-label">The shape of an oval</p></div></div>
+        </div>
+      </div>
+      <p class="pg135-marker" aria-label="Page 129">129</p>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg135_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg135_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg135_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg135_im011.png" alt="" data-id="pg135_im011" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg135_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;129&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">129</span></p>
-  <img src="images/pg135_im012.png" alt="" data-id="pg135_im012" style="position:absolute;top:69px;left:87px;width:401px;height:612px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im019.png" alt="" data-id="pg135_im019" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im020.png" alt="" data-id="pg135_im020" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im021.png" alt="" data-id="pg135_im021" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im022.png" alt="" data-id="pg135_im022" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im023.png" alt="" data-id="pg135_im023" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im024.png" alt="" data-id="pg135_im024" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg135_p001" class="adt-page-overlay-text" style="position:absolute;top:73px;left:102px;line-height:17px;width:13px;height:19px">The examples of plane figures continue. 4. parallelogram. The shape of a parallelogram. 5. trapezium. The shape of a trapezium. 6. triangle. The shape of a triangle. 7. rhombus. The shape of a rhombus. 8. oval. The shape of an oval.</p>
-  <img src="images/pg135_im001.png" alt="Outlined parallelogram." data-id="pg135_im001" style="position:absolute;top:76px;left:139px;width:119px;height:56px;opacity:0">
-  <p data-id="pg135_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;parallelogram&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:146px;left:149px;line-height:18px;width:106px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">parallelogram</span></p>
-  <img src="images/pg135_im002.png" alt="Orange parallelogram." data-id="pg135_im002" style="position:absolute;top:76px;left:292px;width:160px;height:61px;opacity:0">
-  <p data-id="pg135_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The shape of a &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;parellelogram&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:147px;left:318px;line-height:18px;width:114px;height:40px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The shape of a </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">parellelogram</span></p>
-  <p data-id="pg135_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:195px;left:102px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">5.</span></p>
-  <img src="images/pg135_im003.png" alt="Outlined trapezium." data-id="pg135_im003" style="position:absolute;top:198px;left:138px;width:123px;height:65px;opacity:0">
-  <p data-id="pg135_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;trapezium&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:268px;left:163px;line-height:18px;width:83px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">trapezium</span></p>
-  <img src="images/pg135_im004.png" alt="Purple trapezium." data-id="pg135_im004" style="position:absolute;top:198px;left:311px;width:122px;height:62px;opacity:0">
-  <p data-id="pg135_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The shape of a trapezium&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:274px;left:280px;line-height:18px;width:185px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The shape of a trapezium</span></p>
-  <p data-id="pg135_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:314px;left:102px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">6.</span></p>
-  <img src="images/pg135_im005.png" alt="Outlined triangle." data-id="pg135_im005" style="position:absolute;top:317px;left:140px;width:117px;height:89px;opacity:0">
-  <p data-id="pg135_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;triangle&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:416px;left:171px;line-height:18px;width:66px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">triangle</span></p>
-  <img src="images/pg135_im006.png" alt="Yellow triangle." data-id="pg135_im006" style="position:absolute;top:317px;left:305px;width:135px;height:85px;opacity:0">
-  <p data-id="pg135_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The shape of a triangle&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:416px;left:288px;line-height:18px;width:169px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The shape of a triangle</span></p>
-  <p data-id="pg135_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;7.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:441px;left:102px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da">7.</span></p>
-  <img src="images/pg135_im007.png" alt="Outlined rhombus." data-id="pg135_im007" style="position:absolute;top:444px;left:145px;width:108px;height:76px;opacity:0">
-  <p data-id="pg135_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;rhombus&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:535px;left:168px;line-height:18px;width:68px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">rhombus</span></p>
-  <img src="images/pg135_im008.png" alt="Red rhombus." data-id="pg135_im008" style="position:absolute;top:444px;left:305px;width:135px;height:83px;opacity:0">
-  <p data-id="pg135_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The shape of a rhombus&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:535px;left:284px;line-height:18px;width:176px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The shape of a rhombus</span></p>
-  <p data-id="pg135_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:559px;left:102px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da">8.</span></p>
-  <img src="images/pg135_im009.png" alt="Outlined oval." data-id="pg135_im009" style="position:absolute;top:562px;left:135px;width:127px;height:75px;opacity:0">
-  <p data-id="pg135_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;oval&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:651px;left:184px;line-height:18px;width:36px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">oval</span></p>
-  <img src="images/pg135_im010.png" alt="Blue oval." data-id="pg135_im010" style="position:absolute;top:562px;left:307px;width:130px;height:68px;opacity:0">
-  <p data-id="pg135_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The shape of an oval&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:645px;left:296px;line-height:18px;width:153px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The shape of an oval</span></p>
-  <img src="images/pg135_im013.png" alt="" data-id="pg135_im013" style="position:absolute;top:15px;left:-477px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im014.png" alt="" data-id="pg135_im014" style="position:absolute;top:13px;left:-479px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im015.png" alt="" data-id="pg135_im015" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im016.png" alt="" data-id="pg135_im016" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im017.png" alt="" data-id="pg135_im017" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg135_im018.png" alt="" data-id="pg135_im018" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg135_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 129&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 129</span></p>
-  <p data-id="pg135_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+      <span class="sr-only" data-id="pg135_p000">129</span>
+      <span class="sr-only" data-id="pg135_p001">The examples of plane figures continue. 4. parallelogram. The shape of a parallelogram. 5. trapezium. The shape of a trapezium. 6. triangle. The shape of a triangle. 7. rhombus. The shape of a rhombus. 8. oval. The shape of an oval.</span>
+      <span class="sr-only" data-id="pg135_im001"></span><span class="sr-only" data-id="pg135_p002"></span><span class="sr-only" data-id="pg135_im002"></span><span class="sr-only" data-id="pg135_p003"></span>
+      <span class="sr-only" data-id="pg135_p005"></span><span class="sr-only" data-id="pg135_im003"></span><span class="sr-only" data-id="pg135_p006"></span><span class="sr-only" data-id="pg135_im004"></span><span class="sr-only" data-id="pg135_p007"></span>
+      <span class="sr-only" data-id="pg135_p008"></span><span class="sr-only" data-id="pg135_im005"></span><span class="sr-only" data-id="pg135_p009"></span><span class="sr-only" data-id="pg135_im006"></span><span class="sr-only" data-id="pg135_p010"></span>
+      <span class="sr-only" data-id="pg135_p011"></span><span class="sr-only" data-id="pg135_im007"></span><span class="sr-only" data-id="pg135_p012"></span><span class="sr-only" data-id="pg135_im008"></span><span class="sr-only" data-id="pg135_p013"></span>
+      <span class="sr-only" data-id="pg135_p014"></span><span class="sr-only" data-id="pg135_im009"></span><span class="sr-only" data-id="pg135_p015"></span><span class="sr-only" data-id="pg135_im010"></span><span class="sr-only" data-id="pg135_p016"></span>
+      <span class="sr-only" data-id="pg135_im011"></span><span class="sr-only" data-id="pg135_im012"></span><span class="sr-only" data-id="pg135_im013"></span><span class="sr-only" data-id="pg135_im014"></span><span class="sr-only" data-id="pg135_im015"></span><span class="sr-only" data-id="pg135_im016"></span><span class="sr-only" data-id="pg135_im017"></span><span class="sr-only" data-id="pg135_im018"></span><span class="sr-only" data-id="pg135_im019"></span><span class="sr-only" data-id="pg135_im020"></span><span class="sr-only" data-id="pg135_im021"></span><span class="sr-only" data-id="pg135_im022"></span><span class="sr-only" data-id="pg135_im023"></span><span class="sr-only" data-id="pg135_im024"></span>
+      <span class="sr-only" data-id="pg135_p017"></span><span class="sr-only" data-id="pg135_p018"></span>
+    </article>
+  </main>
+  <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
 </body>
-
 </html>
