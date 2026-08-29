@@ -1,132 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg140_sec001" />
-    <meta name="page-section-id" content="140" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg140_sec001">
+  <meta name="page-section-id" content="140">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg140-blue:#159fe0; --pg140-line:#83c9ee; --pg140-grid:#3546b4; --pg140-ink:#231f20; --pg140-dock:var(--dock-height,96px); }
+    html,body{margin:0;min-height:100%}
+    body{overflow-x:hidden;overflow-y:auto;color:var(--pg140-ink);background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%)}
+    #content.pg140-shell{box-sizing:border-box;width:auto!important;min-height:calc(100vh - var(--pg140-dock));padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg140-dock) + clamp(1.5rem,4vw,3rem));visibility:visible!important}
+    .page140{position:relative!important;box-sizing:border-box;width:min(100%,58rem)!important;aspect-ratio:558/768;min-height:79.75rem!important;height:auto!important;margin:0 auto!important;padding:7.2rem 7.35rem 7.8rem!important;overflow:hidden!important;visibility:visible!important;opacity:1!important;transform:none!important;left:auto!important;top:auto!important;color:var(--pg140-ink);border:clamp(.45rem,1vw,.8rem) solid #e1f3fb;border-radius:clamp(1.15rem,3vw,2.25rem);background:#fff;box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14);font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important}
+    .page140,.page140 *{box-sizing:border-box}.page140 *{font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important}
+    .pg140-continuation{margin:0;padding:.55rem 1.8rem 1.45rem;border:.18rem solid var(--pg140-line);border-top:0;border-radius:0 0 1.25rem 1.25rem;background:#fff}
+    .pg140-list{margin:0;padding:0;list-style:none}.pg140-list li{display:grid;grid-template-columns:2.9rem minmax(0,1fr);font-size:1.83rem;line-height:1.38;letter-spacing:.01em}.pg140-list li+li{margin-top:.28rem}.pg140-number{color:var(--pg140-blue)}
+    .pg140-intro{margin:2.15rem 0 .55rem;font-size:1.82rem;line-height:1.42;letter-spacing:.01em}
+    .pg140-table{display:grid;grid-template-columns:1.28fr 1.05fr .95fr;border-top:.12rem solid var(--pg140-grid);border-left:.12rem solid var(--pg140-grid);background:#fff}
+    .pg140-cell{display:flex;align-items:center;justify-content:center;min-width:0;border-right:.12rem solid var(--pg140-grid);border-bottom:.12rem solid var(--pg140-grid)}
+    .pg140-head{min-height:3.15rem;padding:.25rem .45rem;font-family:"Sassoon","SassoonPrimary","Sassoon Primary Std",Arial,sans-serif!important;font-size:1.8rem;line-height:1;text-align:center;white-space:nowrap}
+    .pg140-object{min-height:9.2rem;padding:.45rem}.pg140-object img{display:block;max-width:86%;max-height:7rem;width:auto;height:auto;object-fit:contain}
+    .pg140-figure{min-height:9.2rem;flex-direction:column;gap:.25rem;padding:.35rem .35rem .2rem}.pg140-figure img{display:block;width:auto;height:auto;max-width:72%;max-height:5rem;object-fit:contain}.pg140-figure span{font-size:1.75rem;line-height:1}
+    .pg140-row-cuboid,.pg140-row-cube{min-height:9.25rem}.pg140-row-cuboid img,.pg140-row-cube img{max-height:7.2rem}.pg140-figure.pg140-row-cuboid img,.pg140-figure.pg140-row-cube img{max-height:5.5rem}
+    .pg140-marker{display:grid;place-items:center;position:absolute;left:50%;bottom:3rem;width:5.25rem;aspect-ratio:1.65/1;margin:0;border-radius:50%;background:#00a9e8;color:#fff;font-size:1.75rem;font-weight:900;line-height:1;text-align:center;transform:translateX(-50%);-webkit-text-stroke:.015em currentColor}
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    @media(max-width:44rem){#content.pg140-shell{padding:0 0 calc(var(--pg140-dock) + 1rem)}.page140{width:100%!important;min-height:auto!important;aspect-ratio:auto;padding:clamp(3.7rem,11vw,5.5rem) 5% 7rem!important;border-radius:0}.pg140-continuation{padding:.4rem clamp(.8rem,4vw,1.8rem) 1.1rem}.pg140-list li{grid-template-columns:clamp(1.8rem,8vw,2.9rem) minmax(0,1fr);font-size:clamp(1.05rem,4vw,1.83rem)}.pg140-intro{margin-top:clamp(1.5rem,7vw,2.15rem);font-size:clamp(1.08rem,4vw,1.82rem)}.pg140-head{min-height:2.5rem;font-size:clamp(.9rem,3.7vw,1.8rem);white-space:normal}.pg140-object,.pg140-figure{min-height:clamp(5.6rem,23vw,9.2rem)}.pg140-object img{max-width:92%;max-height:clamp(4.5rem,17vw,7rem)}.pg140-figure img{max-height:clamp(3.1rem,13vw,5rem)}.pg140-figure span{font-size:clamp(.95rem,3.7vw,1.75rem)}.pg140-row-cuboid,.pg140-row-cube{min-height:clamp(5.8rem,23vw,9.25rem)}.pg140-marker{position:relative;left:auto;bottom:auto;margin:3rem auto 0;transform:none}}
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content img[data-id="pg140_im013"]{opacity:0!important}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg140_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg140_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg140_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg140_im014.png" alt="" data-id="pg140_im014" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg140_im019.png" alt="" data-id="pg140_im019" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg140_im020.png" alt="" data-id="pg140_im020" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg140_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;134&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">134</span></p>
-  <img src="images/pg140_im021.png" alt="" data-id="pg140_im021" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg140_p001" class="adt-page-overlay-text" style="position:absolute;top:76px;left:72px;line-height:18px;width:458px;height:28px">Exercise 4 continues. 4. Mention the shapes that are different from the shape of a triangle or a circle. 5. Recognizing non-plane figures. 6. Non-plane figures have capacities or volumes.</p>
-  <img src="images/pg140_im022.png" alt="" data-id="pg140_im022" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg140_im023.png" alt="" data-id="pg140_im023" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg140_im024.png" alt="" data-id="pg140_im024" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg140_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;shape of a triangle or a circle.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:104px;left:72px;line-height:18px;width:458px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">shape of a triangle or a circle.</span></p>
-  <p data-id="pg140_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Recognizing non-plane figures&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:132px;left:72px;line-height:18px;width:458px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Recognizing non-plane figures</span></p>
-  <p data-id="pg140_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Non-plane figures have capacities or volumes.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:160px;left:72px;line-height:18px;width:458px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Non-plane figures have capacities or volumes.</span></p>
-  <p data-id="pg140_p005" class="adt-page-overlay-text" style="position:absolute;top:191px;left:72px;line-height:18px;width:458px;height:25px">The following are examples of non-plane figures and their real objects. The table columns are Non-plane figures, Real objects and Figures. A cylinder is shown with a cylindrical tin. A cone is shown with an ice-cream cone. A cuboid is shown with a matchbox.</p>
-  <p data-id="pg140_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The following are examples of non-plane figures and &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;their real objects.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:216px;left:72px;line-height:18px;width:458px;height:45px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The following are examples of non-plane figures and </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">their real objects.</span></p>
-  <p data-id="pg140_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Non-plane figures&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:268px;left:77px;line-height:18px;width:147px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Non-plane figures</span></p>
-  <p data-id="pg140_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Real objects&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:268px;left:243px;line-height:18px;width:98px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Real objects</span></p>
-  <p data-id="pg140_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Figures&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:268px;left:384px;line-height:18px;width:60px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Figures</span></p>
-  <img src="images/pg140_im001.png" alt="Blue cylinder" data-id="pg140_im001" style="position:absolute;top:301px;left:104px;width:92px;height:44px;opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg140_im002" clipPathUnits="userSpaceOnUse"><path d="M266.63 301.34L317.03 301.34L317.03 365.3L266.63 365.3Z" transform="translate(-266,-301)"/></clipPath></defs></svg>
-  <img src="images/pg140_im002.png" alt="Purple cylindrical tin" data-id="pg140_im002" style="position:absolute;top:301px;left:266px;width:53px;height:65px;clip-path:url(#clip-pg140_im002);opacity:0">
-  <img src="images/pg140_im005.png" alt="Cylinder" data-id="pg140_im005" style="position:absolute;top:301px;left:392px;width:44px;height:40px;opacity:0">
-  <p data-id="pg140_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;cylinder&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:355px;left:380px;line-height:18px;width:82px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">cylinder</span></p>
-  <img src="images/pg140_im006.png" alt="Red cone" data-id="pg140_im006" style="position:absolute;top:385px;left:122px;width:56px;height:46px;opacity:0">
-  <img src="images/pg140_im007.png" alt="Ice cream cone with pink ice cream" data-id="pg140_im007" style="position:absolute;top:385px;left:264px;width:56px;height:66px;opacity:0">
-  <img src="images/pg140_im008.png" alt="Cone" data-id="pg140_im008" style="position:absolute;top:385px;left:386px;width:55px;height:47px;opacity:0">
-  <p data-id="pg140_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;cone&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:439px;left:394px;line-height:18px;width:54px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">cone</span></p>
-  <img src="images/pg140_im009.png" alt="Orange rectangular cuboid" data-id="pg140_im009" style="position:absolute;top:476px;left:102px;width:96px;height:51px;opacity:0">
-  <img src="images/pg140_im010.png" alt="Matchbox" data-id="pg140_im010" style="position:absolute;top:476px;left:252px;width:79px;height:47px;opacity:0">
-  <img src="images/pg140_im011.png" alt="Cuboid" data-id="pg140_im011" style="position:absolute;top:476px;left:371px;width:85px;height:53px;opacity:0">
-  <p data-id="pg140_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;cuboid&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:542px;left:386px;line-height:18px;width:61px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">cuboid</span></p>
-  <img src="images/pg140_im012.png" alt="Red cube" data-id="pg140_im012" style="position:absolute;top:569px;left:99px;width:102px;height:63px;opacity:0">
-  <img src="images/pg140_im003.png" alt="Red die" data-id="pg140_im003" style="position:absolute;top:569px;left:245px;width:95px;height:67px;opacity:0">
-  <img src="images/pg140_im004.png" alt="Cube" data-id="pg140_im004" style="position:absolute;top:569px;left:378px;width:72px;height:58px;opacity:0">
-  <p data-id="pg140_p014" class="adt-page-overlay-text" style="position:absolute;top:639px;left:394px;line-height:18px;width:44px;height:22px">A cube is shown with a die.</p>
-  <img src="images/pg140_im013.png" alt="Questions 4 to 6: mention shapes different from a triangle or a circle; recognising non-plane figures; non-plane figures have capacities or volumes" data-id="pg140_im013" style="position:absolute;top:67px;left:68px;width:408px;height:145px;opacity:0">
-  <img src="images/pg140_im015.png" alt="" data-id="pg140_im015" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg140_im016.png" alt="" data-id="pg140_im016" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg140_im017.png" alt="" data-id="pg140_im017" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg140_im018.png" alt="" data-id="pg140_im018" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg140_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 134&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 134</span></p>
-  <p data-id="pg140_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:24&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:24</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg140-shell">
+    <article class="page140" role="article" data-section-id="pg140_sec001" aria-label="Non-plane figures">
+      <section class="pg140-continuation" aria-label="Exercise 4 continued">
+        <ol class="pg140-list" start="4">
+          <li><span class="pg140-number">4.</span><span>Mention the shapes that are different from the<br>shape of a triangle or a circle.</span></li>
+          <li><span class="pg140-number">5.</span><span>Recognizing non-plane figures</span></li>
+          <li><span class="pg140-number">6.</span><span>Non-plane figures have capacities or volumes.</span></li>
+        </ol>
+      </section>
+      <p class="pg140-intro">The following are examples of non-plane figures and<br>their real objects.</p>
+      <div class="pg140-table" role="table" aria-label="Examples of non-plane figures and real objects">
+        <div class="pg140-cell pg140-head" role="columnheader">Non-plane figures</div><div class="pg140-cell pg140-head" role="columnheader">Real objects</div><div class="pg140-cell pg140-head" role="columnheader">Figures</div>
+        <div class="pg140-cell pg140-object" role="cell"><img src="images/pg140_im001.png" alt="Blue cylinder"></div><div class="pg140-cell pg140-object" role="cell"><img src="images/pg140_im002.png" alt="Purple cylindrical tin"></div><div class="pg140-cell pg140-figure" role="cell"><img src="images/pg140_im005.png" alt="Outline drawing of a cylinder"><span>cylinder</span></div>
+        <div class="pg140-cell pg140-object" role="cell"><img src="images/pg140_im006.png" alt="Red cone"></div><div class="pg140-cell pg140-object" role="cell"><img src="images/pg140_im007.png" alt="Ice-cream cone with pink ice cream"></div><div class="pg140-cell pg140-figure" role="cell"><img src="images/pg140_im008.png" alt="Outline drawing of a cone"><span>cone</span></div>
+        <div class="pg140-cell pg140-object pg140-row-cuboid" role="cell"><img src="images/pg140_im009.png" alt="Orange rectangular cuboid"></div><div class="pg140-cell pg140-object pg140-row-cuboid" role="cell"><img src="images/pg140_im010.png" alt="Matchbox"></div><div class="pg140-cell pg140-figure pg140-row-cuboid" role="cell"><img src="images/pg140_im011.png" alt="Outline drawing of a cuboid"><span>cuboid</span></div>
+        <div class="pg140-cell pg140-object pg140-row-cube" role="cell"><img src="images/pg140_im012.png" alt="Red cube"></div><div class="pg140-cell pg140-object pg140-row-cube" role="cell"><img src="images/pg140_im003.png" alt="Red die"></div><div class="pg140-cell pg140-figure pg140-row-cube" role="cell"><img src="images/pg140_im004.png" alt="Outline drawing of a cube"><span>cube</span></div>
+      </div>
+      <p class="pg140-marker" aria-label="Page 134">134</p>
+      <span class="sr-only" data-id="pg140_p000">134</span><span class="sr-only" data-id="pg140_p001">Exercise 4 continues. 4. Mention the shapes that are different from the shape of a triangle or a circle. 5. Recognizing non-plane figures. 6. Non-plane figures have capacities or volumes.</span>
+      <span class="sr-only" data-id="pg140_p002"></span><span class="sr-only" data-id="pg140_p003"></span><span class="sr-only" data-id="pg140_p004"></span>
+      <span class="sr-only" data-id="pg140_p005">The following are examples of non-plane figures and their real objects. The table columns are Non-plane figures, Real objects and Figures. A cylinder is shown with a cylindrical tin. A cone is shown with an ice-cream cone. A cuboid is shown with a matchbox.</span><span class="sr-only" data-id="pg140_p006"></span><span class="sr-only" data-id="pg140_p008"></span><span class="sr-only" data-id="pg140_p009"></span><span class="sr-only" data-id="pg140_p010"></span>
+      <span class="sr-only" data-id="pg140_im001"></span><span class="sr-only" data-id="pg140_im002"></span><span class="sr-only" data-id="pg140_im003"></span><span class="sr-only" data-id="pg140_im004"></span><span class="sr-only" data-id="pg140_im005"></span><span class="sr-only" data-id="pg140_im006"></span><span class="sr-only" data-id="pg140_im007"></span><span class="sr-only" data-id="pg140_im008"></span><span class="sr-only" data-id="pg140_im009"></span><span class="sr-only" data-id="pg140_im010"></span><span class="sr-only" data-id="pg140_im011"></span><span class="sr-only" data-id="pg140_im012"></span>
+      <span class="sr-only" data-id="pg140_p011"></span><span class="sr-only" data-id="pg140_p012"></span><span class="sr-only" data-id="pg140_p013"></span><span class="sr-only" data-id="pg140_p014">A cube is shown with a die.</span>
+      <span class="sr-only" data-id="pg140_im013"></span><span class="sr-only" data-id="pg140_im014"></span><span class="sr-only" data-id="pg140_im015"></span><span class="sr-only" data-id="pg140_im016"></span><span class="sr-only" data-id="pg140_im017"></span><span class="sr-only" data-id="pg140_im018"></span><span class="sr-only" data-id="pg140_im019"></span><span class="sr-only" data-id="pg140_im020"></span><span class="sr-only" data-id="pg140_im021"></span><span class="sr-only" data-id="pg140_im022"></span><span class="sr-only" data-id="pg140_im023"></span><span class="sr-only" data-id="pg140_im024"></span><span class="sr-only" data-id="pg140_p015"></span><span class="sr-only" data-id="pg140_p016"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div><div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script><script src="./assets/scorm.js"></script><script src="./assets/sign-language-sync.js?v=1"></script><script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
