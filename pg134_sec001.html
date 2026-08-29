@@ -1,130 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg134_sec001" />
-    <meta name="page-section-id" content="134" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg134_sec001">
+  <meta name="page-section-id" content="134">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg134-blue:#159fdf; --pg134-teal:#06a9ac; --pg134-line:#82cef2; --pg134-grid:#3546b4; --pg134-ink:#231f20; --pg134-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg134-ink); background:#eef9ff; }
+    #content.pg134-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg134-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg134-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page134 { position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:0 7.2rem 3rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(ellipse at 2% 48%,rgba(83,184,225,.2),transparent 7%),radial-gradient(ellipse at 98% 48%,rgba(83,184,225,.2),transparent 7%),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page134,.page134 * { box-sizing:border-box; font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg134-chapter-banner { position:relative; z-index:2; display:grid; grid-template-columns:clamp(10rem,27vw,15rem) 1fr; align-items:center; width:calc(100% + 7.4rem); min-height:clamp(10rem,27vw,14rem); margin:3rem 0 3.45rem -3.7rem; isolation:isolate; }
+    .pg134-chapter-banner:after { content:""; position:absolute; z-index:-3; right:0; left:clamp(8rem,21vw,12rem); height:66%; background:#fff; border:.35rem solid var(--pg134-teal); border-radius:0 2rem 2rem 0; box-shadow:0 .8rem 1.8rem rgba(0,135,158,.1); }
+    .pg134-chapter-badge { position:relative; z-index:2; display:grid; place-items:center; width:clamp(9rem,25vw,13.5rem); aspect-ratio:1; padding:1rem; color:#fff; background:linear-gradient(145deg,#12abd3,#078dc4); border:.28rem solid #6ac6cf; border-radius:50%; box-shadow:0 0 0 .35rem #ffe762,0 0 0 .7rem rgba(0,139,190,.62),0 1rem 2rem rgba(27,84,110,.24); }
+    .pg134-chapter-badge:before,.pg134-chapter-badge:after { content:""; position:absolute; z-index:-2; border-radius:42% 58% 53% 47%; background:rgba(0,169,169,.76); }
+    .pg134-chapter-badge:before { inset:-12% -33% 37% 30%; transform:rotate(28deg); }
+    .pg134-chapter-badge:after { inset:42% -35% -20% -27%; transform:rotate(-18deg); }
+    .pg134-chapter-label { display:grid; gap:.15rem; text-align:center; font-size:clamp(1.65rem,4.7vw,2.55rem); font-weight:900; line-height:1.05; -webkit-text-stroke:.018em currentColor; }
+    .pg134-chapter-title { z-index:1; margin:0; padding:1rem clamp(.8rem,3vw,2rem) 1rem clamp(1rem,4vw,3rem); color:#00aeef; font-size:clamp(1.8rem,5vw,3rem); font-weight:900; line-height:1.05; text-align:center; -webkit-text-stroke:.018em currentColor; }
+    .pg134-copy { margin-top:-.1rem; }
+    .pg134-heading { margin:0 0 .45rem; font-size:2rem; font-weight:900; line-height:1.05; letter-spacing:.01em; -webkit-text-stroke:.02em currentColor; }
+    .pg134-intro { margin:0 0 2.4rem; font-size:1.85rem; line-height:1.3; }
+    .pg134-example { position:relative; margin:0; padding:2.4rem 1.3rem .55rem; border:.2rem solid var(--pg134-line); border-radius:1.25rem 1.25rem 0 0; background:rgba(255,255,255,.97); }
+    .pg134-banner { position:absolute; top:0; left:2.9rem; min-width:10.3rem; margin:0; padding:.28rem .9rem .34rem; color:#fff; background:var(--pg134-blue); border-radius:999px; font-size:1.85rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor; }
+    .pg134-example-intro { margin:0 0 1.2rem; font-size:1.8rem; line-height:1.25; }
+    .pg134-table { display:grid; grid-template-columns:3.7rem minmax(0,1fr) minmax(0,1.55fr); border-top:.12rem solid var(--pg134-grid); border-left:.12rem solid var(--pg134-grid); }
+    .pg134-row { display:contents; }
+    .pg134-cell { min-width:0; height:10.65rem; border-right:.12rem solid var(--pg134-grid); border-bottom:.12rem solid var(--pg134-grid); }
+    .pg134-row:last-child .pg134-cell { height:13rem; }
+    .pg134-number { padding:.45rem .5rem; color:var(--pg134-blue); font-size:1.78rem; line-height:1; }
+    .pg134-figure { display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:.9rem .55rem .75rem; }
+    .pg134-figure img { display:block; object-fit:contain; }
+    .pg134-rectangle img { width:11.9rem; height:6.1rem; }
+    .pg134-square img { width:7.2rem; height:6.55rem; }
+    .pg134-circle img { width:11rem; height:9.8rem; }
+    .pg134-caption { margin:0; font-size:1.72rem; line-height:1; text-align:center; white-space:nowrap; }
+    .pg134-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg134-shell { padding:0 0 calc(var(--pg134-dock) + 1rem); }
+      .page134 { width:100%; min-height:100vh; padding:0 5% 2rem; border-radius:0; }
+      .pg134-chapter-banner { grid-template-columns:clamp(8rem,33vw,11rem) 1fr; width:96%; margin:2rem auto 2.25rem; }
+      .pg134-chapter-title { font-size:clamp(1.5rem,6vw,2.2rem); }
+      .pg134-heading,.pg134-intro,.pg134-example-intro,.pg134-banner { font-size:clamp(1.1rem,4vw,1.85rem); }
+      .pg134-intro { margin-bottom:2rem; }
+      .pg134-example { padding:2.2rem .55rem .45rem; }
+      .pg134-banner { left:1.5rem; min-width:8rem; }
+      .pg134-table { grid-template-columns:2.35rem minmax(0,1fr) minmax(0,1.45fr); }
+      .pg134-cell { height:clamp(7.5rem,31vw,10.65rem); }
+      .pg134-row:last-child .pg134-cell { height:clamp(8.5rem,36vw,13rem); }
+      .pg134-number,.pg134-caption { font-size:clamp(.8rem,3.6vw,1.72rem); }
+      .pg134-figure { padding:.65rem .2rem .55rem; }
+      .pg134-rectangle img { width:80%; height:56%; }
+      .pg134-square img { width:62%; height:61%; }
+      .pg134-circle img { width:68%; height:67%; }
+      .pg134-marker { position:static; margin:.55rem auto 0; transform:none; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content img[data-id="pg134_im007"],#content img[data-id="pg134_im008"]{opacity:0!important}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg134_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg134_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg134_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <p data-id="pg134_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;128&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">128</span></p>
-  <img src="images/pg134_im008.png" alt="Example table of plane figures showing a rectangle and a green rectangular shape, a square and a blue square shape, and a circle and a blue circular shape." data-id="pg134_im008" style="position:absolute;top:248px;left:69px;width:407px;height:473px;opacity:0">
-  <p data-id="pg134_p001" class="adt-page-overlay-text" style="position:absolute;top:197px;left:71px;line-height:18px;width:394px;height:23px">Chapter Eleven. Shapes. Plane figures. Plane figures are shapes drawn on flat surfaces. Example. The following are examples of plane figures and their shapes. 1. rectangle. The shape of a rectangle. 2. square. The shape of a square. 3. circle. A shape of a circle.</p>
-  <p data-id="pg134_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Plane figures are shapes drawn on flat surfaces.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:220px;left:71px;line-height:18px;width:394px;height:31px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Plane figures are shapes drawn on flat surfaces.</span></p>
-  <p data-id="pg134_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; Example&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#1accff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:251px;left:71px;line-height:18px;width:394px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#1accff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill"> Example</span></p>
-  <p data-id="pg134_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The following are examples of plane figures and their &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;shapes.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:279px;left:71px;line-height:18px;width:394px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The following are examples of plane figures and their </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">shapes.</span></p>
-  <p data-id="pg134_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:333px;left:87px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da">1.</span></p>
-  <img src="images/pg134_im001.png" alt="Outlined rectangle." data-id="pg134_im001" style="position:absolute;top:336px;left:125px;width:119px;height:70px;opacity:0">
-  <p data-id="pg134_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;rectangle&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:410px;left:151px;line-height:18px;width:66px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">rectangle</span></p>
-  <img src="images/pg134_im002.png" alt="Light green rectangle." data-id="pg134_im002" style="position:absolute;top:336px;left:303px;width:109px;height:68px;opacity:0">
-  <p data-id="pg134_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The shape of a rectangle&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:411px;left:267px;line-height:18px;width:180px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The shape of a rectangle</span></p>
-  <p data-id="pg134_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:438px;left:87px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">2.</span></p>
-  <img src="images/pg134_im003.png" alt="Outlined square." data-id="pg134_im003" style="position:absolute;top:441px;left:143px;width:81px;height:64px;opacity:0">
-  <p data-id="pg134_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;square&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:519px;left:160px;line-height:18px;width:71px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">square</span></p>
-  <img src="images/pg134_im004.png" alt="Blue square." data-id="pg134_im004" style="position:absolute;top:441px;left:316px;width:80px;height:65px;opacity:0">
-  <p data-id="pg134_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The shape of a square&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:276px;line-height:18px;width:161px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The shape of a square</span></p>
-  <p data-id="pg134_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:549px;left:87px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da">3.</span></p>
-  <img src="images/pg134_im005.png" alt="Outlined circle." data-id="pg134_im005" style="position:absolute;top:552px;left:129px;width:110px;height:95px;opacity:0">
-  <p data-id="pg134_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;circle&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:661px;left:166px;line-height:18px;width:42px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">circle</span></p>
-  <img src="images/pg134_im006.png" alt="Blue circle." data-id="pg134_im006" style="position:absolute;top:552px;left:293px;width:129px;height:95px;opacity:0">
-  <p data-id="pg134_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;A shape of a circle&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:661px;left:289px;line-height:18px;width:135px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">A shape of a circle</span></p>
-  <img src="images/pg134_im009.png" alt="" data-id="pg134_im009" style="position:absolute;top:15px;left:22px;width:505px;height:154px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im010.png" alt="" data-id="pg134_im010" style="position:absolute;top:13px;left:20px;width:510px;height:158px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im007.png" alt="Chapter Eleven: Shapes." data-id="pg134_im007" style="position:absolute;top:26px;left:36px;width:405px;height:193px;opacity:0">
-  <p data-id="pg134_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Shapes&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#00aeef&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:91px;left:268px;line-height:24px;width:76px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#00aeef;font-weight:bold">Shapes</span></p>
-  <img src="images/pg134_im015.png" alt="" data-id="pg134_im015" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im016.png" alt="" data-id="pg134_im016" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im017.png" alt="" data-id="pg134_im017" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im018.png" alt="" data-id="pg134_im018" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im019.png" alt="" data-id="pg134_im019" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im020.png" alt="" data-id="pg134_im020" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg134_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Chapter&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:63px;left:76px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold">Chapter</span></p>
-  <p data-id="pg134_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Eleven&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;24px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:90px;left:76px;line-height:24px;width:93px;height:27px;text-align:center"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:24px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Eleven</span></p>
-  <img src="images/pg134_im011.png" alt="" data-id="pg134_im011" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im012.png" alt="" data-id="pg134_im012" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im013.png" alt="" data-id="pg134_im013" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg134_im014.png" alt="" data-id="pg134_im014" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg134_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 128&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 128</span></p>
-  <p data-id="pg134_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg134-shell">
+    <article class="page134" role="article" data-section-id="pg134_sec001" aria-label="Chapter Eleven: Shapes">
+      <header class="pg134-chapter-banner" aria-hidden="true">
+        <div class="pg134-chapter-badge"><div class="pg134-chapter-label"><span>Chapter</span><span>Eleven</span></div></div>
+        <h1 class="pg134-chapter-title">Shapes</h1>
+      </header>
+      <div class="pg134-copy">
+        <h1 class="pg134-heading">Plane figures</h1>
+        <p class="pg134-intro">Plane figures are shapes drawn on flat surfaces.</p>
+        <section class="pg134-example" aria-labelledby="pg134-example-title">
+          <h2 id="pg134-example-title" class="pg134-banner">Example</h2>
+          <p class="pg134-example-intro">The following are examples of plane figures and their<br>shapes.</p>
+          <div class="pg134-table" role="table" aria-label="Examples of plane figures and their shapes">
+            <div class="pg134-row" role="row">
+              <div class="pg134-cell pg134-number" role="cell">1.</div>
+              <div class="pg134-cell pg134-figure pg134-rectangle" role="cell"><img src="images/pg134_im001.png" alt="Outlined rectangle"><p class="pg134-caption">rectangle</p></div>
+              <div class="pg134-cell pg134-figure pg134-rectangle" role="cell"><img src="images/pg134_im002.png" alt="Light green rectangle"><p class="pg134-caption">The shape of a rectangle</p></div>
+            </div>
+            <div class="pg134-row" role="row">
+              <div class="pg134-cell pg134-number" role="cell">2.</div>
+              <div class="pg134-cell pg134-figure pg134-square" role="cell"><img src="images/pg134_im003.png" alt="Outlined square"><p class="pg134-caption">square</p></div>
+              <div class="pg134-cell pg134-figure pg134-square" role="cell"><img src="images/pg134_im004.png" alt="Blue square"><p class="pg134-caption">The shape of a square</p></div>
+            </div>
+            <div class="pg134-row" role="row">
+              <div class="pg134-cell pg134-number" role="cell">3.</div>
+              <div class="pg134-cell pg134-figure pg134-circle" role="cell"><img src="images/pg134_im005.png" alt="Outlined circle"><p class="pg134-caption">circle</p></div>
+              <div class="pg134-cell pg134-figure pg134-circle" role="cell"><img src="images/pg134_im006.png" alt="Blue circle"><p class="pg134-caption">A shape of a circle</p></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <p class="pg134-marker" aria-label="Page 128">128</p>
+      <span class="sr-only" data-id="pg134_p000">128</span>
+      <span class="sr-only" data-id="pg134_p001">Chapter Eleven. Shapes. Plane figures. Plane figures are shapes drawn on flat surfaces. Example. The following are examples of plane figures and their shapes. 1. rectangle. The shape of a rectangle. 2. square. The shape of a square. 3. circle. A shape of a circle.</span>
+      <span class="sr-only" data-id="pg134_im001"></span><span class="sr-only" data-id="pg134_im002"></span><span class="sr-only" data-id="pg134_im003"></span><span class="sr-only" data-id="pg134_im004"></span><span class="sr-only" data-id="pg134_im005"></span><span class="sr-only" data-id="pg134_im006"></span><span class="sr-only" data-id="pg134_im007"></span><span class="sr-only" data-id="pg134_im008"></span>
+      <span class="sr-only" data-id="pg134_p002"></span><span class="sr-only" data-id="pg134_p003"></span><span class="sr-only" data-id="pg134_p004"></span><span class="sr-only" data-id="pg134_p006"></span><span class="sr-only" data-id="pg134_p007"></span><span class="sr-only" data-id="pg134_p008"></span><span class="sr-only" data-id="pg134_p009"></span><span class="sr-only" data-id="pg134_p010"></span><span class="sr-only" data-id="pg134_p011"></span><span class="sr-only" data-id="pg134_p012"></span><span class="sr-only" data-id="pg134_p013"></span><span class="sr-only" data-id="pg134_p014"></span><span class="sr-only" data-id="pg134_p015"></span><span class="sr-only" data-id="pg134_p016"></span><span class="sr-only" data-id="pg134_p017"></span><span class="sr-only" data-id="pg134_p018"></span><span class="sr-only" data-id="pg134_p019"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
