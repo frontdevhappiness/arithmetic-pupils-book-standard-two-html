@@ -1,115 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg131_sec001" />
-    <meta name="page-section-id" content="131" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg131_sec001">
+  <meta name="page-section-id" content="131">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root {
+      --pg131-blue: #159fdf;
+      --pg131-line: #86cef2;
+      --pg131-ink: #231f20;
+      --pg131-dock: var(--dock-height, 96px);
+    }
+
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: var(--pg131-ink);
+      background: radial-gradient(circle at 18% 7%, rgba(111,194,224,.25), transparent 30rem),
+        linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%);
+    }
+
+    #content.pg131-shell {
+      box-sizing: border-box;
+      width: auto !important;
+      min-height: calc(100vh - var(--pg131-dock));
+      padding: clamp(1rem, 4vw, 3rem) clamp(.75rem, 4vw, 2.5rem)
+        calc(var(--pg131-dock) + clamp(1.5rem, 4vw, 3rem));
+      visibility: visible !important;
+    }
+
+    .page131 {
+      position: relative !important;
+      box-sizing: border-box;
+      width: min(100%, 58rem) !important;
+      aspect-ratio: 558 / 768;
+      min-height: 79.75rem !important;
+      height: auto !important;
+      margin: 0 auto !important;
+      padding: 6rem 4.2rem 3rem;
+      overflow: hidden !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      transform: none !important;
+      left: auto !important;
+      top: auto !important;
+      border: clamp(.45rem, 1vw, .8rem) solid #e1f3fb;
+      border-radius: clamp(1.15rem, 3vw, 2.25rem);
+      background: #fff;
+      box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, .14);
+      font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif;
+    }
+
+    .page131, .page131 * { box-sizing: border-box; }
+    .page131 * { font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important; }
+    .pg131-layout { position: relative; z-index: 1; }
+
+    .pg131-title {
+      margin: 0 0 1.8rem;
+      font-size: 1.95rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .015em;
+      -webkit-text-stroke: .025em currentColor;
+    }
+
+    .pg131-intro {
+      margin: 0;
+      font-size: 1.82rem;
+      line-height: 1.25;
+      letter-spacing: .012em;
+    }
+
+    .pg131-example {
+      position: relative;
+      min-height: 13.2rem;
+      margin-top: .9rem;
+      padding: 3.2rem 1.15rem 1rem;
+      border: .2rem solid var(--pg131-line);
+      border-radius: 1.25rem;
+      background: rgba(255,255,255,.96);
+    }
+
+    .pg131-banner {
+      position: absolute;
+      top: 0;
+      left: 2.85rem;
+      min-width: 12.4rem;
+      margin: 0;
+      padding: .35rem 1.15rem .4rem;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--pg131-blue);
+      font-size: 1.85rem;
+      font-weight: 900;
+      font-style: normal;
+      line-height: 1.05;
+      text-align: center;
+      transform: translateY(-50%);
+      -webkit-text-stroke: .02em currentColor;
+    }
+
+    .pg131-example-text {
+      margin: 0;
+      font-size: 1.82rem;
+      font-style: normal;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .pg131-comparison {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 4rem;
+      height: 6.2rem;
+      padding-top: 1rem;
+    }
+
+    .pg131-comparison img { display: block; object-fit: contain; }
+    .pg131-small-bucket { width: 7.1rem; height: 6rem; }
+    .pg131-cup { width: 6.7rem; height: 4.2rem; margin-bottom: .05rem; }
+
+    .pg131-tools-title {
+      margin: 2.55rem 0 0 .45rem;
+      font-size: 1.9rem;
+      font-weight: 900;
+      font-style: normal;
+      line-height: 1.08;
+      letter-spacing: .012em;
+      white-space: nowrap;
+      -webkit-text-stroke: .02em currentColor;
+    }
+
+    .pg131-tools {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 1fr;
+      align-items: end;
+      column-gap: 2.2rem;
+      margin-top: 2.35rem;
+    }
+
+    .pg131-tool {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .pg131-tool-image {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+      height: 21rem;
+    }
+
+    .pg131-tool-image img { display: block; max-width: 100%; object-fit: contain; }
+    .pg131-cylinder { width: 10.2rem; height: 20.6rem; }
+    .pg131-beaker { width: 8.6rem; height: 15rem; }
+    .pg131-large-bucket { width: 9rem; height: 13rem; }
+
+    .pg131-tool-label {
+      margin: 1.25rem 0 0;
+      font-size: 1.82rem;
+      font-style: normal;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .pg131-marker {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      left: 50%;
+      bottom: 3rem;
+      width: 5.25rem;
+      aspect-ratio: 1.65 / 1;
+      margin: 0;
+      border-radius: 50%;
+      color: #fff;
+      background: #00a9e8;
+      font-size: 1.75rem;
+      font-weight: 900;
+      font-style: normal;
+      line-height: 1;
+      text-align: center;
+      transform: translateX(-50%);
+      -webkit-text-stroke: .015em currentColor;
+    }
+
+    .page131 .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 44rem) {
+      #content.pg131-shell { padding: 0 0 calc(var(--pg131-dock) + 1rem); }
+      .page131 { min-height: auto !important; padding: clamp(3.6rem, 12vw, 7rem) 7% 7rem; border-radius: 0; }
+      .pg131-title { font-size: clamp(1.25rem, 4.5vw, 1.95rem); }
+      .pg131-intro, .pg131-example-text, .pg131-tool-label { font-size: clamp(1.05rem, 4vw, 1.82rem); }
+      .pg131-banner, .pg131-tools-title { font-size: clamp(1.15rem, 4.25vw, 1.9rem); }
+      .pg131-example { min-height: clamp(10.5rem, 40vw, 15.9rem); padding-inline: .8rem; }
+      .pg131-banner { left: 1.6rem; min-width: 9rem; }
+      .pg131-comparison { height: clamp(5rem, 19vw, 8.2rem); gap: clamp(2rem, 10vw, 4rem); }
+      .pg131-small-bucket { width: clamp(4.2rem, 16vw, 7.1rem); height: clamp(3.5rem, 14vw, 6rem); }
+      .pg131-cup { width: clamp(4rem, 15vw, 6.7rem); height: clamp(2.5rem, 10vw, 4.2rem); }
+      .pg131-tools-title { white-space: normal; }
+      .pg131-tools { column-gap: clamp(.4rem, 4vw, 2.2rem); }
+      .pg131-tool-image { height: clamp(12rem, 42vw, 21rem); }
+      .pg131-cylinder { width: clamp(6rem, 21vw, 10.2rem); height: clamp(12rem, 41vw, 20.6rem); }
+      .pg131-beaker { width: clamp(5rem, 18vw, 8.6rem); height: clamp(9rem, 30vw, 15rem); }
+      .pg131-large-bucket { width: clamp(5.2rem, 19vw, 9rem); height: clamp(7.5rem, 26vw, 13rem); }
+      .pg131-tool-label { white-space: normal; }
+      .pg131-marker { bottom: 2rem; }
+    }
+  </style>
 </head>
+<body>
+  <main id="content" class="pg131-shell">
+    <article class="page131" role="article" data-section-id="pg131_sec001" aria-label="Volume">
+      <div class="pg131-layout" aria-hidden="true">
+        <h1 class="pg131-title">Volume</h1>
+        <p class="pg131-intro">Volume is the space that can be occupied by an object.<br>The volume of objects can be compared by looking at the<br>amount of space that fills the device. There are objects<br>with large volumes and others with small volumes.</p>
 
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg131_im007.png" alt="" data-id="pg131_im007" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg131_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;125&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">125</span></p>
-  <img src="images/pg131_im006.png" alt="Example showing that a cup has a smaller volume than a bucket, with a yellow cup and a blue bucket." data-id="pg131_im006" style="position:absolute;top:193px;left:83px;width:407px;height:141px;opacity:0">
-  <img src="images/pg131_im012.png" alt="" data-id="pg131_im012" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg131_im013.png" alt="" data-id="pg131_im013" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg131_im014.png" alt="" data-id="pg131_im014" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg131_im015.png" alt="" data-id="pg131_im015" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg131_p001" class="adt-page-overlay-text" style="position:absolute;top:69px;left:86px;line-height:17px;width:63px;height:19px">Volume. Volume is the space that can be occupied by an object. The volume of objects can be compared by looking at the amount of space that fills the device. There are objects with large volumes and others with small volumes.</p>
-  <img src="images/pg131_im016.png" alt="" data-id="pg131_im016" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg131_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Volume is the space that can be occupied by an object.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:101px;left:86px;line-height:18px;width:406px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Volume is the space that can be occupied by an object.</span></p>
-  <img src="images/pg131_im017.png" alt="" data-id="pg131_im017" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg131_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The volume of objects can be compared by looking at the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;amount of space that fills the device. There are objects &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;with large volumes and others with small volumes.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:123px;left:86px;line-height:18px;width:406px;height:63px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">The volume of objects can be compared by looking at the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">amount of space that fills the device. There are objects </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">with large volumes and others with small volumes.</span></p>
-  <p data-id="pg131_p006" class="adt-page-overlay-text" style="position:absolute;top:198px;left:86px;line-height:17px;width:112px;height:19px">Example. A cup has a smaller volume than a bucket.</p>
-  <p data-id="pg131_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;A cup has a smaller volume than a bucket.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:229px;left:96px;line-height:18px;width:353px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">A cup has a smaller volume than a bucket.</span></p>
-  <img src="images/pg131_im001.jpg" alt="Blue bucket." data-id="pg131_im001" style="position:absolute;top:258px;left:165px;width:68px;height:58px;opacity:0">
-  <img src="images/pg131_im002.png" alt="Yellow cup." data-id="pg131_im002" style="position:absolute;top:278px;left:281px;width:68px;height:38px;opacity:0">
-  <p data-id="pg131_p008" class="adt-page-overlay-text" style="position:absolute;top:352px;left:86px;line-height:18px;width:400px;height:20px">Recognizing standard tools for measuring volume. The pictures show a measuring cylinder with markings up to 500 millilitres, a beaker marked to 100 millilitres and a bucket with litre markings up to 14 litres.</p>
-  <img src="images/pg131_im003.png" alt="Measuring cylinder with volume markings up to 500 millilitres." data-id="pg131_im003" style="position:absolute;top:390px;left:115px;width:95px;height:196px;opacity:0">
-  <img src="images/pg131_im004.png" alt="Beaker marked to 100 millilitres." data-id="pg131_im004" style="position:absolute;top:444px;left:259px;width:81px;height:142px;opacity:0">
-  <img src="images/pg131_im005.png" alt="Bucket with litre markings up to 14 litres and a red lid." data-id="pg131_im005" style="position:absolute;top:473px;left:386px;width:74px;height:107px;opacity:0">
-  <p data-id="pg131_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Measuring cylinder&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:599px;left:95px;line-height:18px;width:136px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Measuring cylinder</span></p>
-  <p data-id="pg131_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;beaker&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:599px;left:275px;line-height:18px;width:48px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">beaker</span></p>
-  <p data-id="pg131_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;bucket&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:599px;left:400px;line-height:18px;width:53px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">bucket</span></p>
-  <img src="images/pg131_im008.png" alt="" data-id="pg131_im008" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg131_im009.png" alt="" data-id="pg131_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg131_im010.png" alt="" data-id="pg131_im010" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg131_im011.png" alt="" data-id="pg131_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg131_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 125&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 125</span></p>
-  <p data-id="pg131_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
+        <section class="pg131-example">
+          <h2 class="pg131-banner">Example</h2>
+          <p class="pg131-example-text">A cup has a smaller volume than a bucket.</p>
+          <div class="pg131-comparison">
+            <img class="pg131-small-bucket" src="images/pg131_im001.jpg" alt="">
+            <img class="pg131-cup" src="images/pg131_im002.png" alt="">
+          </div>
+        </section>
 
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+        <h2 class="pg131-tools-title">Recognizing standard tools for measuring volume</h2>
+        <div class="pg131-tools">
+          <figure class="pg131-tool">
+            <div class="pg131-tool-image"><img class="pg131-cylinder" src="images/pg131_im003.png" alt=""></div>
+            <figcaption class="pg131-tool-label">Measuring cylinder</figcaption>
+          </figure>
+          <figure class="pg131-tool">
+            <div class="pg131-tool-image"><img class="pg131-beaker" src="images/pg131_im004.png" alt=""></div>
+            <figcaption class="pg131-tool-label">beaker</figcaption>
+          </figure>
+          <figure class="pg131-tool">
+            <div class="pg131-tool-image"><img class="pg131-large-bucket" src="images/pg131_im005.png" alt=""></div>
+            <figcaption class="pg131-tool-label">bucket</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="pg131-marker" aria-label="Page 125">125</p>
+
+      <span class="sr-only" data-id="pg131_p000">125</span>
+      <span class="sr-only" data-id="pg131_p001">Volume. Volume is the space that can be occupied by an object. The volume of objects can be compared by looking at the amount of space that fills the device. There are objects with large volumes and others with small volumes.</span>
+      <span class="sr-only" data-id="pg131_p002"></span><span class="sr-only" data-id="pg131_p003"></span>
+      <span class="sr-only" data-id="pg131_p006">Example. A cup has a smaller volume than a bucket.</span>
+      <span class="sr-only" data-id="pg131_p007"></span>
+      <span class="sr-only" data-id="pg131_p008">Recognizing standard tools for measuring volume. The pictures show a measuring cylinder with markings up to 500 millilitres, a beaker marked to 100 millilitres and a bucket with litre markings up to 14 litres.</span>
+      <span class="sr-only" data-id="pg131_p009"></span><span class="sr-only" data-id="pg131_p010"></span><span class="sr-only" data-id="pg131_p011"></span>
+      <span class="sr-only" data-id="pg131_p012"></span><span class="sr-only" data-id="pg131_p013"></span>
+      <span class="sr-only" data-id="pg131_im001"></span><span class="sr-only" data-id="pg131_im002"></span>
+      <span class="sr-only" data-id="pg131_im003"></span><span class="sr-only" data-id="pg131_im004"></span><span class="sr-only" data-id="pg131_im005"></span>
+      <span class="sr-only" data-id="pg131_im006"></span><span class="sr-only" data-id="pg131_im007"></span>
+      <span class="sr-only" data-id="pg131_im008"></span><span class="sr-only" data-id="pg131_im009"></span><span class="sr-only" data-id="pg131_im010"></span>
+      <span class="sr-only" data-id="pg131_im011"></span><span class="sr-only" data-id="pg131_im012"></span><span class="sr-only" data-id="pg131_im013"></span>
+      <span class="sr-only" data-id="pg131_im014"></span><span class="sr-only" data-id="pg131_im015"></span><span class="sr-only" data-id="pg131_im016"></span><span class="sr-only" data-id="pg131_im017"></span>
+    </article>
+  </main>
+
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
