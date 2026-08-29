@@ -1,117 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg124_sec001" />
-    <meta name="page-section-id" content="124" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg124_sec001">
+  <meta name="page-section-id" content="124">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg124-blue:#159fe0; --pg124-line:#83c9ee; --pg124-grid:#3546b4; --pg124-ink:#231f20; --pg124-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg124-ink); background:#eef9ff; }
+    #content.pg124-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg124-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg124-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible; }
+    .page124 {
+      position:relative; box-sizing:border-box; container-type:inline-size; width:min(100%,58rem); aspect-ratio:558/768; margin:0 auto; overflow:hidden;
+      border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem);
+      background:radial-gradient(circle at 7% 8%,rgba(131,201,238,.3),transparent 13%),radial-gradient(circle at 94% 94%,rgba(131,201,238,.24),transparent 14%),#fff;
+      box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif;
+    }
+    .page124,.page124 * { box-sizing:border-box; }
+    .page124 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg124-layout { position:absolute; inset:8.55% 12.8% 9.6%; }
+    .pg124-vocabulary { display:grid; grid-template-rows:65.5% 34.5%; height:35.7%; overflow:hidden; border:.18cqw solid var(--pg124-line); border-radius:0 0 2.5cqw 2.5cqw; }
+    .pg124-vocab-row { display:grid; grid-template-columns:53% 47%; min-height:0; }
+    .pg124-vocab-row + .pg124-vocab-row { border-top:.16cqw solid var(--pg124-grid); }
+    .pg124-word,.pg124-vocab-picture { min-width:0; min-height:0; }
+    .pg124-word { margin:0; padding:.9cqw 1.2cqw; border-right:.16cqw solid var(--pg124-grid); font-size:3.15cqw; line-height:1.1; }
+    .pg124-vocab-picture { display:grid; place-items:center; padding:1.1cqw 2cqw; }
+    .pg124-vocab-picture img { display:block; max-width:100%; max-height:100%; object-fit:contain; }
+    .pg124-arm img { width:73%; height:94%; }
+    .pg124-rope img { width:86%; height:82%; }
+    .pg124-exercise { position:relative; height:60.8%; margin-top:3.6%; padding:3.8cqw 2cqw 1.4cqw; border:.22cqw solid var(--pg124-line); border-radius:2.3cqw 2.3cqw 0 0; background:rgba(255,255,255,.97); }
+    .pg124-banner { position:absolute; top:0; left:8.5%; min-width:20.3cqw; margin:0; padding:.55cqw 1.45cqw .42cqw; border:.22cqw solid var(--pg124-blue); border-radius:999px; color:var(--pg124-blue); background:#fff; font-size:2.95cqw; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.02em currentColor; }
+    .pg124-direction { margin:0 0 1.2cqw; font-size:3.2cqw; line-height:1.12; white-space:nowrap; }
+    .pg124-comparisons { display:grid; grid-template-rows:60% 40%; height:calc(100% - 5.2cqw); border:.16cqw solid var(--pg124-grid); }
+    .pg124-question { position:relative; min-height:0; }
+    .pg124-question + .pg124-question { border-top:.16cqw solid var(--pg124-grid); }
+    .pg124-number { position:absolute; top:1.35cqw; left:1.7cqw; z-index:2; color:var(--pg124-blue); font-size:3.05cqw; line-height:1; }
+    .pg124-people,.pg124-objects { display:grid; grid-template-columns:1fr 1fr; height:100%; padding-inline:13%; column-gap:14%; }
+    .pg124-choice { display:grid; justify-items:center; min-width:0; min-height:0; margin:0; }
+    .pg124-people .pg124-choice { grid-template-rows:minmax(0,1fr) auto; padding-top:5.5cqw; }
+    .pg124-people img { display:block; height:100%; max-width:100%; object-fit:contain; object-position:center bottom; }
+    .pg124-people .pg124-ana img { height:87%; align-self:end; }
+    .pg124-label { margin:.6cqw 0 .75cqw; font-size:3.05cqw; line-height:1; white-space:nowrap; }
+    .pg124-objects .pg124-choice { grid-template-rows:minmax(0,1fr) auto; padding-top:1.6cqw; }
+    .pg124-objects img { display:block; max-width:100%; object-fit:contain; align-self:start; }
+    .pg124-cup img { width:9.8cqw; margin-top:1.6cqw; }
+    .pg124-flask img { width:6.5cqw; }
+    .pg124-objects .pg124-label { margin-bottom:2.1cqw; }
+    .pg124-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3.35%; width:10.3cqw; aspect-ratio:1.65/1; margin:0; border-radius:50%; color:#fff; background:#00a9e8; font-size:3cqw; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) { #content.pg124-shell { padding:0 0 calc(var(--pg124-dock) + 1rem); } .page124 { width:100%; border-radius:0; } }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <p data-id="pg124_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;118&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">118</span></p>
-  <img src="images/pg124_im007.png" alt="Page showing arm span and rope, followed by Exercise 4. Ana and Juma stand on the same ground line, with the top of Ana's head lower on the page. A cup and flask bottle rest on the same level, with the top of the cup lower on the page." data-id="pg124_im007" style="position:absolute;top:67px;left:67px;width:408px;height:653px;opacity:0">
-  <img src="images/pg124_im012.png" alt="" data-id="pg124_im012" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im013.png" alt="" data-id="pg124_im013" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im014.png" alt="" data-id="pg124_im014" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im015.png" alt="" data-id="pg124_im015" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im016.png" alt="" data-id="pg124_im016" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im017.png" alt="" data-id="pg124_im017" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg124_p001" class="adt-page-overlay-text" style="position:absolute;top:73px;left:88px;line-height:18px;width:68px;height:20px">Arm span. The picture shows a child standing with both arms stretched out, holding a rope from one hand to the other. Rope. The picture shows a coiled rope with one loose end stretched out. Exercise 4. Write the name of the shortest object or person. 1. Ana. Juma. Ana and Juma stand upright on the same ground line. The top of Ana's head is lower than the top of Juma's head. 2. A cup. A flask bottle. The cup and flask bottle rest on the same level. The top of the cup is lower than the top of the flask bottle.</p>
-  <img src="images/pg124_im001.png" alt="Child standing with both arms stretched out, holding a rope to show arm span." data-id="pg124_im001" style="position:absolute;top:76px;left:300px;width:141px;height:131px;opacity:0">
-  <p data-id="pg124_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;rope&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:212px;left:88px;line-height:18px;width:44px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">rope</span></p>
-  <img src="images/pg124_im002.png" alt="Coiled rope with one loose end stretched out." data-id="pg124_im002" style="position:absolute;top:215px;left:291px;width:156px;height:63px;opacity:0">
-  <p data-id="pg124_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;Exercise 4&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:292px;left:98px;line-height:17px;width:94px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic"> </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Exercise 4</span></p>
-  <p data-id="pg124_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write the name of the shortest object or person.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:321px;left:81px;line-height:18px;width:351px;height:30px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write the name of the shortest object or person.</span></p>
-  <p data-id="pg124_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:351px;left:81px;line-height:18px;width:351px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">1.</span></p>
-  <p data-id="pg124_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Ana&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:521px;left:184px;line-height:18px;width:29px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Ana</span></p>
-  <p data-id="pg124_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Juma&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:519px;left:312px;line-height:18px;width:39px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Juma</span></p>
-  <p data-id="pg124_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:549px;left:89px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <img src="images/pg124_im003.png" alt="Yellow cup resting on the same level as the flask bottle, with its top lower on the page." data-id="pg124_im003" style="position:absolute;top:553px;left:144px;width:68px;height:38px;opacity:0">
-  <p data-id="pg124_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;A cup&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:635px;left:144px;line-height:18px;width:42px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">A cup</span></p>
-  <img src="images/pg124_im004.png" alt="Blue flask bottle with a lid and side handle, resting on the same level as the cup and reaching higher on the page." data-id="pg124_im004" style="position:absolute;top:553px;left:300px;width:45px;height:56px;opacity:0">
-  <p data-id="pg124_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; A flask bottle&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:633px;left:254px;line-height:18px;width:114px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> A flask bottle</span></p>
-  <img src="images/pg124_im005.jpg" alt="Juma standing upright with folded arms on the same ground line as Ana, with his head reaching higher on the page." data-id="pg124_im005" style="position:absolute;top:372px;left:291px;width:78px;height:147px;opacity:0">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg124_im006" clipPathUnits="userSpaceOnUse"><path d="M169.82 396.38L229.45 396.38L229.45 515.45L169.82 515.45Z" transform="translate(-169,-395)"/></clipPath></defs></svg>
-  <img src="images/pg124_im006.jpg" alt="Ana standing upright in a purple dress on the same ground line as Juma, with her head reaching lower on the page." data-id="pg124_im006" style="position:absolute;top:395px;left:169px;width:62px;height:121px;clip-path:url(#clip-pg124_im006);opacity:0">
-  <img src="images/pg124_im008.png" alt="" data-id="pg124_im008" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im009.png" alt="" data-id="pg124_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im010.png" alt="" data-id="pg124_im010" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg124_im011.png" alt="" data-id="pg124_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg124_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 118&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 118</span></p>
-  <p data-id="pg124_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg124-shell">
+    <article class="page124" role="article" data-section-id="pg124_sec001" aria-label="Comparing lengths and heights">
+      <div class="pg124-layout">
+        <section class="pg124-vocabulary" aria-label="Arm span and rope">
+          <div class="pg124-vocab-row">
+            <p class="pg124-word">arm span</p>
+            <div class="pg124-vocab-picture pg124-arm"><img src="images/pg124_im001.png" alt="Child standing with both arms stretched out, holding a rope to show arm span." data-id="pg124_im001"></div>
+          </div>
+          <div class="pg124-vocab-row">
+            <p class="pg124-word">rope</p>
+            <div class="pg124-vocab-picture pg124-rope"><img src="images/pg124_im002.png" alt="Coiled rope with one loose end stretched out." data-id="pg124_im002"></div>
+          </div>
+        </section>
+        <section class="pg124-exercise" aria-labelledby="pg124-exercise-title">
+          <h1 class="pg124-banner" id="pg124-exercise-title">Exercise 4</h1>
+          <p class="pg124-direction">Write the name of the shortest object or person.</p>
+          <div class="pg124-comparisons">
+            <section class="pg124-question" aria-label="Question 1: compare Ana and Juma">
+              <span class="pg124-number">1.</span>
+              <div class="pg124-people">
+                <figure class="pg124-choice pg124-ana"><img src="images/pg124_im006.jpg" alt="Ana standing upright in a purple dress." data-id="pg124_im006"><figcaption class="pg124-label">Ana</figcaption></figure>
+                <figure class="pg124-choice"><img src="images/pg124_im005.jpg" alt="Juma standing upright with folded arms." data-id="pg124_im005"><figcaption class="pg124-label">Juma</figcaption></figure>
+              </div>
+            </section>
+            <section class="pg124-question" aria-label="Question 2: compare a cup and a flask bottle">
+              <span class="pg124-number">2.</span>
+              <div class="pg124-objects">
+                <figure class="pg124-choice pg124-cup"><img src="images/pg124_im003.png" alt="A yellow cup." data-id="pg124_im003"><figcaption class="pg124-label">A cup</figcaption></figure>
+                <figure class="pg124-choice pg124-flask"><img src="images/pg124_im004.png" alt="A blue flask bottle." data-id="pg124_im004"><figcaption class="pg124-label">A flask bottle</figcaption></figure>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+      <p class="pg124-marker" aria-label="Page 118">118</p>
+      <span class="sr-only" data-id="pg124_page"></span><span class="sr-only" data-id="pg124_p000">118</span><span class="sr-only" data-id="pg124_im007"></span>
+      <span class="sr-only" data-id="pg124_p001">Arm span. The picture shows a child standing with both arms stretched out, holding a rope from one hand to the other. Rope. The picture shows a coiled rope with one loose end stretched out. Exercise 4. Write the name of the shortest object or person. 1. Ana. Juma. Ana and Juma stand upright on the same ground line. The top of Ana's head is lower than the top of Juma's head. 2. A cup. A flask bottle. The cup and flask bottle rest on the same level. The top of the cup is lower than the top of the flask bottle.</span>
+      <span class="sr-only" data-id="pg124_p002"></span><span class="sr-only" data-id="pg124_p003"></span><span class="sr-only" data-id="pg124_p004"></span><span class="sr-only" data-id="pg124_p005"></span><span class="sr-only" data-id="pg124_p006"></span><span class="sr-only" data-id="pg124_p007"></span><span class="sr-only" data-id="pg124_p008"></span><span class="sr-only" data-id="pg124_p009"></span><span class="sr-only" data-id="pg124_p010"></span><span class="sr-only" data-id="pg124_p011"></span><span class="sr-only" data-id="pg124_p012"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script><script src="./assets/scorm.js"></script><script src="./assets/sign-language-sync.js?v=1"></script><script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
