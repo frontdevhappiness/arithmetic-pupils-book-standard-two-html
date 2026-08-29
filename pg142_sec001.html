@@ -1,136 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arithmetic Pupil’s Book Standard Two</title>
     <meta name="title-id" content="pg142_sec001" />
     <meta name="page-section-id" content="142" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="./content/tailwind_output.css" rel="stylesheet" />
+    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/fonts.css" rel="stylesheet" />
     <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
+      :root { --pg142-blue:#159fdf; --pg142-line:#86cef2; --pg142-ink:#231f20; --pg142-dock:var(--dock-height,96px); }
+      html, body { min-height:100%; }
+      body.pg142-body { margin:0; overflow-x:hidden; color:var(--pg142-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+      #content.pg142-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg142-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg142-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+      .page142 {
+        position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:8.4rem 7.35rem 7.5rem; overflow:hidden;
+        border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem);
+        background:radial-gradient(ellipse at 0 8%,rgba(134,206,242,.26),transparent 11%),radial-gradient(ellipse at 100% 31%,rgba(134,206,242,.22),transparent 10%),radial-gradient(ellipse at 0 76%,rgba(134,206,242,.2),transparent 11%),#fff;
+        box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif;
+      }
+      .page142, .page142 * { box-sizing:border-box; }
+      .page142 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+      .pg142-exercise { position:relative; min-height:60.2rem; padding:2.85rem 2rem 1.7rem; border:.2rem solid var(--pg142-line); border-radius:1.25rem; background:rgba(255,255,255,.97); }
+      .pg142-banner { position:absolute; top:0; left:4.25rem; min-width:12.7rem; margin:0; padding:.32rem 1rem .28rem; border:.2rem solid var(--pg142-blue); border-radius:999px; background:#fff; color:var(--pg142-blue); font-size:1.85rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.025em currentColor; }
+      .pg142-intro { margin:0 0 1.3rem; font-size:1.8rem; line-height:1.2; letter-spacing:.01em; }
+      .pg142-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(3,13.7rem); column-gap:3.2rem; row-gap:.7rem; }
+      .pg142-item { position:relative; display:grid; grid-template-rows:8rem auto 1.25rem; align-items:end; min-width:0; padding-left:1.55rem; }
+      .pg142-number { position:absolute; top:0; left:0; color:var(--pg142-blue); font-size:1.75rem; line-height:1; }
+      .pg142-picture { display:grid; place-items:center; width:100%; height:8rem; }
+      .pg142-picture img { display:block; max-width:100%; max-height:100%; object-fit:contain; }
+      .pg142-item-one .pg142-picture img { width:6.25rem; }
+      .pg142-item-two .pg142-picture img { width:11.8rem; }
+      .pg142-item-three .pg142-picture img { width:12.5rem; }
+      .pg142-item-four .pg142-picture img { width:5.7rem; }
+      .pg142-item-five .pg142-picture img { width:6.55rem; }
+      .pg142-item-six .pg142-picture img { width:4.3rem; }
+      .pg142-caption { margin:.25rem 0 .5rem; font-size:1.75rem; line-height:1.05; text-align:center; }
+      .pg142-answer-line { display:block; width:92%; margin:0 auto; border-bottom:.12rem solid var(--pg142-ink); }
+      .pg142-prompts { margin-top:1.35rem; }
+      .pg142-prompt { display:grid; grid-template-columns:2.35rem 1fr; margin:0 0 .7rem; font-size:1.75rem; line-height:1.15; }
+      .pg142-prompt-number { color:var(--pg142-blue); }
+      .pg142-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:2.7rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+      .page142 .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+      @media (max-width:44rem) {
+        #content.pg142-shell { padding:0 0 calc(var(--pg142-dock) + 1rem); }
+        .page142 { width:100%; min-height:100vh; padding:clamp(4.7rem,13vw,7rem) 5% 6.5rem; border-radius:0; }
+        .pg142-exercise { min-height:0; padding:clamp(2.2rem,7vw,2.85rem) 4% 1.4rem; }
+        .pg142-banner { left:clamp(1.5rem,9vw,4.25rem); min-width:9rem; font-size:clamp(1.2rem,5vw,1.85rem); }
+        .pg142-intro { font-size:clamp(1.08rem,4.5vw,1.8rem); }
+        .pg142-grid { grid-template-rows:repeat(3,clamp(10rem,34vw,13.7rem)); column-gap:clamp(.7rem,5vw,3.2rem); }
+        .pg142-item { grid-template-rows:clamp(5.7rem,21vw,8rem) auto 1rem; padding-left:1.2rem; }
+        .pg142-picture { height:clamp(5.7rem,21vw,8rem); }
+        .pg142-number, .pg142-caption, .pg142-prompt { font-size:clamp(1.05rem,4.4vw,1.75rem); }
+        .pg142-prompts { margin-top:1rem; }
+        .pg142-prompt { grid-template-columns:clamp(1.65rem,7vw,2.35rem) 1fr; }
+        .pg142-marker { bottom:2rem; }
+      }
     </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
-</head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content img[data-id="pg142_im007"]{opacity:0!important}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg142_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg142_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg142_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg142_im008.png" alt="Page 136" data-id="pg142_im008" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0">
-  <p data-id="pg142_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;136&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">136</span></p>
-  <img src="images/pg142_im009.png" alt="" data-id="pg142_im009" style="position:absolute;top:86px;left:71px;width:402px;height:581px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im014.png" alt="" data-id="pg142_im014" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im007.png" alt="Exercise 6" data-id="pg142_im007" style="position:absolute;top:71px;left:89px;width:121px;height:29px;opacity:0">
-  <img src="images/pg142_im015.png" alt="" data-id="pg142_im015" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im016.png" alt="" data-id="pg142_im016" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im017.png" alt="" data-id="pg142_im017" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg142_p001" class="adt-page-overlay-text" style="position:absolute;top:74px;left:81px;line-height:18px;width:285px;height:30px">Exercise 6. Write plane or non-plane in the blanks. 1. A blue bucket. This shape is blank. 2. A green triangle. This shape is blank. 3. A blue rectangle. This shape is blank. 4. A glass jug filled with orange juice. This shape is blank. 5. A purple cylindrical drum. This shape is blank. 6. A glass of orange juice. This shape is blank. 7. Draw any two plane shapes. 8. Draw any two non-plane shapes.</p>
-  <img src="images/pg142_im018.png" alt="" data-id="pg142_im018" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im019.png" alt="" data-id="pg142_im019" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg142_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write plane or non-plane in the blanks.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:104px;left:81px;line-height:18px;width:285px;height:29px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write plane or non-plane in the blanks.</span></p>
-  <p data-id="pg142_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:133px;left:81px;line-height:18px;width:285px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <img src="images/pg142_im001.jpg" alt="A blue bucket" data-id="pg142_im001" style="position:absolute;top:160px;left:133px;width:68px;height:58px;opacity:0">
-  <p data-id="pg142_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;This shape is&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:228px;left:110px;line-height:18px;width:150px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">This shape is</span></p>
-  <p data-id="pg142_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:247px;left:110px;line-height:18px;width:126px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">______________</span></p>
-  <p data-id="pg142_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:133px;left:266px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <img src="images/pg142_im002.jpg" alt="A glass jug filled with orange juice" data-id="pg142_im002" style="position:absolute;top:136px;left:345px;width:66px;height:74px;opacity:0">
-  <p data-id="pg142_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;This shape is&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:229px;left:295px;line-height:18px;width:98px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">This shape is</span></p>
-  <p data-id="pg142_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:253px;left:298px;line-height:18px;width:126px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">______________</span></p>
-  <p data-id="pg142_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:278px;left:90px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <img src="images/pg142_im003.png" alt="A green triangle" data-id="pg142_im003" style="position:absolute;top:281px;left:114px;width:125px;height:95px;opacity:0">
-  <p data-id="pg142_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;This shape is&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:390px;left:119px;line-height:18px;width:98px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">This shape is</span></p>
-  <p data-id="pg142_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:411px;left:119px;line-height:18px;width:126px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">______________</span></p>
-  <p data-id="pg142_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:278px;left:266px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <img src="images/pg142_im004.jpg" alt="A purple cylindrical drum" data-id="pg142_im004" style="position:absolute;top:281px;left:338px;width:81px;height:106px;opacity:0">
-  <p data-id="pg142_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;This shape is&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:392px;left:295px;line-height:18px;width:98px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">This shape is</span></p>
-  <p data-id="pg142_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:410px;left:298px;line-height:18px;width:126px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">______________</span></p>
-  <p data-id="pg142_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:443px;left:90px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="clip-pg142_im005" clipPathUnits="userSpaceOnUse"><path d="M115.71 530.25L251.24 530.25L251.24 446.63L115.71 446.63Z" transform="translate(-114,-445)"/></clipPath></defs></svg>
-  <img src="images/pg142_im005.png" alt="A blue rectangle" data-id="pg142_im005" style="position:absolute;top:445px;left:114px;width:139px;height:86px;clip-path:url(#clip-pg142_im005);opacity:0">
-  <p data-id="pg142_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;This shape is&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:538px;left:116px;line-height:18px;width:98px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">This shape is</span></p>
-  <p data-id="pg142_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:565px;left:116px;line-height:18px;width:126px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">______________</span></p>
-  <p data-id="pg142_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:443px;left:266px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6.</span></p>
-  <img src="images/pg142_im006.png" alt="A glass of orange juice" data-id="pg142_im006" style="position:absolute;top:447px;left:348px;width:61px;height:78px;opacity:0">
-  <p data-id="pg142_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;This shape is&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:538px;left:295px;line-height:18px;width:98px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">This shape is</span></p>
-  <p data-id="pg142_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;______________&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:566px;left:298px;line-height:18px;width:126px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">______________</span></p>
-  <p data-id="pg142_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;7.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Draw any two plane shapes.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:604px;left:86px;line-height:18px;width:259px;height:28px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">7.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Draw any two plane shapes.</span></p>
-  <p data-id="pg142_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;8.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Draw any two non-plane shapes.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:632px;left:86px;line-height:18px;width:259px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">8.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Draw any two non-plane shapes.</span></p>
-  <img src="images/pg142_im010.png" alt="" data-id="pg142_im010" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im011.png" alt="" data-id="pg142_im011" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im012.png" alt="" data-id="pg142_im012" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg142_im013.png" alt="" data-id="pg142_im013" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg142_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 136&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 136</span></p>
-  <p data-id="pg142_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:24&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:24</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
+  </head>
+  <body class="pg142-body">
+    <main id="content" class="pg142-shell">
+      <article class="page142" role="article" data-section-id="pg142_sec001" aria-label="Exercise 6: plane and non-plane shapes">
+        <section class="pg142-exercise" aria-hidden="true">
+          <h1 class="pg142-banner">Exercise 6</h1>
+          <p class="pg142-intro">Write plane or non-plane in the blanks.</p>
+          <div class="pg142-grid" aria-hidden="true">
+            <div class="pg142-item pg142-item-one"><span class="pg142-number">1.</span><div class="pg142-picture"><img src="images/pg142_im001.jpg" alt="" /></div><p class="pg142-caption">This shape is</p><span class="pg142-answer-line"></span></div>
+            <div class="pg142-item pg142-item-four"><span class="pg142-number">4.</span><div class="pg142-picture"><img src="images/pg142_im002.jpg" alt="" /></div><p class="pg142-caption">This shape is</p><span class="pg142-answer-line"></span></div>
+            <div class="pg142-item pg142-item-two"><span class="pg142-number">2.</span><div class="pg142-picture"><img src="images/pg142_im003.png" alt="" /></div><p class="pg142-caption">This shape is</p><span class="pg142-answer-line"></span></div>
+            <div class="pg142-item pg142-item-five"><span class="pg142-number">5.</span><div class="pg142-picture"><img src="images/pg142_im004.jpg" alt="" /></div><p class="pg142-caption">This shape is</p><span class="pg142-answer-line"></span></div>
+            <div class="pg142-item pg142-item-three"><span class="pg142-number">3.</span><div class="pg142-picture"><img src="images/pg142_im005.png" alt="" /></div><p class="pg142-caption">This shape is</p><span class="pg142-answer-line"></span></div>
+            <div class="pg142-item pg142-item-six"><span class="pg142-number">6.</span><div class="pg142-picture"><img src="images/pg142_im006.png" alt="" /></div><p class="pg142-caption">This shape is</p><span class="pg142-answer-line"></span></div>
+          </div>
+          <div class="pg142-prompts" aria-hidden="true">
+            <p class="pg142-prompt"><span class="pg142-prompt-number">7.</span><span>Draw any two plane shapes.</span></p>
+            <p class="pg142-prompt"><span class="pg142-prompt-number">8.</span><span>Draw any two non-plane shapes.</span></p>
+          </div>
+        </section>
+        <p class="pg142-marker" aria-hidden="true">136</p>
+        <span class="sr-only" data-id="pg142_im008"></span><span class="sr-only" data-id="pg142_p000">136</span><span class="sr-only" data-id="pg142_im007"></span>
+        <span class="sr-only" data-id="pg142_p001">Exercise 6. Write plane or non-plane in the blanks. 1. A blue bucket. This shape is blank. 2. A green triangle. This shape is blank. 3. A blue rectangle. This shape is blank. 4. A glass jug filled with orange juice. This shape is blank. 5. A purple cylindrical drum. This shape is blank. 6. A glass of orange juice. This shape is blank. 7. Draw any two plane shapes. 8. Draw any two non-plane shapes.</span>
+        <span class="sr-only" data-id="pg142_p002"></span><span class="sr-only" data-id="pg142_p003"></span><span class="sr-only" data-id="pg142_im001"></span><span class="sr-only" data-id="pg142_p004"></span><span class="sr-only" data-id="pg142_p005"></span>
+        <span class="sr-only" data-id="pg142_p006"></span><span class="sr-only" data-id="pg142_im002"></span><span class="sr-only" data-id="pg142_p007"></span><span class="sr-only" data-id="pg142_p008"></span><span class="sr-only" data-id="pg142_p009"></span><span class="sr-only" data-id="pg142_im003"></span><span class="sr-only" data-id="pg142_p010"></span><span class="sr-only" data-id="pg142_p011"></span>
+        <span class="sr-only" data-id="pg142_p012"></span><span class="sr-only" data-id="pg142_im004"></span><span class="sr-only" data-id="pg142_p013"></span><span class="sr-only" data-id="pg142_p014"></span><span class="sr-only" data-id="pg142_p015"></span><span class="sr-only" data-id="pg142_im005"></span><span class="sr-only" data-id="pg142_p016"></span><span class="sr-only" data-id="pg142_p017"></span>
+        <span class="sr-only" data-id="pg142_p018"></span><span class="sr-only" data-id="pg142_im006"></span><span class="sr-only" data-id="pg142_p019"></span><span class="sr-only" data-id="pg142_p020"></span><span class="sr-only" data-id="pg142_p021"></span><span class="sr-only" data-id="pg142_p022"></span>
+        <span class="sr-only" data-id="pg142_im009"></span><span class="sr-only" data-id="pg142_im010"></span><span class="sr-only" data-id="pg142_im011"></span><span class="sr-only" data-id="pg142_im012"></span><span class="sr-only" data-id="pg142_im013"></span><span class="sr-only" data-id="pg142_im014"></span><span class="sr-only" data-id="pg142_im015"></span><span class="sr-only" data-id="pg142_im016"></span><span class="sr-only" data-id="pg142_im017"></span><span class="sr-only" data-id="pg142_im018"></span><span class="sr-only" data-id="pg142_im019"></span>
+        <span class="sr-only" data-id="pg142_p023"></span><span class="sr-only" data-id="pg142_p024"></span>
+      </article>
     </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
-</body>
-
+    <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
+  </body>
 </html>
