@@ -1,134 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg136_sec001" />
-    <meta name="page-section-id" content="136" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg136_sec001">
+  <meta name="page-section-id" content="136">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg136-blue:#159fdf; --pg136-line:#83cbee; --pg136-grid:#3548b8; --pg136-ink:#231f20; --pg136-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg136-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg136-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg136-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg136-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page136 { position:relative!important; box-sizing:border-box; width:min(100%,58rem)!important; aspect-ratio:558/768; min-height:79.75rem!important; height:auto!important; margin:0 auto!important; padding:8.05rem 7.1rem 2.5rem; overflow:hidden!important; visibility:visible!important; opacity:1!important; transform:none!important; left:auto!important; top:auto!important; border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page136,.page136 * { box-sizing:border-box; }
+    .page136 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg136-layout { position:relative; z-index:1; }
+    .pg136-card { position:relative; margin:0; border:.18rem solid var(--pg136-line); border-radius:1.25rem; background:rgba(255,255,255,.98); }
+    .pg136-card-one { min-height:27rem; padding:2.65rem 1.2rem 1.05rem; }
+    .pg136-card-two { margin-top:2.45rem; padding:2.65rem 1.35rem .4rem; }
+    .pg136-label { position:absolute; top:0; left:4.05rem; min-width:10.5rem; margin:0; padding:.33rem 1rem .28rem; border:.19rem solid var(--pg136-blue); border-radius:999px; background:#fff; color:var(--pg136-blue); font-size:1.8rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.022em currentColor; }
+    .pg136-questions { display:grid; row-gap:.08rem; }
+    .pg136-question { display:grid; grid-template-columns:2.55rem minmax(0,1fr); margin:0; font-size:1.76rem; line-height:1.29; letter-spacing:.01em; }
+    .pg136-number { color:var(--pg136-blue); }
+    .pg136-intro { margin:0 0 .9rem; font-size:1.76rem; line-height:1.28; letter-spacing:.01em; }
+    .pg136-shape-grid { display:grid; grid-template-columns:3.7rem 1fr 3.7rem 1.42fr 3.7rem 1fr; grid-template-rows:repeat(3,8.25rem); border:.11rem solid var(--pg136-grid); background:#fff; }
+    .pg136-cell { min-width:0; min-height:0; border-right:.08rem solid var(--pg136-grid); border-bottom:.08rem solid var(--pg136-grid); }
+    .pg136-cell:nth-child(6n) { border-right:0; }
+    .pg136-cell:nth-child(n+13) { border-bottom:0; }
+    .pg136-letter { padding:.35rem .45rem; color:var(--pg136-blue); font-size:1.78rem; font-style:normal; line-height:1; }
+    .pg136-figure { display:grid; place-items:center; overflow:hidden; padding:.45rem; }
+    .pg136-figure img { display:block; width:7.2rem; height:auto; max-width:100%; max-height:7rem; object-fit:contain; }
+    .pg136-figure:nth-child(16) img { width:9.6rem; }
+    .pg136-figure:nth-child(18) img { width:8.2rem; }
+    .pg136-marker { display:grid; place-items:center; width:5.25rem; aspect-ratio:1.65/1; margin:1.25rem auto 0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; font-style:normal; line-height:1; text-align:center; -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg136-shell { padding:0 0 calc(var(--pg136-dock) + 1rem); }
+      .page136 { min-height:auto!important; padding:clamp(4.6rem,14vw,8.05rem) 5% 7rem; border-radius:0; }
+      .pg136-card-one { min-height:0; padding:clamp(2rem,7vw,2.65rem) .85rem 1rem; }
+      .pg136-card-two { margin-top:clamp(2rem,7vw,2.45rem); padding:clamp(2rem,7vw,2.65rem) .75rem 1rem; }
+      .pg136-label { left:2.3rem; min-width:8.6rem; font-size:clamp(1.2rem,5vw,1.8rem); }
+      .pg136-question,.pg136-intro { font-size:clamp(1.05rem,4.3vw,1.76rem); }
+      .pg136-question { grid-template-columns:clamp(1.65rem,8vw,2.55rem) minmax(0,1fr); }
+      .pg136-questions { row-gap:clamp(.05rem,.4vw,.08rem); }
+      .pg136-shape-grid { grid-template-columns:clamp(2rem,10vw,3.7rem) 1fr clamp(2rem,10vw,3.7rem) 1.42fr clamp(2rem,10vw,3.7rem) 1fr; grid-template-rows:repeat(3,clamp(4.7rem,22vw,8.25rem)); }
+      .pg136-letter { padding:.25rem; font-size:clamp(1.08rem,5vw,1.78rem); }
+      .pg136-marker { width:clamp(4rem,20vw,5.25rem); font-size:clamp(1.25rem,5.5vw,1.75rem); }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content img[data-id="pg136_im011"]{opacity:0!important}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg136_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg136_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg136_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <p data-id="pg136_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;130&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">130</span></p>
-  <img src="images/pg136_im011.png" alt="Exercise 2: &#x2018;Study the following figures and answer the questions that follow.&#x2019; A 3 by 3 grid of labelled shapes: a, yellow triangle; b, purple diamond; c, green circle; d, blue octagon; e, yellow triangle; f, purple kite; g, red square; h, green oval; i, orange rectangle." data-id="pg136_im011" style="position:absolute;top:346px;left:66px;width:408px;height:375px;opacity:0">
-  <img src="images/pg136_im010.png" alt="" data-id="pg136_im010" style="position:absolute;top:79px;left:66px;width:408px;height:264px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg136_im016.png" alt="" data-id="pg136_im016" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg136_im017.png" alt="" data-id="pg136_im017" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg136_im018.png" alt="" data-id="pg136_im018" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg136_im019.png" alt="" data-id="pg136_im019" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg136_p001" class="adt-page-overlay-text" style="position:absolute;top:71px;left:78px;line-height:18px;width:477px;height:35px">Exercise 1. 1. Name some objects that have the shape of a circle. 2. Which objects in your classroom have the rectangular shape? 3. Name some objects that have the shape of a triangle. 4. Mention some objects with the square shape. 5. Which objects have the oval shape? 6. List the names of all four-sided figures from your answer.</p>
-  <img src="images/pg136_im020.png" alt="" data-id="pg136_im020" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg136_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Name some objects that have the shape of a&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:106px;left:78px;line-height:18px;width:477px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Name some objects that have the shape of a</span></p>
-  <img src="images/pg136_im021.png" alt="" data-id="pg136_im021" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg136_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;circle.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:128px;left:78px;line-height:18px;width:477px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">circle.</span></p>
-  <p data-id="pg136_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which objects in your classroom have the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;rectangular shape?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:151px;left:78px;line-height:18px;width:477px;height:46px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which objects in your classroom have the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">rectangular shape?</span></p>
-  <p data-id="pg136_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;Name some objects that have the shape of a &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;triangle.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:197px;left:78px;line-height:18px;width:477px;height:46px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Name some objects that have the shape of a </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">triangle.</span></p>
-  <p data-id="pg136_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Mention some objects with the square shape.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:243px;left:78px;line-height:18px;width:477px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Mention some objects with the square shape.</span></p>
-  <p data-id="pg136_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which objects have the oval shape?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:266px;left:78px;line-height:18px;width:477px;height:23px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which objects have the oval shape?</span></p>
-  <p data-id="pg136_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;List the names of all four-sided figures from your &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;answer.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:289px;left:78px;line-height:18px;width:477px;height:61px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">6. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">List the names of all four-sided figures from your </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">answer.</span></p>
-  <p data-id="pg136_p012" class="adt-page-overlay-text" style="position:absolute;top:350px;left:78px;line-height:18px;width:477px;height:35px">Exercise 2. Study the following figures and answer the questions that follow. The labelled figures are: a, a yellow triangle; b, a purple diamond; c, a green circle; d, a blue octagon; e, a yellow triangle; f, a purple kite; g, a red square; h, a green oval; and i, an orange rectangle.</p>
-  <p data-id="pg136_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Study the following figures and answer the questions &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;that follow.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:385px;left:78px;line-height:18px;width:477px;height:42px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Study the following figures and answer the questions </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">that follow.</span></p>
-  <p data-id="pg136_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;a.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:439px;left:88px;line-height:18px;width:16px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">a.</span></p>
-  <img src="images/pg136_im001.png" alt="Yellow triangle." data-id="pg136_im001" style="position:absolute;top:442px;left:120px;width:63px;height:52px;opacity:0">
-  <p data-id="pg136_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;b.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:439px;left:208px;line-height:18px;width:15px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">b.</span></p>
-  <img src="images/pg136_im002.png" alt="Purple diamond." data-id="pg136_im002" style="position:absolute;top:442px;left:236px;width:64px;height:60px;opacity:0">
-  <p data-id="pg136_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;c.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:439px;left:352px;line-height:18px;width:14px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">c.</span></p>
-  <img src="images/pg136_im003.png" alt="Green circle." data-id="pg136_im003" style="position:absolute;top:442px;left:374px;width:53px;height:59px;opacity:0">
-  <p data-id="pg136_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;d.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:88px;line-height:18px;width:16px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">d.</span></p>
-  <img src="images/pg136_im004.png" alt="Blue octagon." data-id="pg136_im004" style="position:absolute;top:523px;left:120px;width:64px;height:58px;opacity:0">
-  <p data-id="pg136_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;e.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:208px;line-height:18px;width:14px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">e.</span></p>
-  <img src="images/pg136_im005.png" alt="Yellow triangle." data-id="pg136_im005" style="position:absolute;top:523px;left:236px;width:73px;height:64px;opacity:0">
-  <p data-id="pg136_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;f.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:520px;left:352px;line-height:18px;width:11px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">f.</span></p>
-  <img src="images/pg136_im006.png" alt="Purple kite." data-id="pg136_im006" style="position:absolute;top:523px;left:374px;width:61px;height:70px;opacity:0">
-  <p data-id="pg136_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;g.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:88px;line-height:18px;width:15px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">g.</span></p>
-  <img src="images/pg136_im007.png" alt="Red square." data-id="pg136_im007" style="position:absolute;top:600px;left:120px;width:80px;height:63px;opacity:0">
-  <p data-id="pg136_p022" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;h.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:208px;line-height:18px;width:16px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">h.</span></p>
-  <img src="images/pg136_im008.png" alt="Green oval with a purple outline." data-id="pg136_im008" style="position:absolute;top:600px;left:236px;width:97px;height:56px;opacity:0">
-  <p data-id="pg136_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;i.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:597px;left:352px;line-height:18px;width:11px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#0099da;font-style:italic">i.</span></p>
-  <img src="images/pg136_im009.png" alt="Orange rectangle." data-id="pg136_im009" style="position:absolute;top:600px;left:374px;width:79px;height:60px;opacity:0">
-  <img src="images/pg136_im012.png" alt="" data-id="pg136_im012" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg136_im013.png" alt="" data-id="pg136_im013" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg136_im014.png" alt="" data-id="pg136_im014" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg136_im015.png" alt="" data-id="pg136_im015" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg136_p024" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 130&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 130</span></p>
-  <p data-id="pg136_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg136-shell">
+    <article class="page136" role="article" data-section-id="pg136_sec001" aria-label="Exercises about shapes">
+      <div class="pg136-layout" aria-hidden="true">
+        <section class="pg136-card pg136-card-one">
+          <h1 class="pg136-label">Exercise 1</h1>
+          <div class="pg136-questions">
+            <p class="pg136-question"><span class="pg136-number">1.</span><span>Name some objects that have the shape of a<br>circle.</span></p>
+            <p class="pg136-question"><span class="pg136-number">2.</span><span>Which objects in your classroom have the<br>rectangular shape?</span></p>
+            <p class="pg136-question"><span class="pg136-number">3.</span><span>Name some objects that have the shape of a<br>triangle.</span></p>
+            <p class="pg136-question"><span class="pg136-number">4.</span><span>Mention some objects with the square shape.</span></p>
+            <p class="pg136-question"><span class="pg136-number">5.</span><span>Which objects have the oval shape?</span></p>
+            <p class="pg136-question"><span class="pg136-number">6.</span><span>List the names of all four-sided figures from your<br>answer.</span></p>
+          </div>
+        </section>
+        <section class="pg136-card pg136-card-two">
+          <h2 class="pg136-label">Exercise 2</h2>
+          <p class="pg136-intro">Study the following figures and answer the questions<br>that follow.</p>
+          <div class="pg136-shape-grid">
+            <div class="pg136-cell pg136-letter">a.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im001.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">b.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im002.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">c.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im003.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">d.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im004.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">e.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im005.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">f.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im006.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">g.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im007.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">h.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im008.png" alt=""></div>
+            <div class="pg136-cell pg136-letter">i.</div><div class="pg136-cell pg136-figure"><img src="images/pg136_im009.png" alt=""></div>
+          </div>
+        </section>
+        <p class="pg136-marker">130</p>
+      </div>
+      <span class="sr-only" data-id="pg136_p000">130</span>
+      <span class="sr-only" data-id="pg136_p001">Exercise 1. 1. Name some objects that have the shape of a circle. 2. Which objects in your classroom have the rectangular shape? 3. Name some objects that have the shape of a triangle. 4. Mention some objects with the square shape. 5. Which objects have the oval shape? 6. List the names of all four-sided figures from your answer.</span>
+      <span class="sr-only" data-id="pg136_p002"></span><span class="sr-only" data-id="pg136_p003"></span><span class="sr-only" data-id="pg136_p004"></span><span class="sr-only" data-id="pg136_p006"></span><span class="sr-only" data-id="pg136_p008"></span><span class="sr-only" data-id="pg136_p009"></span><span class="sr-only" data-id="pg136_p010"></span>
+      <span class="sr-only" data-id="pg136_p012">Exercise 2. Study the following figures and answer the questions that follow. The labelled figures are: a, a yellow triangle; b, a purple diamond; c, a green circle; d, a blue octagon; e, a yellow triangle; f, a purple kite; g, a red square; h, a green oval; and i, an orange rectangle.</span>
+      <span class="sr-only" data-id="pg136_p013"></span><span class="sr-only" data-id="pg136_p015"></span><span class="sr-only" data-id="pg136_p016"></span><span class="sr-only" data-id="pg136_p017"></span><span class="sr-only" data-id="pg136_p018"></span><span class="sr-only" data-id="pg136_p019"></span><span class="sr-only" data-id="pg136_p020"></span><span class="sr-only" data-id="pg136_p021"></span><span class="sr-only" data-id="pg136_p022"></span><span class="sr-only" data-id="pg136_p023"></span><span class="sr-only" data-id="pg136_p024"></span><span class="sr-only" data-id="pg136_p025"></span>
+      <span class="sr-only" data-id="pg136_im001"></span><span class="sr-only" data-id="pg136_im002"></span><span class="sr-only" data-id="pg136_im003"></span><span class="sr-only" data-id="pg136_im004"></span><span class="sr-only" data-id="pg136_im005"></span><span class="sr-only" data-id="pg136_im006"></span><span class="sr-only" data-id="pg136_im007"></span><span class="sr-only" data-id="pg136_im008"></span><span class="sr-only" data-id="pg136_im009"></span><span class="sr-only" data-id="pg136_im011"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
