@@ -1,125 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg113_sec001" />
-    <meta name="page-section-id" content="113" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg113_sec001">
+  <meta name="page-section-id" content="113">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg113-blue:#159fdf; --pg113-line:#83ccef; --pg113-grid:#3049ae; --pg113-ink:#231f20; --pg113-dock:var(--dock-height,96px); }
+    html, body { margin:0; min-height:100%; }
+    body.pg113-body { overflow-x:hidden; color:var(--pg113-ink); background:#eef9ff; }
+    #content.pg113-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg113-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg113-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible; }
+    .page113 { position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:7.8rem 7.1rem 2.8rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(circle at 0 10%,rgba(133,205,238,.24),transparent 11%),radial-gradient(circle at 100% 34%,rgba(133,205,238,.2),transparent 10%),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page113, .page113 * { box-sizing:border-box; }
+    .page113 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg113-layout { position:relative; z-index:1; }
+    .pg113-card { position:relative; margin:0; border:.18rem solid var(--pg113-line); border-radius:1.25rem; background:rgba(255,255,255,.98); }
+    .pg113-card + .pg113-card { margin-top:2.35rem; }
+    .pg113-example-one { padding:2.35rem 1.45rem 1.2rem; }
+    .pg113-example-two { min-height:31.8rem; padding:3.2rem 1.65rem 1.65rem; }
+    .pg113-banner { position:absolute; top:0; left:2.75rem; min-width:10.4rem; margin:0; padding:.3rem 1rem .35rem; border-radius:999px; color:#fff; background:var(--pg113-blue); font-size:1.85rem; font-weight:900; font-style:italic; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor; }
+    .pg113-instruction { margin:0 0 .8rem; font-size:1.82rem; line-height:1.16; white-space:nowrap; }
+    .pg113-one-grid { display:grid; grid-template-columns:1fr 1fr; border:.1rem solid var(--pg113-grid); }
+    .pg113-one-item { display:grid; grid-template-columns:2.75rem minmax(0,1fr); align-items:center; min-height:9.6rem; }
+    .pg113-one-item:nth-child(-n+2) { border-bottom:.1rem solid var(--pg113-grid); }
+    .pg113-one-item:nth-child(odd) { border-right:.1rem solid var(--pg113-grid); }
+    .pg113-qno { align-self:stretch; padding:.45rem 0 0 .7rem; border-right:.1rem solid var(--pg113-grid); color:var(--pg113-blue); font-size:1.75rem; line-height:1; }
+    .pg113-figure { display:grid; place-items:center; min-width:0; }
+    .pg113-figure img { display:block; max-width:100%; object-fit:contain; }
+    .pg113-one-item:nth-child(1) img { width:7.7rem; }
+    .pg113-one-item:nth-child(2) img { width:7.8rem; }
+    .pg113-one-item:nth-child(3), .pg113-one-item:nth-child(4) { min-height:5.05rem; }
+    .pg113-one-item:nth-child(3) img { width:10.3rem; }
+    .pg113-one-item:nth-child(4) img { width:8.8rem; }
+    .pg113-example-two .pg113-instruction { margin-bottom:2.35rem; }
+    .pg113-two-grid { display:grid; grid-template-columns:1fr 1fr; column-gap:2.35rem; row-gap:1.1rem; }
+    .pg113-two-item { display:grid; grid-template-columns:2.35rem minmax(0,1fr); grid-template-rows:8.4rem auto; align-items:start; min-width:0; }
+    .pg113-two-item .pg113-qno { grid-row:1; padding:.15rem 0 0; border:0; }
+    .pg113-two-item .pg113-figure { align-self:center; height:100%; }
+    .pg113-two-item img { max-height:8rem; }
+    .pg113-two-item:nth-child(1) img { width:14.6rem; }
+    .pg113-two-item:nth-child(2) img { width:8.35rem; }
+    .pg113-two-item:nth-child(3) img { width:10.9rem; }
+    .pg113-two-item:nth-child(4) img { width:11.3rem; }
+    .pg113-caption { grid-column:2; margin:.35rem 0 0; font-size:1.82rem; font-style:italic; line-height:1; text-align:center; }
+    .pg113-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; color:#fff; background:#00a9e8; font-size:1.75rem; font-weight:900; font-style:italic; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg113-shell { padding:0 0 calc(var(--pg113-dock) + 1rem); }
+      .page113 { min-height:100vh; padding:clamp(4.5rem,13vw,7.8rem) 5% 7rem; border-radius:0; }
+      .pg113-card + .pg113-card { margin-top:clamp(2rem,7vw,2.35rem); }
+      .pg113-example-one { padding:clamp(1.9rem,7vw,2.35rem) 3% 3%; }
+      .pg113-example-two { min-height:0; padding:clamp(2.7rem,9vw,3.2rem) 4% 1.5rem; }
+      .pg113-banner { left:1.5rem; min-width:8.5rem; font-size:clamp(1.2rem,5vw,1.85rem); }
+      .pg113-instruction { font-size:clamp(1.05rem,4.4vw,1.82rem); white-space:normal; }
+      .pg113-one-item { grid-template-columns:clamp(1.8rem,8vw,2.75rem) 1fr; min-height:clamp(6.3rem,28vw,9.6rem); }
+      .pg113-one-item:nth-child(3), .pg113-one-item:nth-child(4) { min-height:clamp(3.7rem,15vw,5.05rem); }
+      .pg113-qno { padding-left:.35rem; font-size:clamp(1.1rem,4.8vw,1.75rem); }
+      .pg113-one-item img { max-height:clamp(3rem,19vw,7.4rem); }
+      .pg113-example-two .pg113-instruction { margin-bottom:1.5rem; }
+      .pg113-two-grid { column-gap:.7rem; row-gap:1rem; }
+      .pg113-two-item { grid-template-columns:clamp(1.5rem,7vw,2.35rem) 1fr; grid-template-rows:clamp(5rem,22vw,8.4rem) auto; }
+      .pg113-two-item img { max-width:100%; max-height:clamp(4.5rem,20vw,8rem); }
+      .pg113-caption { font-size:clamp(1.05rem,4.5vw,1.82rem); }
+      .pg113-marker { bottom:calc(var(--pg113-dock) + 2rem); }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg113_im010.png" alt="" data-id="pg113_im010" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg113_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;107&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">107</span></p>
-  <img src="images/pg113_im009.png" alt="" data-id="pg113_im009" style="position:absolute;top:71px;left:84px;width:405px;height:558px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im015.png" alt="" data-id="pg113_im015" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im016.png" alt="" data-id="pg113_im016" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im017.png" alt="" data-id="pg113_im017" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im018.png" alt="" data-id="pg113_im018" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg113_p001" class="adt-page-overlay-text" style="position:absolute;top:73px;left:86px;line-height:18px;width:388px;height:33px">Example 1. Recognize one-third by looking at the shaded region. 1. A circle is divided into three equal parts, with one part shaded green to show one-third. 2. A rectangle is divided into three equal parts, with the right-hand part shaded green to show one-third. 3. A triangle is divided into three equal parts, with the bottom part shaded green to show one-third. 4. Three equal circles are in a row, with the right-hand circle shaded green to show one-third.</p>
-  <img src="images/pg113_im019.png" alt="" data-id="pg113_im019" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im020.png" alt="" data-id="pg113_im020" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg113_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Recognize one-third by looking at the shaded region.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:106px;left:86px;line-height:18px;width:388px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">Recognize one-third by looking at the shaded region.</span></p>
-  <p data-id="pg113_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:133px;left:86px;line-height:18px;width:388px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">1.</span></p>
-  <img src="images/pg113_im001.png" alt="Circle divided into three equal parts, with one part shaded green and labelled one-third." data-id="pg113_im001" style="position:absolute;top:142px;left:175px;width:85px;height:85px;opacity:0">
-  <p data-id="pg113_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:133px;left:314px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <img src="images/pg113_im002.png" alt="Triangle divided into three equal parts, with the bottom part shaded green and labelled one-third." data-id="pg113_im002" style="position:absolute;top:148px;left:363px;width:84px;height:72px;opacity:0">
-  <p data-id="pg113_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:250px;left:107px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <img src="images/pg113_im003.png" alt="Rectangle divided into three equal parts, with the right-hand part shaded green and labelled one-third." data-id="pg113_im003" style="position:absolute;top:241px;left:163px;width:108px;height:36px;opacity:0">
-  <p data-id="pg113_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:250px;left:314px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <img src="images/pg113_im004.png" alt="Three equal circles in a row, with the right-hand circle shaded green and labelled one-third." data-id="pg113_im004" style="position:absolute;top:243px;left:359px;width:92px;height:31px;opacity:0">
-  <p data-id="pg113_p007" class="adt-page-overlay-text" style="position:absolute;top:302px;left:86px;line-height:18px;width:388px;height:43px">Example 2. Recognize two-thirds by studying the shaded regions. 1. A rectangle is divided into three equal parts, with the first two parts shaded green to show two-thirds. 2. A circle is divided into three equal parts, with two parts shaded green to show two-thirds. 3. A triangle is divided into three equal parts, with the left and right parts shaded green to show two-thirds. 4. Three equal circles are in a row, with the first two shaded green to show two-thirds.</p>
-  <p data-id="pg113_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Recognize two-thirds by studying the shaded regions.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:345px;left:86px;line-height:18px;width:388px;height:37px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Recognize two-thirds by studying the shaded regions.</span></p>
-  <p data-id="pg113_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:382px;left:86px;line-height:18px;width:388px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span></p>
-  <img src="images/pg113_im005.png" alt="Rectangle divided into three equal parts, with the first two parts shaded green to show two-thirds." data-id="pg113_im005" style="position:absolute;top:386px;left:151px;width:165px;height:75px;opacity:0">
-  <p data-id="pg113_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Two-thirds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:474px;left:190px;line-height:18px;width:87px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Two-thirds</span></p>
-  <p data-id="pg113_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:382px;left:332px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <img src="images/pg113_im006.png" alt="Circle divided into three equal parts, with two parts shaded green to show two-thirds." data-id="pg113_im006" style="position:absolute;top:386px;left:391px;width:74px;height:75px;opacity:0">
-  <p data-id="pg113_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Two-thirds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:474px;left:190px;line-height:18px;width:87px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Two-thirds</span></p>
-  <p data-id="pg113_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:495px;left:110px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <img src="images/pg113_im007.png" alt="Triangle divided into three equal parts, with the left and right parts shaded green to show two-thirds." data-id="pg113_im007" style="position:absolute;top:502px;left:183px;width:99px;height:77px;opacity:0">
-  <p data-id="pg113_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Two-thirds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:592px;left:190px;line-height:18px;width:87px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Two-thirds</span></p>
-  <p data-id="pg113_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:495px;left:332px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <img src="images/pg113_im008.png" alt="Three equal circles in a row, with the first two shaded green to show two-thirds." data-id="pg113_im008" style="position:absolute;top:524px;left:372px;width:100px;height:39px;opacity:0">
-  <p data-id="pg113_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Two-thirds&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:592px;left:190px;line-height:18px;width:87px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Two-thirds</span></p>
-  <img src="images/pg113_im011.png" alt="" data-id="pg113_im011" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im012.png" alt="" data-id="pg113_im012" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im013.png" alt="" data-id="pg113_im013" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg113_im014.png" alt="" data-id="pg113_im014" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg113_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 107&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 107</span></p>
-  <p data-id="pg113_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body class="pg113-body">
+  <main id="content" class="pg113-shell">
+    <article class="page113" role="article" data-section-id="pg113_sec001" aria-label="Recognizing one-third and two-thirds">
+      <div class="pg113-layout" aria-hidden="true">
+        <section class="pg113-card pg113-example-one">
+          <h1 class="pg113-banner">Example 1</h1>
+          <p class="pg113-instruction">Recognize one-third by looking at the shaded region.</p>
+          <div class="pg113-one-grid">
+            <div class="pg113-one-item"><span class="pg113-qno">1.</span><div class="pg113-figure"><img src="images/pg113_im001.png" alt=""></div></div>
+            <div class="pg113-one-item"><span class="pg113-qno">3.</span><div class="pg113-figure"><img src="images/pg113_im002.png" alt=""></div></div>
+            <div class="pg113-one-item"><span class="pg113-qno">2.</span><div class="pg113-figure"><img src="images/pg113_im003.png" alt=""></div></div>
+            <div class="pg113-one-item"><span class="pg113-qno">4.</span><div class="pg113-figure"><img src="images/pg113_im004.png" alt=""></div></div>
+          </div>
+        </section>
+        <section class="pg113-card pg113-example-two">
+          <h2 class="pg113-banner">Example 2</h2>
+          <p class="pg113-instruction">Recognize two-thirds by studying the shaded regions.</p>
+          <div class="pg113-two-grid">
+            <div class="pg113-two-item"><span class="pg113-qno">1.</span><div class="pg113-figure"><img src="images/pg113_im005.png" alt=""></div><p class="pg113-caption">Two-thirds</p></div>
+            <div class="pg113-two-item"><span class="pg113-qno">2.</span><div class="pg113-figure"><img src="images/pg113_im006.png" alt=""></div><p class="pg113-caption">Two-thirds</p></div>
+            <div class="pg113-two-item"><span class="pg113-qno">3.</span><div class="pg113-figure"><img src="images/pg113_im007.png" alt=""></div><p class="pg113-caption">Two-thirds</p></div>
+            <div class="pg113-two-item"><span class="pg113-qno">4.</span><div class="pg113-figure"><img src="images/pg113_im008.png" alt=""></div><p class="pg113-caption">Two-thirds</p></div>
+          </div>
+        </section>
+      </div>
+      <p class="pg113-marker" aria-hidden="true">107</p>
+      <span class="sr-only" data-id="pg113_p000">107</span>
+      <span class="sr-only" data-id="pg113_p001">Example 1. Recognize one-third by looking at the shaded region. 1. A circle is divided into three equal parts, with one part shaded green to show one-third. 2. A rectangle is divided into three equal parts, with the right-hand part shaded green to show one-third. 3. A triangle is divided into three equal parts, with the bottom part shaded green to show one-third. 4. Three equal circles are in a row, with the right-hand circle shaded green to show one-third.</span>
+      <span class="sr-only" data-id="pg113_p002"></span><span class="sr-only" data-id="pg113_p003"></span><span class="sr-only" data-id="pg113_im001"></span><span class="sr-only" data-id="pg113_p004"></span><span class="sr-only" data-id="pg113_im002"></span><span class="sr-only" data-id="pg113_p005"></span><span class="sr-only" data-id="pg113_im003"></span><span class="sr-only" data-id="pg113_p006"></span><span class="sr-only" data-id="pg113_im004"></span>
+      <span class="sr-only" data-id="pg113_p007">Example 2. Recognize two-thirds by studying the shaded regions. 1. A rectangle is divided into three equal parts, with the first two parts shaded green to show two-thirds. 2. A circle is divided into three equal parts, with two parts shaded green to show two-thirds. 3. A triangle is divided into three equal parts, with the left and right parts shaded green to show two-thirds. 4. Three equal circles are in a row, with the first two shaded green to show two-thirds.</span>
+      <span class="sr-only" data-id="pg113_p008"></span><span class="sr-only" data-id="pg113_p009"></span><span class="sr-only" data-id="pg113_im005"></span><span class="sr-only" data-id="pg113_p010"></span><span class="sr-only" data-id="pg113_p011"></span><span class="sr-only" data-id="pg113_im006"></span><span class="sr-only" data-id="pg113_p012"></span><span class="sr-only" data-id="pg113_p013"></span><span class="sr-only" data-id="pg113_im007"></span><span class="sr-only" data-id="pg113_p014"></span><span class="sr-only" data-id="pg113_p015"></span><span class="sr-only" data-id="pg113_im008"></span><span class="sr-only" data-id="pg113_p016"></span>
+      <span class="sr-only" data-id="pg113_p017">ARITHMETICS PUPIL'S STD 2.indd 107</span><span class="sr-only" data-id="pg113_p018">06/11/2024 17:23</span>
+    </article>
+  </main>
+  <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
 </body>
-
 </html>
