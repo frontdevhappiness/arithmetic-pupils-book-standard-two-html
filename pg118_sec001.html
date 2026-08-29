@@ -1,118 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg118_sec001" />
-    <meta name="page-section-id" content="118" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg118_sec001">
+  <meta name="page-section-id" content="118">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg118-blue:#159fe0; --pg118-grid:#3546b4; --pg118-ink:#231f20; --pg118-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg118-ink); background:#eef9ff; }
+    #content.pg118-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg118-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg118-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible; }
+    .page118 { position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:7.8rem 7.35rem 2.8rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(circle at 6% 9%,rgba(133,205,238,.26),transparent 12rem),radial-gradient(circle at 96% 42%,rgba(133,205,238,.2),transparent 11rem),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page118,.page118 * { box-sizing:border-box; }
+    .page118 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg118-exercise { position:relative; width:100%; padding:2.35rem 1.45rem .45rem; border:.18rem solid var(--pg118-blue); border-radius:1.25rem; background:rgba(255,255,255,.98); }
+    .pg118-banner { position:absolute; top:0; left:3.55rem; min-width:11rem; margin:0; padding:.28rem 1rem .25rem; border:.18rem solid var(--pg118-blue); border-radius:999px; color:var(--pg118-blue); background:#fff; font-size:1.82rem; font-weight:900; font-style:italic; line-height:1.05; text-align:center; transform:translateY(-53%); -webkit-text-stroke:.02em currentColor; }
+    .pg118-instruction { margin:0 0 1rem; font-size:1.72rem; line-height:1.27; letter-spacing:.01em; }
+    .pg118-grid { border-top:.1rem solid var(--pg118-grid); border-left:.1rem solid var(--pg118-grid); }
+    .pg118-row { display:grid; border-bottom:.1rem solid var(--pg118-grid); }
+    .pg118-row-split { grid-template-columns:1fr 1fr; }
+    .pg118-cell { display:grid; grid-template-columns:3.25rem minmax(0,1fr); min-width:0; border-right:.1rem solid var(--pg118-grid); }
+    .pg118-number { padding:.42rem 0 0 .5rem; border-right:.1rem solid var(--pg118-grid); color:var(--pg118-blue); font-size:1.72rem; line-height:1; }
+    .pg118-cell:nth-child(2) .pg118-number { color:var(--pg118-ink); }
+    .pg118-figure { display:flex; align-items:center; justify-content:center; min-width:0; padding:.55rem .65rem; }
+    .pg118-figure img { display:block; max-width:100%; max-height:100%; object-fit:contain; }
+    .pg118-row-one { height:11.45rem; }
+    .pg118-row-one .pg118-cell:first-child img { width:10rem; }
+    .pg118-row-one .pg118-cell:last-child img { width:13.4rem; }
+    .pg118-row-two { height:9.1rem; }
+    .pg118-row-two img { width:29rem; }
+    .pg118-row-three { height:12.45rem; }
+    .pg118-row-three .pg118-cell:first-child img { width:8.1rem; }
+    .pg118-row-three .pg118-cell:last-child img { width:7.4rem; }
+    .pg118-row-four { height:13.3rem; }
+    .pg118-row-four img { width:27rem; }
+    .pg118-ict { margin:1.5rem 0 0; }
+    .pg118-ict h2 { margin:0; font-size:1.72rem; font-weight:900; font-style:italic; line-height:1.15; -webkit-text-stroke:.018em currentColor; }
+    .pg118-ict p { margin:.9rem 0 0; font-size:1.72rem; font-style:italic; line-height:1.2; }
+    .pg118-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; color:#fff; background:#00a9e8; font-size:1.75rem; font-weight:900; font-style:italic; line-height:1; text-align:center; transform:translateX(-50%); }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg118-shell { padding:0 0 calc(var(--pg118-dock) + 1rem); }
+      .page118 { width:100%; min-height:100vh; padding:clamp(4.7rem,14vw,7.8rem) 6% 7rem; border-radius:0; }
+      .pg118-exercise { padding:clamp(1.7rem,7vw,2.35rem) clamp(.55rem,3vw,1.45rem) .35rem; }
+      .pg118-banner { left:9%; min-width:8.5rem; font-size:clamp(1.15rem,4.6vw,1.82rem); }
+      .pg118-instruction,.pg118-number,.pg118-ict h2,.pg118-ict p { font-size:clamp(1rem,4.2vw,1.72rem); }
+      .pg118-cell { grid-template-columns:clamp(2rem,9vw,3.25rem) minmax(0,1fr); }
+      .pg118-number { padding-left:.3rem; }
+      .pg118-row-one { height:clamp(7.4rem,31vw,11.45rem); }
+      .pg118-row-two { height:clamp(5.6rem,24vw,9.1rem); }
+      .pg118-row-three { height:clamp(7.6rem,33vw,12.45rem); }
+      .pg118-row-four { height:clamp(8.3rem,35vw,13.3rem); }
+      .pg118-figure { padding:.35rem; }
+      .pg118-ict { margin-top:1.25rem; }
+      .pg118-ict p { margin-top:.55rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg118_im008.png" alt="" data-id="pg118_im008" style="position:absolute;top:692px;left:248px;width:49px;height:29px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg118_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;112&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:258px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">112</span></p>
-  <img src="images/pg118_im007.png" alt="" data-id="pg118_im007" style="position:absolute;top:82px;left:69px;width:405px;height:519px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg118_im013.png" alt="" data-id="pg118_im013" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg118_im014.png" alt="" data-id="pg118_im014" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg118_im015.png" alt="" data-id="pg118_im015" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg118_im016.png" alt="" data-id="pg118_im016" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg118_p001" class="adt-page-overlay-text" style="position:absolute;top:75px;left:81px;line-height:18px;width:388px;height:27px">Exercise 10. Write in numerals the fraction labelled B in the following figures. 1. A triangle is divided into three equal parts, with B marked in two parts. 2. Three equal squares are joined in a row, with B in the middle square. 3. A complete circle is labelled B. 4. Four equal triangles are in a row, with B marked in the two middle triangles. 5. A step-shaped figure is divided into two equal parts, with B in the right half. 6. A rectangle is divided into four equal vertical parts, with B in the last part on the right.</p>
-  <img src="images/pg118_im017.png" alt="" data-id="pg118_im017" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg118_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write in numerals the fraction labelled B in the&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:102px;left:81px;line-height:18px;width:388px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write in numerals the fraction labelled B in the</span></p>
-  <img src="images/pg118_im018.png" alt="" data-id="pg118_im018" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg118_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;following figures:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:124px;left:81px;line-height:18px;width:388px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">following figures:</span></p>
-  <p data-id="pg118_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:153px;left:91px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">1.</span></p>
-  <img src="images/pg118_im001.png" alt="A triangle divided into three equal triangular parts, with B marked in two parts." data-id="pg118_im001" style="position:absolute;top:180px;left:121px;width:98px;height:77px;opacity:0">
-  <p data-id="pg118_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:154px;left:254px;line-height:17px;width:15px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">5.</span></p>
-  <img src="images/pg118_im002.png" alt="A step-shaped figure divided into two equal parts, with B in the right half." data-id="pg118_im002" style="position:absolute;top:180px;left:284px;width:141px;height:74px;opacity:0">
-  <p data-id="pg118_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:261px;left:91px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">2.</span></p>
-  <img src="images/pg118_im003.jpg" alt="Three equal squares joined in a row by narrow bars, with an extra short bar at the far right; B is in the middle square." data-id="pg118_im003" style="position:absolute;top:264px;left:121px;width:271px;height:79px;opacity:0">
-  <p data-id="pg118_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:348px;left:91px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">3.</span></p>
-  <img src="images/pg118_im004.png" alt="A complete circle labelled B." data-id="pg118_im004" style="position:absolute;top:375px;left:121px;width:80px;height:80px;opacity:0">
-  <p data-id="pg118_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;6.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:349px;left:254px;line-height:17px;width:15px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:17px;color:#231f20;font-style:italic">6.</span></p>
-  <img src="images/pg118_im005.png" alt="A rectangle divided into four equal vertical parts, with B in the last part on the right." data-id="pg118_im005" style="position:absolute;top:375px;left:284px;width:70px;height:68px;opacity:0">
-  <p data-id="pg118_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:470px;left:91px;line-height:17px;width:13px;height:19px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#0099da">4.</span></p>
-  <img src="images/pg118_im006.png" alt="Four equal triangles in a row, with B marked in the two middle triangles." data-id="pg118_im006" style="position:absolute;top:496px;left:121px;width:267px;height:71px;opacity:0">
-  <p data-id="pg118_p010" class="adt-page-overlay-text" style="position:absolute;top:612px;left:72px;line-height:18px;width:308px;height:27px">Recognizing fractions by using ICT. Fractions can be recognized by using ICT.</p>
-  <p data-id="pg118_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Fractions can be recognized by using ICT.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:639px;left:72px;line-height:18px;width:308px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Fractions can be recognized by using ICT.</span></p>
-  <img src="images/pg118_im009.png" alt="" data-id="pg118_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg118_im010.png" alt="" data-id="pg118_im010" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg118_im011.png" alt="" data-id="pg118_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg118_im012.png" alt="" data-id="pg118_im012" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg118_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 112&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 112</span></p>
-  <p data-id="pg118_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg118-shell">
+    <article class="page118" role="article" data-section-id="pg118_sec001" aria-label="Exercise 10: Recognizing fractions">
+      <section class="pg118-exercise">
+        <h1 class="pg118-banner">Exercise 10</h1>
+        <p class="pg118-instruction">Write in numerals the fraction labelled B in the<br>following figures:</p>
+        <div class="pg118-grid" aria-label="Six fraction figures">
+          <div class="pg118-row pg118-row-split pg118-row-one">
+            <div class="pg118-cell"><span class="pg118-number">1.</span><div class="pg118-figure"><img src="images/pg118_im001.png" alt="A triangle divided into three equal triangular parts, with B marked in two parts."></div></div>
+            <div class="pg118-cell"><span class="pg118-number">5.</span><div class="pg118-figure"><img src="images/pg118_im002.png" alt="A step-shaped figure divided into two equal parts, with B in the right half."></div></div>
+          </div>
+          <div class="pg118-row pg118-row-two">
+            <div class="pg118-cell"><span class="pg118-number">2.</span><div class="pg118-figure"><img src="images/pg118_im003.jpg" alt="Three equal squares joined in a row by narrow bars, with B in the middle square."></div></div>
+          </div>
+          <div class="pg118-row pg118-row-split pg118-row-three">
+            <div class="pg118-cell"><span class="pg118-number">3.</span><div class="pg118-figure"><img src="images/pg118_im004.png" alt="A complete circle labelled B."></div></div>
+            <div class="pg118-cell"><span class="pg118-number">6.</span><div class="pg118-figure"><img src="images/pg118_im005.png" alt="A rectangle divided into four equal vertical parts, with B in the last part on the right."></div></div>
+          </div>
+          <div class="pg118-row pg118-row-four">
+            <div class="pg118-cell"><span class="pg118-number">4.</span><div class="pg118-figure"><img src="images/pg118_im006.png" alt="Four equal triangles in a row, with B marked in the two middle triangles."></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="pg118-ict"><h2>Recognizing fractions by using ICT</h2><p>Fractions can be recognized by using ICT.</p></section>
+      <p class="pg118-marker" aria-label="Page 112">112</p>
+      <span class="sr-only" data-id="pg118_p000">112</span>
+      <span class="sr-only" data-id="pg118_p001">Exercise 10. Write in numerals the fraction labelled B in the following figures. 1. A triangle is divided into three equal parts, with B marked in two parts. 2. Three equal squares are joined in a row, with B in the middle square. 3. A complete circle is labelled B. 4. Four equal triangles are in a row, with B marked in the two middle triangles. 5. A step-shaped figure is divided into two equal parts, with B in the right half. 6. A rectangle is divided into four equal vertical parts, with B in the last part on the right.</span>
+      <span class="sr-only" data-id="pg118_p002"></span><span class="sr-only" data-id="pg118_p003"></span><span class="sr-only" data-id="pg118_p004"></span>
+      <span class="sr-only" data-id="pg118_im001"></span><span class="sr-only" data-id="pg118_p005"></span><span class="sr-only" data-id="pg118_im002"></span>
+      <span class="sr-only" data-id="pg118_p006"></span><span class="sr-only" data-id="pg118_im003"></span><span class="sr-only" data-id="pg118_p007"></span>
+      <span class="sr-only" data-id="pg118_im004"></span><span class="sr-only" data-id="pg118_p008"></span><span class="sr-only" data-id="pg118_im005"></span>
+      <span class="sr-only" data-id="pg118_p009"></span><span class="sr-only" data-id="pg118_im006"></span>
+      <span class="sr-only" data-id="pg118_p010">Recognizing fractions by using ICT. Fractions can be recognized by using ICT.</span>
+      <span class="sr-only" data-id="pg118_p011"></span><span class="sr-only" data-id="pg118_p012"></span><span class="sr-only" data-id="pg118_p013"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
