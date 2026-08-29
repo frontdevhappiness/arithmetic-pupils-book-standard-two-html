@@ -10,6 +10,9 @@ const normal = (word) => word.toLocaleLowerCase("en-GB");
 
 const html = read("pg007_sec001.html");
 const runtime = read("assets/base.bundle.local.js");
+const sharedCss = read("content/tailwind_output.css");
+const fontCss = read("assets/fonts.css");
+const bridge = read("assets/read-aloud-highlight-bridge.js");
 const texts = json("content/i18n/en-GB/texts.json");
 const audios = json("content/i18n/en-GB/audios.json");
 const timecodes = json("content/i18n/en-GB/timecode/timecode_output.json");
@@ -87,16 +90,14 @@ for (const handler of ["ontimeupdate", "onloadedmetadata", "onseeking", "onseeke
 }
 assert.match(runtime, /audio\.playbackRate = speedRef\.current/, "playback speed must stay on the same media clock");
 
-// The page marker is a separate, fixed layer, so its exact measured bounds cannot
-// reflow or overlap the book text.
-assert.match(html, /#adt-pg007-word-highlight\{position:fixed;/);
-assert.match(html, /marker\.style\.width = rect\.width \+ "px"/);
-assert.match(html, /var height = Number\.isFinite\(lineHeight\) \? lineHeight \* scaleY : rect\.height/);
-assert.match(html, /fontSize \* scaleY \* 0\.2/, "the marker must align with the photographed text baseline");
-assert.match(html, /marker\.style\.height = height \+ "px"/);
-assert.match(html, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/);
-assert.match(html, /\[data-adt-segment-lines\]\{white-space:nowrap\}/, "words must not flow into a different photographed line");
-assert.match(html, /\["pg007_p002", "pg007_p008", "pg007_p013", "pg007_p018", "pg007_p021"\][\s\S]*?data-adt-segment-lines/, "all multiline page-7 passages must retain their extracted line boundaries");
-assert.doesNotMatch(html, /transition:[^;}]*\b(?:left|top|width|height)\b/, "marker geometry must never lag behind the spoken word");
+// The responsive page uses inline word spans. Hidden narration used by other
+// rebuilt layouts is projected by a fixed overlay that never changes layout.
+assert.match(html, /assets\/fonts\.css\?v=2/);
+assert.match(html, /assets\/read-aloud-highlight-bridge\.js\?v=7/);
+assert.match(sharedCss, /span\[data-word-index\]\.bg-yellow-300/);
+assert.doesNotMatch(fontCss, /Word highlighting is temporarily disabled book-wide/);
+assert.match(bridge, /position:fixed/);
+assert.match(bridge, /range\.getClientRects\(\)/);
+assert.doesNotMatch(bridge, /transition:[^;}]*\b(?:left|top|width|height)\b/, "overlay geometry must never lag behind the spoken word");
 
 console.log(`pg007 read-aloud regression: ${spokenOrder.length} passages and ${spokenOrder.reduce((sum, id) => sum + tokens(texts[id]).length, 0)} spoken words verified`);

@@ -9,6 +9,9 @@ const normal = (word) => word.toLocaleLowerCase("en-GB");
 
 const html = read("pg008_sec001.html");
 const pageMarkup = html.split("</main>", 1)[0];
+const sharedCss = read("content/tailwind_output.css");
+const fontCss = read("assets/fonts.css");
+const bridge = read("assets/read-aloud-highlight-bridge.js");
 const texts = json("content/i18n/en-GB/texts.json");
 const audios = json("content/i18n/en-GB/audios.json");
 const timecodes = json("content/i18n/en-GB/timecode/timecode_output.json");
@@ -56,11 +59,12 @@ for (const [id, expected] of Object.entries({
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text }) => text), expected, `${id} spoken expansion must highlight its displayed numeral continuously`);
 }
 
-assert.match(html, /\[data-adt-segment-lines\]\{white-space:nowrap\}/, "words must not flow onto a different photographed line");
-assert.match(html, /\["pg008_p006", "pg008_p050"\][\s\S]*?data-adt-segment-lines/, "both multiline passages must preserve extracted line boundaries");
-assert.match(html, /#adt-pg008-word-highlight\{position:fixed;/);
-assert.match(html, /marker\.style\.width = rect\.width \+ "px"/);
-assert.match(html, /marker\.style\.height = height \+ "px"/);
-assert.doesNotMatch(html, /transition:[^;}]*\b(?:left|top|width|height)\b/, "marker geometry must not lag behind narration");
+assert.match(html, /assets\/fonts\.css\?v=2/);
+assert.match(html, /assets\/read-aloud-highlight-bridge\.js\?v=7/);
+assert.match(sharedCss, /span\[data-word-index\]\.bg-yellow-300/);
+assert.doesNotMatch(fontCss, /Word highlighting is temporarily disabled book-wide/);
+assert.match(bridge, /position:fixed/);
+assert.match(bridge, /range\.getClientRects\(\)/);
+assert.doesNotMatch(bridge, /transition:[^;}]*\b(?:left|top|width|height)\b/, "overlay geometry must not lag behind narration");
 
 console.log(`pg008 read-aloud regression: ${spokenOrder.length} passages and ${spokenWordCount} spoken words verified`);
