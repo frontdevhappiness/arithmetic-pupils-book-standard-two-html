@@ -1,131 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg138_sec001" />
-    <meta name="page-section-id" content="138" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:1!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg138_sec001">
+  <meta name="page-section-id" content="138">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg138-blue:#159fdf; --pg138-line:#86cef2; --pg138-green:#32ac42; --pg138-green-line:#8fd58c; --pg138-wash:#f0f8e8; --pg138-ink:#231f20; --pg138-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg138-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg138-shell { box-sizing:border-box; width:auto!important; min-height:calc(100vh - var(--pg138-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg138-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page138 {
+      position:relative!important; box-sizing:border-box; width:min(100%,58rem)!important; aspect-ratio:558/768; min-height:79.75rem!important; height:auto!important;
+      margin:0 auto!important; padding:7.25rem 7.35rem 8.2rem!important; overflow:hidden!important; visibility:visible!important; opacity:1!important;
+      transform:none!important; left:auto!important; top:auto!important; color:var(--pg138-ink);
+      border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:#fff;
+      box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important;
+    }
+    .page138, .page138 * { box-sizing:border-box; }
+    .page138 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg138-visual { position:relative; z-index:1; width:100%; }
+    .pg138-intro { margin:0 0 1.55rem; font-size:1.82rem; line-height:1.3; }
+    .pg138-song { display:grid; grid-template-columns:10.6rem minmax(0,1fr); column-gap:.55rem; row-gap:.22rem; margin:0 .45rem 3.15rem; font-size:1.83rem; line-height:1.26; }
+    .pg138-song dt, .pg138-song dd { margin:0; }
+    .pg138-song dt { font-weight:900; -webkit-text-stroke:.018em currentColor; }
+    .pg138-song dd { font-style:normal; }
+    .pg138-song .pg138-long { margin-bottom:.08rem; }
+    .pg138-card { position:relative; margin:0; border:.17rem solid var(--pg138-line); border-radius:1.15rem; background:rgba(255,255,255,.97); }
+    .pg138-questions { min-height:12.55rem; padding:2.55rem 1.7rem .55rem; border-color:var(--pg138-green-line); background:var(--pg138-wash); }
+    .pg138-exercise { min-height:13.15rem; margin-top:2.65rem; padding:2.55rem 1.7rem 1rem; border-bottom:0; border-radius:1.15rem 1.15rem 0 0; }
+    .pg138-banner { position:absolute; top:0; left:1rem; min-width:12rem; margin:0; padding:.3rem 1rem .34rem; border:.2rem solid currentColor; border-radius:999px; background:#fff; color:var(--pg138-green); font-size:1.85rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor; }
+    .pg138-exercise .pg138-banner { left:6.8rem; min-width:10.7rem; color:var(--pg138-blue); }
+    .pg138-list { display:grid; grid-template-columns:2.6rem minmax(0,1fr); column-gap:.15rem; row-gap:.28rem; margin:0; font-size:1.76rem; line-height:1.3; }
+    .pg138-exercise .pg138-list { row-gap:.75rem; }
+    .pg138-number { color:var(--pg138-blue); }
+    .pg138-item { min-width:0; }
+    .pg138-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; padding:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .page138 .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg138-shell { padding:0 0 calc(var(--pg138-dock) + 1rem); }
+      .page138 { width:100%!important; min-height:auto!important; padding:clamp(3.7rem,11vw,5.5rem) 5% 7rem!important; border-radius:0; }
+      .pg138-intro, .pg138-song, .pg138-banner, .pg138-list { font-size:clamp(1.08rem,4vw,1.82rem); }
+      .pg138-song { grid-template-columns:clamp(6.4rem,28vw,10.6rem) minmax(0,1fr); margin-inline:0; margin-bottom:clamp(2.35rem,8vw,3.15rem); }
+      .pg138-card { padding-inline:clamp(.8rem,4vw,1.7rem); }
+      .pg138-banner { left:1rem; min-width:9rem; }
+      .pg138-exercise .pg138-banner { left:clamp(2.25rem,12vw,6.8rem); min-width:8rem; }
+      .pg138-list { grid-template-columns:clamp(1.8rem,7vw,2.6rem) minmax(0,1fr); }
+      .pg138-marker { bottom:2rem; }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text{z-index:3}
-#content{background:#fff;border-inline:1px solid #c6ecff;box-sizing:border-box}
-#content::before{content:"";position:absolute;inset:21px;border-inline:2px solid #82cef2;pointer-events:none;z-index:1}
-#content img[alt]:not([alt=""]):not([role="presentation"]){opacity:1!important;z-index:2}
-#content img[data-id="pg138_im001"],#content img[data-id="pg138_im002"]{opacity:0!important}
-#content .adt-page-overlay-text span[data-word-index]{color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg138_p000"] span[data-word-index]{color:#fff!important}
-#content .adt-page-overlay-text span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#231f20!important;-webkit-text-stroke:0!important}
-#content [data-id="pg138_p000"] span[data-word-index]:not([data-hidden]):not([aria-hidden]){color:#fff!important}
-#content [data-id="pg138_p000"]{background:#00a4e4;border-radius:50%;padding:4px 11px;box-sizing:border-box;text-align:center;height:28px;width:48px;top:691px!important;left:254px!important}
-/* The photographed page supplies the visible glyphs. The invisible overlay's
-   font metrics can sit slightly below those photographed glyphs, so paint a
-   separate, raised highlight band instead of using the inline text box. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <p data-id="pg138_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;132&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:72px;line-height:18px;width:467px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">132</span></p>
-  <img src="images/pg138_im001.png" alt="Questions: 1. What shape does the arrangement of players relate to? 2. What other game is similar to the game you played? 3. Which game has a rectangular arrangement?" data-id="pg138_im001" style="position:absolute;top:396px;left:71px;width:403px;height:141px;opacity:0">
-  <img src="images/pg138_im002.png" alt="Exercise 3: 1. Draw a circle by tracing a 100 or 200 shillings coin. 2. Draw a triangle by tracing the shape of a triangular object. Page 132." data-id="pg138_im002" style="position:absolute;top:545px;left:68px;width:408px;height:175px;opacity:0">
-  <img src="images/pg138_im007.png" alt="" data-id="pg138_im007" style="position:absolute;top:22px;left:513px;width:24px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg138_im008.png" alt="" data-id="pg138_im008" style="position:absolute;top:21px;left:21px;width:52px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg138_im009.png" alt="" data-id="pg138_im009" style="position:absolute;top:21px;left:521px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg138_im010.png" alt="" data-id="pg138_im010" style="position:absolute;top:21px;left:494px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg138_p001" class="adt-page-overlay-text" style="position:absolute;top:69px;left:72px;line-height:18px;width:405px;height:21px">Let us sing the song and then answer the questions that follow. Leader: Ukuti-ukuti. Followers: Wa mnazi, wa mnazi. Leader: Mwenzetu, mwenzetu. Followers: Kagongwa, kagongwa. Leader: Na nini, na nini? Followers: Na gari, na gari. Leader: Tumpeleke hospitalini asije kusema kwa baba yake. Followers: Yesa, yesa, yesa, yee. Leader: Cheza kidogo. Followers: Yesa, yesa, yesa, yee.</p>
-  <img src="images/pg138_im011.png" alt="" data-id="pg138_im011" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg138_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;follow.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:90px;left:72px;line-height:18px;width:405px;height:27px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">follow.</span></p>
-  <img src="images/pg138_im012.png" alt="" data-id="pg138_im012" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg138_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Leader:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:117px;left:72px;line-height:18px;width:405px;height:24px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Leader:</span></p>
-  <p data-id="pg138_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Ukuti-ukuti.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:117px;left:178px;line-height:18px;width:183px;height:24px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Ukuti-ukuti.</span></p>
-  <p data-id="pg138_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Followers:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:141px;left:72px;line-height:18px;width:405px;height:22px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Followers:</span></p>
-  <p data-id="pg138_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Wa mnazi wa mnazi.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:141px;left:178px;line-height:18px;width:183px;height:23px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Wa mnazi wa mnazi.</span></p>
-  <p data-id="pg138_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Leader:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:163px;left:72px;line-height:18px;width:405px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Leader:</span></p>
-  <p data-id="pg138_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Mwenzetu, mwenzetu.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:164px;left:178px;line-height:18px;width:183px;height:21px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Mwenzetu, mwenzetu.</span></p>
-  <p data-id="pg138_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Followers: &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot;Kagongwa, kagongwa.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:190px;left:76px;line-height:18px;width:82px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Followers: </span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Kagongwa, kagongwa.</span></p>
-  <p data-id="pg138_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Leader:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:215px;left:76px;line-height:18px;width:60px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Leader:</span></p>
-  <p data-id="pg138_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Na nini, na nini?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:216px;left:178px;line-height:18px;width:135px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Na nini, na nini?</span></p>
-  <p data-id="pg138_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Followers: &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot;Na gari, na gari.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:240px;left:76px;line-height:18px;width:82px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Followers: </span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Na gari, na gari.</span></p>
-  <p data-id="pg138_p013" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Leader:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:268px;left:76px;line-height:18px;width:60px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Leader:</span></p>
-  <p data-id="pg138_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Tumpeleke hospitalini asije kusema &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;kwa baba yake.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:268px;left:178px;line-height:18px;width:293px;height:40px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Tumpeleke hospitalini asije kusema </span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">kwa baba yake.</span></p>
-  <p data-id="pg138_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Followers:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot; Yesa, yesa, yesa, yee.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:313px;left:76px;line-height:18px;width:82px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Followers:</span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> Yesa, yesa, yesa, yee.</span></p>
-  <p data-id="pg138_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Leader:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:339px;left:76px;line-height:18px;width:60px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Leader:</span></p>
-  <p data-id="pg138_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Cheza kidogo.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:339px;left:178px;line-height:18px;width:122px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic">Cheza kidogo.</span></p>
-  <p data-id="pg138_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Followers:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot; Yesa, yesa, yesa yee.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}}]" data-adt-fit="1" style="position:absolute;top:364px;left:76px;line-height:18px;width:82px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;font-weight:bold">Followers:</span><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> Yesa, yesa, yesa yee.</span></p>
-  <p data-id="pg138_p020" class="adt-page-overlay-text" style="position:absolute;top:400px;left:72px;line-height:18px;width:467px;height:28px">Questions. 1. What shape does the arrangement of players relate to? 2. What other game is similar to the game you played? 3. Which game has a rectangular arrangement? Exercise 3. 1. Draw a circle by tracing a 100 or 200 shillings coin. 2. Draw a triangle by tracing the shape of a triangular object.</p>
-  <p data-id="pg138_p021" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1. &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot;What shape does the arrangement of players &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;relate to?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:428px;left:72px;line-height:18px;width:467px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1. </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">What shape does the arrangement of players </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">relate to?</span></p>
-  <p data-id="pg138_p023" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; What other game is similar to the game you &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;played?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:471px;left:72px;line-height:18px;width:467px;height:43px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> What other game is similar to the game you </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">played?</span></p>
-  <p data-id="pg138_p025" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Which game has a rectangular arrangement?&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:514px;left:72px;line-height:18px;width:467px;height:36px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Which game has a rectangular arrangement?</span></p>
-  <p data-id="pg138_p026" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Exercise 3&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:550px;left:72px;line-height:18px;width:467px;height:35px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;font-weight:bold">Exercise 3</span></p>
-  <p data-id="pg138_p027" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Draw a circle by tracing a 100 or 200 shillings &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;coin.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:585px;left:72px;line-height:18px;width:467px;height:47px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">1.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Draw a circle by tracing a 100 or 200 shillings </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">coin.</span></p>
-  <p data-id="pg138_p029" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}},{&quot;text&quot;:&quot; Draw a triangle by tracing the shape of a &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;triangular object.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:632px;left:72px;line-height:18px;width:467px;height:63px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> Draw a triangle by tracing the shape of a </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">triangular object.</span></p>
-  <img src="images/pg138_im003.png" alt="" data-id="pg138_im003" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg138_im004.png" alt="" data-id="pg138_im004" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg138_im005.png" alt="" data-id="pg138_im005" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg138_im006.png" alt="" data-id="pg138_im006" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg138_p031" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 132&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 132</span></p>
-  <p data-id="pg138_p032" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:24&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:24</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg138-shell">
+    <article class="page138" role="article" data-section-id="pg138_sec001" aria-label="Song, questions and Exercise 3">
+      <div class="pg138-visual" aria-hidden="true">
+        <p class="pg138-intro">Let us sing the song and then answer the questions that<br>follow.</p>
+        <dl class="pg138-song">
+          <dt>Leader:</dt><dd>Ukuti-ukuti.</dd>
+          <dt>Followers:</dt><dd>Wa mnazi wa mnazi.</dd>
+          <dt>Leader:</dt><dd>Mwenzetu, mwenzetu.</dd>
+          <dt>Followers:</dt><dd>Kagongwa, kagongwa.</dd>
+          <dt>Leader:</dt><dd>Na nini, na nini?</dd>
+          <dt>Followers:</dt><dd>Na gari, na gari.</dd>
+          <dt>Leader:</dt><dd class="pg138-long">Tumpeleke hospitalini asije kusema<br>kwa baba&nbsp; yake.</dd>
+          <dt>Followers:</dt><dd>Yesa, yesa, yesa, yee.</dd>
+          <dt>Leader:</dt><dd>Cheza kidogo.</dd>
+          <dt>Followers:</dt><dd>Yesa, yesa, yesa yee.</dd>
+        </dl>
+        <section class="pg138-card pg138-questions">
+          <h1 class="pg138-banner">Questions</h1>
+          <div class="pg138-list">
+            <span class="pg138-number">1.</span><span class="pg138-item">What shape does the arrangement of players<br>relate to?</span>
+            <span class="pg138-number">2.</span><span class="pg138-item">What other game is similar to the game you<br>played?</span>
+            <span class="pg138-number">3.</span><span class="pg138-item">Which game has a rectangular arrangement?</span>
+          </div>
+        </section>
+        <section class="pg138-card pg138-exercise">
+          <h2 class="pg138-banner">Exercise 3</h2>
+          <div class="pg138-list">
+            <span class="pg138-number">1.</span><span class="pg138-item">Draw a circle by tracing a 100 or 200 shillings<br>coin.</span>
+            <span class="pg138-number">2.</span><span class="pg138-item">Draw a triangle by tracing the shape of a<br>triangular object.</span>
+          </div>
+        </section>
+      </div>
+      <p class="pg138-marker" aria-label="Page 132">132</p>
+      <span class="sr-only" data-id="pg138_p000">132</span>
+      <span class="sr-only" data-id="pg138_im001"></span><span class="sr-only" data-id="pg138_im002"></span><span class="sr-only" data-id="pg138_im003"></span><span class="sr-only" data-id="pg138_im004"></span><span class="sr-only" data-id="pg138_im005"></span><span class="sr-only" data-id="pg138_im006"></span><span class="sr-only" data-id="pg138_im007"></span><span class="sr-only" data-id="pg138_im008"></span><span class="sr-only" data-id="pg138_im009"></span><span class="sr-only" data-id="pg138_im010"></span><span class="sr-only" data-id="pg138_im011"></span><span class="sr-only" data-id="pg138_im012"></span>
+      <span class="sr-only" data-id="pg138_p001">Let us sing the song and then answer the questions that follow. Leader: Ukuti-ukuti. Followers: Wa mnazi, wa mnazi. Leader: Mwenzetu, mwenzetu. Followers: Kagongwa, kagongwa. Leader: Na nini, na nini? Followers: Na gari, na gari. Leader: Tumpeleke hospitalini asije kusema kwa baba yake. Followers: Yesa, yesa, yesa, yee. Leader: Cheza kidogo. Followers: Yesa, yesa, yesa, yee.</span>
+      <span class="sr-only" data-id="pg138_p002"></span><span class="sr-only" data-id="pg138_p003"></span><span class="sr-only" data-id="pg138_p004"></span><span class="sr-only" data-id="pg138_p005"></span><span class="sr-only" data-id="pg138_p006"></span><span class="sr-only" data-id="pg138_p007"></span><span class="sr-only" data-id="pg138_p008"></span><span class="sr-only" data-id="pg138_p009"></span><span class="sr-only" data-id="pg138_p010"></span><span class="sr-only" data-id="pg138_p011"></span><span class="sr-only" data-id="pg138_p012"></span><span class="sr-only" data-id="pg138_p013"></span><span class="sr-only" data-id="pg138_p014"></span><span class="sr-only" data-id="pg138_p016"></span><span class="sr-only" data-id="pg138_p017"></span><span class="sr-only" data-id="pg138_p018"></span><span class="sr-only" data-id="pg138_p019"></span>
+      <span class="sr-only" data-id="pg138_p020">Questions. 1. What shape does the arrangement of players relate to? 2. What other game is similar to the game you played? 3. Which game has a rectangular arrangement? Exercise 3. 1. Draw a circle by tracing a 100 or 200 shillings coin. 2. Draw a triangle by tracing the shape of a triangular object.</span>
+      <span class="sr-only" data-id="pg138_p021"></span><span class="sr-only" data-id="pg138_p023"></span><span class="sr-only" data-id="pg138_p025"></span><span class="sr-only" data-id="pg138_p026"></span><span class="sr-only" data-id="pg138_p027"></span><span class="sr-only" data-id="pg138_p029"></span><span class="sr-only" data-id="pg138_p031"></span><span class="sr-only" data-id="pg138_p032"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
