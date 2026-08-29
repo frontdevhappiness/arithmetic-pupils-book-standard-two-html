@@ -1,123 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg115_sec001" />
-    <meta name="page-section-id" content="115" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg115_sec001">
+  <meta name="page-section-id" content="115">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg115-blue:#159fdf; --pg115-pale-blue:#86cef2; --pg115-grid-blue:#3546b4; --pg115-pink:#ed1385; --pg115-ink:#231f20; --pg115-dock:var(--dock-height,96px); }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; color:var(--pg115-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg115-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg115-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg115-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible!important; }
+    .page115 { position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #dff2fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(ellipse at 1% 14%,rgba(101,194,232,.28),transparent 9%),radial-gradient(ellipse at 99% 33%,rgba(101,194,232,.24),transparent 9%),radial-gradient(ellipse at 1% 63%,rgba(101,194,232,.18),transparent 8%),radial-gradient(ellipse at 99% 85%,rgba(101,194,232,.18),transparent 8%),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page115,.page115 * { box-sizing:border-box; }
+    .page115 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg115-question { position:absolute; top:7.35rem; left:14.9%; width:73.2%; height:18rem; padding:.35rem 1.7rem 1.3rem 4.75rem; border:.2rem solid var(--pg115-pale-blue); border-top:0; border-radius:0 0 1.3rem 1.3rem; background:rgba(255,255,255,.96); }
+    .pg115-question-number { position:absolute; top:.35rem; left:2rem; color:var(--pg115-blue); font-size:1.88rem; line-height:1; }
+    .pg115-prompt { margin:0; font-size:1.66rem; line-height:1.32; letter-spacing:.01em; }
+    .pg115-prompt-line { white-space:nowrap; }
+    .pg115-boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:1.05rem 1.7rem; margin:.85rem 3.8rem 0 0; }
+    .pg115-box { height:5.25rem; border:.12rem solid var(--pg115-pink); background:#fff; }
+    .pg115-exercise { position:absolute; top:27.55rem; left:15.25%; width:72.5%; height:42rem; padding:1.95rem 1.1rem .6rem; border:.2rem solid var(--pg115-blue); border-radius:1.25rem; background:rgba(255,255,255,.98); }
+    .pg115-banner { position:absolute; top:0; left:4.15rem; min-width:12.4rem; margin:0; padding:.33rem 1rem .28rem; border:.19rem solid var(--pg115-blue); border-radius:999px; background:#fff; color:var(--pg115-blue); font-size:1.82rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.025em currentColor; }
+    .pg115-instruction { margin:0 0 .8rem; font-size:1.8rem; line-height:1.14; }
+    .pg115-table { display:grid; grid-template-columns:2.35rem 11rem 11.55rem minmax(0,1fr); grid-template-rows:6.4rem 5.4rem 5.2rem 5.7rem 7.1rem 7rem; width:100%; border-top:.1rem solid var(--pg115-grid-blue); border-left:.1rem solid var(--pg115-grid-blue); background:#fff; }
+    .pg115-cell { min-width:0; padding:.45rem .55rem; border-right:.1rem solid var(--pg115-grid-blue); border-bottom:.1rem solid var(--pg115-grid-blue); font-size:1.72rem; line-height:1.12; }
+    .pg115-head { padding-top:.35rem; font-size:1.77rem; }
+    .pg115-head-last { font-size:1.6rem; line-height:1.08; }
+    .pg115-head-line { white-space:nowrap; }
+    .pg115-number { padding:.45rem .18rem 0; color:var(--pg115-blue); text-align:center; }
+    .pg115-objects { display:flex; align-items:center; justify-content:center; padding:.25rem .5rem; }
+    .pg115-objects img { display:block; width:100%; height:100%; object-fit:contain; }
+    .pg115-group,.pg115-answer { padding-top:.5rem; }
+    .pg115-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:2.8rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg115-shell { padding:0 0 calc(var(--pg115-dock) + 1rem); }
+      .page115 { width:100%; min-height:100vh; aspect-ratio:558/768; border-radius:0; }
+      .pg115-question { top:9.2%; height:22.7%; padding:.35rem 3% 1rem 8.4%; }
+      .pg115-question-number { left:5%; font-size:clamp(1rem,4vw,1.88rem); }
+      .pg115-prompt { font-size:clamp(.91rem,3.55vw,1.66rem); }
+      .pg115-boxes { gap:clamp(.45rem,2.2vw,1.05rem) clamp(.55rem,3vw,1.7rem); margin:clamp(.35rem,2vw,.85rem) 9% 0 0; }
+      .pg115-box { height:clamp(2.7rem,10vw,5.25rem); }
+      .pg115-exercise { top:34.5%; height:52.8%; padding:clamp(1.2rem,4vw,1.95rem) 2% .4rem; }
+      .pg115-banner { left:10%; min-width:9rem; font-size:clamp(1.05rem,4vw,1.82rem); }
+      .pg115-instruction { margin-bottom:1.5%; font-size:clamp(.94rem,3.75vw,1.8rem); }
+      .pg115-table { grid-template-columns:6% 29% 30% 35%; grid-template-rows:15.5% 13% 12.5% 13.5% 17% 16.5%; height:91%; }
+      .pg115-cell { padding:1.5% 3%; font-size:clamp(.78rem,3.45vw,1.72rem); }
+      .pg115-number { padding-inline:0; }
+      .pg115-head { font-size:clamp(.78rem,3.45vw,1.77rem); }
+      .pg115-objects { padding:2% 4%; }
+      .pg115-marker { bottom:3.4%; width:clamp(3.4rem,13vw,5.25rem); font-size:clamp(1.1rem,4vw,1.75rem); }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg115_im009.png" alt="" data-id="pg115_im009" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg115_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;109&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold">109</span></p>
-  <img src="images/pg115_im008.png" alt="" data-id="pg115_im008" style="position:absolute;top:263px;left:84px;width:405px;height:408px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg115_im014.png" alt="" data-id="pg115_im014" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg115_im015.png" alt="" data-id="pg115_im015" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg115_im016.png" alt="" data-id="pg115_im016" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg115_p001" class="adt-page-overlay-text" style="position:absolute;top:73px;left:102px;line-height:18px;width:14px;height:20px">2. Write two-thirds in numerals in each of the following boxes: The image shows six empty rectangular boxes arranged in two rows of three.</p>
-  <img src="images/pg115_im017.png" alt="" data-id="pg115_im017" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg115_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write two-thirds in numerals in each of the fol&#xad;&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:73px;left:130px;line-height:18px;width:342px;height:21px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Write two-thirds in numerals in each of the fol&#xad;</span></p>
-  <img src="images/pg115_im018.png" alt="" data-id="pg115_im018" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg115_im019.png" alt="" data-id="pg115_im019" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg115_p003" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;lowing boxes:&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:94px;left:130px;line-height:18px;width:342px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">lowing boxes:</span></p>
-  <img src="images/pg115_im001.png" alt="Six empty boxes arranged in two rows of three for writing the numeral two-thirds." data-id="pg115_im001" style="position:absolute;top:118px;left:130px;width:307px;height:121px;opacity:0">
-  <p data-id="pg115_p004" class="adt-page-overlay-text" style="position:absolute;top:254px;left:98px;line-height:18px;width:119px;height:20px">Exercise 7. Write in words the fraction of the objects labelled A. The table columns are Objects, Group, and Name the fraction of object labelled A. 1. Three fruits are shown, with the third fruit labelled A. One fruit out of the three is one-third. 2. Three mugs are shown, with the third mug labelled A. 3. Three balloons are shown, with the first two labelled A. 4. Three bottles are shown, with the second and third labelled A. 5. Three mangoes are shown, with the second and third labelled A.</p>
-  <p data-id="pg115_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Write in words the fraction of the objects labelled A.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.358572006225586px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:282px;left:98px;line-height:17.358572006225586px;width:356px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.358572006225586px;color:#231f20">Write in words the fraction of the objects labelled A.</span></p>
-  <p data-id="pg115_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Objects&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:312px;left:124px;line-height:18px;width:52px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Objects</span></p>
-  <p data-id="pg115_p007" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Group&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:312px;left:236px;line-height:18px;width:44px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">Group</span></p>
-  <p data-id="pg115_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Name the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;fraction of the &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;object labelled A.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17.727943420410156px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:312px;left:351px;line-height:18px;width:121px;height:54px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">Name the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">fraction of the </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17.727943420410156px;color:#231f20">object labelled A.</span></p>
-  <p data-id="pg115_p011" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;1.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #0017ff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:373px;left:102px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da;-webkit-text-stroke:1px #0017ff;paint-order:stroke fill">1.</span></p>
-  <img src="images/pg115_im002.jpg" alt="Three fruits, with the third fruit labelled A." data-id="pg115_im002" style="position:absolute;top:377px;left:124px;width:99px;height:35px;opacity:0">
-  <p data-id="pg115_p012" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;One fruit out &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}},{&quot;text&quot;:&quot;of the three&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:373px;left:236px;line-height:18px;width:100px;height:41px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">One fruit out </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">of the three</span></p>
-  <p data-id="pg115_p014" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;One-third&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:373px;left:351px;line-height:18px;width:67px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20">One-third</span></p>
-  <p data-id="pg115_p015" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;2.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:425px;left:102px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">2.</span></p>
-  <img src="images/pg115_im003.jpg" alt="Three mugs, with the third mug labelled A." data-id="pg115_im003" style="position:absolute;top:428px;left:124px;width:101px;height:39px;opacity:0">
-  <p data-id="pg115_p016" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;3.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:475px;left:102px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">3.</span></p>
-  <img src="images/pg115_im004.jpg" alt="Three balloons, with the first two labelled A." data-id="pg115_im004" style="position:absolute;top:478px;left:124px;width:96px;height:47px;opacity:0">
-  <p data-id="pg115_p017" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;4.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:530px;left:102px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">4.</span></p>
-  <img src="images/pg115_im005.jpg" alt="Three bottles, with the second and third labelled A." data-id="pg115_im005" style="position:absolute;top:533px;left:124px;width:85px;height:60px;opacity:0">
-  <p data-id="pg115_p018" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;5.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#0099da&quot;}}]" data-adt-fit="1" style="position:absolute;top:598px;left:102px;line-height:18px;width:14px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#0099da">5.</span></p>
-  <img src="images/pg115_im006.jpg" alt="Three mangoes, with the second and third labelled A." data-id="pg115_im006" style="position:absolute;top:601px;left:128px;width:97px;height:42px;opacity:0">
-  <img src="images/pg115_im007.png" alt="Question 2: Write two-thirds in numerals in each of the following boxes, with six empty boxes arranged in two rows of three." data-id="pg115_im007" style="position:absolute;top:68px;left:82px;width:408px;height:177px;opacity:0">
-  <img src="images/pg115_im010.png" alt="" data-id="pg115_im010" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg115_im011.png" alt="" data-id="pg115_im011" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg115_im012.png" alt="" data-id="pg115_im012" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg115_im013.png" alt="" data-id="pg115_im013" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg115_p019" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 109&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 109</span></p>
-  <p data-id="pg115_p020" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body>
+  <main id="content" class="pg115-shell">
+    <article class="page115" role="article" data-section-id="pg115_sec001" aria-label="Fractions exercise">
+      <div aria-hidden="true">
+        <section class="pg115-question">
+          <span class="pg115-question-number">2.</span>
+          <p class="pg115-prompt"><span class="pg115-prompt-line">Write two-thirds in numerals in each of the fol-</span><br>lowing boxes:</p>
+          <div class="pg115-boxes"><span class="pg115-box"></span><span class="pg115-box"></span><span class="pg115-box"></span><span class="pg115-box"></span><span class="pg115-box"></span><span class="pg115-box"></span></div>
+        </section>
+        <section class="pg115-exercise">
+          <h1 class="pg115-banner">Exercise 7</h1>
+          <p class="pg115-instruction">Write in words the fraction of the objects labelled A.</p>
+          <div class="pg115-table">
+            <div class="pg115-cell pg115-head"></div><div class="pg115-cell pg115-head">Objects</div><div class="pg115-cell pg115-head">Group</div><div class="pg115-cell pg115-head pg115-head-last"><span class="pg115-head-line">Name the</span><br><span class="pg115-head-line">fraction of the</span><br><span class="pg115-head-line">object labelled A.</span></div>
+            <div class="pg115-cell pg115-number">1.</div><div class="pg115-cell pg115-objects"><img src="images/pg115_im002.jpg" alt=""></div><div class="pg115-cell pg115-group">One fruit out<br>of the three</div><div class="pg115-cell pg115-answer">One-third</div>
+            <div class="pg115-cell pg115-number">2.</div><div class="pg115-cell pg115-objects"><img src="images/pg115_im003.jpg" alt=""></div><div class="pg115-cell"></div><div class="pg115-cell"></div>
+            <div class="pg115-cell pg115-number">3.</div><div class="pg115-cell pg115-objects"><img src="images/pg115_im004.jpg" alt=""></div><div class="pg115-cell"></div><div class="pg115-cell"></div>
+            <div class="pg115-cell pg115-number">4.</div><div class="pg115-cell pg115-objects"><img src="images/pg115_im005.jpg" alt=""></div><div class="pg115-cell"></div><div class="pg115-cell"></div>
+            <div class="pg115-cell pg115-number">5.</div><div class="pg115-cell pg115-objects"><img src="images/pg115_im006.jpg" alt=""></div><div class="pg115-cell"></div><div class="pg115-cell"></div>
+          </div>
+        </section>
+        <p class="pg115-marker">109</p>
+      </div>
+      <span class="sr-only" data-id="pg115_p000">109</span>
+      <span class="sr-only" data-id="pg115_p001">2. Write two-thirds in numerals in each of the following boxes: The image shows six empty rectangular boxes arranged in two rows of three.</span>
+      <span class="sr-only" data-id="pg115_p002"></span><span class="sr-only" data-id="pg115_p003"></span><span class="sr-only" data-id="pg115_im001"></span>
+      <span class="sr-only" data-id="pg115_p004">Exercise 7. Write in words the fraction of the objects labelled A. The table columns are Objects, Group, and Name the fraction of object labelled A. 1. Three fruits are shown, with the third fruit labelled A. One fruit out of the three is one-third. 2. Three mugs are shown, with the third mug labelled A. 3. Three balloons are shown, with the first two labelled A. 4. Three bottles are shown, with the second and third labelled A. 5. Three mangoes are shown, with the second and third labelled A.</span>
+      <span class="sr-only" data-id="pg115_p005"></span><span class="sr-only" data-id="pg115_p006"></span><span class="sr-only" data-id="pg115_p007"></span><span class="sr-only" data-id="pg115_p008"></span><span class="sr-only" data-id="pg115_p011"></span><span class="sr-only" data-id="pg115_p012"></span><span class="sr-only" data-id="pg115_p014"></span><span class="sr-only" data-id="pg115_p015"></span><span class="sr-only" data-id="pg115_p016"></span><span class="sr-only" data-id="pg115_p017"></span><span class="sr-only" data-id="pg115_p018"></span>
+      <span class="sr-only" data-id="pg115_im002"></span><span class="sr-only" data-id="pg115_im003"></span><span class="sr-only" data-id="pg115_im004"></span><span class="sr-only" data-id="pg115_im005"></span><span class="sr-only" data-id="pg115_im006"></span><span class="sr-only" data-id="pg115_im007"></span><span class="sr-only" data-id="pg115_im008"></span><span class="sr-only" data-id="pg115_im009"></span><span class="sr-only" data-id="pg115_im010"></span><span class="sr-only" data-id="pg115_im011"></span><span class="sr-only" data-id="pg115_im012"></span><span class="sr-only" data-id="pg115_im013"></span><span class="sr-only" data-id="pg115_im014"></span><span class="sr-only" data-id="pg115_im015"></span><span class="sr-only" data-id="pg115_im016"></span><span class="sr-only" data-id="pg115_im017"></span><span class="sr-only" data-id="pg115_im018"></span><span class="sr-only" data-id="pg115_im019"></span>
+      <span class="sr-only" data-id="pg115_p019"></span><span class="sr-only" data-id="pg115_p020"></span>
+    </article>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=1"></script>
+  <script src="./assets/base.bundle.local.js"></script>
 </body>
-
 </html>
