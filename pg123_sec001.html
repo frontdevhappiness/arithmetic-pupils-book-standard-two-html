@@ -1,113 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=558, height=768" />
-    <title>Arithmetic Pupil’s Book Standard Two</title>
-    <meta name="title-id" content="pg123_sec001" />
-    <meta name="page-section-id" content="123" />
-    <link href="./content/tailwind_output.css" rel="stylesheet">
-    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
-    <link href="./assets/fonts.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&amp;display=swap" rel="stylesheet">
-    <style>
-      html { width: 100%; height: 100%; }
-      #content { visibility: hidden; }
-    </style>
-<style>
-#content .adt-page-overlay-text{opacity:0!important}
-#content img[style*="opacity:0"]{opacity:1!important}
-#content img[data-id$="_page"],
-#content img[style*="width:558px"][style*="height:768px"],
-#content img[style*="width:541px"][style*="height:751px"]{display:none!important}
-#content .adt-page-overlay-text[data-segments]{z-index:2;opacity:1!important}
-#content .adt-page-overlay-text[data-id$="_p000"]{opacity:0!important}
-</style>
-    <noscript><style>#content { visibility: visible !important; }</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two</title>
+  <meta name="title-id" content="pg123_sec001">
+  <meta name="page-section-id" content="123">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css" rel="stylesheet">
+  <style>
+    :root { --pg123-blue:#159fdf; --pg123-line:#86cef2; --pg123-grid:#3546b4; --pg123-ink:#231f20; --pg123-dock:var(--dock-height,96px); }
+    html, body { margin:0; min-height:100%; }
+    body.pg123-body { overflow-x:hidden; color:var(--pg123-ink); background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
+    #content.pg123-shell { box-sizing:border-box; min-height:calc(100vh - var(--pg123-dock)); padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--pg123-dock) + clamp(1.5rem,4vw,3rem)); visibility:visible; }
+    .page123 { position:relative; box-sizing:border-box; width:min(100%,58rem); min-height:79.75rem; margin:0 auto; padding:8.15rem 7.35rem 2.8rem; overflow:hidden; border:clamp(.45rem,1vw,.8rem) solid #e1f3fb; border-radius:clamp(1.15rem,3vw,2.25rem); background:radial-gradient(ellipse at 50% 0,rgba(134,206,242,.18),transparent 14rem),#fff; box-shadow:0 1.25rem 3.5rem rgba(24,91,118,.14); font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif; }
+    .page123, .page123 * { box-sizing:border-box; }
+    .page123 * { font-family:"SassoonPrimary","Sassoon Primary Std",Sassoon,Arial,sans-serif!important; }
+    .pg123-lesson { position:relative; min-height:61.15rem; padding:2.75rem .9rem 0; border:.2rem solid var(--pg123-line); border-bottom:0; border-radius:1.25rem 1.25rem 0 0; background:rgba(255,255,255,.96); }
+    .pg123-banner { position:absolute; top:0; left:2.35rem; min-width:10.35rem; margin:0; padding:.32rem 1.1rem .36rem; border-radius:999px; background:var(--pg123-blue); color:#fff; font-size:1.85rem; font-style:italic; font-weight:900; line-height:1; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.018em currentColor; }
+    .pg123-statement { margin:0 1rem; font-size:1.88rem; font-style:italic; line-height:1.18; }
+    .pg123-comparison { display:flex; align-items:end; justify-content:center; gap:3.85rem; height:14.7rem; padding:1.25rem 0 1.7rem; }
+    .pg123-chair { width:7.1rem; height:9.6rem; object-fit:contain; }
+    .pg123-door { width:6.45rem; height:13.45rem; object-fit:contain; }
+    .pg123-heading, .pg123-subheading { font-size:1.72rem; font-weight:900; letter-spacing:.015em; line-height:1.18; -webkit-text-stroke:.022em currentColor; }
+    .pg123-heading { margin:.15rem 0 2.25rem; }
+    .pg123-tool { display:grid; grid-template-columns:1fr 1.35fr; align-items:center; min-height:9.7rem; padding:0 2.65rem; }
+    .pg123-tool + .pg123-tool { min-height:8.35rem; }
+    .pg123-tool-label { margin:0; font-size:1.78rem; font-style:italic; line-height:1.1; }
+    .pg123-tape { width:9.5rem; height:9.15rem; object-fit:contain; justify-self:center; }
+    .pg123-ruler { width:23.7rem; max-width:100%; height:7.2rem; object-fit:contain; justify-self:start; }
+    .pg123-subheading { margin:.25rem .85rem 1.45rem; }
+    .pg123-footsteps { display:grid; grid-template-columns:1.15fr 1fr; height:14.45rem; margin:0 .75rem; border:.12rem solid var(--pg123-grid); }
+    .pg123-foot-label { margin:0; padding:.45rem 1.7rem; border-right:.12rem solid var(--pg123-grid); font-size:1.8rem; line-height:1.1; }
+    .pg123-walker-wrap { display:grid; place-items:center; overflow:hidden; }
+    .pg123-walker { width:14.6rem; height:13.55rem; object-fit:contain; }
+    .pg123-marker { display:grid; place-items:center; width:5.2rem; aspect-ratio:1.65/1; margin:3.35rem auto 0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; }
+    .page123 .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+    @media (max-width:44rem) {
+      #content.pg123-shell { padding:0 0 calc(var(--pg123-dock) + 1rem); }
+      .page123 { min-height:100vh; padding:clamp(4.6rem,14vw,8.15rem) 5% 6rem; border-radius:0; }
+      .pg123-lesson { min-height:0; padding-inline:2.2%; }
+      .pg123-banner { left:1.4rem; min-width:8rem; font-size:clamp(1.15rem,5vw,1.85rem); }
+      .pg123-statement { font-size:clamp(1.05rem,4.8vw,1.88rem); }
+      .pg123-comparison { height:clamp(9rem,36vw,14.7rem); gap:clamp(1.6rem,10vw,3.85rem); }
+      .pg123-chair { width:clamp(4rem,18vw,7.1rem); height:clamp(5.4rem,24vw,9.6rem); }
+      .pg123-door { width:clamp(3.6rem,16vw,6.45rem); height:clamp(7.5rem,33vw,13.45rem); }
+      .pg123-heading, .pg123-subheading { font-size:clamp(1rem,4.2vw,1.72rem); }
+      .pg123-heading { margin-bottom:1rem; }
+      .pg123-tool { min-height:clamp(6.4rem,26vw,9.7rem); padding:0 5%; }
+      .pg123-tool-label, .pg123-foot-label { font-size:clamp(1.05rem,4.4vw,1.8rem); }
+      .pg123-tape { width:clamp(5.5rem,24vw,9.5rem); height:clamp(5rem,23vw,9.15rem); }
+      .pg123-ruler { width:min(100%,23.7rem); height:clamp(4rem,18vw,7.2rem); }
+      .pg123-subheading { margin:.2rem 2% 1rem; }
+      .pg123-footsteps { height:clamp(8.8rem,36vw,14.45rem); margin-inline:1%; }
+      .pg123-foot-label { padding:.4rem 8%; }
+      .pg123-walker { width:min(92%,14.6rem); height:95%; }
+      .pg123-marker { margin-top:clamp(2rem,9vw,3.35rem); }
+    }
+  </style>
 </head>
-
-<body style="margin:0;overflow:hidden;width:100%;height:100%">
-    <main>
-      <div id="content" data-fl-reference-width="558" style="position:relative;width:558px;height:768px;margin:0 auto;overflow:hidden">
-<style>
-#content .adt-page-overlay-text:not([data-segments]),#content .adt-page-overlay-text:not([data-segments]) *{color:transparent!important;-webkit-text-stroke:0 transparent!important;text-shadow:none!important}
-/* Keep the semantic Sassoon layer selectable and above the visual assets. */
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300{position:relative;background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300>span{background-color:transparent!important;color:transparent!important}
-#content .adt-page-overlay-text span[data-word-index].bg-yellow-300::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(253,224,71,.48);border-radius:2px;mix-blend-mode:multiply;pointer-events:none;transform:translateY(-.2em) scaleY(.78);transform-origin:center}
-</style>
-  <img src="images/pg123_im007.png" alt="" data-id="pg123_im007" style="position:absolute;top:691px;left:261px;width:50px;height:30px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg123_p000" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;117&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#ffffff&quot;,&quot;font-weight&quot;:&quot;bold&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:695px;left:271px;line-height:18px;width:27px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#ffffff;font-weight:bold;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">117</span></p>
-  <img src="images/pg123_im008.png" alt="" data-id="pg123_im008" style="position:absolute;top:81px;left:87px;width:398px;height:589px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im013.png" alt="" data-id="pg123_im013" style="position:absolute;top:22px;left:21px;width:25px;height:724px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im014.png" alt="" data-id="pg123_im014" style="position:absolute;top:21px;left:486px;width:51px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im015.png" alt="" data-id="pg123_im015" style="position:absolute;top:21px;left:22px;width:42px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im016.png" alt="" data-id="pg123_im016" style="position:absolute;top:21px;left:21px;width:16px;height:726px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im017.png" alt="" data-id="pg123_im017" style="position:absolute;top:708px;left:21px;width:516px;height:39px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg123_p001" class="adt-page-overlay-text" style="position:absolute;top:73px;left:95px;line-height:18px;width:107px;height:20px">Example. The door is higher than the chair. The picture shows a wooden chair and a taller wooden door.</p>
-  <img src="images/pg123_im018.png" alt="" data-id="pg123_im018" style="position:absolute;top:21px;left:21px;width:516px;height:42px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg123_p002" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;The door is higher than the chair.&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:97px;left:104px;line-height:18px;width:277px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">The door is higher than the chair.</span></p>
-  <img src="images/pg123_im001.png" alt="A wooden chair." data-id="pg123_im001" style="position:absolute;top:156px;left:250px;width:68px;height:92px;opacity:0">
-  <p data-id="pg123_p003" class="adt-page-overlay-text" style="position:absolute;top:270px;left:91px;line-height:17px;width:379px;height:19px">Recognizing standard measuring tools of length. Tape measure. The picture shows a yellow tape measure with numbered markings. Ruler. The picture shows a ruler marked in centimetres from 1 to 20. Recognizing non-standard tools for measuring length. Footsteps. The picture shows a child walking, with footsteps shown as a way to measure length.</p>
-  <p data-id="pg123_p004" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Sassoon,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-style&quot;:&quot;italic&quot;}},{&quot;text&quot;:&quot;Tape measure&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:320px;left:115px;line-height:18px;width:111px;height:22px"><span style="font-family:Sassoon,Merriweather,serif;font-size:18px;color:#231f20;font-style:italic"> </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Tape measure</span></p>
-  <img src="images/pg123_im002.png" alt="A yellow tape measure with numbered markings." data-id="pg123_im002" style="position:absolute;top:303px;left:290px;width:91px;height:88px;opacity:0">
-  <p data-id="pg123_p005" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Ruler&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;-webkit-text-stroke&quot;:&quot;1px #1accff&quot;,&quot;paint-order&quot;:&quot;stroke fill&quot;}}]" data-adt-fit="1" style="position:absolute;top:430px;left:121px;line-height:18px;width:42px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20;-webkit-text-stroke:1px #1accff;paint-order:stroke fill">Ruler</span></p>
-  <img src="images/pg123_im003.jpg" alt="A ruler marked in centimetres from 1 to 20." data-id="pg123_im003" style="position:absolute;top:401px;left:257px;width:227px;height:69px;opacity:0">
-  <p data-id="pg123_p006" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;Recognizing non-standard tools for measuring &quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}},{&quot;text&quot;:&quot;length&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;17px&quot;,&quot;color&quot;:&quot;#231f20&quot;,&quot;font-weight&quot;:&quot;bold&quot;}}]" data-adt-fit="1" style="position:absolute;top:474px;left:100px;line-height:17px;width:365px;height:40px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#231f20;font-weight:bold">Recognizing non-standard tools for measuring </span><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:17px;color:#231f20;font-weight:bold">length</span></p>
-  <img src="images/pg123_im004.png" alt="A child walking, with footsteps shown as a way to measure length." data-id="pg123_im004" style="position:absolute;top:525px;left:320px;width:140px;height:130px;opacity:0">
-  <img src="images/pg123_im005.png" alt="A tall wooden door." data-id="pg123_im005" style="position:absolute;top:126px;left:353px;width:62px;height:129px;opacity:0">
-  <img src="images/pg123_im009.png" alt="" data-id="pg123_im009" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im010.png" alt="" data-id="pg123_im010" style="position:absolute;top:9px;left:9px;width:541px;height:751px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im011.png" alt="" data-id="pg123_im011" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <img src="images/pg123_im012.png" alt="" data-id="pg123_im012" style="position:absolute;top:0px;left:0px;width:558px;height:768px;opacity:0" role="presentation" aria-hidden="true">
-  <p data-id="pg123_p009" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;ARITHMETICS PUPIL&apos;S STD 2.indd 117&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:40px;line-height:6px;width:102px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">ARITHMETICS PUPIL&apos;S STD 2.indd 117</span></p>
-  <p data-id="pg123_p010" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot;06/11/2024 17:23&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;Arimo,serif&quot;,&quot;font-size&quot;:&quot;6px&quot;,&quot;color&quot;:&quot;#ffffff&quot;}}]" data-adt-fit="1" style="position:absolute;top:746px;left:474px;line-height:6px;width:48px;height:6px"><span style="font-family:Arimo,Merriweather,serif;font-size:6px;color:#ffffff">06/11/2024 17:23</span></p>
-  <p data-id="pg123_p008" class="adt-page-overlay-text" data-segments="[{&quot;text&quot;:&quot; footsteps&quot;,&quot;style&quot;:{&quot;font-family&quot;:&quot;SassoonPrimary,serif&quot;,&quot;font-size&quot;:&quot;18px&quot;,&quot;color&quot;:&quot;#231f20&quot;}}]" data-adt-fit="1" style="position:absolute;top:523px;left:107px;line-height:18px;width:82px;height:20px"><span style="font-family:SassoonPrimary,Merriweather,serif;font-size:18px;color:#231f20"> footsteps</span></p>
-<script src="./assets/auto-fit.js"></script>
-</div>
-    </main>
-    <script>
-      (function () {
-        var c = document.getElementById("content");
-        if (!c) return;
-        var W = parseFloat(c.style.width) || c.offsetWidth || 1;
-        var H = parseFloat(c.style.height) || c.offsetHeight || 1;
-        var ref = parseFloat(c.getAttribute("data-fl-reference-width"));
-        var refW = ref > 0 ? ref : W;
-        var FALLBACK = 96;
-        function dock() {
-          var v = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dock-height"));
-          return v > 0 ? v : FALLBACK;
-        }
-        function fit() {
-          var DOCK = dock();
-          var byW = window.innerWidth / refW;
-          var byH = (window.innerHeight - DOCK) / H;
-          var s = Math.min(2, byW, byH > 0 ? byH : byW);
-          c.style.position = "absolute";
-          c.style.left = "50%";
-          c.style.top = "calc((100% - " + DOCK + "px) / 2)";
-          c.style.margin = "0";
-          c.style.transformOrigin = "center center";
-          c.style.transform = "translate(-50%, -50%) scale(" + s + ")";
-          c.style.visibility = "visible";
-        }
-        fit();
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        window.addEventListener("adt:dock-resize", fit);
-      })();
-    </script>
-
-    <div class="relative z-50" id="interface-container"></div>
-    <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js"></script>
-    <script src="./assets/scorm.js"></script>
-    <script src="./assets/sign-language-sync.js?v=1"></script>
-    <script src="./assets/base.bundle.local.js"></script>
+<body class="pg123-body">
+  <main id="content" class="pg123-shell">
+    <article class="page123" role="article" data-section-id="pg123_sec001" aria-label="Tools for measuring length">
+      <div class="pg123-lesson">
+        <section aria-labelledby="pg123-example-title">
+          <h1 id="pg123-example-title" class="pg123-banner">Example</h1>
+          <p class="pg123-statement">The door is higher than the chair.</p>
+          <div class="pg123-comparison">
+            <img class="pg123-chair" src="images/pg123_im001.png" alt="A wooden chair.">
+            <img class="pg123-door" src="images/pg123_im005.png" alt="A tall wooden door.">
+          </div>
+        </section>
+        <section aria-labelledby="pg123-standard-heading">
+          <h2 id="pg123-standard-heading" class="pg123-heading">Recognizing standard measuring tools of length</h2>
+          <div class="pg123-tool">
+            <p class="pg123-tool-label">Tape measure</p>
+            <img class="pg123-tape" src="images/pg123_im002.png" alt="A yellow tape measure with numbered markings.">
+          </div>
+          <div class="pg123-tool">
+            <p class="pg123-tool-label">Ruler</p>
+            <img class="pg123-ruler" src="images/pg123_im003.jpg" alt="A ruler marked in centimetres from 1 to 20.">
+          </div>
+        </section>
+        <section aria-labelledby="pg123-nonstandard-heading">
+          <h2 id="pg123-nonstandard-heading" class="pg123-subheading">Recognizing non-standard tools for measuring<br>length</h2>
+          <div class="pg123-footsteps">
+            <p class="pg123-foot-label">footsteps</p>
+            <div class="pg123-walker-wrap">
+              <img class="pg123-walker" src="images/pg123_im004.png" alt="A child walking, with footsteps shown as a way to measure length.">
+            </div>
+          </div>
+        </section>
+      </div>
+      <p class="pg123-marker" aria-label="Page 117">117</p>
+      <span class="sr-only" data-id="pg123_p000">117</span>
+      <span class="sr-only" data-id="pg123_p001">Example. The door is higher than the chair. The picture shows a wooden chair and a taller wooden door.</span>
+      <span class="sr-only" data-id="pg123_p002"></span><span class="sr-only" data-id="pg123_im001"></span>
+      <span class="sr-only" data-id="pg123_p003">Recognizing standard measuring tools of length. Tape measure. The picture shows a yellow tape measure with numbered markings. Ruler. The picture shows a ruler marked in centimetres from 1 to 20. Recognizing non-standard tools for measuring length. Footsteps. The picture shows a child walking, with footsteps shown as a way to measure length.</span>
+      <span class="sr-only" data-id="pg123_p004"></span><span class="sr-only" data-id="pg123_im002"></span>
+      <span class="sr-only" data-id="pg123_p005"></span><span class="sr-only" data-id="pg123_im003"></span>
+      <span class="sr-only" data-id="pg123_p006"></span><span class="sr-only" data-id="pg123_im004"></span>
+      <span class="sr-only" data-id="pg123_im005"></span><span class="sr-only" data-id="pg123_p008"></span>
+      <span class="sr-only" data-id="pg123_p009"></span><span class="sr-only" data-id="pg123_p010"></span>
+    </article>
+  </main>
+  <script src="./assets/base.bundle.min.js?v=1" type="module"></script>
 </body>
-
 </html>
