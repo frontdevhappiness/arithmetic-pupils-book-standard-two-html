@@ -27267,16 +27267,56 @@
       null,
       {
         "word_timestamps": [
-          { "text": "A", "start": 0.1, "end": 0.547 },
-          { "text": "place-value", "start": 0.547, "end": 1.305 },
-          { "text": "table", "start": 1.305, "end": 1.797 },
-          { "text": "has", "start": 1.797, "end": 2.244 },
-          { "text": "three", "start": 2.244, "end": 2.736 },
-          { "text": "columns", "start": 2.736, "end": 3.328 },
-          { "text": "hundreds", "start": 3.328, "end": 3.964 },
-          { "text": "tens", "start": 3.964, "end": 4.411 },
-          { "text": "and", "start": 4.411, "end": 4.857 },
-          { "text": "ones", "start": 4.857, "end": 5.304 }
+          {
+            "text": "A",
+            "start": 0.1,
+            "end": 0.547
+          },
+          {
+            "text": "place-value",
+            "start": 0.547,
+            "end": 1.305
+          },
+          {
+            "text": "table",
+            "start": 1.305,
+            "end": 1.797
+          },
+          {
+            "text": "has",
+            "start": 1.797,
+            "end": 2.244
+          },
+          {
+            "text": "three",
+            "start": 2.244,
+            "end": 2.736
+          },
+          {
+            "text": "columns",
+            "start": 2.736,
+            "end": 3.328
+          },
+          {
+            "text": "hundreds",
+            "start": 3.328,
+            "end": 3.964
+          },
+          {
+            "text": "tens",
+            "start": 3.964,
+            "end": 4.411
+          },
+          {
+            "text": "and",
+            "start": 4.411,
+            "end": 4.857
+          },
+          {
+            "text": "ones",
+            "start": 4.857,
+            "end": 5.304
+          }
         ]
       }
     ]
@@ -118431,6 +118471,222 @@
             "text": "stars",
             "start": 10.440000184377034,
             "end": 10.800000190734863
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p008": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Hundreds",
+            "start": 0.274958,
+            "end": 0.8663620000000001
+          },
+          {
+            "text": "answer",
+            "start": 0.8663620000000001,
+            "end": 1.4577660000000001
+          },
+          {
+            "text": "blank",
+            "start": 1.4577660000000001,
+            "end": 2.04917
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p009": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Tens",
+            "start": 0.264625,
+            "end": 0.8467366666666666
+          },
+          {
+            "text": "answer",
+            "start": 0.8467366666666666,
+            "end": 1.4288483333333333
+          },
+          {
+            "text": "blank",
+            "start": 1.4288483333333333,
+            "end": 2.01096
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p010": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Ones",
+            "start": 0.280667,
+            "end": 0.8720279999999999
+          },
+          {
+            "text": "answer",
+            "start": 0.8720279999999999,
+            "end": 1.4633889999999998
+          },
+          {
+            "text": "blank",
+            "start": 1.4633889999999998,
+            "end": 2.05475
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p015": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Hundreds",
+            "start": 0.274958,
+            "end": 0.8663620000000001
+          },
+          {
+            "text": "answer",
+            "start": 0.8663620000000001,
+            "end": 1.4577660000000001
+          },
+          {
+            "text": "blank",
+            "start": 1.4577660000000001,
+            "end": 2.04917
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p016": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Tens",
+            "start": 0.264625,
+            "end": 0.8467366666666666
+          },
+          {
+            "text": "answer",
+            "start": 0.8467366666666666,
+            "end": 1.4288483333333333
+          },
+          {
+            "text": "blank",
+            "start": 1.4288483333333333,
+            "end": 2.01096
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p017": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Ones",
+            "start": 0.280667,
+            "end": 0.8720279999999999
+          },
+          {
+            "text": "answer",
+            "start": 0.8720279999999999,
+            "end": 1.4633889999999998
+          },
+          {
+            "text": "blank",
+            "start": 1.4633889999999998,
+            "end": 2.05475
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p022": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Hundreds",
+            "start": 0.274958,
+            "end": 0.8663620000000001
+          },
+          {
+            "text": "answer",
+            "start": 0.8663620000000001,
+            "end": 1.4577660000000001
+          },
+          {
+            "text": "blank",
+            "start": 1.4577660000000001,
+            "end": 2.04917
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p023": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Tens",
+            "start": 0.264625,
+            "end": 0.8467366666666666
+          },
+          {
+            "text": "answer",
+            "start": 0.8467366666666666,
+            "end": 1.4288483333333333
+          },
+          {
+            "text": "blank",
+            "start": 1.4288483333333333,
+            "end": 2.01096
+          }
+        ]
+      }
+    ]
+  },
+  "pg024_p024": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Ones",
+            "start": 0.280667,
+            "end": 0.8720279999999999
+          },
+          {
+            "text": "answer",
+            "start": 0.8720279999999999,
+            "end": 1.4633889999999998
+          },
+          {
+            "text": "blank",
+            "start": 1.4633889999999998,
+            "end": 2.05475
           }
         ]
       }

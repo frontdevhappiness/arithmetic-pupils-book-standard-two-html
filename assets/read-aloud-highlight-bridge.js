@@ -248,9 +248,19 @@
     });
   }
 
+  function buildPage24AnswerBlankMap(content, source, narration) {
+    var id = source.getAttribute("data-id");
+    if (!/^pg024_p(?:008|009|010|015|016|017|022|023|024)$/.test(id || "")) return null;
+    var section = content.querySelector('[data-section-id="pg024_sec001"]');
+    if (!section) return null;
+    var line = section.querySelector('[data-answer-for="' + id + '"]');
+    var target = line && line.closest(".answer-cell");
+    return target ? new Array(narration.length).fill(target) : null;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
@@ -309,7 +319,10 @@
 
   function drawWord(target, source, wordIndex) {
     var ranges = Array.isArray(target) ? target : [target];
-    if (window.CSS && CSS.highlights && typeof window.Highlight === "function") {
+    var hasElementTarget = ranges.some(function (item) {
+      return item && item.nodeType === Node.ELEMENT_NODE;
+    });
+    if (!hasElementTarget && window.CSS && CSS.highlights && typeof window.Highlight === "function") {
       var marker = getMarker();
       marker.replaceChildren();
       marker.classList.remove("adt-block-highlight");

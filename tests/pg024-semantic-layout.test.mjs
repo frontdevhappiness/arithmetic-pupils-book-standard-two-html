@@ -18,9 +18,24 @@ function offlineHtml(path) {
 const narrationOrder = [
   "pg024_p001", "pg024_p002",
   "pg024_p004", "pg024_p005", "pg024_p006", "pg024_p007", "pg024_im001",
+  "pg024_p008", "pg024_p009", "pg024_p010",
   "pg024_p011", "pg024_p012", "pg024_p013", "pg024_p014", "pg024_im002",
-  "pg024_p018", "pg024_p019", "pg024_p020", "pg024_p021", "pg024_im003"
+  "pg024_p015", "pg024_p016", "pg024_p017",
+  "pg024_p018", "pg024_p019", "pg024_p020", "pg024_p021", "pg024_im003",
+  "pg024_p022", "pg024_p023", "pg024_p024"
 ];
+
+const answerBlanks = {
+  pg024_p008: ["Hundreds answer blank.", "pg023_hundreds_blank_male_free_tts.mp3"],
+  pg024_p009: ["Tens answer blank.", "pg023_tens_blank_male_free_tts.mp3"],
+  pg024_p010: ["Ones answer blank.", "pg023_ones_blank_male_free_tts.mp3"],
+  pg024_p015: ["Hundreds answer blank.", "pg023_hundreds_blank_male_free_tts.mp3"],
+  pg024_p016: ["Tens answer blank.", "pg023_tens_blank_male_free_tts.mp3"],
+  pg024_p017: ["Ones answer blank.", "pg023_ones_blank_male_free_tts.mp3"],
+  pg024_p022: ["Hundreds answer blank.", "pg023_hundreds_blank_male_free_tts.mp3"],
+  pg024_p023: ["Tens answer blank.", "pg023_tens_blank_male_free_tts.mp3"],
+  pg024_p024: ["Ones answer blank.", "pg023_ones_blank_male_free_tts.mp3"]
+};
 
 test("page 24 uses responsive semantic HTML", () => {
   assert.match(html, /width=device-width/);
@@ -53,8 +68,11 @@ test("cup quantities match the printed page", () => {
 });
 
 test("all nine learner blanks remain empty", () => {
-  for (const id of ["pg024_p008", "pg024_p009", "pg024_p010", "pg024_p015", "pg024_p016", "pg024_p017", "pg024_p022", "pg024_p023", "pg024_p024"]) {
-    assert.match(html, new RegExp(`class="answer-line" data-id="${id}"`));
+  for (const [id, [label, filename]] of Object.entries(answerBlanks)) {
+    assert.match(html, new RegExp(`class="answer-narration narration-only" data-id="${id}">${label}<`));
+    assert.match(html, new RegExp(`class="answer-line" data-answer-for="${id}" aria-hidden="true">_+<`));
+    assert.equal(texts[id], label, `${id} must contain the approved spoken phrase`);
+    assert.equal(audios[id], filename, `${id} must narrate its place-value blank`);
   }
 });
 
