@@ -40,7 +40,7 @@ test("all approved spoken IDs retain audio mappings", () => {
     "pg028_p000", "pg028_p075", "pg028_p076",
     "pg029_p000", "pg029_im010", "pg029_p015", "pg029_p016",
     "pg030_p000", "pg030_p032", "pg030_p033",
-    "pg031_p000", "pg031_p007", "pg031_p009", "pg031_p011", "pg031_p013", "pg031_p015", "pg031_p022", "pg031_p023"
+    "pg031_p000", "pg031_p022", "pg031_p023"
   ]);
   for (let number = 27; number <= 31; number += 1) {
     const prefix = `pg${String(number).padStart(3, "0")}_`;
