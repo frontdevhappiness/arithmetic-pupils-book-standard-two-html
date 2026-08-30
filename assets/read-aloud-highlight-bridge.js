@@ -289,9 +289,16 @@
     return blankIndex === 3 ? mapping : null;
   }
 
+  function buildPage28ExerciseRowMap(content, source, narration) {
+    var id = source.getAttribute("data-id");
+    if (!/^pg028_p(?:004|010|016|022|028|034|040|046|052|058)$/.test(id || "")) return null;
+    var row = source.closest(".exercise3-row");
+    return row ? alignTokens(narration, collectRootTokens(row, content)) : null;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

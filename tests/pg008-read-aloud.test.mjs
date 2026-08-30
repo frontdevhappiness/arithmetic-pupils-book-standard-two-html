@@ -60,7 +60,7 @@ for (const [id, expected] of Object.entries({
 }
 
 assert.match(html, /assets\/fonts\.css\?v=2/);
-assert.match(html, /assets\/read-aloud-highlight-bridge\.js\?v=9/);
+assert.match(html, /assets\/read-aloud-highlight-bridge\.js\?v=10/);
 assert.match(sharedCss, /span\[data-word-index\]\.bg-yellow-300/);
 assert.doesNotMatch(fontCss, /Word highlighting is temporarily disabled book-wide/);
 assert.match(bridge, /position:fixed/);
