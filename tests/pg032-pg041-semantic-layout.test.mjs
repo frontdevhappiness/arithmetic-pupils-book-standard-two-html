@@ -71,6 +71,17 @@ test("page 38 highlights generated step numbers during read-aloud", () => {
   }
 });
 
+test("page 39 highlights generated question numbers and keeps each model narration local", () => {
+  const html = page(39).html;
+  assert.match(css, /\[data-id="pg039_p002"\]:has\(\[data-word-index="0"\]\.bg-yellow-300\)::before/);
+  assert.match(css, /\[data-id="pg039_p020"\]:has\(\[data-word-index="0"\]\.bg-yellow-300\)::before/);
+  assert.ok(html.indexOf('data-id="pg039_p003"') < html.indexOf('data-id="pg039_p039"'));
+  assert.ok(html.indexOf('data-id="pg039_p039"') < html.indexOf('data-id="pg039_p020"'));
+  assert.ok(html.indexOf('data-id="pg039_p020"') < html.indexOf('data-id="pg039_p040"'));
+  assert.equal((html.match(/data-id="pg039_p039"/g) || []).length, 1);
+  assert.equal((html.match(/data-id="pg039_p040"/g) || []).length, 1);
+});
+
 test("offline copies match pages 32 to 41", () => {
   for (let number = 32; number <= 41; number += 1) {
     const { file, html } = page(number);

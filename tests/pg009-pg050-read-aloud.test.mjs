@@ -734,12 +734,12 @@ for (const id of ["pg038_p009", "pg038_p019"]) {
 
 const page39 = read("pg039_sec001.html");
 const page39Models = {
-  pg039_p039: "First place-value model. In the hundreds column, two green counters are added to one green counter. In the tens column, one blue counter is added to four blue counters. In the ones column, four red counters are added to three red counters. Fill in the three column totals and the final sum.",
-  pg039_p040: "Second place-value model. In the hundreds column, three green counters are added to four green counters. In the tens column, four blue counters are added to three blue counters. In the ones column, two red counters are added to six red counters. Fill in the three column totals and the final sum."
+  pg039_p039: "First place-value model. In the hundreds column, two green counters are added to one green counter. Equals. In the tens column, one blue counter is added to four blue counters. Equals. In the ones column, four red counters are added to three red counters. Equals. Fill in the three column totals and the final sum.",
+  pg039_p040: "Second place-value model. In the hundreds column, three green counters are added to four green counters. Equals. In the tens column, four blue counters are added to three blue counters. Equals. In the ones column, two red counters are added to six red counters. Equals. Fill in the three column totals and the final sum."
 };
 for (const [id, expected] of Object.entries(page39Models)) {
   assert.equal(texts[id], expected, `${id} must describe every counter group without giving away the answer`);
-  assert.equal(audios[id], `${id}_adt_model.mp3`, `${id} must use the complete ADT model narration`);
+  assert.equal(audios[id], `${id}_adt_model_equals.mp3`, `${id} must use the complete ADT model narration`);
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
 }
 assert.ok(page39.indexOf('data-id="pg039_p003"') < page39.indexOf('data-id="pg039_p039"'), "the first model description must follow its equation");

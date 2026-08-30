@@ -84100,184 +84100,199 @@
             "end": 6.22
           },
           {
+            "text": "Equals",
+            "start": 6.651,
+            "end": 7.275
+          },
+          {
             "text": "In",
-            "start": 6.96,
-            "end": 7.06
+            "start": 7.72,
+            "end": 7.82
           },
           {
             "text": "the",
-            "start": 7.06,
-            "end": 7.46
+            "start": 7.82,
+            "end": 8.22
           },
           {
             "text": "tens",
-            "start": 7.46,
-            "end": 7.56
+            "start": 8.22,
+            "end": 8.32
           },
           {
             "text": "column",
-            "start": 7.56,
-            "end": 7.84
+            "start": 8.32,
+            "end": 8.6
           },
           {
             "text": "one",
-            "start": 8.1,
-            "end": 8.5
+            "start": 8.86,
+            "end": 9.26
           },
           {
             "text": "blue",
-            "start": 8.5,
-            "end": 8.74
+            "start": 9.26,
+            "end": 9.5
           },
           {
             "text": "counter",
-            "start": 8.74,
-            "end": 9
+            "start": 9.5,
+            "end": 9.76
           },
           {
             "text": "is",
-            "start": 9,
-            "end": 9.46
+            "start": 9.76,
+            "end": 10.22
           },
           {
             "text": "added",
-            "start": 9.46,
-            "end": 9.56
+            "start": 10.22,
+            "end": 10.32
           },
           {
             "text": "to",
-            "start": 9.56,
-            "end": 9.72
+            "start": 10.32,
+            "end": 10.48
           },
           {
             "text": "four",
-            "start": 9.72,
-            "end": 9.94
+            "start": 10.48,
+            "end": 10.7
           },
           {
             "text": "blue",
-            "start": 9.94,
-            "end": 10.2
+            "start": 10.7,
+            "end": 10.96
           },
           {
             "text": "counters",
-            "start": 10.2,
-            "end": 10.52
+            "start": 10.96,
+            "end": 11.28
+          },
+          {
+            "text": "Equals",
+            "start": 11.721,
+            "end": 12.345
           },
           {
             "text": "In",
-            "start": 11.28,
-            "end": 11.38
+            "start": 12.8,
+            "end": 12.9
           },
           {
             "text": "the",
-            "start": 11.38,
-            "end": 11.78
+            "start": 12.9,
+            "end": 13.3
           },
           {
             "text": "ones",
-            "start": 11.78,
-            "end": 11.88
+            "start": 13.3,
+            "end": 13.4
           },
           {
             "text": "column",
-            "start": 11.88,
-            "end": 12.14
+            "start": 13.4,
+            "end": 13.66
           },
           {
             "text": "four",
-            "start": 12.62,
-            "end": 12.88
+            "start": 14.14,
+            "end": 14.4
           },
           {
             "text": "red",
-            "start": 12.88,
-            "end": 13.18
+            "start": 14.4,
+            "end": 14.7
           },
           {
             "text": "counters",
-            "start": 13.18,
-            "end": 13.44
+            "start": 14.7,
+            "end": 14.96
           },
           {
             "text": "are",
-            "start": 13.44,
-            "end": 13.94
+            "start": 14.96,
+            "end": 15.46
           },
           {
             "text": "added",
-            "start": 13.94,
-            "end": 14.04
+            "start": 15.46,
+            "end": 15.56
           },
           {
             "text": "to",
-            "start": 14.04,
-            "end": 14.28
+            "start": 15.56,
+            "end": 15.8
           },
           {
             "text": "three",
-            "start": 14.28,
-            "end": 14.46
+            "start": 15.8,
+            "end": 15.98
           },
           {
             "text": "red",
-            "start": 14.46,
-            "end": 14.72
+            "start": 15.98,
+            "end": 16.24
           },
           {
             "text": "counters",
-            "start": 14.72,
-            "end": 15.08
-          },
-          {
-            "text": "Fill",
-            "start": 15.9,
-            "end": 16
-          },
-          {
-            "text": "in",
-            "start": 16,
-            "end": 16.1
-          },
-          {
-            "text": "the",
-            "start": 16.1,
-            "end": 16.28
-          },
-          {
-            "text": "three",
-            "start": 16.28,
+            "start": 16.24,
             "end": 16.6
           },
           {
-            "text": "column",
-            "start": 16.6,
-            "end": 16.76
+            "text": "Equals",
+            "start": 17.071,
+            "end": 17.695
           },
           {
-            "text": "totals",
-            "start": 16.76,
-            "end": 17.1
+            "text": "Fill",
+            "start": 18.18,
+            "end": 18.28
           },
           {
-            "text": "and",
-            "start": 17.1,
-            "end": 17.34
+            "text": "in",
+            "start": 18.28,
+            "end": 18.38
           },
           {
             "text": "the",
-            "start": 17.34,
-            "end": 17.68
+            "start": 18.38,
+            "end": 18.56
+          },
+          {
+            "text": "three",
+            "start": 18.56,
+            "end": 18.88
+          },
+          {
+            "text": "column",
+            "start": 18.88,
+            "end": 19.04
+          },
+          {
+            "text": "totals",
+            "start": 19.04,
+            "end": 19.38
+          },
+          {
+            "text": "and",
+            "start": 19.38,
+            "end": 19.62
+          },
+          {
+            "text": "the",
+            "start": 19.62,
+            "end": 19.96
           },
           {
             "text": "final",
-            "start": 17.68,
-            "end": 17.78
+            "start": 19.96,
+            "end": 20.06
           },
           {
             "text": "sum",
-            "start": 17.78,
-            "end": 18.1
+            "start": 20.06,
+            "end": 20.38
           }
         ]
       }
@@ -84369,184 +84384,199 @@
             "end": 6.62
           },
           {
+            "text": "Equals",
+            "start": 7.271,
+            "end": 7.895
+          },
+          {
             "text": "In",
-            "start": 7.8,
-            "end": 7.9
+            "start": 8.56,
+            "end": 8.66
           },
           {
             "text": "the",
-            "start": 7.9,
-            "end": 8.26
+            "start": 8.66,
+            "end": 9.02
           },
           {
             "text": "tens",
-            "start": 8.26,
-            "end": 8.36
+            "start": 9.02,
+            "end": 9.12
           },
           {
             "text": "column",
-            "start": 8.36,
-            "end": 8.56
+            "start": 9.12,
+            "end": 9.32
           },
           {
             "text": "four",
-            "start": 9.14,
-            "end": 9.38
+            "start": 9.9,
+            "end": 10.14
           },
           {
             "text": "blue",
-            "start": 9.38,
-            "end": 9.7
-          },
-          {
-            "text": "counters",
-            "start": 9.7,
-            "end": 9.92
-          },
-          {
-            "text": "are",
-            "start": 9.92,
+            "start": 10.14,
             "end": 10.46
           },
           {
-            "text": "added",
+            "text": "counters",
             "start": 10.46,
-            "end": 10.56
-          },
-          {
-            "text": "to",
-            "start": 10.56,
-            "end": 10.82
-          },
-          {
-            "text": "three",
-            "start": 10.82,
-            "end": 11.02
-          },
-          {
-            "text": "blue",
-            "start": 11.02,
-            "end": 11.26
-          },
-          {
-            "text": "counters",
-            "start": 11.26,
-            "end": 11.52
-          },
-          {
-            "text": "In",
-            "start": 12.6,
-            "end": 12.7
-          },
-          {
-            "text": "the",
-            "start": 12.7,
-            "end": 13.1
-          },
-          {
-            "text": "ones",
-            "start": 13.1,
-            "end": 13.2
-          },
-          {
-            "text": "column",
-            "start": 13.2,
-            "end": 13.42
-          },
-          {
-            "text": "two",
-            "start": 13.92,
-            "end": 14.16
-          },
-          {
-            "text": "red",
-            "start": 14.16,
-            "end": 14.46
-          },
-          {
-            "text": "counters",
-            "start": 14.46,
-            "end": 14.7
+            "end": 10.68
           },
           {
             "text": "are",
-            "start": 14.7,
-            "end": 15.2
+            "start": 10.68,
+            "end": 11.22
           },
           {
             "text": "added",
-            "start": 15.2,
-            "end": 15.3
+            "start": 11.22,
+            "end": 11.32
           },
           {
             "text": "to",
-            "start": 15.3,
-            "end": 15.64
-          },
-          {
-            "text": "six",
-            "start": 15.64,
-            "end": 15.74
-          },
-          {
-            "text": "red",
-            "start": 15.74,
-            "end": 16
-          },
-          {
-            "text": "counters",
-            "start": 16,
-            "end": 16.32
-          },
-          {
-            "text": "Fill",
-            "start": 17.44,
-            "end": 17.54
-          },
-          {
-            "text": "in",
-            "start": 17.54,
-            "end": 17.64
-          },
-          {
-            "text": "the",
-            "start": 17.64,
-            "end": 17.84
+            "start": 11.32,
+            "end": 11.58
           },
           {
             "text": "three",
-            "start": 17.84,
-            "end": 18.16
+            "start": 11.58,
+            "end": 11.78
           },
           {
-            "text": "column",
-            "start": 18.16,
-            "end": 18.32
+            "text": "blue",
+            "start": 11.78,
+            "end": 12.02
           },
           {
-            "text": "totals",
-            "start": 18.32,
-            "end": 18.72
+            "text": "counters",
+            "start": 12.02,
+            "end": 12.28
           },
           {
-            "text": "and",
-            "start": 18.72,
-            "end": 19.32
+            "text": "Equals",
+            "start": 12.881,
+            "end": 13.505
+          },
+          {
+            "text": "In",
+            "start": 14.12,
+            "end": 14.22
           },
           {
             "text": "the",
-            "start": 19.32,
-            "end": 19.68
+            "start": 14.22,
+            "end": 14.62
+          },
+          {
+            "text": "ones",
+            "start": 14.62,
+            "end": 14.72
+          },
+          {
+            "text": "column",
+            "start": 14.72,
+            "end": 14.94
+          },
+          {
+            "text": "two",
+            "start": 15.44,
+            "end": 15.68
+          },
+          {
+            "text": "red",
+            "start": 15.68,
+            "end": 15.98
+          },
+          {
+            "text": "counters",
+            "start": 15.98,
+            "end": 16.22
+          },
+          {
+            "text": "are",
+            "start": 16.22,
+            "end": 16.72
+          },
+          {
+            "text": "added",
+            "start": 16.72,
+            "end": 16.82
+          },
+          {
+            "text": "to",
+            "start": 16.82,
+            "end": 17.16
+          },
+          {
+            "text": "six",
+            "start": 17.16,
+            "end": 17.26
+          },
+          {
+            "text": "red",
+            "start": 17.26,
+            "end": 17.52
+          },
+          {
+            "text": "counters",
+            "start": 17.52,
+            "end": 17.84
+          },
+          {
+            "text": "Equals",
+            "start": 18.461,
+            "end": 19.085
+          },
+          {
+            "text": "Fill",
+            "start": 19.72,
+            "end": 19.82
+          },
+          {
+            "text": "in",
+            "start": 19.82,
+            "end": 19.92
+          },
+          {
+            "text": "the",
+            "start": 19.92,
+            "end": 20.12
+          },
+          {
+            "text": "three",
+            "start": 20.12,
+            "end": 20.44
+          },
+          {
+            "text": "column",
+            "start": 20.44,
+            "end": 20.6
+          },
+          {
+            "text": "totals",
+            "start": 20.6,
+            "end": 21
+          },
+          {
+            "text": "and",
+            "start": 21,
+            "end": 21.6
+          },
+          {
+            "text": "the",
+            "start": 21.6,
+            "end": 21.96
           },
           {
             "text": "final",
-            "start": 19.68,
-            "end": 19.8
+            "start": 21.96,
+            "end": 22.08
           },
           {
             "text": "sum",
-            "start": 19.8,
-            "end": 20.1
+            "start": 22.08,
+            "end": 22.38
           }
         ]
       }
