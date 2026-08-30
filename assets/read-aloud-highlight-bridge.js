@@ -50,6 +50,7 @@
       "::highlight(" + CUSTOM_HIGHLIGHT_NAME + "){background:#fde047;color:inherit}" +
       "#" + MARKER_ID + "[data-source-id^='pg036_']>span{background:#fde047}" +
       "#" + MARKER_ID + "[data-source-id='pg046_p079']>span{background:#fde047}" +
+      "#" + MARKER_ID + "[data-source-id^='pg047_p17']>span{background:#fde047}" +
       "#" + MARKER_ID + ".adt-block-highlight>span{background:rgba(37,99,235,.10);box-shadow:inset 0 0 0 2px rgba(37,99,235,.85);mix-blend-mode:normal}";
     document.head.appendChild(style);
   }
@@ -791,9 +792,62 @@
     return mapping.some(function (target) { return !target; }) ? null : mapping;
   }
 
+  function buildPage47ExerciseMap(content, source, narration) {
+    var sourceId = source.getAttribute("data-id");
+    if (sourceId !== "pg047_p171" && sourceId !== "pg047_p172") return null;
+    var container = sourceId === "pg047_p171"
+      ? source.closest(".continuation-card")
+      : source.closest(".exercise-card");
+    var problems = container ? Array.from(container.querySelectorAll(".sum-problem")) : [];
+    if (!problems.length || narration.length !== problems.length * 5) return null;
+
+    function visibleRanges(elements) {
+      var ranges = [];
+      Array.from(elements).forEach(function (element) {
+        collectRootTokens(element, content).forEach(function (token) { ranges.push(token.range); });
+      });
+      return ranges;
+    }
+
+    function firstRawRange(element) {
+      var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        var match = node.nodeValue && node.nodeValue.match(WORD_PATTERN);
+        if (!match) continue;
+        var start = node.nodeValue.indexOf(match[0]);
+        var range = document.createRange();
+        range.setStart(node, start);
+        range.setEnd(node, start + match[0].length);
+        return range;
+      }
+      return null;
+    }
+
+    var mapping = new Array(narration.length).fill(null);
+    problems.forEach(function (problem, problemIndex) {
+      var questionNumber = problem.querySelector(":scope > .question-number");
+      var rows = problem.querySelectorAll(".sum-row");
+      var plus = rows[1] && rows[1].querySelector(":scope > [data-id]");
+      if (!questionNumber || rows.length !== 2 || !plus) return;
+      var questionRange = collectRootTokens(questionNumber, content)[0];
+      var firstNumberRanges = visibleRanges(rows[0].children);
+      var plusRange = firstRawRange(plus);
+      var secondNumberRanges = visibleRanges(Array.from(rows[1].children).filter(function (element) { return element !== plus; }));
+      if (!questionRange || !plusRange || !firstNumberRanges.length || !secondNumberRanges.length) return;
+      var offset = problemIndex * 5;
+      mapping[offset] = questionRange.range;
+      mapping[offset + 1] = questionRange.range;
+      mapping[offset + 2] = firstNumberRanges;
+      mapping[offset + 3] = plusRange;
+      mapping[offset + 4] = secondNumberRanges;
+    });
+    return mapping.some(function (target) { return !target; }) ? null : mapping;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

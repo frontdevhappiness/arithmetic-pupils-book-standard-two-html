@@ -92,6 +92,15 @@ test("page 46 steps use solid yellow and Exercise 3 maps every spoken sum locall
   assert.match(highlightBridge, /mapping\[offset \+ 4\] = secondNumberRanges/);
 });
 
+test("page 47 continuation and Exercise 4 map every spoken sum locally", () => {
+  assert.match(page(47).html, /read-aloud-highlight-bridge\.js\?v=29/);
+  assert.match(highlightBridge, /function buildPage47ExerciseMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg047_p171" && sourceId !== "pg047_p172"/);
+  assert.match(highlightBridge, /sourceId === "pg047_p171"[\s\S]*?source\.closest\("\.continuation-card"\)[\s\S]*?source\.closest\("\.exercise-card"\)/);
+  assert.match(highlightBridge, /\[data-source-id\^='pg047_p17'\]>span\{background:#fde047\}/);
+  assert.match(highlightBridge, /buildPage47ExerciseMap\(content, source, narration\)/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
