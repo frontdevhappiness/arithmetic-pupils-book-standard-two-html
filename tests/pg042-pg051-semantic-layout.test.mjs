@@ -79,6 +79,19 @@ test("page 45 step numbers and words use solid yellow and Example 2 has a local 
   assert.match(highlightBridge, /buildPage45SolutionMap\(content, source, narration\)/);
 });
 
+test("page 46 steps use solid yellow and Exercise 3 maps every spoken sum locally", () => {
+  assert.match(css, /\[data-section-id="pg046_sec001"\] \.step-grid \.highlight-copy \[data-word-index\]\.bg-yellow-300 \{ color:#000!important; background:#fde047!important; \}/);
+  assert.match(page(46).html, /semantic-pages-042-051\.css\?v=6/);
+  assert.match(page(46).html, /read-aloud-highlight-bridge\.js\?v=28/);
+  assert.match(highlightBridge, /function buildPage46ExerciseMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg046_p079"/);
+  assert.match(highlightBridge, /\[data-source-id='pg046_p079'\]>span\{background:#fde047\}/);
+  assert.match(highlightBridge, /mapping\[offset \+ 2\] = firstNumberRanges/);
+  assert.match(highlightBridge, /var plusRange = firstRawRange\(plus\)/);
+  assert.match(highlightBridge, /mapping\[offset \+ 3\] = plusRange/);
+  assert.match(highlightBridge, /mapping\[offset \+ 4\] = secondNumberRanges/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);

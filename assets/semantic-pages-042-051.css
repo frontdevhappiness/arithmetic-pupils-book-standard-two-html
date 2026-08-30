@@ -14,6 +14,7 @@
 [data-section-id="pg043_sec001"] .question-stack .highlight-copy [data-word-index].bg-yellow-300 { color:#000!important; background:#fde047!important; }
 [data-section-id="pg044_sec001"] .step-grid .highlight-copy [data-word-index].bg-yellow-300 { color:#000!important; background:#fde047!important; }
 [data-section-id="pg045_sec001"] .step-grid .highlight-copy [data-word-index].bg-yellow-300 { color:#000!important; background:#fde047!important; }
+[data-section-id="pg046_sec001"] .step-grid .highlight-copy [data-word-index].bg-yellow-300 { color:#000!important; background:#fde047!important; }
 .question-number { color:var(--exercise-blue)!important; font-weight:400!important; }
 
 .answer-list { display:grid; gap:.42rem clamp(1rem,4vw,2.5rem); }
