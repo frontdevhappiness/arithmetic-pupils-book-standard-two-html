@@ -55,7 +55,7 @@ body {
 
 .place-diagram { --d1:"3"; --d2:"9"; --d3:"5"; position: relative; box-sizing: border-box; width: min(100%,15.5rem); height: 8.5rem; margin: .3rem auto; }
 .place-diagram::before { content: var(--d1) "   " var(--d2) "   " var(--d3); position: absolute; top: 0; left: 2rem; white-space: pre; font-size: clamp(1.05rem,2.7vw,1.45rem); }
-.place-diagram.highlightable-digits::before { content: none; }
+.place-diagram.highlightable-digits::before { content: none !important; }
 .place-digits { position: absolute; top: 0; left: 2rem; white-space: pre; font-size: clamp(1.05rem,2.7vw,1.45rem); }
 .place-line { position: absolute; border-left: .16rem solid; border-bottom: .16rem solid; }
 .place-line.hundreds { top: 1.55rem; left: 2.15rem; width: 9rem; height: 6rem; color: var(--hundreds); }
