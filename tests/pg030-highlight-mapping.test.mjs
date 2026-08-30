@@ -19,7 +19,7 @@ const diagramPlaces = {
   pg030_p007: ["hundreds", "tens", "ones"],
   pg030_p008: ["hundreds", "tens", "ones"]
 };
-const numberIds = ["pg030_p012", "pg030_p014", "pg030_p016", "pg030_p018", "pg030_p020", "pg030_p022", "pg030_p024", "pg030_p026", "pg030_p028", "pg030_p030"];
+const numberIds = ["pg030_p012", "pg030_p016", "pg030_p020", "pg030_p024", "pg030_p028", "pg030_p014", "pg030_p018", "pg030_p022", "pg030_p026", "pg030_p030"];
 
 test("page 30 maps every spoken diagram token within its own question", () => {
   assert.match(bridge, /function buildPage30ExerciseMap/);
@@ -47,6 +47,16 @@ test("page 30 maps Exercise 5 narration to the matching visible row", () => {
     assert.match(row, /class="visual-question-number"/, `${id} has no local question-number target`);
     assert.match(row, /class="visual-given-number"/, `${id} has no local number target`);
   }
+});
+
+test("Exercise 5 narration follows questions 1 through 10", () => {
+  let previousPosition = -1;
+  for (const id of numberIds) {
+    const position = page.indexOf(`data-id="${id}"`);
+    assert.ok(position > previousPosition, `${id} is out of narration order`);
+    previousPosition = position;
+  }
+  assert.match(css, /\.number-list\s*\{[^}]*grid-template-rows:\s*repeat\(5,auto\);[^}]*grid-auto-flow:\s*column;/);
 });
 
 test("page 30 highlight changes are available offline", () => {
