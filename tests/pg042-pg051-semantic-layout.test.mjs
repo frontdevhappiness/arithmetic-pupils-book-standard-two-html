@@ -65,6 +65,10 @@ test("page 43 question numbers and words use the same solid yellow highlight as 
   assert.match(css, /\[data-section-id="pg043_sec001"\] \.question-stack \.highlight-copy \[data-word-index\]\.bg-yellow-300 \{ color:#000!important; background:#fde047!important; \}/);
 });
 
+test("page 44 step numbers and words use the same solid yellow highlight as the Steps heading", () => {
+  assert.match(css, /\[data-section-id="pg044_sec001"\] \.step-grid \.highlight-copy \[data-word-index\]\.bg-yellow-300 \{ color:#000!important; background:#fde047!important; \}/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
