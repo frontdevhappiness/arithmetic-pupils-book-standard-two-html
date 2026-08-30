@@ -978,12 +978,12 @@ assert.deepEqual(
 );
 
 const page49 = read("pg049_sec001.html");
-const page49Step = "Step 3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds place. Therefore, 167 plus 138 equals 305.";
-const page49Questions = "Question 1. 683 plus 138. Question 2. 364 plus 348. Question 3. 736 plus 249. Question 4. 262 plus 289. Question 5. 566 plus 284. Question 6. 292 plus 362. Question 7. 456 plus 258. Question 8. 272 plus 465. Question 9. 781 plus 209. Question 10. 189 plus 771.";
+const page49Step = "Step 3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds place. Therefore, the answer is 305.";
+const page49Questions = "Question 1. 683 plus 138 equals. Question 2. 364 plus 348 equals. Question 3. 736 plus 249 equals. Question 4. 262 plus 289 equals. Question 5. 566 plus 284 equals. Question 6. 292 plus 362 equals. Question 7. 456 plus 258 equals. Question 8. 272 plus 465 equals. Question 9. 781 plus 209 equals. Question 10. 189 plus 771 equals.";
 const page49Image = "Place-value bead frame showing regrouping for 167 plus 138. Fifteen red ones are regrouped: ten circled ones become one blue ten, leaving five ones. Then ten circled blue tens become one green hundred, leaving zero tens. Together with the existing hundreds, the final columns show 3 hundreds, 0 tens, and 5 ones. Therefore, 167 plus 138 equals 305.";
 for (const [id, expected, filename] of [
-  ["pg049_p030", page49Step, "pg049_p030_adt_step3.mp3"],
-  ["pg049_p031", page49Questions, "pg049_p031_adt_exercise5.mp3"]
+  ["pg049_p030", page49Step, "pg049_p030_adt_step3_ordered.mp3"],
+  ["pg049_p031", page49Questions, "pg049_p031_adt_exercise5_equals.mp3"]
 ]) {
   assert.equal(texts[id], expected, `${id} must narrate page 49 coherently`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);

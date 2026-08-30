@@ -121,6 +121,30 @@ test("page 48 continuation and regrouping example use exact local highlight maps
   );
 });
 
+test("page 49 Step 3 and Exercise 5 use exact local highlight maps and reading order", () => {
+  const html = page(49).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=35/);
+  assert.ok(html.indexOf('data-id="pg049_p030"') < html.indexOf('data-id="pg049_p001"'));
+  assert.ok(html.indexOf('data-id="pg049_p008"') < html.indexOf('data-id="pg049_p031"'));
+  assert.ok(html.indexOf('data-id="pg049_p031"') < html.indexOf('class="answer-list'));
+  assert.match(highlightBridge, /function buildPage49Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg049_p030" && sourceId !== "pg049_p031"/);
+  assert.match(highlightBridge, /firstStep\.slice\(1\).*stepMap\[index \+ 2\]/);
+  assert.match(highlightBridge, /questionMap\[offset\] = ranges\[0\]/);
+  assert.match(highlightBridge, /questionMap\[offset \+ 5\] = ranges\[4\]/);
+  assert.equal(texts.pg049_p030, "Step 3. Add hundreds: 1 plus 1 plus 1 equals 3. Write 3 in the hundreds place. Therefore, the answer is 305.");
+  assert.equal(audios.pg049_p030, "pg049_p030_adt_step3_ordered.mp3");
+  assert.equal(audios.pg049_p031, "pg049_p031_adt_exercise5_equals.mp3");
+  assert.equal(
+    timecodes.pg049_p031.timecodes[1].word_timestamps.filter(({ text }) => text === "equals").length,
+    10,
+  );
+  assert.deepEqual(
+    timecodes.pg049_p030.timecodes[1].word_timestamps.slice(-5).map(({ text }) => text),
+    ["Therefore", "the", "answer", "is", "305"],
+  );
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
