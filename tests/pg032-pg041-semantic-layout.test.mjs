@@ -63,6 +63,14 @@ test("pages 34 and 35 highlight generated question numbers during read-aloud", (
   }
 });
 
+test("page 38 highlights generated step numbers during read-aloud", () => {
+  assert.match(css, /\[data-section-id="pg038_sec001"\] \.steps-list p:has\(\[data-word-index="0"\]\.bg-yellow-300\)::before/);
+  assert.match(css, /\[data-section-id="pg038_sec001"\] \.steps-list p\.tts-active-block::before/);
+  for (const id of ["pg038_p004", "pg038_p006", "pg038_p008", "pg038_p014", "pg038_p016", "pg038_p018"]) {
+    assert.match(page(38).html, new RegExp(`data-id="${id}">[123]\\.`));
+  }
+});
+
 test("offline copies match pages 32 to 41", () => {
   for (let number = 32; number <= 41; number += 1) {
     const { file, html } = page(number);

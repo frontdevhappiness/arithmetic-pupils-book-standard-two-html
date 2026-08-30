@@ -46,6 +46,8 @@
 .steps-list [data-id="pg038_p004"]::before,.steps-list [data-id="pg038_p014"]::before { content:"1."; }
 .steps-list [data-id="pg038_p006"]::before,.steps-list [data-id="pg038_p016"]::before { content:"2."; }
 .steps-list [data-id="pg038_p008"]::before,.steps-list [data-id="pg038_p018"]::before { content:"3."; }
+[data-section-id="pg038_sec001"] .steps-list p:has([data-word-index="0"].bg-yellow-300)::before { background:#fde047; color:#000; border-radius:3px; }
+[data-section-id="pg038_sec001"] .steps-list p.tts-active-block::before { background:rgba(37,99,235,.10); box-shadow:inset 0 0 0 2px rgba(37,99,235,.85); border-radius:6px; }
 .place-model { border:.12rem solid var(--table-blue); margin-bottom:1.3rem; }
 .place-model-title { padding:.45rem .75rem; font-size:clamp(1.15rem,2.8vw,1.55rem); }
 .place-model-grid { display:grid; grid-template-columns:repeat(3,1fr); text-align:center; }
