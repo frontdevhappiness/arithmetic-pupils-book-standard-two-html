@@ -48,6 +48,7 @@
       "#" + MARKER_ID + "{position:fixed;inset:0;pointer-events:none;z-index:45}" +
       "#" + MARKER_ID + ">span{position:absolute;box-sizing:border-box;border-radius:3px;background:rgba(253,224,71,.58);mix-blend-mode:multiply}" +
       "::highlight(" + CUSTOM_HIGHLIGHT_NAME + "){background:#fde047;color:inherit}" +
+      "#" + MARKER_ID + "[data-source-id^='pg036_']>span{background:#fde047}" +
       "#" + MARKER_ID + ".adt-block-highlight>span{background:rgba(37,99,235,.10);box-shadow:inset 0 0 0 2px rgba(37,99,235,.85);mix-blend-mode:normal}";
     document.head.appendChild(style);
   }
@@ -349,9 +350,85 @@
     return target ? new Array(narration.length).fill(target) : null;
   }
 
+  function buildPage36TableMap(content, source, narration) {
+    var id = source.getAttribute("data-id") || "";
+    if (/^pg036_p(?:086|087|088|089|090|091|092|093)$/.test(id)) {
+      var blankCell = source.closest("td");
+      return blankCell ? new Array(narration.length).fill(blankCell) : null;
+    }
+    var question3 = /^pg036_p07[6-9]$|^pg036_p080$/.test(id);
+    var question4 = /^pg036_p08[1-5]$/.test(id);
+    if (!question3 && !question4) return null;
+
+    var section = source.closest("section");
+    var table = section && section.querySelector("table");
+    if (!table) return null;
+    var rowIndex = Number(id.slice(-3)) - (question3 ? 76 : 81);
+    var row = table.tBodies[0] && table.tBodies[0].rows[rowIndex];
+    if (!row) return null;
+
+    var headers = Array.from(table.querySelectorAll("thead th")).map(function (header) {
+      var token = collectRootTokens(header, content)[0];
+      return token && token.range;
+    });
+    var cells = Array.from(row.cells).map(function (cell) {
+      var token = collectRootTokens(cell, content)[0];
+      return token && token.range;
+    });
+
+    if (question3) {
+      var printedNumber = collectRootTokens(row.cells[0], content)[0];
+      var digitNames = { "2": "two", "3": "three", "6": "six", "9": "nine" };
+      var cellCursor = 1;
+      var blankTarget = null;
+      var lastPlaceHeader = null;
+      return narration.map(function (word, index) {
+        if (printedNumber && index < 4) return printedNumber.range;
+        if (printedNumber && word === printedNumber.normalized) return printedNumber.range;
+        if (word === "blank" && cellCursor < cells.length) {
+          blankTarget = row.cells[cellCursor];
+          var target = blankTarget;
+          blankTarget = null;
+          cellCursor += 1;
+          return target;
+        }
+        if (cellCursor < cells.length && cells[cellCursor]) {
+          var printedDigit = collectRootTokens(row.cells[cellCursor], content)[0];
+          if (printedDigit && word === digitNames[printedDigit.normalized]) {
+            cellCursor += 1;
+            return printedDigit.range;
+          }
+        }
+        if (word === "hundreds") lastPlaceHeader = headers[1];
+        else if (word === "tens") lastPlaceHeader = headers[2];
+        else if (word === "ones") lastPlaceHeader = headers[3];
+        else if (word !== "column") return null;
+        return lastPlaceHeader;
+      });
+    }
+
+    var placeCursor = 0;
+    var lastHeader = null;
+    var numberNames = /^(?:zero|one|two|three|four|five|six|seven|eight|nine)$/;
+    return narration.map(function (word) {
+      if (numberNames.test(word) && placeCursor < 3) {
+        var target = cells[placeCursor];
+        placeCursor += 1;
+        return target;
+      }
+      if (word === "blank") return row.cells[3];
+      if (word === "hundreds") lastHeader = headers[0];
+      else if (word === "tens") lastHeader = headers[1];
+      else if (word === "ones") lastHeader = headers[2];
+      else if (word === "number") lastHeader = headers[3];
+      else if (word !== "column") return null;
+      return lastHeader;
+    });
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
