@@ -469,9 +469,23 @@
     });
   }
 
+  function buildPage37ChapterBannerMap(content, source, narration) {
+    if (source.getAttribute("data-id") !== "pg037_im007") return null;
+    var ids = ["pg037_p023", "pg037_p024", "pg037_p022"];
+    var targets = ids.map(function (id) {
+      var element = content.querySelector('[data-id="' + id + '"]');
+      var token = element && collectRootTokens(element, content)[0];
+      return token ? token.range : null;
+    });
+    if (targets.some(function (target) { return !target; })) return null;
+    return narration.map(function (_word, index) {
+      return targets[index] || null;
+    });
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
