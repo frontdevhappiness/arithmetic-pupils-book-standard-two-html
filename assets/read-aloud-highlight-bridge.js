@@ -267,9 +267,31 @@
     return target ? new Array(narration.length).fill(target) : null;
   }
 
+  function buildPage27AnswerBlankMap(content, source, narration) {
+    var id = source.getAttribute("data-id");
+    if (/^pg027_p(?:010|012|014|016|018|020|022|024|026)$/.test(id || "")) {
+      var numberRow = source.closest(".place-value-row");
+      var numberTarget = numberRow && numberRow.querySelector(".visual-question-number");
+      return numberTarget ? new Array(narration.length).fill(numberTarget) : null;
+    }
+    if (!/^pg027_p(?:011|013|015|017|019|021|023|025|027|028)$/.test(id || "")) return null;
+    var row = source.closest(".place-value-row");
+    if (!row) return null;
+    var mapping = alignTokens(narration, collectRootTokens(row, content));
+    var lines = Array.from(row.querySelectorAll('[data-answer-for="' + id + '"]'));
+    var blankIndex = 0;
+    narration.forEach(function (word, index) {
+      if (word === "blank" && lines[blankIndex]) {
+        mapping[index] = lines[blankIndex];
+        blankIndex += 1;
+      }
+    });
+    return blankIndex === 3 ? mapping : null;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

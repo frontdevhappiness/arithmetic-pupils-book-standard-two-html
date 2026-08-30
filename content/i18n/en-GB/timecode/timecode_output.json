@@ -30911,13 +30911,13 @@
         "word_timestamps": [
           {
             "text": "Exercise",
-            "start": 0,
-            "end": 0.699999988079071
+            "start": 0.1,
+            "end": 0.6625
           },
           {
             "text": "2",
-            "start": 0.699999988079071,
-            "end": 1.100000023841858
+            "start": 0.7375,
+            "end": 0.8625
           }
         ]
       }
@@ -30974,8 +30974,8 @@
         "word_timestamps": [
           {
             "text": "1",
-            "start": 0,
-            "end": 0.48
+            "start": 0.1,
+            "end": 0.35
           }
         ]
       }
@@ -31002,8 +31002,8 @@
         "word_timestamps": [
           {
             "text": "2",
-            "start": 0,
-            "end": 1.0199999809265137
+            "start": 0.1,
+            "end": 0.275
           }
         ]
       }
@@ -31030,8 +31030,8 @@
         "word_timestamps": [
           {
             "text": "3",
-            "start": 0,
-            "end": 0.6200000047683716
+            "start": 0.1,
+            "end": 0.4
           }
         ]
       }
@@ -31044,8 +31044,8 @@
         "word_timestamps": [
           {
             "text": "4",
-            "start": 0,
-            "end": 0.64
+            "start": 0.1,
+            "end": 0.3625
           }
         ]
       }
@@ -31072,8 +31072,8 @@
         "word_timestamps": [
           {
             "text": "5",
-            "start": 0,
-            "end": 0.8399999737739563
+            "start": 0.1,
+            "end": 0.4625
           }
         ]
       }
@@ -31100,8 +31100,8 @@
         "word_timestamps": [
           {
             "text": "6",
-            "start": 0,
-            "end": 1.2599999904632568
+            "start": 0.1,
+            "end": 0.575
           }
         ]
       }
@@ -31128,8 +31128,8 @@
         "word_timestamps": [
           {
             "text": "7",
-            "start": 0,
-            "end": 1.3600000143051147
+            "start": 0.1,
+            "end": 0.575
           }
         ]
       }
@@ -31156,8 +31156,8 @@
         "word_timestamps": [
           {
             "text": "8",
-            "start": 0,
-            "end": 1.159999966621399
+            "start": 0.1,
+            "end": 0.3
           }
         ]
       }
@@ -31184,8 +31184,8 @@
         "word_timestamps": [
           {
             "text": "9",
-            "start": 0,
-            "end": 0.7599999904632568
+            "start": 0.1,
+            "end": 0.4375
           }
         ]
       }
@@ -31212,28 +31212,43 @@
         "word_timestamps": [
           {
             "text": "426",
-            "start": 0,
-            "end": 1.94
+            "start": 0.1,
+            "end": 1.15
           },
           {
             "text": "=",
-            "start": 1.94,
-            "end": 2.86
+            "start": 1.2,
+            "end": 1.55
+          },
+          {
+            "text": "blank",
+            "start": 1.6375,
+            "end": 1.9
           },
           {
             "text": "hundreds",
-            "start": 2.86,
-            "end": 3.52
+            "start": 1.9125,
+            "end": 2.325
+          },
+          {
+            "text": "blank",
+            "start": 2.4125,
+            "end": 2.6125
           },
           {
             "text": "tens",
-            "start": 4.34,
-            "end": 4.92
+            "start": 2.6875,
+            "end": 2.95
+          },
+          {
+            "text": "blank",
+            "start": 3.0375,
+            "end": 3.275
           },
           {
             "text": "ones",
-            "start": 4.92,
-            "end": 5.02
+            "start": 3.325,
+            "end": 3.7
           }
         ]
       }
@@ -31246,63 +31261,63 @@
         "word_timestamps": [
           {
             "text": "Write",
-            "start": 0,
-            "end": 0.3400000035762787
+            "start": 0.1,
+            "end": 0.3
           },
           {
             "text": "the",
-            "start": 0.3400000035762787,
-            "end": 0.6200000047683716
+            "start": 0.4,
+            "end": 0.475
           },
           {
             "text": "digits",
-            "start": 0.6200000047683716,
-            "end": 0.9399999976158142
+            "start": 0.55,
+            "end": 0.8875
           },
           {
             "text": "that",
-            "start": 0.9399999976158142,
-            "end": 1.440000057220459
+            "start": 0.975,
+            "end": 1.0875
           },
           {
             "text": "represent",
-            "start": 1.440000057220459,
-            "end": 1.899999976158142
+            "start": 1.1875,
+            "end": 1.6125
           },
           {
             "text": "the",
-            "start": 1.899999976158142,
-            "end": 2.140000104904175
+            "start": 1.6875,
+            "end": 1.7375
           },
           {
             "text": "place",
-            "start": 2.140000104904175,
-            "end": 2.4600000381469727
+            "start": 1.825,
+            "end": 2.05
           },
           {
             "text": "values",
-            "start": 2.4600000381469727,
-            "end": 2.940000057220459
+            "start": 2.0875,
+            "end": 2.45
           },
           {
             "text": "of",
-            "start": 2.940000057220459,
-            "end": 3.359999895095825
+            "start": 2.45,
+            "end": 2.525
           },
           {
             "text": "the",
-            "start": 3.359999895095825,
-            "end": 3.5
+            "start": 2.5625,
+            "end": 2.625
           },
           {
             "text": "following",
-            "start": 3.5,
-            "end": 3.9200000762939453
+            "start": 2.6375,
+            "end": 3.0375
           },
           {
             "text": "numbers",
-            "start": 3.9200000762939453,
-            "end": 4.340000152587891
+            "start": 3.05,
+            "end": 3.5625
           }
         ]
       }
@@ -31315,28 +31330,43 @@
         "word_timestamps": [
           {
             "text": "215",
-            "start": 0,
-            "end": 2
+            "start": 0.1,
+            "end": 0.9375
           },
           {
             "text": "=",
-            "start": 2,
-            "end": 2.54
+            "start": 0.975,
+            "end": 1.3125
+          },
+          {
+            "text": "blank",
+            "start": 1.4,
+            "end": 1.65
           },
           {
             "text": "hundreds",
-            "start": 2.54,
-            "end": 3.06
+            "start": 1.6625,
+            "end": 2.0875
+          },
+          {
+            "text": "blank",
+            "start": 2.175,
+            "end": 2.3875
           },
           {
             "text": "tens",
-            "start": 3.82,
-            "end": 4.46
+            "start": 2.4625,
+            "end": 2.725
+          },
+          {
+            "text": "blank",
+            "start": 2.8125,
+            "end": 3.05
           },
           {
             "text": "ones",
-            "start": 4.46,
-            "end": 4.56
+            "start": 3.1,
+            "end": 3.475
           }
         ]
       }
@@ -31349,28 +31379,43 @@
         "word_timestamps": [
           {
             "text": "309",
-            "start": 0,
-            "end": 1.68
+            "start": 0.1,
+            "end": 0.875
           },
           {
             "text": "=",
-            "start": 1.68,
-            "end": 2.48
+            "start": 0.9,
+            "end": 1.25
+          },
+          {
+            "text": "blank",
+            "start": 1.3375,
+            "end": 1.6
           },
           {
             "text": "hundreds",
-            "start": 2.48,
-            "end": 3.02
+            "start": 1.6125,
+            "end": 2.0375
+          },
+          {
+            "text": "blank",
+            "start": 2.125,
+            "end": 2.3625
           },
           {
             "text": "tens",
-            "start": 3.82,
-            "end": 4.42
+            "start": 2.4375,
+            "end": 2.7
+          },
+          {
+            "text": "blank",
+            "start": 2.7875,
+            "end": 3.0125
           },
           {
             "text": "ones",
-            "start": 4.42,
-            "end": 4.52
+            "start": 3.05,
+            "end": 3.425
           }
         ]
       }
@@ -31402,28 +31447,43 @@
         "word_timestamps": [
           {
             "text": "186",
-            "start": 0,
-            "end": 1.72
+            "start": 0.1,
+            "end": 1.2625
           },
           {
             "text": "=",
-            "start": 1.72,
-            "end": 2.4
+            "start": 1.3125,
+            "end": 1.6625
+          },
+          {
+            "text": "blank",
+            "start": 1.75,
+            "end": 2.0125
           },
           {
             "text": "hundreds",
-            "start": 2.4,
-            "end": 2.9
+            "start": 2.025,
+            "end": 2.4625
+          },
+          {
+            "text": "blank",
+            "start": 2.55,
+            "end": 2.7875
           },
           {
             "text": "tens",
-            "start": 3.66,
-            "end": 4.22
+            "start": 2.8625,
+            "end": 3.125
+          },
+          {
+            "text": "blank",
+            "start": 3.2125,
+            "end": 3.45
           },
           {
             "text": "ones",
-            "start": 4.22,
-            "end": 4.32
+            "start": 3.5,
+            "end": 3.8875
           }
         ]
       }
@@ -31436,28 +31496,43 @@
         "word_timestamps": [
           {
             "text": "126",
-            "start": 0,
-            "end": 1.74
+            "start": 0.1,
+            "end": 1.2
           },
           {
             "text": "=",
-            "start": 1.74,
-            "end": 2.36
+            "start": 1.25,
+            "end": 1.6
+          },
+          {
+            "text": "blank",
+            "start": 1.6875,
+            "end": 1.95
           },
           {
             "text": "hundreds",
-            "start": 2.36,
-            "end": 2.94
+            "start": 1.9625,
+            "end": 2.3875
+          },
+          {
+            "text": "blank",
+            "start": 2.475,
+            "end": 2.6875
           },
           {
             "text": "tens",
-            "start": 3.82,
-            "end": 4.58
+            "start": 2.7625,
+            "end": 3.025
+          },
+          {
+            "text": "blank",
+            "start": 3.1125,
+            "end": 3.35
           },
           {
             "text": "ones",
-            "start": 4.58,
-            "end": 4.68
+            "start": 3.4,
+            "end": 3.775
           }
         ]
       }
@@ -31519,28 +31594,43 @@
         "word_timestamps": [
           {
             "text": "71",
-            "start": 0,
-            "end": 0.82
+            "start": 0.1,
+            "end": 0.75
           },
           {
             "text": "=",
-            "start": 0.82,
-            "end": 1.94
+            "start": 0.775,
+            "end": 1.125
+          },
+          {
+            "text": "blank",
+            "start": 1.2125,
+            "end": 1.475
           },
           {
             "text": "hundreds",
-            "start": 1.94,
-            "end": 2.58
+            "start": 1.4875,
+            "end": 1.925
+          },
+          {
+            "text": "blank",
+            "start": 2.0125,
+            "end": 2.2375
           },
           {
             "text": "tens",
-            "start": 3.44,
-            "end": 4.08
+            "start": 2.3125,
+            "end": 2.575
+          },
+          {
+            "text": "blank",
+            "start": 2.6625,
+            "end": 2.9
           },
           {
             "text": "ones",
-            "start": 4.08,
-            "end": 4.18
+            "start": 2.95,
+            "end": 3.325
           }
         ]
       }
@@ -31567,28 +31657,43 @@
         "word_timestamps": [
           {
             "text": "4",
-            "start": 0,
-            "end": 0.58
+            "start": 0.1,
+            "end": 0.3375
           },
           {
             "text": "=",
-            "start": 0.58,
-            "end": 1.34
+            "start": 0.4125,
+            "end": 0.7625
+          },
+          {
+            "text": "blank",
+            "start": 0.85,
+            "end": 1.0875
           },
           {
             "text": "hundreds",
-            "start": 1.34,
-            "end": 1.86
+            "start": 1.1,
+            "end": 1.525
+          },
+          {
+            "text": "blank",
+            "start": 1.6125,
+            "end": 1.825
           },
           {
             "text": "tens",
-            "start": 2.74,
-            "end": 3.5
+            "start": 1.9125,
+            "end": 2.1625
+          },
+          {
+            "text": "blank",
+            "start": 2.25,
+            "end": 2.4875
           },
           {
             "text": "ones",
-            "start": 3.5,
-            "end": 3.6
+            "start": 2.5375,
+            "end": 2.925
           }
         ]
       }
@@ -32233,33 +32338,48 @@
         "word_timestamps": [
           {
             "text": "10",
-            "start": 0,
-            "end": 0.82
+            "start": 0.1,
+            "end": 0.3375
           },
           {
             "text": "400",
-            "start": 1.52,
-            "end": 2.2
+            "start": 0.5625,
+            "end": 1.0375
           },
           {
             "text": "=",
-            "start": 2.2,
-            "end": 2.86
+            "start": 1.1,
+            "end": 1.4625
+          },
+          {
+            "text": "blank",
+            "start": 1.55,
+            "end": 1.8
           },
           {
             "text": "hundreds",
-            "start": 2.86,
-            "end": 3.38
+            "start": 1.8125,
+            "end": 2.25
+          },
+          {
+            "text": "blank",
+            "start": 2.3375,
+            "end": 2.55
           },
           {
             "text": "tens",
-            "start": 4.3,
-            "end": 4.96
+            "start": 2.625,
+            "end": 2.8875
+          },
+          {
+            "text": "blank",
+            "start": 2.975,
+            "end": 3.2
           },
           {
             "text": "ones",
-            "start": 4.96,
-            "end": 5.06
+            "start": 3.2375,
+            "end": 3.6
           }
         ]
       }
@@ -32272,28 +32392,43 @@
         "word_timestamps": [
           {
             "text": "358",
-            "start": 0,
-            "end": 1.52
+            "start": 0.1,
+            "end": 1.2375
           },
           {
             "text": "=",
-            "start": 1.52,
-            "end": 2.2
+            "start": 1.275,
+            "end": 1.6125
+          },
+          {
+            "text": "blank",
+            "start": 1.7,
+            "end": 1.9625
           },
           {
             "text": "hundreds",
-            "start": 2.2,
-            "end": 2.72
+            "start": 1.975,
+            "end": 2.425
+          },
+          {
+            "text": "blank",
+            "start": 2.5125,
+            "end": 2.75
           },
           {
             "text": "tens",
-            "start": 3.42,
-            "end": 3.74
+            "start": 2.825,
+            "end": 3.0875
+          },
+          {
+            "text": "blank",
+            "start": 3.175,
+            "end": 3.4125
           },
           {
             "text": "ones",
-            "start": 3.74,
-            "end": 3.92
+            "start": 3.4625,
+            "end": 3.8375
           }
         ]
       }
@@ -32306,28 +32441,43 @@
         "word_timestamps": [
           {
             "text": "231",
-            "start": 0,
-            "end": 1.62
+            "start": 0.1,
+            "end": 0.9875
           },
           {
             "text": "=",
-            "start": 1.62,
-            "end": 2.16
+            "start": 1.05,
+            "end": 1.3875
+          },
+          {
+            "text": "blank",
+            "start": 1.475,
+            "end": 1.725
           },
           {
             "text": "hundreds",
-            "start": 2.16,
-            "end": 2.64
+            "start": 1.7375,
+            "end": 2.175
+          },
+          {
+            "text": "blank",
+            "start": 2.2625,
+            "end": 2.4875
           },
           {
             "text": "tens",
-            "start": 3.26,
-            "end": 3.82
+            "start": 2.5625,
+            "end": 2.825
+          },
+          {
+            "text": "blank",
+            "start": 2.9125,
+            "end": 3.1375
           },
           {
             "text": "ones",
-            "start": 3.82,
-            "end": 3.92
+            "start": 3.1875,
+            "end": 3.575
           }
         ]
       }
@@ -118693,45 +118843,147 @@
     ]
   },
   "pg025_p005": {
-    "timecodes": [null, { "word_timestamps": [
-      { "text": "answer", "start": 0.1, "end": 0.4125 },
-      { "text": "blank", "start": 0.5, "end": 0.7125 },
-      { "text": "space", "start": 0.7625, "end": 1.25 }
-    ] }]
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "answer",
+            "start": 0.1,
+            "end": 0.4125
+          },
+          {
+            "text": "blank",
+            "start": 0.5,
+            "end": 0.7125
+          },
+          {
+            "text": "space",
+            "start": 0.7625,
+            "end": 1.25
+          }
+        ]
+      }
+    ]
   },
   "pg025_p007": {
-    "timecodes": [null, { "word_timestamps": [
-      { "text": "answer", "start": 0.1, "end": 0.4125 },
-      { "text": "blank", "start": 0.5, "end": 0.7125 },
-      { "text": "space", "start": 0.7625, "end": 1.25 }
-    ] }]
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "answer",
+            "start": 0.1,
+            "end": 0.4125
+          },
+          {
+            "text": "blank",
+            "start": 0.5,
+            "end": 0.7125
+          },
+          {
+            "text": "space",
+            "start": 0.7625,
+            "end": 1.25
+          }
+        ]
+      }
+    ]
   },
   "pg025_p009": {
-    "timecodes": [null, { "word_timestamps": [
-      { "text": "answer", "start": 0.1, "end": 0.4125 },
-      { "text": "blank", "start": 0.5, "end": 0.7125 },
-      { "text": "space", "start": 0.7625, "end": 1.25 }
-    ] }]
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "answer",
+            "start": 0.1,
+            "end": 0.4125
+          },
+          {
+            "text": "blank",
+            "start": 0.5,
+            "end": 0.7125
+          },
+          {
+            "text": "space",
+            "start": 0.7625,
+            "end": 1.25
+          }
+        ]
+      }
+    ]
   },
   "pg025_p011": {
-    "timecodes": [null, { "word_timestamps": [
-      { "text": "answer", "start": 0.1, "end": 0.4125 },
-      { "text": "blank", "start": 0.5, "end": 0.7125 },
-      { "text": "space", "start": 0.7625, "end": 1.25 }
-    ] }]
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "answer",
+            "start": 0.1,
+            "end": 0.4125
+          },
+          {
+            "text": "blank",
+            "start": 0.5,
+            "end": 0.7125
+          },
+          {
+            "text": "space",
+            "start": 0.7625,
+            "end": 1.25
+          }
+        ]
+      }
+    ]
   },
   "pg025_p013": {
-    "timecodes": [null, { "word_timestamps": [
-      { "text": "answer", "start": 0.1, "end": 0.4125 },
-      { "text": "blank", "start": 0.5, "end": 0.7125 },
-      { "text": "space", "start": 0.7625, "end": 1.25 }
-    ] }]
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "answer",
+            "start": 0.1,
+            "end": 0.4125
+          },
+          {
+            "text": "blank",
+            "start": 0.5,
+            "end": 0.7125
+          },
+          {
+            "text": "space",
+            "start": 0.7625,
+            "end": 1.25
+          }
+        ]
+      }
+    ]
   },
   "pg025_p015": {
-    "timecodes": [null, { "word_timestamps": [
-      { "text": "answer", "start": 0.1, "end": 0.4125 },
-      { "text": "blank", "start": 0.5, "end": 0.7125 },
-      { "text": "space", "start": 0.7625, "end": 1.25 }
-    ] }]
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "answer",
+            "start": 0.1,
+            "end": 0.4125
+          },
+          {
+            "text": "blank",
+            "start": 0.5,
+            "end": 0.7125
+          },
+          {
+            "text": "space",
+            "start": 0.7625,
+            "end": 1.25
+          }
+        ]
+      }
+    ]
   }
 }
