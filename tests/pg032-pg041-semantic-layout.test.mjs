@@ -55,6 +55,14 @@ test("page-specific visual structures remain present", () => {
   }
 });
 
+test("pages 34 and 35 highlight generated question numbers during read-aloud", () => {
+  for (const number of [34, 35]) {
+    const section = `pg${String(number).padStart(3, "0")}_sec001`;
+    assert.match(css, new RegExp(`\\[data-section-id="${section}"\\] \\.question-list p:has\\(\\[data-word-index="0"\\]\\.bg-yellow-300\\)::before`));
+    assert.match(css, new RegExp(`\\[data-section-id="${section}"\\] \\.question-list p\\.tts-active-block::before`));
+  }
+});
+
 test("offline copies match pages 32 to 41", () => {
   for (let number = 32; number <= 41; number += 1) {
     const { file, html } = page(number);
