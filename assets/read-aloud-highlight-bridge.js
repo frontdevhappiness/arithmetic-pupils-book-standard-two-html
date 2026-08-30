@@ -169,6 +169,49 @@
     return tokens;
   }
 
+  function wrapPage36VisualWords(copy) {
+    if (!copy || copy.getAttribute("data-visual-words-ready") === "true") return;
+    var walker = document.createTreeWalker(copy, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    var wordIndex = 0;
+    nodes.forEach(function (textNode) {
+      var value = textNode.nodeValue || "";
+      var pattern = new RegExp(WORD_PATTERN.source, "gu");
+      var fragment = document.createDocumentFragment();
+      var cursor = 0;
+      var match;
+      while ((match = pattern.exec(value))) {
+        if (match.index > cursor) fragment.appendChild(document.createTextNode(value.slice(cursor, match.index)));
+        var span = document.createElement("span");
+        span.className = "visual-word";
+        span.setAttribute("data-visual-word-index", String(wordIndex));
+        span.textContent = match[0];
+        fragment.appendChild(span);
+        wordIndex += 1;
+        cursor = match.index + match[0].length;
+      }
+      if (cursor < value.length) fragment.appendChild(document.createTextNode(value.slice(cursor)));
+      textNode.replaceWith(fragment);
+    });
+    copy.setAttribute("data-visual-words-ready", "true");
+  }
+
+  function syncPage36InstructionHighlight(content) {
+    content.querySelectorAll('.exercise-nine .live-copy').forEach(function (liveCopy) {
+      var visualCopy = liveCopy.querySelector('.visual-copy');
+      var highlightCopy = liveCopy.querySelector('.highlight-copy');
+      if (!visualCopy || !highlightCopy) return;
+      wrapPage36VisualWords(visualCopy);
+      var active = highlightCopy.querySelector('[data-word-index].bg-yellow-300');
+      var activeIndex = active ? active.getAttribute('data-word-index') : null;
+      visualCopy.querySelectorAll('[data-visual-word-index]').forEach(function (word) {
+        word.classList.toggle('visual-word-active', activeIndex !== null && word.getAttribute('data-visual-word-index') === activeIndex);
+      });
+    });
+  }
+
   function alignTokens(narration, visible) {
     var rows = narration.length + 1;
     var cols = visible.length + 1;
@@ -511,6 +554,7 @@
       clearMarker();
       return;
     }
+    syncPage36InstructionHighlight(content);
     var active = findActiveNarration(content);
     if (!active) {
       currentSource = null;

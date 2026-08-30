@@ -73,9 +73,11 @@
 .exercise-nine .live-copy { position:relative; display:inline-block; min-width:0; }
 .exercise-nine .visual-copy { display:inline; }
 .exercise-nine .question-number { color:var(--exercise-blue); font-weight:400; }
-.exercise-nine .highlight-copy { position:absolute; inset:0; z-index:2; overflow:visible; color:transparent!important; white-space:normal; }
+.exercise-nine .highlight-copy { position:absolute; inset:0; z-index:2; overflow:visible; color:transparent!important; white-space:normal; pointer-events:none; }
 .exercise-nine .highlight-copy,.exercise-nine .highlight-copy * { color:transparent!important; }
+.exercise-nine .visual-word-active { visibility:hidden; }
 .exercise-nine .highlight-copy [data-word-index].bg-yellow-300 { color:#000!important; background:#fde047!important; border-radius:3px; }
+.exercise-nine .live-copy:has(.highlight-copy [data-word-index="0"].bg-yellow-300) .visual-copy .question-number { color:#000; }
 .numbered-title,.numbered-instruction,.equation-row { position:relative; }
 .numbered-title::before,.numbered-instruction::before,.equation-row::before { content:attr(data-question-number); background:#fff; }
 [data-section-id="pg032_sec001"] .equation-row:nth-child(1)::before,[data-section-id="pg033_sec001"] .equation-row:nth-child(1)::before { content:"1."; }

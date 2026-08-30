@@ -8,6 +8,7 @@ const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 const json = (file) => JSON.parse(read(file));
 const page = read("pg036_sec001.html");
 const bridge = read("assets/read-aloud-highlight-bridge.js");
+const css = read("assets/semantic-pages-032-041.css");
 const texts = json("content/i18n/en-GB/texts.json");
 const audios = json("content/i18n/en-GB/audios.json");
 const timecodes = json("content/i18n/en-GB/timecode/timecode_output.json");
@@ -50,6 +51,19 @@ test("the highlight bridge targets each blank table cell", () => {
   assert.match(bridge, /pg036_p\(\?:086\|087\|088\|089\|090\|091\|092\|093\)/);
   assert.match(bridge, /blankCell = source\.closest\("td"\)/);
   assert.match(bridge, /new Array\(narration\.length\)\.fill\(blankCell\)/);
+});
+
+test("question instruction highlighting replaces rather than covers the active visual word", () => {
+  assert.match(page, /semantic-pages-032-041\.css\?v=5/);
+  assert.match(page, /read-aloud-highlight-bridge\.js\?v=16/);
+  assert.match(bridge, /function wrapPage36VisualWords\(copy\)/);
+  assert.match(bridge, /data-visual-word-index/);
+  assert.match(bridge, /function syncPage36InstructionHighlight\(content\)/);
+  assert.match(bridge, /word\.classList\.toggle\('visual-word-active'/);
+  assert.match(bridge, /syncPage36InstructionHighlight\(content\)/);
+  assert.match(css, /\.exercise-nine \.visual-word-active \{ visibility:hidden; \}/);
+  assert.match(css, /\.highlight-copy \[data-word-index\]\.bg-yellow-300 \{ color:#000!important;/);
+  assert.match(css, /\[data-word-index="0"\]\.bg-yellow-300\) \.visual-copy \.question-number \{ color:#000; \}/);
 });
 
 test("question 3 identifies both empty cells as column-specific blanks with ElimuNeural", () => {
