@@ -17,12 +17,12 @@ function offlineHtml(path) {
 
 const narrationOrder = [
   "pg025_p001", "pg025_p002",
-  "pg025_p004", "pg025_p016", "pg025_im001",
-  "pg025_p006", "pg025_p017", "pg025_im002",
-  "pg025_p008", "pg025_p018", "pg025_im003",
-  "pg025_p010", "pg025_p020", "pg025_im004",
-  "pg025_p012", "pg025_p019", "pg025_im005",
-  "pg025_p014", "pg025_p021", "pg025_im006"
+  "pg025_p004", "pg025_p016", "pg025_im001", "pg025_p005",
+  "pg025_p006", "pg025_p017", "pg025_im002", "pg025_p007",
+  "pg025_p008", "pg025_p018", "pg025_im003", "pg025_p009",
+  "pg025_p010", "pg025_p020", "pg025_im004", "pg025_p011",
+  "pg025_p012", "pg025_p019", "pg025_im005", "pg025_p013",
+  "pg025_p014", "pg025_p021", "pg025_im006", "pg025_p015"
 ];
 
 test("page 25 uses responsive semantic HTML", () => {
@@ -52,7 +52,10 @@ test("all six approved image descriptions remain unchanged", () => {
 
 test("the six learner answer lines remain empty", () => {
   for (const id of ["pg025_p005", "pg025_p007", "pg025_p009", "pg025_p011", "pg025_p013", "pg025_p015"]) {
-    assert.match(html, new RegExp(`class="answer-line" data-id="${id}"`));
+    assert.match(html, new RegExp(`class="answer-narration narration-only" data-id="${id}">answer blank space<`));
+    assert.match(html, new RegExp(`class="answer-line" data-answer-for="${id}" aria-hidden="true">_+<`));
+    assert.equal(texts[id], "answer blank space");
+    assert.equal(audios[id], "pg025_answer_blank_space_elimu_neural.mp3");
   }
 });
 

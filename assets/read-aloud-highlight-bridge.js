@@ -258,9 +258,18 @@
     return target ? new Array(narration.length).fill(target) : null;
   }
 
+  function buildPage25AnswerBlankMap(content, source, narration) {
+    var id = source.getAttribute("data-id");
+    if (!/^pg025_p(?:005|007|009|011|013|015)$/.test(id || "")) return null;
+    var section = content.querySelector('[data-section-id="pg025_sec001"]');
+    if (!section) return null;
+    var target = section.querySelector('[data-answer-for="' + id + '"]');
+    return target ? new Array(narration.length).fill(target) : null;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
