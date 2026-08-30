@@ -10,6 +10,7 @@
 .highlight-copy { position:absolute; inset:0; z-index:2; overflow:visible; color:transparent!important; white-space:nowrap; }
 .highlight-copy,.highlight-copy * { color:transparent!important; }
 .highlight-copy [data-word-index].bg-yellow-300 { color:transparent!important; background:rgba(253,224,71,.48)!important; border-radius:.12em; }
+[data-section-id="pg042_sec001"] .answer-list .highlight-copy [data-word-index].bg-yellow-300 { color:#000!important; background:#fde047!important; }
 .question-number { color:var(--exercise-blue)!important; font-weight:400!important; }
 
 .answer-list { display:grid; gap:.42rem clamp(1rem,4vw,2.5rem); }

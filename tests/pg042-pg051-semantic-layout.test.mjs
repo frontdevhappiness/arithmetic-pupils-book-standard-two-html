@@ -57,6 +57,10 @@ test("visible read-aloud copies retain highlightable IDs", () => {
   assert.match(css, /background:rgba\(253,224,71,\.48\)!important/);
 });
 
+test("page 42 questions use the same solid yellow highlight as the exercise heading", () => {
+  assert.match(css, /\[data-section-id="pg042_sec001"\] \.answer-list \.highlight-copy \[data-word-index\]\.bg-yellow-300 \{ color:#000!important; background:#fde047!important; \}/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
