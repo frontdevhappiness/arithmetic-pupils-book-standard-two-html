@@ -1005,11 +1005,11 @@ assert.deepEqual(
 );
 
 const page50 = read("pg050_sec001.html");
-const page50Continuation = "Question 11. 484 plus 109. Question 12. 189 plus 102. Question 13. 801 plus 9. Question 14. 229 plus 229. Question 15. 518 plus 119. Question 16. 673 plus 117. Question 17. 239 plus 221. Question 18. 123 plus 229. Question 19. 444 plus 137. Question 20. 269 plus 21.";
-const page50Exercise = "Question 1. 739 plus 15. Question 2. 118 plus 132. Question 3. 819 plus 113. Question 4. 287 plus 113. Question 5. 773 plus 9. Question 6. 333 plus 27. Question 7. 239 plus 8. Question 8. 123 plus 127. Question 9. 444 plus 219. Question 10. 269 plus 23. Question 11. 291 plus 19. Question 12. 839 plus 111. Question 13. 709 plus 29. Question 14. 469 plus 31. Question 15. 729 plus 148. Question 16. 456 plus 326. Question 17. 381 plus 409. Question 18. 462 plus 418. Question 19. 282 plus 365. Question 20. 627 plus 203.";
+const page50Continuation = "Question 11. 484 plus 109 equals. Question 12. 189 plus 102 equals. Question 13. 801 plus 9 equals. Question 14. 229 plus 229 equals. Question 15. 518 plus 119 equals. Question 16. 673 plus 117 equals. Question 17. 239 plus 221 equals. Question 18. 123 plus 229 equals. Question 19. 444 plus 137 equals. Question 20. 269 plus 21 equals.";
+const page50Exercise = "Question 1. 739 plus 15 equals. Question 2. 118 plus 132 equals. Question 3. 819 plus 113 equals. Question 4. 287 plus 113 equals. Question 5. 773 plus 9 equals. Question 6. 333 plus 27 equals. Question 7. 239 plus 8 equals. Question 8. 123 plus 127 equals. Question 9. 444 plus 219 equals. Question 10. 269 plus 23 equals. Question 11. 291 plus 19 equals. Question 12. 839 plus 111 equals. Question 13. 709 plus 29 equals. Question 14. 469 plus 31 equals. Question 15. 729 plus 148 equals. Question 16. 456 plus 326 equals. Question 17. 381 plus 409 equals. Question 18. 462 plus 418 equals. Question 19. 282 plus 365 equals. Question 20. 627 plus 203 equals.";
 for (const [id, expected, filename] of [
-  ["pg050_p068", page50Continuation, "pg050_p068_adt_questions11to20.mp3"],
-  ["pg050_p069", page50Exercise, "pg050_p069_adt_exercise6.mp3"]
+  ["pg050_p068", page50Continuation, "pg050_p068_adt_questions11to20_equals.mp3"],
+  ["pg050_p069", page50Exercise, "pg050_p069_adt_exercise6_equals.mp3"]
 ]) {
   assert.equal(texts[id], expected, `${id} must narrate the printed page 50 sums in order`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);

@@ -145,6 +145,21 @@ test("page 49 Step 3 and Exercise 5 use exact local highlight maps and reading o
   );
 });
 
+test("page 50 question sets read equals and highlight within their own rows", () => {
+  const html = page(50).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=36/);
+  assert.ok(html.indexOf('data-id="pg050_p068"') < html.indexOf('data-id="pg050_p001"'));
+  assert.ok(html.indexOf('data-id="pg050_p021"') < html.indexOf('data-id="pg050_p069"'));
+  assert.ok(html.indexOf('data-id="pg050_p069"') < html.indexOf('data-id="pg050_p022"'));
+  assert.match(highlightBridge, /function buildPage50Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg050_p068" && sourceId !== "pg050_p069"/);
+  assert.match(highlightBridge, /mapping\[offset \+ 5\] = ranges\[4\]/);
+  assert.equal(audios.pg050_p068, "pg050_p068_adt_questions11to20_equals.mp3");
+  assert.equal(audios.pg050_p069, "pg050_p069_adt_exercise6_equals.mp3");
+  assert.equal(timecodes.pg050_p068.timecodes[1].word_timestamps.filter(({ text }) => text === "equals").length, 10);
+  assert.equal(timecodes.pg050_p069.timecodes[1].word_timestamps.filter(({ text }) => text === "equals").length, 20);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
