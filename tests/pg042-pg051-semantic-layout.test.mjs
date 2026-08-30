@@ -6,6 +6,9 @@ import test from "node:test";
 const root = new URL("../", import.meta.url);
 const css = fs.readFileSync(new URL("assets/semantic-pages-042-051.css", root), "utf8");
 const highlightBridge = fs.readFileSync(new URL("assets/read-aloud-highlight-bridge.js", root), "utf8");
+const texts = JSON.parse(fs.readFileSync(new URL("content/i18n/en-GB/texts.json", root), "utf8"));
+const audios = JSON.parse(fs.readFileSync(new URL("content/i18n/en-GB/audios.json", root), "utf8"));
+const timecodes = JSON.parse(fs.readFileSync(new URL("content/i18n/en-GB/timecode/timecode_output.json", root), "utf8"));
 const offlineSource = fs.readFileSync(new URL("assets/offline-data.js", root), "utf8");
 const offlinePrefix = "  var INLINE = ";
 const offlineStart = offlineSource.indexOf(offlinePrefix) + offlinePrefix.length;
@@ -99,6 +102,23 @@ test("page 47 continuation and Exercise 4 map every spoken sum locally", () => {
   assert.match(highlightBridge, /sourceId === "pg047_p171"[\s\S]*?source\.closest\("\.continuation-card"\)[\s\S]*?source\.closest\("\.exercise-card"\)/);
   assert.match(highlightBridge, /\[data-source-id\^='pg047_p17'\]>span\{background:#fde047\}/);
   assert.match(highlightBridge, /buildPage47ExerciseMap\(content, source, narration\)/);
+});
+
+test("page 48 continuation and regrouping example use exact local highlight maps", () => {
+  assert.match(page(48).html, /read-aloud-highlight-bridge\.js\?v=33/);
+  assert.match(highlightBridge, /function buildPage48Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg048_p052" && sourceId !== "pg048_p053"/);
+  assert.match(highlightBridge, /assignRange\(0, 3, rawRanges\(section\.querySelector\('\[data-id="pg048_p030"\]'\)\)\)/);
+  assert.match(highlightBridge, /assignRange\(4, 4, rawRanges\(section\.querySelector\('\[data-id="pg048_p031"\]'\)\)\)/);
+  assert.match(highlightBridge, /assignRange\(5, 9, rawRanges\(section\.querySelector\('\[data-id="pg048_p032"\]'\)\)\)/);
+  assert.match(highlightBridge, /assignRange\(63, 74, rawRanges\(visualCopy\("pg048_p045"\)\)\)/);
+  assert.match(highlightBridge, /buildPage48Map\(content, source, narration\)/);
+  assert.match(texts.pg048_p053, /^167 plus 138 equals\. Solution\. 167 plus 138 equals 305\. Steps\. Step 1\./);
+  assert.equal(audios.pg048_p053, "pg048_p053_adt_example_solution_steps.mp3");
+  assert.deepEqual(
+    timecodes.pg048_p053.timecodes[1].word_timestamps.slice(0, 12).map(({ text }) => text),
+    ["167", "plus", "138", "equals", "Solution", "167", "plus", "138", "equals", "305", "Steps", "Step"],
+  );
 });
 
 test("page-specific corrected structures are present", () => {

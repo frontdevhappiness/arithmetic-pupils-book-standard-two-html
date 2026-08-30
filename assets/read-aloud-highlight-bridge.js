@@ -51,6 +51,7 @@
       "#" + MARKER_ID + "[data-source-id^='pg036_']>span{background:#fde047}" +
       "#" + MARKER_ID + "[data-source-id='pg046_p079']>span{background:#fde047}" +
       "#" + MARKER_ID + "[data-source-id^='pg047_p17']>span{background:#fde047}" +
+      "#" + MARKER_ID + "[data-source-id^='pg048_p05']>span{background:#fde047}" +
       "#" + MARKER_ID + ".adt-block-highlight>span{background:rgba(37,99,235,.10);box-shadow:inset 0 0 0 2px rgba(37,99,235,.85);mix-blend-mode:normal}";
     document.head.appendChild(style);
   }
@@ -845,9 +846,92 @@
     return mapping.some(function (target) { return !target; }) ? null : mapping;
   }
 
+  function buildPage48Map(content, source, narration) {
+    var sourceId = source.getAttribute("data-id");
+    if (sourceId !== "pg048_p052" && sourceId !== "pg048_p053") return null;
+    var section = content.querySelector('[data-section-id="pg048_sec001"]');
+    if (!section) return null;
+
+    function rawRanges(root) {
+      var ranges = [];
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        if (excludedTextNode(node, content)) continue;
+        var pattern = new RegExp(WORD_PATTERN.source, "gu");
+        var match;
+        while ((match = pattern.exec(node.nodeValue || ""))) {
+          var range = document.createRange();
+          range.setStart(node, match.index);
+          range.setEnd(node, match.index + match[0].length);
+          ranges.push(range);
+        }
+      }
+      return ranges;
+    }
+
+    if (sourceId === "pg048_p052") {
+      var problems = Array.from(source.closest(".continuation-card").querySelectorAll(".sum-problem"));
+      if (problems.length !== 3 || narration.length !== 15) return null;
+      var questionMap = new Array(narration.length).fill(null);
+      problems.forEach(function (problem, problemIndex) {
+        var questionNumber = problem.querySelector(":scope > .question-number");
+        var rows = problem.querySelectorAll(".sum-row");
+        var plus = rows[1] && rows[1].querySelector(":scope > [data-id]");
+        if (!questionNumber || rows.length !== 2 || !plus) return;
+        var questionRanges = rawRanges(questionNumber);
+        var firstNumberRanges = rawRanges(rows[0]);
+        var plusRanges = rawRanges(plus);
+        var secondNumberRanges = rawRanges(rows[1]).slice(1);
+        if (!questionRanges.length || !firstNumberRanges.length || !plusRanges.length || !secondNumberRanges.length) return;
+        var offset = problemIndex * 5;
+        questionMap[offset] = questionRanges;
+        questionMap[offset + 1] = questionRanges;
+        questionMap[offset + 2] = firstNumberRanges;
+        questionMap[offset + 3] = plusRanges;
+        questionMap[offset + 4] = secondNumberRanges;
+      });
+      return questionMap.some(function (target) { return !target; }) ? null : questionMap;
+    }
+
+    if (narration.length !== 75) return null;
+    var exampleMap = new Array(narration.length).fill(null);
+    function assignRange(start, end, ranges) {
+      if (ranges.length !== end - start + 1) return false;
+      ranges.forEach(function (range, index) { exampleMap[start + index] = range; });
+      return true;
+    }
+    function visualCopy(id) {
+      var highlight = section.querySelector('.highlight-copy[data-id="' + id + '"]');
+      var liveCopy = highlight && highlight.closest(".live-copy");
+      return liveCopy && liveCopy.querySelector(".visual-copy");
+    }
+
+    var stepsHeading = rawRanges(section.querySelector('[data-id="pg048_p033"]'));
+    var valid =
+      assignRange(0, 3, rawRanges(section.querySelector('[data-id="pg048_p030"]'))) &&
+      assignRange(4, 4, rawRanges(section.querySelector('[data-id="pg048_p031"]'))) &&
+      assignRange(5, 9, rawRanges(section.querySelector('[data-id="pg048_p032"]'))) &&
+      stepsHeading.length === 1 &&
+      assignRange(12, 19, rawRanges(visualCopy("pg048_p034"))) &&
+      assignRange(20, 23, rawRanges(visualCopy("pg048_p035"))) &&
+      assignRange(24, 28, rawRanges(visualCopy("pg048_p036"))) &&
+      assignRange(29, 34, rawRanges(visualCopy("pg048_p037"))) &&
+      assignRange(35, 41, rawRanges(visualCopy("pg048_p038"))) &&
+      assignRange(43, 52, rawRanges(visualCopy("pg048_p042"))) &&
+      assignRange(53, 57, rawRanges(visualCopy("pg048_p043"))) &&
+      assignRange(58, 62, rawRanges(visualCopy("pg048_p044"))) &&
+      assignRange(63, 74, rawRanges(visualCopy("pg048_p045")));
+    if (!valid) return null;
+    exampleMap[10] = stepsHeading[0];
+    exampleMap[11] = stepsHeading[0];
+    exampleMap[42] = stepsHeading[0];
+    return exampleMap.some(function (target) { return !target; }) ? null : exampleMap;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

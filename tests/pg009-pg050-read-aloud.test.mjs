@@ -954,10 +954,10 @@ assert.deepEqual(
 
 const page48 = read("pg048_sec001.html");
 const page48Questions = "Question 13. 213 plus 331. Question 14. 213 plus 431. Question 15. 785 plus 214.";
-const page48Example = "167 plus 138 equals 305. Solution. Step 1. Add ones: 7 plus 8 equals 15. Regroup 15 ones into 1 ten and 5 ones. Write 5 in the ones place. Carry 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 3 equals 10. Regroup 10 tens into 1 hundred and 0 tens. Write 0 in the tens place. Carry 1 hundred to the hundreds place.";
+const page48Example = "167 plus 138 equals. Solution. 167 plus 138 equals 305. Steps. Step 1. Add ones: 7 plus 8 equals 15. Regroup 15 ones into 1 ten and 5 ones. Write 5 in the ones place. Carry 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 3 equals 10. Regroup 10 tens into 1 hundred and 0 tens. Write 0 in the tens place. Carry 1 hundred to the hundreds place.";
 for (const [id, expected, filename] of [
   ["pg048_p052", page48Questions, "pg048_p052_adt_questions13to15.mp3"],
-  ["pg048_p053", page48Example, "pg048_p053_adt_example.mp3"]
+  ["pg048_p053", page48Example, "pg048_p053_adt_example_solution_steps.mp3"]
 ]) {
   assert.equal(texts[id], expected, `${id} must narrate page 48 coherently`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
