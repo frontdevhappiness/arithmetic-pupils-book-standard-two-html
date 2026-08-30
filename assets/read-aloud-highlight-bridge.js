@@ -222,9 +222,35 @@
     return mapping;
   }
 
+  function buildPage23TableMap(content, source, narration) {
+    var targets = {
+      pg023_p019: "all",
+      pg023_im002: 0,
+      pg023_im003: 1,
+      pg023_im001: 2
+    };
+    var id = source.getAttribute("data-id");
+    if (!Object.prototype.hasOwnProperty.call(targets, id)) return null;
+    var section = content.querySelector('[data-section-id="pg023_sec001"]');
+    if (!section) return null;
+    var headings = Array.from(section.querySelectorAll(".question:first-child .column-heading")).map(function (heading) {
+      var token = collectRootTokens(heading, content)[0];
+      return token && token.range;
+    }).filter(Boolean);
+    if (headings.length !== 3) return null;
+
+    if (targets[id] !== "all") return new Array(narration.length).fill(headings[targets[id]]);
+    return narration.map(function (word) {
+      if (word === "hundreds") return headings[0];
+      if (word === "tens") return headings[1];
+      if (word === "ones") return headings[2];
+      return headings;
+    });
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
@@ -281,7 +307,8 @@
     });
   }
 
-  function drawWord(range, source, wordIndex) {
+  function drawWord(target, source, wordIndex) {
+    var ranges = Array.isArray(target) ? target : [target];
     if (window.CSS && CSS.highlights && typeof window.Highlight === "function") {
       var marker = getMarker();
       marker.replaceChildren();
@@ -289,11 +316,11 @@
       marker.setAttribute("data-source-id", source.getAttribute("data-id") || "");
       marker.setAttribute("data-word-index", String(wordIndex));
       marker.setAttribute("data-custom-highlight", "true");
-      CSS.highlights.set(CUSTOM_HIGHLIGHT_NAME, new Highlight(range));
+      CSS.highlights.set(CUSTOM_HIGHLIGHT_NAME, new Highlight(...ranges));
       return;
     }
-    var rect = usableRect(range);
-    if (rect) drawRects([rect], source, wordIndex, false);
+    var rects = ranges.map(usableRect).filter(Boolean);
+    if (rects.length) drawRects(rects, source, wordIndex, false);
   }
 
   function render() {
@@ -322,8 +349,9 @@
 
     if (active.mode === "word") {
       var index = Number(active.word.getAttribute("data-word-index"));
-      var range = currentMap[index];
-      if (usableRect(range)) drawWord(range, active.source, index);
+      var target = currentMap[index];
+      var usable = (Array.isArray(target) ? target : [target]).some(function (item) { return usableRect(item); });
+      if (usable) drawWord(target, active.source, index);
       else {
         var marker = document.getElementById(MARKER_ID);
         var samePassage = marker && marker.getAttribute("data-source-id") === (active.source.getAttribute("data-id") || "");
@@ -333,7 +361,9 @@
       return;
     }
 
-    var rects = currentMap.map(usableRect).filter(Boolean);
+    var rects = currentMap.flatMap(function (target) {
+      return (Array.isArray(target) ? target : [target]).map(usableRect).filter(Boolean);
+    });
     if (rects.length) drawRects(mergeLineRects(rects), active.source, null, true);
     else clearMarker();
   }

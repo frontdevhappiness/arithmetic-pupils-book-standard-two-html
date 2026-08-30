@@ -16,9 +16,9 @@ function offlineHtml(path) {
 }
 
 const narrationOrder = [
-  "pg023_p001", "pg023_p002", "pg023_im002", "pg023_p005",
-  "pg023_p003", "pg023_im003", "pg023_p006", "pg023_p004",
-  "pg023_im001", "pg023_p007", "pg023_p008", "pg023_p009",
+  "pg023_p001", "pg023_p019", "pg023_im002", "pg023_im003", "pg023_im001",
+  "pg023_p002", "pg023_p005", "pg023_p003", "pg023_p006", "pg023_p004",
+  "pg023_p007", "pg023_p008", "pg023_p009",
   "pg023_p010", "pg023_im004", "pg023_p013", "pg023_p011",
   "pg023_im005", "pg023_p014", "pg023_p012", "pg023_im018",
   "pg023_p015", "pg023_p016"
@@ -36,14 +36,27 @@ test("page 23 preserves approved narration order", () => {
     const next = html.indexOf(`data-id="${id}"`);
     assert.ok(next > position, `${id} is missing or out of order`);
     position = next;
-    assert.equal(typeof audios[id], "string", `${id} has no audio mapping`);
+    if (!["pg023_p002", "pg023_p003", "pg023_p004"].includes(id)) {
+      assert.equal(typeof audios[id], "string", `${id} has no audio mapping`);
+    }
   }
 });
 
-test("question 2 retains interpreted descriptions", () => {
+test("question 2 uses the approved table and image narration", () => {
+  const expected = {
+    pg023_p019: "A place-value table has three columns: hundreds, tens, and ones.",
+    pg023_im002: "In the hundreds column, there are two large bundles of pencils.",
+    pg023_im003: "In the tens column, there are three smaller bundles of pencils.",
+    pg023_im001: "In the ones column, there are three single pencils.",
+  };
+  for (const [id, narration] of Object.entries(expected)) {
+    assert.equal(texts[id], narration);
+    assert.match(audios[id], /_elimu_male\.mp3$/);
+    assert.match(html, new RegExp(`class="table-narration narration-only" data-id="${id}">${narration.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</p>`));
+  }
   for (const id of ["pg023_im002", "pg023_im003", "pg023_im001"]) {
-    assert.match(texts[id], /representing/);
-    assert.ok(html.includes(`alt="${texts[id]}" data-id="${id}"`));
+    assert.ok(html.includes(`alt="${texts[id]}"`));
+    assert.doesNotMatch(html, new RegExp(`alt="[^"]+" data-id="${id}"`));
   }
 });
 

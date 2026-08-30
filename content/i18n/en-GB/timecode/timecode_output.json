@@ -27214,35 +27214,69 @@
       {
         "word_timestamps": [
           {
-            "text": "Three",
-            "start": 0,
-            "end": 0.7
+            "text": "In",
+            "start": 0.1,
+            "end": 0.492
           },
           {
-            "text": "single",
-            "start": 0.7,
-            "end": 1.32
-          },
-          {
-            "text": "pencils",
-            "start": 1.32,
-            "end": 1.84
-          },
-          {
-            "text": "representing",
-            "start": 2.24,
-            "end": 2.84
-          },
-          {
-            "text": "3",
-            "start": 2.84,
-            "end": 3.34
+            "text": "the",
+            "start": 0.492,
+            "end": 0.884
           },
           {
             "text": "ones",
-            "start": 3.34,
-            "end": 3.74
+            "start": 0.884,
+            "end": 1.277
+          },
+          {
+            "text": "column",
+            "start": 1.277,
+            "end": 1.754
+          },
+          {
+            "text": "there",
+            "start": 1.754,
+            "end": 2.186
+          },
+          {
+            "text": "are",
+            "start": 2.186,
+            "end": 2.578
+          },
+          {
+            "text": "three",
+            "start": 2.578,
+            "end": 3.011
+          },
+          {
+            "text": "single",
+            "start": 3.011,
+            "end": 3.488
+          },
+          {
+            "text": "pencils",
+            "start": 3.488,
+            "end": 4.008
           }
+        ]
+      }
+    ]
+  },
+  "pg023_p019": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          { "text": "A", "start": 0.1, "end": 0.547 },
+          { "text": "place-value", "start": 0.547, "end": 1.305 },
+          { "text": "table", "start": 1.305, "end": 1.797 },
+          { "text": "has", "start": 1.797, "end": 2.244 },
+          { "text": "three", "start": 2.244, "end": 2.736 },
+          { "text": "columns", "start": 2.736, "end": 3.328 },
+          { "text": "hundreds", "start": 3.328, "end": 3.964 },
+          { "text": "tens", "start": 3.964, "end": 4.411 },
+          { "text": "and", "start": 4.411, "end": 4.857 },
+          { "text": "ones", "start": 4.857, "end": 5.304 }
         ]
       }
     ]
@@ -27946,49 +27980,59 @@
       {
         "word_timestamps": [
           {
-            "text": "Two",
-            "start": 0,
-            "end": 0.7200000286102295
+            "text": "In",
+            "start": 0.1,
+            "end": 0.461
           },
           {
-            "text": "bundles",
-            "start": 0.7200000286102295,
-            "end": 1.1200000047683716
-          },
-          {
-            "text": "of",
-            "start": 1.1200000047683716,
-            "end": 1.4600000381469727
-          },
-          {
-            "text": "one",
-            "start": 1.4600000381469727,
-            "end": 1.6399999856948853
-          },
-          {
-            "text": "hundred",
-            "start": 1.6399999856948853,
-            "end": 1.9199999570846558
-          },
-          {
-            "text": "pencils",
-            "start": 1.9199999570846558,
-            "end": 2.5
-          },
-          {
-            "text": "representing",
-            "start": 3,
-            "end": 3.5199999809265137
-          },
-          {
-            "text": "2",
-            "start": 3.5199999809265137,
-            "end": 4.079999923706055
+            "text": "the",
+            "start": 0.461,
+            "end": 0.821
           },
           {
             "text": "hundreds",
-            "start": 4.079999923706055,
-            "end": 4.380000114440918
+            "start": 0.821,
+            "end": 1.336
+          },
+          {
+            "text": "column",
+            "start": 1.336,
+            "end": 1.775
+          },
+          {
+            "text": "there",
+            "start": 1.775,
+            "end": 2.172
+          },
+          {
+            "text": "are",
+            "start": 2.172,
+            "end": 2.533
+          },
+          {
+            "text": "two",
+            "start": 2.533,
+            "end": 2.894
+          },
+          {
+            "text": "large",
+            "start": 2.894,
+            "end": 3.291
+          },
+          {
+            "text": "bundles",
+            "start": 3.291,
+            "end": 3.769
+          },
+          {
+            "text": "of",
+            "start": 3.769,
+            "end": 4.13
+          },
+          {
+            "text": "pencils",
+            "start": 4.13,
+            "end": 4.608
           }
         ]
       }
@@ -28000,44 +28044,59 @@
       {
         "word_timestamps": [
           {
-            "text": "Three",
-            "start": 0,
-            "end": 0.5799999833106995
+            "text": "In",
+            "start": 0.1,
+            "end": 0.469
           },
           {
-            "text": "bundles",
-            "start": 0.5799999833106995,
-            "end": 1.059999942779541
-          },
-          {
-            "text": "of",
-            "start": 1.059999942779541,
-            "end": 1.340000033378601
-          },
-          {
-            "text": "ten",
-            "start": 1.340000033378601,
-            "end": 1.6200000047683716
-          },
-          {
-            "text": "pencils",
-            "start": 1.6200000047683716,
-            "end": 2.200000047683716
-          },
-          {
-            "text": "representing",
-            "start": 2.6,
-            "end": 3.059999942779541
-          },
-          {
-            "text": "3",
-            "start": 3.059999942779541,
-            "end": 3.5
+            "text": "the",
+            "start": 0.469,
+            "end": 0.839
           },
           {
             "text": "tens",
-            "start": 3.5,
-            "end": 3.759999990463257
+            "start": 0.839,
+            "end": 1.208
+          },
+          {
+            "text": "column",
+            "start": 1.208,
+            "end": 1.658
+          },
+          {
+            "text": "there",
+            "start": 1.658,
+            "end": 2.065
+          },
+          {
+            "text": "are",
+            "start": 2.065,
+            "end": 2.435
+          },
+          {
+            "text": "three",
+            "start": 2.435,
+            "end": 2.842
+          },
+          {
+            "text": "smaller",
+            "start": 2.842,
+            "end": 3.331
+          },
+          {
+            "text": "bundles",
+            "start": 3.331,
+            "end": 3.821
+          },
+          {
+            "text": "of",
+            "start": 3.821,
+            "end": 4.19
+          },
+          {
+            "text": "pencils",
+            "start": 4.19,
+            "end": 4.68
           }
         ]
       }

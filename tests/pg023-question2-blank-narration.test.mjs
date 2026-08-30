@@ -25,12 +25,13 @@ test("page 23 question 2 neutrally describes every answer line", () => {
   }
 });
 
-test("page 23 question 2 reads each heading, picture, and answer line together", () => {
+test("page 23 question 2 reads the approved table narration before its answer lines", () => {
   const expectedOrder = [
     "pg023_p001",
-    "pg023_p002", "pg023_im002", "pg023_p005",
-    "pg023_p003", "pg023_im003", "pg023_p006",
-    "pg023_p004", "pg023_im001", "pg023_p007",
+    "pg023_p019", "pg023_im002", "pg023_im003", "pg023_im001",
+    "pg023_p002", "pg023_p005",
+    "pg023_p003", "pg023_p006",
+    "pg023_p004", "pg023_p007",
     "pg023_p008", "pg023_p009",
   ];
   const positions = expectedOrder.map((id) => page.lastIndexOf(`"${id}"`));
