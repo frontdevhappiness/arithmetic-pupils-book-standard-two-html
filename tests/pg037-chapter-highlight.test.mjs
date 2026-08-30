@@ -25,4 +25,20 @@ assert.deepEqual(
   ["Chapter", "5", "Addition"],
 );
 
-console.log("Page 37 chapter narration maps to Chapter, Five, and Addition in visible order.");
+assert.match(
+  page,
+  /class="narration-only" data-id="pg037_im008">Example 1 showing 223 \+ 345 by place value:/,
+  "the example description must be hidden text so its timed words can drive visible highlighting",
+);
+assert.match(bridge, /function buildPage37ExampleMap/);
+for (const id of [
+  "pg037_p007", "pg037_p008", "pg037_p009", "pg037_p010", "pg037_p011",
+  "pg037_p012", "pg037_p013", "pg037_p014", "pg037_p015", "pg037_p016",
+  "pg037_p017", "pg037_p018", "pg037_p019", "pg037_p020", "pg037_p021",
+]) {
+  assert.match(bridge, new RegExp(`"${id}"`), `${id} must be an example-highlight target`);
+}
+assert.equal(audios.pg037_im008, "pg037_im008.mp3");
+assert.equal(timecodes.pg037_im008.timecodes[1].word_timestamps.length, 43);
+
+console.log("Page 37 chapter and example narrations map to their visible text in order.");

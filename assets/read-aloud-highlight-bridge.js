@@ -483,9 +483,88 @@
     });
   }
 
+  function buildPage37ExampleMap(content, source, narration) {
+    if (source.getAttribute("data-id") !== "pg037_im008") return null;
+
+    function tokens(id) {
+      var element = content.querySelector('[data-id="' + id + '"]');
+      return element ? collectRootTokens(element, content) : [];
+    }
+
+    function textRange(id, start, end) {
+      var element = content.querySelector('[data-id="' + id + '"]');
+      var node = element && element.firstChild;
+      if (!node || node.nodeType !== Node.TEXT_NODE || end > node.nodeValue.length) return null;
+      var range = document.createRange();
+      range.setStart(node, start);
+      range.setEnd(node, end);
+      return range;
+    }
+
+    var label = tokens("pg037_p007");
+    var expression = tokens("pg037_p008");
+    var finalLine = tokens("pg037_p021");
+    var hundreds = tokens("pg037_p009")[0];
+    var tens = tokens("pg037_p010")[0];
+    var ones = tokens("pg037_p011")[0];
+    var addHundreds = tokens("pg037_p012")[0];
+    var addTens = tokens("pg037_p013")[0];
+    var addOnes = tokens("pg037_p014")[0];
+    var equalsHundreds = tokens("pg037_p015")[0];
+    var equalsTens = tokens("pg037_p016")[0];
+    var equalsOnes = tokens("pg037_p017")[0];
+    var fiveHundreds = tokens("pg037_p018")[0];
+    var sixTens = tokens("pg037_p019")[0];
+    var eightOnes = tokens("pg037_p020")[0];
+    if (label.length < 2 || expression.length < 2 || finalLine.length < 4 || !hundreds || !tens || !ones) return null;
+
+    var mapping = new Array(narration.length).fill(null);
+    mapping[0] = label[0].range;
+    mapping[1] = label[1].range;
+    mapping[3] = textRange("pg037_p008", 0, 3);
+    mapping[4] = textRange("pg037_p008", 4, 5);
+    mapping[5] = textRange("pg037_p008", 6, 9);
+    mapping[7] = [hundreds.range, tens.range, ones.range];
+    mapping[8] = mapping[7];
+    mapping[9] = textRange("pg037_p008", 0, 1);
+    mapping[10] = hundreds.range;
+    mapping[11] = addHundreds && addHundreds.range;
+    mapping[12] = mapping[11];
+    mapping[13] = textRange("pg037_p008", 6, 7);
+    mapping[14] = hundreds.range;
+    mapping[15] = equalsHundreds && equalsHundreds.range;
+    mapping[16] = fiveHundreds && fiveHundreds.range;
+    mapping[17] = hundreds.range;
+    mapping[18] = textRange("pg037_p008", 1, 2);
+    mapping[19] = tens.range;
+    mapping[20] = addTens && addTens.range;
+    mapping[21] = mapping[20];
+    mapping[22] = textRange("pg037_p008", 7, 8);
+    mapping[23] = tens.range;
+    mapping[24] = equalsTens && equalsTens.range;
+    mapping[25] = sixTens && sixTens.range;
+    mapping[26] = tens.range;
+    mapping[28] = textRange("pg037_p008", 2, 3);
+    mapping[29] = ones.range;
+    mapping[30] = addOnes && addOnes.range;
+    mapping[31] = mapping[30];
+    mapping[32] = textRange("pg037_p008", 8, 9);
+    mapping[33] = ones.range;
+    mapping[34] = equalsOnes && equalsOnes.range;
+    mapping[35] = eightOnes && eightOnes.range;
+    mapping[36] = ones.range;
+    mapping[37] = finalLine[0].range;
+    mapping[38] = finalLine[1].range;
+    mapping[39] = textRange("pg037_p021", 15, 16);
+    mapping[40] = finalLine[2].range;
+    mapping[41] = textRange("pg037_p021", 21, 22);
+    mapping[42] = finalLine[3].range;
+    return mapping;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

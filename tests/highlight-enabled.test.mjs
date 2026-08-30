@@ -31,7 +31,7 @@ for (const { href } of pageManifest) {
   assert.match(html, /assets\/fonts\.css\?v=2/, `${href} must request the restored highlight CSS`);
   assert.match(
     html,
-    /assets\/read-aloud-highlight-bridge\.js\?v=17/,
+    /assets\/read-aloud-highlight-bridge\.js\?v=18/,
     `${href} must load the non-layout-changing highlight bridge`,
   );
   if (/class=["'][^"']*\bsr-only\b[^"']*["'][^>]*data-id=["']pg\d{3}_[^"']+["']/i.test(html)) {
