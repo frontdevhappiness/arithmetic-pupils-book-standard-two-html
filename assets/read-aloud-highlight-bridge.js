@@ -695,9 +695,52 @@
     return mapping;
   }
 
+  function buildPage45SolutionMap(content, source, narration) {
+    var sourceId = source.getAttribute("data-id");
+    if (sourceId !== "pg045_p025" && sourceId !== "pg045_p053") return null;
+    var solution = content.querySelector('[data-section-id="pg045_sec001"] .example-card .solution-pair > div:nth-child(2)');
+    if (!solution) return null;
+
+    var title = solution.querySelector("h2");
+    var headings = Array.from(solution.querySelectorAll(".place-head > span"));
+    var equation = solution.querySelector(".place-sum");
+    var result = Array.from(solution.querySelectorAll('[data-id="pg045_p034"],[data-id="pg045_p035"],[data-id="pg045_p036"]'));
+    if (!title || headings.length !== 3 || !equation || result.length !== 3) return null;
+
+    function firstRange(element) {
+      var token = collectRootTokens(element, content)[0];
+      return token && token.range;
+    }
+
+    var titleRange = firstRange(title);
+    var headingRanges = headings.map(firstRange);
+    if (!titleRange || headingRanges.some(function (range) { return !range; })) return null;
+
+    if (sourceId === "pg045_p025") {
+      var shortTargets = {
+        solution: titleRange,
+        hundreds: headingRanges[0],
+        tens: headingRanges[1],
+        ones: headingRanges[2]
+      };
+      return narration.map(function (word) { return shortTargets[word] || null; });
+    }
+
+    return narration.map(function (word, index) {
+      if (word === "solution") return titleRange;
+      if (word === "hundreds") return headingRanges[0];
+      if (word === "tens") return headingRanges[1];
+      if (word === "ones") return headingRanges[2];
+      if (index >= 1 && index <= 5) return equation;
+      if (index >= 6 && index <= 16) return headings;
+      if (index >= 17) return result;
+      return null;
+    });
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

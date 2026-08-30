@@ -5,6 +5,7 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const css = fs.readFileSync(new URL("assets/semantic-pages-042-051.css", root), "utf8");
+const highlightBridge = fs.readFileSync(new URL("assets/read-aloud-highlight-bridge.js", root), "utf8");
 const offlineSource = fs.readFileSync(new URL("assets/offline-data.js", root), "utf8");
 const offlinePrefix = "  var INLINE = ";
 const offlineStart = offlineSource.indexOf(offlinePrefix) + offlinePrefix.length;
@@ -67,6 +68,15 @@ test("page 43 question numbers and words use the same solid yellow highlight as 
 
 test("page 44 step numbers and words use the same solid yellow highlight as the Steps heading", () => {
   assert.match(css, /\[data-section-id="pg044_sec001"\] \.step-grid \.highlight-copy \[data-word-index\]\.bg-yellow-300 \{ color:#000!important; background:#fde047!important; \}/);
+});
+
+test("page 45 step numbers and words use solid yellow and Example 2 has a local solution map", () => {
+  assert.match(css, /\[data-section-id="pg045_sec001"\] \.step-grid \.highlight-copy \[data-word-index\]\.bg-yellow-300 \{ color:#000!important; background:#fde047!important; \}/);
+  assert.match(page(45).html, /semantic-pages-042-051\.css\?v=5/);
+  assert.match(page(45).html, /read-aloud-highlight-bridge\.js\?v=24/);
+  assert.match(highlightBridge, /function buildPage45SolutionMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg045_p025" && sourceId !== "pg045_p053"/);
+  assert.match(highlightBridge, /buildPage45SolutionMap\(content, source, narration\)/);
 });
 
 test("page-specific corrected structures are present", () => {
