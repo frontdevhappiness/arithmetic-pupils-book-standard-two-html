@@ -93,7 +93,7 @@ assert.match(runtime, /audio\.playbackRate = speedRef\.current/, "playback speed
 // The responsive page uses inline word spans. Hidden narration used by other
 // rebuilt layouts is projected by a fixed overlay that never changes layout.
 assert.match(html, /assets\/fonts\.css\?v=2/);
-assert.match(html, /assets\/read-aloud-highlight-bridge\.js\?v=10/);
+assert.match(html, /assets\/read-aloud-highlight-bridge\.js\?v=11/);
 assert.match(sharedCss, /span\[data-word-index\]\.bg-yellow-300/);
 assert.doesNotMatch(fontCss, /Word highlighting is temporarily disabled book-wide/);
 assert.match(bridge, /position:fixed/);

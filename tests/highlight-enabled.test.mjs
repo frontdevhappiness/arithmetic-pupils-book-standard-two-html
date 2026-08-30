@@ -22,6 +22,7 @@ assert.match(bridge, /buildPage94ShareMap/);
 assert.match(bridge, /buildPage23TableMap/);
 assert.match(bridge, /buildPage24AnswerBlankMap/);
 assert.match(bridge, /buildPage28ExerciseRowMap/);
+assert.match(bridge, /buildPage29ExerciseDiagramMap/);
 assert.match(bridge, /samePassage/);
 
 let hiddenNarrationPages = 0;
@@ -30,7 +31,7 @@ for (const { href } of pageManifest) {
   assert.match(html, /assets\/fonts\.css\?v=2/, `${href} must request the restored highlight CSS`);
   assert.match(
     html,
-    /assets\/read-aloud-highlight-bridge\.js\?v=10/,
+    /assets\/read-aloud-highlight-bridge\.js\?v=11/,
     `${href} must load the non-layout-changing highlight bridge`,
   );
   if (/class=["'][^"']*\bsr-only\b[^"']*["'][^>]*data-id=["']pg\d{3}_[^"']+["']/i.test(html)) {

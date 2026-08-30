@@ -459,8 +459,8 @@ for (const number of [2,3,4,5,6,7]) {
   assert.equal(texts[id], "", `${id} must not duplicate its combined exercise narration`);
   assert.equal(audios[id], undefined, `${id} must be decorative after its words move to the question overlay`);
 }
-assert.match(page29, /\{id:"pg029_p009", item:"1\.", h:"3", t:"1", o:"2", left:105, top:396\}/, "question 1 highlight segments must align with its printed diagram");
-assert.match(page29, /\{id:"pg029_p012", item:"4\.", h:null, t:"3", o:"5", left:297, top:489\}/, "question 4 must omit a nonexistent hundreds place");
+assert.match(page29, /data-id="pg029_p009"[\s\S]*?data-place-digit="hundreds">3<[\s\S]*?data-place-digit="tens">1<[\s\S]*?data-place-digit="ones">2</, "question 1 highlight targets must align with its printed diagram");
+assert.match(page29, /data-id="pg029_p012"[\s\S]*?data-place-digit="tens">3<[\s\S]*?data-place-digit="ones">5</, "question 4 must map only its tens and ones digits");
 
 const page30 = read("pg030_sec001.html");
 assert.match(page30, /span\[data-word-index\]\.bg-yellow-300::before\{content:none!important\}/, "page 30 must use only the exact runtime word highlight");

@@ -296,9 +296,29 @@
     return row ? alignTokens(narration, collectRootTokens(row, content)) : null;
   }
 
+  function buildPage29ExerciseDiagramMap(content, source, narration) {
+    var id = source.getAttribute("data-id");
+    if (!/^pg029_p(?:009|010|011|012|013|014)$/.test(id || "")) return null;
+    var question = source.closest(".diagram-question");
+    if (!question) return null;
+    var targets = [];
+    var questionNumber = question.querySelector(".question-number");
+    if (questionNumber) targets.push(collectRootTokens(questionNumber, content)[0]);
+    ["hundreds", "tens", "ones"].forEach(function (place) {
+      var digit = question.querySelector('[data-place-digit="' + place + '"]');
+      var label = question.querySelector(".place-line." + place + " span");
+      if (digit) targets.push(collectRootTokens(digit, content)[0]);
+      if (digit && label) targets.push(collectRootTokens(label, content)[0]);
+    });
+    if (targets.length !== narration.length || targets.some(function (target) { return !target; })) return null;
+    return narration.map(function (word, index) {
+      return targets[index].normalized === word ? targets[index].range : null;
+    });
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
