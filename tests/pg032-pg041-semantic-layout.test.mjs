@@ -82,6 +82,17 @@ test("page 39 highlights generated question numbers and keeps each model narrati
   assert.equal((html.match(/data-id="pg039_p040"/g) || []).length, 1);
 });
 
+test("page 40 highlights generated question numbers", () => {
+  const html = page(40).html;
+  assert.match(css, /\[data-section-id="pg040_sec001"\] \.place-model-title:has\(\[data-word-index="0"\]\.bg-yellow-300\)::before/);
+  assert.match(css, /\[data-section-id="pg040_sec001"\] \.place-model-title\.tts-active-block::before/);
+  assert.ok(html.indexOf('data-id="pg040_p001"') < html.indexOf('data-id="pg040_p037"'));
+  assert.ok(html.indexOf('data-id="pg040_p037"') < html.indexOf('data-id="pg040_p018"'));
+  assert.ok(html.indexOf('data-id="pg040_p018"') < html.indexOf('data-id="pg040_p038"'));
+  assert.equal((html.match(/data-id="pg040_p037"/g) || []).length, 1);
+  assert.equal((html.match(/data-id="pg040_p038"/g) || []).length, 1);
+});
+
 test("offline copies match pages 32 to 41", () => {
   for (let number = 32; number <= 41; number += 1) {
     const { file, html } = page(number);

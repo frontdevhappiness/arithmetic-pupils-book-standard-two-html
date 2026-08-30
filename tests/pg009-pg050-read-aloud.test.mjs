@@ -757,16 +757,17 @@ for (const id of ["pg039_p004","pg039_p005","pg039_p006","pg039_p007","pg039_p00
 
 const page40 = read("pg040_sec001.html");
 const page40Models = {
-  pg040_p037: "Third place-value model. In the hundreds column, one green counter is added to two green counters. In the tens column, two blue counters are added to three blue counters. In the ones column, five red counters are added to three red counters. Fill in the three column totals and the final sum.",
-  pg040_p038: "Fourth place-value model. In the hundreds column, four green counters are added to five green counters. In the tens column, two blue counters are added to one blue counter. In the ones column, five red counters are added to two red counters. Fill in the three column totals and the final sum."
+  pg040_p037: "Third place-value model. In the hundreds column, one green counter is added to two green counters. Equals. In the tens column, two blue counters are added to three blue counters. Equals. In the ones column, five red counters are added to three red counters. Equals. Fill in the three column totals and the final sum.",
+  pg040_p038: "Fourth place-value model. In the hundreds column, four green counters are added to five green counters. Equals. In the tens column, two blue counters are added to one blue counter. Equals. In the ones column, five red counters are added to two red counters. Equals. Fill in the three column totals and the final sum."
 };
 for (const [id, expected] of Object.entries(page40Models)) {
   assert.equal(texts[id], expected, `${id} must describe every counter group without giving away the answer`);
-  assert.equal(audios[id], `${id}_adt_model.mp3`, `${id} must use the complete ADT model narration`);
+  assert.equal(audios[id], `${id}_adt_model_equals.mp3`, `${id} must use the complete ADT model narration`);
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
 }
 assert.ok(page40.indexOf('data-id="pg040_p001"') < page40.indexOf('data-id="pg040_p037"'), "the third model description must follow its equation");
 assert.ok(page40.indexOf('data-id="pg040_p018"') < page40.indexOf('data-id="pg040_p038"'), "the fourth model description must follow its equation");
+assert.ok(page40.indexOf('data-id="pg040_p037"') < page40.indexOf('data-id="pg040_p018"'), "the third model description must precede question 4");
 for (const id of ["pg040_im001", "pg040_im002", "pg040_im003"]) {
   assert.equal(texts[id], "", `${id} must be decorative because the complete model is described once`);
   assert.equal(audios[id], undefined, `${id} must not play an isolated counter description`);
