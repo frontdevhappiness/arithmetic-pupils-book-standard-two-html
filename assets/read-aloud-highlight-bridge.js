@@ -649,9 +649,55 @@
     return mapping;
   }
 
+  function buildPage41ModelMap(content, source, narration) {
+    var sourceId = source.getAttribute("data-id");
+    if (sourceId !== "pg041_p037" && sourceId !== "pg041_p038") return null;
+    var model = source.closest(".place-model");
+    var columns = model ? Array.from(model.querySelectorAll(".place-model-grid > div")) : [];
+    if (columns.length !== 3) return null;
+
+    function wordRange(element) {
+      var tokens = element ? collectRootTokens(element, content) : [];
+      return tokens[0] && tokens[0].range;
+    }
+
+    var headers = columns.map(function (column) { return wordRange(column.querySelector("h3")); });
+    var firstCounters = columns.map(function (column) { return column.querySelectorAll(".counter-row")[0]; });
+    var secondCounters = columns.map(function (column) { return column.querySelectorAll(".counter-row")[1]; });
+    var adds = columns.map(function (column) { return wordRange(column.querySelectorAll(".model-word")[0]); });
+    var equals = columns.map(function (column) { return wordRange(column.querySelectorAll(".model-word")[1]); });
+    var answers = columns.map(function (column) { return column.querySelector(".model-answer"); });
+    var finalLine = model.querySelector(".model-final");
+    if ([headers, firstCounters, secondCounters, adds, equals, answers].some(function (items) { return items.some(function (item) { return !item; }); }) || !finalLine) return null;
+
+    var mapping = new Array(narration.length).fill(null);
+    function assign(start, end, target) {
+      for (var index = start; index <= end; index += 1) mapping[index] = target;
+    }
+
+    assign(3, 6, headers[0]);
+    assign(7, 9, firstCounters[0]);
+    assign(10, 12, adds[0]);
+    assign(13, 15, secondCounters[0]);
+    mapping[16] = equals[0];
+    assign(17, 20, headers[1]);
+    assign(21, 23, firstCounters[1]);
+    assign(24, 26, adds[1]);
+    assign(27, 29, secondCounters[1]);
+    mapping[30] = equals[1];
+    assign(31, 34, headers[2]);
+    assign(35, 37, firstCounters[2]);
+    assign(38, 40, adds[2]);
+    assign(41, 43, secondCounters[2]);
+    mapping[44] = equals[2];
+    assign(45, 50, answers);
+    assign(51, 54, finalLine);
+    return mapping;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
