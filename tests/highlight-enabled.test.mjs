@@ -63,6 +63,8 @@ for (const { href } of pageManifest) {
                                   ? /assets\/read-aloud-highlight-bridge\.js\?v=51/
                                   : href === "pg060_sec001.html"
                                     ? /assets\/read-aloud-highlight-bridge\.js\?v=52/
+                                    : href === "pg063_sec001.html"
+                                      ? /assets\/read-aloud-highlight-bridge\.js\?v=54/
             : /assets\/read-aloud-highlight-bridge\.js\?v=23/,
     `${href} must load the non-layout-changing highlight bridge`,
   );

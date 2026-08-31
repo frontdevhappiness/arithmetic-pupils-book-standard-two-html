@@ -304,6 +304,19 @@ test("page 60 keeps all Step 2 highlights inside the second row", () => {
   assert.equal(timecodes.pg060_p051.timecodes[1].word_timestamps[73].text, "place");
 });
 
+test("page 63 maps every example token to its exact visual target", () => {
+  const html = page(63).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=54/);
+  assert.match(highlightBridge, /function buildPage63ExampleMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg063_p036" \|\| narration\.length !== 64/);
+  assert.match(highlightBridge, /content\.matches\('\[data-section-id="pg063_sec001"\]'\)/);
+  assert.match(highlightBridge, /mapping\[4\] = equation\[3\]/);
+  assert.match(highlightBridge, /mapPlace\(14, \[labelRanges\[2\], labelRanges\[6\], labelRanges\[10\]\], 2, 6, 10\)/);
+  assert.match(highlightBridge, /mapping\[46\] = \[valueRanges\[8\], valueRanges\[9\], valueRanges\[10\]\]/);
+  assert.match(highlightBridge, /mapping\[63\] = \[labelRanges\[0\], labelRanges\[4\], labelRanges\[8\]\]/);
+  assert.equal(timecodes.pg063_p036.timecodes[1].word_timestamps.length, 64);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -315,8 +328,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 60", () => {
-  for (let number = 42; number <= 60; number += 1) {
+test("offline copies match pages 42 to 63", () => {
+  for (let number = 42; number <= 63; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }

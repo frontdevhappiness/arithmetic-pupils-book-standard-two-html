@@ -1273,8 +1273,8 @@ assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg062_")).sor
 
 const page63 = read("pg063_sec001.html");
 const page63Intro = "Chapter Six. Subtraction. Subtracting numbers not exceeding 999. Numbers can be subtracted horizontally or vertically. Subtraction is done by considering the place value of each digit in a number. Subtracting numbers horizontally without regrouping. Numbers are subtracted starting from the right to the left.";
-const page63Example = "Example. 247 minus 123. Solution. Subtract by place value, starting from the right. In the ones place, 7 minus 3 equals 4. In the tens place, 4 minus 2 equals 2. In the hundreds place, 2 minus 1 equals 1. Therefore, 247 minus 123 equals 124. The diagram uses coloured arrows to match ones with ones, tens with tens, and hundreds with hundreds.";
-for (const [id, expected, filename] of [["pg063_p035", page63Intro, "pg063_p035_adt_intro.mp3"], ["pg063_p036", page63Example, "pg063_p036_adt_example.mp3"]]) {
+const page63Example = "Example. 247 minus 123 equals. Solution. Subtract by place value, starting from the right. In the ones place, 7 minus 3 equals 4. In the tens place, 4 minus 2 equals 2. In the hundreds place, 2 minus 1 equals 1. Therefore, 247 minus 123 equals 124. The diagram uses coloured arrows to match ones with ones, tens with tens, and hundreds with hundreds.";
+for (const [id, expected, filename] of [["pg063_p035", page63Intro, "pg063_p035_adt_intro.mp3"], ["pg063_p036", page63Example, "pg063_p036_adt_example_equals.mp3"]]) {
   assert.equal(texts[id], expected, `${id} must narrate page 63 coherently`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
