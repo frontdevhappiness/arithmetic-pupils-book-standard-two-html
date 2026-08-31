@@ -1620,10 +1620,10 @@ const page82 = read("pg082_sec001.html");
 const page82Passages = [
   ["pg082_p001", "Exercise 1", "pg082_p001.mp3"],
   ["pg082_p002", "Use objects to multiply each of the following numbers.", "pg082_p002_adt_instruction.mp3"],
-  ["pg082_p004", "1. 4 × 2. Four yellow cars plus four yellow cars.", "pg082_p004_adt_natural.mp3"],
-  ["pg082_p008", "2. 6 × 3. Six pencils plus six pencils plus six pencils.", "pg082_p008_adt_natural.mp3"],
-  ["pg082_p013", "3. Three bells plus three bells plus three bells.", "pg082_p013_adt_natural.mp3"],
-  ["pg082_p019", "4. Five green sticks plus five green sticks plus five green sticks plus five green sticks.", "pg082_p019_adt_natural.mp3"],
+  ["pg082_p004", "1. 4 × 2. Four yellow cars plus four yellow cars = blank cars.", "pg082_p004_adt_equals_blank.mp3"],
+  ["pg082_p008", "2. 6 × 3. Six pencils plus six pencils plus six pencils = blank pencils.", "pg082_p008_adt_equals_blank.mp3"],
+  ["pg082_p013", "3. blank. Three bells plus three bells plus three bells = blank bells.", "pg082_p013_adt_equals_blanks.mp3"],
+  ["pg082_p019", "4. blank. Five green sticks plus five green sticks plus five green sticks plus five green sticks = blank sticks.", "pg082_p019_adt_equals_blanks.mp3"],
   ["pg082_p026", "Multiplying using repeated addition", "pg082_p026.mp3"],
   ["pg082_p027", "Multiplication can be done using repeated addition of a number.", "pg082_p027.mp3"],
   ["pg082_im006", "Example 1. Two times four equals. Solution. Repeated addition: 2 + 2 + 2 + 2 = 8. Multiply: 2 × 4 = 8. Therefore, 2 × 4 = 8.", "pg082_im006_adt_example.mp3"]

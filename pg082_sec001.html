@@ -238,6 +238,16 @@
         text-align: center;
         -webkit-text-stroke: 0.025em currentColor;
       }
+      .page82 .adt-source-hooks [data-id],
+      .page82 .pg082-source-item {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        clip-path: inset(50%) !important;
+        white-space: nowrap !important;
+      }
       @media (max-width: 44rem) {
         #content.pg082-shell {
           padding: 0 0 calc(var(--dock-height, 96px) + 1rem);
@@ -1433,6 +1443,14 @@
         const page = document.querySelector('[data-section-id="pg082_sec001"]');
         if (!page) return;
         const hooks = page.querySelector(".adt-source-hooks");
+        const exampleSourceImage = hooks?.querySelector('img[data-id="pg082_im006"]');
+        if (exampleSourceImage) {
+          const exampleSource = document.createElement("span");
+          exampleSource.className = "pg082-source-item";
+          exampleSource.dataset.id = "pg082_im006";
+          exampleSource.textContent = exampleSourceImage.getAttribute("alt") || "";
+          exampleSourceImage.replaceWith(exampleSource);
+        }
         const group = (src, alt) => `<img src="${src}" alt="${alt}">`;
         const blank = '<span class="pg082-blank" aria-hidden="true"></span>';
         const row = (number, factor, objects, answer, className, label) => `
@@ -1480,6 +1498,6 @@
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=2"></script>
-    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=41"></script>
   </body>
 </html>

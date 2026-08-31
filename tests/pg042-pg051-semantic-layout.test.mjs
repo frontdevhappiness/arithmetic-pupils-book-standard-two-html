@@ -551,6 +551,25 @@ test("page 81 maps each worked-example narration to its local equation", () => {
   assert.equal(timecodes.pg081_p039.timecodes[1].word_timestamps.length, 6);
 });
 
+test("page 82 maps exercise objects and Example 1 in exact narration order", () => {
+  const html = page(82).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=41/);
+  assert.match(html, /\.page82 \.adt-source-hooks \[data-id\]/);
+  assert.match(html, /exampleSource\.dataset\.id = "pg082_im006"/);
+  assert.match(html, /exampleSourceImage\.replaceWith\(exampleSource\)/);
+  assert.match(highlightBridge, /function buildPage82Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /id !== "pg082_p001" && id !== "pg082_p002"/);
+  assert.match(highlightBridge, /mapObjectRow\(rows\[0\], narration, 3\)/);
+  assert.match(highlightBridge, /mapObjectRow\(rows\[3\], narration, 3\)/);
+  assert.match(highlightBridge, /return mapping\.every\(Boolean\) \? mapping : \[\]/);
+  assert.match(highlightBridge, /buildPage82Map\(content, source, narration\)/);
+  assert.equal(timecodes.pg082_p004.timecodes[1].word_timestamps.length, 14);
+  assert.equal(timecodes.pg082_p008.timecodes[1].word_timestamps.length, 15);
+  assert.equal(timecodes.pg082_p013.timecodes[1].word_timestamps.length, 13);
+  assert.equal(timecodes.pg082_p019.timecodes[1].word_timestamps.length, 20);
+  assert.equal(timecodes.pg082_im006.timecodes[1].word_timestamps.length, 30);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -562,8 +581,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 81", () => {
-  for (let number = 42; number <= 81; number += 1) {
+test("offline copies match pages 42 to 82", () => {
+  for (let number = 42; number <= 82; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
