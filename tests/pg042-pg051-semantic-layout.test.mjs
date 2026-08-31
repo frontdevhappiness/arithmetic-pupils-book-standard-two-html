@@ -340,7 +340,7 @@ test("page 65 reads every equals sign and maps each equation locally", () => {
   assert.equal(timecodes.pg065_p037.timecodes[1].word_timestamps.length, 116);
   assert.equal(timecodes.pg065_p037.timecodes[1].word_timestamps.filter(({ text }) => text === "equals").length, 18);
   assert.equal(audios.pg065_p036, "pg065_p036_adt_abacus_equals_clean.mp3");
-  assert.equal(audios.pg065_p037, "pg065_p037_adt_exercise_equals_clean.mp3");
+  assert.equal(audios.pg065_p037, "pg065_p037_adt_exercise_equals_clean_trimmed.mp3");
 });
 
 test("page-specific corrected structures are present", () => {
