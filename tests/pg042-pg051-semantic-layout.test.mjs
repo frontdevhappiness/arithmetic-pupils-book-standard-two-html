@@ -462,6 +462,19 @@ test("page 75 maps every narrated subtraction to its own question", () => {
   assert.match(highlightBridge, /buildPage75ExerciseMap\(content, source, narration\)/);
 });
 
+test("page 76 matches the source equations and maps every narration locally", () => {
+  const html = page(76).html;
+  for (const equation of ["975 − 689", "647 − 429", "817 − 109", "754 − 269", "801 − 779", "862 − 279"]) assert.ok(html.includes(equation));
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=30/);
+  assert.match(highlightBridge, /function buildPage76Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /pg076_p114: \[1, 2, 3\]/);
+  assert.match(highlightBridge, /pg076_p118: \[13, 14, 15\]/);
+  assert.match(highlightBridge, /mapping\[minusIndex\] = subtrahend\[0\]/);
+  assert.match(highlightBridge, /buildPage76Map\(content, source, narration\)/);
+  assert.match(html, /\.page76 \.pg076-intro \{[\s\S]*?font-style: normal;/);
+  assert.match(html, /\.page76 \.pg076-copy p \{[\s\S]*?font-style: normal;/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -473,8 +486,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 75", () => {
-  for (let number = 42; number <= 75; number += 1) {
+test("offline copies match pages 42 to 76", () => {
+  for (let number = 42; number <= 76; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
