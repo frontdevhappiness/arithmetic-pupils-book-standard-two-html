@@ -281,6 +281,17 @@ test("page 58 maps every narrated question to its own visible row", () => {
   assert.equal(timecodes.pg058_p025.timecodes[1].word_timestamps.length, 111);
 });
 
+test("page 59 keeps the introductory fish counts in the top sum", () => {
+  const html = page(59).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=51/);
+  assert.match(highlightBridge, /function buildPage59FishNumberMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg059_p053" \|\| narration\.length !== 83/);
+  assert.match(highlightBridge, /mapping\[9\] = ranges\[0\]/);
+  assert.match(highlightBridge, /mapping\[18\] = ranges\[2\]/);
+  assert.equal(timecodes.pg059_p053.timecodes[1].word_timestamps[9].text, "112");
+  assert.equal(timecodes.pg059_p053.timecodes[1].word_timestamps[18].text, "210");
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -292,8 +303,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 58", () => {
-  for (let number = 42; number <= 58; number += 1) {
+test("offline copies match pages 42 to 59", () => {
+  for (let number = 42; number <= 59; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
