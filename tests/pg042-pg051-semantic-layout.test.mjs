@@ -241,6 +241,18 @@ test("page 55 maps all narration to its local chart, questions, and sequences", 
   assert.equal(audios.pg055_p043, "pg055_p043_adt_sequences_with_blanks.mp3");
 });
 
+test("page 56 narrates and maps every missing-number blank", () => {
+  const html = page(56).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=46/);
+  assert.match(highlightBridge, /function buildPage56SequenceMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg056_p018" \|\| narration\.length !== 25/);
+  assert.match(highlightBridge, /mapping\[cursor \+ 5\] = blanks\[0\]/);
+  assert.match(highlightBridge, /mapping\[cursor \+ 8\] = blanks\[2\]/);
+  assert.equal(timecodes.pg056_p018.timecodes[1].word_timestamps.length, 25);
+  assert.equal(timecodes.pg056_p018.timecodes[1].word_timestamps.filter(({ text }) => text === "blank").length, 9);
+  assert.equal(audios.pg056_p018, "pg056_p018_adt_sequences_with_blanks.mp3");
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -252,8 +264,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 55", () => {
-  for (let number = 42; number <= 55; number += 1) {
+test("offline copies match pages 42 to 56", () => {
+  for (let number = 42; number <= 56; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }

@@ -1141,14 +1141,14 @@ assert.deepEqual(
 );
 
 const page56 = read("pg056_sec001.html");
-const page56Sequences = "Question 8. 401, 500, 599. Question 9. 306, 312, 318. Question 10. 497, 506, 515, 542.";
+const page56Sequences = "Question 8. 401, 500, 599, blank, blank, blank. Question 9. 306, 312, 318, blank, blank, blank. Question 10. 497, 506, 515, blank, blank, 542, blank.";
 const page56Path201 = "Number path from HOME to SCHOOL. 201, 202, 203, 204, 205, 206, 207, 208, 209, 210.";
 const page56Path301 = "301, 302, 303, 304, 305, 306, 307, 308, 309, 310.";
 const page56Path401 = "401, 402, 403, 404, 405, 406, 407, 408, 409, 410.";
 const page56Path501 = "501 at SCHOOL.";
 const page56Steps = "Step 1. Play in pairs. Step 2. Use a cup or a tin. Step 3. Put a die in a cup or in a tin. Step 4. Each player must have a marble of different colour for identification.";
 for (const [id, expected, filename] of [
-  ["pg056_p018", page56Sequences, "pg056_p018_adt_sequences.mp3"],
+  ["pg056_p018", page56Sequences, "pg056_p018_adt_sequences_with_blanks.mp3"],
   ["pg056_im001", page56Path201, "pg056_im001_adt_path_201.mp3"],
   ["pg056_p020", page56Path301, "pg056_p020_adt_path_301.mp3"],
   ["pg056_p021", page56Path401, "pg056_p021_adt_path_401.mp3"],
