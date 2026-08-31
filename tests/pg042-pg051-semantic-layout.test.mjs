@@ -329,6 +329,20 @@ test("page 64 maps every step token to its exact diagram and place-value column"
   assert.equal(timecodes.pg064_p059.timecodes[1].word_timestamps.length, 92);
 });
 
+test("page 65 reads every equals sign and maps each equation locally", () => {
+  const html = page(65).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=56/);
+  assert.match(highlightBridge, /function buildPage65Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /if \(narration\.length !== 48\) return null/);
+  assert.match(highlightBridge, /if \(narration\.length !== 116\) return null/);
+  assert.match(highlightBridge, /exerciseMap\[start \+ 5\] = ranges\[4\]/);
+  assert.equal(timecodes.pg065_p036.timecodes[1].word_timestamps[4].text, "equals");
+  assert.equal(timecodes.pg065_p037.timecodes[1].word_timestamps.length, 116);
+  assert.equal(timecodes.pg065_p037.timecodes[1].word_timestamps.filter(({ text }) => text === "equals").length, 18);
+  assert.equal(audios.pg065_p036, "pg065_p036_adt_abacus_equals_clean.mp3");
+  assert.equal(audios.pg065_p037, "pg065_p037_adt_exercise_equals_clean.mp3");
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -340,8 +354,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 64", () => {
-  for (let number = 42; number <= 64; number += 1) {
+test("offline copies match pages 42 to 65", () => {
+  for (let number = 42; number <= 65; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
