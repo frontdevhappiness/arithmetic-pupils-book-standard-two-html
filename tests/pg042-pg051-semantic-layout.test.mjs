@@ -353,6 +353,14 @@ test("page 66 reads every equals sign and maps each equation locally", () => {
   assert.equal(audios.pg066_p031, "pg066_p031_adt_exercise_equals_clean.mp3");
 });
 
+test("page 67 maps balloon values in narrated order", () => {
+  const words = timecodes.pg067_p055.timecodes[1].word_timestamps.map(({ text }) => text);
+  assert.equal(words.length, 45);
+  assert.deepEqual([words[14], words[35], words[38], words[41]], ["300", "800", "200", "400"]);
+  assert.match(highlightBridge, /function buildPage67ActivityMap\(content, source, narration\)/);
+  for (const selector of ["pg067-v300", "pg067-v800", "pg067-v200", "pg067-v400"]) assert.match(highlightBridge, new RegExp(selector));
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -364,8 +372,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 66", () => {
-  for (let number = 42; number <= 66; number += 1) {
+test("offline copies match pages 42 to 67", () => {
+  for (let number = 42; number <= 67; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
