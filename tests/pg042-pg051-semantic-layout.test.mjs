@@ -439,6 +439,18 @@ test("page 73 reads equals and maps both exercises without cross-jumps", () => {
   assert.match(highlightBridge, /mapping\[start \+ 5\] = ranges\[4\]/);
 });
 
+test("page 74 maps its complete worked example in narration order", () => {
+  const words = timecodes.pg074_p078.timecodes[1].word_timestamps.map(({ text }) => text);
+  assert.equal(words.length, 121);
+  assert.deepEqual(words.slice(35, 47), ["Steps", "One", "Subtract", "ones", "four", "minus", "eight", "It", "is", "not", "sufficient", "Two"]);
+  assert.deepEqual(words.slice(113), ["Therefore", "the", "answer", "is", "one", "hundred", "and", "six"]);
+  assert.match(page(74).html, /read-aloud-highlight-bridge\.js\?v=28/);
+  assert.match(highlightBridge, /function buildPage74WorkedExampleMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /starts = \[36, 46, 71, 85, 99\]/);
+  assert.match(highlightBridge, /mapping\[first\] = number\[0\]/);
+  assert.match(highlightBridge, /conclusionNumber = 117; conclusionNumber <= 120/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -450,8 +462,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 73", () => {
-  for (let number = 42; number <= 73; number += 1) {
+test("offline copies match pages 42 to 74", () => {
+  for (let number = 42; number <= 74; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
