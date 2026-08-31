@@ -153,7 +153,9 @@
         counter-increment: question;
       }
       .page58 .pg058-list li::before {
-        content: counter(question) ".";
+        content: none;
+      }
+      .page58 .pg058-qno {
         color: var(--page-blue);
         font-variant-numeric: tabular-nums;
       }
@@ -240,19 +242,19 @@
             Use the home-to-school game to answer the following questions:
           </p>
           <div class="pg058-list-wrap">
-            <p class="pg058-highlight-map adt-page-overlay-text" data-id="pg058_p025">
+            <p class="sr-only" data-id="pg058_p025">
               Question 1. Name the tools used to play this game. Question 2. How many faces does a die have? Question 3. What is the largest number of dots on a die? Question 4. What is the smallest number of dots on a die? Question 5. What is the smallest number in the game? Question 6. What is the largest number in the game? Question 7. How many steps are there before the number 210 in the game? Question 8. Asha and Anna each rolled a die once. Both of their marbles were at 407. Asha got 2 dots and Anna got 4 dots. Who moved her marble up to number 501?
             </p>
             <ol class="pg058-list">
-              <li>Name the tools used to play this game.</li>
-              <li>How many faces does a die have?</li>
-              <li>What is the largest number of dots on a die?</li>
-              <li>What is the smallest number of dots on a die?</li>
-              <li>What is the smallest number in the game?</li>
-              <li>What is the largest number in the game?</li>
-              <li>How many steps are there before the number 210 in the game?</li>
+              <li><span class="pg058-qno" aria-hidden="true">1.</span><span>Name the tools used to play this game.</span></li>
+              <li><span class="pg058-qno" aria-hidden="true">2.</span><span>How many faces does a die have?</span></li>
+              <li><span class="pg058-qno" aria-hidden="true">3.</span><span>What is the largest number of dots on a die?</span></li>
+              <li><span class="pg058-qno" aria-hidden="true">4.</span><span>What is the smallest number of dots on a die?</span></li>
+              <li><span class="pg058-qno" aria-hidden="true">5.</span><span>What is the smallest number in the game?</span></li>
+              <li><span class="pg058-qno" aria-hidden="true">6.</span><span>What is the largest number in the game?</span></li>
+              <li><span class="pg058-qno" aria-hidden="true">7.</span><span>How many steps are there before the number 210 in the game?</span></li>
               <li>
-                Asha and Anna each rolled a die once. Both of their marbles were at 407. Asha got 2 dots and Anna got 4 dots. Who moved her marble up to number 501?
+                <span class="pg058-qno" aria-hidden="true">8.</span><span>Asha and Anna each rolled a die once. Both of their marbles were at 407. Asha got 2 dots and Anna got 4 dots. Who moved her marble up to number 501?</span>
               </li>
             </ol>
           </div>
@@ -304,6 +306,6 @@
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=2"></script>
-    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=50"></script>
   </body>
 </html>

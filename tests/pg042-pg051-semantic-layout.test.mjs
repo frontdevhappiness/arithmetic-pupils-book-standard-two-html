@@ -270,6 +270,17 @@ test("page 57 maps steps, guidance, and both tables exactly", () => {
   assert.equal(audios.pg057_p043, "pg057_p043_adt_solution_visible_total.mp3");
 });
 
+test("page 58 maps every narrated question to its own visible row", () => {
+  const html = page(58).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=50/);
+  assert.match(html, /class="sr-only" data-id="pg058_p025"/);
+  assert.equal((html.match(/class="pg058-qno"/g) || []).length, 8);
+  assert.match(highlightBridge, /function buildPage58QuestionMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg058_p025" \|\| narration\.length !== 111/);
+  assert.match(highlightBridge, /mapping\[cursor\] = ranges\[0\]/);
+  assert.equal(timecodes.pg058_p025.timecodes[1].word_timestamps.length, 111);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -281,8 +292,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 57", () => {
-  for (let number = 42; number <= 57; number += 1) {
+test("offline copies match pages 42 to 58", () => {
+  for (let number = 42; number <= 58; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
