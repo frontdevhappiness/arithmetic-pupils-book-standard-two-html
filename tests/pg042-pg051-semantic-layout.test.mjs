@@ -401,7 +401,7 @@ test("page 71 maps every spoken step and Example 2 token locally", () => {
   assert.equal(example.length, 22);
   assert.deepEqual(steps.slice(67, 75), ["4", "Add", "ones", "10", "plus", "3", "equals", "13"]);
   assert.deepEqual(example.slice(0, 13), ["Example", "2", "100", "minus", "47", "Solution", "100", "minus", "47", "equals", "53", "Steps", "1"]);
-  assert.match(page(71).html, /read-aloud-highlight-bridge\.js\?v=24/);
+  assert.match(page(71).html, /read-aloud-highlight-bridge\.js\?v=26/);
   assert.match(highlightBridge, /function buildPage71Map\(content, source, narration\)/);
   assert.match(highlightBridge, /stepStarts = \[1, 27, 48, 67, 75, 89, 103\]/);
   assert.match(page(71).html, /className='pg071-continuation-step-number'/);
@@ -409,6 +409,17 @@ test("page 71 maps every spoken step and Example 2 token locally", () => {
   assert.match(highlightBridge, /exampleMap\[6\] = \[workedEquation\[0\], workedEquation\[1\], workedEquation\[2\]\]/);
   assert.match(highlightBridge, /exampleMap\[8\] = \[workedEquation\[4\], workedEquation\[5\]\]/);
   assert.match(highlightBridge, /exampleMap\[11\] = stepsHeading\[0\]; exampleMap\[12\] = stepNumber\[0\]/);
+});
+
+test("page 72 maps step numbers 2 through 6 to their own rows", () => {
+  const words = timecodes.pg072_p038.timecodes[1].word_timestamps.map(({ text }) => text);
+  assert.equal(words.length, 105);
+  assert.deepEqual([words[0], words[35], words[56], words[70], words[84]], ["2", "3", "4", "5", "6"]);
+  assert.match(page(72).html, /read-aloud-highlight-bridge\.js\?v=26/);
+  assert.match(highlightBridge, /function buildPage72StepsMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /starts = \[0, 35, 56, 70, 84\]/);
+  assert.match(highlightBridge, /mapping\[first\] = number\[0\]/);
+  assert.match(highlightBridge, /function buildPage72StepsMap[\s\S]*new RegExp\(WORD_PATTERN\.source, "gu"\)/);
 });
 
 test("page-specific corrected structures are present", () => {
@@ -422,8 +433,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 71", () => {
-  for (let number = 42; number <= 71; number += 1) {
+test("offline copies match pages 42 to 72", () => {
+  for (let number = 42; number <= 72; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
