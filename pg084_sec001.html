@@ -205,6 +205,16 @@
         -webkit-text-stroke: 0.015em currentColor;
       }
 
+      .page84 .adt-source-hooks [data-id] {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        clip-path: inset(50%) !important;
+        white-space: nowrap !important;
+      }
+
       @media (max-width: 44rem) {
         #content.pg084-shell {
           padding: 0 0 calc(var(--dock-height, 96px) + 1rem);
@@ -317,7 +327,7 @@
           <p
             data-id="pg084_p001"
             class="adt-page-overlay-text"
-            data-segments='[{"text":" Exercise 2","style":{"font-family":"SassoonPrimary,serif","font-size":"17px","color":"#0099da","font-weight":"bold"}}]'
+            data-segments='[{"text":" Exercise 2. Fill in the blank boxes. Question 1 is an example. 1. 2 × 6 = 2 + 2 + 2 + 2 + 2 + 2 = 12. 2. 4 × 7 = 4 + 4 + 4 + 4 + 4 + 4 + 4. The answer box is blank. 3. 4 × 5. The repeated addition box and answer box are blank. 4. The multiplication box is blank. It equals 6 + 6 + 6 + 6. The answer box is blank. 5. The multiplication box is blank. It equals 5 + 5 + 5 + 5 + 5 = 25. 6. 8 × 3. The repeated addition and answer boxes are blank. 7. 10 × 2. The repeated addition and answer boxes are blank. 8. 9 × 5. The repeated addition and answer boxes are blank. 9. 11 × 4. The repeated addition and answer boxes are blank. 10. 12 × 3. The repeated addition and answer boxes are blank.","style":{"font-family":"SassoonPrimary,serif","font-size":"17px","color":"#0099da","font-weight":"bold"}}]'
             data-adt-fit="1"
             style="
               position: absolute;
@@ -336,7 +346,7 @@
                 font-weight: bold;
               "
             >
-              Exercise 2</span
+              Exercise 2. Fill in the blank boxes. Question 1 is an example. 1. 2 × 6 = 2 + 2 + 2 + 2 + 2 + 2 = 12. 2. 4 × 7 = 4 + 4 + 4 + 4 + 4 + 4 + 4. The answer box is blank. 3. 4 × 5. The repeated addition box and answer box are blank. 4. The multiplication box is blank. It equals 6 + 6 + 6 + 6. The answer box is blank. 5. The multiplication box is blank. It equals 5 + 5 + 5 + 5 + 5 = 25. 6. 8 × 3. The repeated addition and answer boxes are blank. 7. 10 × 2. The repeated addition and answer boxes are blank. 8. 9 × 5. The repeated addition and answer boxes are blank. 9. 11 × 4. The repeated addition and answer boxes are blank. 10. 12 × 3. The repeated addition and answer boxes are blank.</span
             >
           </p>
           <p
@@ -1024,7 +1034,7 @@
           <p
             data-id="pg084_p030"
             class="adt-page-overlay-text"
-            data-segments='[{"text":" Exercise 3","style":{"font-family":"SassoonPrimary,serif","font-size":"17px","color":"#0099da","font-weight":"bold"}}]'
+            data-segments='[{"text":" Exercise 3. Write the answer in each question. 1. 2 × 1. 2. 2 × 2. 3. 2 × 3. 4. 5 × 4. 5. 2 × 5. 6. 6 × 3. 7. 7 × 2. 8. 2 × 8. 9. 2 × 9. 10. 10 × 4. 11. 2 × 11. 12. 2 × 12. 13. 9 × 2. 14. 8 × 4.","style":{"font-family":"SassoonPrimary,serif","font-size":"17px","color":"#0099da","font-weight":"bold"}}]'
             data-adt-fit="1"
             style="
               position: absolute;
@@ -1043,7 +1053,7 @@
                 font-weight: bold;
               "
             >
-              Exercise 3</span
+              Exercise 3. Write the answer in each question. 1. 2 × 1. 2. 2 × 2. 3. 2 × 3. 4. 5 × 4. 5. 2 × 5. 6. 6 × 3. 7. 7 × 2. 8. 2 × 8. 9. 2 × 9. 10. 10 × 4. 11. 2 × 11. 12. 2 × 12. 13. 9 × 2. 14. 8 × 4.</span
             >
           </p>
           <p
@@ -1741,7 +1751,16 @@
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=2"></script>
-    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+    <script>
+      (() => {
+        const source = document.querySelector('[data-id="pg084_p030"]');
+        if (!source) return;
+        const narration = "Exercise 3. Write the answer in each question. 1. 2 × 1 equals. 2. 2 × 2 equals. 3. 2 × 3 equals. 4. 5 × 4 equals. 5. 2 × 5 equals. 6. 6 × 3 equals. 7. 7 × 2 equals. 8. 2 × 8 equals. 9. 2 × 9 equals. 10. 10 × 4 equals. 11. 2 × 11 equals. 12. 2 × 12 equals. 13. 9 × 2 equals. 14. 8 × 4 equals.";
+        source.textContent = narration;
+        source.setAttribute("data-segments", JSON.stringify([{ text: ` ${narration}`, style: { "font-family": "SassoonPrimary,serif", "font-size": "17px", color: "#0099da", "font-weight": "bold" } }]));
+      })();
+    </script>
+    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=45"></script>
     <script>
       (() => {
         const page = document.querySelector('[data-section-id="pg084_sec001"]');

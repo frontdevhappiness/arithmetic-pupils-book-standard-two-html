@@ -582,6 +582,28 @@ test("page 83 maps all three examples without repeated-number jumps", () => {
   assert.equal(timecodes.pg083_p013.timecodes[1].word_timestamps.length, 36);
 });
 
+test("page 84 maps both exercises and every described blank locally", () => {
+  const html = page(84).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=45/);
+  assert.match(html, /\.page84 \.adt-source-hooks \[data-id\]/);
+  assert.match(highlightBridge, /function buildPage84Map\(content, source\)/);
+  assert.match(highlightBridge, /id !== "pg084_p001" && id !== "pg084_p030"/);
+  assert.match(highlightBridge, /rows\[3\]\.querySelector\("\.pg084-factor \.pg084-box"\)/);
+  assert.match(highlightBridge, /exerciseThree\.querySelectorAll\("\.pg084-question"\)/);
+  assert.match(html, /Exercise 2\. Fill in the blank boxes\. Question 1 is an example\./);
+  assert.match(html, /data-segments='\[\{"text":" Exercise 2\. Fill in the blank boxes\./);
+  assert.match(html, /10\. 12 × 3\. The repeated addition and answer boxes are blank\./);
+  assert.match(html, /Exercise 3\. Write the answer in each question\. 1\. 2 × 1\./);
+  assert.match(html, /data-segments='\[\{"text":" Exercise 3\. Write the answer in each question\./);
+  assert.match(html, /14\. 8 × 4\.<\/span/);
+  assert.equal(audios.pg084_p001, "pg084_p001_adt_natural.mp3");
+  assert.equal(timecodes.pg084_p001.timecodes[1].word_timestamps.length, 165);
+  assert.equal(audios.pg084_p030, "pg084_p030_adt_equals_male_v2.mp3");
+  assert.equal(texts.pg084_p030.match(/\bequals\b/g).length, 14);
+  assert.equal(timecodes.pg084_p030.timecodes[1].word_timestamps.length, 78);
+  assert.equal(timecodes.pg084_p030.timecodes[1].word_timestamps.filter(({ text }) => text === "equals").length, 14);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -593,8 +615,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 83", () => {
-  for (let number = 42; number <= 83; number += 1) {
+test("offline copies match pages 42 to 84", () => {
+  for (let number = 42; number <= 84; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
