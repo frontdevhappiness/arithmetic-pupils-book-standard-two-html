@@ -197,6 +197,20 @@ test("page 52 instruction and worked solution use exact local highlight maps", (
   assert.equal(timecodes.pg052_p066.timecodes[1].word_timestamps.length, 169);
 });
 
+test("page 53 Exercise 8 maps each narrated sum to its own row", () => {
+  const html = page(53).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=42/);
+  assert.match(highlightBridge, /function buildPage53Exercise8Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg053_p119" && sourceId !== "pg053_p120" && sourceId !== "pg053_p148"/);
+  assert.match(highlightBridge, /narration\.length === 2 && heading\.length === 2/);
+  assert.match(highlightBridge, /narration\.length === 6 && instruction\.length === 6/);
+  assert.match(highlightBridge, /var offset = rowIndex \* 5/);
+  assert.match(highlightBridge, /mapping\[offset \+ 4\] = ranges\[3\]/);
+  assert.equal(timecodes.pg053_p148.timecodes[1].word_timestamps.length, 15);
+  assert.equal(timecodes.pg053_p119.timecodes[1].word_timestamps.length, 2);
+  assert.equal(timecodes.pg053_p120.timecodes[1].word_timestamps.length, 6);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -208,8 +222,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 52", () => {
-  for (let number = 42; number <= 52; number += 1) {
+test("offline copies match pages 42 to 53", () => {
+  for (let number = 42; number <= 53; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
