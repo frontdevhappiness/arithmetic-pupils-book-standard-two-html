@@ -223,6 +223,24 @@ test("page 54 chart narration maps repeated values to exact table cells", () => 
   assert.equal(timecodes.pg054_p138.timecodes[1].word_timestamps.length, 52);
 });
 
+test("page 55 maps all narration to its local chart, questions, and sequences", () => {
+  const html = page(55).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=45/);
+  assert.match(highlightBridge, /function buildPage55Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /var supported = \["pg055_p001", "pg055_p002", "pg055_p023", "pg055_p024", "pg055_p041", "pg055_p042", "pg055_p043"\]/);
+  assert.match(highlightBridge, /function mapQuestionRows\(rows\)/);
+  assert.match(highlightBridge, /if \(narration\.length !== 57\) return null/);
+  assert.match(highlightBridge, /sequenceMap\[sequenceCursor \+ 5\] = blanks\[0\]/);
+  assert.match(highlightBridge, /sequenceMap\[sequenceCursor \+ 8\] = blanks\[2\]/);
+  assert.match(highlightBridge, /mapping\[32\] = firstShown/);
+  assert.match(highlightBridge, /mapping\[38\] = secondShown/);
+  for (const [id, length] of [["pg055_p001", 2], ["pg055_p002", 8], ["pg055_p023", 2], ["pg055_p024", 5], ["pg055_p041", 44], ["pg055_p042", 48], ["pg055_p043", 57]]) {
+    assert.equal(timecodes[id].timecodes[1].word_timestamps.length, length);
+  }
+  assert.equal(timecodes.pg055_p043.timecodes[1].word_timestamps.filter(({ text }) => text === "blank").length, 21);
+  assert.equal(audios.pg055_p043, "pg055_p043_adt_sequences_with_blanks.mp3");
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -234,8 +252,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 54", () => {
-  for (let number = 42; number <= 54; number += 1) {
+test("offline copies match pages 42 to 55", () => {
+  for (let number = 42; number <= 55; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }

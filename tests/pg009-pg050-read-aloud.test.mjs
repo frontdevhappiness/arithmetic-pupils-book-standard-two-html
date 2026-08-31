@@ -1119,11 +1119,11 @@ assert.deepEqual(
 const page55 = read("pg055_sec001.html");
 const page55Chart = "The addition chart has column headings 201, 202, 203, 204, 205, and 206, and row headings 201, 202, 203, 204, 205, and 206. Two sums are already shown: 204 plus 205 equals 409, and 206 plus 203 equals 409. Fill in the other sums.";
 const page55Questions = "Question 1. Add the numbers in the chart. Question 2. Write the smallest number in the first row. Question 3. Write the largest number in the fifth row. Question 4. Write the largest number in the chart. Question 5. The largest number is the sum of which numbers?";
-const page55Sequences = "Question 1. 102, 104, 106. Question 2. 105, 110, 115. Question 3. 200, 250, 300. Question 4. 820, 840, 860. Question 5. 890, 893, 896. Question 6. 799, 808, 817. Question 7. 601, 605, 609, 621.";
+const page55Sequences = "Question 1. 102, 104, 106, blank, blank, blank. Question 2. 105, 110, 115, blank, blank, blank. Question 3. 200, 250, 300, blank, blank, blank. Question 4. 820, 840, 860, blank, blank, blank. Question 5. 890, 893, 896, blank, blank, blank. Question 6. 799, 808, 817, blank, blank, blank. Question 7. 601, 605, 609, blank, blank, 621, blank.";
 for (const [id, expected, filename] of [
   ["pg055_p041", page55Chart, "pg055_p041_adt_chart.mp3"],
   ["pg055_p042", page55Questions, "pg055_p042_adt_questions.mp3"],
-  ["pg055_p043", page55Sequences, "pg055_p043_adt_sequences.mp3"]
+  ["pg055_p043", page55Sequences, "pg055_p043_adt_sequences_with_blanks.mp3"]
 ]) {
   assert.equal(texts[id], expected, `${id} must narrate page 55 coherently`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
