@@ -384,6 +384,16 @@ test("page 69 maps both exercises by local question number", () => {
   assert.match(highlightBridge, /parseInt\(candidate\.querySelector\("\.pg069-qno"\)\.textContent, 10\) === questionNumber/);
 });
 
+test("page 70 reads equals and keeps the counting-frame narration on the abacus", () => {
+  const words = timecodes.pg070_p075.timecodes[1].word_timestamps.map(({ text }) => text);
+  assert.equal(words.length, 79);
+  assert.deepEqual(words.slice(12, 18), ["Example", "1", "243", "minus", "127", "equals"]);
+  assert.equal(audios.pg070_p075, "pg070_p075_adt_example_equals_clean.mp3");
+  assert.match(highlightBridge, /function buildPage70ExampleMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /equationIndex = 14; equationIndex <= 17/);
+  assert.match(highlightBridge, /abacusIndex = 18; abacusIndex <= 78/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -395,8 +405,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 69", () => {
-  for (let number = 42; number <= 69; number += 1) {
+test("offline copies match pages 42 to 70", () => {
+  for (let number = 42; number <= 70; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }

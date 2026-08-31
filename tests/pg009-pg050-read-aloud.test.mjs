@@ -1389,8 +1389,8 @@ assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg069_")).sor
 
 const page70 = read("pg070_sec001.html");
 const page70Questions = "Question 4. 328 minus 215. Question 5. 776 minus 715. Question 6. 824 minus 221. Question 7. 624 minus 321. Question 8. 515 minus 102. Question 9. 345 minus 215. Question 10. 467 minus 115. Question 11. 349 minus 117. Question 12. 286 minus 123.";
-const page70Example = "Subtracting numbers horizontally by regrouping. Numbers can be subtracted horizontally by regrouping. Example 1. 243 minus 127. The counting frame starts with 2 beads in the hundreds column, 4 beads in the tens column, and 3 beads in the ones column. Regroup 1 ten as 10 ones. There are now 3 tens and 13 ones. Cross out 7 ones, leaving 6. Cross out 2 tens, leaving 1. Cross out 1 hundred, leaving 1. The remaining beads show 116.";
-for (const [id, expected, filename] of [["pg070_p074", page70Questions, "pg070_p074_adt_questions.mp3"], ["pg070_p075", page70Example, "pg070_p075_adt_example.mp3"]]) {
+const page70Example = "Subtracting numbers horizontally by regrouping. Numbers can be subtracted horizontally by regrouping. Example 1. 243 minus 127 equals. The counting frame starts with 2 beads in the hundreds column, 4 beads in the tens column, and 3 beads in the ones column. Regroup 1 ten as 10 ones. There are now 3 tens and 13 ones. Cross out 7 ones, leaving 6. Cross out 2 tens, leaving 1. Cross out 1 hundred, leaving 1. The remaining beads show 116.";
+for (const [id, expected, filename] of [["pg070_p074", page70Questions, "pg070_p074_adt_questions.mp3"], ["pg070_p075", page70Example, "pg070_p075_adt_example_equals_clean.mp3"]]) {
   assert.equal(texts[id], expected, `${id} must narrate page 70 in order`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
