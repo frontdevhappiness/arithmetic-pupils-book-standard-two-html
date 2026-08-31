@@ -1431,22 +1431,22 @@ assert.match(page72, /data-id="pg072_p038"[\s\S]*data-id="pg072_p009"/, "the cor
 assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg072_")).sort(), ["pg072_p038"], "page 72 must narrate its continuation exactly once");
 
 const page73 = read("pg073_sec001.html");
-const page73Exercise6 = "Exercise 6. Write the answer in each question. Question 1. 823 minus 147. Question 2. 295 minus 76. Question 3. 864 minus 576. Question 4. 890 minus 698. Question 5. 100 minus 21. Question 6. 640 minus 128. Question 7. 584 minus 286. Question 8. 770 minus 493. Question 9. 586 minus 138. Question 10. 654 minus 337. Question 11. 778 minus 469. Question 12. 984 minus 427. Question 13. 881 minus 457. Question 14. 456 minus 257. Question 15. 551 minus 499. Question 16. 100 minus 25.";
-const page73Exercise7a = "Exercise 7. Write the answer in each question. Question 1. 764 minus 147. Question 2. 354 minus 215. Question 3. 582 minus 396. Question 4. 755 minus 267. Question 5. 633 minus 278. Question 6. 987 minus 498. Question 7. 287 minus 97. Question 8. 384 minus 295.";
-const page73Exercise7b = "Question 9. 863 minus 289. Question 10. 692 minus 188. Question 11. 449 minus 187. Question 12. 249 minus 194. Question 13. 904 minus 106. Question 14. 816 minus 798. Question 15. 387 minus 197. Question 16. 100 minus 12.";
+const page73Exercise6 = "Exercise 6. Write the answer in each question. Question 1. 823 minus 147 equals. Question 2. 295 minus 76 equals. Question 3. 864 minus 576 equals. Question 4. 890 minus 698 equals. Question 5. 100 minus 21 equals. Question 6. 640 minus 128 equals. Question 7. 584 minus 286 equals. Question 8. 770 minus 493 equals. Question 9. 586 minus 138 equals. Question 10. 654 minus 337 equals. Question 11. 778 minus 469 equals. Question 12. 984 minus 427 equals. Question 13. 881 minus 457 equals. Question 14. 456 minus 257 equals. Question 15. 551 minus 499 equals. Question 16. 100 minus 25 equals.";
+const page73Exercise7a = "Exercise 7. Write the answer in each question. Question 1. 764 minus 147 equals. Question 2. 354 minus 215 equals. Question 3. 582 minus 396 equals. Question 4. 755 minus 267 equals. Question 5. 633 minus 278 equals. Question 6. 987 minus 498 equals. Question 7. 287 minus 97 equals. Question 8. 384 minus 295 equals.";
+const page73Exercise7b = "Question 9. 863 minus 289 equals. Question 10. 692 minus 188 equals. Question 11. 449 minus 187 equals. Question 12. 249 minus 194 equals. Question 13. 904 minus 106 equals. Question 14. 816 minus 798 equals. Question 15. 387 minus 197 equals. Question 16. 100 minus 12 equals.";
 const page73Heading = "Subtracting numbers vertically by regrouping. Numbers can be subtracted vertically by regrouping.";
 for (const [id, expected, filename] of [
-  ["pg073_p051", page73Exercise6, "pg073_p051_adt_exercise6.mp3"],
-  ["pg073_p052", page73Exercise7a, "pg073_p052_adt_exercise7_part1.mp3"],
-  ["pg073_p054", page73Exercise7b, "pg073_p054_adt_exercise7_part2.mp3"],
+  ["pg073_p051", page73Exercise6, "pg073_p051_adt_exercise6_equals_clean_v2.mp3"],
+  ["pg073_p052", page73Exercise7a, "pg073_p052_adt_exercise7_part1_equals_clean_v2.mp3"],
+  ["pg073_p054", page73Exercise7b, "pg073_p054_adt_exercise7_part2_equals_clean_v2.mp3"],
   ["pg073_p053", page73Heading, "pg073_p053_adt_heading.mp3"]
 ]) {
   assert.equal(texts[id], expected, `${id} must narrate page 73 in numerical order`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
 }
-assert.doesNotMatch(`${texts.pg073_p051} ${texts.pg073_p052} ${texts.pg073_p054}`, /equals/i, "page 73 must not imply or reveal blank answers");
-assert.match(texts.pg073_p051, /Question 11\. 778 minus 469\./, "Exercise 6 question 11 must match the printed 778");
+assert.doesNotMatch(`${texts.pg073_p051} ${texts.pg073_p052} ${texts.pg073_p054}`, /equals\s+\d/i, "page 73 must not reveal blank answers after equals");
+assert.match(texts.pg073_p051, /Question 11\. 778 minus 469 equals\./, "Exercise 6 question 11 must match the printed 778");
 for (const id of ["pg073_im001", "pg073_im002"]) {
   assert.equal(texts[id], "", `${id} duplicate exercise image must have no separate narration`);
   assert.match(page73, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} must be decorative`);
