@@ -361,6 +361,16 @@ test("page 67 maps balloon values in narrated order", () => {
   for (const selector of ["pg067-v300", "pg067-v800", "pg067-v200", "pg067-v400"]) assert.match(highlightBridge, new RegExp(selector));
 });
 
+test("page 68 keeps Or and the counting-frame narration on stable targets", () => {
+  const words = timecodes.pg068_p063.timecodes[1].word_timestamps.map(({ text }) => text);
+  assert.equal(words.length, 74);
+  assert.equal(words[24], "Or");
+  assert.deepEqual(words.slice(25, 29), ["use", "the", "counting", "frame"]);
+  assert.match(highlightBridge, /function buildPage68ExampleMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /mapping\[24\] = orWord/);
+  assert.match(highlightBridge, /abacusIndex = 25; abacusIndex <= 68/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -372,8 +382,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 67", () => {
-  for (let number = 42; number <= 67; number += 1) {
+test("offline copies match pages 42 to 68", () => {
+  for (let number = 42; number <= 68; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
