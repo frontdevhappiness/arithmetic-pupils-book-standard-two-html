@@ -1029,10 +1029,10 @@ assert.deepEqual(
 
 const page51 = read("pg051_sec001.html");
 const page51Instruction = "Add one hundred and sixty-six and one hundred and twenty-six vertically.";
-const page51Solution = "Align the hundreds, tens, and ones digits in their correct columns. The first row has 1 in the hundreds column, 6 in the tens column, and 6 in the ones column. The second row has 1 in the hundreds column, 2 in the tens column, and 6 in the ones column. A plus sign appears before the second row. The answer row shows 2 in the hundreds column, 9 in the tens column, and 2 in the ones column. Steps. Step 1. Add ones: 6 plus 6 equals 12. Regroup 12 ones into 1 ten and 2 ones. Write 2 in the ones place. Take 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 2 equals 9. Write 9 in the tens place. Step 3. Add hundreds: 1 plus 1 equals 2. Write 2 in the hundreds place. Therefore, the answer is two hundred and ninety-two.";
+const page51Solution = "Solution. Align the hundreds, tens, and ones digits in their correct columns. The first row has 1 in the hundreds column, 6 in the tens column, and 6 in the ones column. The second row has 1 in the hundreds column, 2 in the tens column, and 6 in the ones column. A plus sign appears before the second row. The answer row shows 2 in the hundreds column, 9 in the tens column, and 2 in the ones column. Steps. Step 1. Add ones: 6 plus 6 equals 12. Regroup 12 ones into 1 ten and 2 ones. Write 2 in the ones place. Take 1 ten to the tens place. Step 2. Add tens: 1 plus 6 plus 2 equals 9. Write 9 in the tens place. Step 3. Add hundreds: 1 plus 1 equals 2. Write 2 in the hundreds place. Therefore, the answer is two hundred and ninety-two.";
 for (const [id, expected, filename] of [
   ["pg051_p060", page51Instruction, "pg051_p060_adt_instruction.mp3"],
-  ["pg051_p061", page51Solution, "pg051_p061_adt_solution.mp3"]
+  ["pg051_p061", page51Solution, "pg051_p061_adt_solution_heading_worked.mp3"]
 ]) {
   assert.equal(texts[id], expected, `${id} must narrate page 51 coherently`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
@@ -1047,8 +1047,8 @@ assert.ok(page51.indexOf('data-id="pg051_p060"') < page51.indexOf('data-id="pg05
 assert.ok(page51.indexOf('data-id="pg051_p002"') < page51.indexOf('data-id="pg051_p061"'), "the Solution heading must precede the worked steps");
 assert.deepEqual(
   Object.keys(audios).filter((id) => id.startsWith("pg051_")).sort(),
-  ["pg051_p001", "pg051_p002", "pg051_p060", "pg051_p061"],
-  "page 51 must narrate only its heading, instruction, solution label, and coherent worked steps"
+  ["pg051_p001", "pg051_p060", "pg051_p061"],
+  "page 51 must narrate its heading, instruction, and one reliable Solution passage"
 );
 
 const page52 = read("pg052_sec001.html");

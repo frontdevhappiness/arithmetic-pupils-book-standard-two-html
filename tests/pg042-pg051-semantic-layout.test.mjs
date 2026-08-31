@@ -160,6 +160,29 @@ test("page 50 question sets read equals and highlight within their own rows", ()
   assert.equal(timecodes.pg050_p069.timecodes[1].word_timestamps.filter(({ text }) => text === "equals").length, 20);
 });
 
+test("page 51 solution narration precedes its visuals and uses an exact worked-example map", () => {
+  const html = page(51).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=39/);
+  assert.ok(html.indexOf('data-id="pg051_p002"') < html.indexOf('data-id="pg051_p061"'));
+  assert.ok(html.indexOf('data-id="pg051_p061"') < html.indexOf('class="solution-pair"'));
+  assert.match(highlightBridge, /function buildPage51Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg051_p060" && sourceId !== "pg051_p061"/);
+  assert.match(highlightBridge, /instructionMap\.fill\(equationParts\[0\], 1, 5\)/);
+  assert.match(highlightBridge, /instructionMap\[5\] = equationParts\[1\]/);
+  assert.match(highlightBridge, /instructionMap\.fill\(equationParts\[2\], 6, 10\)/);
+  assert.match(highlightBridge, /mapping\[0\] = solutionHeading\[0\]/);
+  assert.match(highlightBridge, /assign\(82, stepOne\)/);
+  assert.match(highlightBridge, /assign\(113, stepTwo\)/);
+  assert.match(highlightBridge, /assign\(130, stepThree\)/);
+  assert.match(highlightBridge, /fill\(148, 151, conclusion\[4\]\)/);
+  assert.equal(audios.pg051_p002, undefined);
+  assert.equal(audios.pg051_p061, "pg051_p061_adt_solution_heading_worked.mp3");
+  assert.equal(timecodes.pg051_p061.timecodes[1].word_timestamps[0].text, "Solution");
+  assert.equal(texts.pg051_p022, "Regroup 12 ones into 1 ten and 2 ones.");
+  assert.equal(texts.pg051_p024, "Write 2 in the ones place. Take 1 ten to the tens place.");
+  assert.equal(texts.pg051_p035, "2. Add tens: 1 + 6 + 2 = 9.");
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
