@@ -500,6 +500,19 @@ test("page 78 maps every step and exercise question to its local text", () => {
   assert.doesNotMatch(html, /pupils who continued with the\s+journey/);
 });
 
+test("page 79 maps its continuation and questions 3 through 12 in exact order", () => {
+  const html = page(79).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=33/);
+  assert.match(html, /class="pg079-continuation"/);
+  assert.equal((html.match(/class="pg079-qno"/g) || []).length, 10);
+  assert.equal((html.match(/class="pg079-qtext"/g) || []).length, 10);
+  assert.match(highlightBridge, /function buildPage79Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg079_p029"/);
+  assert.match(highlightBridge, /mapping\.push\.apply\(mapping, rawRanges\(questions\[index\]\.querySelector\("\.pg079-qtext"\)\)\)/);
+  assert.match(highlightBridge, /buildPage79Map\(content, source, narration\)/);
+  assert.equal(timecodes.pg079_p029.timecodes[1].word_timestamps.length, 199);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -511,8 +524,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 78", () => {
-  for (let number = 42; number <= 78; number += 1) {
+test("offline copies match pages 42 to 79", () => {
+  for (let number = 42; number <= 79; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }

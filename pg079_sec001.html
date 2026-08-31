@@ -18,46 +18,39 @@
         data-section-id="pg079_sec001"
       >
         <section class="exercise prose">
+          <p class="pg079-continuation">
+            pupils who continued with the journey.
+          </p>
           <ol start="3">
             <li>
-              A teacher had 596 books. He gave out 421 books to his pupils. How
-              many books did the teacher remain with?
+              <span class="pg079-qno">3.</span><span class="pg079-qtext">A teacher had 596 books. He gave out 421 books to his pupils. How many books did the teacher remain with?</span>
             </li>
             <li>
-              Roza had 365 oranges. If she sold 365 oranges, how many oranges
-              did she remain with?
+              <span class="pg079-qno">4.</span><span class="pg079-qtext">Roza had 365 oranges. If she sold 365 oranges, how many oranges did she remain with?</span>
             </li>
             <li>
-              There were 635 pencils in a shop. If 412 pencils were sold, how
-              many pencils were left in the shop?
+              <span class="pg079-qno">5.</span><span class="pg079-qtext">There were 635 pencils in a shop. If 412 pencils were sold, how many pencils were left in the shop?</span>
             </li>
             <li>
-              A second-hand toy vendor had 888 toys. He sold 573 toys. Find the
-              number of toys that remained.
+              <span class="pg079-qno">6.</span><span class="pg079-qtext">A second-hand toy vendor had 888 toys. He sold 573 toys. Find the number of toys that remained.</span>
             </li>
             <li>
-              A businesswoman bought 760 bottles of juice. She sold 650 bottles.
-              How many bottles was she left with?
+              <span class="pg079-qno">7.</span><span class="pg079-qtext">A businesswoman bought 760 bottles of juice. She sold 650 bottles. How many bottles was she left with?</span>
             </li>
             <li>
-              Erika had 500 shillings for buying exercise book. If an exercise
-              book costs 355 shillings, how much money did she remain with?
+              <span class="pg079-qno">8.</span><span class="pg079-qtext">Erika had 500 shillings for buying exercise book. If an exercise book costs 355 shillings, how much money did she remain with?</span>
             </li>
             <li>
-              Some ducks laid 734 eggs. If 218 eggs were broken, how many eggs
-              remained?
+              <span class="pg079-qno">9.</span><span class="pg079-qtext">Some ducks laid 734 eggs. If 218 eggs were broken, how many eggs remained?</span>
             </li>
             <li>
-              A flock of 500 birds landed on a tree. Some 308 birds flew away.
-              How many birds remained on the tree?
+              <span class="pg079-qno">10.</span><span class="pg079-qtext">A flock of 500 birds landed on a tree. Some 308 birds flew away. How many birds remained on the tree?</span>
             </li>
             <li>
-              Juma had 463 oranges. He sold 185 oranges. How many oranges
-              remained?
+              <span class="pg079-qno">11.</span><span class="pg079-qtext">Juma had 463 oranges. He sold 185 oranges. How many oranges remained?</span>
             </li>
             <li>
-              In a class of 210 students, 170 students sat for an examination.
-              How many students did not sit for the examination?
+              <span class="pg079-qno">12.</span><span class="pg079-qtext">In a class of 210 students, 170 students sat for an examination. How many students did not sit for the examination?</span>
             </li>
           </ol>
         </section>
@@ -830,7 +823,7 @@
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=2"></script>
-    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=33"></script>
   </body>
 </html>
 <style>
@@ -889,25 +882,24 @@
     line-height: 1.32;
   }
 
-  .page79 .exercise.prose::before {
-    content: "pupils who continued with the journey.";
-    display: block;
+  .page79 .pg079-continuation {
     margin: 0 1rem 0.16rem 4.3rem;
   }
 
   .page79 .exercise.prose ol {
     margin: 0;
     padding: 0 1rem 0 4.3rem;
-    list-style-type: decimal;
-    list-style-position: outside;
+    list-style: none;
   }
 
   .page79 .exercise.prose li {
+    display: grid;
+    grid-template-columns: 2.3rem minmax(0, 1fr);
     margin: 0 0 0.13rem;
-    padding: 0 0 0 0.28rem;
+    padding: 0;
   }
 
-  .page79 .exercise.prose li::marker {
+  .page79 .pg079-qno {
     color: var(--page-blue);
     font-variant-numeric: tabular-nums;
   }
@@ -945,7 +937,7 @@
       font-size: clamp(1.18rem, 4.2vw, 1.85rem);
     }
 
-    .page79 .exercise.prose::before {
+    .page79 .pg079-continuation {
       margin-left: 3.45rem;
     }
 
