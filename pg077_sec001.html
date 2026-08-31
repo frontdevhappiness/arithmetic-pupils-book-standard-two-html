@@ -358,14 +358,7 @@
     text-align: center;
   }
   .page77 .pg077-number-row::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: .85rem;
-    height: .12rem;
-    background: #111;
-    transform: translateY(-50%);
+    content: none;
   }
   .page77 .pg077-minuend::before,
   .page77 .pg077-answer::before {
@@ -401,6 +394,13 @@
   .page77 .pg077-answer {
     padding-bottom: .15rem;
     border-bottom: .12rem solid #111;
+  }
+  .page77 .pg077-minus-sign {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    line-height: 1;
+    transform: translateY(-50%);
   }
   .page77 .pg077-marker {
     display: grid;
@@ -493,7 +493,7 @@
         <p class="pg077-subtract-label">Subtract:</p>
         <div class="pg077-subtraction" aria-label="Five hundred and forty-three minus one hundred and twenty-nine equals four hundred and fourteen">
           <div class="pg077-number-row pg077-minuend"><span>5</span><span class="pg077-borrowed"><small class="pg077-carry">3</small>4</span><span class="pg077-borrowed"><small class="pg077-carry">13</small>3</span></div>
-          <div class="pg077-number-row"><span>1</span><span>2</span><span>9</span></div>
+          <div class="pg077-number-row"><span class="pg077-minus-sign" aria-hidden="true">−</span><span>1</span><span>2</span><span>9</span></div>
           <div class="pg077-rule" aria-hidden="true"></div>
           <div class="pg077-number-row pg077-answer"><span>4</span><span>1</span><span>4</span></div>
         </div>
@@ -517,6 +517,6 @@
 </script>
 <script src="./assets/base.bundle.local.js">
 </script>
-<script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+<script src="./assets/read-aloud-highlight-bridge.js?v=31"></script>
 </body>
 </html>
