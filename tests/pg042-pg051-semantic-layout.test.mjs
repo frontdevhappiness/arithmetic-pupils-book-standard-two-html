@@ -513,6 +513,28 @@ test("page 79 maps its continuation and questions 3 through 12 in exact order", 
   assert.equal(timecodes.pg079_p029.timecodes[1].word_timestamps.length, 199);
 });
 
+test("page 80 maps its chapter, examples, equations, and steps exactly", () => {
+  const html = page(80).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=35/);
+  assert.match(highlightBridge, /function buildPage80Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /id !== "pg080_p020" && id !== "pg080_p021" && id !== "pg080_p022"/);
+  assert.match(highlightBridge, /\["pg080_p016", "pg080_p017", "pg080_p015", "pg080_p001"/);
+  assert.match(highlightBridge, /rawRanges\(section\.querySelectorAll\("\.step-number"\)\[0\]\)/);
+  assert.match(highlightBridge, /rawRanges\(section\.querySelectorAll\("\.step-number"\)\[1\]\)/);
+  assert.equal(texts.pg080_p009, "Put two cups in one group only once. This means,");
+  assert.equal(texts.pg080_p011, "Add the number of cups. The sum is 2 cups.");
+  assert.equal(texts.pg080_im001, "Two cups shown side by side to represent one group of two.");
+  assert.equal(audios.pg080_im001, "pg080_im001.mp3");
+  assert.ok(timecodes.pg080_im001.timecodes[1].word_timestamps.length > 0);
+  assert.ok(html.indexOf('data-id="pg080_p020"') < html.indexOf('data-id="pg080_im001"'));
+  assert.ok(html.indexOf('data-id="pg080_im001"') < html.indexOf('data-id="pg080_p022"'));
+  assert.ok(html.indexOf('data-id="pg080_p022"') < html.indexOf('data-id="pg080_p021"'));
+  assert.match(highlightBridge, /buildPage80Map\(content, source, narration\)/);
+  assert.equal(timecodes.pg080_p020.timecodes[1].word_timestamps.length, 67);
+  assert.equal(timecodes.pg080_p022.timecodes[1].word_timestamps.length, 17);
+  assert.equal(timecodes.pg080_p021.timecodes[1].word_timestamps.length, 6);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -524,8 +546,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 79", () => {
-  for (let number = 42; number <= 79; number += 1) {
+test("offline copies match pages 42 to 80", () => {
+  for (let number = 42; number <= 80; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
