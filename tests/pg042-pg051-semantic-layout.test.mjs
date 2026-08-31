@@ -292,6 +292,18 @@ test("page 59 keeps the introductory fish counts in the top sum", () => {
   assert.equal(timecodes.pg059_p053.timecodes[1].word_timestamps[18].text, "210");
 });
 
+test("page 60 keeps all Step 2 highlights inside the second row", () => {
+  const html = page(60).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=52/);
+  assert.match(highlightBridge, /function buildPage60Step2Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg060_p051" \|\| narration\.length !== 98/);
+  assert.match(highlightBridge, /mapping\[42\] = numberRange/);
+  assert.match(highlightBridge, /mapping\[58\] = \[first\[13\], first\[14\]\]/);
+  assert.match(highlightBridge, /mapping\[69\] = \[second\[1\], second\[2\]\]/);
+  assert.equal(timecodes.pg060_p051.timecodes[1].word_timestamps[42].text, "Step");
+  assert.equal(timecodes.pg060_p051.timecodes[1].word_timestamps[73].text, "place");
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -303,8 +315,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 59", () => {
-  for (let number = 42; number <= 59; number += 1) {
+test("offline copies match pages 42 to 60", () => {
+  for (let number = 42; number <= 60; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
