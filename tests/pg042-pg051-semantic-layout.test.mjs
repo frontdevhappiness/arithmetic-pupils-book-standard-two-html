@@ -570,6 +570,18 @@ test("page 82 maps exercise objects and Example 1 in exact narration order", () 
   assert.equal(timecodes.pg082_im006.timecodes[1].word_timestamps.length, 30);
 });
 
+test("page 83 maps all three examples without repeated-number jumps", () => {
+  const html = page(83).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=42/);
+  assert.match(html, /\.pg083-source-hooks \[data-id\]/);
+  assert.match(highlightBridge, /function buildPage83Map\(content, source\)/);
+  assert.match(highlightBridge, /id !== "pg083_p001" && id !== "pg083_p007" && id !== "pg083_p013"/);
+  assert.match(highlightBridge, /for \(var imageWord = 0; imageWord < 11; imageWord \+= 1\) mapping\.push\(image\)/);
+  assert.equal(timecodes.pg083_p001.timecodes[1].word_timestamps.length, 28);
+  assert.equal(timecodes.pg083_p007.timecodes[1].word_timestamps.length, 32);
+  assert.equal(timecodes.pg083_p013.timecodes[1].word_timestamps.length, 36);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -581,8 +593,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 82", () => {
-  for (let number = 42; number <= 82; number += 1) {
+test("offline copies match pages 42 to 83", () => {
+  for (let number = 42; number <= 83; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
