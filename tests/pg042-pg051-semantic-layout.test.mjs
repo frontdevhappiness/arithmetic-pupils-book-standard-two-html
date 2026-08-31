@@ -183,6 +183,20 @@ test("page 51 solution narration precedes its visuals and uses an exact worked-e
   assert.equal(texts.pg051_p035, "2. Add tens: 1 + 6 + 2 = 9.");
 });
 
+test("page 52 instruction and worked solution use exact local highlight maps", () => {
+  const html = page(52).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=40/);
+  assert.match(highlightBridge, /function buildPage52Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg052_p065" && sourceId !== "pg052_p066"/);
+  assert.match(highlightBridge, /instructionMap\.fill\(equation\[0\], 1, 5\)/);
+  assert.match(highlightBridge, /assign\(81, stepOne\)/);
+  assert.match(highlightBridge, /assign\(112, stepTwo\)/);
+  assert.match(highlightBridge, /assign\(145, stepThree\)/);
+  assert.match(highlightBridge, /fill\(165, 168, conclusion\[4\]\)/);
+  assert.equal(timecodes.pg052_p065.timecodes[1].word_timestamps.length, 11);
+  assert.equal(timecodes.pg052_p066.timecodes[1].word_timestamps.length, 169);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -194,8 +208,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 51", () => {
-  for (let number = 42; number <= 51; number += 1) {
+test("offline copies match pages 42 to 52", () => {
+  for (let number = 42; number <= 52; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
