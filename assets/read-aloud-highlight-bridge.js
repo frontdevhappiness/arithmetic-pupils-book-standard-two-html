@@ -1300,9 +1300,81 @@
     return mapping.some(function (target) { return !target; }) ? null : mapping;
   }
 
+  function buildPage54ChartMap(content, source, narration) {
+    var sourceId = source.getAttribute("data-id");
+    if (sourceId !== "pg054_p137" && sourceId !== "pg054_p138") return null;
+    var section = content.querySelector('[data-section-id="pg054_sec001"]');
+    if (!section) return null;
+
+    function rawRanges(root) {
+      var ranges = [];
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        if (excludedTextNode(node, content)) continue;
+        var pattern = new RegExp(WORD_PATTERN.source, "gu");
+        var match;
+        while ((match = pattern.exec(node.nodeValue || ""))) {
+          var range = document.createRange();
+          range.setStart(node, match.index);
+          range.setEnd(node, match.index + match[0].length);
+          ranges.push(range);
+        }
+      }
+      return ranges;
+    }
+
+    if (sourceId === "pg054_p138") {
+      var explanation = rawRanges(section.querySelector(".pg054-explanation"));
+      return narration.length === 52 && explanation.length === 52 ? explanation : null;
+    }
+
+    if (narration.length !== 76) return null;
+    var table = section.querySelector(".pg054-chart");
+    var headerCells = table ? Array.from(table.querySelectorAll("thead th")).slice(1) : [];
+    var bodyRows = table ? Array.from(table.querySelectorAll("tbody tr")) : [];
+    var rowHeaders = bodyRows.map(function (row) { return row.querySelector("th"); });
+    var valueRows = bodyRows.map(function (row) { return Array.from(row.querySelectorAll("td")); });
+    if (!table || headerCells.length !== 5 || bodyRows.length !== 5 || rowHeaders.some(function (cell) { return !cell; }) || valueRows.some(function (cells) { return cells.length !== 5; })) return null;
+
+    var mapping = new Array(narration.length).fill(null);
+    function fill(start, end, target) {
+      for (var index = start; index <= end; index += 1) mapping[index] = target;
+    }
+    fill(0, 5, table.querySelector("thead"));
+    mapping[6] = headerCells[0];
+    mapping[7] = headerCells[1];
+    mapping[8] = headerCells[2];
+    mapping[9] = headerCells[3];
+    mapping[10] = headerCells;
+    mapping[11] = headerCells[4];
+    mapping[12] = rowHeaders;
+    mapping[13] = rowHeaders;
+    mapping[14] = rowHeaders;
+    mapping[15] = rowHeaders[0];
+    mapping[16] = rowHeaders[1];
+    mapping[17] = rowHeaders[2];
+    mapping[18] = rowHeaders[3];
+    mapping[19] = rowHeaders;
+    mapping[20] = rowHeaders[4];
+    bodyRows.forEach(function (row, rowIndex) {
+      var offset = 21 + rowIndex * 11;
+      fill(offset, offset + 2, row);
+      mapping[offset + 3] = rowHeaders[rowIndex];
+      mapping[offset + 4] = row;
+      mapping[offset + 5] = valueRows[rowIndex][0];
+      mapping[offset + 6] = valueRows[rowIndex][1];
+      mapping[offset + 7] = valueRows[rowIndex][2];
+      mapping[offset + 8] = valueRows[rowIndex][3];
+      mapping[offset + 9] = valueRows[rowIndex];
+      mapping[offset + 10] = valueRows[rowIndex][4];
+    });
+    return mapping.some(function (target) { return !target; }) ? null : mapping;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage54ChartMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

@@ -211,6 +211,18 @@ test("page 53 Exercise 8 maps each narrated sum to its own row", () => {
   assert.equal(timecodes.pg053_p120.timecodes[1].word_timestamps.length, 6);
 });
 
+test("page 54 chart narration maps repeated values to exact table cells", () => {
+  const html = page(54).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=43/);
+  assert.match(highlightBridge, /function buildPage54ChartMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /sourceId !== "pg054_p137" && sourceId !== "pg054_p138"/);
+  assert.match(highlightBridge, /var offset = 21 \+ rowIndex \* 11/);
+  assert.match(highlightBridge, /mapping\[offset \+ 10\] = valueRows\[rowIndex\]\[4\]/);
+  assert.match(highlightBridge, /narration\.length === 52 && explanation\.length === 52/);
+  assert.equal(timecodes.pg054_p137.timecodes[1].word_timestamps.length, 76);
+  assert.equal(timecodes.pg054_p138.timecodes[1].word_timestamps.length, 52);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -222,8 +234,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 53", () => {
-  for (let number = 42; number <= 53; number += 1) {
+test("offline copies match pages 42 to 54", () => {
+  for (let number = 42; number <= 54; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
