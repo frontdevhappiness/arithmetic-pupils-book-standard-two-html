@@ -1554,9 +1554,99 @@
     return cursor === narration.length && !mapping.some(function (target) { return !target; }) ? mapping : null;
   }
 
+  function buildPage57Map(content, source, narration) {
+    var sourceId = source.getAttribute("data-id");
+    var supported = ["pg057_p022", "pg057_p023", "pg057_p041", "pg057_p042", "pg057_p043"];
+    if (supported.indexOf(sourceId) === -1) return null;
+    var section = content.querySelector('[data-section-id="pg057_sec001"]');
+    if (!section) return null;
+
+    function rawRanges(root) {
+      var ranges = [];
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        if (excludedTextNode(node, content)) continue;
+        var pattern = new RegExp(WORD_PATTERN.source, "gu");
+        var match;
+        while ((match = pattern.exec(node.nodeValue || ""))) {
+          var range = document.createRange();
+          range.setStart(node, match.index);
+          range.setEnd(node, match.index + match[0].length);
+          ranges.push(range);
+        }
+      }
+      return ranges;
+    }
+
+    if (sourceId === "pg057_p022" || sourceId === "pg057_p023") {
+      var guidanceRanges = rawRanges(section.querySelector(".pg057-guidance"));
+      var split = sourceId === "pg057_p022" ? guidanceRanges.slice(0, 11) : guidanceRanges.slice(11);
+      return split.length === narration.length ? split : null;
+    }
+
+    if (sourceId === "pg057_p041") {
+      if (narration.length !== 69) return null;
+      var steps = Array.from(section.querySelectorAll(".pg057-steps li"));
+      var stepMap = new Array(narration.length).fill(null);
+      var cursor = 0;
+      steps.forEach(function (step) {
+        var ranges = rawRanges(step);
+        if (!ranges.length || narration[cursor] !== "step") return;
+        stepMap[cursor] = ranges[0];
+        ranges.forEach(function (range, index) { stepMap[cursor + index + 1] = range; });
+        cursor += ranges.length + 1;
+      });
+      return cursor === narration.length && !stepMap.some(function (target) { return !target; }) ? stepMap : null;
+    }
+
+    if (sourceId === "pg057_p043") {
+      if (narration.length !== 28) return null;
+      var solutionTable = section.querySelector(".pg057-solution-table");
+      var solutionHeaders = solutionTable ? Array.from(solutionTable.querySelectorAll("thead th")) : [];
+      var solutionRows = solutionTable ? Array.from(solutionTable.querySelectorAll("tbody tr")) : [];
+      var totalCopy = section.querySelector(".pg057-total");
+      if (solutionHeaders.length !== 3 || solutionRows.length !== 3 || !totalCopy) return null;
+      var solutionCells = solutionRows.map(function (row) { return Array.from(row.querySelectorAll("td")); });
+      if (solutionCells.some(function (row) { return row.length !== 3; })) return null;
+      var ashaHeader = rawRanges(solutionHeaders[1])[0];
+      var annaHeader = rawRanges(solutionHeaders[2])[0];
+      var ashaFirst = rawRanges(solutionCells[0][1])[0];
+      var annaFirst = rawRanges(solutionCells[0][2])[0];
+      var ashaSecond = rawRanges(solutionCells[1][1]);
+      var annaSecond = rawRanges(solutionCells[1][2]);
+      var ashaTotal = rawRanges(solutionCells[2][1])[0];
+      var annaTotal = rawRanges(solutionCells[2][2])[0];
+      var totalRanges = rawRanges(totalCopy);
+      if (!ashaHeader || !annaHeader || !ashaFirst || !annaFirst || ashaSecond.length !== 2 || annaSecond.length !== 2 || !ashaTotal || !annaTotal || totalRanges.length !== 15) return null;
+      return [
+        ashaHeader, ashaHeader, ashaHeader, ashaFirst, ashaSecond[0], ashaSecond[1], ashaTotal, ashaTotal,
+        annaHeader, annaHeader, annaHeader, annaFirst, annaSecond[0], annaSecond[1], annaTotal, annaTotal,
+        totalRanges[0], totalRanges[4], totalRanges[1], totalRanges[2], totalRanges[5], totalRanges[6], totalRanges[7],
+        totalRanges[12], totalRanges[9], totalRanges[10], totalRanges[13], totalRanges[14]
+      ];
+    }
+
+    if (narration.length !== 18) return null;
+    var table = section.querySelector(".pg057-table:not(.pg057-solution-table)");
+    var headers = table ? Array.from(table.querySelectorAll("thead th")) : [];
+    var rows = table ? Array.from(table.querySelectorAll("tbody tr")) : [];
+    if (headers.length !== 3 || rows.length !== 2) return null;
+    var headerRanges = headers.map(rawRanges);
+    var cells = rows.map(function (row) { return Array.from(row.querySelectorAll("td")); });
+    if (headerRanges[0].length !== 2 || headerRanges[1].length !== 1 || headerRanges[2].length !== 1 || cells.some(function (row) { return row.length !== 3; })) return null;
+    var cellRanges = cells.map(function (row) { return row.map(function (cell) { return rawRanges(cell)[0]; }); });
+    if (cellRanges.some(function (row) { return row.some(function (range) { return !range; }); })) return null;
+    return [
+      headerRanges[0][0], headerRanges[0][1], headerRanges[1][0], headerRanges[2][0],
+      cellRanges[0][0], cellRanges[0][0], cellRanges[0][0], headerRanges[1][0], cellRanges[0][1], headerRanges[2][0], cellRanges[0][2],
+      cellRanges[1][0], cellRanges[1][0], cellRanges[1][0], headerRanges[1][0], cellRanges[1][1], headerRanges[2][0], cellRanges[1][2]
+    ];
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage54ChartMap(content, source, narration) || buildPage55Map(content, source, narration) || buildPage56SequenceMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage54ChartMap(content, source, narration) || buildPage55Map(content, source, narration) || buildPage56SequenceMap(content, source, narration) || buildPage57Map(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {

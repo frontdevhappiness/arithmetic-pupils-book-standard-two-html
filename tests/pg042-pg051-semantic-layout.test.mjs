@@ -253,6 +253,22 @@ test("page 56 narrates and maps every missing-number blank", () => {
   assert.equal(audios.pg056_p018, "pg056_p018_adt_sequences_with_blanks.mp3");
 });
 
+test("page 57 maps steps, guidance, and both tables exactly", () => {
+  const html = page(57).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=48/);
+  assert.equal((html.match(/class="pg057-step-no"/g) || []).length, 5);
+  assert.match(highlightBridge, /function buildPage57Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /var supported = \["pg057_p022", "pg057_p023", "pg057_p041", "pg057_p042", "pg057_p043"\]/);
+  assert.match(highlightBridge, /stepMap\[cursor\] = ranges\[0\]/);
+  assert.match(highlightBridge, /cellRanges\[0\]\[0\], cellRanges\[0\]\[0\], cellRanges\[0\]\[0\]/);
+  assert.match(highlightBridge, /sourceId === "pg057_p022" \|\| sourceId === "pg057_p023"/);
+  assert.match(highlightBridge, /if \(sourceId === "pg057_p043"\)/);
+  assert.match(highlightBridge, /ashaSecond\[0\], ashaSecond\[1\], ashaTotal, ashaTotal/);
+  assert.equal(timecodes.pg057_p041.timecodes[1].word_timestamps.length, 69);
+  assert.equal(timecodes.pg057_p042.timecodes[1].word_timestamps.length, 18);
+  assert.equal(timecodes.pg057_p043.timecodes[1].word_timestamps.length, 28);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -264,8 +280,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 56", () => {
-  for (let number = 42; number <= 56; number += 1) {
+test("offline copies match pages 42 to 57", () => {
+  for (let number = 42; number <= 57; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
