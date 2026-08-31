@@ -486,6 +486,20 @@ test("page 77 maps both examples, all steps, and the regrouped subtraction", () 
   assert.match(highlightBridge, /buildPage77Map\(content, source, narration\)/);
 });
 
+test("page 78 maps every step and exercise question to its local text", () => {
+  const html = page(78).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=32/);
+  assert.match(highlightBridge, /function buildPage78Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /id !== "pg078_p071" && id !== "pg078_p072"/);
+  assert.match(highlightBridge, /expectedCopyLengths = \[9, 30, 13, 13, 13\]/);
+  assert.match(highlightBridge, /secondQuestion\.slice\(0, 19\)/);
+  assert.match(highlightBridge, /buildPage78Map\(content, source, narration\)/);
+  assert.equal(timecodes.pg078_p071.timecodes[1].word_timestamps.length, 90);
+  assert.equal(timecodes.pg078_p072.timecodes[1].word_timestamps.length, 42);
+  assert.match(html, /Find the number of<\/span>/);
+  assert.doesNotMatch(html, /pupils who continued with the\s+journey/);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -497,8 +511,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 77", () => {
-  for (let number = 42; number <= 77; number += 1) {
+test("offline copies match pages 42 to 78", () => {
+  for (let number = 42; number <= 78; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
