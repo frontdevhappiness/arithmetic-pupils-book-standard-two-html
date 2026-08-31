@@ -317,6 +317,18 @@ test("page 63 maps every example token to its exact visual target", () => {
   assert.equal(timecodes.pg063_p036.timecodes[1].word_timestamps.length, 64);
 });
 
+test("page 64 maps every step token to its exact diagram and place-value column", () => {
+  const html = page(64).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=55/);
+  assert.match(highlightBridge, /function buildPage64StepsMap\(content, source, narration\)/);
+  assert.match(highlightBridge, /source\.getAttribute\("data-id"\) !== "pg064_p059" \|\| narration\.length !== 92/);
+  assert.match(highlightBridge, /mapping\[31\] = column\(first, 2\)/);
+  assert.match(highlightBridge, /mapping\[54\] = column\(second, 1\)/);
+  assert.match(highlightBridge, /mapping\[81\] = \[third\.heads\[8\], third\.digits\[8\]\]/);
+  assert.match(highlightBridge, /mapping\[86\] = column\(third, 2\)/);
+  assert.equal(timecodes.pg064_p059.timecodes[1].word_timestamps.length, 92);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -328,8 +340,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 63", () => {
-  for (let number = 42; number <= 63; number += 1) {
+test("offline copies match pages 42 to 64", () => {
+  for (let number = 42; number <= 64; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }

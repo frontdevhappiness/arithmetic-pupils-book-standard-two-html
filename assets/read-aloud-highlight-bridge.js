@@ -1830,9 +1830,110 @@
     return mapping.some(function (target) { return !target; }) ? null : mapping;
   }
 
+  function buildPage64StepsMap(content, source, narration) {
+    if (source.getAttribute("data-id") !== "pg064_p059" || narration.length !== 92) return null;
+    var section = content.querySelector('[data-section-id="pg064_sec001"]');
+    var title = section ? section.querySelector(".pg064-title") : null;
+    var steps = section ? Array.from(section.querySelectorAll(".pg064-step")) : [];
+    var therefore = section ? section.querySelector(".pg064-therefore") : null;
+    if (!title || steps.length !== 3 || !therefore) return null;
+
+    function rawRanges(root) {
+      var ranges = [];
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        if (excludedTextNode(node, content)) continue;
+        var pattern = new RegExp(WORD_PATTERN.source, "gu");
+        var match;
+        while ((match = pattern.exec(node.nodeValue || ""))) {
+          var range = document.createRange();
+          range.setStart(node, match.index);
+          range.setEnd(node, match.index + match[0].length);
+          ranges.push(range);
+        }
+      }
+      return ranges;
+    }
+
+    var rows = steps.map(function (step) {
+      var paragraphs = step.querySelectorAll(".pg064-copy p");
+      var diagram = step.querySelector(".pg064-diagram");
+      var heads = Array.from(step.querySelectorAll(".pg064-head"));
+      var digits = Array.from(step.querySelectorAll(".pg064-digit"));
+      return {
+        number: rawRanges(step.querySelector(".pg064-number"))[0],
+        first: rawRanges(paragraphs[0]),
+        second: rawRanges(paragraphs[1]),
+        diagram: diagram,
+        heads: heads.map(function (cell) { return rawRanges(cell)[0]; }),
+        digits: digits.map(function (cell) { return rawRanges(cell)[0]; })
+      };
+    });
+    if (rows.some(function (row) {
+      return !row.number || row.first.length !== 7 || row.second.length !== 6 || !row.diagram || row.heads.length !== 11 || row.digits.length !== 11;
+    })) return null;
+
+    function column(row, offset) {
+      return [row.heads[offset], row.heads[offset + 4], row.heads[offset + 8]].filter(Boolean);
+    }
+    function allHeadings(row) {
+      return [0, 1, 2, 4, 5, 6, 8, 9, 10].map(function (index) { return row.heads[index]; }).filter(Boolean);
+    }
+
+    var mapping = new Array(narration.length).fill(null);
+    mapping[0] = rawRanges(title)[0];
+
+    var first = rows[0];
+    mapping[1] = first.number; mapping[2] = first.number;
+    mapping[3] = first.first[0]; mapping[4] = first.first[1]; mapping[5] = [first.first[1]].concat(column(first, 2));
+    for (var firstSum = 6; firstSum <= 10; firstSum += 1) mapping[firstSum] = first.first[firstSum - 4];
+    for (var firstWrite = 11; firstWrite <= 16; firstWrite += 1) mapping[firstWrite] = first.second[firstWrite - 11];
+    mapping[15] = [first.second[4]].concat(column(first, 2));
+    mapping[17] = first.diagram; mapping[18] = first.diagram;
+    mapping[19] = allHeadings(first); mapping[20] = allHeadings(first);
+    mapping[21] = first.diagram; mapping[22] = first.diagram;
+    mapping[23] = [first.digits[0], first.digits[1], first.digits[2]];
+    mapping[24] = first.digits[3]; mapping[25] = [first.digits[4], first.digits[5], first.digits[6]];
+    mapping[26] = first.diagram; mapping[27] = first.digits[10]; mapping[28] = first.digits[10];
+    mapping[29] = first.digits[10]; mapping[30] = first.digits[10];
+    mapping[31] = column(first, 2); mapping[32] = first.heads[10];
+
+    var second = rows[1];
+    mapping[33] = second.number; mapping[34] = second.number;
+    mapping[35] = second.first[0]; mapping[36] = second.first[1]; mapping[37] = [second.first[1]].concat(column(second, 1));
+    for (var secondSum = 38; secondSum <= 42; secondSum += 1) mapping[secondSum] = second.first[secondSum - 36];
+    for (var secondWrite = 43; secondWrite <= 48; secondWrite += 1) mapping[secondWrite] = second.second[secondWrite - 43];
+    mapping[47] = [second.second[4]].concat(column(second, 1));
+    mapping[49] = second.diagram; mapping[50] = second.diagram;
+    mapping[51] = second.diagram; mapping[52] = second.diagram;
+    mapping[53] = second.digits[9]; mapping[54] = column(second, 1);
+    mapping[55] = second.diagram; mapping[56] = second.digits[10]; mapping[57] = column(second, 2);
+    mapping[58] = [second.digits[9], second.digits[10]];
+    mapping[59] = [second.digits[9], second.digits[10]];
+    mapping[60] = [second.digits[9], second.digits[10]];
+
+    var third = rows[2];
+    mapping[61] = third.number; mapping[62] = third.number;
+    mapping[63] = third.first[0]; mapping[64] = third.first[1]; mapping[65] = [third.first[1]].concat(column(third, 0));
+    for (var thirdSum = 66; thirdSum <= 70; thirdSum += 1) mapping[thirdSum] = third.first[thirdSum - 64];
+    for (var thirdWrite = 71; thirdWrite <= 76; thirdWrite += 1) mapping[thirdWrite] = third.second[thirdWrite - 71];
+    mapping[75] = [third.second[4]].concat(column(third, 0));
+    mapping[77] = third.diagram; mapping[78] = third.diagram;
+    mapping[79] = third.diagram; mapping[80] = third.diagram;
+    mapping[81] = [third.heads[8], third.digits[8]];
+    mapping[82] = third.digits[9]; mapping[83] = column(third, 1);
+    mapping[84] = third.diagram; mapping[85] = third.digits[10]; mapping[86] = column(third, 2);
+
+    var ending = rawRanges(therefore);
+    if (ending.length !== 5) return null;
+    for (var end = 87; end <= 91; end += 1) mapping[end] = ending[end - 87];
+    return mapping.some(function (target) { return !target || (Array.isArray(target) && !target.length); }) ? null : mapping;
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage54ChartMap(content, source, narration) || buildPage55Map(content, source, narration) || buildPage56SequenceMap(content, source, narration) || buildPage57Map(content, source, narration) || buildPage58QuestionMap(content, source, narration) || buildPage59FishNumberMap(content, source, narration) || buildPage60Step2Map(content, source, narration) || buildPage63ExampleMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage54ChartMap(content, source, narration) || buildPage55Map(content, source, narration) || buildPage56SequenceMap(content, source, narration) || buildPage57Map(content, source, narration) || buildPage58QuestionMap(content, source, narration) || buildPage59FishNumberMap(content, source, narration) || buildPage60Step2Map(content, source, narration) || buildPage63ExampleMap(content, source, narration) || buildPage64StepsMap(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
