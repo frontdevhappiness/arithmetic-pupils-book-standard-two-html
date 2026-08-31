@@ -99552,432 +99552,522 @@
           {
             "text": "321",
             "start": 6.96,
-            "end": 8.1
+            "end": 8.15067
+          },
+          {
+            "text": "equals",
+            "start": 8.15067,
+            "end": 8.51067
           },
           {
             "text": "Question",
-            "start": 9.14,
-            "end": 9.24
+            "start": 9.5,
+            "end": 9.6
           },
           {
             "text": "2",
-            "start": 9.24,
-            "end": 9.56
+            "start": 9.6,
+            "end": 9.92
           },
           {
             "text": "758",
-            "start": 10.08,
-            "end": 11.12
+            "start": 10.44,
+            "end": 11.48
           },
           {
             "text": "minus",
-            "start": 11.12,
-            "end": 11.46
+            "start": 11.48,
+            "end": 11.82
           },
           {
             "text": "643",
-            "start": 11.46,
-            "end": 12.8
+            "start": 11.82,
+            "end": 13.1053
+          },
+          {
+            "text": "equals",
+            "start": 13.1053,
+            "end": 13.4653
           },
           {
             "text": "Question",
-            "start": 13.7,
-            "end": 13.8
+            "start": 14.42,
+            "end": 14.52
           },
           {
             "text": "3",
-            "start": 13.8,
-            "end": 14.14
+            "start": 14.52,
+            "end": 14.86
           },
           {
             "text": "239",
-            "start": 14.48,
-            "end": 15.52
+            "start": 15.2,
+            "end": 16.24
           },
           {
             "text": "minus",
-            "start": 15.52,
-            "end": 15.86
+            "start": 16.24,
+            "end": 16.58
           },
           {
             "text": "115",
-            "start": 15.86,
-            "end": 16.76
+            "start": 16.58,
+            "end": 17.7551
+          },
+          {
+            "text": "equals",
+            "start": 17.7551,
+            "end": 18.1151
           },
           {
             "text": "Question",
-            "start": 17.9,
-            "end": 18
+            "start": 18.98,
+            "end": 19.08
           },
           {
             "text": "4",
-            "start": 18,
-            "end": 18.42
+            "start": 19.08,
+            "end": 19.5
           },
           {
             "text": "384",
-            "start": 18.78,
-            "end": 19.76
+            "start": 19.86,
+            "end": 20.84
           },
           {
             "text": "minus",
-            "start": 19.76,
-            "end": 20.12
+            "start": 20.84,
+            "end": 21.2
           },
           {
             "text": "243",
-            "start": 20.12,
-            "end": 21.34
+            "start": 21.2,
+            "end": 22.3583
+          },
+          {
+            "text": "equals",
+            "start": 22.3583,
+            "end": 22.7183
           },
           {
             "text": "Question",
-            "start": 22.26,
-            "end": 22.36
+            "start": 23.7,
+            "end": 23.8
           },
           {
             "text": "5",
-            "start": 22.36,
-            "end": 22.78
+            "start": 23.8,
+            "end": 24.22
           },
           {
             "text": "895",
-            "start": 23.18,
-            "end": 24.14
+            "start": 24.62,
+            "end": 25.58
           },
           {
             "text": "minus",
-            "start": 24.14,
-            "end": 24.64
+            "start": 25.58,
+            "end": 26.08
           },
           {
             "text": "670",
-            "start": 24.64,
-            "end": 25.7
+            "start": 26.08,
+            "end": 27.1784
+          },
+          {
+            "text": "equals",
+            "start": 27.1784,
+            "end": 27.5384
           },
           {
             "text": "Question",
-            "start": 26.08,
-            "end": 26.78
+            "start": 28.2422,
+            "end": 28.58
           },
           {
             "text": "6",
-            "start": 26.78,
-            "end": 27.2
+            "start": 28.58,
+            "end": 29
           },
           {
             "text": "267",
-            "start": 27.68,
-            "end": 28.9
+            "start": 29.48,
+            "end": 30.7
           },
           {
             "text": "minus",
-            "start": 28.9,
-            "end": 29.18
+            "start": 30.7,
+            "end": 30.98
           },
           {
             "text": "145",
-            "start": 29.18,
-            "end": 30.54
+            "start": 30.98,
+            "end": 32.2673
+          },
+          {
+            "text": "equals",
+            "start": 32.2673,
+            "end": 32.6273
           },
           {
             "text": "Question",
-            "start": 31.32,
-            "end": 31.42
+            "start": 33.48,
+            "end": 33.58
           },
           {
             "text": "7",
-            "start": 31.42,
-            "end": 31.86
+            "start": 33.58,
+            "end": 34.02
           },
           {
             "text": "530",
-            "start": 32.24,
-            "end": 33.06
+            "start": 34.4,
+            "end": 35.22
           },
           {
             "text": "minus",
-            "start": 33.06,
-            "end": 33.44
+            "start": 35.22,
+            "end": 35.6
           },
           {
             "text": "410",
-            "start": 33.44,
-            "end": 34.3
+            "start": 35.6,
+            "end": 36.4595
+          },
+          {
+            "text": "equals",
+            "start": 36.4595,
+            "end": 36.8195
           },
           {
             "text": "Question",
-            "start": 35.26,
-            "end": 35.36
+            "start": 37.78,
+            "end": 37.88
           },
           {
             "text": "8",
-            "start": 35.36,
-            "end": 35.7
+            "start": 37.88,
+            "end": 38.22
           },
           {
             "text": "682",
-            "start": 36.18,
-            "end": 37.3
-          },
-          {
-            "text": "minus",
-            "start": 37.3,
-            "end": 37.66
-          },
-          {
-            "text": "381",
-            "start": 37.66,
-            "end": 38.84
-          },
-          {
-            "text": "Question",
-            "start": 39.72,
+            "start": 38.7,
             "end": 39.82
           },
           {
-            "text": "9",
+            "text": "minus",
             "start": 39.82,
             "end": 40.18
           },
           {
+            "text": "381",
+            "start": 40.18,
+            "end": 41.3326
+          },
+          {
+            "text": "equals",
+            "start": 41.3326,
+            "end": 41.6926
+          },
+          {
+            "text": "Question",
+            "start": 42.6,
+            "end": 42.7
+          },
+          {
+            "text": "9",
+            "start": 42.7,
+            "end": 43.06
+          },
+          {
             "text": "999",
-            "start": 41.02,
-            "end": 41.76
+            "start": 43.9,
+            "end": 44.64
           },
           {
             "text": "minus",
-            "start": 41.76,
-            "end": 42.24
+            "start": 44.64,
+            "end": 45.12
           },
           {
             "text": "717",
-            "start": 42.24,
-            "end": 43.46
+            "start": 45.12,
+            "end": 46.4002
+          },
+          {
+            "text": "equals",
+            "start": 46.4002,
+            "end": 46.7602
           },
           {
             "text": "Question",
-            "start": 44.52,
-            "end": 44.62
+            "start": 47.76,
+            "end": 47.86
           },
           {
             "text": "10",
-            "start": 44.62,
-            "end": 45.02
+            "start": 47.86,
+            "end": 48.26
           },
           {
             "text": "246",
-            "start": 45.5,
-            "end": 46.66
+            "start": 48.74,
+            "end": 49.9
           },
           {
             "text": "minus",
-            "start": 46.66,
-            "end": 46.98
+            "start": 49.9,
+            "end": 50.22
           },
           {
             "text": "123",
-            "start": 46.98,
-            "end": 47.96
+            "start": 50.22,
+            "end": 51.3958
+          },
+          {
+            "text": "equals",
+            "start": 51.3958,
+            "end": 51.7558
           },
           {
             "text": "Question",
-            "start": 49.14,
-            "end": 49.24
+            "start": 52.74,
+            "end": 52.84
           },
           {
             "text": "11",
-            "start": 49.24,
-            "end": 49.64
+            "start": 52.84,
+            "end": 53.24
           },
           {
             "text": "896",
-            "start": 50.16,
-            "end": 51.14
+            "start": 53.76,
+            "end": 54.74
           },
           {
             "text": "minus",
-            "start": 51.14,
-            "end": 51.68
+            "start": 54.74,
+            "end": 55.28
           },
           {
             "text": "643",
-            "start": 51.68,
-            "end": 52.98
+            "start": 55.28,
+            "end": 56.5025
+          },
+          {
+            "text": "equals",
+            "start": 56.5025,
+            "end": 56.8625
           },
           {
             "text": "Question",
-            "start": 52.98,
-            "end": 53.92
+            "start": 57.567,
+            "end": 57.88
           },
           {
             "text": "12",
-            "start": 53.92,
-            "end": 54.42
+            "start": 57.88,
+            "end": 58.38
           },
           {
             "text": "900",
-            "start": 54.74,
-            "end": 55.3
+            "start": 58.7,
+            "end": 59.26
           },
           {
             "text": "minus",
-            "start": 55.3,
-            "end": 55.76
+            "start": 59.26,
+            "end": 59.72
           },
           {
             "text": "500",
-            "start": 55.76,
-            "end": 56.4
+            "start": 59.72,
+            "end": 60.365
+          },
+          {
+            "text": "equals",
+            "start": 60.365,
+            "end": 60.725
           },
           {
             "text": "Question",
-            "start": 57.28,
-            "end": 57.38
+            "start": 61.6,
+            "end": 61.7
           },
           {
             "text": "13",
-            "start": 57.38,
-            "end": 57.96
+            "start": 61.7,
+            "end": 62.28
           },
           {
             "text": "729",
-            "start": 58.36,
-            "end": 59.5
+            "start": 62.68,
+            "end": 63.82
           },
           {
             "text": "minus",
-            "start": 59.5,
-            "end": 59.94
+            "start": 63.82,
+            "end": 64.26
           },
           {
             "text": "408",
-            "start": 59.94,
-            "end": 61.14
+            "start": 64.26,
+            "end": 65.2553
+          },
+          {
+            "text": "equals",
+            "start": 65.2553,
+            "end": 65.6153
           },
           {
             "text": "Question",
-            "start": 61.96,
-            "end": 62.06
+            "start": 66.64,
+            "end": 66.74
           },
           {
             "text": "14",
-            "start": 62.06,
-            "end": 62.6
+            "start": 66.74,
+            "end": 67.28
           },
           {
             "text": "256",
-            "start": 63.1,
-            "end": 64.14
+            "start": 67.78,
+            "end": 68.82
           },
           {
             "text": "minus",
-            "start": 64.14,
-            "end": 64.74
+            "start": 68.82,
+            "end": 69.42
           },
           {
             "text": "113",
-            "start": 64.74,
-            "end": 65.8
+            "start": 69.42,
+            "end": 70.5267
+          },
+          {
+            "text": "equals",
+            "start": 70.5267,
+            "end": 70.8867
           },
           {
             "text": "Question",
-            "start": 66.82,
-            "end": 66.92
+            "start": 71.86,
+            "end": 71.96
           },
           {
             "text": "15",
-            "start": 66.92,
-            "end": 67.46
+            "start": 71.96,
+            "end": 72.5
           },
           {
             "text": "446",
-            "start": 68.04,
-            "end": 69.04
+            "start": 73.08,
+            "end": 74.08
           },
           {
             "text": "minus",
-            "start": 69.04,
-            "end": 69.48
+            "start": 74.08,
+            "end": 74.52
           },
           {
             "text": "325",
-            "start": 69.48,
-            "end": 70.66
+            "start": 74.52,
+            "end": 75.7407
+          },
+          {
+            "text": "equals",
+            "start": 75.7407,
+            "end": 76.1007
           },
           {
             "text": "Question",
-            "start": 71.66,
-            "end": 71.76
+            "start": 77.06,
+            "end": 77.16
           },
           {
             "text": "16",
-            "start": 71.76,
-            "end": 72.34
+            "start": 77.16,
+            "end": 77.74
           },
           {
             "text": "185",
-            "start": 72.88,
-            "end": 73.84
+            "start": 78.28,
+            "end": 79.24
           },
           {
             "text": "minus",
-            "start": 73.84,
-            "end": 74.14
+            "start": 79.24,
+            "end": 79.54
           },
           {
             "text": "172",
-            "start": 74.14,
-            "end": 75.58
+            "start": 79.54,
+            "end": 80.7881
+          },
+          {
+            "text": "equals",
+            "start": 80.7881,
+            "end": 81.1481
           },
           {
             "text": "Question",
-            "start": 76.38,
-            "end": 76.48
+            "start": 82.14,
+            "end": 82.24
           },
           {
             "text": "17",
-            "start": 76.48,
-            "end": 77.06
+            "start": 82.24,
+            "end": 82.82
           },
           {
             "text": "388",
-            "start": 77.54,
-            "end": 78.48
+            "start": 83.3,
+            "end": 84.24
           },
           {
             "text": "minus",
-            "start": 78.48,
-            "end": 78.8
+            "start": 84.24,
+            "end": 84.56
           },
           {
             "text": "216",
-            "start": 78.8,
-            "end": 79.96
+            "start": 84.56,
+            "end": 85.7489
+          },
+          {
+            "text": "equals",
+            "start": 85.7489,
+            "end": 86.1089
           },
           {
             "text": "Question",
-            "start": 79.96,
-            "end": 81.02
+            "start": 86.8482,
+            "end": 87.14
           },
           {
             "text": "18",
-            "start": 81.02,
-            "end": 81.62
+            "start": 87.14,
+            "end": 87.74
           },
           {
             "text": "888",
-            "start": 82.04,
-            "end": 82.94
+            "start": 88.16,
+            "end": 89.06
           },
           {
             "text": "minus",
-            "start": 82.94,
-            "end": 83.38
+            "start": 89.06,
+            "end": 89.5
           },
           {
             "text": "283",
-            "start": 83.38,
-            "end": 84.5
+            "start": 89.5,
+            "end": 90.6584
+          },
+          {
+            "text": "equals",
+            "start": 90.6584,
+            "end": 91.0184
           }
         ]
       }

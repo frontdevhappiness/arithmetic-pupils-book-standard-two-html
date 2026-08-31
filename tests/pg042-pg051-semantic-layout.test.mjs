@@ -343,6 +343,16 @@ test("page 65 reads every equals sign and maps each equation locally", () => {
   assert.equal(audios.pg065_p037, "pg065_p037_adt_exercise_equals_clean_trimmed.mp3");
 });
 
+test("page 66 reads every equals sign and maps each equation locally", () => {
+  const page66 = page(66).html;
+  const words = timecodes.pg066_p031.timecodes[1].word_timestamps;
+  assert.match(page66, /read-aloud-highlight-bridge\.js\?v=23/);
+  assert.match(highlightBridge, /function buildPage66Map\(content, source, narration\)/);
+  assert.equal(words.length, 116);
+  assert.equal(words.filter(({ text }) => text === "equals").length, 18);
+  assert.equal(audios.pg066_p031, "pg066_p031_adt_exercise_equals_clean.mp3");
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -354,8 +364,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 65", () => {
-  for (let number = 42; number <= 65; number += 1) {
+test("offline copies match pages 42 to 66", () => {
+  for (let number = 42; number <= 66; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
