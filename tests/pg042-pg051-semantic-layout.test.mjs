@@ -535,6 +535,22 @@ test("page 80 maps its chapter, examples, equations, and steps exactly", () => {
   assert.equal(timecodes.pg080_p021.timecodes[1].word_timestamps.length, 6);
 });
 
+test("page 81 maps each worked-example narration to its local equation", () => {
+  const html = page(81).html;
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=36/);
+  assert.match(highlightBridge, /function buildPage81Map\(content, source, narration\)/);
+  assert.match(highlightBridge, /id !== "pg081_p036" && id !== "pg081_p037" && id !== "pg081_p038" && id !== "pg081_p039"/);
+  assert.match(highlightBridge, /pg081_p037: \["pg081_p003", "pg081_p004", "pg081_p005", "pg081_p006"\]/);
+  assert.match(highlightBridge, /pg081_p038: \["pg081_p012", "pg081_p013", "pg081_p014", "pg081_p015"\]/);
+  assert.match(highlightBridge, /buildPage81Map\(content, source, narration\)/);
+  assert.equal(texts.pg081_p014, "4×3=");
+  assert.equal(texts.pg081_p031, "Therefore, 4×3=12");
+  assert.equal(timecodes.pg081_p036.timecodes[1].word_timestamps.length, 1);
+  assert.equal(timecodes.pg081_p037.timecodes[1].word_timestamps.length, 13);
+  assert.equal(timecodes.pg081_p038.timecodes[1].word_timestamps.length, 13);
+  assert.equal(timecodes.pg081_p039.timecodes[1].word_timestamps.length, 6);
+});
+
 test("page-specific corrected structures are present", () => {
   assert.match(page(42).html, /answer-list two-columns column-flow/);
   assert.match(page(43).html, /class="money-scene"/);
@@ -546,8 +562,8 @@ test("page-specific corrected structures are present", () => {
   assert.match(page(51).html, /class="step-grid compact-sums"/);
 });
 
-test("offline copies match pages 42 to 80", () => {
-  for (let number = 42; number <= 80; number += 1) {
+test("offline copies match pages 42 to 81", () => {
+  for (let number = 42; number <= 81; number += 1) {
     const { file, html } = page(number);
     assert.equal(offline[`./${file}`], html);
   }
