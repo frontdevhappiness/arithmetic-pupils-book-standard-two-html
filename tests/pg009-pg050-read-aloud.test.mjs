@@ -1173,11 +1173,11 @@ assert.deepEqual(
 const page57 = read("pg057_sec001.html");
 const page57Steps = "Step 5. Roll the die in the cup or tin. Step 6. Count the number of dots shown on the top face of the die. Step 7. Move your marble in the direction of the school as the picture shows. Step 8. The marble is moved in steps equal to the number of dots on a die. Step 9. The first person to reach school will be the winner.";
 const page57Scores = "Game number. Asha. Anna. Game number one. Asha, 203. Anna, 205. Game number two. Asha, 206. Anna, 211.";
-const page57Solution = "Add Asha's scores: 203 plus 206 equals 409. Add Anna's scores: 205 plus 211 equals 416. Therefore, Asha's total score is 409 and Anna's total score is 416.";
+const page57Solution = "Add Asha's scores: 203 plus 206 equals 409. Add Anna's scores: 205 plus 211 equals 416. The total scores of Asha is 409 and the total scores of Anna is 416.";
 for (const [id, expected, filename] of [
   ["pg057_p041", page57Steps, "pg057_p041_adt_steps.mp3"],
   ["pg057_p042", page57Scores, "pg057_p042_adt_scores.mp3"],
-  ["pg057_p043", page57Solution, "pg057_p043_adt_solution.mp3"]
+  ["pg057_p043", page57Solution, "pg057_p043_adt_solution_visible_total.mp3"]
 ]) {
   assert.equal(texts[id], expected, `${id} must narrate page 57 coherently`);
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);

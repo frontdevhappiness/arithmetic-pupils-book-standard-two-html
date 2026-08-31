@@ -255,7 +255,7 @@ test("page 56 narrates and maps every missing-number blank", () => {
 
 test("page 57 maps steps, guidance, and both tables exactly", () => {
   const html = page(57).html;
-  assert.match(html, /read-aloud-highlight-bridge\.js\?v=48/);
+  assert.match(html, /read-aloud-highlight-bridge\.js\?v=49/);
   assert.equal((html.match(/class="pg057-step-no"/g) || []).length, 5);
   assert.match(highlightBridge, /function buildPage57Map\(content, source, narration\)/);
   assert.match(highlightBridge, /var supported = \["pg057_p022", "pg057_p023", "pg057_p041", "pg057_p042", "pg057_p043"\]/);
@@ -266,7 +266,8 @@ test("page 57 maps steps, guidance, and both tables exactly", () => {
   assert.match(highlightBridge, /ashaSecond\[0\], ashaSecond\[1\], ashaTotal, ashaTotal/);
   assert.equal(timecodes.pg057_p041.timecodes[1].word_timestamps.length, 69);
   assert.equal(timecodes.pg057_p042.timecodes[1].word_timestamps.length, 18);
-  assert.equal(timecodes.pg057_p043.timecodes[1].word_timestamps.length, 28);
+  assert.equal(timecodes.pg057_p043.timecodes[1].word_timestamps.length, 31);
+  assert.equal(audios.pg057_p043, "pg057_p043_adt_solution_visible_total.mp3");
 });
 
 test("page-specific corrected structures are present", () => {

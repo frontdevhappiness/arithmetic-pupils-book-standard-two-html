@@ -93714,64 +93714,79 @@
             "end": 13.56
           },
           {
-            "text": "Therefore",
-            "start": 14.4,
-            "end": 14.72
-          },
-          {
-            "text": "Asha's",
-            "start": 15.28,
-            "end": 15.54
+            "text": "The",
+            "start": 14,
+            "end": 14.32
           },
           {
             "text": "total",
-            "start": 15.54,
-            "end": 15.88
+            "start": 14.32,
+            "end": 14.7
           },
           {
-            "text": "score",
-            "start": 15.88,
-            "end": 16.14
+            "text": "scores",
+            "start": 14.7,
+            "end": 15.04
+          },
+          {
+            "text": "of",
+            "start": 15.04,
+            "end": 15.32
+          },
+          {
+            "text": "Asha",
+            "start": 15.32,
+            "end": 15.66
           },
           {
             "text": "is",
-            "start": 16.14,
-            "end": 16.54
+            "start": 15.66,
+            "end": 16.28
           },
           {
             "text": "409",
-            "start": 16.54,
-            "end": 17.46
+            "start": 16.28,
+            "end": 17.3
           },
           {
             "text": "and",
-            "start": 17.46,
-            "end": 18.18
+            "start": 17.3,
+            "end": 17.68
           },
           {
-            "text": "Anna's",
-            "start": 18.18,
-            "end": 18.52
+            "text": "the",
+            "start": 17.68,
+            "end": 17.88
           },
           {
             "text": "total",
-            "start": 18.52,
-            "end": 18.9
+            "start": 17.88,
+            "end": 18.24
           },
           {
-            "text": "score",
-            "start": 18.9,
-            "end": 19.16
+            "text": "scores",
+            "start": 18.24,
+            "end": 18.58
+          },
+          {
+            "text": "of",
+            "start": 18.58,
+            "end": 18.92
+          },
+          {
+            "text": "Anna",
+            "start": 18.92,
+            "end": 19.06
           },
           {
             "text": "is",
-            "start": 19.16,
-            "end": 20.02
+            "start": 19.06,
+            "end": 19.8
           },
           {
             "text": "416",
-            "start": 20.02,
-            "end": 20.74
+            "start": 19.8,
+            "end": 20.78
           }
         ]
       }

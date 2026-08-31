@@ -1601,7 +1601,7 @@
     }
 
     if (sourceId === "pg057_p043") {
-      if (narration.length !== 28) return null;
+      if (narration.length !== 31) return null;
       var solutionTable = section.querySelector(".pg057-solution-table");
       var solutionHeaders = solutionTable ? Array.from(solutionTable.querySelectorAll("thead th")) : [];
       var solutionRows = solutionTable ? Array.from(solutionTable.querySelectorAll("tbody tr")) : [];
@@ -1622,8 +1622,8 @@
       return [
         ashaHeader, ashaHeader, ashaHeader, ashaFirst, ashaSecond[0], ashaSecond[1], ashaTotal, ashaTotal,
         annaHeader, annaHeader, annaHeader, annaFirst, annaSecond[0], annaSecond[1], annaTotal, annaTotal,
-        totalRanges[0], totalRanges[4], totalRanges[1], totalRanges[2], totalRanges[5], totalRanges[6], totalRanges[7],
-        totalRanges[12], totalRanges[9], totalRanges[10], totalRanges[13], totalRanges[14]
+        totalRanges[0], totalRanges[1], totalRanges[2], totalRanges[3], totalRanges[4], totalRanges[5], totalRanges[6],
+        totalRanges[7], totalRanges[8], totalRanges[9], totalRanges[10], totalRanges[11], totalRanges[12], totalRanges[13], totalRanges[14]
       ];
     }
 
