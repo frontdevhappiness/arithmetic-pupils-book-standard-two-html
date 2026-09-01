@@ -4069,7 +4069,7 @@
 
   function buildPage105Map(content, source) {
     var id = source.getAttribute("data-id");
-    if (id !== "pg105_p001" && id !== "pg105_p011" && id !== "pg105_p020") return null;
+    if (id !== "pg105_p001" && id !== "pg105_p011") return null;
     var section = content.querySelector('[data-section-id="pg105_sec001"]');
     if (!section) return [];
 
@@ -4078,11 +4078,6 @@
     }
     function repeat(mapping, target, count) {
       for (var index = 0; index < count; index += 1) mapping.push(target);
-    }
-
-    if (id === "pg105_p020") {
-      var answerBlank = section.querySelector(".pg105-exercise-grid .pg105-blank");
-      return answerBlank ? [answerBlank, answerBlank] : [];
     }
 
     if (id === "pg105_p001") {

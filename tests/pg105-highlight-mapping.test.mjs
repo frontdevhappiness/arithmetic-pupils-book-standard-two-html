@@ -3,8 +3,6 @@ import fs from "node:fs";
 
 const bridge = fs.readFileSync("assets/read-aloud-highlight-bridge.js", "utf8");
 const page = fs.readFileSync("pg105_sec001.html", "utf8");
-const texts = JSON.parse(fs.readFileSync("content/i18n/en-GB/texts.json", "utf8"));
-const audios = JSON.parse(fs.readFileSync("content/i18n/en-GB/audios.json", "utf8"));
 const timecodes = JSON.parse(fs.readFileSync("content/i18n/en-GB/timecode/timecode_output.json", "utf8"));
 const offlineSource = fs.readFileSync("assets/offline-data.js", "utf8");
 const prefix = "  var INLINE = ";
@@ -13,12 +11,11 @@ const end = offlineSource.indexOf(";\n  var BASE_DIR", start);
 const offline = JSON.parse(offlineSource.slice(start, end));
 
 assert.match(bridge, /function buildPage105Map/);
-assert.match(bridge, /id !== "pg105_p001" && id !== "pg105_p011" && id !== "pg105_p020"/);
+assert.match(bridge, /id !== "pg105_p001" && id !== "pg105_p011"/);
 assert.match(bridge, /exampleMap\.length === 57/);
 assert.match(bridge, /exerciseMap\.length === 69/);
-assert.match(bridge, /return answerBlank \? \[answerBlank, answerBlank\] : \[\]/);
-assert.match(page, /data-id="pg105_p020">answer blank<\/span>/);
-assert.match(page, /read-aloud-highlight-bridge\.js\?v=68/);
+assert.match(page, /data-id="pg105_p020"><\/span>/);
+assert.match(page, /read-aloud-highlight-bridge\.js\?v=70/);
 
 for (const [id, count] of [["pg105_p001", 57], ["pg105_p011", 69]]) {
   const words = timecodes[id].timecodes[1].word_timestamps;
@@ -41,16 +38,6 @@ assert.ok(exercise[18].start >= 6.05, "question 1 must wait for the directions")
 assert.ok(exercise[43].start >= 15.01, "question 2 must wait for question 1");
 assert.ok(exercise.at(-1).end <= 26.13, "exercise highlighting must stop with the narration");
 
-assert.equal(texts.pg105_p020, "answer blank");
-assert.equal(audios.pg105_p020, "pg031_answer_blank_elimu_neural.mp3");
-assert.ok(fs.existsSync(`content/i18n/en-GB/audio/${audios.pg105_p020}`), "answer-blank audio must exist");
-assert.deepEqual(timecodes.pg105_p020.timecodes[1].word_timestamps, [
-  { text: "answer", start: 0.1, end: 0.4125 },
-  { text: "blank", start: 0.5, end: 0.7125 },
-]);
-
 assert.deepEqual(offline["./content/i18n/en-GB/timecode/timecode_output.json"], timecodes, "offline timings must match network data");
-assert.deepEqual(offline["./content/i18n/en-GB/texts.json"], texts, "offline text must include the answer blank");
-assert.deepEqual(offline["./content/i18n/en-GB/audios.json"], audios, "offline audio map must include the answer blank");
 assert.equal(offline["./pg105_sec001.html"], page, "offline page 105 must match the edited page");
 assert.equal(offline["./assets/read-aloud-highlight-bridge.js"], bridge, "offline bridge must include page 105 mapping");

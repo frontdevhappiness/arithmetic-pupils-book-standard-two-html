@@ -120703,24 +120703,5 @@
         ]
       }
     ]
-  },
-  "pg105_p020": {
-    "timecodes": [
-      null,
-      {
-        "word_timestamps": [
-          {
-            "text": "answer",
-            "start": 0.1,
-            "end": 0.4125
-          },
-          {
-            "text": "blank",
-            "start": 0.5,
-            "end": 0.7125
-          }
-        ]
-      }
-    ]
   }
 }

@@ -157,7 +157,7 @@ for (const { href } of pageManifest) {
                                                                                                           : href === "pg104_sec001.html"
                                                                                                             ? /assets\/read-aloud-highlight-bridge\.js\?v=66/
                                                                                                             : href === "pg105_sec001.html"
-                                                                                                              ? /assets\/read-aloud-highlight-bridge\.js\?v=68/
+                                                                                                              ? /assets\/read-aloud-highlight-bridge\.js\?v=70/
                                                                                                               : href === "pg106_sec001.html"
                                                                                                                 ? /assets\/read-aloud-highlight-bridge\.js\?v=69/
             : /assets\/read-aloud-highlight-bridge\.js\?v=23/,
