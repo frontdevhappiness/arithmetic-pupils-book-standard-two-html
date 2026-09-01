@@ -26,7 +26,7 @@
     .pg132-tool--bottle img { width:6.8rem; height:13.2rem; }
     .pg132-tool--jug img { width:9.8rem; height:11rem; }
     .pg132-tool--glass img { width:7.7rem; height:10.6rem; }
-    .pg132-tool figcaption { margin-top:.45rem; font-size:1.88rem; font-style:italic; line-height:1; }
+    .pg132-tool figcaption { margin-top:.45rem; font-size:1.88rem; font-style:normal; line-height:1; }
     .pg132-subheading { margin:0 0 .5rem; font-size:1.9rem; font-weight:900; line-height:1.1; letter-spacing:.015em; -webkit-text-stroke:.018em currentColor; }
     .pg132-copy { margin:0; font-size:1.86rem; line-height:1.24; }
     .pg132-exercise { position:relative; margin-top:3.2rem; padding:2.65rem 1.65rem 0; border:.2rem solid var(--pg132-line); border-bottom:0; border-radius:1.25rem 1.25rem 0 0; background:rgba(255,255,255,.96); }
@@ -44,8 +44,8 @@
     .pg132-choice--bucket img { width:5.2rem; height:5.7rem; }
     .pg132-choice--jug img { width:6.9rem; height:6.4rem; }
     .pg132-choice--glass img { width:4.9rem; height:5.8rem; }
-    .pg132-choice figcaption { margin-top:.15rem; font-size:1.78rem; font-style:italic; line-height:1; }
-    .pg132-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; color:#fff; background:#00a9e8; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .pg132-choice figcaption { margin-top:.15rem; font-size:1.78rem; font-style:normal; line-height:1; }
+    .pg132-marker { display:grid; place-items:center; position:absolute; z-index:2; left:50%; bottom:1.75rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; color:#fff; background:#00a9e8; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
     .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
     @media (max-width:44rem) {
       #content.pg132-shell { padding:0 0 calc(var(--pg132-dock) + 1rem); }
@@ -60,7 +60,7 @@
       .pg132-row { grid-template-columns:2.5rem 1fr 1fr; min-height:clamp(9rem,38vw,11.6rem); }
       .pg132-number { font-size:clamp(1rem,4vw,1.72rem); }
       .pg132-choice img { max-height:clamp(5rem,24vw,8rem); }
-      .pg132-marker { bottom:2rem; }
+      .pg132-marker { bottom:1.25rem; }
     }
   </style>
 </head>
