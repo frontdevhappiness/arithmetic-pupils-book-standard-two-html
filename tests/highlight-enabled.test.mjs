@@ -23,6 +23,7 @@ assert.match(bridge, /buildPage23TableMap/);
 assert.match(bridge, /buildPage24AnswerBlankMap/);
 assert.match(bridge, /buildPage28ExerciseRowMap/);
 assert.match(bridge, /buildPage29ExerciseDiagramMap/);
+assert.match(bridge, /buildPage85Map/);
 assert.match(bridge, /samePassage/);
 
 let hiddenNarrationPages = 0;
@@ -97,6 +98,8 @@ for (const { href } of pageManifest) {
                                                                     ? /assets\/read-aloud-highlight-bridge\.js\?v=42/
                                                                     : href === "pg084_sec001.html"
                                                                       ? /assets\/read-aloud-highlight-bridge\.js\?v=45/
+                                                                      : href === "pg085_sec001.html"
+                                                                        ? /assets\/read-aloud-highlight-bridge\.js\?v=46/
             : /assets\/read-aloud-highlight-bridge\.js\?v=23/,
     `${href} must load the non-layout-changing highlight bridge`,
   );
@@ -106,6 +109,11 @@ for (const { href } of pageManifest) {
 }
 
 assert.ok(hiddenNarrationPages > 0, "the bridge must cover rebuilt pages with hidden narration sources");
+assert.match(
+  fs.readFileSync("pg085_sec001.html", "utf8"),
+  /class="adt-source-hooks sr-only"/,
+  "page 85 narration hooks must be recognized as hidden highlight sources",
+);
 
 let audioEntries = 0;
 for (const id of Object.keys(audios)) {
