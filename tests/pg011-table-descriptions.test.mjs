@@ -44,7 +44,7 @@ assert.ok(page.indexOf('data-id="pg011_im002"') < page.indexOf('data-id="pg011_p
 assert.match(page, /data-id="pg011_im001"[\s\S]*?<table class="number-table"/);
 assert.match(page, /data-id="pg011_im002"[\s\S]*?<table class="number-table extended"/);
 assert.match(page, /read-aloud-highlight-bridge\.js\?v=105/);
-assert.match(config.bundleVersion, /-pg011-table-descriptions-1$/);
+assert.match(config.bundleVersion, /-pg011-table-descriptions-1(?:-|$)/);
 
 assert.equal(hash("pg011_p001.mp3"), "2b7df2ebbfc3f04590cbe224b6f9c87bce7013525a6bb589637fe0c141ff37eb");
 assert.equal(hash("pg011_p003.mp3"), "cbba7254cc0670a3681fe1e587db1f8caa6fa63c260b229997acb4587d105230");

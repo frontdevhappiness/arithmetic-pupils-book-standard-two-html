@@ -62,8 +62,11 @@ test("page 12 retains separate natural audio at 730 and 731", () => {
     assert.equal(audios.pg012_p030, "pg012_p030_adt_gpt4omini.mp3");
 });
 
-test("page 12 avoids duplicate image narration", () => {
-    assert.doesNotMatch(html, /data-id="pg012_im002"/);
+test("page 12 describes both tables without restoring duplicate table images", () => {
+    assert.match(html, /<span class="sr-only" data-id="pg012_im001">Table description\./);
+    assert.equal(audios.pg012_im001, "pg012_im001_table_description.mp3");
+    assert.match(html, /<span class="sr-only" data-id="pg012_im002">Table description\./);
+    assert.equal(audios.pg012_im002, "pg012_im002_table_description.mp3");
 });
 
 test("page 12 uses measured original colours and preserves highlight font", () => {

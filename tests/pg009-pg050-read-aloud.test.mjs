@@ -103,8 +103,10 @@ assert.equal(texts.pg011_p245, "651", "651 must be an independent table cell");
 assert.match(page11, /data-id="pg011_p230"[\s\S]*?>650<\/span><\/p>\s*<p data-id="pg011_p245"[\s\S]*?>651<\/span><\/p>/, "650 and 651 must use separate overlay and narration elements");
 
 const page12 = read("pg012_sec001.html");
-assert.match(page12, /data-id="pg012_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "page 12 duplicate Exercise 9 panel must be decorative");
-assert.equal(audios.pg012_im002, undefined, "page 12 duplicate Exercise 9 panel must not have narration audio");
+assert.match(page12, /data-id="pg012_im001">Table description\./, "Exercise 8 must introduce its table before reading the cells");
+assert.equal(audios.pg012_im001, "pg012_im001_table_description.mp3", "Exercise 8 must have table-description audio");
+assert.match(page12, /data-id="pg012_im002">Table description\./, "Exercise 9 must introduce its visible table before reading the cells");
+assert.equal(audios.pg012_im002, "pg012_im002_table_description.mp3", "Exercise 9 must have table-description audio");
 assert.equal(texts.pg012_p029, "730", "730 must be an independent table cell");
 assert.equal(texts.pg012_p030, "731", "731 must be an independent table cell");
 assert.equal(audios.pg012_p030, "pg012_p030_adt_gpt4omini.mp3", "731 must use the Arithmetic ADT voice preset");
