@@ -35,9 +35,9 @@
     .screens img { display:block; width:100%; height:11.25rem; object-fit:fill; }
     .steps { margin-top:2.8rem; }
     .steps h2 { margin:0 0 1.05rem; font-size:1.85rem; font-weight:900; line-height:1; -webkit-text-stroke:.018em currentColor; }
-    .steps ol { margin:0; padding:0; list-style:none; counter-reset:step; }
-    .steps li { display:grid; grid-template-columns:3.3rem minmax(0,1fr); counter-increment:step; margin:0 0 .38rem; font-size:1.7rem; line-height:1.34; }
-    .steps li::before { content:counter(step) "."; color:var(--blue); }
+    .steps ol { margin:0; padding:0; list-style:none; }
+    .steps li { display:grid; grid-template-columns:3.3rem minmax(0,1fr); margin:0 0 .38rem; font-size:1.7rem; line-height:1.34; }
+    .step-number { color:var(--blue); }
     .marker { display:grid; place-items:center; position:absolute; left:50%; bottom:2.9rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; color:#fff; background:#00a9e8; font-size:1.75rem; font-weight:900; font-style:italic; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
     .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
     @media (max-width:44rem) {
@@ -77,11 +77,11 @@
         <section class="steps">
           <h2>Steps</h2>
           <ol>
-            <li>Open the application for recognizing fractions.</li>
-            <li>Read clearly the question that appears on the<br>screen.</li>
-            <li>Write the answer by shading the part of the<br>circle.</li>
-            <li>Click OK to check your answer.</li>
-            <li>Do other questions to practice more on recognizing<br>fractions.</li>
+            <li><span class="step-number">1.</span><span class="step-text">Open the application for recognizing fractions.</span></li>
+            <li><span class="step-number">2.</span><span class="step-text">Read clearly the question that appears on the<br>screen.</span></li>
+            <li><span class="step-number">3.</span><span class="step-text">Write the answer by shading the part of the<br>circle.</span></li>
+            <li><span class="step-number">4.</span><span class="step-text">Click OK to check your answer.</span></li>
+            <li><span class="step-number">5.</span><span class="step-text">Do other questions to practice more on recognizing<br>fractions.</span></li>
           </ol>
         </section>
       </section>
@@ -97,6 +97,6 @@
   <script src="./assets/offline-preloader.js"></script>
   <script src="./assets/scorm.js"></script>
   <script src="./assets/sign-language-sync.js?v=2"></script>
-  <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+  <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=84"></script>
 </body>
 </html>
