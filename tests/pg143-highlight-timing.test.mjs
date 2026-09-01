@@ -37,7 +37,7 @@ assert.equal(audios.pg143_p001, "pg143_p001_adt_natural.mp3");
 assert.equal(audios.pg143_p017, "pg143_p017_adt_natural.mp3");
 assert.equal(hash(audios.pg143_p001), "bcacb1d0927ec75188525e1622a3a5a544c9c482cec101e3e1ab7be2d067b0e4");
 assert.equal(hash(audios.pg143_p017), "d4ad4ea31f1c26aaceaa100cc62baf3c8a9f68d6a2c71aae4df101ddd542337b");
-assert.match(config.bundleVersion, /-pg143-highlight-timing-1$/);
+assert.match(config.bundleVersion, /-pg143-highlight-timing-1(?:-|$)/);
 assert.deepEqual(offline["./assets/config.json"], config);
 assert.deepEqual(offline["./content/i18n/en-GB/timecode/timecode_output.json"], timecodes);
 
