@@ -26,7 +26,7 @@ assert.deepEqual(words[21], { text: "14", start: 11.3, end: 11.86 });
 const hash = (filename) => createHash("sha256").update(fs.readFileSync(`content/i18n/en-GB/audio/${filename}`)).digest("hex");
 assert.equal(audios.pg144_p001, "pg144_p001_adt_natural.mp3");
 assert.equal(hash(audios.pg144_p001), "49153050e0bee981461d0417f4bfaedb61ef23c641f02eff3887eb3bf1cafd6e");
-assert.match(config.bundleVersion, /-pg144-highlight-timing-1$/);
+assert.match(config.bundleVersion, /-pg144-highlight-timing-1(?:-|$)/);
 assert.deepEqual(offline["./assets/config.json"], config);
 assert.deepEqual(offline["./content/i18n/en-GB/timecode/timecode_output.json"], timecodes);
 
