@@ -49,6 +49,7 @@
       .page110 * { font-family: "SassoonPrimary", "Sassoon Primary Std", Sassoon, Arial, sans-serif !important; }
       .pg110-visual { z-index: 1; }
       .pg110-continuation {
+        position: relative;
         width: 100%;
         margin: 0 0 2rem;
         overflow: hidden;
@@ -56,6 +57,10 @@
         background: #fff;
       }
       .pg110-continuation img { display: block; width: 100%; height: auto; }
+      .pg110-question-zone { position: absolute; top: 0; bottom: 0; }
+      .pg110-question-zone.q7 { left: 0; width: 34%; }
+      .pg110-question-zone.q8 { left: 34%; width: 32%; }
+      .pg110-question-zone.q9 { left: 66%; right: 0; }
       .pg110-heading {
         margin: 0 0 .65rem;
         font-size: 1.9rem;
@@ -141,7 +146,7 @@
     <main id="content" class="pg110-shell">
       <article class="page110" role="article" data-section-id="pg110_sec001" aria-label="Recognizing one-third and two-thirds of a whole object">
         <div class="pg110-visual" aria-hidden="true">
-          <section class="pg110-continuation"><img src="images/pg110_im006.png" alt="" /></section>
+          <section class="pg110-continuation"><img src="images/pg110_im006.png" alt="" /><span class="pg110-question-zone q7"></span><span class="pg110-question-zone q8"></span><span class="pg110-question-zone q9"></span></section>
           <h1 class="pg110-heading">Recognizing one-third and two-thirds of a whole<br />object</h1>
           <p class="pg110-copy">Three equal parts of the same object form one whole object. One-third is one of the three equal parts. For example, an orange can be cut into three equal pieces. Each piece is one-third of the orange. After removing one-third from an orange, the remaining part is two-thirds.</p>
           <p class="pg110-copy">In numeral, one-third is written as <span class="pg110-fraction"><span>1</span><span>3</span></span>. It is read as, one-third or one over three. Two-thirds is written as <span class="pg110-fraction"><span>2</span><span>3</span></span>. It is read as, two-thirds or two over three.</p>
@@ -167,6 +172,6 @@
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=2"></script>
-    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=77"></script>
   </body>
 </html>
