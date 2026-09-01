@@ -1965,7 +1965,17 @@ assert.equal(texts.pg114_p011, "Exercise 6. Answer the following questions: 1. W
 assert.equal(texts.pg115_p001, "2. Write two-thirds in numerals in each of the following boxes: The image shows six empty rectangular boxes arranged in two rows of three.", "page 115 item 2 must read the exact printed words before describing the boxes");
 assert.match(texts.pg117_p001, /1\. 1 over 2[\s\S]*6\. Whole object\.$/, "page 117 first table passage must contain rows 1 through 6");
 assert.match(texts.pg117_p020, /7\. 1 over 3[\s\S]*11\. One-third\.$/, "page 117 second table passage must contain rows 7 through 11");
-assert.equal(texts.pg117_p033, "12. Two-thirds.", "page 117 final row must not be omitted");
+assert.equal(texts.pg117_p033, "12. Blank in numerals. Two-thirds.", "page 117 final row must narrate its numeral blank before the printed words");
+assert.equal(
+  (`${texts.pg117_p001} ${texts.pg117_p020} ${texts.pg117_p033}`.match(/Blank in words\./g) || []).length,
+  5,
+  "page 117 must narrate all five word blanks",
+);
+assert.equal(
+  (`${texts.pg117_p001} ${texts.pg117_p020} ${texts.pg117_p033}`.match(/Blank in numerals\./g) || []).length,
+  7,
+  "page 117 must narrate all seven numeral blanks",
+);
 assert.doesNotMatch(
   `${texts.pg117_p001} ${texts.pg117_p020} ${texts.pg117_p033}`,
   /\brow\b/i,
