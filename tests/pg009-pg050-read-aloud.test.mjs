@@ -1137,14 +1137,16 @@ for (const [id, expected, filename] of [
   assert.equal(audios[id], filename, `${id} must use corrected ADT narration`);
   assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(({ text: word }) => word), tokens(expected), `${id} must retain real word-level timing`);
 }
-assert.match(page55, /data-id="pg055_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "the duplicate Exercise 10 panel must be decorative");
-assert.equal(texts.pg055_im002, "", "the duplicate Exercise 10 panel must not repeat the sequence narration");
+assert.match(texts.pg055_im002, /^Table description\. The addition chart has seven rows and seven columns\./, "Exercise 9 must introduce the chart structure");
+assert.equal(audios.pg055_im002, "pg055_im002_table_description.mp3", "Exercise 9 must have table-description audio");
+assert.ok(page55.indexOf('data-id="pg055_p002"') < page55.indexOf('data-id="pg055_im002"'), "the chart instruction must precede its table description");
+assert.ok(page55.indexOf('data-id="pg055_im002"') < page55.indexOf('data-id="pg055_p041"'), "the structural table description must precede the detailed chart narration");
 assert.ok(page55.indexOf('data-id="pg055_p002"') < page55.indexOf('data-id="pg055_p041"'), "the chart instruction must precede its description");
 assert.ok(page55.indexOf('data-id="pg055_p041"') < page55.indexOf('data-id="pg055_p042"'), "the chart description must precede the questions");
 assert.ok(page55.indexOf('data-id="pg055_p024"') < page55.indexOf('data-id="pg055_p043"'), "the Exercise 10 instruction must precede its sequences");
 assert.deepEqual(
   Object.keys(audios).filter((id) => id.startsWith("pg055_")).sort(),
-  ["pg055_p001", "pg055_p002", "pg055_p023", "pg055_p024", "pg055_p041", "pg055_p042", "pg055_p043"],
+  ["pg055_im002", "pg055_p001", "pg055_p002", "pg055_p023", "pg055_p024", "pg055_p041", "pg055_p042", "pg055_p043"],
   "page 55 must narrate only its headings, instructions, chart description, questions, and sequences"
 );
 

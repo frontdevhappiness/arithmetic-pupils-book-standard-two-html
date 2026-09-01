@@ -130179,5 +130179,184 @@
         ]
       }
     ]
+  },
+  "pg055_im002": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Table",
+            "start": 0,
+            "end": 0.358
+          },
+          {
+            "text": "description",
+            "start": 0.4296,
+            "end": 1.2171
+          },
+          {
+            "text": "The",
+            "start": 1.2887,
+            "end": 1.5751
+          },
+          {
+            "text": "addition",
+            "start": 1.6467,
+            "end": 2.2194
+          },
+          {
+            "text": "chart",
+            "start": 2.291,
+            "end": 2.649
+          },
+          {
+            "text": "has",
+            "start": 2.7206,
+            "end": 3.007
+          },
+          {
+            "text": "seven",
+            "start": 3.0786,
+            "end": 3.4365
+          },
+          {
+            "text": "rows",
+            "start": 3.5081,
+            "end": 3.7945
+          },
+          {
+            "text": "and",
+            "start": 3.8661,
+            "end": 4.1525
+          },
+          {
+            "text": "seven",
+            "start": 4.2241,
+            "end": 4.582
+          },
+          {
+            "text": "columns",
+            "start": 4.6536,
+            "end": 5.1548
+          },
+          {
+            "text": "The",
+            "start": 5.2264,
+            "end": 5.5128
+          },
+          {
+            "text": "first",
+            "start": 5.5843,
+            "end": 5.9423
+          },
+          {
+            "text": "row",
+            "start": 6.0139,
+            "end": 6.3003
+          },
+          {
+            "text": "and",
+            "start": 6.3719,
+            "end": 6.6583
+          },
+          {
+            "text": "first",
+            "start": 6.7299,
+            "end": 7.0878
+          },
+          {
+            "text": "column",
+            "start": 7.1594,
+            "end": 7.589
+          },
+          {
+            "text": "contain",
+            "start": 7.6606,
+            "end": 8.1617
+          },
+          {
+            "text": "headings",
+            "start": 8.2333,
+            "end": 8.8061
+          },
+          {
+            "text": "The",
+            "start": 8.8777,
+            "end": 9.1641
+          },
+          {
+            "text": "other",
+            "start": 9.2357,
+            "end": 9.5936
+          },
+          {
+            "text": "cells",
+            "start": 9.6652,
+            "end": 10.0232
+          },
+          {
+            "text": "contain",
+            "start": 10.0948,
+            "end": 10.5959
+          },
+          {
+            "text": "sums",
+            "start": 10.6675,
+            "end": 10.9539
+          },
+          {
+            "text": "or",
+            "start": 11.0255,
+            "end": 11.3119
+          },
+          {
+            "text": "blank",
+            "start": 11.3835,
+            "end": 11.7414
+          },
+          {
+            "text": "spaces",
+            "start": 11.813,
+            "end": 12.2426
+          },
+          {
+            "text": "Rows",
+            "start": 12.3142,
+            "end": 12.6006
+          },
+          {
+            "text": "are",
+            "start": 12.6722,
+            "end": 12.9586
+          },
+          {
+            "text": "read",
+            "start": 13.0301,
+            "end": 13.3165
+          },
+          {
+            "text": "from",
+            "start": 13.3881,
+            "end": 13.6745
+          },
+          {
+            "text": "left",
+            "start": 13.7461,
+            "end": 14.0325
+          },
+          {
+            "text": "to",
+            "start": 14.1041,
+            "end": 14.3904
+          },
+          {
+            "text": "right",
+            "start": 14.462,
+            "end": 14.82
+          }
+        ]
+      }
+    ]
   }
 }

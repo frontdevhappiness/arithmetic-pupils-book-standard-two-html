@@ -43,7 +43,7 @@ assert.ok(page.indexOf('data-id="pg036_im004"') < page.indexOf('data-id="pg036_p
 assert.ok(page.indexOf('data-id="pg036_p048"') < page.indexOf('data-id="pg036_im005"'));
 assert.ok(page.indexOf('data-id="pg036_im005"') < page.indexOf('data-id="pg036_p050"'));
 assert.match(page, /read-aloud-highlight-bridge\.js\?v=111/);
-assert.match(config.bundleVersion, /-pg036-q3-q4-table-descriptions-1$/);
+assert.match(config.bundleVersion, /-pg036-q3-q4-table-descriptions-1(?:-|$)/);
 assert.doesNotMatch(descriptions.pg036_im005, /\b(?:119|827|263|610|333)\b/, "Question 4 must not supply formed-number answers");
 
 assert.equal(hash("pg036_im003_table_description.mp3"), "2051b002ad21f29dae024a959bc3ee53c056c57305d7485f1e36f87f3eab5927");

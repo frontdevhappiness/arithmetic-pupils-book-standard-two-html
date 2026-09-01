@@ -90,7 +90,7 @@ for (const { href } of pageManifest) {
                       : href === "pg054_sec001.html"
                         ? /assets\/read-aloud-highlight-bridge\.js\?v=43/
                         : href === "pg055_sec001.html"
-                          ? /assets\/read-aloud-highlight-bridge\.js\?v=45/
+                          ? /assets\/read-aloud-highlight-bridge\.js\?v=112/
                           : href === "pg056_sec001.html"
                             ? /assets\/read-aloud-highlight-bridge\.js\?v=46/
                             : href === "pg057_sec001.html"
