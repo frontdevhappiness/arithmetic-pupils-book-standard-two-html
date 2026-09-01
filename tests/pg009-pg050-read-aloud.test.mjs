@@ -91,8 +91,10 @@ assert.match(page10, /data-id="pg010_im002">Table description\./, "Exercise 5 mu
 assert.equal(audios.pg010_im002, "pg010_im002_table_description.mp3", "Exercise 5 must have table-description audio");
 
 const page11 = read("pg011_sec001.html");
-assert.match(page11, /data-id="pg011_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "page 11 duplicate exercise panel must be decorative");
-assert.equal(audios.pg011_im001, undefined, "page 11 duplicate exercise panel must not have narration audio");
+assert.match(page11, /data-id="pg011_im001">Table description\./, "Exercise 6 must introduce its table before reading the cells");
+assert.equal(audios.pg011_im001, "pg011_im001_table_description.mp3", "Exercise 6 must have table-description audio");
+assert.match(page11, /data-id="pg011_im002">Table description\./, "Exercise 7 must introduce its table before reading the cells");
+assert.equal(audios.pg011_im002, "pg011_im002_table_description.mp3", "Exercise 7 must have table-description audio");
 assert.equal(texts.pg011_p213, "630", "630 must be an independent table cell");
 assert.equal(texts.pg011_p244, "631", "631 must be an independent table cell");
 assert.match(page11, /data-id="pg011_p213"[\s\S]*?>630<\/span><\/p>\s*<p data-id="pg011_p244"[\s\S]*?>631<\/span><\/p>/, "630 and 631 must use separate overlay and narration elements");

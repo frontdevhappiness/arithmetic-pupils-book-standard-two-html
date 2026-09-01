@@ -61,6 +61,8 @@ for (const { href } of pageManifest) {
         ? /assets\/read-aloud-highlight-bridge\.js\?v=102/
       : href === "pg010_sec001.html"
         ? /assets\/read-aloud-highlight-bridge\.js\?v=104/
+      : href === "pg011_sec001.html"
+        ? /assets\/read-aloud-highlight-bridge\.js\?v=105/
       : href === "pg045_sec001.html"
         ? /assets\/read-aloud-highlight-bridge\.js\?v=24/
       : href === "pg046_sec001.html"
