@@ -55,8 +55,10 @@ for (const { href } of pageManifest) {
   assert.match(html, /assets\/fonts\.css\?v=2/, `${href} must request the restored highlight CSS`);
   assert.match(
     html,
-    href === "pg045_sec001.html"
-      ? /assets\/read-aloud-highlight-bridge\.js\?v=24/
+    href === "pg008_sec001.html"
+      ? /assets\/read-aloud-highlight-bridge\.js\?v=101/
+      : href === "pg045_sec001.html"
+        ? /assets\/read-aloud-highlight-bridge\.js\?v=24/
       : href === "pg046_sec001.html"
         ? /assets\/read-aloud-highlight-bridge\.js\?v=28/
         : href === "pg047_sec001.html"

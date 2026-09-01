@@ -138,6 +138,7 @@
   "pg008_p004": "Reading numbers from 101 to 999",
   "pg008_p005": "Exercise 2",
   "pg008_p006": "Read all the numbers from 101 to 150 in the following table.",
+  "pg008_p007": "Table description. The table has five rows and ten columns. The first row contains 101 to 110. The second row contains 111 to 120. The third row contains 121 to 130. The fourth row contains 131 to 140. The fifth row contains 141 to 150. Rows are read from left to right.",
   "pg008_p008": "101",
   "pg008_p009": "102",
   "pg008_p010": "103",

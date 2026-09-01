@@ -15,9 +15,9 @@ const end = offlineSource.indexOf(";\n  var BASE_DIR", start);
 const offline = JSON.parse(offlineSource.slice(start, end));
 
 assert.equal(pages.length, 144);
-assert.match(config.bundleVersion, /-end-of-page-narration-1$/);
+assert.match(config.bundleVersion, /-end-of-page-narration-1(?:-|$)/);
 assert.equal(offline["./assets/config.json"].bundleVersion, config.bundleVersion);
-assert.match(bridge, /\/_p999\$\/\.test\(source\.getAttribute\("data-id"\)/);
+assert.match(bridge, /\/_p999\$\/\.test\(sourceId\)/);
 assert.equal(offline["./assets/read-aloud-highlight-bridge.js"], bridge);
 
 const clip = "content/i18n/en-GB/audio/end_of_page_elimu_neural.mp3";
