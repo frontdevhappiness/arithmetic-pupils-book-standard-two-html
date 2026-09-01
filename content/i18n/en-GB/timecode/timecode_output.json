@@ -120893,5 +120893,88 @@
         ]
       }
     ]
+  },
+  "pg131_im001": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "A",
+            "start": 0.1,
+            "end": 0.2125
+          },
+          {
+            "text": "blue",
+            "start": 0.3,
+            "end": 0.4375
+          },
+          {
+            "text": "bucket",
+            "start": 0.5,
+            "end": 0.8125
+          },
+          {
+            "text": "with",
+            "start": 0.8625,
+            "end": 0.975
+          },
+          {
+            "text": "a",
+            "start": 0.975,
+            "end": 1.0375
+          },
+          {
+            "text": "metal",
+            "start": 1.0625,
+            "end": 1.3125
+          },
+          {
+            "text": "handle",
+            "start": 1.3125,
+            "end": 1.6875
+          }
+        ]
+      }
+    ]
+  },
+  "pg131_im002": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "A",
+            "start": 0.1,
+            "end": 0.2
+          },
+          {
+            "text": "yellow",
+            "start": 0.25,
+            "end": 0.475
+          },
+          {
+            "text": "cup",
+            "start": 0.5375,
+            "end": 0.75
+          },
+          {
+            "text": "with",
+            "start": 0.7875,
+            "end": 0.9125
+          },
+          {
+            "text": "a",
+            "start": 0.9125,
+            "end": 0.975
+          },
+          {
+            "text": "handle",
+            "start": 0.9875,
+            "end": 1.4125
+          }
+        ]
+      }
+    ]
   }
 }
