@@ -39,12 +39,12 @@
         margin: 0; padding: .05rem .75rem .55rem; border: .18rem solid var(--pg137-line); border-top: 0;
         border-radius: 0 0 1.25rem 1.25rem; background: rgba(255,255,255,.97);
       }
-      .pg137-questions { margin: 0; padding: 0; list-style: none; counter-reset: pg137-question; }
+      .pg137-questions { margin: 0; padding: 0; list-style: none; }
       .pg137-questions li {
         display: grid; grid-template-columns: 2.15rem minmax(0,1fr); align-items: start; margin: 0;
-        font-size: 1.82rem; line-height: 1.35; letter-spacing: .01em; counter-increment: pg137-question;
+        font-size: 1.82rem; line-height: 1.35; letter-spacing: .01em;
       }
-      .pg137-questions li::before { content: counter(pg137-question) "."; color: var(--pg137-blue); }
+      .pg137-question-number { color: var(--pg137-blue); }
       .pg137-activity { margin-top: 2.55rem; }
       .pg137-label {
         width: 10.4rem; margin: 0 0 .9rem; padding: .22rem .9rem .2rem; border: .28rem solid var(--pg137-green);
@@ -87,10 +87,10 @@
         <div class="pg137-layout" aria-hidden="true">
           <section class="pg137-exercise">
             <ol class="pg137-questions">
-              <li>List all similar shapes by writing their letters together.</li>
-              <li>Write the letters of all the shapes of triangles.</li>
-              <li>Write the letters of all the shapes with four sides.</li>
-              <li>Write the names of all the shapes of plane figures you know.</li>
+              <li><span class="pg137-question-number">1.</span><span class="pg137-question-text">List all similar shapes by writing their letters together.</span></li>
+              <li><span class="pg137-question-number">2.</span><span class="pg137-question-text">Write the letters of all the shapes of triangles.</span></li>
+              <li><span class="pg137-question-number">3.</span><span class="pg137-question-text">Write the letters of all the shapes with four sides.</span></li>
+              <li><span class="pg137-question-number">4.</span><span class="pg137-question-text">Write the names of all the shapes of plane figures you know.</span></li>
             </ol>
           </section>
           <section class="pg137-activity">
@@ -123,6 +123,6 @@
     <script src="./assets/offline-preloader.js"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/sign-language-sync.js?v=2"></script>
-    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=96"></script>
   </body>
 </html>
