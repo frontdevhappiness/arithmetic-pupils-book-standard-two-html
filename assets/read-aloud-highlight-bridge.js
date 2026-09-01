@@ -3381,9 +3381,81 @@
     return mapping.length === expectedLength && mapping.every(Boolean) ? mapping : [];
   }
 
+  function buildPage89Map(content, source) {
+    var id = source.getAttribute("data-id");
+    if (id !== "pg089_p001" && id !== "pg089_p007" && id !== "pg089_p020") return null;
+    var section = content.querySelector('[data-section-id="pg089_sec001"]');
+    if (!section) return [];
+
+    function append(mapping, root) {
+      if (!root) return;
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        if (excludedTextNode(node, content)) continue;
+        var pattern = new RegExp(WORD_PATTERN.source, "gu");
+        var match;
+        while ((match = pattern.exec(node.nodeValue || ""))) {
+          var range = document.createRange();
+          range.setStart(node, match.index);
+          range.setEnd(node, match.index + match[0].length);
+          mapping.push(range);
+        }
+      }
+    }
+
+    function whole(root) {
+      if (!root) return null;
+      var range = document.createRange();
+      range.selectNodeContents(root);
+      return range;
+    }
+
+    var mapping = [];
+    if (id === "pg089_p001") {
+      var solution = section.querySelector(".pg089-solution");
+      if (!solution) return [];
+      append(mapping, solution.querySelector("h1"));
+      solution.querySelectorAll("p").forEach(function (paragraph) { append(mapping, paragraph); });
+      return mapping.length === 33 && mapping.every(Boolean) ? mapping : [];
+    }
+
+    if (id === "pg089_p007") {
+      var example = section.querySelector(".pg089-example");
+      var stacks = example && example.querySelectorAll(".pg089-stack");
+      if (!example || !stacks || stacks.length !== 2) return [];
+      append(mapping, example.querySelector(".pg089-label"));
+      mapping.push(whole(stacks[0].querySelector(".pg089-top")));
+      append(mapping, stacks[0].querySelector(".pg089-factor"));
+      append(mapping, example.querySelector(".pg089-therefore"));
+      mapping.push(whole(stacks[1].querySelector(".pg089-top")));
+      append(mapping, stacks[1].querySelector(".pg089-factor"));
+      mapping.push(stacks[1].querySelector(".pg089-rule"));
+      var resultRows = stacks[1].querySelectorAll(".pg089-top");
+      mapping.push(whole(resultRows[1]));
+      return mapping.length === 11 && mapping.every(Boolean) ? mapping : [];
+    }
+
+    var exercise = section.querySelector(".pg089-exercise");
+    var problems = exercise && exercise.querySelectorAll(".pg089-problem");
+    if (!exercise || !problems || problems.length !== 10) return [];
+    append(mapping, exercise.querySelector(".pg089-label"));
+    append(mapping, exercise.querySelector(".pg089-instruction"));
+    problems.forEach(function (problem, index) {
+      append(mapping, problem.querySelector(".pg089-number"));
+      if (index < 4) {
+        mapping.push(whole(problem.querySelector(".pg089-top")));
+        append(mapping, problem.querySelector(".pg089-factor"));
+      } else {
+        append(mapping, problem.querySelector(".pg089-inline"));
+      }
+    });
+    return mapping.length === 54 && mapping.every(Boolean) ? mapping : [];
+  }
+
   function buildMap(content, source) {
     var narration = collectNarrationTokens(source);
-    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage54ChartMap(content, source, narration) || buildPage55Map(content, source, narration) || buildPage56SequenceMap(content, source, narration) || buildPage57Map(content, source, narration) || buildPage58QuestionMap(content, source, narration) || buildPage59FishNumberMap(content, source, narration) || buildPage60Step2Map(content, source, narration) || buildPage63ExampleMap(content, source, narration) || buildPage64StepsMap(content, source, narration) || buildPage65Map(content, source, narration) || buildPage66Map(content, source, narration) || buildPage67ActivityMap(content, source, narration) || buildPage68ExampleMap(content, source, narration) || buildPage69ExerciseMap(content, source, narration) || buildPage70ExampleMap(content, source, narration) || buildPage71Map(content, source, narration) || buildPage72StepsMap(content, source, narration) || buildPage73ExerciseMap(content, source, narration) || buildPage74WorkedExampleMap(content, source, narration) || buildPage75ExerciseMap(content, source, narration) || buildPage76Map(content, source, narration) || buildPage77Map(content, source, narration) || buildPage78Map(content, source, narration) || buildPage79Map(content, source, narration) || buildPage80Map(content, source, narration) || buildPage81Map(content, source, narration) || buildPage82Map(content, source, narration) || buildPage83Map(content, source, narration) || buildPage84Map(content, source, narration) || buildPage85Map(content, source, narration) || buildPage86ExerciseMap(content, source, narration) || buildPage87Map(content, source, narration) || buildPage88Map(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
+    return buildPage23TableMap(content, source, narration) || buildPage24AnswerBlankMap(content, source, narration) || buildPage25AnswerBlankMap(content, source, narration) || buildPage27AnswerBlankMap(content, source, narration) || buildPage28ExerciseRowMap(content, source, narration) || buildPage29ExerciseDiagramMap(content, source, narration) || buildPage30ExerciseMap(content, source, narration) || buildPage31AnswerBlankMap(content, source, narration) || buildPage36TableMap(content, source, narration) || buildPage37ChapterBannerMap(content, source, narration) || buildPage37ExampleMap(content, source, narration) || buildPage39ModelMap(content, source, narration) || buildPage40ModelMap(content, source, narration) || buildPage41ModelMap(content, source, narration) || buildPage45SolutionMap(content, source, narration) || buildPage46ExerciseMap(content, source, narration) || buildPage47ExerciseMap(content, source, narration) || buildPage48Map(content, source, narration) || buildPage49Map(content, source, narration) || buildPage50Map(content, source, narration) || buildPage51Map(content, source, narration) || buildPage52Map(content, source, narration) || buildPage53Exercise8Map(content, source, narration) || buildPage54ChartMap(content, source, narration) || buildPage55Map(content, source, narration) || buildPage56SequenceMap(content, source, narration) || buildPage57Map(content, source, narration) || buildPage58QuestionMap(content, source, narration) || buildPage59FishNumberMap(content, source, narration) || buildPage60Step2Map(content, source, narration) || buildPage63ExampleMap(content, source, narration) || buildPage64StepsMap(content, source, narration) || buildPage65Map(content, source, narration) || buildPage66Map(content, source, narration) || buildPage67ActivityMap(content, source, narration) || buildPage68ExampleMap(content, source, narration) || buildPage69ExerciseMap(content, source, narration) || buildPage70ExampleMap(content, source, narration) || buildPage71Map(content, source, narration) || buildPage72StepsMap(content, source, narration) || buildPage73ExerciseMap(content, source, narration) || buildPage74WorkedExampleMap(content, source, narration) || buildPage75ExerciseMap(content, source, narration) || buildPage76Map(content, source, narration) || buildPage77Map(content, source, narration) || buildPage78Map(content, source, narration) || buildPage79Map(content, source, narration) || buildPage80Map(content, source, narration) || buildPage81Map(content, source, narration) || buildPage82Map(content, source, narration) || buildPage83Map(content, source, narration) || buildPage84Map(content, source, narration) || buildPage85Map(content, source, narration) || buildPage86ExerciseMap(content, source, narration) || buildPage87Map(content, source, narration) || buildPage88Map(content, source, narration) || buildPage89Map(content, source, narration) || buildPage94ShareMap(content, source, narration) || alignTokens(narration, collectVisibleTokens(content));
   }
 
   function usableRect(range) {
