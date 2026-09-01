@@ -29,7 +29,7 @@ assert.ok(page.indexOf('data-id="pg009_p005"') < page.indexOf('data-id="pg009_p0
 assert.match(page, /data-id="pg009_p005"[\s\S]*<table class="number-table"/);
 assert.match(page, /read-aloud-highlight-bridge\.js\?v=102/);
 assert.match(bridge, /sourceId === "pg009_p005"/);
-assert.match(config.bundleVersion, /-pg009-table-description-1$/);
+assert.match(config.bundleVersion, /-pg009-table-description-1(?:-|$)/);
 
 const hash = (filename) => createHash("sha256").update(fs.readFileSync(`content/i18n/en-GB/audio/${filename}`)).digest("hex");
 assert.equal(hash("pg009_p003.mp3"), "b7177467bca37271c9a207c130a7c19ddbe99e3b3a072b92a960b44905d9a26b");

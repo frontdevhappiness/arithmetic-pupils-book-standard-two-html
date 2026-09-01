@@ -53,9 +53,11 @@ test("page 10 tables contain every number once in printed row order", () => {
     assert.match(bodies[1], /data-id="pg010_p206">400<\/td>/);
 });
 
-test("page 10 avoids duplicate table image narration", () => {
-    assert.doesNotMatch(html, /data-id="pg010_im001"/);
-    assert.doesNotMatch(html, /data-id="pg010_im002"/);
+test("page 10 describes both tables without restoring duplicate table images", () => {
+    assert.match(html, /<span class="sr-only" data-id="pg010_im001">Table description\./);
+    assert.equal(audios.pg010_im001, "pg010_im001_table_description.mp3");
+    assert.match(html, /<span class="sr-only" data-id="pg010_im002">Table description\./);
+    assert.equal(audios.pg010_im002, "pg010_im002_table_description.mp3");
 });
 
 test("page 10 preserves the corrected audio mapping for 360", () => {

@@ -85,10 +85,10 @@ assert.ok(texts.pg009_im001?.startsWith("Ten schoolchildren"), "the main illustr
 assert.match(page9, /\[\s*"pg009_im001",\s*"pg009_p046"[\s\S]*root\.insertBefore\(element, question\)/, "the illustration and labels must be narrated before the question");
 
 const page10 = read("pg010_sec001.html");
-for (const id of ["pg010_im001", "pg010_im002"]) {
-  assert.match(page10, new RegExp(`data-id="${id}"[^>]*role="presentation"[^>]*aria-hidden="true"`), `${id} duplicate exercise panel must be decorative`);
-  assert.equal(audios[id], undefined, `${id} duplicate exercise panel must not have narration audio`);
-}
+assert.match(page10, /data-id="pg010_im001">Table description\./, "Exercise 4 must introduce its table before reading the cells");
+assert.equal(audios.pg010_im001, "pg010_im001_table_description.mp3", "Exercise 4 must have table-description audio");
+assert.match(page10, /data-id="pg010_im002">Table description\./, "Exercise 5 must introduce its table before reading the cells");
+assert.equal(audios.pg010_im002, "pg010_im002_table_description.mp3", "Exercise 5 must have table-description audio");
 
 const page11 = read("pg011_sec001.html");
 assert.match(page11, /data-id="pg011_im001"[^>]*role="presentation"[^>]*aria-hidden="true"/, "page 11 duplicate exercise panel must be decorative");
