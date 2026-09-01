@@ -1986,7 +1986,7 @@ assert.match(texts.pg119_p001, /^Example\. One over two\. Solution\./, "page 119
 assert.match(texts.pg119_p001, /Solution\. Use the computer application in the TIE online library, https:\/\/tie\.go\.tz\/pages\/download-software, to divide numbers\./, "page 119 solution must use the exact printed wording");
 assert.match(texts.pg119_p001, /5\. Do other questions to practice more on recognizing fractions\.$/, "page 119 step 5 must use the exact printed wording");
 assert.equal(texts.pg120_p008, "Exercise 1. Study the following pictures. Fill in the blanks with the words near to or far from. The football and bottle are close together on the left. The chair is on the right, separated from them by a large empty space.", "page 120 Exercise 1 must convey the visible spacing without supplying the answer words");
-assert.doesNotMatch(texts.pg121_p001, /\bblank\b/i, "page 121 Exercise 1 must pause at answer spaces instead of saying blank");
+assert.equal((texts.pg121_p001.match(/\bblank\b/gi) || []).length, 4, "page 121 Exercise 1 must narrate all four answer spaces");
 assert.match(texts.pg123_p001, /^Example\. The door is higher than the chair\. The picture shows/, "page 123 must read the printed example before its image description");
 assert.match(texts.pg123_p003, /^Recognizing standard measuring tools of length\. Tape measure\.[\s\S]*Ruler\.[\s\S]*Recognizing non-standard tools for measuring length\. Footsteps\./, "page 123 must read every printed heading and label in page order");
 assert.match(texts.pg124_p001, /^Arm span\.[\s\S]*Rope\.[\s\S]*Exercise 4\. Write the name of the shortest object or person\. 1\. Ana\. Juma\.[\s\S]*2\. A cup\. A flask bottle\./, "page 124 must read every printed label and instruction in page order");
