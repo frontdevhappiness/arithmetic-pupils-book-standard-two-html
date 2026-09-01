@@ -43,6 +43,7 @@ assert.match(bridge, /buildPage102Map/);
 assert.match(bridge, /buildPage103Map/);
 assert.match(bridge, /buildPage104Map/);
 assert.match(bridge, /buildPage105Map/);
+assert.match(bridge, /buildPage106Map/);
 assert.match(bridge, /samePassage/);
 
 let hiddenNarrationPages = 0;
@@ -157,6 +158,8 @@ for (const { href } of pageManifest) {
                                                                                                             ? /assets\/read-aloud-highlight-bridge\.js\?v=66/
                                                                                                             : href === "pg105_sec001.html"
                                                                                                               ? /assets\/read-aloud-highlight-bridge\.js\?v=68/
+                                                                                                              : href === "pg106_sec001.html"
+                                                                                                                ? /assets\/read-aloud-highlight-bridge\.js\?v=69/
             : /assets\/read-aloud-highlight-bridge\.js\?v=23/,
     `${href} must load the non-layout-changing highlight bridge`,
   );
