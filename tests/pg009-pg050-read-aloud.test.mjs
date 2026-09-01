@@ -114,6 +114,10 @@ assert.deepEqual(timecodes.pg012_p030.timecodes[1].word_timestamps, [{ text: "73
 assert.match(page12, /data-id="pg012_p029"[\s\S]*?>730<\/span><\/p>\s*<p data-id="pg012_p030"[\s\S]*?>731<\/span><\/p>/, "730 and 731 must use separate overlay and narration elements");
 
 const page13 = read("pg013_sec001.html");
+assert.match(page13, /data-id="pg013_im001">Table description\./, "continued Exercise 9 must introduce its table before reading the cells");
+assert.equal(audios.pg013_im001, "pg013_im001_table_description.mp3", "continued Exercise 9 must have table-description audio");
+assert.match(page13, /data-id="pg013_im002">Table description\./, "Exercise 10 must introduce its table before reading the cells");
+assert.equal(audios.pg013_im002, "pg013_im002_table_description.mp3", "Exercise 10 must have table-description audio");
 assert.equal(texts.pg013_p106, "930", "930 must be an independent table cell");
 assert.equal(texts.pg013_p107, "931", "931 must be an independent table cell");
 assert.equal(audios.pg013_p107, "pg013_p107_adt_gpt4omini.mp3", "931 must use the Arithmetic ADT voice preset");

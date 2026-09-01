@@ -60,8 +60,11 @@ test("page 13 retains separate natural audio at 930 and 931", () => {
     assert.equal(audios.pg013_p107, "pg013_p107_adt_gpt4omini.mp3");
 });
 
-test("page 13 avoids duplicate image narration and printer metadata", () => {
-    assert.doesNotMatch(html, /data-id="pg013_im00[12]"/);
+test("page 13 describes both tables without restoring duplicate table images", () => {
+    assert.match(html, /<span class="sr-only" data-id="pg013_im001">Table description\./);
+    assert.equal(audios.pg013_im001, "pg013_im001_table_description.mp3");
+    assert.match(html, /<span class="sr-only" data-id="pg013_im002">Table description\./);
+    assert.equal(audios.pg013_im002, "pg013_im002_table_description.mp3");
     assert.doesNotMatch(html, /data-id="pg013_p10[45]"/);
 });
 

@@ -127679,5 +127679,948 @@
         ]
       }
     ]
+  },
+  "pg013_im001": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Table",
+            "start": 0,
+            "end": 0.4627
+          },
+          {
+            "text": "description",
+            "start": 0.5552,
+            "end": 1.5732
+          },
+          {
+            "text": "The",
+            "start": 1.6657,
+            "end": 2.0359
+          },
+          {
+            "text": "table",
+            "start": 2.1284,
+            "end": 2.5911
+          },
+          {
+            "text": "has",
+            "start": 2.6837,
+            "end": 3.0538
+          },
+          {
+            "text": "eleven",
+            "start": 3.1463,
+            "end": 3.7016
+          },
+          {
+            "text": "rows",
+            "start": 3.7941,
+            "end": 4.1643
+          },
+          {
+            "text": "and",
+            "start": 4.2568,
+            "end": 4.627
+          },
+          {
+            "text": "eleven",
+            "start": 4.7195,
+            "end": 5.2748
+          },
+          {
+            "text": "columns",
+            "start": 5.3673,
+            "end": 6.0151
+          },
+          {
+            "text": "The",
+            "start": 6.1076,
+            "end": 6.4778
+          },
+          {
+            "text": "first",
+            "start": 6.5703,
+            "end": 7.033
+          },
+          {
+            "text": "row",
+            "start": 7.1256,
+            "end": 7.4957
+          },
+          {
+            "text": "contains",
+            "start": 7.5883,
+            "end": 8.3286
+          },
+          {
+            "text": "886",
+            "start": 8.4211,
+            "end": 8.7913
+          },
+          {
+            "text": "to",
+            "start": 8.8838,
+            "end": 9.254
+          },
+          {
+            "text": "896",
+            "start": 9.3465,
+            "end": 9.7167
+          },
+          {
+            "text": "The",
+            "start": 9.8092,
+            "end": 10.1794
+          },
+          {
+            "text": "second",
+            "start": 10.2719,
+            "end": 10.8271
+          },
+          {
+            "text": "row",
+            "start": 10.9197,
+            "end": 11.2898
+          },
+          {
+            "text": "contains",
+            "start": 11.3824,
+            "end": 12.1227
+          },
+          {
+            "text": "897",
+            "start": 12.2152,
+            "end": 12.5854
+          },
+          {
+            "text": "to",
+            "start": 12.6779,
+            "end": 13.0481
+          },
+          {
+            "text": "907",
+            "start": 13.1406,
+            "end": 13.5108
+          },
+          {
+            "text": "The",
+            "start": 13.6033,
+            "end": 13.9735
+          },
+          {
+            "text": "third",
+            "start": 14.066,
+            "end": 14.5287
+          },
+          {
+            "text": "row",
+            "start": 14.6213,
+            "end": 14.9914
+          },
+          {
+            "text": "contains",
+            "start": 15.084,
+            "end": 15.8243
+          },
+          {
+            "text": "908",
+            "start": 15.9168,
+            "end": 16.287
+          },
+          {
+            "text": "to",
+            "start": 16.3795,
+            "end": 16.7497
+          },
+          {
+            "text": "918",
+            "start": 16.8422,
+            "end": 17.2124
+          },
+          {
+            "text": "The",
+            "start": 17.3049,
+            "end": 17.6751
+          },
+          {
+            "text": "fourth",
+            "start": 17.7676,
+            "end": 18.3229
+          },
+          {
+            "text": "row",
+            "start": 18.4154,
+            "end": 18.7856
+          },
+          {
+            "text": "contains",
+            "start": 18.8781,
+            "end": 19.6184
+          },
+          {
+            "text": "919",
+            "start": 19.711,
+            "end": 20.0811
+          },
+          {
+            "text": "to",
+            "start": 20.1737,
+            "end": 20.5438
+          },
+          {
+            "text": "929",
+            "start": 20.6363,
+            "end": 21.0065
+          },
+          {
+            "text": "The",
+            "start": 21.099,
+            "end": 21.4692
+          },
+          {
+            "text": "fifth",
+            "start": 21.5617,
+            "end": 22.0244
+          },
+          {
+            "text": "row",
+            "start": 22.117,
+            "end": 22.4871
+          },
+          {
+            "text": "contains",
+            "start": 22.5797,
+            "end": 23.32
+          },
+          {
+            "text": "930",
+            "start": 23.4125,
+            "end": 23.7827
+          },
+          {
+            "text": "to",
+            "start": 23.8752,
+            "end": 24.2454
+          },
+          {
+            "text": "940",
+            "start": 24.3379,
+            "end": 24.7081
+          },
+          {
+            "text": "The",
+            "start": 24.8006,
+            "end": 25.1708
+          },
+          {
+            "text": "sixth",
+            "start": 25.2633,
+            "end": 25.726
+          },
+          {
+            "text": "row",
+            "start": 25.8186,
+            "end": 26.1887
+          },
+          {
+            "text": "contains",
+            "start": 26.2813,
+            "end": 27.0216
+          },
+          {
+            "text": "941",
+            "start": 27.1141,
+            "end": 27.4843
+          },
+          {
+            "text": "to",
+            "start": 27.5768,
+            "end": 27.947
+          },
+          {
+            "text": "951",
+            "start": 28.0395,
+            "end": 28.4097
+          },
+          {
+            "text": "The",
+            "start": 28.5022,
+            "end": 28.8724
+          },
+          {
+            "text": "seventh",
+            "start": 28.9649,
+            "end": 29.6127
+          },
+          {
+            "text": "row",
+            "start": 29.7052,
+            "end": 30.0754
+          },
+          {
+            "text": "contains",
+            "start": 30.1679,
+            "end": 30.9083
+          },
+          {
+            "text": "952",
+            "start": 31.0008,
+            "end": 31.371
+          },
+          {
+            "text": "to",
+            "start": 31.4635,
+            "end": 31.8337
+          },
+          {
+            "text": "962",
+            "start": 31.9262,
+            "end": 32.2963
+          },
+          {
+            "text": "The",
+            "start": 32.3889,
+            "end": 32.759
+          },
+          {
+            "text": "eighth",
+            "start": 32.8516,
+            "end": 33.4068
+          },
+          {
+            "text": "row",
+            "start": 33.4994,
+            "end": 33.8695
+          },
+          {
+            "text": "contains",
+            "start": 33.9621,
+            "end": 34.7024
+          },
+          {
+            "text": "963",
+            "start": 34.7949,
+            "end": 35.1651
+          },
+          {
+            "text": "to",
+            "start": 35.2576,
+            "end": 35.6278
+          },
+          {
+            "text": "973",
+            "start": 35.7203,
+            "end": 36.0905
+          },
+          {
+            "text": "The",
+            "start": 36.183,
+            "end": 36.5532
+          },
+          {
+            "text": "ninth",
+            "start": 36.6457,
+            "end": 37.1084
+          },
+          {
+            "text": "row",
+            "start": 37.201,
+            "end": 37.5711
+          },
+          {
+            "text": "contains",
+            "start": 37.6637,
+            "end": 38.404
+          },
+          {
+            "text": "974",
+            "start": 38.4965,
+            "end": 38.8667
+          },
+          {
+            "text": "to",
+            "start": 38.9592,
+            "end": 39.3294
+          },
+          {
+            "text": "984",
+            "start": 39.4219,
+            "end": 39.7921
+          },
+          {
+            "text": "The",
+            "start": 39.8846,
+            "end": 40.2548
+          },
+          {
+            "text": "tenth",
+            "start": 40.3473,
+            "end": 40.81
+          },
+          {
+            "text": "row",
+            "start": 40.9025,
+            "end": 41.2727
+          },
+          {
+            "text": "contains",
+            "start": 41.3652,
+            "end": 42.1056
+          },
+          {
+            "text": "985",
+            "start": 42.1981,
+            "end": 42.5683
+          },
+          {
+            "text": "to",
+            "start": 42.6608,
+            "end": 43.031
+          },
+          {
+            "text": "995",
+            "start": 43.1235,
+            "end": 43.4937
+          },
+          {
+            "text": "The",
+            "start": 43.5862,
+            "end": 43.9563
+          },
+          {
+            "text": "eleventh",
+            "start": 44.0489,
+            "end": 44.7892
+          },
+          {
+            "text": "row",
+            "start": 44.8817,
+            "end": 45.2519
+          },
+          {
+            "text": "contains",
+            "start": 45.3444,
+            "end": 46.0848
+          },
+          {
+            "text": "nine",
+            "start": 46.1773,
+            "end": 46.5475
+          },
+          {
+            "text": "hundred",
+            "start": 46.64,
+            "end": 47.2878
+          },
+          {
+            "text": "and",
+            "start": 47.3803,
+            "end": 47.7505
+          },
+          {
+            "text": "ninety-six",
+            "start": 47.843,
+            "end": 48.7684
+          },
+          {
+            "text": "to",
+            "start": 48.861,
+            "end": 49.2311
+          },
+          {
+            "text": "nine",
+            "start": 49.3237,
+            "end": 49.6938
+          },
+          {
+            "text": "hundred",
+            "start": 49.7863,
+            "end": 50.4341
+          },
+          {
+            "text": "and",
+            "start": 50.5267,
+            "end": 50.8968
+          },
+          {
+            "text": "ninety-nine",
+            "start": 50.9894,
+            "end": 52.0073
+          },
+          {
+            "text": "followed",
+            "start": 52.0998,
+            "end": 52.8402
+          },
+          {
+            "text": "by",
+            "start": 52.9327,
+            "end": 53.3029
+          },
+          {
+            "text": "seven",
+            "start": 53.3954,
+            "end": 53.8581
+          },
+          {
+            "text": "empty",
+            "start": 53.9506,
+            "end": 54.4133
+          },
+          {
+            "text": "cells",
+            "start": 54.5059,
+            "end": 54.9686
+          },
+          {
+            "text": "Rows",
+            "start": 55.0611,
+            "end": 55.4313
+          },
+          {
+            "text": "are",
+            "start": 55.5238,
+            "end": 55.894
+          },
+          {
+            "text": "read",
+            "start": 55.9865,
+            "end": 56.3567
+          },
+          {
+            "text": "from",
+            "start": 56.4492,
+            "end": 56.8194
+          },
+          {
+            "text": "left",
+            "start": 56.9119,
+            "end": 57.2821
+          },
+          {
+            "text": "to",
+            "start": 57.3746,
+            "end": 57.7448
+          },
+          {
+            "text": "right",
+            "start": 57.8373,
+            "end": 58.3
+          }
+        ]
+      }
+    ]
+  },
+  "pg013_im002": {
+    "timecodes": [
+      null,
+      {
+        "word_timestamps": [
+          {
+            "text": "Table",
+            "start": 0,
+            "end": 0.4414
+          },
+          {
+            "text": "description",
+            "start": 0.5297,
+            "end": 1.5009
+          },
+          {
+            "text": "The",
+            "start": 1.5891,
+            "end": 1.9423
+          },
+          {
+            "text": "table",
+            "start": 2.0306,
+            "end": 2.472
+          },
+          {
+            "text": "has",
+            "start": 2.5603,
+            "end": 2.9134
+          },
+          {
+            "text": "nine",
+            "start": 3.0017,
+            "end": 3.3549
+          },
+          {
+            "text": "rows",
+            "start": 3.4431,
+            "end": 3.7963
+          },
+          {
+            "text": "and",
+            "start": 3.8846,
+            "end": 4.2377
+          },
+          {
+            "text": "ten",
+            "start": 4.326,
+            "end": 4.6791
+          },
+          {
+            "text": "columns",
+            "start": 4.7674,
+            "end": 5.3854
+          },
+          {
+            "text": "The",
+            "start": 5.4737,
+            "end": 5.8269
+          },
+          {
+            "text": "first",
+            "start": 5.9151,
+            "end": 6.3566
+          },
+          {
+            "text": "row",
+            "start": 6.4449,
+            "end": 6.798
+          },
+          {
+            "text": "contains",
+            "start": 6.8863,
+            "end": 7.5926
+          },
+          {
+            "text": "100",
+            "start": 7.6809,
+            "end": 8.034
+          },
+          {
+            "text": "to",
+            "start": 8.1223,
+            "end": 8.4754
+          },
+          {
+            "text": "190",
+            "start": 8.5637,
+            "end": 8.9169
+          },
+          {
+            "text": "The",
+            "start": 9.0051,
+            "end": 9.3583
+          },
+          {
+            "text": "second",
+            "start": 9.4466,
+            "end": 9.9763
+          },
+          {
+            "text": "row",
+            "start": 10.0646,
+            "end": 10.4177
+          },
+          {
+            "text": "contains",
+            "start": 10.506,
+            "end": 11.2123
+          },
+          {
+            "text": "200",
+            "start": 11.3006,
+            "end": 11.6537
+          },
+          {
+            "text": "to",
+            "start": 11.742,
+            "end": 12.0951
+          },
+          {
+            "text": "290",
+            "start": 12.1834,
+            "end": 12.5366
+          },
+          {
+            "text": "The",
+            "start": 12.6249,
+            "end": 12.978
+          },
+          {
+            "text": "third",
+            "start": 13.0663,
+            "end": 13.5077
+          },
+          {
+            "text": "row",
+            "start": 13.596,
+            "end": 13.9491
+          },
+          {
+            "text": "contains",
+            "start": 14.0374,
+            "end": 14.7437
+          },
+          {
+            "text": "300",
+            "start": 14.832,
+            "end": 15.1851
+          },
+          {
+            "text": "to",
+            "start": 15.2734,
+            "end": 15.6266
+          },
+          {
+            "text": "390",
+            "start": 15.7149,
+            "end": 16.068
+          },
+          {
+            "text": "The",
+            "start": 16.1563,
+            "end": 16.5094
+          },
+          {
+            "text": "fourth",
+            "start": 16.5977,
+            "end": 17.1274
+          },
+          {
+            "text": "row",
+            "start": 17.2157,
+            "end": 17.5689
+          },
+          {
+            "text": "contains",
+            "start": 17.6571,
+            "end": 18.3634
+          },
+          {
+            "text": "400",
+            "start": 18.4517,
+            "end": 18.8049
+          },
+          {
+            "text": "to",
+            "start": 18.8931,
+            "end": 19.2463
+          },
+          {
+            "text": "490",
+            "start": 19.3346,
+            "end": 19.6877
+          },
+          {
+            "text": "The",
+            "start": 19.776,
+            "end": 20.1291
+          },
+          {
+            "text": "fifth",
+            "start": 20.2174,
+            "end": 20.6589
+          },
+          {
+            "text": "row",
+            "start": 20.7471,
+            "end": 21.1003
+          },
+          {
+            "text": "contains",
+            "start": 21.1886,
+            "end": 21.8949
+          },
+          {
+            "text": "500",
+            "start": 21.9831,
+            "end": 22.3363
+          },
+          {
+            "text": "to",
+            "start": 22.4246,
+            "end": 22.7777
+          },
+          {
+            "text": "590",
+            "start": 22.866,
+            "end": 23.2191
+          },
+          {
+            "text": "The",
+            "start": 23.3074,
+            "end": 23.6606
+          },
+          {
+            "text": "sixth",
+            "start": 23.7489,
+            "end": 24.1903
+          },
+          {
+            "text": "row",
+            "start": 24.2786,
+            "end": 24.6317
+          },
+          {
+            "text": "contains",
+            "start": 24.72,
+            "end": 25.4263
+          },
+          {
+            "text": "600",
+            "start": 25.5146,
+            "end": 25.8677
+          },
+          {
+            "text": "to",
+            "start": 25.956,
+            "end": 26.3091
+          },
+          {
+            "text": "690",
+            "start": 26.3974,
+            "end": 26.7506
+          },
+          {
+            "text": "The",
+            "start": 26.8389,
+            "end": 27.192
+          },
+          {
+            "text": "seventh",
+            "start": 27.2803,
+            "end": 27.8983
+          },
+          {
+            "text": "row",
+            "start": 27.9866,
+            "end": 28.3397
+          },
+          {
+            "text": "contains",
+            "start": 28.428,
+            "end": 29.1343
+          },
+          {
+            "text": "700",
+            "start": 29.2226,
+            "end": 29.5757
+          },
+          {
+            "text": "to",
+            "start": 29.664,
+            "end": 30.0171
+          },
+          {
+            "text": "790",
+            "start": 30.1054,
+            "end": 30.4586
+          },
+          {
+            "text": "The",
+            "start": 30.5469,
+            "end": 30.9
+          },
+          {
+            "text": "eighth",
+            "start": 30.9883,
+            "end": 31.518
+          },
+          {
+            "text": "row",
+            "start": 31.6063,
+            "end": 31.9594
+          },
+          {
+            "text": "contains",
+            "start": 32.0477,
+            "end": 32.754
+          },
+          {
+            "text": "800",
+            "start": 32.8423,
+            "end": 33.1954
+          },
+          {
+            "text": "to",
+            "start": 33.2837,
+            "end": 33.6369
+          },
+          {
+            "text": "890",
+            "start": 33.7251,
+            "end": 34.0783
+          },
+          {
+            "text": "The",
+            "start": 34.1666,
+            "end": 34.5197
+          },
+          {
+            "text": "ninth",
+            "start": 34.608,
+            "end": 35.0494
+          },
+          {
+            "text": "row",
+            "start": 35.1377,
+            "end": 35.4909
+          },
+          {
+            "text": "contains",
+            "start": 35.5791,
+            "end": 36.2854
+          },
+          {
+            "text": "900",
+            "start": 36.3737,
+            "end": 36.7269
+          },
+          {
+            "text": "to",
+            "start": 36.8151,
+            "end": 37.1683
+          },
+          {
+            "text": "990",
+            "start": 37.2566,
+            "end": 37.6097
+          },
+          {
+            "text": "Rows",
+            "start": 37.698,
+            "end": 38.0511
+          },
+          {
+            "text": "are",
+            "start": 38.1394,
+            "end": 38.4926
+          },
+          {
+            "text": "read",
+            "start": 38.5809,
+            "end": 38.934
+          },
+          {
+            "text": "from",
+            "start": 39.0223,
+            "end": 39.3754
+          },
+          {
+            "text": "left",
+            "start": 39.4637,
+            "end": 39.8169
+          },
+          {
+            "text": "to",
+            "start": 39.9051,
+            "end": 40.2583
+          },
+          {
+            "text": "right",
+            "start": 40.3466,
+            "end": 40.788
+          }
+        ]
+      }
+    ]
   }
 }
