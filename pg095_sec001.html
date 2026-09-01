@@ -20,7 +20,7 @@
     .activity-intro{margin-bottom:.45rem!important}
     .questions{margin:0 0 1.55rem;padding:0;list-style:none;counter-reset:activity}
     .questions li{position:relative;margin:0 0 .5rem;padding-left:3.15rem;counter-increment:activity}
-    .questions li::before{content:counter(activity) ".";position:absolute;left:1.05rem;top:0;color:var(--blue)}
+    .question-number{position:absolute;left:1.05rem;top:0;color:var(--blue)}
     .topic{margin:1.5rem 0 2.35rem!important;font-size:1.82rem;font-weight:900;line-height:1.1;-webkit-text-stroke:.012em currentColor}
     .example{position:relative;padding:2.25rem .9rem .9rem;border:.18rem solid var(--light-blue);border-radius:.75rem}
     .example-label{position:absolute;top:0;left:2.45rem;min-width:10.7rem;padding:.28rem 1.15rem .35rem;color:#fff;background:var(--blue);border-radius:999px;font-size:1.83rem;font-weight:900;line-height:1;text-align:center;transform:translateY(-50%);-webkit-text-stroke:.015em currentColor}
@@ -33,7 +33,7 @@
     .conclusion{margin:0 0 .65rem .6rem!important}
     .pg095-page-number{display:grid;place-items:center;position:absolute;left:50%;bottom:3rem;width:5.25rem;aspect-ratio:1.65/1;margin:0;color:#fff;background:#00a9e8;border-radius:50%;font-size:1.75rem;font-weight:900;line-height:1;text-align:center;transform:translateX(-50%);-webkit-text-stroke:.015em currentColor}
     .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-    @media(max-width:44rem){#content.pg095-shell{padding:0 0 calc(var(--dock-height,96px) + 1rem)}.pg095-page{width:100%;min-height:100vh;padding:4.2rem clamp(.8rem,6vw,2rem) 7rem;border-radius:0;font-size:clamp(1.18rem,4.6vw,1.72rem)}.activity-label{width:9rem;min-height:2.55rem;font-size:1.5rem}.questions li{padding-left:2.45rem}.questions li::before{left:.35rem}.topic{font-size:clamp(1.35rem,5.1vw,1.82rem)}.example{padding:2rem .35rem .7rem}.example-label{left:1.25rem;min-width:8.5rem;font-size:1.5rem}.solution{font-size:1.45rem}.diagram{grid-template-rows:7rem 2.35rem;margin-inline:.2rem;font-size:1.15rem}.oranges-four{grid-template-columns:repeat(2,2.65rem);gap:.25rem .4rem}.oranges-two{grid-template-rows:repeat(2,2.65rem)}.orange{width:2.65rem;height:2.4rem}.divide{font-size:clamp(.85rem,3.3vw,1.2rem)}.pg095-page-number{bottom:2rem}}
+    @media(max-width:44rem){#content.pg095-shell{padding:0 0 calc(var(--dock-height,96px) + 1rem)}.pg095-page{width:100%;min-height:100vh;padding:4.2rem clamp(.8rem,6vw,2rem) 7rem;border-radius:0;font-size:clamp(1.18rem,4.6vw,1.72rem)}.activity-label{width:9rem;min-height:2.55rem;font-size:1.5rem}.questions li{padding-left:2.45rem}.question-number{left:.35rem}.topic{font-size:clamp(1.35rem,5.1vw,1.82rem)}.example{padding:2rem .35rem .7rem}.example-label{left:1.25rem;min-width:8.5rem;font-size:1.5rem}.solution{font-size:1.45rem}.diagram{grid-template-rows:7rem 2.35rem;margin-inline:.2rem;font-size:1.15rem}.oranges-four{grid-template-columns:repeat(2,2.65rem);gap:.25rem .4rem}.oranges-two{grid-template-rows:repeat(2,2.65rem)}.orange{width:2.65rem;height:2.4rem}.divide{font-size:clamp(.85rem,3.3vw,1.2rem)}.pg095-page-number{bottom:2rem}}
   </style>
 </head>
 <body>
@@ -43,9 +43,9 @@
         <h1 id="activity-heading" class="activity-label">Activity</h1>
         <p class="activity-intro">Use counters to perform the following activities:</p>
         <ol class="questions">
-          <li>Distribute 30 counters into 6 equal groups. How many counters are there in each group?</li>
-          <li>Distribute 36 counters into 4 equal groups. How many counters are there in each group?</li>
-          <li>Distribute 96 counters into 3 equal groups. How many counters are there in each group?</li>
+          <li><span class="question-number">1.</span><span class="question-copy">Distribute 30 counters into 6 equal groups. How many counters are there in each group?</span></li>
+          <li><span class="question-number">2.</span><span class="question-copy">Distribute 36 counters into 4 equal groups. How many counters are there in each group?</span></li>
+          <li><span class="question-number">3.</span><span class="question-copy">Distribute 96 counters into 3 equal groups. How many counters are there in each group?</span></li>
         </ol>
       </section>
       <h2 class="topic">Dividing objects by using numbers</h2>
@@ -78,6 +78,6 @@
   <script src="./assets/offline-preloader.js"></script>
   <script src="./assets/scorm.js"></script>
   <script src="./assets/sign-language-sync.js?v=2"></script>
-  <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+  <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=56"></script>
 </body>
 </html>
