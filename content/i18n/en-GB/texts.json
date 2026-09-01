@@ -191,6 +191,7 @@
   "pg009_p002": "Read all the numbers mentioned in the game.",
   "pg009_p003": "Exercise 3",
   "pg009_p004": "Read all the numbers from 151 to 200 in the following table.",
+  "pg009_p005": "Table description. The table has five rows and ten columns. The first row contains 151 to 160. The second row contains 161 to 170. The third row contains 171 to 180. The fourth row contains 181 to 190. The fifth row contains 191 to 200. Rows are read from left to right.",
   "pg009_p006": "151",
   "pg009_p007": "152 153",
   "pg009_p008": "154",
