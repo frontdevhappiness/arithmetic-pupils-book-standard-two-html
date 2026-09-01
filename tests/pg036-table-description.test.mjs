@@ -30,9 +30,9 @@ assert.ok(page.indexOf('data-id="pg036_p002"') < page.indexOf('data-id="pg036_im
 assert.ok(page.indexOf('data-id="pg036_im003"') < page.indexOf('data-id="pg036_p004"'));
 assert.equal((page.match(/data-id="pg036_im003"/g) || []).length, 1);
 assert.match(page, /data-id="pg036_im003"[\s\S]*?<table[\s\S]*?aria-label="Number chart from 201 to 909"/);
-assert.match(page, /read-aloud-highlight-bridge\.js\?v=110/);
+assert.match(page, /read-aloud-highlight-bridge\.js\?v=111/);
 assert.match(bridge, /sourceId === "pg036_im003"/);
-assert.match(config.bundleVersion, /-pg036-table-description-1$/);
+assert.match(config.bundleVersion, /-pg036-table-description-1(?:-|$)/);
 assert.doesNotMatch(expected, /204|302|406|505|602|707|809|903/, "the description must not reveal missing-number answers");
 
 assert.equal(hash("pg036_im003.mp3"), "83378e23de445167f7f8853769aaf3f88ccf3e9d53a11edefbe9c4365657f4dd");
