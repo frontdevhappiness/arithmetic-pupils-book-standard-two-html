@@ -45,7 +45,7 @@ assert.match(page, /data-id="pg013_im002"[\s\S]*?<table class="number-table tens
 assert.match(page, /read-aloud-highlight-bridge\.js\?v=109/);
 assert.match(config.bundleVersion, /-pg013-table-descriptions-1(?:-|$)/);
 assert.match(config.bundleVersion, /-pg013-remove-in-tens-1(?:-|$)/);
-assert.match(config.bundleVersion, /-pg013-final-row-pronunciation-1$/);
+assert.match(config.bundleVersion, /-pg013-final-row-pronunciation-1(?:-|$)/);
 
 assert.equal(hash("pg013_p001.mp3"), "c80663590a8e2980bf5c038880dcf617f8a7dc08e54897e67cf0ceb5f5318e62");
 assert.equal(hash("pg013_p011.mp3"), "ae3384432d4bf00f9673583f81106ecfb616e51570f5f0850512a5e4e1ce634b");
