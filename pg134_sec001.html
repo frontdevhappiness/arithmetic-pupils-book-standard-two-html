@@ -36,11 +36,11 @@
     .pg134-row:last-child .pg134-cell { height:13rem; }
     .pg134-number { padding:.45rem .5rem; color:var(--pg134-blue); font-size:1.78rem; line-height:1; }
     .pg134-figure { display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:.9rem .55rem .75rem; }
-    .pg134-figure img { display:block; object-fit:contain; }
+    .pg134-figure img { order:1; display:block; object-fit:contain; }
     .pg134-rectangle img { width:11.9rem; height:6.1rem; }
     .pg134-square img { width:7.2rem; height:6.55rem; }
     .pg134-circle img { width:11rem; height:9.8rem; }
-    .pg134-caption { margin:0; font-size:1.72rem; line-height:1; text-align:center; white-space:nowrap; }
+    .pg134-caption { order:2; margin:0; font-size:1.72rem; line-height:1; text-align:center; white-space:nowrap; }
     .pg134-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
     .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
     @media (max-width:44rem) {
@@ -81,25 +81,30 @@
             <div class="pg134-row" role="row">
               <div class="pg134-cell pg134-number" role="cell">1.</div>
               <div class="pg134-cell pg134-figure pg134-rectangle" role="cell"><img src="images/pg134_im001.png" alt="Outlined rectangle"><p class="pg134-caption">rectangle</p></div>
-              <div class="pg134-cell pg134-figure pg134-rectangle" role="cell"><img src="images/pg134_im002.png" alt="Light green rectangle"><p class="pg134-caption">The shape of a rectangle</p></div>
+              <div class="pg134-cell pg134-figure pg134-rectangle" role="cell"><p class="pg134-caption">The shape of a rectangle</p><img src="images/pg134_im002.png" alt="A light green horizontal rectangle. It is wider than it is tall."></div>
             </div>
             <div class="pg134-row" role="row">
               <div class="pg134-cell pg134-number" role="cell">2.</div>
               <div class="pg134-cell pg134-figure pg134-square" role="cell"><img src="images/pg134_im003.png" alt="Outlined square"><p class="pg134-caption">square</p></div>
-              <div class="pg134-cell pg134-figure pg134-square" role="cell"><img src="images/pg134_im004.png" alt="Blue square"><p class="pg134-caption">The shape of a square</p></div>
+              <div class="pg134-cell pg134-figure pg134-square" role="cell"><p class="pg134-caption">The shape of a square</p><img src="images/pg134_im004.png" alt="A light blue square. It has four equal sides."></div>
             </div>
             <div class="pg134-row" role="row">
               <div class="pg134-cell pg134-number" role="cell">3.</div>
               <div class="pg134-cell pg134-figure pg134-circle" role="cell"><img src="images/pg134_im005.png" alt="Outlined circle"><p class="pg134-caption">circle</p></div>
-              <div class="pg134-cell pg134-figure pg134-circle" role="cell"><img src="images/pg134_im006.png" alt="Blue circle"><p class="pg134-caption">A shape of a circle</p></div>
+              <div class="pg134-cell pg134-figure pg134-circle" role="cell"><p class="pg134-caption">A shape of a circle</p><img src="images/pg134_im006.png" alt="A light blue circle. It is round and has no corners."></div>
             </div>
           </div>
         </section>
       </div>
       <p class="pg134-marker" aria-label="Page 128">128</p>
       <span class="sr-only" data-id="pg134_p000">128</span>
-      <span class="sr-only" data-id="pg134_p001">Chapter Eleven. Shapes. Plane figures. Plane figures are shapes drawn on flat surfaces. Example. The following are examples of plane figures and their shapes. 1. rectangle. The shape of a rectangle. 2. square. The shape of a square. 3. circle. A shape of a circle.</span>
-      <span class="sr-only" data-id="pg134_im001"></span><span class="sr-only" data-id="pg134_im002"></span><span class="sr-only" data-id="pg134_im003"></span><span class="sr-only" data-id="pg134_im004"></span><span class="sr-only" data-id="pg134_im005"></span><span class="sr-only" data-id="pg134_im006"></span><span class="sr-only" data-id="pg134_im007"></span><span class="sr-only" data-id="pg134_im008"></span>
+      <span class="sr-only" data-id="pg134_p001">Chapter Eleven. Shapes. Plane figures. Plane figures are shapes drawn on flat surfaces. Example. The following are examples of plane figures and their shapes. 1. rectangle. The shape of a rectangle.</span>
+      <span class="sr-only" data-id="pg134_im002">A light green horizontal rectangle. It is wider than it is tall.</span>
+      <span class="sr-only" data-id="pg134_p001_part2">2. square. The shape of a square.</span>
+      <span class="sr-only" data-id="pg134_im004">A light blue square. It has four equal sides.</span>
+      <span class="sr-only" data-id="pg134_p001_part3">3. circle. A shape of a circle.</span>
+      <span class="sr-only" data-id="pg134_im006">A light blue circle. It is round and has no corners.</span>
+      <span class="sr-only" data-id="pg134_im001"></span><span class="sr-only" data-id="pg134_im003"></span><span class="sr-only" data-id="pg134_im005"></span><span class="sr-only" data-id="pg134_im007"></span><span class="sr-only" data-id="pg134_im008"></span>
       <span class="sr-only" data-id="pg134_p002"></span><span class="sr-only" data-id="pg134_p003"></span><span class="sr-only" data-id="pg134_p004"></span><span class="sr-only" data-id="pg134_p006"></span><span class="sr-only" data-id="pg134_p007"></span><span class="sr-only" data-id="pg134_p008"></span><span class="sr-only" data-id="pg134_p009"></span><span class="sr-only" data-id="pg134_p010"></span><span class="sr-only" data-id="pg134_p011"></span><span class="sr-only" data-id="pg134_p012"></span><span class="sr-only" data-id="pg134_p013"></span><span class="sr-only" data-id="pg134_p014"></span><span class="sr-only" data-id="pg134_p015"></span><span class="sr-only" data-id="pg134_p016"></span><span class="sr-only" data-id="pg134_p017"></span><span class="sr-only" data-id="pg134_p018"></span><span class="sr-only" data-id="pg134_p019"></span>
     </article>
   </main>
@@ -108,6 +113,6 @@
   <script src="./assets/offline-preloader.js"></script>
   <script src="./assets/scorm.js"></script>
   <script src="./assets/sign-language-sync.js?v=2"></script>
-  <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+  <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=91"></script>
 </body>
 </html>
