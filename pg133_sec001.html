@@ -25,7 +25,7 @@
     .pg133-object:first-of-type { border-left:.1rem solid var(--pg133-grid); }
     .pg133-object img { display:block; width:5.45rem; height:3.9rem; object-fit:contain; }
     .pg133-object:nth-of-type(3) img { width:5.7rem; height:4.2rem; }
-    .pg133-object em { font-size:2.15rem; line-height:1; }
+    .pg133-object em { font-size:2.15rem; font-style:normal; line-height:1; }
     .pg133-exercise { position:relative; margin-top:2.35rem; padding:3.6rem 1.4rem 2.05rem; border:.2rem solid var(--pg133-line); border-radius:1.25rem; background:rgba(255,255,255,.98); }
     .pg133-banner { position:absolute; top:0; left:4.25rem; min-width:12.65rem; margin:0; padding:.32rem 1rem .27rem; border:.2rem solid var(--pg133-blue); border-radius:999px; background:#fff; color:var(--pg133-blue); font-size:1.85rem; font-weight:900; line-height:1.05; text-align:center; transform:translateY(-50%); -webkit-text-stroke:.02em currentColor; }
     .pg133-question { margin:0; font-size:1.86rem; line-height:1.25; }
@@ -38,7 +38,7 @@
     .pg133-bottle { width:3.4rem; height:8.1rem; }
     .pg133-jug { width:6.2rem; height:7.4rem; }
     .pg133-written .pg133-qno { vertical-align:top; }
-    .pg133-marker { display:grid; place-items:center; position:absolute; left:50%; bottom:3rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
+    .pg133-marker { display:grid; place-items:center; position:absolute; z-index:2; left:50%; bottom:1.25rem; width:5.25rem; aspect-ratio:1.65/1; margin:0; border-radius:50%; background:#00a9e8; color:#fff; font-size:1.75rem; font-weight:900; line-height:1; text-align:center; transform:translateX(-50%); -webkit-text-stroke:.015em currentColor; }
     .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
     @media (max-width:44rem) {
       #content.pg133-shell { padding:0 0 calc(var(--pg133-dock) + 1rem); }
@@ -57,7 +57,7 @@
       .pg133-jug { width:clamp(3.8rem,16vw,6.2rem); height:clamp(4.4rem,19vw,7.4rem); }
       .pg133-question+.pg133-question { margin-top:.58rem; }
       .pg133-qno { min-width:clamp(1.55rem,6vw,2.35rem); }
-      .pg133-marker { bottom:2rem; }
+      .pg133-marker { bottom:.75rem; }
     }
   </style>
 </head>
