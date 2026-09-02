@@ -49774,15 +49774,15 @@ function useAtomValueWithDelay<Value>(
     const entries = [
       {
         label: t("shortcut-toc-label") || "Open table of contents",
-        groups: [["X"]]
+        groups: [["Alt", "Shift", "X"]]
       },
       {
         label: t("shortcut-settings-label") || "Open settings",
-        groups: [["A"]]
+        groups: [["Alt", "Shift", "A"]]
       },
       {
         label: t("shortcut-language-label") || "Open language",
-        groups: [["L"]]
+        groups: [["Alt", "Shift", "L"]]
       },
       {
         label: t("shortcut-close-label") || "Close panel",
@@ -52451,9 +52451,9 @@ function useAtomValueWithDelay<Value>(
   function useDockShortcuts() {
     const [value, setValue] = useAtom(dockMenuValueAtom);
     const toggle = (next) => setValue((prev) => prev === next ? "" : next);
-    useHotkey("X", () => toggle("toc"));
-    useHotkey("A", () => toggle("settings"));
-    useHotkey("L", () => toggle("language"));
+    useHotkey("Alt+Shift+X", () => toggle("toc"));
+    useHotkey("Alt+Shift+A", () => toggle("settings"));
+    useHotkey("Alt+Shift+L", () => toggle("language"));
     useHotkey("Escape", () => setValue(""), { enabled: value !== "" });
   }
 
