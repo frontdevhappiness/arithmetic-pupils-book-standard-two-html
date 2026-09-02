@@ -1563,7 +1563,7 @@ assert.deepEqual(Object.keys(audios).filter((id) => id.startsWith("pg078_")).sor
 
 for (let pageNumber = 1; pageNumber <= 70; pageNumber += 1) {
   const page = String(pageNumber).padStart(3, "0");
-  const markup = read(pageNumber === 1 ? "index.html" : `pg${page}_sec001.html`);
+  const markup = read(`pg${page}_sec001.html`);
   const image = `images/pg${page}_page_hq_pdf_clean.png`;
   assert.match(markup, new RegExp(image.replace(".", "\\.")), `page ${pageNumber} must use its sharper watermark-free background image`);
   assert.ok(existsSync(new URL(image, root)), `page ${pageNumber} clear background image must exist`);

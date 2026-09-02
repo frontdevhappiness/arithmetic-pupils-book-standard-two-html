@@ -7,7 +7,7 @@ const fitter = read("assets/auto-fit.js");
 
 for (let pageNumber = 1; pageNumber <= 144; pageNumber += 1) {
   const filename = pageNumber === 1
-    ? "index.html"
+    ? "pg001_sec001.html"
     : `pg${String(pageNumber).padStart(3, "0")}_sec001.html`;
   const page = read(filename);
   assert.match(page, /data-fl-reference-width="558"/, `${filename} must expose its fixed-layout width`);

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Existing numbered page 1, preserved when the unnumbered front cover was added. -->
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arithmetic Pupil’s Book Standard Two</title>
+    <meta name="title-id" content="pg001_sec001" />
+    <meta name="page-section-id" content="1" />
+    <link href="./content/tailwind_output.css" rel="stylesheet">
+    <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="./assets/fonts.css?v=2" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "Sassoon Primary Std";
+            src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        :root {
+            color-scheme: light;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            color: #20252a;
+            background:
+                radial-gradient(circle at 18% 10%, rgba(111, 194, 224, 0.28), transparent 28rem),
+                linear-gradient(160deg, #f5fbfe 0%, #e7f4fa 100%);
+            font-family: SassoonPrimary, Arimo, Arial, sans-serif;
+        }
+
+        .semantic-page-shell {
+            box-sizing: border-box;
+            min-height: calc(100vh - var(--dock-height, 96px));
+            padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 4vw, 2.5rem)
+                calc(var(--dock-height, 96px) + clamp(1.5rem, 4vw, 3rem));
+        }
+
+        #content {
+            box-sizing: border-box;
+            width: min(100%, 54rem);
+            margin: 0 auto;
+            padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 5vw, 4rem) clamp(1.75rem, 5vw, 3.5rem);
+            overflow: hidden;
+            visibility: visible;
+            background: #ffffff;
+            border: 1px solid rgba(72, 161, 198, 0.3);
+            border-radius: clamp(1.25rem, 3vw, 2.5rem);
+            box-shadow: 0 1.25rem 3.5rem rgba(24, 91, 118, 0.16);
+        }
+
+        .cover-content {
+            display: grid;
+            justify-items: center;
+            gap: clamp(1.25rem, 3vw, 2.25rem);
+        }
+
+        .cover-heading {
+            text-align: center;
+        }
+
+        .cover-heading h1,
+        .cover-heading p,
+        .publisher {
+            margin: 0;
+            font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif;
+            font-style: normal;
+        }
+
+        .cover-content [data-id],
+        .cover-content [data-id] span {
+            font-family: "Sassoon Primary Std", Arimo, Arial, sans-serif;
+        }
+
+        .cover-heading h1 {
+            color: #0099da;
+            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: 0.01em;
+        }
+
+        .cover-heading .book-kind {
+            margin-top: 0.45rem;
+            color: #0099da;
+            font-size: clamp(1.6rem, 5vw, 3.1rem);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .cover-heading .level {
+            margin-top: 0.65rem;
+            font-size: clamp(1.65rem, 5.5vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .approval-figure {
+            width: min(100%, 27rem);
+            margin: 0;
+        }
+
+        .approval-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .publisher {
+            color: #20252a;
+            font-size: clamp(1.15rem, 3.5vw, 1.8rem);
+            font-weight: 700;
+            line-height: 1.25;
+            text-align: center;
+        }
+
+        @media (max-width: 34rem) {
+            #content {
+                border-radius: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="semantic-page-shell">
+        <article id="content" aria-labelledby="book-title">
+            <section class="cover-content" role="article" data-section-type="text_and_single_image"
+                data-section-id="pg001_sec001">
+                <header class="cover-heading">
+                    <h1 id="book-title" data-id="pg001_p000">Arithmetic</h1>
+                    <p class="book-kind" data-id="pg001_p001">Pupil’s Book</p>
+                    <p class="level" data-id="pg001_p002">Standard Two</p>
+                </header>
+
+                <figure class="approval-figure">
+                    <img src="images/pg001_certificate_portrait.jpg"
+                        alt="The United Republic of Tanzania. Ministry of Education, Science and Technology. Certificate of Approval, number 1646. Title of Publication: Arithmetic Pupil’s Book Standard Two. Publisher: Tanzania Institute of Education. Author: Tanzania Institute of Education. ISBN: 978-9912-753-59-4. This book was approved by the Ministry of Education, Science and Technology on 11th September 2024 as a textbook for Standard Two in Primary Schools in Tanzania, as per the 2023 syllabus. Signed by Dr Lyabwene M. Mtahabwa, Commissioner for Education."
+                        data-id="pg001_im001">
+                </figure>
+
+                <footer>
+                    <p class="publisher" data-id="pg001_p003">Tanzania Institute of Education</p>
+                </footer>
+            </section>
+        <span class="sr-only" data-id="pg001_p999">End of page.</span></article>
+    </main>
+
+    <div class="relative z-50" id="interface-container"></div>
+    <div class="relative z-50" id="nav-container"></div>
+    <script src="./assets/offline-preloader.js"></script>
+    <script src="./assets/scorm.js"></script>
+    <script src="./assets/sign-language-sync.js?v=2"></script>
+    <script src="./assets/base.bundle.local.js"></script><script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+</body>
+
+</html>

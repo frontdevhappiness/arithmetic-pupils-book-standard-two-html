@@ -3,7 +3,7 @@ import fs from "node:fs";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
-const html = fs.readFileSync(new URL("index.html", root), "utf8");
+const html = fs.readFileSync(new URL("pg001_sec001.html", root), "utf8");
 const texts = JSON.parse(
     fs.readFileSync(new URL("content/i18n/en-GB/texts.json", root), "utf8"),
 );
@@ -82,5 +82,5 @@ test("page 1 preserves each approved read-aloud identifier exactly once", () => 
 
 test("the offline page 1 copy matches the reviewed source", () => {
     const inline = readOfflineInline();
-    assert.equal(inline["./index.html"], html);
+    assert.equal(inline["./pg001_sec001.html"], html);
 });
