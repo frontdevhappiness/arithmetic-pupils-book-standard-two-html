@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Pupil’s Book Standard Two — Back Cover</title>
+  <meta name="title-id" content="back_cover_sec001">
+  <meta name="page-section-id" content="0">
+  <link href="./content/tailwind_output.css" rel="stylesheet">
+  <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./assets/fonts.css?v=2" rel="stylesheet">
+  <style>
+    :root { --dock:var(--dock-height,96px); color-scheme:light; }
+    html,body { margin:0; min-height:100%; }
+    body { overflow-x:hidden; overflow-y:auto; background:#edf7fb; }
+    .cover-shell {
+      box-sizing:border-box;
+      display:grid;
+      place-items:center;
+      min-height:calc(100vh - var(--dock));
+      padding:clamp(.5rem,2vw,1.5rem) clamp(.5rem,3vw,2rem) calc(var(--dock) + clamp(1rem,3vw,2rem));
+    }
+    .back-cover {
+      display:block;
+      width:auto;
+      max-width:min(100%,44rem);
+      max-height:calc(100vh - var(--dock) - clamp(1.5rem,4vw,3rem));
+      height:auto;
+      object-fit:contain;
+      box-shadow:0 1.1rem 3rem rgba(102,14,57,.22);
+    }
+    @media (max-width:44rem) {
+      .cover-shell { padding:.5rem .5rem calc(var(--dock) + .5rem); }
+      .back-cover { box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <main id="content" class="cover-shell">
+    <section data-section-id="back_cover_sec001" aria-label="Back cover">
+      <img class="back-cover" src="images/arithmetic_std_2_back_cover.png"
+        alt="Back cover of Arithmetic Pupil’s Book Standard Two. It shows five other Standard Two books published by the Tanzania Institute of Education and the ISBN barcode 978-9912-753-59-4.">
+    </section>
+  </main>
+  <div class="relative z-50" id="interface-container"></div>
+  <div class="relative z-50" id="nav-container"></div>
+  <script src="./assets/offline-preloader.js"></script>
+  <script src="./assets/scorm.js"></script>
+  <script src="./assets/sign-language-sync.js?v=2"></script>
+  <script src="./assets/base.bundle.local.js"></script>
+  <script src="./assets/read-aloud-highlight-bridge.js?v=23"></script>
+  <script>
+    (function labelUnnumberedBackCover() {
+      var nav = document.getElementById("nav-container");
+      function update() {
+        var current = nav.querySelector(".order-3 > span:first-child");
+        if (current && current.textContent.trim() === "0") current.textContent = "Back Cover";
+      }
+      new MutationObserver(update).observe(nav, { childList:true, subtree:true, characterData:true });
+      update();
+    })();
+  </script>
+</body>
+</html>
