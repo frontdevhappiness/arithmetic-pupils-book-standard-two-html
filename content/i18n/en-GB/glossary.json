@@ -1,1 +1,2248 @@
-{}
+{
+  "abacus": {
+    "word": "abacus",
+    "definition": "a tool with beads used to help count and show numbers",
+    "variations": [
+      "abacus",
+      "abacuses"
+    ],
+    "emoji": "🧮"
+  },
+  "activity": {
+    "word": "activity",
+    "definition": "something learners do to practise or learn",
+    "variations": [
+      "activity",
+      "activities"
+    ],
+    "emoji": "🎯🧩"
+  },
+  "add": {
+    "word": "add",
+    "definition": "to put numbers together to find the total",
+    "variations": [
+      "add",
+      "adds",
+      "added",
+      "adding"
+    ],
+    "emoji": "➕"
+  },
+  "addition": {
+    "word": "addition",
+    "definition": "the process of putting numbers together to find the total",
+    "variations": [
+      "addition",
+      "additions"
+    ],
+    "emoji": "➕"
+  },
+  "after": {
+    "word": "after",
+    "definition": "later than something else or coming next",
+    "variations": [
+      "after"
+    ],
+    "emoji": "➡️⏭️"
+  },
+  "altogether": {
+    "word": "altogether",
+    "definition": "in total; when everything is added together",
+    "variations": [
+      "altogether"
+    ],
+    "emoji": "➕🧮"
+  },
+  "amount": {
+    "word": "amount",
+    "definition": "how much of something there is.",
+    "variations": [
+      "amount",
+      "amounts"
+    ],
+    "emoji": "💰📊"
+  },
+  "answer": {
+    "word": "answer",
+    "definition": "the result you get after doing a question",
+    "variations": [
+      "answer",
+      "answers"
+    ],
+    "emoji": "✅💡"
+  },
+  "application": {
+    "word": "application",
+    "definition": "a computer program used for a task",
+    "variations": [
+      "application",
+      "applications"
+    ],
+    "emoji": "💻📲"
+  },
+  "arithmetic": {
+    "word": "arithmetic",
+    "definition": "the part of mathematics about working with numbers, such as adding, subtracting, multiplying, and dividing",
+    "variations": [
+      "arithmetic"
+    ],
+    "emoji": "➕🔢"
+  },
+  "arm span": {
+    "word": "arm span",
+    "definition": "the distance from the end of one arm to the end of the other when both arms are stretched out",
+    "variations": [
+      "arm span",
+      "arm spans"
+    ],
+    "emoji": "🙆↔️"
+  },
+  "arrange": {
+    "word": "arrange",
+    "definition": "to put things in a correct or chosen order",
+    "variations": [
+      "arrange",
+      "arranged",
+      "arranging",
+      "arranges"
+    ],
+    "emoji": "📋↕️"
+  },
+  "attended": {
+    "word": "attended",
+    "definition": "went to an event, lesson, or meeting",
+    "variations": [
+      "attend",
+      "attended",
+      "attending",
+      "attends"
+    ],
+    "emoji": "👥📍"
+  },
+  "balloons": {
+    "word": "balloons",
+    "definition": "round shapes used here to show numbers in a maths activity",
+    "variations": [
+      "balloon",
+      "balloons"
+    ],
+    "emoji": "🎈🔢"
+  },
+  "basis": {
+    "word": "basis",
+    "definition": "the main idea or starting point for something",
+    "variations": [
+      "basis",
+      "bases"
+    ],
+    "emoji": "🏗️📘"
+  },
+  "bead": {
+    "word": "bead",
+    "definition": "a small round piece on an abacus that is moved to show a number",
+    "variations": [
+      "bead",
+      "beads"
+    ],
+    "emoji": "🟠🧮"
+  },
+  "beaker": {
+    "word": "beaker",
+    "definition": "A container used for holding or measuring liquids.",
+    "variations": [
+      "beaker",
+      "beakers"
+    ],
+    "emoji": "🧪🥛"
+  },
+  "beam balance": {
+    "word": "beam balance",
+    "definition": "a tool used to compare or measure mass by balancing objects",
+    "variations": [
+      "beam balance",
+      "beam balances"
+    ],
+    "emoji": "⚖️"
+  },
+  "before": {
+    "word": "before",
+    "definition": "earlier than something else or coming first",
+    "variations": [
+      "before"
+    ],
+    "emoji": "⬅️⏮️"
+  },
+  "blank": {
+    "word": "blank",
+    "definition": "an empty space where an answer should be written",
+    "variations": [
+      "blank",
+      "blanks"
+    ],
+    "emoji": "⬜✏️"
+  },
+  "bottle": {
+    "word": "bottle",
+    "definition": "A container with a narrow top used for holding liquids.",
+    "variations": [
+      "bottle",
+      "bottles"
+    ],
+    "emoji": "🍶🥤"
+  },
+  "bucket": {
+    "word": "bucket",
+    "definition": "A container used for carrying or holding water or other things.",
+    "variations": [
+      "bucket",
+      "buckets"
+    ],
+    "emoji": "🪣"
+  },
+  "bunch": {
+    "word": "bunch",
+    "definition": "a group of things held or kept together",
+    "variations": [
+      "bunch",
+      "bunches"
+    ],
+    "emoji": "🥕📚"
+  },
+  "capacity": {
+    "word": "capacity",
+    "definition": "the greatest number or amount that something can hold",
+    "variations": [
+      "capacity",
+      "capacities"
+    ],
+    "emoji": "📦🔟"
+  },
+  "carried": {
+    "word": "carried",
+    "definition": "took or transported something from one place to another",
+    "variations": [
+      "carry",
+      "carried",
+      "carries",
+      "carrying"
+    ],
+    "emoji": "🚚📦"
+  },
+  "carry": {
+    "word": "carry",
+    "definition": "to take or hold people or things from one place to another",
+    "variations": [
+      "carry",
+      "carries",
+      "carried",
+      "carrying"
+    ],
+    "emoji": "🚗🎒"
+  },
+  "catch": {
+    "word": "catch",
+    "definition": "to take hold of something moving through the air",
+    "variations": [
+      "catch",
+      "catches",
+      "catching",
+      "caught"
+    ],
+    "emoji": "🤲⚽"
+  },
+  "chapter": {
+    "word": "chapter",
+    "definition": "a main section of a book",
+    "variations": [
+      "chapter",
+      "chapters"
+    ],
+    "emoji": "📘📖"
+  },
+  "chart": {
+    "word": "chart",
+    "definition": "a table or diagram that shows information in an organised way",
+    "variations": [
+      "chart",
+      "charts"
+    ],
+    "emoji": "📊🔢"
+  },
+  "circle": {
+    "word": "circle",
+    "definition": "a flat round shape with no corners",
+    "variations": [
+      "circle",
+      "circles"
+    ],
+    "emoji": "⚪⭕"
+  },
+  "coins": {
+    "word": "coins",
+    "definition": "small round pieces of money made of metal.",
+    "variations": [
+      "coin",
+      "coins"
+    ],
+    "emoji": "🪙💰"
+  },
+  "column": {
+    "word": "column",
+    "definition": "a vertical line of numbers or boxes in a table or chart",
+    "variations": [
+      "column",
+      "columns"
+    ],
+    "emoji": "📋⬇️"
+  },
+  "cone": {
+    "word": "cone",
+    "definition": "a 3D shape with a round base and a pointed top",
+    "variations": [
+      "cone",
+      "cones"
+    ],
+    "emoji": "🍦🔺"
+  },
+  "continue": {
+    "word": "continue",
+    "definition": "to keep going without stopping",
+    "variations": [
+      "continue",
+      "continues",
+      "continued",
+      "continuing"
+    ],
+    "emoji": "➡️🔁"
+  },
+  "count": {
+    "word": "count",
+    "definition": "to say or find how many there are",
+    "variations": [
+      "count",
+      "counts",
+      "counted",
+      "counting"
+    ],
+    "emoji": "🔢🧮"
+  },
+  "counted": {
+    "word": "counted",
+    "definition": "found how many there are by saying or adding numbers in order.",
+    "variations": [
+      "count",
+      "counts",
+      "counted",
+      "counting"
+    ],
+    "emoji": "🔢🧮"
+  },
+  "counters": {
+    "word": "counters",
+    "definition": "small objects used for counting or solving maths problems",
+    "variations": [
+      "counter",
+      "counters"
+    ],
+    "emoji": "🔵🔢"
+  },
+  "cube": {
+    "word": "cube",
+    "definition": "a 3D shape with six equal square faces",
+    "variations": [
+      "cube",
+      "cubes"
+    ],
+    "emoji": "🧊🎲"
+  },
+  "cuboid": {
+    "word": "cuboid",
+    "definition": "a 3D box-shaped object with rectangular faces",
+    "variations": [
+      "cuboid",
+      "cuboids"
+    ],
+    "emoji": "📦🧱"
+  },
+  "cylinder": {
+    "word": "cylinder",
+    "definition": "a 3D shape with two flat round ends and one curved side",
+    "variations": [
+      "cylinder",
+      "cylinders"
+    ],
+    "emoji": "🥫🛢️"
+  },
+  "damaged": {
+    "word": "damaged",
+    "definition": "broken or harmed so that something is not in good condition",
+    "variations": [
+      "damage",
+      "damaged",
+      "damages"
+    ],
+    "emoji": "🪑💥"
+  },
+  "desks": {
+    "word": "desks",
+    "definition": "tables used by pupils for writing and learning",
+    "variations": [
+      "desk",
+      "desks"
+    ],
+    "emoji": "🪑🏫"
+  },
+  "die": {
+    "word": "die",
+    "definition": "a small cube used in games, with dots showing numbers on its faces",
+    "variations": [
+      "die",
+      "dice"
+    ],
+    "emoji": "🎲"
+  },
+  "digit": {
+    "word": "digit",
+    "definition": "a single number symbol from 0 to 9",
+    "variations": [
+      "digit",
+      "digits"
+    ],
+    "emoji": "🔢0️⃣"
+  },
+  "direction": {
+    "word": "direction",
+    "definition": "the way something moves or points",
+    "variations": [
+      "direction",
+      "directions"
+    ],
+    "emoji": "➡️🧭"
+  },
+  "distance": {
+    "word": "distance",
+    "definition": "the length from one place or point to another",
+    "variations": [
+      "distance",
+      "distances"
+    ],
+    "emoji": "📏↔️"
+  },
+  "distribute": {
+    "word": "distribute",
+    "definition": "to give out or share things among people or groups",
+    "variations": [
+      "distribute",
+      "distributes",
+      "distributed",
+      "distributing",
+      "distribution"
+    ],
+    "emoji": "📦↔️"
+  },
+  "divide": {
+    "word": "divide",
+    "definition": "to split something into parts",
+    "variations": [
+      "divide",
+      "divided",
+      "dividing"
+    ],
+    "emoji": "➗✂️"
+  },
+  "division": {
+    "word": "division",
+    "definition": "the maths process of sharing or separating a number into equal parts or groups",
+    "variations": [
+      "divide",
+      "divides",
+      "divided",
+      "dividing",
+      "division",
+      "divisions"
+    ],
+    "emoji": "➗🔢"
+  },
+  "dot": {
+    "word": "dot",
+    "definition": "a small round mark; on a die, dots show the number",
+    "variations": [
+      "dot",
+      "dots"
+    ],
+    "emoji": "⚫🎲"
+  },
+  "empty": {
+    "word": "empty",
+    "definition": "having nothing inside",
+    "variations": [
+      "empty",
+      "emptier",
+      "emptiest"
+    ],
+    "emoji": "📭⭕"
+  },
+  "environmental": {
+    "word": "environmental",
+    "definition": "connected with the natural world and caring for it",
+    "variations": [
+      "environmental"
+    ],
+    "emoji": "🌍🌱"
+  },
+  "equal": {
+    "word": "equal",
+    "definition": "the same in size, number, or amount",
+    "variations": [
+      "equal",
+      "equally"
+    ],
+    "emoji": "⚖️🟰"
+  },
+  "equally": {
+    "word": "equally",
+    "definition": "in the same amount for each person or group",
+    "variations": [
+      "equal",
+      "equally",
+      "equals"
+    ],
+    "emoji": "⚖️🟰"
+  },
+  "equals": {
+    "word": "equals",
+    "definition": "has the same value as; gives the answer.",
+    "variations": [
+      "equal",
+      "equals",
+      "equalled",
+      "equaling"
+    ],
+    "emoji": "🟰✅"
+  },
+  "examination": {
+    "word": "examination",
+    "definition": "a test to check what someone has learned",
+    "variations": [
+      "examination",
+      "examinations"
+    ],
+    "emoji": "📝📚"
+  },
+  "exercise": {
+    "word": "exercise",
+    "definition": "a set of questions or tasks for practice",
+    "variations": [
+      "exercise",
+      "exercises"
+    ],
+    "emoji": "✏️📘"
+  },
+  "exercise books": {
+    "word": "exercise books",
+    "definition": "books used by pupils for writing school work",
+    "variations": [
+      "exercise book",
+      "exercise books"
+    ],
+    "emoji": "📓✏️"
+  },
+  "expanded form": {
+    "word": "expanded form",
+    "definition": "a way of writing a number by showing the value of each digit added together",
+    "variations": [
+      "expanded form",
+      "expanded forms"
+    ],
+    "emoji": "➕🔢"
+  },
+  "face": {
+    "word": "face",
+    "definition": "one flat side of an object such as a die",
+    "variations": [
+      "face",
+      "faces"
+    ],
+    "emoji": "🎲⬜"
+  },
+  "far": {
+    "word": "far",
+    "definition": "a long distance away; not near",
+    "variations": [
+      "far",
+      "farther",
+      "farthest"
+    ],
+    "emoji": "📏🌍"
+  },
+  "far from": {
+    "word": "far from",
+    "definition": "at a long distance away",
+    "variations": [
+      "far",
+      "far from"
+    ],
+    "emoji": "🚶↔️"
+  },
+  "fellow": {
+    "word": "fellow",
+    "definition": "belonging to the same group; another person in the same school or class",
+    "variations": [
+      "fellow",
+      "fellows"
+    ],
+    "emoji": "👫"
+  },
+  "fill": {
+    "word": "fill",
+    "definition": "to put in what is missing",
+    "variations": [
+      "fill",
+      "fills",
+      "filled",
+      "filling"
+    ],
+    "emoji": "✍️🔢"
+  },
+  "fill in": {
+    "word": "fill in",
+    "definition": "to complete missing parts with the correct answer",
+    "variations": [
+      "fill in",
+      "fills in",
+      "filled in",
+      "filling in"
+    ],
+    "emoji": "✍️🧩"
+  },
+  "flat surface": {
+    "word": "flat surface",
+    "definition": "A smooth, level area with no curves or bumps.",
+    "variations": [
+      "flat surface",
+      "flat surfaces"
+    ],
+    "emoji": "📄"
+  },
+  "flower bed": {
+    "word": "flower bed",
+    "definition": "a piece of ground where flowers are planted",
+    "variations": [
+      "flower bed",
+      "flower beds"
+    ],
+    "emoji": "🌼🪴"
+  },
+  "footstep": {
+    "word": "footstep",
+    "definition": "the distance of one step when walking",
+    "variations": [
+      "footstep",
+      "footsteps"
+    ],
+    "emoji": "👣"
+  },
+  "four-sided": {
+    "word": "four-sided",
+    "definition": "Having four sides.",
+    "variations": [
+      "four-sided"
+    ],
+    "emoji": "🔲"
+  },
+  "fraction": {
+    "word": "fraction",
+    "definition": "a number that shows equal parts of a whole",
+    "variations": [
+      "fraction",
+      "fractions"
+    ],
+    "emoji": "➗🍰"
+  },
+  "game": {
+    "word": "game",
+    "definition": "an activity with rules that people play for fun or learning",
+    "variations": [
+      "game",
+      "games"
+    ],
+    "emoji": "🎮🎲"
+  },
+  "gift": {
+    "word": "gift",
+    "definition": "something given to someone without payment",
+    "variations": [
+      "gift",
+      "gifts"
+    ],
+    "emoji": "🎁"
+  },
+  "glass": {
+    "word": "glass",
+    "definition": "A drinking container used for holding liquids.",
+    "variations": [
+      "glass",
+      "glasses"
+    ],
+    "emoji": "🥛"
+  },
+  "group": {
+    "word": "group",
+    "definition": "a number of things put together",
+    "variations": [
+      "group",
+      "groups"
+    ],
+    "emoji": "👥🧺"
+  },
+  "guava": {
+    "word": "guava",
+    "definition": "a tropical fruit",
+    "variations": [
+      "guava",
+      "guavas"
+    ],
+    "emoji": "🍈🌿"
+  },
+  "half": {
+    "word": "half",
+    "definition": "one of two equal parts of something",
+    "variations": [
+      "half",
+      "halves"
+    ],
+    "emoji": "1️⃣2️⃣🍊"
+  },
+  "Head Teacher": {
+    "word": "Head Teacher",
+    "definition": "the main teacher in charge of a school",
+    "variations": [
+      "Head Teacher",
+      "Head Teachers"
+    ],
+    "emoji": "🏫👩‍🏫"
+  },
+  "health officer": {
+    "word": "health officer",
+    "definition": "a person whose job is to help protect people's health",
+    "variations": [
+      "health officer",
+      "health officers"
+    ],
+    "emoji": "🩺👩‍⚕️"
+  },
+  "heavier": {
+    "word": "heavier",
+    "definition": "having more weight than something else",
+    "variations": [
+      "heavy",
+      "heavier",
+      "heaviest"
+    ],
+    "emoji": "🏋️⬇️"
+  },
+  "heaviness": {
+    "word": "heaviness",
+    "definition": "the quality of being heavy",
+    "variations": [
+      "heaviness"
+    ],
+    "emoji": "🏋️⚖️"
+  },
+  "hectare": {
+    "word": "hectare",
+    "definition": "a unit used to measure land area",
+    "variations": [
+      "hectare",
+      "hectares"
+    ],
+    "emoji": "🌾📏"
+  },
+  "height": {
+    "word": "height",
+    "definition": "how tall something is from bottom to top",
+    "variations": [
+      "height",
+      "heights"
+    ],
+    "emoji": "📏⬆️"
+  },
+  "higher": {
+    "word": "higher",
+    "definition": "more up; taller than something else",
+    "variations": [
+      "high",
+      "higher",
+      "highest"
+    ],
+    "emoji": "⬆️📈"
+  },
+  "horizontal": {
+    "word": "horizontal",
+    "definition": "going across from side to side, not up and down",
+    "variations": [
+      "horizontal",
+      "horizontally"
+    ],
+    "emoji": "↔️"
+  },
+  "horizontally": {
+    "word": "horizontally",
+    "definition": "in a side-to-side way, across the page",
+    "variations": [
+      "horizontal",
+      "horizontally"
+    ],
+    "emoji": "↔️"
+  },
+  "hundred": {
+    "word": "hundred",
+    "definition": "the number 100",
+    "variations": [
+      "hundred",
+      "hundreds"
+    ],
+    "emoji": "💯🔢"
+  },
+  "hundreds": {
+    "word": "hundreds",
+    "definition": "the place in a number that shows how many groups of 100 there are",
+    "variations": [
+      "hundred",
+      "hundreds",
+      "one hundred"
+    ],
+    "emoji": "💯🔢"
+  },
+  "ICT": {
+    "word": "ICT",
+    "definition": "the use of computers and technology to work or learn",
+    "variations": [
+      "ICT"
+    ],
+    "emoji": "💻📱🖥️"
+  },
+  "identification": {
+    "word": "identification",
+    "definition": "the act of showing who or which thing something is",
+    "variations": [
+      "identification"
+    ],
+    "emoji": "🪪🔍"
+  },
+  "increase": {
+    "word": "increase",
+    "definition": "to become more or to make something more",
+    "variations": [
+      "increase",
+      "increased",
+      "increases",
+      "increasing"
+    ],
+    "emoji": "⬆️➕"
+  },
+  "involve": {
+    "word": "involve",
+    "definition": "to include or have as a part",
+    "variations": [
+      "involve",
+      "involves",
+      "involved",
+      "involving"
+    ],
+    "emoji": "📌"
+  },
+  "joined": {
+    "word": "joined",
+    "definition": "came together with others",
+    "variations": [
+      "join",
+      "joined",
+      "joining",
+      "joins"
+    ],
+    "emoji": "🤝👥"
+  },
+  "jug": {
+    "word": "jug",
+    "definition": "A container with a handle and a spout, used for holding and pouring liquid.",
+    "variations": [
+      "jug",
+      "jugs"
+    ],
+    "emoji": "🫗🥛"
+  },
+  "keyboard": {
+    "word": "keyboard",
+    "definition": "the set of keys used to type on a computer",
+    "variations": [
+      "keyboard",
+      "keyboards"
+    ],
+    "emoji": "⌨️💻"
+  },
+  "label": {
+    "word": "label",
+    "definition": "a letter, word, or sign used to name something in a picture or diagram",
+    "variations": [
+      "label",
+      "labelled",
+      "labels"
+    ],
+    "emoji": "🏷️🔤"
+  },
+  "largest": {
+    "word": "largest",
+    "definition": "having the greatest size or value in a group",
+    "variations": [
+      "large",
+      "larger",
+      "largest"
+    ],
+    "emoji": "🔼9️⃣"
+  },
+  "length": {
+    "word": "length",
+    "definition": "how long something is from one end to the other",
+    "variations": [
+      "length",
+      "lengths"
+    ],
+    "emoji": "📐📏"
+  },
+  "library": {
+    "word": "library",
+    "definition": "a place or collection where books or learning materials are kept",
+    "variations": [
+      "library",
+      "libraries"
+    ],
+    "emoji": "📚🏫"
+  },
+  "lighter": {
+    "word": "lighter",
+    "definition": "having less weight than something else",
+    "variations": [
+      "light",
+      "lighter",
+      "lightest"
+    ],
+    "emoji": "🪶⬆️"
+  },
+  "litre": {
+    "word": "litre",
+    "definition": "A unit used to measure liquid, bigger than a millilitre.",
+    "variations": [
+      "litre",
+      "litres"
+    ],
+    "emoji": "💧📐"
+  },
+  "loaf": {
+    "word": "loaf",
+    "definition": "one shaped piece of bread",
+    "variations": [
+      "loaf",
+      "loaves"
+    ],
+    "emoji": "🍞"
+  },
+  "lorry": {
+    "word": "lorry",
+    "definition": "a large vehicle used for carrying goods",
+    "variations": [
+      "lorry",
+      "lorries"
+    ],
+    "emoji": "🚛"
+  },
+  "marble": {
+    "word": "marble",
+    "definition": "a small hard ball used in games",
+    "variations": [
+      "marble",
+      "marbles"
+    ],
+    "emoji": "⚪🎯"
+  },
+  "mass": {
+    "word": "mass",
+    "definition": "how heavy an object is",
+    "variations": [
+      "mass",
+      "masses"
+    ],
+    "emoji": "⚖️🪨"
+  },
+  "measure": {
+    "word": "measure",
+    "definition": "to find out the size, length, or amount of something",
+    "variations": [
+      "measure",
+      "measures",
+      "measuring",
+      "measured"
+    ],
+    "emoji": "📐📏"
+  },
+  "measurement": {
+    "word": "measurement",
+    "definition": "the size, length, amount, or weight of something found using units",
+    "variations": [
+      "measurement",
+      "measurements"
+    ],
+    "emoji": "📏⚖️"
+  },
+  "measuring cylinder": {
+    "word": "measuring cylinder",
+    "definition": "A tall container with markings used to measure how much liquid there is.",
+    "variations": [
+      "measuring cylinder",
+      "measuring cylinders"
+    ],
+    "emoji": "🧪📏"
+  },
+  "middle": {
+    "word": "middle",
+    "definition": "the centre part between two ends or sides",
+    "variations": [
+      "middle"
+    ],
+    "emoji": "🎯↔️"
+  },
+  "millilitre": {
+    "word": "millilitre",
+    "definition": "A small unit used to measure liquid.",
+    "variations": [
+      "millilitre",
+      "millilitres"
+    ],
+    "emoji": "💧📏"
+  },
+  "missing": {
+    "word": "missing",
+    "definition": "not there or left out",
+    "variations": [
+      "missing",
+      "miss"
+    ],
+    "emoji": "❓🧩"
+  },
+  "mosquito nets": {
+    "word": "mosquito nets",
+    "definition": "nets used to protect people from mosquito bites, especially while sleeping",
+    "variations": [
+      "mosquito net",
+      "mosquito nets"
+    ],
+    "emoji": "🦟🛏️"
+  },
+  "move": {
+    "word": "move",
+    "definition": "to change place or position",
+    "variations": [
+      "move",
+      "moves",
+      "moved",
+      "moving"
+    ],
+    "emoji": "➡️🏃"
+  },
+  "multiplication": {
+    "word": "multiplication",
+    "definition": "a maths operation that shows repeated addition of equal groups",
+    "variations": [
+      "multiplication"
+    ],
+    "emoji": "✖️🔢"
+  },
+  "multiplied": {
+    "word": "multiplied",
+    "definition": "times another number; used when doing multiplication",
+    "variations": [
+      "multiply",
+      "multiplies",
+      "multiplied",
+      "multiplying"
+    ],
+    "emoji": "✖️🔢"
+  },
+  "multiply": {
+    "word": "multiply",
+    "definition": "to add the same number again and again to find a total",
+    "variations": [
+      "multiply",
+      "multiplies",
+      "multiplied",
+      "multiplying",
+      "multiplication"
+    ],
+    "emoji": "✖️🔢"
+  },
+  "near": {
+    "word": "near",
+    "definition": "close to something; not far away",
+    "variations": [
+      "near",
+      "nearer",
+      "nearest"
+    ],
+    "emoji": "📍👀"
+  },
+  "near to": {
+    "word": "near to",
+    "definition": "close to; not far away",
+    "variations": [
+      "near",
+      "near to"
+    ],
+    "emoji": "📍🤝"
+  },
+  "non-plane figure": {
+    "word": "non-plane figure",
+    "definition": "A solid shape that is not flat and takes up space.",
+    "variations": [
+      "non-plane figure",
+      "non-plane figures"
+    ],
+    "emoji": "📦🔵"
+  },
+  "non-plane shape": {
+    "word": "non-plane shape",
+    "definition": "a solid shape that is not flat and has thickness",
+    "variations": [
+      "non-plane shape",
+      "non-plane shapes"
+    ],
+    "emoji": "🧊📦"
+  },
+  "non-standard": {
+    "word": "non-standard",
+    "definition": "not using the usual measuring tools",
+    "variations": [
+      "non-standard"
+    ],
+    "emoji": "✋📏"
+  },
+  "number": {
+    "word": "number",
+    "definition": "a word or symbol used for counting, measuring, or showing an amount",
+    "variations": [
+      "number",
+      "numbers"
+    ],
+    "emoji": "🔢"
+  },
+  "numeral": {
+    "word": "numeral",
+    "definition": "a symbol used to write a number, such as 3 or 7",
+    "variations": [
+      "numeral",
+      "numerals"
+    ],
+    "emoji": "🔢"
+  },
+  "numerals": {
+    "word": "numerals",
+    "definition": "symbols used to write numbers, such as 1, 2, and 3",
+    "variations": [
+      "numeral",
+      "numerals"
+    ],
+    "emoji": "🔢✍️"
+  },
+  "object": {
+    "word": "object",
+    "definition": "a thing that can be seen or touched",
+    "variations": [
+      "object",
+      "objects"
+    ],
+    "emoji": "📦🔹"
+  },
+  "one-digit number": {
+    "word": "one-digit number",
+    "definition": "a number made of one digit, such as 4 or 7",
+    "variations": [
+      "one-digit number",
+      "one-digit numbers"
+    ],
+    "emoji": "🔢1️⃣"
+  },
+  "one-third": {
+    "word": "one-third",
+    "definition": "one out of three equal parts",
+    "variations": [
+      "one-third",
+      "one thirds",
+      "1/3"
+    ],
+    "emoji": "1️⃣3️⃣🍰"
+  },
+  "ones": {
+    "word": "ones",
+    "definition": "the place in a number that shows how many single units there are",
+    "variations": [
+      "one",
+      "ones"
+    ],
+    "emoji": "1️⃣🔢"
+  },
+  "open market": {
+    "word": "open market",
+    "definition": "a place where goods are sold openly, often outdoors",
+    "variations": [
+      "open market",
+      "open markets"
+    ],
+    "emoji": "🛒🏬"
+  },
+  "operation": {
+    "word": "operation",
+    "definition": "a maths action such as addition, subtraction, multiplication, or division",
+    "variations": [
+      "operation",
+      "operations"
+    ],
+    "emoji": "➕➖✖️"
+  },
+  "opposite": {
+    "word": "opposite",
+    "definition": "completely different from something else",
+    "variations": [
+      "opposite",
+      "opposites"
+    ],
+    "emoji": "↔️🔄"
+  },
+  "orange seedlings": {
+    "word": "orange seedlings",
+    "definition": "young orange plants that are planted to grow",
+    "variations": [
+      "orange seedling",
+      "orange seedlings"
+    ],
+    "emoji": "🍊🌱"
+  },
+  "oval": {
+    "word": "oval",
+    "definition": "a flat rounded shape like a stretched circle",
+    "variations": [
+      "oval",
+      "ovals"
+    ],
+    "emoji": "🥚⭕"
+  },
+  "pairs": {
+    "word": "pairs",
+    "definition": "groups of two",
+    "variations": [
+      "pair",
+      "pairs"
+    ],
+    "emoji": "👫2️⃣"
+  },
+  "parallelogram": {
+    "word": "parallelogram",
+    "definition": "a flat shape with two pairs of opposite sides that are parallel",
+    "variations": [
+      "parallelogram",
+      "parallelograms"
+    ],
+    "emoji": "🔷📐"
+  },
+  "part": {
+    "word": "part",
+    "definition": "one piece of a whole thing",
+    "variations": [
+      "part",
+      "parts"
+    ],
+    "emoji": "🧩🍊"
+  },
+  "participated": {
+    "word": "participated",
+    "definition": "took part in an activity",
+    "variations": [
+      "participate",
+      "participated",
+      "participating",
+      "participates"
+    ],
+    "emoji": "🏃🙋"
+  },
+  "passenger": {
+    "word": "passenger",
+    "definition": "a person travelling in a car, bus, or other vehicle",
+    "variations": [
+      "passenger",
+      "passengers"
+    ],
+    "emoji": "🧍🚗"
+  },
+  "pawpaws": {
+    "word": "pawpaws",
+    "definition": "large tropical fruits; another name for papayas",
+    "variations": [
+      "pawpaw",
+      "pawpaws"
+    ],
+    "emoji": "🍈🌴"
+  },
+  "pencils": {
+    "word": "pencils",
+    "definition": "tools used for writing or drawing",
+    "variations": [
+      "pencil",
+      "pencils"
+    ],
+    "emoji": "✏️"
+  },
+  "piece": {
+    "word": "piece",
+    "definition": "a small part cut or taken from something bigger",
+    "variations": [
+      "piece",
+      "pieces"
+    ],
+    "emoji": "🍊🧩"
+  },
+  "place": {
+    "word": "place",
+    "definition": "the position of a digit in a number, such as ones place or tens place",
+    "variations": [
+      "place",
+      "places"
+    ],
+    "emoji": "📍🔢"
+  },
+  "place value": {
+    "word": "place value",
+    "definition": "the value a digit has because of its position in a number",
+    "variations": [
+      "place value",
+      "place values"
+    ],
+    "emoji": "📍🔢"
+  },
+  "plane figure": {
+    "word": "plane figure",
+    "definition": "A flat shape drawn on a flat surface.",
+    "variations": [
+      "plane figure",
+      "plane figures"
+    ],
+    "emoji": "📄🔺"
+  },
+  "plane shape": {
+    "word": "plane shape",
+    "definition": "a flat shape that has length and width but no thickness",
+    "variations": [
+      "plane shape",
+      "plane shapes",
+      "plane figure",
+      "plane figures"
+    ],
+    "emoji": "⬜📐"
+  },
+  "planted": {
+    "word": "planted",
+    "definition": "put seeds or young plants into the ground to grow",
+    "variations": [
+      "plant",
+      "planted",
+      "planting",
+      "plants"
+    ],
+    "emoji": "🌱🪴"
+  },
+  "player": {
+    "word": "player",
+    "definition": "a person who takes part in a game",
+    "variations": [
+      "player",
+      "players"
+    ],
+    "emoji": "🧍🎲"
+  },
+  "point": {
+    "word": "point",
+    "definition": "an exact place or position",
+    "variations": [
+      "point",
+      "points"
+    ],
+    "emoji": "📍•"
+  },
+  "position": {
+    "word": "position",
+    "definition": "the place where something is found or written",
+    "variations": [
+      "position",
+      "positions"
+    ],
+    "emoji": "📍↔️"
+  },
+  "practice": {
+    "word": "practice",
+    "definition": "doing something again to get better at it",
+    "variations": [
+      "practice",
+      "practices",
+      "practised",
+      "practising"
+    ],
+    "emoji": "✍️🔁"
+  },
+  "primary school": {
+    "word": "primary school",
+    "definition": "a school for young children in the first years of education",
+    "variations": [
+      "primary school",
+      "primary schools"
+    ],
+    "emoji": "🏫👧"
+  },
+  "principle": {
+    "word": "principle",
+    "definition": "a basic rule or important idea",
+    "variations": [
+      "principle",
+      "principles"
+    ],
+    "emoji": "📚💡"
+  },
+  "process": {
+    "word": "process",
+    "definition": "a series of steps done in order to reach an answer or result",
+    "variations": [
+      "process",
+      "processes"
+    ],
+    "emoji": "🪜➡️"
+  },
+  "pupil": {
+    "word": "pupil",
+    "definition": "a child who is learning at school",
+    "variations": [
+      "pupil",
+      "pupils"
+    ],
+    "emoji": "🧒🏫"
+  },
+  "pupils": {
+    "word": "pupils",
+    "definition": "children who are learning at school",
+    "variations": [
+      "pupil",
+      "pupils"
+    ],
+    "emoji": "🧒📚"
+  },
+  "pyramid": {
+    "word": "pyramid",
+    "definition": "a 3D shape with a base and triangular sides that meet at a point",
+    "variations": [
+      "pyramid",
+      "pyramids"
+    ],
+    "emoji": "🔺🏔️"
+  },
+  "quarter": {
+    "word": "quarter",
+    "definition": "one of four equal parts of something",
+    "variations": [
+      "quarter",
+      "quarters"
+    ],
+    "emoji": "1️⃣4️⃣🟦"
+  },
+  "question": {
+    "word": "question",
+    "definition": "something that asks for an answer",
+    "variations": [
+      "question",
+      "questions"
+    ],
+    "emoji": "❓📝"
+  },
+  "reach": {
+    "word": "reach",
+    "definition": "to get to a place or point",
+    "variations": [
+      "reach",
+      "reaches",
+      "reached",
+      "reaching"
+    ],
+    "emoji": "🏁➡️"
+  },
+  "read": {
+    "word": "read",
+    "definition": "to look at words or numbers and say or understand them",
+    "variations": [
+      "read",
+      "reads",
+      "reading"
+    ],
+    "emoji": "📖👀"
+  },
+  "received": {
+    "word": "received",
+    "definition": "got or was given something",
+    "variations": [
+      "receive",
+      "received",
+      "receives",
+      "receiving"
+    ],
+    "emoji": "📥🎁"
+  },
+  "recognise": {
+    "word": "recognise",
+    "definition": "to know or identify something when you see, hear, or read it",
+    "variations": [
+      "recognise",
+      "recognises",
+      "recognised",
+      "recognising",
+      "recognizing",
+      "recognized",
+      "recognizes",
+      "recognizing"
+    ],
+    "emoji": "👀🧠"
+  },
+  "recognize": {
+    "word": "recognize",
+    "definition": "to know or identify something when you see it",
+    "variations": [
+      "recognize",
+      "recognizing",
+      "recognized"
+    ],
+    "emoji": "👀✅"
+  },
+  "record": {
+    "word": "record",
+    "definition": "to write down information so it can be kept and used later",
+    "variations": [
+      "record",
+      "records",
+      "recorded",
+      "recording"
+    ],
+    "emoji": "📝📋"
+  },
+  "rectangle": {
+    "word": "rectangle",
+    "definition": "a flat shape with four sides and four right angles",
+    "variations": [
+      "rectangle",
+      "rectangles"
+    ],
+    "emoji": "▭📏"
+  },
+  "region": {
+    "word": "region",
+    "definition": "an area or part of a shape",
+    "variations": [
+      "region",
+      "regions"
+    ],
+    "emoji": "⬜🔷"
+  },
+  "regroup": {
+    "word": "regroup",
+    "definition": "to change a value into another form of equal value, such as 1 ten into 10 ones, to help calculate",
+    "variations": [
+      "regroup",
+      "regroups",
+      "regrouped",
+      "regrouping"
+    ],
+    "emoji": "🔄🔟1️⃣"
+  },
+  "regrouping": {
+    "word": "regrouping",
+    "definition": "moving a value to the next place when a place is too large, such as making 10 ones into 1 ten",
+    "variations": [
+      "regroup",
+      "regroups",
+      "regrouped",
+      "regrouping"
+    ],
+    "emoji": "🔄🔟"
+  },
+  "remain": {
+    "word": "remain",
+    "definition": "to be left after some amount is taken away or used",
+    "variations": [
+      "remain",
+      "remains",
+      "remained",
+      "remaining"
+    ],
+    "emoji": "↩️📉"
+  },
+  "remaining": {
+    "word": "remaining",
+    "definition": "left after some part has been taken away",
+    "variations": [
+      "remain",
+      "remaining",
+      "remains"
+    ],
+    "emoji": "↩️📦"
+  },
+  "repeated addition": {
+    "word": "repeated addition",
+    "definition": "adding the same number again and again",
+    "variations": [
+      "repeated addition"
+    ],
+    "emoji": "➕🔁"
+  },
+  "repeated subtraction": {
+    "word": "repeated subtraction",
+    "definition": "subtracting the same number again and again until nothing is left or until you reach zero",
+    "variations": [
+      "repeated subtraction",
+      "subtract",
+      "subtracts",
+      "subtracted",
+      "subtracting",
+      "subtraction"
+    ],
+    "emoji": "➖🔁"
+  },
+  "represent": {
+    "word": "represent",
+    "definition": "to stand for or show something",
+    "variations": [
+      "represent",
+      "represents",
+      "represented",
+      "representing"
+    ],
+    "emoji": "🔣➡️"
+  },
+  "represented": {
+    "word": "represented",
+    "definition": "shown by a sign, symbol, picture, or another form",
+    "variations": [
+      "represent",
+      "represents",
+      "represented",
+      "representing"
+    ],
+    "emoji": "🔣👀"
+  },
+  "rhombus": {
+    "word": "rhombus",
+    "definition": "a flat shape with four equal sides",
+    "variations": [
+      "rhombus",
+      "rhombuses",
+      "rhombi"
+    ],
+    "emoji": "💠🔷"
+  },
+  "roll": {
+    "word": "roll",
+    "definition": "to throw or turn a die so that it lands and shows a number",
+    "variations": [
+      "roll",
+      "rolls",
+      "rolled",
+      "rolling"
+    ],
+    "emoji": "🎲↪️"
+  },
+  "rope": {
+    "word": "rope",
+    "definition": "a strong thick string used for tying or measuring",
+    "variations": [
+      "rope",
+      "ropes"
+    ],
+    "emoji": "🪢"
+  },
+  "row": {
+    "word": "row",
+    "definition": "a horizontal line of numbers or boxes in a table or chart",
+    "variations": [
+      "row",
+      "rows"
+    ],
+    "emoji": "📋↔️"
+  },
+  "rubber": {
+    "word": "rubber",
+    "definition": "an object used to remove pencil marks from paper",
+    "variations": [
+      "rubber",
+      "rubbers"
+    ],
+    "emoji": "✏️🧽"
+  },
+  "ruler": {
+    "word": "ruler",
+    "definition": "a straight tool used for measuring and drawing lines",
+    "variations": [
+      "ruler",
+      "rulers"
+    ],
+    "emoji": "📏"
+  },
+  "score": {
+    "word": "score",
+    "definition": "the number of points a player gets in a game",
+    "variations": [
+      "score",
+      "scores"
+    ],
+    "emoji": "🏆🔢"
+  },
+  "screen": {
+    "word": "screen",
+    "definition": "the part of a computer or phone where words and pictures appear",
+    "variations": [
+      "screen",
+      "screens"
+    ],
+    "emoji": "🖥️📱"
+  },
+  "seedling": {
+    "word": "seedling",
+    "definition": "a very young plant",
+    "variations": [
+      "seedling",
+      "seedlings"
+    ],
+    "emoji": "🌱"
+  },
+  "seedlings": {
+    "word": "seedlings",
+    "definition": "very young plants",
+    "variations": [
+      "seedling",
+      "seedlings"
+    ],
+    "emoji": "🌱🪴"
+  },
+  "sentence": {
+    "word": "sentence",
+    "definition": "a group of words that makes a complete meaning",
+    "variations": [
+      "sentence",
+      "sentences"
+    ],
+    "emoji": "📝📖"
+  },
+  "sequence": {
+    "word": "sequence",
+    "definition": "a set of numbers or things arranged in a particular order",
+    "variations": [
+      "sequence",
+      "sequences"
+    ],
+    "emoji": "🔢➡️"
+  },
+  "sequentially": {
+    "word": "sequentially",
+    "definition": "in an order that follows one after another",
+    "variations": [
+      "sequentially",
+      "sequential"
+    ],
+    "emoji": "➡️🔢"
+  },
+  "shade": {
+    "word": "shade",
+    "definition": "to colour part of a shape or picture",
+    "variations": [
+      "shade",
+      "shaded",
+      "shading",
+      "shades"
+    ],
+    "emoji": "🖍️⬛"
+  },
+  "shaded": {
+    "word": "shaded",
+    "definition": "filled with colour or darker marking",
+    "variations": [
+      "shade",
+      "shaded",
+      "shading"
+    ],
+    "emoji": "🖍️⬛"
+  },
+  "shape": {
+    "word": "shape",
+    "definition": "The form of an object or figure.",
+    "variations": [
+      "shape",
+      "shapes"
+    ],
+    "emoji": "🔷⭕"
+  },
+  "share": {
+    "word": "share",
+    "definition": "to divide something and give parts to others",
+    "variations": [
+      "share",
+      "shared",
+      "sharing",
+      "shares"
+    ],
+    "emoji": "🤝➗"
+  },
+  "shillings": {
+    "word": "shillings",
+    "definition": "units of money used in some countries.",
+    "variations": [
+      "shilling",
+      "shillings"
+    ],
+    "emoji": "💵🪙"
+  },
+  "shopkeeper": {
+    "word": "shopkeeper",
+    "definition": "a person who owns or works in a shop",
+    "variations": [
+      "shopkeeper",
+      "shopkeepers"
+    ],
+    "emoji": "🏪🧑‍💼"
+  },
+  "short form": {
+    "word": "short form",
+    "definition": "a way of writing a number as one whole number instead of splitting it into parts",
+    "variations": [
+      "short form",
+      "short forms"
+    ],
+    "emoji": "🔢✍️"
+  },
+  "shortest": {
+    "word": "shortest",
+    "definition": "smaller in length or height than all the others",
+    "variations": [
+      "short",
+      "shorter",
+      "shortest"
+    ],
+    "emoji": "📏⬇️"
+  },
+  "skill": {
+    "word": "skill",
+    "definition": "the ability to do something well",
+    "variations": [
+      "skill",
+      "skills"
+    ],
+    "emoji": "🎓💪"
+  },
+  "smallest": {
+    "word": "smallest",
+    "definition": "having the least size or value in a group",
+    "variations": [
+      "small",
+      "smaller",
+      "smallest"
+    ],
+    "emoji": "🔽1️⃣"
+  },
+  "soda": {
+    "word": "soda",
+    "definition": "a sweet fizzy drink",
+    "variations": [
+      "soda",
+      "sodas"
+    ],
+    "emoji": "🥤"
+  },
+  "solution": {
+    "word": "solution",
+    "definition": "the answer to a problem, or the method used to find the answer",
+    "variations": [
+      "solution",
+      "solutions"
+    ],
+    "emoji": "✅💡"
+  },
+  "sphere": {
+    "word": "sphere",
+    "definition": "a round 3D shape like a ball",
+    "variations": [
+      "sphere",
+      "spheres"
+    ],
+    "emoji": "⚽🔵"
+  },
+  "sports uniforms": {
+    "word": "sports uniforms",
+    "definition": "special clothes worn for sports",
+    "variations": [
+      "sports uniform",
+      "sports uniforms"
+    ],
+    "emoji": "👕🏃"
+  },
+  "square": {
+    "word": "square",
+    "definition": "a flat shape with four equal sides and four right angles",
+    "variations": [
+      "square",
+      "squares"
+    ],
+    "emoji": "⬜📏"
+  },
+  "standard": {
+    "word": "standard",
+    "definition": "normal or commonly accepted for measuring",
+    "variations": [
+      "standard",
+      "standards"
+    ],
+    "emoji": "📐"
+  },
+  "step": {
+    "word": "step",
+    "definition": "one stage in doing something",
+    "variations": [
+      "step",
+      "steps"
+    ],
+    "emoji": "👣1️⃣"
+  },
+  "straight line": {
+    "word": "straight line",
+    "definition": "a line that does not bend or curve",
+    "variations": [
+      "straight line",
+      "straight lines"
+    ],
+    "emoji": "📏➖"
+  },
+  "subtract": {
+    "word": "subtract",
+    "definition": "to take one number away from another",
+    "variations": [
+      "subtract",
+      "subtracts",
+      "subtracted",
+      "subtracting"
+    ],
+    "emoji": "➖🔢"
+  },
+  "subtracted": {
+    "word": "subtracted",
+    "definition": "taken away from a number",
+    "variations": [
+      "subtract",
+      "subtracted",
+      "subtracting",
+      "subtracts"
+    ],
+    "emoji": "➖🔢"
+  },
+  "subtraction": {
+    "word": "subtraction",
+    "definition": "the process of taking one number away from another",
+    "variations": [
+      "subtraction",
+      "subtractions"
+    ],
+    "emoji": "➖🔢"
+  },
+  "sufficient": {
+    "word": "sufficient",
+    "definition": "enough for what is needed",
+    "variations": [
+      "sufficient",
+      "insufficient"
+    ],
+    "emoji": "✅👌"
+  },
+  "sum": {
+    "word": "sum",
+    "definition": "the total you get when numbers are added together",
+    "variations": [
+      "sum",
+      "sums"
+    ],
+    "emoji": "➕🧮"
+  },
+  "table": {
+    "word": "table",
+    "definition": "an arrangement of numbers or words in rows and columns",
+    "variations": [
+      "table",
+      "tables"
+    ],
+    "emoji": "📋🔢"
+  },
+  "tape measure": {
+    "word": "tape measure",
+    "definition": "a long flexible strip used to measure length or height",
+    "variations": [
+      "tape measure",
+      "tape measures"
+    ],
+    "emoji": "📏🪢"
+  },
+  "tens": {
+    "word": "tens",
+    "definition": "the place in a number that shows how many groups of 10 there are",
+    "variations": [
+      "ten",
+      "tens",
+      "one ten"
+    ],
+    "emoji": "🔟🔢"
+  },
+  "therefore": {
+    "word": "therefore",
+    "definition": "for that reason; it shows the final result or conclusion",
+    "variations": [
+      "therefore"
+    ],
+    "emoji": "➡️✅"
+  },
+  "throw": {
+    "word": "throw",
+    "definition": "to send something through the air with your hand",
+    "variations": [
+      "throw",
+      "throws",
+      "throwing",
+      "threw",
+      "thrown"
+    ],
+    "emoji": "🤾🖐️"
+  },
+  "tool": {
+    "word": "tool",
+    "definition": "an object used to do a job or task",
+    "variations": [
+      "tool",
+      "tools"
+    ],
+    "emoji": "🧰"
+  },
+  "total": {
+    "word": "total",
+    "definition": "the whole amount after adding everything together.",
+    "variations": [
+      "total",
+      "totals"
+    ],
+    "emoji": "🧮➕"
+  },
+  "total value": {
+    "word": "total value",
+    "definition": "the full amount a digit is worth in a number because of its place",
+    "variations": [
+      "total value",
+      "total values"
+    ],
+    "emoji": "➕💯🔢"
+  },
+  "tourist": {
+    "word": "tourist",
+    "definition": "a person who travels to visit a place",
+    "variations": [
+      "tourist",
+      "tourists"
+    ],
+    "emoji": "🧳🌍"
+  },
+  "training": {
+    "word": "training",
+    "definition": "teaching or practice to help people learn skills",
+    "variations": [
+      "training",
+      "trainings"
+    ],
+    "emoji": "📘👥"
+  },
+  "trapezium": {
+    "word": "trapezium",
+    "definition": "a flat shape with one pair of parallel sides",
+    "variations": [
+      "trapezium",
+      "trapeziums",
+      "trapezia"
+    ],
+    "emoji": "🔷📐"
+  },
+  "triangle": {
+    "word": "triangle",
+    "definition": "a flat shape with three sides and three corners",
+    "variations": [
+      "triangle",
+      "triangles"
+    ],
+    "emoji": "🔺📏"
+  },
+  "two-digit number": {
+    "word": "two-digit number",
+    "definition": "a number made of two digits, such as 24 or 33",
+    "variations": [
+      "two-digit number",
+      "two-digit numbers"
+    ],
+    "emoji": "🔢2️⃣"
+  },
+  "two-thirds": {
+    "word": "two-thirds",
+    "definition": "two out of three equal parts",
+    "variations": [
+      "two-thirds",
+      "two thirds",
+      "2/3"
+    ],
+    "emoji": "2️⃣3️⃣🍰"
+  },
+  "uniforms": {
+    "word": "uniforms",
+    "definition": "special clothes worn by members of the same school or group",
+    "variations": [
+      "uniform",
+      "uniforms"
+    ],
+    "emoji": "👕🏫"
+  },
+  "value": {
+    "word": "value",
+    "definition": "the amount a number or digit is worth",
+    "variations": [
+      "value",
+      "values"
+    ],
+    "emoji": "💯"
+  },
+  "vertical": {
+    "word": "vertical",
+    "definition": "going up and down",
+    "variations": [
+      "vertical",
+      "vertically"
+    ],
+    "emoji": "↕️"
+  },
+  "vertically": {
+    "word": "vertically",
+    "definition": "in an up-and-down way, down the page",
+    "variations": [
+      "vertical",
+      "vertically"
+    ],
+    "emoji": "↕️"
+  },
+  "village": {
+    "word": "village",
+    "definition": "a small group of homes and people living together in one place",
+    "variations": [
+      "village",
+      "villages"
+    ],
+    "emoji": "🏘️"
+  },
+  "villager": {
+    "word": "villager",
+    "definition": "a person who lives in a village",
+    "variations": [
+      "villager",
+      "villagers"
+    ],
+    "emoji": "🏡🌳"
+  },
+  "villagers": {
+    "word": "villagers",
+    "definition": "people who live in a village",
+    "variations": [
+      "villager",
+      "villagers"
+    ],
+    "emoji": "🏘️👨‍👩‍👧‍👦"
+  },
+  "volume": {
+    "word": "volume",
+    "definition": "The amount of space that an object takes up or can hold.",
+    "variations": [
+      "volume",
+      "volumes"
+    ],
+    "emoji": "📦📏"
+  },
+  "whole": {
+    "word": "whole",
+    "definition": "all of something; the complete amount",
+    "variations": [
+      "whole",
+      "wholes"
+    ],
+    "emoji": "🧩⭕"
+  },
+  "whole object": {
+    "word": "whole object",
+    "definition": "a complete thing with no part missing",
+    "variations": [
+      "whole object",
+      "whole objects"
+    ],
+    "emoji": "⭕📦"
+  },
+  "winner": {
+    "word": "winner",
+    "definition": "the person who does best in a game or comes first",
+    "variations": [
+      "winner",
+      "winners"
+    ],
+    "emoji": "🏆🥇"
+  },
+  "women": {
+    "word": "women",
+    "definition": "adult female people",
+    "variations": [
+      "woman",
+      "women"
+    ],
+    "emoji": "👩"
+  },
+  "word problem": {
+    "word": "word problem",
+    "definition": "a maths question written in sentences using a real-life situation",
+    "variations": [
+      "word problem",
+      "word problems"
+    ],
+    "emoji": "📝❓"
+  },
+  "write": {
+    "word": "write",
+    "definition": "to make letters, words, or numbers on paper or another surface",
+    "variations": [
+      "write",
+      "writes",
+      "writing",
+      "written"
+    ],
+    "emoji": "✍️📝"
+  },
+  "zero": {
+    "word": "zero",
+    "definition": "the number 0; it means nothing or no amount",
+    "variations": [
+      "zero",
+      "zeros"
+    ],
+    "emoji": "0️⃣"
+  }
+}
