@@ -13,6 +13,17 @@
     :root { --dock:var(--dock-height,96px); color-scheme:light; }
     html,body { margin:0; min-height:100%; }
     body { overflow-x:hidden; overflow-y:auto; background:#edf7fb; }
+    .cover-narration {
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip-path:inset(50%);
+      white-space:nowrap;
+      border:0;
+    }
     .cover-shell {
       box-sizing:border-box;
       display:grid;
@@ -38,8 +49,9 @@
 <body>
   <main id="content" class="cover-shell">
     <section data-section-id="cover_sec001" aria-label="Front cover">
-      <img class="front-cover" src="images/arithmetic_std_2_front_cover.png"
-        alt="Front cover of Arithmetic Pupil’s Book Standard Two. A pupil holds balloons numbered 100 to 900. A die, measuring tape, rope, and a place-value abacus illustrate arithmetic concepts. Published by the Tanzania Institute of Education.">
+      <p class="cover-narration" data-id="cover_p001">Front cover. Arithmetic. Pupil’s Book. Standard Two. Tanzania Institute of Education. Property of the Government of the United Republic of Tanzania, Not for Sale. The cover has a dark pink background. A pupil in a white shirt and blue shorts holds nine colourful balloons, numbered one hundred, two hundred, three hundred, four hundred, five hundred, six hundred, seven hundred, eight hundred, and nine hundred. Around the pupil are a die, a coil of rope, a measuring tape, and a place-value abacus with columns labelled hundreds, tens, and ones. The Tanzania Institute of Education logo appears beside the publisher’s name.</p>
+      <img aria-hidden="true" class="front-cover" src="images/arithmetic_std_2_front_cover.png"
+        alt="Front cover. Arithmetic. Pupil’s Book. Standard Two. Tanzania Institute of Education. Property of the Government of the United Republic of Tanzania, Not for Sale. The cover has a dark pink background. A pupil in a white shirt and blue shorts holds nine colourful balloons, numbered one hundred, two hundred, three hundred, four hundred, five hundred, six hundred, seven hundred, eight hundred, and nine hundred. Around the pupil are a die, a coil of rope, a measuring tape, and a place-value abacus with columns labelled hundreds, tens, and ones. The Tanzania Institute of Education logo appears beside the publisher’s name.">
     </section>
   </main>
   <div class="relative z-50" id="interface-container"></div>

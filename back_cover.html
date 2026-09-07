@@ -13,6 +13,17 @@
     :root { --dock:var(--dock-height,96px); color-scheme:light; }
     html,body { margin:0; min-height:100%; }
     body { overflow-x:hidden; overflow-y:auto; background:#edf7fb; }
+    .cover-narration {
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip-path:inset(50%);
+      white-space:nowrap;
+      border:0;
+    }
     .cover-shell {
       box-sizing:border-box;
       display:grid;
@@ -38,8 +49,9 @@
 <body>
   <main id="content" class="cover-shell">
     <section data-section-id="back_cover_sec001" aria-label="Back cover">
-      <img class="back-cover" src="images/arithmetic_std_2_back_cover.png"
-        alt="Back cover of Arithmetic Pupil’s Book Standard Two. It shows five other Standard Two books published by the Tanzania Institute of Education and the ISBN barcode 978-9912-753-59-4.">
+      <p class="cover-narration" data-id="back_cover_p001">Back cover. Other Books by Tanzania Institute of Education. Standard Two. Five book covers are displayed in two rows. From left to right, the top row shows: Writing, Pupil’s Book, Standard Two, with two pupils writing at a desk. Learn English, Pupil’s Book, Standard Two, English Medium Schools, with a teacher and pupils in a classroom. Culture, Art and Sports, Pupil’s Book, Standard Two, with pictures of dancing, a traditional house, sport, and a group activity. The bottom row shows: Health and Environment, Pupil’s Book, Standard Two, with a school and its surroundings. Kusoma, Kitabu cha Mwanafunzi, English Medium Schools, Darasa la Pili, with two pupils reading words on a blackboard. The Tanzania Institute of Education logo appears at the top. Below the books is a barcode labelled ISBN 978-9912-753-59-4. At the bottom, the cover reads: Property of the Government of the United Republic of Tanzania, Not for Sale.</p>
+      <img aria-hidden="true" class="back-cover" src="images/arithmetic_std_2_back_cover.png"
+        alt="Back cover. Other Books by Tanzania Institute of Education. Standard Two. Five book covers are displayed in two rows. From left to right, the top row shows: Writing, Pupil’s Book, Standard Two, with two pupils writing at a desk. Learn English, Pupil’s Book, Standard Two, English Medium Schools, with a teacher and pupils in a classroom. Culture, Art and Sports, Pupil’s Book, Standard Two, with pictures of dancing, a traditional house, sport, and a group activity. The bottom row shows: Health and Environment, Pupil’s Book, Standard Two, with a school and its surroundings. Kusoma, Kitabu cha Mwanafunzi, English Medium Schools, Darasa la Pili, with two pupils reading words on a blackboard. The Tanzania Institute of Education logo appears at the top. Below the books is a barcode labelled ISBN 978-9912-753-59-4. At the bottom, the cover reads: Property of the Government of the United Republic of Tanzania, Not for Sale.">
     </section>
   </main>
   <div class="relative z-50" id="interface-container"></div>
