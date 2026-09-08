@@ -27,18 +27,63 @@ assert.deepEqual(
 
 assert.match(
   page,
-  /class="narration-only" data-id="pg037_im008">Example 1 showing 223 \+ 345 by place value:/,
-  "the example description must be hidden text so its timed words can drive visible highlighting",
+  /class="narration-only" data-id="pg037_im008">In the hundreds column, two green counters/,
 );
-assert.match(bridge, /function buildPage37ExampleMap/);
-for (const id of [
-  "pg037_p007", "pg037_p008", "pg037_p009", "pg037_p010", "pg037_p011",
-  "pg037_p012", "pg037_p013", "pg037_p014", "pg037_p015", "pg037_p016",
-  "pg037_p017", "pg037_p018", "pg037_p019", "pg037_p020", "pg037_p021",
-]) {
-  assert.match(bridge, new RegExp(`"${id}"`), `${id} must be an example-highlight target`);
+assert.ok(page.indexOf('data-id="pg037_p008"') < page.indexOf('data-id="pg037_im008"'));
+assert.ok(page.indexOf('data-id="pg037_im008"') < page.indexOf('class="place-model-grid"'));
+assert.equal(audios.pg037_im008, "pg037_im008_alloy.mp3");
+assert.ok(fs.statSync(`content/i18n/en-GB/audio/${audios.pg037_im008}`).size > 1000);
+const words = timecodes.pg037_im008.timecodes[1].word_timestamps;
+assert.equal(words.length, 60);
+for (let i = 0; i < words.length; i++) {
+  assert.ok(words[i].end >= words[i].start);
+  if (i) assert.ok(words[i].start >= words[i - 1].end);
 }
-assert.equal(audios.pg037_im008, "pg037_im008.mp3");
-assert.equal(timecodes.pg037_im008.timecodes[1].word_timestamps.length, 43);
 
-console.log("Page 37 chapter and example narrations map to their visible text in order.");
+// Exercise the actual mapping with distinct targets for each counter group.
+const { runInNewContext } = await import("node:vm");
+const functionSource = bridge.slice(bridge.indexOf("  function buildPage37ExampleMap("), bridge.indexOf("  function buildPage39ModelMap("));
+const mapExample = runInNewContext(`(${functionSource.trim()})`);
+const columns = Array.from({ length: 3 }, (_, index) => ({
+  header: { name: `header-${index}` },
+  counters: [0, 1, 2].map(row => ({ name: `counters-${index}-${row}` })),
+  words: [0, 1, 2].map(row => ({ name: `word-${index}-${row}` })),
+  querySelector() { return this.header; },
+  querySelectorAll(selector) { return selector === ".counter-row" ? this.counters : this.words; },
+}));
+const source = {
+  getAttribute() { return "pg037_im008"; },
+  closest() { return { querySelectorAll() { return columns; } }; },
+};
+const mapping = mapExample(null, source, words);
+columns.forEach((column, index) => {
+  const offset = index * 20;
+  assert.equal(mapping[offset + 2], column.header);
+  assert.equal(mapping[offset + 4], column.counters[0]);
+  assert.equal(mapping[offset + 8], column.words[0]);
+  assert.equal(mapping[offset + 10], column.counters[1]);
+  assert.equal(mapping[offset + 13], column.words[1]);
+  assert.equal(mapping[offset + 14], column.counters[2]);
+  assert.equal(mapping[offset + 18], column.words[2]);
+  assert.equal(mapping[offset + 19], column.header);
+});
+console.log("Page 37 chapter and counter descriptions highlight their visible targets in order.");
+
+for (const [id, expected] of [
+  ["pg037_p007", ["Example", "1"]],
+  ["pg037_p008", ["223", "+", "345", "="]],
+  ["pg037_p021", ["Therefore", "345", "+", "223", "=", "568"]],
+]) {
+  assert.equal(audios[id], `${id}_alloy.mp3`);
+  assert.ok(fs.statSync(`content/i18n/en-GB/audio/${audios[id]}`).size > 1000);
+  assert.deepEqual(timecodes[id].timecodes[1].word_timestamps.map(word => word.text), expected);
+}
+const offlineSource = fs.readFileSync("assets/offline-data.js", "utf8");
+const start = offlineSource.indexOf("  var INLINE = ") + "  var INLINE = ".length;
+const offline = JSON.parse(offlineSource.slice(start, offlineSource.indexOf(";\n  var BASE_DIR", start)));
+for (const id of ["pg037_p007", "pg037_p008", "pg037_im008", "pg037_p021"]) {
+  assert.equal(offline["./content/i18n/en-GB/audios.json"][id], audios[id]);
+  assert.deepEqual(offline["./content/i18n/en-GB/timecode/timecode_output.json"][id], timecodes[id]);
+}
+
+assert.ok(page.indexOf('data-id="pg037_p007"') < page.indexOf('data-id="pg037_p008"'));

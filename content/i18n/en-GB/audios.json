@@ -1428,7 +1428,7 @@
   "pg036_p048": "pg036_p048.mp3",
   "pg037_p005": "pg037_p005.mp3",
   "pg037_p006": "pg037_p006.mp3",
-  "pg037_im008": "pg037_im008.mp3",
+  "pg037_im008": "pg037_im008_alloy.mp3",
   "pg038_p002": "pg038_p002.mp3",
   "pg038_p001": "pg038_p001.mp3",
   "pg037_im007": "pg037_im007.mp3",
@@ -1962,5 +1962,8 @@
   "pg143_p999": "end_of_page_elimu_neural.mp3",
   "pg144_p999": "end_of_page_elimu_neural.mp3",
   "cover_p001": "cover_p001_complete.mp3",
-  "back_cover_p001": "back_cover_p001_complete.mp3"
+  "back_cover_p001": "back_cover_p001_complete.mp3",
+  "pg037_p008": "pg037_p008_alloy.mp3",
+  "pg037_p021": "pg037_p021_alloy.mp3",
+  "pg037_p007": "pg037_p007_alloy.mp3"
 }

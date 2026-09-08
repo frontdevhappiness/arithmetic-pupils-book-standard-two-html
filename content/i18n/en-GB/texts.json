@@ -1796,7 +1796,7 @@
   "pg036_p092": "missing number",
   "pg036_p093": "missing number",
   "pg037_p000": "31",
-  "pg037_im008": "Example 1 showing 223 + 345 by place value: 2 hundreds added to 3 hundreds equals 5 hundreds, 2 tens added to 4 tens equals 6 tens, and 3 ones added to 5 ones equals 8 ones; therefore 345 + 223 = 568.",
+  "pg037_im008": "In the hundreds column, two green counters are added to three green counters. Equals five green counters, or five hundreds. In the tens column, two blue counters are added to four blue counters. Equals six blue counters, or six tens. In the ones column, three red counters are added to five red counters. Equals eight red counters, or eight ones.",
   "pg037_p001": "Adding numbers not exceeding 999",
   "pg037_p002": "Numbers can be added horizontally or vertically. Addition is done by considering the place value of each digit in a number.",
   "pg037_p003": "",
