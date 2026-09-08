@@ -53,7 +53,7 @@ test("page 24 preserves approved narration order", () => {
   }
 });
 
-test("the three approved row descriptions remain unchanged", () => {
+test("the three row descriptions match the image alternatives", () => {
   for (const id of ["pg024_im001", "pg024_im002", "pg024_im003"]) {
     assert.ok(html.includes(`alt="${texts[id]}" data-id="${id}"`));
     assert.equal((html.match(new RegExp(`data-id="${id}"`, "g")) || []).length, 1);

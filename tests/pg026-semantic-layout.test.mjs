@@ -41,16 +41,16 @@ test("page 26 preserves the printed reading order", () => {
   }
 });
 
-test("exercise questions narrate only their printed numbers", () => {
+test("exercise questions describe their printed numbers and digit guide lines", () => {
   const expected = {
-    pg026_im002: "224",
-    pg026_im003: "185",
-    pg026_im004: "402",
-    pg026_im005: "306"
+    pg026_im002: "two hundred and twenty-four",
+    pg026_im003: "one hundred and eighty-five",
+    pg026_im004: "four hundred and two",
+    pg026_im005: "three hundred and six"
   };
   for (const [id, value] of Object.entries(expected)) {
-    assert.equal(texts[id], value);
-    assert.ok(html.includes(`alt="${value}" data-id="${id}"`));
+    assert.ok(texts[id].startsWith(`The number shown is ${value}.`));
+    assert.ok(html.includes(`alt="${texts[id]}" data-id="${id}"`));
   }
   assert.doesNotMatch(html, /coloured guide lines|colored guide lines|represents [0-9]+ hundreds/i);
 });

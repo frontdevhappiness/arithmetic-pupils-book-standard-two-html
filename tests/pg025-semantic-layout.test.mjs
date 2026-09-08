@@ -42,7 +42,7 @@ test("page 25 preserves approved narration order", () => {
   }
 });
 
-test("all six approved image descriptions remain unchanged", () => {
+test("all six stick descriptions match the image alternatives", () => {
   for (let number = 1; number <= 6; number += 1) {
     const id = `pg025_im${String(number).padStart(3, "0")}`;
     assert.ok(html.includes(`alt="${texts[id]}" data-id="${id}"`));

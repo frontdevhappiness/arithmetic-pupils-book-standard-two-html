@@ -54,8 +54,8 @@ test("all approved spoken IDs retain audio mappings", () => {
 test("earlier narration corrections are preserved", () => {
   assert.equal(texts.pg028_p016, "3. 0 hundreds 6 tens 9 ones =");
   assert.equal(texts.pg029_p012, "4. 3 tens 5 ones");
-  assert.equal(texts.pg031_im003, "An abacus with 0 hundreds, 3 tens, and 3 ones.");
-  assert.equal(texts.pg031_im005, "An abacus with 1 hundred, 3 tens, and 3 ones.");
+  assert.equal(texts.pg031_im003, "The hundreds stick on the left has no caps. The tens stick in the middle has three blue caps. The ones stick on the right has three red caps.");
+  assert.equal(texts.pg031_im005, "The hundreds stick on the left has one green cap. The tens stick in the middle has three blue caps. The ones stick on the right has three red caps.");
   assert.match(page(28).html, /data-id="pg028_p016"/);
   assert.match(page(29).html, /data-id="pg029_p012"/);
   assert.match(page(31).html, /data-id="pg031_im003"/);
