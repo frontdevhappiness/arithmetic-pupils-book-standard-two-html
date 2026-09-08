@@ -81,7 +81,7 @@ const page9 = read("pg009_sec001.html");
 assert.match(page9, /data-id="pg009_im002"[^>]*role="presentation"[^>]*aria-hidden="true"/, "duplicate question panel must be decorative");
 assert.equal(audios.pg009_im002, undefined, "duplicate question panel must not have narration audio");
 assert.ok(audios.pg009_im001, "the children-and-ball illustration must have narration audio");
-assert.ok(texts.pg009_im001?.startsWith("Ten schoolchildren"), "the main illustration must have a useful description");
+assert.ok(texts.pg009_im001?.startsWith("Ten pupils"), "the main illustration must have a useful description");
 assert.match(page9, /\[\s*"pg009_im001",\s*"pg009_p046"[\s\S]*root\.insertBefore\(element, question\)/, "the illustration and labels must be narrated before the question");
 
 const page10 = read("pg010_sec001.html");
