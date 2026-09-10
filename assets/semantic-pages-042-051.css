@@ -41,7 +41,7 @@
 .compact-equation span:nth-child(2) { justify-self:start; margin-right:5rem; }
 .compact-equation span:last-child { width:100%; padding-bottom:.15rem; border-bottom:.12rem solid var(--ink); text-align:right; }
 .place-sum { width:min(100%,17rem); margin:.2rem auto; }
-.place-head { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.35rem; margin:0 0 .25rem 2rem; font-size:clamp(.85rem,2vw,1.08rem); font-style:italic; text-align:center; }
+.place-head { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.35rem; margin:0 0 .25rem 2rem; font-size:clamp(.85rem,2vw,1.08rem); font-style:normal; text-align:center; }
 .place-sum-grid { display:grid; grid-template-columns:2rem repeat(3,minmax(2.25rem,1fr)); align-items:center; font-size:clamp(1.2rem,3vw,1.75rem); line-height:1.3; text-align:center; }
 .place-sum-grid > i { grid-column:1/-1; height:.1rem; margin:.12rem 0; background:var(--ink); }
 .place-sum-grid .wide-result { grid-column:2/-1; letter-spacing:.55em; text-align:center; }

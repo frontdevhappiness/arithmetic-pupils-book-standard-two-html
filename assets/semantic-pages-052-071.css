@@ -55,7 +55,7 @@ body { overflow:auto !important; background:#eef9ff; }
 .vertical-sum .op { float:left; letter-spacing:0; margin-left:-1.1rem; }
 .vertical-sum .sum-rule { clear:both; border-top:2px solid var(--math-ink); margin:.25rem 0 .9rem; }
 .place-sum { display:grid; grid-template-columns:1.5rem repeat(3,1fr); width:min(100%,15rem); margin:.3rem auto; text-align:center; font-size:1.3rem; }
-.place-sum .labels { grid-column:2 / -1; display:grid; grid-template-columns:repeat(3,1fr); font-size:.93rem; font-style:italic; margin-bottom:.45rem; }
+.place-sum .labels { grid-column:2 / -1; display:grid; grid-template-columns:repeat(3,1fr); font-size:.93rem; font-style:normal; margin-bottom:.45rem; }
 .place-sum .row { grid-column:1 / -1; display:grid; grid-template-columns:1.5rem repeat(3,1fr); line-height:1.45; }
 .place-sum .rule { grid-column:1 / -1; border-top:2px solid var(--math-ink); margin:.13rem 0 .6rem; }
 .step-table { border:1.5px solid #394cc7; margin-top:.35rem; }
@@ -100,7 +100,7 @@ body { overflow:auto !important; background:#eef9ff; }
 .pg052-worked .vertical-sum .carry-1 > span { grid-column:2; }
 .pg052-worked .vertical-sum .carry-2 > span:first-child { grid-column:1; }
 .pg052-worked .place-sum { width:17.25rem; font-size:1.48rem; }
-.pg052-worked .place-sum .labels { margin-bottom:.38rem; font-size:1.09rem; font-style:italic; }
+.pg052-worked .place-sum .labels { margin-bottom:.38rem; font-size:1.09rem; font-style:normal; }
 .pg052-worked .place-sum .row { line-height:1.25; }
 .pg052-worked .place-sum .rule { border-width:2.2px; margin:.18rem 0 .48rem; }
 .pg052-worked .steps-title { margin:.58rem 0 .38rem; color:var(--math-ink); font-size:1.62rem; font-weight:900; line-height:1; -webkit-text-stroke:.015em currentColor; }
@@ -119,3 +119,6 @@ body { overflow:auto !important; background:#eef9ff; }
 .pg052-worked .therefore { padding:.25rem .8rem; font-size:1.28rem; line-height:1.25; }
 .pg052-worked + .page-number { width:3.3rem; margin-top:1.25rem; padding:.38rem .35rem; font-size:1.12rem; background:#1d9fd8; }
 @media (max-width:42rem) { .semantic-52-71 { margin:0; min-height:100vh; padding:1rem; } .worked-top,.step-row,.subtraction-note { grid-template-columns:1fr; } .step-math { border-left:0; border-top:1.5px solid #394cc7; } .sum-grid { gap:1.1rem .55rem; } .sum-stack { width:5.2rem; font-size:1.08rem; } .two-col,.equation-grid { gap:1rem; } .card-label { left:1rem; } }
+
+/* Place-value labels use regular Sassoon in the printed book. */
+.place-sum .labels i { font-style: normal; }

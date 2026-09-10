@@ -71,7 +71,7 @@ body {
 .place-diagram::before { content: var(--d1) "   " var(--d2) "   " var(--d3); position: absolute; top: 0; left: 2rem; white-space: pre; font-size: clamp(1.05rem,2.7vw,1.45rem); }
 .place-diagram.highlightable-digits::before { content: none !important; }
 .place-digits { position: absolute; top: 0; left: 2rem; white-space: pre; font-size: clamp(1.05rem,2.7vw,1.45rem); }
-.place-line { position: absolute; border-left: .16rem solid; border-bottom: .16rem solid; }
+.place-line { font-style: normal; position: absolute; border-left: .16rem solid; border-bottom: .16rem solid; }
 .place-line.hundreds { top: 1.55rem; left: 2.15rem; width: 9rem; height: 6rem; color: var(--hundreds); }
 .place-line.tens { top: 1.55rem; left: 4.15rem; width: 7rem; height: 4.5rem; color: var(--tens); }
 .place-line.ones { top: 1.55rem; left: 6.15rem; width: 5rem; height: 2.8rem; color: var(--ones); }
