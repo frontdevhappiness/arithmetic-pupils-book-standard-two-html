@@ -14,6 +14,16 @@
       src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");
       font-display: swap;
     }
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face {
+      font-family: "SassoonBook";
+      src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");
+      font-display: swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face {
+      font-family: "SassoonBook";
+      src: url("./assets/book-numeral-one.otf") format("opentype");
+      font-display: swap; unicode-range: U+0031; font-feature-settings: normal; }
     :root { --pg086-blue: #139fdf; --pg086-line: #82caef; --pg086-ink: #231f20; }
     * { box-sizing: border-box; }
     body.pg086-body {

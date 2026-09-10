@@ -10,6 +10,20 @@
   font-style:normal;
   font-display:swap;
 }
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face {
+  font-family:"Sassoon Primary Std";
+  src:url("./fonts/SassoonPrimaryStd-Regular.otf") format("opentype");
+  font-weight:400 700;
+  font-style:normal;
+  font-display:swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face {
+  font-family:"Sassoon Primary Std";
+  src:url("./book-numeral-one.otf") format("opentype");
+  font-weight:400 700;
+  font-style:normal;
+  font-display:swap; unicode-range: U+0031; font-feature-settings: normal; }
 :root { --math-blue:#159fe0; --math-line:#9bcbed; --math-ink:#231f20; --math-green:#69ba45; --math-orange:#e29530; }
 body { overflow:auto !important; background:#eef9ff; }
 #content { visibility:visible !important; position:relative !important; width:auto !important; height:auto !important; margin:0 auto !important; overflow:visible !important; transform:none !important; left:auto !important; top:auto !important; }

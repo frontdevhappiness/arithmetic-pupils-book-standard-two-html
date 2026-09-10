@@ -14,6 +14,20 @@
   font-style: normal;
   font-display: swap;
 }
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face {
+  font-family: 'SassoonPrimary';
+  src: url('./fonts/SassoonPrimaryStd-Regular.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face {
+  font-family: 'SassoonPrimary';
+  src: url('./book-numeral-one.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap; unicode-range: U+0031; font-feature-settings: normal; }
 
 @font-face {
   font-family: 'Sassoon';
@@ -22,6 +36,20 @@
   font-style: normal;
   font-display: swap;
 }
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face {
+  font-family: 'Sassoon';
+  src: url('./fonts/SassoonPrimaryStd-Regular.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face {
+  font-family: 'Sassoon';
+  src: url('./book-numeral-one.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap; unicode-range: U+0031; font-feature-settings: normal; }
 
 @font-face {
   font-family: 'Atkinson Hyperlegible';

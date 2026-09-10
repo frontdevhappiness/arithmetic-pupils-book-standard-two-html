@@ -11,6 +11,10 @@
     <link href="./assets/fonts.css?v=2" rel="stylesheet">
     <style>
         @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face { font-family: "Sassoon Primary Std"; src: url("./assets/book-numeral-one.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+0031; font-feature-settings: normal; }
         :root { color-scheme: light; --exercise-blue: #219ade; --exercise-border: #90ccee; --page-blue: #00aeef; --ink: #231f20; }
         html, body { min-height: 100%; }
         body { margin: 0; overflow-x: hidden; overflow-y: auto; color: var(--ink); background: radial-gradient(circle at 82% 8%, rgba(111, 194, 224, 0.25), transparent 30rem), linear-gradient(200deg, #f5fbfe 0%, #e7f4fa 100%); }

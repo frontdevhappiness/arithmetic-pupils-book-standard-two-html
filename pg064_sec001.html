@@ -11,6 +11,10 @@
 <link href="./assets/semantic-pages-052-071.css" rel="stylesheet">
 <style>
 @font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; }
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face { font-family: "Sassoon Primary Std"; src: url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face { font-family: "Sassoon Primary Std"; src: url("./assets/book-numeral-one.otf") format("opentype"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+0031; font-feature-settings: normal; }
 body.pg064-body { margin: 0; overflow-x: hidden; overflow-y: auto; color: #231f20; background: radial-gradient(circle at 18% 7%, rgba(111,194,224,.25), transparent 30rem), linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%); }
 #content.pg064-shell { box-sizing: border-box; width: auto !important; min-height: calc(100vh - var(--dock-height,96px)); padding: clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--dock-height,96px) + clamp(1.5rem,4vw,3rem)); }
 [data-section-id="pg064_sec001"].page64 { --page-blue: #159fe0; --line-blue: #394cc7; --border-blue: #7bc6ed; position: relative !important; width: min(100%,58rem) !important; min-height: 79.8rem !important; margin: 0 auto !important; padding: 7.45rem 6.25rem 3rem !important; overflow: hidden !important; box-sizing: border-box !important; background: #fff !important; border: clamp(.45rem,1vw,.8rem) solid #e1f3fb !important; border-radius: clamp(1.15rem,3vw,2.25rem) !important; color: #231f20 !important; box-shadow: 0 1.25rem 3.5rem rgba(24,91,118,.14) !important; font-family: "Sassoon Primary Std", SassoonPrimary, Arial, sans-serif !important; }

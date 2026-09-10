@@ -7,6 +7,10 @@
   <link href="./content/tailwind_output.css" rel="stylesheet"><link href="./assets/fonts.css?v=2" rel="stylesheet">
   <style>
     @font-face{font-family:SassoonBook;src:url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");font-display:swap}
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face{font-family:SassoonBook;src:url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");font-display:swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face{font-family:SassoonBook;src:url("./assets/book-numeral-one.otf") format("opentype");font-display:swap; unicode-range: U+0031; font-feature-settings: normal; }
     :root{--blue:#16a4e0;--line:#82c9ef;--ink:#231f20}*{box-sizing:border-box}
     body{margin:0;overflow-x:hidden;color:var(--ink);background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe,#e7f4fa)}
     #content{width:auto!important;height:auto!important;min-height:calc(100vh - var(--dock-height,96px));padding:clamp(1rem,4vw,3rem) clamp(.75rem,4vw,2.5rem) calc(var(--dock-height,96px) + clamp(1.5rem,4vw,3rem));overflow:visible!important;visibility:visible!important;opacity:1!important}

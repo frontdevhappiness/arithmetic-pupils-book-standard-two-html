@@ -7,6 +7,10 @@
   <link href="./content/tailwind_output.css" rel="stylesheet"><link href="./assets/fonts.css?v=2" rel="stylesheet">
   <style>
     @font-face{font-family:"Sassoon Page 73";src:url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");font-display:swap}
+/* Use the book’s short f and alternate 4 and 9 without changing other letterforms. */
+@font-face{font-family:"Sassoon Page 73";src:url("./assets/fonts/SassoonPrimaryStd-Regular.otf") format("opentype");font-display:swap; unicode-range: U+0034, U+0039, U+0066; font-feature-settings: "salt" 1; }
+/* Plain-stroke numeral 1; the text remains U+0031 for accessibility. */
+@font-face{font-family:"Sassoon Page 73";src:url("./assets/book-numeral-one.otf") format("opentype");font-display:swap; unicode-range: U+0031; font-feature-settings: normal; }
     :root{--p73-blue:#00a9e8;--p73-line:#7fc8ed;--p73-ink:#231f20}
     *{box-sizing:border-box}
     body.pg073-body{margin:0;overflow-x:hidden;overflow-y:auto;color:var(--p73-ink);background:radial-gradient(circle at 18% 7%,rgba(111,194,224,.25),transparent 30rem),linear-gradient(160deg,#f5fbfe 0%,#e7f4fa 100%)}
