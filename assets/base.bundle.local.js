@@ -50219,16 +50219,15 @@ function useAtomValueWithDelay<Value>(
   function PageNav() {
     const pages = useAtomValue(pagesAtom);
     const currentSectionId = useAtomValue(currentSectionIdAtom);
-    const currentPageFromMeta = useAtomValue(currentPageNumberAtom);
     const dockMenuValue = useAtomValue(dockMenuValueAtom);
     const setDockMenuValue = useSetAtom(dockMenuValueAtom);
     const { t } = useTranslation();
     const idx = pages.findIndex((p) => p.section_id === currentSectionId);
     const prev = idx > 0 ? pages[idx - 1] : void 0;
     const next = idx >= 0 && idx < pages.length - 1 ? pages[idx + 1] : void 0;
-    const currentEntry = idx >= 0 ? pages[idx] : void 0;
-    const currentRange = currentEntry ? pageRangeForEntry(currentEntry) : null;
-    const pageNumber = currentPageFromMeta ?? currentRange?.[0] ?? null;
+    // Display the reading-order position, as PageList does. Keep the page
+    // metadata unchanged: sign-language videos use those original numbers.
+    const pageNumber = idx >= 0 ? idx + 1 : null;
     const totalPages = pages.length;
     const go = (href) => {
       if (!href) return;
